@@ -241,8 +241,8 @@ AS $$
     mp.updated_at,
     -- Left joins for optional fields
     o.name AS org_name,
-    p_pm.display_name AS pm_name,
-    p_client.display_name AS client_name
+    p_pm.full_name AS pm_name,
+    p_client.full_name AS client_name
   FROM managed_projects mp
   LEFT JOIN organizations o ON mp.assigned_org_id = o.id
   LEFT JOIN profiles p_pm ON mp.pm_user_id = p_pm.id
