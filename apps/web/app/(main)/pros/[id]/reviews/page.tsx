@@ -1,37 +1,82 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { Star, ChevronRight, ThumbsUp, MessageSquare, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { mockDetailedReviews, getAverageSubRatings } from '@/lib/mock-data/reviews';
 import { WriteReviewDialog } from '@/components/write-review-dialog';
 import { StarRatingInput } from '@/components/star-rating-input';
+import { fetchProByIdWithDetails } from '@/lib/supabase/queries/profiles';
 
 interface ReviewsPageProps {
   params: Promise<{ id: string }>;
 }
 
-const mockPro = {
-  id: '1',
-  name: 'Marcus Johnson',
-  rating: 4.9,
-  reviewCount: 127,
-  avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
-};
-
-const starDistribution = [
-  { stars: 5, count: 102, pct: 80 },
-  { stars: 4, count: 19, pct: 15 },
-  { stars: 3, count: 4, pct: 3 },
-  { stars: 2, count: 1, pct: 1 },
-  { stars: 1, count: 1, pct: 1 },
-];
-
 export default async function ProReviewsPage({ params }: ReviewsPageProps) {
   const resolvedParams = await params;
-  const reviews = mockDetailedReviews.filter((r) => r.proId === resolvedParams.id);
-  const subRatings = getAverageSubRatings(resolvedParams.id);
+  const { data } = await fetchProByIdWithDetails(resolvedParams.id);
+
+  if (!data) {
+    notFound();
+  }
+
+  const pro = {
+    id: data.id,
+    name: data.profile?.full_name || 'Unknown',
+    rating: Number(data.avg_rating) || 0,
+    reviewCount: data.total_reviews || 0,
+    avatarUrl: data.profile?.avatar_url || '',
+  };
+
+  const reviews = (data.reviews || []).map((r: any) => ({
+    id: r.id,
+    proId: resolvedParams.id,
+    reviewerName: r.reviewer?.full_name || 'Anonymous',
+    reviewerAvatar: r.reviewer?.avatar_url || '',
+    rating: r.rating || 0,
+    title: r.title || '',
+    comment: r.comment || '',
+    createdAt: r.created_at,
+    qualityRating: r.quality_rating || r.rating || 0,
+    punctualityRating: r.punctuality_rating || r.rating || 0,
+    communicationRating: r.communication_rating || r.rating || 0,
+    valueRating: r.value_rating || r.rating || 0,
+    photos: (r.photos || []) as string[],
+    proResponse: r.pro_response || null,
+    proName: pro.name,
+    helpfulCount: 0,
+  }));
+
+  // Calculate star distribution
+  const starCounts = [0, 0, 0, 0, 0];
+  reviews.forEach((r: any) => {
+    if (r.rating >= 1 && r.rating <= 5) {
+      starCounts[r.rating - 1]++;
+    }
+  });
+
+  const starDistribution = [5, 4, 3, 2, 1].map((stars) => {
+    const count = starCounts[stars - 1];
+    const pct = reviews.length > 0 ? Math.round((count / reviews.length) * 100) : 0;
+    return { stars, count, pct };
+  });
+
+  // Calculate average sub-ratings
+  const subRatings = {
+    quality: reviews.length > 0
+      ? reviews.reduce((sum: number, r: any) => sum + r.qualityRating, 0) / reviews.length
+      : 0,
+    punctuality: reviews.length > 0
+      ? reviews.reduce((sum: number, r: any) => sum + r.punctualityRating, 0) / reviews.length
+      : 0,
+    communication: reviews.length > 0
+      ? reviews.reduce((sum: number, r: any) => sum + r.communicationRating, 0) / reviews.length
+      : 0,
+    value: reviews.length > 0
+      ? reviews.reduce((sum: number, r: any) => sum + r.valueRating, 0) / reviews.length
+      : 0,
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -42,7 +87,7 @@ export default async function ProReviewsPage({ params }: ReviewsPageProps) {
           <ChevronRight className="h-3.5 w-3.5" />
           <Link href="/pros" className="hover:text-gray-700">Pros</Link>
           <ChevronRight className="h-3.5 w-3.5" />
-          <Link href={`/pros/${resolvedParams.id}`} className="hover:text-gray-700">{mockPro.name}</Link>
+          <Link href={`/pros/${resolvedParams.id}`} className="hover:text-gray-700">{pro.name}</Link>
           <ChevronRight className="h-3.5 w-3.5" />
           <span className="font-medium text-gray-900">Reviews</span>
         </div>
@@ -54,21 +99,21 @@ export default async function ProReviewsPage({ params }: ReviewsPageProps) {
             <Card className="sticky top-20 rounded-2xl border-gray-200 bg-white p-6">
               <div className="mb-4 flex items-center gap-3">
                 <Avatar className="h-12 w-12">
-                  <AvatarImage src={mockPro.avatarUrl} alt={mockPro.name} className="object-cover" />
+                  <AvatarImage src={pro.avatarUrl} alt={pro.name} className="object-cover" />
                   <AvatarFallback className="bg-reno-green-light font-bold text-reno-green-dark">
-                    {mockPro.name.charAt(0)}
+                    {pro.name.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
                 <div>
                   <h1 className="text-lg font-bold text-gray-900">Reviews</h1>
-                  <p className="text-sm text-gray-500">{mockPro.name}</p>
+                  <p className="text-sm text-gray-500">{pro.name}</p>
                 </div>
               </div>
 
               {/* Overall Score */}
               <div className="mb-5 flex items-center gap-4 rounded-xl bg-amber-50/70 p-4">
                 <span className="text-4xl font-extrabold tracking-tight text-gray-900">
-                  {mockPro.rating}
+                  {pro.rating.toFixed(1)}
                 </span>
                 <div>
                   <div className="flex gap-0.5">
@@ -76,7 +121,7 @@ export default async function ProReviewsPage({ params }: ReviewsPageProps) {
                       <Star
                         key={i}
                         className={`h-4 w-4 ${
-                          i < Math.round(mockPro.rating)
+                          i < Math.round(pro.rating)
                             ? 'fill-amber-400 text-amber-400'
                             : 'text-gray-200'
                         }`}
@@ -84,7 +129,7 @@ export default async function ProReviewsPage({ params }: ReviewsPageProps) {
                     ))}
                   </div>
                   <p className="mt-0.5 text-xs text-gray-500">
-                    {mockPro.reviewCount} reviews
+                    {pro.reviewCount} reviews
                   </p>
                 </div>
               </div>
@@ -122,7 +167,7 @@ export default async function ProReviewsPage({ params }: ReviewsPageProps) {
                     <div className="flex items-center gap-2">
                       <StarRatingInput value={item.value} size="sm" readonly />
                       <span className="min-w-[2ch] text-right text-xs font-bold text-gray-700">
-                        {item.value}
+                        {item.value.toFixed(1)}
                       </span>
                     </div>
                   </div>
@@ -130,7 +175,7 @@ export default async function ProReviewsPage({ params }: ReviewsPageProps) {
               </div>
 
               {/* Write Review CTA */}
-              <WriteReviewDialog proName={mockPro.name}>
+              <WriteReviewDialog proName={pro.name}>
                 <Button className="mt-5 w-full rounded-xl bg-reno-green py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-reno-green-dark h-auto">
                   Write a Review
                 </Button>
@@ -161,8 +206,18 @@ export default async function ProReviewsPage({ params }: ReviewsPageProps) {
               </Button>
             </Card>
 
+            {/* Empty State */}
+            {reviews.length === 0 && (
+              <Card className="rounded-2xl border-gray-200 bg-white p-12 text-center">
+                <p className="text-lg font-semibold text-gray-600">No reviews yet</p>
+                <p className="mt-2 text-sm text-gray-400">
+                  This contractor hasn't received any reviews yet.
+                </p>
+              </Card>
+            )}
+
             {/* Reviews */}
-            {reviews.map((review) => (
+            {reviews.map((review: any) => (
               <Card key={review.id} className="rounded-2xl border-gray-200 bg-white p-6">
                 {/* Header */}
                 <div className="mb-4 flex items-start justify-between">
@@ -231,7 +286,7 @@ export default async function ProReviewsPage({ params }: ReviewsPageProps) {
                 {/* Photos */}
                 {review.photos.length > 0 && (
                   <div className="mb-4 flex gap-2">
-                    {review.photos.map((photo, i) => (
+                    {review.photos.map((photo: string, i: number) => (
                       <div key={i} className="h-20 w-20 overflow-hidden rounded-lg">
                         <img
                           src={photo}

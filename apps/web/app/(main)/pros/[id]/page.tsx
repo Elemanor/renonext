@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import {
   Star,
   MapPin,
@@ -33,104 +34,118 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import type { ProTier } from '@/components/pro-card';
 import { WriteReviewDialog } from '@/components/write-review-dialog';
+import { fetchProByIdWithDetails } from '@/lib/supabase/queries/profiles';
 
 interface ProPageProps {
   params: Promise<{ id: string }>;
 }
 
-const mockPro = {
-  id: '1',
-  name: 'Marcus Johnson',
-  headline: 'Licensed Electrician - 15 Years Experience',
-  bio: 'I am a fully licensed and insured electrician with over 15 years of experience in residential and commercial electrical work. Specializing in panel upgrades, smart home installations, EV charger setups, and complete home rewiring. I take pride in clean, code-compliant work and clear communication throughout every project. Every job comes with a satisfaction guarantee.',
-  avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-  coverUrl: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&h=400&fit=crop',
-  rating: 4.9,
-  reviewCount: 127,
-  hourlyRateMin: 65,
-  hourlyRateMax: 85,
-  categories: ['Electrical', 'Smart Home', 'Lighting', 'EV Chargers'],
-  city: 'Toronto',
-  province: 'ON',
-  isVerified: true,
-  idVerified: true,
-  backgroundCheckPassed: true,
-  responseTimeMinutes: 30,
-  yearsExperience: 15,
-  totalJobsCompleted: 342,
-  isAvailable: true,
-  memberSince: '2021-03-15',
-  tier: 'top_rated' as ProTier,
-  responseRate: 98,
-};
-
-const mockReviews = [
-  {
-    id: '1',
-    reviewerName: 'Jennifer S.',
-    reviewerAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face',
-    rating: 5,
-    comment:
-      'Marcus was absolutely fantastic! He upgraded our electrical panel and installed new outlets in our basement. Very professional, clean, and explained everything clearly. Would hire again in a heartbeat.',
-    date: '2024-11-15',
-    jobTitle: 'Electrical Panel Upgrade',
-  },
-  {
-    id: '2',
-    reviewerName: 'Robert K.',
-    reviewerAvatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
-    rating: 5,
-    comment:
-      'Installed an EV charger in our garage. Marcus was on time, provided a detailed quote, and finished ahead of schedule. The work was impeccable.',
-    date: '2024-10-28',
-    jobTitle: 'EV Charger Installation',
-  },
-  {
-    id: '3',
-    reviewerName: 'Linda M.',
-    reviewerAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
-    rating: 4,
-    comment:
-      'Good work on the kitchen lighting upgrade. Minor scheduling delay but Marcus communicated well and the final result was great.',
-    date: '2024-10-05',
-    jobTitle: 'Kitchen Lighting Installation',
-  },
-];
-
-const mockGallery = [
-  { id: '1', url: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=400&fit=crop', alt: 'Panel upgrade', category: 'Electrical Panel', projectAddress: '45 Queen St W', scope: 'Panel Upgrade — 200A', verifiedDate: 'Oct 2024', escrowVerified: true },
-  { id: '2', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=400&fit=crop', alt: 'Smart home setup', category: 'Smart Home', projectAddress: '12 Lakeshore Blvd', scope: 'Full Smart Home Integration', verifiedDate: 'Sep 2024', escrowVerified: true },
-  { id: '3', url: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400&h=400&fit=crop', alt: 'EV charger install', category: 'EV Charger', projectAddress: '88 King St E', scope: 'Level 2 EV Charger Install', verifiedDate: 'Nov 2024', escrowVerified: true },
-  { id: '4', url: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&h=400&fit=crop', alt: 'Kitchen lighting', category: 'Lighting', projectAddress: '220 Dundas St', scope: 'Kitchen Pot Light Retrofit', verifiedDate: 'Aug 2024', escrowVerified: true },
-  { id: '5', url: 'https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=400&h=400&fit=crop', alt: 'Outlet installation', category: 'Electrical', projectAddress: '9 Bloor St W', scope: 'Outlet & Circuit Expansion', verifiedDate: 'Jul 2024', escrowVerified: true },
-  { id: '6', url: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=400&fit=crop', alt: 'Wiring project', category: 'Residential', projectAddress: '155 Yonge St', scope: 'Full Rewire — Knob & Tube', verifiedDate: 'Jun 2024', escrowVerified: true },
-];
-
-const mockCompliance = {
-  identity: { verified: true, lastVerified: 'Feb 12, 2025' },
-  wsib: { number: 'ON-12345678', status: 'active' as const, lastVerified: 'Today, 8:00 AM', expiry: 'Jan 2026' },
-  insurance: { provider: 'Aviva Canada', coverage: '$5,000,000', lastVerified: 'Feb 8, 2025', expiry: 'Dec 2025' },
-  license: { number: 'EC-7002189', issuer: 'ECRA/ESA Ontario', lastVerified: 'Feb 12, 2025' },
-  safety: { certs: ['WHMIS', 'Fall Arrest', 'Confined Spaces'], lastVerified: 'Jan 20, 2025' },
-};
-
 export async function generateMetadata({
   params,
 }: ProPageProps): Promise<Metadata> {
   const resolvedParams = await params;
+  const { data } = await fetchProByIdWithDetails(resolvedParams.id);
+
+  if (!data) {
+    return {
+      title: 'Pro Not Found | RenoNext',
+      description: 'The contractor profile you are looking for could not be found.',
+    };
+  }
+
+  const name = data.profile?.full_name || 'Unknown';
+  const headline = data.headline || `View ${name}'s profile on RenoNext`;
+
   return {
-    title: `${mockPro.name} - Electrician | RenoNext`,
-    description: mockPro.headline || `View ${mockPro.name}'s profile on RenoNext`,
+    title: `${name} | RenoNext`,
+    description: headline,
     openGraph: {
-      title: `${mockPro.name} - Electrician | RenoNext`,
-      description: mockPro.headline || '',
+      title: `${name} | RenoNext`,
+      description: headline,
     },
   };
 }
 
 export default async function ProProfilePage({ params }: ProPageProps) {
   const resolvedParams = await params;
-  const pro = mockPro;
+  const { data } = await fetchProByIdWithDetails(resolvedParams.id);
+
+  if (!data) {
+    notFound();
+  }
+
+  // Map DB data to component variables
+  const pro = {
+    id: data.id,
+    name: data.profile?.full_name || 'Unknown',
+    headline: data.headline || '',
+    bio: data.bio || '',
+    avatarUrl: data.profile?.avatar_url || '',
+    coverUrl: '',
+    rating: Number(data.avg_rating) || 0,
+    reviewCount: data.total_reviews || 0,
+    hourlyRateMin: Number(data.hourly_rate_min) || 0,
+    hourlyRateMax: Number(data.hourly_rate_max) || 0,
+    categories: data.categories?.map((c: any) => c.category?.name).filter(Boolean) || [],
+    city: data.city || '',
+    province: data.province || 'ON',
+    isVerified: data.profile?.is_verified || false,
+    idVerified: data.id_verified || false,
+    backgroundCheckPassed: data.background_check_passed || false,
+    responseTimeMinutes: data.response_time_minutes || 0,
+    yearsExperience: data.years_experience || 0,
+    totalJobsCompleted: data.total_jobs_completed || 0,
+    isAvailable: data.is_available,
+    memberSince: data.created_at,
+    tier: (data.total_jobs_completed >= 50 ? 'top_rated' : data.total_jobs_completed >= 10 ? 'rising_talent' : 'new') as ProTier,
+    responseRate: 0,
+  };
+
+  const reviews = (data.reviews || []).map((r: any) => ({
+    id: r.id,
+    reviewerName: r.reviewer?.full_name || 'Anonymous',
+    reviewerAvatar: r.reviewer?.avatar_url || '',
+    rating: r.rating || 0,
+    comment: r.comment || '',
+    date: r.created_at,
+    jobTitle: r.job?.title || 'Project',
+  }));
+
+  const gallery = (data.gallery || []).map((g: any) => ({
+    id: g.id,
+    url: g.image_url || g.thumbnail_url || '',
+    alt: g.caption || 'Project photo',
+    category: 'Project',
+    projectAddress: 'N/A',
+    scope: g.caption || 'Project',
+    verifiedDate: new Date(g.created_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }),
+    escrowVerified: g.is_featured || false,
+  }));
+
+  const mockCompliance = {
+    identity: { verified: data.id_verified, lastVerified: data.id_verified ? 'Verified' : 'N/A' },
+    wsib: {
+      number: data.wsib_number || 'N/A',
+      status: (data.wsib_status || 'not_applicable') as 'active' | 'expired' | 'exempt' | 'not_applicable',
+      lastVerified: data.wsib_number ? 'Verified' : 'N/A',
+      expiry: 'N/A',
+    },
+    insurance: {
+      provider: data.insurance_provider || 'N/A',
+      coverage: data.insurance_coverage_amount ? `$${data.insurance_coverage_amount.toLocaleString()}` : 'N/A',
+      lastVerified: data.insurance_policy_number ? 'Verified' : 'N/A',
+      expiry: data.insurance_expiry || 'N/A',
+    },
+    license: {
+      number: data.license_number || 'N/A',
+      issuer: data.license_type || 'N/A',
+      lastVerified: data.license_number ? 'Verified' : 'N/A',
+    },
+    safety: {
+      certs: [] as string[],
+      lastVerified: 'N/A',
+    },
+  };
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -296,7 +311,9 @@ export default async function ProProfilePage({ params }: ProPageProps) {
               <div className="bg-slate-900 p-4 transition-colors hover:bg-slate-800/80">
                 <Shield className="mb-3 h-5 w-5 text-slate-400" />
                 <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">WSIB Clearance</p>
-                <p className="mt-1 font-mono text-sm font-semibold text-emerald-400">ACTIVE</p>
+                <p className={`mt-1 font-mono text-sm font-semibold ${mockCompliance.wsib.status === 'active' ? 'text-emerald-400' : 'text-slate-500'}`}>
+                  {mockCompliance.wsib.status === 'active' ? 'ACTIVE' : mockCompliance.wsib.status === 'not_applicable' ? 'PENDING' : mockCompliance.wsib.status.toUpperCase()}
+                </p>
                 <p className="mt-1 font-mono text-[9px] text-slate-400">#{mockCompliance.wsib.number}</p>
               </div>
               {/* Insurance */}
@@ -365,7 +382,7 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                     Approved Service Categories
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {pro.categories.map((cat) => (
+                    {pro.categories.map((cat: string) => (
                       <Badge
                         key={cat}
                         className="rounded-full bg-slate-100 px-3.5 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-200 border-transparent"
@@ -389,12 +406,19 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                       <p className="text-xs text-gray-500">GPS-stamped milestone documentation</p>
                     </div>
                   </div>
-                  <Button variant="outline" className="text-sm h-auto px-4 py-2 rounded-xl">
-                    View Full Archive
-                  </Button>
+                  {gallery.length > 0 && (
+                    <Button variant="outline" className="text-sm h-auto px-4 py-2 rounded-xl">
+                      View Full Archive
+                    </Button>
+                  )}
                 </div>
-                <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-                  {mockGallery.map((item) => (
+                {gallery.length === 0 ? (
+                  <div className="py-8 text-center">
+                    <p className="text-sm text-gray-500">No project photos yet</p>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+                    {gallery.map((item: any) => (
                     <div
                       key={item.id}
                       className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-gray-200"
@@ -427,7 +451,8 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                       </div>
                     </div>
                   ))}
-                </div>
+                  </div>
+                )}
               </Card>
 
               {/* Reviews */}
@@ -476,8 +501,13 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                   ))}
                 </div>
 
-                <div className="space-y-6">
-                  {mockReviews.map((review) => (
+                {reviews.length === 0 ? (
+                  <div className="py-8 text-center">
+                    <p className="text-sm text-gray-500">No reviews yet</p>
+                  </div>
+                ) : (
+                  <div className="space-y-6">
+                    {reviews.slice(0, 3).map((review: any) => (
                     <div key={review.id} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
                       <div className="mb-3 flex items-start justify-between">
                         <div className="flex items-center gap-3">
@@ -526,9 +556,11 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                       </Button>
                     </div>
                   ))}
-                </div>
+                  </div>
+                )}
 
-                <Button
+                {reviews.length > 0 && (
+                  <Button
                   asChild
                   variant="outline"
                   className="mt-6 w-full rounded-xl border-gray-200 py-2.5 text-sm font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-50 hover:shadow-sm"
@@ -536,7 +568,8 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                   <Link href={`/pros/${pro.id}/reviews`}>
                     See All {pro.reviewCount} Reviews
                   </Link>
-                </Button>
+                  </Button>
+                )}
               </Card>
             </div>
 
