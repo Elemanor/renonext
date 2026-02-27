@@ -1,0 +1,12 @@
+{
+  "name": "@renonext/supabase",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "db:push": "supabase db push",
+    "db:reset": "supabase db reset",
+    "db:seed": "supabase db seed",
+    "functions:serve": "supabase functions serve",
+    "functions:deploy": "supabase functions deploy"
+  }
+}

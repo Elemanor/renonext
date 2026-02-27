@@ -1,0 +1,413 @@
+export interface JobStepTemplate {
+  id: string;
+  name: string;
+  category: string;
+  hazards: string[];
+  safetyControls: string[];
+  requiredTools: string[];
+  requiredPPE: string[];
+  riskLevel: 'A' | 'B' | 'C';
+}
+
+export const jobStepTemplates: JobStepTemplate[] = [
+  {
+    id: 'form-erection',
+    name: 'Formwork Erection',
+    category: 'Formwork',
+    hazards: [
+      'Falls from heights',
+      'Struck by falling objects',
+      'Manual handling injuries',
+      'Cuts from sharp edges',
+      'Pinch points',
+      'Crane contact/strikes',
+    ],
+    safetyControls: [
+      'Install guardrails and fall protection',
+      'Use tag lines for crane loads',
+      'Inspect forms before use',
+      'Use proper lifting techniques',
+      'Maintain 3-point contact on ladders',
+      'Signal person for crane operations',
+    ],
+    requiredTools: ['Crane/Hoist', 'Hammers', 'Levels', 'Measuring tape', 'Wedges', 'Form oil', 'Tie wire', 'Scaffolding'],
+    requiredPPE: ['Hard hat', 'Safety glasses', 'Work gloves', 'Fall harness', 'Steel-toed boots', 'High-visibility vest'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'form-stripping',
+    name: 'Formwork Stripping/Removal',
+    category: 'Formwork',
+    hazards: [
+      'Falls from heights',
+      'Struck by falling formwork',
+      'Back injuries from lifting',
+      'Cuts and abrasions',
+      'Unstable structure',
+    ],
+    safetyControls: [
+      'Ensure concrete has reached required strength',
+      'Remove forms in planned sequence',
+      'Use fall protection equipment',
+      'Clear area below of personnel',
+      'Support forms during removal',
+      'Stack removed forms safely',
+    ],
+    requiredTools: ['Pry bars', 'Hammers', 'Crane/Hoist', 'Come-alongs', 'Wedges', 'Scaffolding'],
+    requiredPPE: ['Hard hat', 'Safety glasses', 'Work gloves', 'Fall harness', 'Steel-toed boots', 'High-visibility vest'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'concrete-pour',
+    name: 'Concrete Pouring',
+    category: 'Concrete',
+    hazards: [
+      'Chemical burns from concrete',
+      'Slips and falls on wet surfaces',
+      'Heavy hose management',
+      'Noise from equipment',
+      'Eye injuries from splashing',
+      'Vibration exposure',
+    ],
+    safetyControls: [
+      'Wear appropriate PPE including rubber boots',
+      'Wash skin immediately if contact occurs',
+      'Secure pump hoses properly',
+      'Use spotters for equipment movement',
+      'Maintain good housekeeping',
+      'Rotate workers on vibration equipment',
+      'Use hearing protection near pumps',
+    ],
+    requiredTools: ['Concrete pump', 'Vibrators', 'Screeds', 'Bull floats', 'Trowels', 'Wheelbarrows', 'Shovels', 'Rakes'],
+    requiredPPE: ['Rubber boots', 'Safety glasses', 'Rubber gloves', 'Hard hat', 'Hearing protection', 'High-visibility vest', 'Long sleeves'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'rebar-install',
+    name: 'Rebar Installation',
+    category: 'Concrete',
+    hazards: [
+      'Impalement hazards',
+      'Cuts from sharp edges',
+      'Back injuries from lifting',
+      'Trip hazards',
+      'Eye injuries from wire ties',
+      'Falls from heights',
+    ],
+    safetyControls: [
+      'Cap all exposed rebar ends',
+      'Use proper lifting techniques',
+      'Maintain clear walkways',
+      'Wear cut-resistant gloves',
+      'Use fall protection when required',
+      'Bend rebar away from body',
+      'Store rebar on racks',
+    ],
+    requiredTools: ['Rebar bender', 'Rebar cutter', 'Tie wire', 'Pliers', 'Measuring tape', 'Chalk line', 'Come-alongs', 'Crane for heavy bars'],
+    requiredPPE: ['Hard hat', 'Safety glasses', 'Cut-resistant gloves', 'Steel-toed boots', 'High-visibility vest', 'Fall harness (if applicable)'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'excavation',
+    name: 'Excavation Operations',
+    category: 'Earthwork',
+    hazards: [
+      'Cave-in/collapse',
+      'Falls into excavation',
+      'Struck by equipment',
+      'Underground utilities contact',
+      'Hazardous atmospheres',
+      'Water accumulation',
+    ],
+    safetyControls: [
+      'Install shoring/trench boxes',
+      'Slope or bench excavation walls',
+      'Locate utilities before digging',
+      'Install barriers around excavation',
+      'Provide safe access/egress',
+      'Monitor atmosphere if required',
+      'Pump out water accumulation',
+      'Daily inspections by competent person',
+    ],
+    requiredTools: ['Excavator', 'Backhoe', 'Shoring equipment', 'Trench boxes', 'Ladders', 'Water pump', 'Gas monitor', 'Survey equipment'],
+    requiredPPE: ['Hard hat', 'Safety glasses', 'Steel-toed boots', 'High-visibility vest', 'Work gloves', 'Hearing protection'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'scaffold-erect',
+    name: 'Scaffold Erection',
+    category: 'Access',
+    hazards: [
+      'Falls from heights',
+      'Falling objects',
+      'Structural collapse',
+      'Pinch points',
+      'Overexertion',
+      'Electrical hazards',
+    ],
+    safetyControls: [
+      'Inspect all components before use',
+      'Level and secure base plates',
+      'Install guardrails as you go',
+      'Use fall protection above 6 feet',
+      'Tag scaffold when complete',
+      'Maintain 10 feet from power lines',
+      'Do not exceed load capacity',
+      'Secure tools and materials',
+    ],
+    requiredTools: ['Scaffold frames', 'Cross braces', 'Planks', 'Base plates', 'Levels', 'Hammers', 'Wrenches', 'Tag lines'],
+    requiredPPE: ['Hard hat', 'Safety glasses', 'Work gloves', 'Fall harness', 'Steel-toed boots', 'High-visibility vest'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'site-prep',
+    name: 'Site Preparation/Layout',
+    category: 'General',
+    hazards: [
+      'Trip hazards',
+      'Vehicle traffic',
+      'Uneven surfaces',
+      'Weather exposure',
+      'Dust exposure',
+    ],
+    safetyControls: [
+      'Clear and level work areas',
+      'Install temporary barriers',
+      'Establish traffic patterns',
+      'Control dust with water',
+      'Remove trip hazards',
+      'Provide adequate lighting',
+    ],
+    requiredTools: ['Survey equipment', 'Stakes', 'String line', 'Spray paint', 'Measuring tape', 'Levels', 'Hand tools'],
+    requiredPPE: ['Hard hat', 'Safety glasses', 'Steel-toed boots', 'High-visibility vest', 'Work gloves'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'material-handling',
+    name: 'Material Handling/Storage',
+    category: 'General',
+    hazards: [
+      'Back injuries',
+      'Crush injuries',
+      'Struck by materials',
+      'Forklift accidents',
+      'Stack collapse',
+    ],
+    safetyControls: [
+      'Use mechanical aids when possible',
+      'Team lift heavy items',
+      'Stack materials safely',
+      'Secure tall stacks',
+      'Maintain clear aisles',
+      'Inspect lifting equipment',
+      'Follow forklift safety rules',
+    ],
+    requiredTools: ['Forklift', 'Pallet jack', 'Dollies', 'Straps', 'Dunnage', 'Storage racks'],
+    requiredPPE: ['Hard hat', 'Safety glasses', 'Work gloves', 'Steel-toed boots', 'High-visibility vest', 'Back support (optional)'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'crane-ops',
+    name: 'Crane/Hoisting Operations',
+    category: 'Equipment',
+    hazards: [
+      'Struck by load',
+      'Load drops',
+      'Electrical contact',
+      'Rigging failure',
+      'Blind spots',
+    ],
+    safetyControls: [
+      'Inspect crane and rigging daily',
+      'Never exceed load capacity',
+      'Establish exclusion zones',
+      'Use tag lines on loads',
+      'Maintain communication with operator',
+      'Watch for overhead power lines',
+    ],
+    requiredTools: ['Mobile/Tower crane', 'Slings', 'Shackles', 'Tag lines', 'Load charts', 'Two-way radios', 'Wind speed meter'],
+    requiredPPE: ['Hard hat', 'Safety glasses', 'Work gloves', 'Steel-toed boots', 'High-visibility vest'],
+    riskLevel: 'B',
+  },
+  {
+    id: 'power-tools',
+    name: 'Power Tool Operations',
+    category: 'Tools',
+    hazards: [
+      'Cuts and lacerations',
+      'Eye injuries',
+      'Noise exposure',
+      'Vibration',
+      'Electrical shock',
+      'Fire/sparks',
+    ],
+    safetyControls: [
+      'Inspect tools before use',
+      'Use guards and safety devices',
+      'Disconnect power when changing blades',
+      'Use GFCI protection',
+      'Keep work area clean',
+      'Store tools properly',
+      'Use appropriate tool for job',
+    ],
+    requiredTools: ['Circular saws', 'Grinders', 'Drills', 'Impact wrenches', 'Reciprocating saws', 'Extension cords', 'GFCI adapters'],
+    requiredPPE: ['Safety glasses', 'Face shield (grinding)', 'Hearing protection', 'Work gloves', 'Dust mask', 'Steel-toed boots'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'telehandler-ops',
+    name: 'Telehandler/Forklift Operations',
+    category: 'Equipment',
+    hazards: [
+      'Tip-over hazards',
+      'Struck by equipment',
+      'Falls from forks/platform',
+      'Crush injuries',
+      'Load drops',
+      'Blind spots',
+      'Uneven terrain',
+    ],
+    safetyControls: [
+      'Only trained operators allowed',
+      'Daily equipment inspection',
+      'Check load capacity',
+      'Use spotter in congested areas',
+      'Maintain safe travel speed',
+      'Keep load low when traveling',
+      'Use seat belt',
+      'No passengers on forks',
+    ],
+    requiredTools: ['Telehandler/Forklift', 'Load chart', 'Wheel chocks', 'Warning lights/beacon', 'Fire extinguisher', 'Two-way radio'],
+    requiredPPE: ['Hard hat', 'Safety glasses', 'High-visibility vest', 'Steel-toed boots', 'Work gloves', 'Hearing protection'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'welding',
+    name: 'Welding/Cutting Operations',
+    category: 'Hot Work',
+    hazards: [
+      'Burns',
+      'Eye damage (flash)',
+      'Fume inhalation',
+      'Fire/explosion',
+      'Electric shock',
+      'Noise',
+    ],
+    safetyControls: [
+      'Use welding screens',
+      'Ensure adequate ventilation',
+      'Remove combustibles',
+      'Have fire extinguisher ready',
+      'Use fire watch',
+      'Check for hot work permit',
+      'Inspect equipment and cables',
+    ],
+    requiredTools: ['Welding machine', 'Cutting torch', 'Welding leads', 'Ground clamps', 'Chipping hammer', 'Wire brush', 'Fire extinguisher', 'Welding screens'],
+    requiredPPE: ['Welding helmet', 'Leather gloves', 'Flame-resistant clothing', 'Safety glasses', 'Steel-toed boots', 'Respirator (if required)'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'waterstop-welding',
+    name: 'Waterstop Welding',
+    category: 'Hot Work',
+    hazards: [
+      'Iron burn hazard',
+      'Hot metal burns',
+      'Eye damage (welding flash)',
+      'Toxic fume inhalation',
+      'Fire from hot materials',
+      'Heat stress',
+      'Electrical shock',
+    ],
+    safetyControls: [
+      'Use heat-resistant welding screens',
+      'Allow cooling time before handling',
+    ],
+    requiredTools: ['Welding iron', 'Wire brushes', 'Grinding wheel', 'Temperature gauge', 'Fire blanket', 'Fire extinguisher'],
+    requiredPPE: ['Welding helmet/face shield', 'Heat-resistant gloves', 'Leather apron', 'Flame-resistant clothing', 'Safety glasses under helmet', 'Steel-toed boots', 'Respirator for fumes', 'Burn-resistant sleeves'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'ewp-operation',
+    name: 'Elevated Work Platform Operation',
+    category: 'Equipment',
+    hazards: [
+      'Falls from height',
+      'Platform tip-over',
+      'Electrocution from overhead lines',
+      'Crushing between platform and objects',
+      'Struck by falling tools/materials',
+      'Equipment malfunction',
+      'Weather conditions (wind)',
+      'Entanglement in controls',
+    ],
+    safetyControls: [
+      'Complete pre-use inspection',
+      'Check ground conditions/stability',
+      'Maintain 10 ft from power lines',
+      'Use 100% fall protection/harness',
+      'Secure all tools and materials',
+      'Check load capacity limits',
+      'Monitor wind speed (max 28 mph)',
+      'Use spotter when needed',
+    ],
+    requiredTools: ['Scissor lift/Boom lift', 'Safety harness/lanyard', 'Warning cones/barriers', 'Outrigger pads', 'Level indicator', 'Communication devices'],
+    requiredPPE: ['Hard hat', 'Safety harness', 'Shock-absorbing lanyard', 'Safety glasses', 'High-visibility vest', 'Steel-toed boots', 'Work gloves', 'Fall arrest equipment'],
+    riskLevel: 'C',
+  },
+  {
+    id: 'edge-form-bracing',
+    name: 'Edge Form Bracing for Base Slabs',
+    category: 'Formwork',
+    hazards: [
+      'Pinched fingers',
+      'Hand injuries from tools',
+      'Cuts from sharp edges',
+      'Back strain from lifting',
+      'Trip hazards',
+    ],
+    safetyControls: [
+      'Wear protective gloves',
+      'Keep hands clear of pinch points',
+      'Use proper lifting techniques',
+      'Maintain organized work area',
+      'Inspect tools before use',
+      'Work at safe pace',
+    ],
+    requiredTools: ['Hammers', 'Levels', 'Measuring tape', 'Stakes', 'Bracing lumber', 'Wedges', 'Hand saws', 'Cordless drill'],
+    requiredPPE: ['Hard hat', 'Safety glasses', 'Work gloves', 'Steel-toed boots', 'High-visibility vest'],
+    riskLevel: 'C',
+  },
+];
+
+export const commonTools = [
+  'Hammers', 'Levels', 'Measuring tape', 'Chalk line', 'String line',
+  'Hand saws', 'Wrenches', 'Pliers', 'Screwdrivers', 'Shovels',
+  'Rakes', 'Wheelbarrows', 'Ladders', 'Extension cords',
+];
+
+export const commonPPE = [
+  'Hard hat', 'Safety glasses', 'Safety goggles', 'Face shield',
+  'Work gloves', 'Cut-resistant gloves', 'Rubber gloves',
+  'Steel-toed boots', 'Rubber boots', 'High-visibility vest',
+  'Fall harness', 'Hearing protection', 'Dust mask', 'Respirator',
+  'Welding helmet', 'Flame-resistant clothing',
+];
+
+export const templateCategories = [
+  ...new Set(jobStepTemplates.map((t) => t.category)),
+];
+
+export function getTemplatesByCategory(category: string) {
+  return jobStepTemplates.filter((t) => t.category === category);
+}
+
+export function searchTemplates(query: string) {
+  const q = query.toLowerCase();
+  return jobStepTemplates.filter(
+    (t) =>
+      t.name.toLowerCase().includes(q) ||
+      t.category.toLowerCase().includes(q) ||
+      t.hazards.some((h) => h.toLowerCase().includes(q))
+  );
+}

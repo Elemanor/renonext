@@ -1,0 +1,32 @@
+export const MOCK_WORK_AREAS = {
+  stageDistribution: [
+    { name: 'Excavation', value: 1, color: '#8b5cf6' },
+    { name: 'Foundation', value: 1, color: '#2563eb' },
+    { name: 'Framing', value: 1, color: '#06b6d4' },
+    { name: 'Rough-In', value: 1, color: '#f59e0b' },
+    { name: 'Finishing', value: 1, color: '#10b981' },
+  ],
+  areas: [
+    { id: 'wa1', name: 'Building A - Level 1', stage: 'finishing', progress: 85, hoursWorked: 420 },
+    { id: 'wa2', name: 'Building A - Level 2', stage: 'rough_in', progress: 50, hoursWorked: 280 },
+    { id: 'wa3', name: 'Building B - Level 1', stage: 'framing', progress: 37, hoursWorked: 190 },
+    { id: 'wa4', name: 'Parking Structure', stage: 'foundation', progress: 25, hoursWorked: 140 },
+    { id: 'wa5', name: 'Site Utilities', stage: 'excavation', progress: 12, hoursWorked: 65 },
+  ],
+  dailyHoursChart: [
+    { date: 'Feb 1', hours: 24 },
+    { date: 'Feb 2', hours: 28 },
+    { date: 'Feb 3', hours: 32 },
+    { date: 'Feb 4', hours: 26 },
+    { date: 'Feb 5', hours: 30 },
+    { date: 'Feb 6', hours: 18 },
+    { date: 'Feb 7', hours: 0 },
+    { date: 'Feb 8', hours: 28 },
+    { date: 'Feb 9', hours: 34 },
+    { date: 'Feb 10', hours: 30 },
+    { date: 'Feb 11', hours: 28 },
+    { date: 'Feb 12', hours: 32 },
+    { date: 'Feb 13', hours: 22 },
+    { date: 'Feb 14', hours: 0 },
+  ],
+};

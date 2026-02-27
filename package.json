@@ -1,0 +1,32 @@
+{
+  "name": "renonext",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "dev:mobile": "turbo dev --filter=@renonext/mobile",
+    "dev:web": "turbo dev --filter=@renonext/web",
+    "dev:field": "turbo dev --filter=@renonext/field",
+    "build:field": "turbo build --filter=@renonext/field",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "clean": "turbo clean",
+    "db:migrate": "cd packages/supabase && supabase db push",
+    "db:reset": "cd packages/supabase && supabase db reset",
+    "db:seed": "cd packages/supabase && supabase db seed",
+    "functions:deploy": "cd packages/supabase && supabase functions deploy"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "npm@10.8.0",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

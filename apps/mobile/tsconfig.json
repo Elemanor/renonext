@@ -1,0 +1,35 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "paths": {
+      "@renonext/shared": [
+        "../../packages/shared/src"
+      ],
+      "@renonext/shared/*": [
+        "../../packages/shared/src/*"
+      ],
+      "@renonext/ui": [
+        "../../packages/ui/src"
+      ],
+      "@renonext/ui/*": [
+        "../../packages/ui/src/*"
+      ],
+      "@/*": [
+        "./app/*"
+      ]
+    }
+  },
+  "include": [
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "nativewind-env.d.ts",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
