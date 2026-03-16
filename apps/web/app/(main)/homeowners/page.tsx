@@ -266,18 +266,18 @@ export default function HomeownersPage() {
                   passRate: 'Verified',
                 },
                 {
-                  name: 'Join the Network',
-                  specialty: 'Your Trade Here',
-                  rating: '—',
-                  jobs: '—',
-                  passRate: '—',
+                  name: 'Imperial Form',
+                  specialty: 'Concrete & Masonry',
+                  rating: 'New',
+                  jobs: '15+ yrs',
+                  passRate: 'Verified',
                 },
                 {
-                  name: 'Join the Network',
-                  specialty: 'Your Trade Here',
-                  rating: '—',
-                  jobs: '—',
-                  passRate: '—',
+                  name: 'Spaders',
+                  specialty: 'Underpinning & Basements',
+                  rating: 'New',
+                  jobs: '15+ yrs',
+                  passRate: 'Verified',
                 },
               ].map((contractor, idx) => (
                 <div

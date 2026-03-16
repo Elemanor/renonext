@@ -468,29 +468,87 @@ export default function HowItWorksPage() {
               </div>
             </div>
 
-            <div className="rounded-xl border-2 border-dashed border-gray-300 bg-gray-50/50 p-6">
-              <div className="flex h-full flex-col items-center justify-center text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-lg font-bold text-gray-400">
-                  ?
+            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-reno-teal-light text-lg font-bold text-reno-teal">
+                  IF
                 </div>
-                <div className="mt-3 font-semibold text-gray-500">Your Company Here</div>
-                <div className="mt-1 text-xs text-gray-400">Join the verified network</div>
-                <a href="/join" className="mt-4 rounded-full bg-reno-green px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-reno-green/90">
-                  Apply Now
-                </a>
+                <div>
+                  <div className="font-semibold text-reno-dark">
+                    Imperial Form
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    Concrete & Masonry • 15+ years
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4 text-center">
+                <div>
+                  <div className="font-display text-2xl font-bold text-reno-teal">
+                    15+
+                  </div>
+                  <div className="text-xs text-gray-600">Years</div>
+                </div>
+                <div>
+                  <div className="font-display text-2xl font-bold text-reno-teal">
+                    WSIB
+                  </div>
+                  <div className="text-xs text-gray-600">Covered</div>
+                </div>
+                <div>
+                  <div className="font-display text-2xl font-bold text-reno-teal">
+                    $2M
+                  </div>
+                  <div className="text-xs text-gray-600">Insured</div>
+                </div>
+                <div>
+                  <div className="font-display text-2xl font-bold text-reno-teal">
+                    ✓
+                  </div>
+                  <div className="text-xs text-gray-600">Verified</div>
+                </div>
               </div>
             </div>
 
-            <div className="rounded-xl border-2 border-dashed border-gray-300 bg-gray-50/50 p-6">
-              <div className="flex h-full flex-col items-center justify-center text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-lg font-bold text-gray-400">
-                  ?
+            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-reno-purple-light text-lg font-bold text-reno-purple">
+                  SP
                 </div>
-                <div className="mt-3 font-semibold text-gray-500">Your Company Here</div>
-                <div className="mt-1 text-xs text-gray-400">Join the verified network</div>
-                <a href="/join" className="mt-4 rounded-full bg-reno-green px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-reno-green/90">
-                  Apply Now
-                </a>
+                <div>
+                  <div className="font-semibold text-reno-dark">
+                    Spaders
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    Underpinning & Basements • 15+ years
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4 text-center">
+                <div>
+                  <div className="font-display text-2xl font-bold text-reno-purple">
+                    15+
+                  </div>
+                  <div className="text-xs text-gray-600">Years</div>
+                </div>
+                <div>
+                  <div className="font-display text-2xl font-bold text-reno-purple">
+                    WSIB
+                  </div>
+                  <div className="text-xs text-gray-600">Covered</div>
+                </div>
+                <div>
+                  <div className="font-display text-2xl font-bold text-reno-purple">
+                    $2M
+                  </div>
+                  <div className="text-xs text-gray-600">Insured</div>
+                </div>
+                <div>
+                  <div className="font-display text-2xl font-bold text-reno-purple">
+                    ✓
+                  </div>
+                  <div className="text-xs text-gray-600">Verified</div>
+                </div>
               </div>
             </div>
           </div>
