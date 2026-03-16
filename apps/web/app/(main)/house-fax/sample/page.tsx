@@ -100,7 +100,7 @@ const materials = [
     manufacturer: 'Schluter',
     sku: 'DITRA-25',
     qty: '240 sf',
-    installer: 'Apex Builders',
+    installer: 'DrySpace Waterproofing',
     installDate: 'Jan 28, 2026',
     warranty: 'Active 10yr',
     status: 'active',
@@ -110,7 +110,7 @@ const materials = [
     manufacturer: 'Kohler',
     sku: 'K-596-VS',
     qty: '1 unit',
-    installer: 'FlowRight Plumbing',
+    installer: 'Metro Excavation',
     installDate: 'Feb 3, 2026',
     warranty: 'Lifetime',
     status: 'active',
@@ -120,7 +120,7 @@ const materials = [
     manufacturer: 'Rockwool',
     sku: 'RXCB324',
     qty: '1200 sf',
-    installer: 'Apex Builders',
+    installer: 'DrySpace Waterproofing',
     installDate: 'Jan 20, 2026',
     warranty: 'N/A',
     status: 'na',
@@ -130,7 +130,7 @@ const materials = [
     manufacturer: 'LP Building',
     sku: 'LPI-20',
     qty: '14 pcs',
-    installer: 'Apex Builders',
+    installer: 'DrySpace Waterproofing',
     installDate: 'Dec 8, 2025',
     warranty: 'Active 25yr',
     status: 'active',
@@ -140,7 +140,7 @@ const materials = [
     manufacturer: 'NuHeat',
     sku: 'NH-MAT-80',
     qty: '80 sf',
-    installer: 'Spark Electric',
+    installer: 'Precision Electrical',
     installDate: 'Jan 26, 2026',
     warranty: 'Expiring 2036',
     status: 'expiring',
@@ -150,7 +150,7 @@ const materials = [
     manufacturer: 'Cosella-Dörken',
     sku: 'DELTA-MS',
     qty: '140 lf',
-    installer: 'WP Solutions',
+    installer: 'DrySpace Waterproofing',
     installDate: 'Nov 25, 2025',
     warranty: 'Active 20yr',
     status: 'active',
@@ -170,7 +170,7 @@ const materials = [
     manufacturer: 'Lutron',
     sku: 'PD-6WCL-WH',
     qty: '8 units',
-    installer: 'Spark Electric',
+    installer: 'Precision Electrical',
     installDate: 'Jan 18, 2026',
     warranty: 'Active 2yr',
     status: 'active',
@@ -187,21 +187,21 @@ const inspections = [
 ];
 
 const trades = [
-  { company: 'Apex Builders', trade: 'General Contractor', role: 'PM + Labour', hours: 640, wsib: true, insured: true },
-  { company: 'FlowRight Plumbing', trade: 'Plumber', role: 'Rough-in + Finish', hours: 48, wsib: true, insured: true },
-  { company: 'SparkLine Electric', trade: 'Electrician', role: 'Panel + Rough-in + Finish', hours: 56, wsib: true, insured: true },
-  { company: 'WP Solutions Inc', trade: 'Waterproofing', role: 'Foundation wrap', hours: 24, wsib: true, insured: true },
+  { company: 'DrySpace Waterproofing', trade: 'General Contractor', role: 'PM + Labour', hours: 640, wsib: true, insured: true },
+  { company: 'Northshore Concrete', trade: 'Plumber', role: 'Rough-in + Finish', hours: 48, wsib: true, insured: true },
+  { company: 'Precision Electrical', trade: 'Electrician', role: 'Panel + Rough-in + Finish', hours: 56, wsib: true, insured: true },
+  { company: 'DrySpace Waterproofing Inc', trade: 'Waterproofing', role: 'Foundation wrap', hours: 24, wsib: true, insured: true },
   { company: 'Comfort HVAC', trade: 'HVAC', role: 'Ductwork + Mini-split', hours: 32, wsib: true, insured: true },
   { company: 'TileCraft', trade: 'Tiler', role: 'Bathroom + Laundry', hours: 40, wsib: true, insured: true },
 ];
 
 const warranties = [
-  { product: 'Underpinning', manufacturer: 'Apex Builders', term: 'Structural 25yr', installDate: 'Nov 20, 2025', expiryDate: 'Nov 20, 2050', installer: 'Apex Builders', status: 'active' },
-  { product: 'Waterproofing', manufacturer: 'Cosella-Dörken', term: 'Product 20yr', installDate: 'Nov 25, 2025', expiryDate: 'Nov 25, 2045', installer: 'WP Solutions', status: 'active' },
-  { product: 'Electrical Panel', manufacturer: 'Eaton', term: 'Product 10yr', installDate: 'Dec 22, 2025', expiryDate: 'Dec 22, 2035', installer: 'SparkLine Electric', status: 'expiring' },
-  { product: 'Plumbing Fixtures', manufacturer: 'Kohler', term: 'Lifetime', installDate: 'Feb 3, 2026', expiryDate: 'Lifetime', installer: 'FlowRight Plumbing', status: 'active' },
+  { product: 'Underpinning', manufacturer: 'DrySpace Waterproofing', term: 'Structural 25yr', installDate: 'Nov 20, 2025', expiryDate: 'Nov 20, 2050', installer: 'DrySpace Waterproofing', status: 'active' },
+  { product: 'Waterproofing', manufacturer: 'Cosella-Dörken', term: 'Product 20yr', installDate: 'Nov 25, 2025', expiryDate: 'Nov 25, 2045', installer: 'DrySpace Waterproofing', status: 'active' },
+  { product: 'Electrical Panel', manufacturer: 'Eaton', term: 'Product 10yr', installDate: 'Dec 22, 2025', expiryDate: 'Dec 22, 2035', installer: 'Precision Electrical', status: 'expiring' },
+  { product: 'Plumbing Fixtures', manufacturer: 'Kohler', term: 'Lifetime', installDate: 'Feb 3, 2026', expiryDate: 'Lifetime', installer: 'Northshore Concrete', status: 'active' },
   { product: 'Paint', manufacturer: 'Benjamin Moore', term: 'Workmanship 5yr', installDate: 'Feb 8, 2026', expiryDate: 'Feb 8, 2031', installer: 'TrueFinish Painting', status: 'active' },
-  { product: 'Heated Floor', manufacturer: 'NuHeat', term: 'Product 10yr', installDate: 'Jan 26, 2026', expiryDate: 'Jan 26, 2036', installer: 'Spark Electric', status: 'expiring' },
+  { product: 'Heated Floor', manufacturer: 'NuHeat', term: 'Product 10yr', installDate: 'Jan 26, 2026', expiryDate: 'Jan 26, 2036', installer: 'Precision Electrical', status: 'expiring' },
 ];
 
 const photoTimeline = [
@@ -305,7 +305,7 @@ export default function SampleHouseFaxPage() {
                 General Contractor
               </div>
               <Link href="/pros/apex" className="text-xl font-semibold text-reno-teal hover:underline inline-flex items-center gap-1">
-                Apex Builders
+                DrySpace Waterproofing
                 <ExternalLink className="h-4 w-4" />
               </Link>
               <div className="flex items-center gap-3 mt-1 text-xs text-gray-400">

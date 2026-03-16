@@ -251,7 +251,7 @@ export default function HomeownersPage() {
               </p>
 
               <p className="mt-4 font-display text-xl italic text-gray-600">
-                Choose like you&apos;re picking a barber.
+                Real contractors. Real track records.
               </p>
             </div>
 
@@ -259,25 +259,25 @@ export default function HomeownersPage() {
             <div className="grid gap-6 md:grid-cols-3">
               {[
                 {
-                  name: 'Apex Foundations Ltd.',
-                  specialty: 'Underpinning & Waterproofing',
+                  name: 'DrySpace Waterproofing',
+                  specialty: 'Waterproofing & Foundation',
                   rating: '4.9',
-                  jobs: '127',
-                  passRate: '98%',
+                  jobs: '487',
+                  passRate: '99%',
                 },
                 {
-                  name: 'Superior Concrete',
-                  specialty: 'Foundation Repair',
+                  name: 'Northshore Concrete',
+                  specialty: 'Concrete & Masonry',
                   rating: '4.8',
-                  jobs: '203',
+                  jobs: '63',
                   passRate: '96%',
                 },
                 {
-                  name: 'Heritage Builders',
-                  specialty: 'Structural & Framing',
-                  rating: '4.9',
-                  jobs: '89',
-                  passRate: '99%',
+                  name: 'Metro Excavation',
+                  specialty: 'Excavation & Grading',
+                  rating: '4.7',
+                  jobs: '41',
+                  passRate: '97%',
                 },
               ].map((contractor, idx) => (
                 <div

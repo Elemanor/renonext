@@ -19,40 +19,40 @@ interface ProCardData {
 
 const contractors: ProCardData[] = [
   {
-    name: 'Apex Builders',
-    initials: 'AB',
+    name: 'DrySpace Waterproofing',
+    initials: 'DS',
     gradientFrom: '#1D6B3F',
-    gradientTo: '#2D8B5F',
+    gradientTo: '#0D7377',
     rating: 4.9,
-    projectCount: 30,
-    proofCompletion: 95,
-    specialty: 'General Contractor',
-    location: 'Toronto',
-    sparklineData: [70, 75, 82, 88, 90, 95],
+    projectCount: 487,
+    proofCompletion: 97,
+    specialty: 'Waterproofing & Foundation',
+    location: 'Toronto · GTA',
+    sparklineData: [82, 86, 89, 92, 95, 97],
   },
   {
-    name: 'SparkLine Electric',
-    initials: 'SE',
+    name: 'Northshore Concrete',
+    initials: 'NC',
     gradientFrom: '#3b82f6',
     gradientTo: '#60a5fa',
     rating: 4.8,
-    projectCount: 42,
-    proofCompletion: 88,
-    specialty: 'Electrical',
+    projectCount: 63,
+    proofCompletion: 91,
+    specialty: 'Concrete & Masonry',
     location: 'Scarborough',
-    sparklineData: [65, 72, 78, 82, 85, 88],
+    sparklineData: [65, 72, 78, 82, 85, 91],
   },
   {
-    name: 'FlowRight Plumbing',
-    initials: 'FR',
+    name: 'Metro Excavation',
+    initials: 'ME',
     gradientFrom: '#0D7377',
     gradientTo: '#14919B',
     rating: 4.7,
-    projectCount: 28,
-    proofCompletion: 92,
-    specialty: 'Plumbing',
+    projectCount: 41,
+    proofCompletion: 89,
+    specialty: 'Excavation & Grading',
     location: 'North York',
-    sparklineData: [75, 78, 84, 86, 89, 92],
+    sparklineData: [75, 78, 84, 86, 88, 89],
   },
 ];
 
@@ -219,7 +219,7 @@ export function ProsPreview() {
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
           `}
         >
-          Choose like you&apos;re picking a barber.
+          Real contractors. Real track records.
         </h2>
 
         {/* Contractor Cards */}
@@ -241,7 +241,7 @@ export function ProsPreview() {
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
           `}
         >
-          <Link href="/contractors">
+          <Link href="/pros">
             <button
               className="
                 inline-flex items-center gap-2 px-8 py-3

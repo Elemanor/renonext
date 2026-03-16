@@ -377,8 +377,8 @@ export default function HowItWorksPage() {
               Verified Pros
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              The barbershop concept: portfolios built from system data, not
-              marketing claims. Real work, real costs, real outcomes.
+              Portfolios built from system data, not marketing claims.
+              Real work, real costs, real outcomes.
             </p>
           </div>
 
@@ -429,21 +429,21 @@ export default function HowItWorksPage() {
             <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-reno-green-light text-lg font-bold text-reno-green">
-                  JM
+                  DS
                 </div>
                 <div>
                   <div className="font-semibold text-reno-dark">
-                    Jordan Martinez Construction
+                    DrySpace Waterproofing
                   </div>
                   <div className="text-xs text-gray-500">
-                    Licensed GC • 12 years
+                    Waterproofing & Foundation • 25 years
                   </div>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
                   <div className="font-display text-2xl font-bold text-reno-green">
-                    30
+                    487
                   </div>
                   <div className="text-xs text-gray-600">Projects</div>
                 </div>
@@ -471,14 +471,14 @@ export default function HowItWorksPage() {
             <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-reno-teal-light text-lg font-bold text-reno-teal">
-                  AR
+                  NC
                 </div>
                 <div>
                   <div className="font-semibold text-reno-dark">
-                    Atlas Renovations
+                    Northshore Concrete
                   </div>
                   <div className="text-xs text-gray-500">
-                    Licensed GC • 8 years
+                    Concrete & Masonry • 8 years
                   </div>
                 </div>
               </div>
@@ -513,14 +513,14 @@ export default function HowItWorksPage() {
             <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-reno-purple-light text-lg font-bold text-reno-purple">
-                  EB
+                  ME
                 </div>
                 <div>
                   <div className="font-semibold text-reno-dark">
-                    Elevation Builders
+                    Metro Excavation
                   </div>
                   <div className="text-xs text-gray-500">
-                    Licensed GC • 15 years
+                    Excavation & Grading • 15 years
                   </div>
                 </div>
               </div>

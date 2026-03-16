@@ -67,7 +67,7 @@ const warrantyExamples = [
     product: 'Kohler K-72218 Kitchen Faucet',
     term: 'Lifetime Limited',
     installed: 'Feb 3, 2026',
-    installer: 'FlowRight Plumbing',
+    installer: 'DrySpace Waterproofing',
     status: 'expiring',
     daysLeft: 90,
   },
@@ -75,7 +75,7 @@ const warrantyExamples = [
     product: 'Schluter DITRA Uncoupling Membrane',
     term: '10 Year',
     installed: 'Jan 28, 2026',
-    installer: 'Apex Builders',
+    installer: 'DrySpace Waterproofing',
     status: 'active',
     expiryDate: 'Jan 28, 2036',
   },
@@ -83,7 +83,7 @@ const warrantyExamples = [
     product: 'LP SolidStart LVL Beams',
     term: '20 Year Structural',
     installed: 'Jan 15, 2026',
-    installer: 'Apex Builders',
+    installer: 'DrySpace Waterproofing',
     status: 'active',
     expiryDate: 'Jan 15, 2046',
   },
@@ -170,7 +170,7 @@ export default function HouseFaxPage() {
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-600">Contractor</span>
                       <span className="text-sm font-semibold text-reno-teal">
-                        Apex Builders
+                        DrySpace Waterproofing
                       </span>
                     </div>
                   </div>
@@ -248,7 +248,7 @@ export default function HouseFaxPage() {
                   Your Kohler faucet warranty expires in 90 days.
                 </p>
                 <p className="text-sm text-amber-700 mt-1">
-                  Installed by FlowRight Plumbing on Feb 3, 2026. Contact them
+                  Installed by DrySpace Waterproofing on Feb 3, 2026. Contact them
                   for service before May 3, 2026.
                 </p>
               </div>

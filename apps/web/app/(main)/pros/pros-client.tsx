@@ -389,88 +389,99 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
                             </div>
                             <span className="text-gray-300">•</span>
                             <span className="text-sm text-gray-600">
-                              {contractor.projectCount} projects
+                              {contractor.projectCount.toLocaleString()} projects
                             </span>
                           </div>
 
-                          {/* Trust Metrics */}
-                          <div className="space-y-3 border-t border-gray-100 pt-4">
-                            {/* Proof Completeness */}
-                            <div>
-                              <div className="mb-1.5 flex items-center justify-between">
-                                <span className="text-xs font-semibold text-gray-600">Proof completeness</span>
-                                <span className="text-xs font-bold text-reno-teal">
-                                  {contractor.proofCompleteness}%
-                                </span>
-                              </div>
-                              <div className="h-2 overflow-hidden rounded-full bg-gray-100">
-                                <div
-                                  className="h-full rounded-full bg-gradient-to-r from-reno-teal to-reno-green transition-all"
-                                  style={{ width: `${contractor.proofCompleteness}%` }}
-                                />
-                              </div>
-                            </div>
-
-                            {/* Pass Rate & Disputes */}
-                            <div className="grid grid-cols-2 gap-3">
-                              <div className="rounded-lg border border-reno-green/20 bg-reno-green-light/30 p-2.5">
-                                <div className="flex items-center gap-1.5">
-                                  <CheckCircle2 className="h-3.5 w-3.5 text-reno-green" />
-                                  <span className="text-xs font-semibold text-gray-600">Pass Rate</span>
+                          {/* Trust Metrics — show only when platform data exists */}
+                          {contractor.proofCompleteness > 0 || contractor.inspectionPassRate > 0 ? (
+                            <div className="space-y-3 border-t border-gray-100 pt-4">
+                              {/* Proof Completeness */}
+                              <div>
+                                <div className="mb-1.5 flex items-center justify-between">
+                                  <span className="text-xs font-semibold text-gray-600">Proof completeness</span>
+                                  <span className="text-xs font-bold text-reno-teal">
+                                    {contractor.proofCompleteness}%
+                                  </span>
                                 </div>
-                                <p className="mt-1 text-lg font-bold text-reno-green">
-                                  {contractor.inspectionPassRate}%
-                                </p>
+                                <div className="h-2 overflow-hidden rounded-full bg-gray-100">
+                                  <div
+                                    className="h-full rounded-full bg-gradient-to-r from-reno-teal to-reno-green transition-all"
+                                    style={{ width: `${contractor.proofCompleteness}%` }}
+                                  />
+                                </div>
                               </div>
-                              <div
-                                className={cn(
-                                  "rounded-lg border p-2.5",
-                                  contractor.disputeCount === 0
-                                    ? "border-reno-green/20 bg-reno-green-light/30"
-                                    : contractor.disputeCount <= 2
-                                    ? "border-reno-amber/20 bg-reno-amber-light/30"
-                                    : "border-red-200 bg-red-50"
-                                )}
-                              >
-                                <div className="flex items-center gap-1.5">
-                                  <AlertCircle
+
+                              {/* Pass Rate & Disputes */}
+                              <div className="grid grid-cols-2 gap-3">
+                                <div className="rounded-lg border border-reno-green/20 bg-reno-green-light/30 p-2.5">
+                                  <div className="flex items-center gap-1.5">
+                                    <CheckCircle2 className="h-3.5 w-3.5 text-reno-green" />
+                                    <span className="text-xs font-semibold text-gray-600">Pass Rate</span>
+                                  </div>
+                                  <p className="mt-1 text-lg font-bold text-reno-green">
+                                    {contractor.inspectionPassRate}%
+                                  </p>
+                                </div>
+                                <div
+                                  className={cn(
+                                    "rounded-lg border p-2.5",
+                                    contractor.disputeCount === 0
+                                      ? "border-reno-green/20 bg-reno-green-light/30"
+                                      : contractor.disputeCount <= 2
+                                      ? "border-reno-amber/20 bg-reno-amber-light/30"
+                                      : "border-red-200 bg-red-50"
+                                  )}
+                                >
+                                  <div className="flex items-center gap-1.5">
+                                    <AlertCircle
+                                      className={cn(
+                                        "h-3.5 w-3.5",
+                                        contractor.disputeCount === 0
+                                          ? "text-reno-green"
+                                          : contractor.disputeCount <= 2
+                                          ? "text-reno-amber"
+                                          : "text-red-500"
+                                      )}
+                                    />
+                                    <span className="text-xs font-semibold text-gray-600">Disputes</span>
+                                  </div>
+                                  <p
                                     className={cn(
-                                      "h-3.5 w-3.5",
+                                      "mt-1 text-lg font-bold",
                                       contractor.disputeCount === 0
                                         ? "text-reno-green"
                                         : contractor.disputeCount <= 2
                                         ? "text-reno-amber"
-                                        : "text-red-500"
+                                        : "text-red-600"
                                     )}
-                                  />
-                                  <span className="text-xs font-semibold text-gray-600">Disputes</span>
+                                  >
+                                    {contractor.disputeCount}
+                                  </p>
                                 </div>
-                                <p
-                                  className={cn(
-                                    "mt-1 text-lg font-bold",
-                                    contractor.disputeCount === 0
-                                      ? "text-reno-green"
-                                      : contractor.disputeCount <= 2
-                                      ? "text-reno-amber"
-                                      : "text-red-600"
-                                  )}
-                                >
-                                  {contractor.disputeCount}
+                              </div>
+
+                              {/* Last Job */}
+                              <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+                                <div className="flex items-center gap-1.5 text-xs text-gray-600">
+                                  <Calendar className="h-3.5 w-3.5" />
+                                  <span>Last job</span>
+                                </div>
+                                <span className="text-xs font-bold text-reno-dark">
+                                  {contractor.lastJobDays} days ago
+                                </span>
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="border-t border-gray-100 pt-4">
+                              <div className="rounded-lg border border-blue-100 bg-blue-50/50 p-3 text-center">
+                                <p className="text-xs font-semibold text-blue-700">New to RenoNext</p>
+                                <p className="mt-1 text-[10px] leading-relaxed text-blue-600/70">
+                                  Platform trust metrics appear after the first verified project through RenoNext.
                                 </p>
                               </div>
                             </div>
-
-                            {/* Last Job */}
-                            <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
-                              <div className="flex items-center gap-1.5 text-xs text-gray-600">
-                                <Calendar className="h-3.5 w-3.5" />
-                                <span>Last job</span>
-                              </div>
-                              <span className="text-xs font-bold text-reno-dark">
-                                {contractor.lastJobDays} days ago
-                              </span>
-                            </div>
-                          </div>
+                          )}
 
                           {/* Trust Badges */}
                           <div className="mt-4 flex items-center gap-2 border-t border-gray-100 pt-4">

@@ -128,11 +128,11 @@ export function SocialProofBar({ variant = 'light', stats }: SocialProofBarProps
    3. VETTING PIPELINE — animated reject/accept sequence
    ═══════════════════════════════════════════════════════ */
 const applications = [
-  { id: 'A-4821', name: 'Apex Foundations Ltd.', status: 'rejected' as const, reason: 'WSIB lapsed' },
-  { id: 'A-4822', name: 'Northshore Concrete', status: 'rejected' as const, reason: 'No $2M liability' },
-  { id: 'A-4823', name: 'Elite Structural Co.', status: 'accepted' as const, reason: 'All checks passed' },
-  { id: 'A-4824', name: 'Metro Excavation Inc.', status: 'rejected' as const, reason: 'Background flag' },
-  { id: 'A-4825', name: 'Precision Rebar Pro', status: 'accepted' as const, reason: 'All checks passed' },
+  { id: 'A-4821', name: 'QuickFix Renos', status: 'rejected' as const, reason: 'WSIB lapsed' },
+  { id: 'A-4822', name: 'Budget Basements', status: 'rejected' as const, reason: 'No $2M liability' },
+  { id: 'A-4823', name: 'DrySpace Waterproofing', status: 'accepted' as const, reason: 'All checks passed' },
+  { id: 'A-4824', name: 'FastTrack Demolition', status: 'rejected' as const, reason: 'Background flag' },
+  { id: 'A-4825', name: 'Northshore Concrete', status: 'accepted' as const, reason: 'All checks passed' },
 ];
 
 export function VettingPipeline() {

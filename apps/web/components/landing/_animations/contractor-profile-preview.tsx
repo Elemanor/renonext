@@ -59,17 +59,17 @@ const TABS: Tab[] = [
 
 function PortfolioBlock() {
   const projects = [
-    { label: 'Kitchen Reno', color: 'bg-emerald-100' },
-    { label: 'Bath Remodel', color: 'bg-violet-100' },
-    { label: 'Pipe Repair', color: 'bg-blue-100' },
-    { label: 'Tankless HW', color: 'bg-amber-100' },
+    { label: 'Exterior WP', color: 'bg-emerald-100' },
+    { label: 'Foundation Fix', color: 'bg-violet-100' },
+    { label: 'Sump Pump', color: 'bg-blue-100' },
+    { label: 'Crack Repair', color: 'bg-amber-100' },
   ];
 
   return (
     <m.div variants={stagger} initial="hidden" animate="show" className="p-3">
       <m.div variants={fadeUp} className="mb-2 flex items-center justify-between">
         <span className="text-[10px] font-bold text-gray-800">Recent Projects</span>
-        <span className="text-[8px] text-gray-400">12 total</span>
+        <span className="text-[8px] text-gray-400">487 total</span>
       </m.div>
       <m.div variants={fadeUp} className="grid grid-cols-2 gap-2">
         {projects.map((p) => (
@@ -85,9 +85,9 @@ function PortfolioBlock() {
 
 function CredentialsBlock() {
   const creds = [
-    { label: 'BCIN Certified', detail: 'Ontario Building Code', color: 'emerald' },
-    { label: 'Insured — $2M', detail: 'Liability Coverage', color: 'violet' },
-    { label: 'Background Check', detail: 'Verified Clean', color: 'blue' },
+    { label: 'WSIB Covered', detail: 'Workers Safety Insurance', color: 'emerald' },
+    { label: 'Insured — $5M', detail: 'Liability Coverage', color: 'violet' },
+    { label: 'OBC Certified', detail: 'Ontario Building Code', color: 'blue' },
   ];
 
   return (
@@ -115,15 +115,15 @@ function CredentialsBlock() {
 
 function ReviewsBlock() {
   const reviews = [
-    { name: 'Sarah T.', stars: 5, text: 'Incredible work on our kitchen. Clean, fast, professional.' },
-    { name: 'David M.', stars: 5, text: 'Fixed our pipe issue same day. Highly recommend Marcus.' },
+    { name: 'Jennifer S.', stars: 5, text: 'Basement is bone dry after 25 years of leaks. Unbelievable work.' },
+    { name: 'Robert K.', stars: 5, text: 'Emergency response in under an hour. Saved our basement.' },
   ];
 
   return (
     <m.div variants={stagger} initial="hidden" animate="show" className="p-3">
       <m.div variants={fadeUp} className="mb-2 flex items-center justify-between">
         <span className="text-[10px] font-bold text-gray-800">Recent Reviews</span>
-        <span className="text-[8px] text-gray-400">47 total</span>
+        <span className="text-[8px] text-gray-400">487 total</span>
       </m.div>
       {reviews.map((r) => (
         <m.div key={r.name} variants={fadeUp} className="mb-1.5 rounded-lg border border-gray-200 bg-white p-2.5">
@@ -238,7 +238,7 @@ export function ContractorProfilePreview() {
             <span className="h-3 w-3 rounded-full bg-red-400" />
             <span className="h-3 w-3 rounded-full bg-amber-400" />
             <span className="h-3 w-3 rounded-full bg-green-400" />
-            <span className="ml-3 text-xs text-gray-400">renonext.com/pros/marcus-johnson</span>
+            <span className="ml-3 text-xs text-gray-400">renonext.com/pros/dryspace-waterproofing</span>
           </div>
         </div>
         <div className="divide-y divide-gray-100">
@@ -278,7 +278,7 @@ export function ContractorProfilePreview() {
             <span className="h-3 w-3 rounded-full bg-green-400" />
             <div className="ml-3 flex flex-1 items-center gap-1 rounded-md bg-gray-100 px-2 py-0.5">
               <Lock className="h-2 w-2 text-emerald-500" />
-              <span className="text-[8px] text-gray-400">renonext.com/pros/marcus-johnson</span>
+              <span className="text-[8px] text-gray-400">renonext.com/pros/dryspace-waterproofing</span>
             </div>
           </div>
         </div>
@@ -287,20 +287,20 @@ export function ContractorProfilePreview() {
         <div className="border-b border-gray-100 bg-gradient-to-r from-emerald-600 to-violet-600 px-4 py-3">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-sm font-bold text-white">
-              MJ
+              DS
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <p className="text-[11px] font-bold text-white">Marcus Johnson</p>
+                <p className="text-[11px] font-bold text-white">DrySpace Waterproofing</p>
                 <BadgeCheck className="h-3 w-3 text-emerald-200" />
               </div>
               <div className="flex items-center gap-2 text-[8px] text-white/80">
-                <span>Licensed Plumber</span>
+                <span>Waterproofing & Foundation</span>
                 <span className="flex items-center gap-0.5">
                   <Star className="h-2 w-2 fill-amber-300 text-amber-300" />
                   4.9
                 </span>
-                <span>47 reviews</span>
+                <span>487 reviews</span>
               </div>
             </div>
           </div>

@@ -44,7 +44,7 @@ export const serviceLanes: ServiceLane[] = [
     bgColor: 'bg-blue-50',
     textColor: 'text-blue-600',
     examples: ['Mount a TV', 'LED Lights', 'Moving', 'Cleaning', 'Snow Removal'],
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&fit=crop',
+    image: '/images/canvas/worker-1.jpg',
   },
   {
     icon: HardHat,
@@ -59,7 +59,7 @@ export const serviceLanes: ServiceLane[] = [
     bgColor: 'bg-emerald-50',
     textColor: 'text-emerald-600',
     examples: ['Waterproofing', 'Underpinning', 'Additions', 'Roofing', 'Concrete'],
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&fit=crop',
+    image: '/images/canvas/hero-construction.jpg',
     featured: true,
   },
   {
@@ -75,7 +75,7 @@ export const serviceLanes: ServiceLane[] = [
     bgColor: 'bg-violet-50',
     textColor: 'text-violet-600',
     examples: ['Drywallers', 'Drain Installers', 'Glass Fabricators', 'Plan Drafters', 'Electricians'],
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&fit=crop',
+    image: '/images/canvas/project-4.jpg',
   },
 ];
 
@@ -200,11 +200,11 @@ export const testimonials: Testimonial[] = [
     name: 'Jennifer S.',
     role: 'Homeowner in Toronto',
     quote:
-      'I almost hired a guy off Facebook Marketplace. No insurance, no reviews, just a phone number. Then I found RenoNext — saw his WSIB clearance, background check, and 47 verified reviews instantly. Night and day.',
+      'DrySpace came through RenoNext with 487 verified reviews, WSIB clearance, full insurance — all confirmed before I even called. The escrow gave me total peace of mind on a $12K waterproofing job.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&fit=crop&crop=face',
     verified: true,
-    jobType: 'Electrical Panel Upgrade',
+    jobType: 'Exterior Waterproofing',
   },
   {
     name: 'Robert K.',
@@ -214,16 +214,16 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&fit=crop&crop=face',
     verified: true,
-    jobType: 'Basement Waterproofing',
+    jobType: 'Foundation Repair',
   },
   {
     name: 'Maria G.',
     role: 'Homeowner in Mississauga',
     quote:
-      'My biggest fear was letting a stranger into my house while I was at work. RenoNext showed me a live dashboard — I could see exactly when he arrived, what he completed, and photos of every step. I felt in control the entire time.',
+      'My basement had been leaking for years. RenoNext matched me with DrySpace — I could track every milestone from my phone, see GPS-stamped photos daily, and the 25-year warranty transferred when we sold the house.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&fit=crop&crop=face',
     verified: true,
-    jobType: 'Interior Painting',
+    jobType: 'Basement Waterproofing',
   },
 ];

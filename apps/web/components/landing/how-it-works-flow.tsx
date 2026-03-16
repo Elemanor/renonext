@@ -37,8 +37,8 @@ function MockPostJob() {
       </div>
       <div className="mb-2 flex gap-1.5">
         {[
-          { key: 'photo1', src: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=100&fit=crop' },
-          { key: 'photo2', src: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=100&fit=crop&crop=bottom' },
+          { key: 'photo1', src: '/images/pros/dryspace/interior.webp' },
+          { key: 'photo2', src: '/images/pros/dryspace/crack-repair.webp' },
         ].map((f) => (
           <img
             key={f.key}
@@ -113,12 +113,9 @@ function MockProDispatched() {
     <div className="rounded-xl border border-gray-200 bg-white p-3 shadow-sm">
       <div className="flex items-center gap-3">
         <div className="relative">
-          <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&fit=crop&crop=face"
-            alt="David P."
-            loading="lazy"
-            className="h-9 w-9 rounded-full object-cover"
-          />
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-xs font-bold text-white">
+            DP
+          </div>
           <span className="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full border border-white bg-emerald-500" />

@@ -115,12 +115,9 @@ function TrackerPanel() {
           Bathroom renovation — Tile & fixtures
         </p>
         <div className="mt-2 flex items-center gap-2">
-          <img
-            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&fit=crop&crop=face"
-            alt=""
-            loading="lazy"
-            className="h-5 w-5 rounded-full object-cover"
-          />
+          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-[8px] font-bold text-white">
+            SM
+          </div>
           <span className="text-xs text-gray-500">
             Sarah M. — Red Seal Plumber
           </span>
@@ -269,12 +266,9 @@ function VaultPanel() {
           HVAC system replacement
         </p>
         <div className="mt-2 flex items-center gap-2">
-          <img
-            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&fit=crop&crop=face"
-            alt=""
-            loading="lazy"
-            className="h-5 w-5 rounded-full object-cover"
-          />
+          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-orange-600 text-[8px] font-bold text-white">
+            JT
+          </div>
           <span className="text-xs text-gray-500">
             James T. — TSSA Certified
           </span>
