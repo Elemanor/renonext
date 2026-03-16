@@ -4,25 +4,20 @@ import { notFound } from 'next/navigation';
 import {
   Star,
   MapPin,
-  Clock,
   CheckCircle,
   Shield,
   ShieldCheck,
   Calendar,
   MessageSquare,
-  Phone,
   ChevronRight,
   ThumbsUp,
   Award,
   Briefcase,
   Zap,
   Camera,
-  Heart,
   Lock,
-  CreditCard,
   PenLine,
   ClipboardList,
-  TrendingUp,
   Fingerprint,
   FileCheck,
   GraduationCap,
@@ -81,7 +76,7 @@ export default async function ProProfilePage({ params }: ProPageProps) {
     headline: data.headline || '',
     bio: data.bio || '',
     avatarUrl: data.profile?.avatar_url || '',
-    coverUrl: '',
+    coverUrl: data.gallery?.[0]?.image_url || '',
     rating: Number(data.avg_rating) || 0,
     reviewCount: data.total_reviews || 0,
     hourlyRateMin: Number(data.hourly_rate_min) || 0,
@@ -98,7 +93,8 @@ export default async function ProProfilePage({ params }: ProPageProps) {
     isAvailable: data.is_available,
     memberSince: data.created_at,
     tier: (data.total_jobs_completed >= 50 ? 'top_rated' : data.total_jobs_completed >= 10 ? 'rising_talent' : 'new') as ProTier,
-    responseRate: 0,
+    wsibStatus: data.wsib_status || 'not_applicable',
+    insuranceCoverage: data.insurance_coverage_amount || 0,
   };
 
   const reviews = (data.reviews || []).map((r: any) => ({
@@ -176,11 +172,15 @@ export default async function ProProfilePage({ params }: ProPageProps) {
       <div className="min-h-screen bg-gray-50">
         {/* Cover Image */}
         <div className="relative h-48 overflow-hidden md:h-64">
-          <img
-            src={pro.coverUrl}
-            alt=""
-            className="h-full w-full object-cover"
-          />
+          {pro.coverUrl ? (
+            <img
+              src={pro.coverUrl}
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <div className="h-full w-full bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900" />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
 
           {/* Breadcrumb on cover */}
@@ -251,10 +251,12 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                   <MapPin className="h-4 w-4" />
                   {pro.city}, {pro.province}
                 </span>
+                {pro.responseTimeMinutes > 0 && (
                 <span className="flex items-center gap-1.5 text-gray-500">
                   <Zap className="h-4 w-4" />
                   Responds in ~{pro.responseTimeMinutes} min
                 </span>
+                )}
               </div>
             </div>
           </div>
@@ -304,7 +306,9 @@ export default async function ProProfilePage({ params }: ProPageProps) {
               <div className="bg-slate-900 p-4 transition-colors hover:bg-slate-800/80">
                 <Fingerprint className="mb-3 h-5 w-5 text-slate-400" />
                 <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Identity</p>
-                <p className="mt-1 font-mono text-sm font-semibold text-emerald-400">VERIFIED</p>
+                <p className={`mt-1 font-mono text-sm font-semibold ${mockCompliance.identity.verified ? 'text-emerald-400' : 'text-slate-500'}`}>
+                  {mockCompliance.identity.verified ? 'VERIFIED' : 'PENDING'}
+                </p>
                 <p className="mt-1 text-[9px] text-slate-500">Log: {mockCompliance.identity.lastVerified}</p>
               </div>
               {/* WSIB */}
@@ -327,15 +331,19 @@ export default async function ProProfilePage({ params }: ProPageProps) {
               <div className="bg-slate-900 p-4 transition-colors hover:bg-slate-800/80">
                 <FileCheck className="mb-3 h-5 w-5 text-slate-400" />
                 <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Trade License</p>
-                <p className="mt-1 font-mono text-sm font-semibold text-emerald-400">VALID</p>
-                <p className="mt-1 font-mono text-[9px] text-slate-400">#{mockCompliance.license.number}</p>
+                <p className={`mt-1 font-mono text-sm font-semibold ${mockCompliance.license.number !== 'N/A' ? 'text-emerald-400' : 'text-slate-500'}`}>
+                  {mockCompliance.license.number !== 'N/A' ? 'VALID' : 'PENDING'}
+                </p>
+                <p className="mt-1 font-mono text-[9px] text-slate-400">
+                  {mockCompliance.license.number !== 'N/A' ? `#${mockCompliance.license.number}` : 'Not yet submitted'}
+                </p>
               </div>
               {/* Safety Training */}
               <div className="bg-slate-900 p-4 transition-colors hover:bg-slate-800/80">
                 <GraduationCap className="mb-3 h-5 w-5 text-slate-400" />
                 <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Safety Certifications</p>
-                <p className="mt-1 font-mono text-sm font-semibold text-purple-400">3 ACTIVE</p>
-                <p className="mt-1 text-[9px] text-slate-500">{mockCompliance.safety.certs.join(', ')}</p>
+                <p className="mt-1 font-mono text-sm font-semibold text-slate-500">PENDING</p>
+                <p className="mt-1 text-[9px] text-slate-500">Not yet submitted</p>
               </div>
             </div>
           </div>
@@ -345,15 +353,13 @@ export default async function ProProfilePage({ params }: ProPageProps) {
           <div className="grid gap-8 lg:grid-cols-3">
             {/* Left Column */}
             <div className="space-y-6 lg:col-span-2">
-              {/* Performance Matrix */}
-              <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+              {/* Key Stats */}
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
                 {[
-                  { label: 'Platform Volume', value: String(pro.totalJobsCompleted), icon: Briefcase, badge: null },
-                  { label: 'On-Time Delivery', value: '98%', icon: Clock, badge: { text: 'Top 5%', color: 'bg-emerald-50 text-emerald-700' } },
-                  { label: 'Dispute Rate', value: '0%', icon: Shield, badge: { text: 'Flawless', color: 'bg-emerald-50 text-emerald-700' } },
-                  { label: 'Avg Response', value: '12 min', icon: Zap, badge: null },
-                  { label: 'Response Rate', value: `${pro.responseRate}%`, icon: TrendingUp, badge: null },
-                  { label: 'Platform Tenure', value: `${pro.yearsExperience} yrs`, icon: Award, badge: null },
+                  { label: 'Projects Completed', value: pro.totalJobsCompleted.toLocaleString(), icon: Briefcase },
+                  { label: 'Years Experience', value: `${pro.yearsExperience}+`, icon: Award },
+                  { label: 'Avg Response', value: pro.responseTimeMinutes > 0 ? `${pro.responseTimeMinutes} min` : 'N/A', icon: Zap },
+                  { label: 'Client Reviews', value: pro.reviewCount.toLocaleString(), icon: Star },
                 ].map((stat) => (
                   <Card key={stat.label} className="rounded-2xl border-gray-200 bg-white p-4 text-center transition-all duration-200 hover:shadow-md">
                     <stat.icon className="mx-auto mb-1.5 h-5 w-5 text-slate-400" />
@@ -361,11 +367,6 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                       {stat.value}
                     </p>
                     <p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-gray-500">{stat.label}</p>
-                    {stat.badge && (
-                      <span className={`mt-2 inline-block rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider ${stat.badge.color}`}>
-                        {stat.badge.text}
-                      </span>
-                    )}
                   </Card>
                 ))}
               </div>
@@ -478,28 +479,28 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                   </div>
                 </div>
 
-                {/* Star Distribution Chart */}
+                {/* Star Distribution Chart — computed from real reviews */}
+                {reviews.length > 0 && (
                 <div className="mb-6 rounded-xl bg-gray-50 p-4">
-                  {[
-                    { stars: 5, pct: 80 },
-                    { stars: 4, pct: 15 },
-                    { stars: 3, pct: 3 },
-                    { stars: 2, pct: 1 },
-                    { stars: 1, pct: 1 },
-                  ].map((row) => (
-                    <div key={row.stars} className="flex items-center gap-2.5 py-1">
-                      <span className="w-4 text-right text-xs font-semibold text-gray-600">{row.stars}</span>
-                      <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-                      <div className="flex-1 h-2 rounded-full bg-gray-200 overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-amber-400 transition-all duration-500"
-                          style={{ width: `${row.pct}%` }}
-                        />
+                  {[5, 4, 3, 2, 1].map((stars) => {
+                    const count = reviews.filter((r: any) => r.rating === stars).length;
+                    const pct = reviews.length > 0 ? Math.round((count / reviews.length) * 100) : 0;
+                    return (
+                      <div key={stars} className="flex items-center gap-2.5 py-1">
+                        <span className="w-4 text-right text-xs font-semibold text-gray-600">{stars}</span>
+                        <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
+                        <div className="flex-1 h-2 rounded-full bg-gray-200 overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-amber-400 transition-all duration-500"
+                            style={{ width: `${pct}%` }}
+                          />
+                        </div>
+                        <span className="w-8 text-right text-xs text-gray-400">{pct}%</span>
                       </div>
-                      <span className="w-8 text-right text-xs text-gray-400">{row.pct}%</span>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
+                )}
 
                 {reviews.length === 0 ? (
                   <div className="py-8 text-center">
@@ -620,10 +621,12 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                       })}
                     </span>
                   </div>
+                  {pro.responseTimeMinutes > 0 && (
                   <div className="flex items-center gap-3 text-sm text-gray-600">
                     <Zap className="h-4 w-4 text-amber-400" />
                     <span>Avg response: {pro.responseTimeMinutes} min</span>
                   </div>
+                  )}
                   <div className="flex items-center gap-3 text-sm">
                     <div className="h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-sm shadow-emerald-200" />
                     <span className="font-semibold text-emerald-700">
@@ -645,34 +648,15 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                 </div>
               </Card>
 
-              {/* Similar Pros */}
+              {/* Browse More Pros */}
               <Card className="rounded-2xl border-gray-200 bg-white p-6">
-                <h3 className="mb-4 text-sm font-bold uppercase tracking-widest text-gray-400">
-                  Similar Pros
+                <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-gray-400">
+                  Explore More Pros
                 </h3>
-                <div className="space-y-4">
-                  {[
-                    { name: 'Alex Rivera', specialty: 'Electrician', rating: 4.8, avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face' },
-                    { name: 'Priya Sharma', specialty: 'Smart Home Expert', rating: 4.9, avatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop&crop=face' },
-                    { name: 'Tom Chen', specialty: 'Electrician', rating: 4.7, avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face' },
-                  ].map((similar) => (
-                    <div key={similar.name} className="flex items-center gap-3">
-                      <Avatar className="h-10 w-10">
-                        <AvatarImage src={similar.avatar} alt={similar.name} className="object-cover" />
-                        <AvatarFallback className="bg-gray-100 text-sm">{similar.name.charAt(0)}</AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-semibold text-gray-900 truncate">{similar.name}</p>
-                        <p className="text-xs text-gray-500">{similar.specialty}</p>
-                      </div>
-                      <div className="flex items-center gap-1 shrink-0">
-                        <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                        <span className="text-xs font-bold text-gray-700">{similar.rating}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <Button variant="outline" asChild className="mt-4 w-full rounded-xl border-gray-200 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 h-auto">
+                <p className="mb-4 text-sm text-gray-500">
+                  Browse our verified contractor network to compare options and find the right fit.
+                </p>
+                <Button variant="outline" asChild className="w-full rounded-xl border-gray-200 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 h-auto">
                   <Link href="/pros">
                     Browse All Pros
                   </Link>
