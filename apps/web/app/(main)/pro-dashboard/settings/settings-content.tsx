@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   User,
   Tag,
@@ -12,24 +12,33 @@ import {
   Save,
   Plus,
   X,
+  Loader2,
+  CheckCircle,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
+import { useAuth } from '@/lib/auth/auth-context';
 
 export default function ProSettingsContent() {
+  const { user } = useAuth();
+  const [supabase] = useState(() => createSupabaseBrowserClient());
   const [activeSection, setActiveSection] = useState('profile');
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [saveSuccess, setSaveSuccess] = useState<string | null>(null);
 
   const [profile, setProfile] = useState({
-    fullName: 'Marcus Johnson',
-    email: 'marcus@example.com',
-    phone: '(416) 555-9876',
-    headline: 'Licensed Electrician - 15 Years Experience',
-    bio: 'I am a fully licensed and insured electrician with over 15 years of experience in residential and commercial electrical work.',
+    fullName: '',
+    email: '',
+    phone: '',
+    headline: '',
+    bio: '',
   });
 
   const [categories] = useState([
@@ -39,8 +48,10 @@ export default function ProSettingsContent() {
   ]);
 
   const [serviceArea, setServiceArea] = useState({
-    address: '123 Main St, Toronto',
-    radius: 25,
+    address: '',
+    city: '',
+    province: 'ON',
+    radius: 50,
   });
 
   const [availability, setAvailability] = useState({
@@ -55,6 +66,92 @@ export default function ProSettingsContent() {
     endTime: '18:00',
   });
 
+  const fetchData = useCallback(async () => {
+    if (!user) return;
+    setLoading(true);
+
+    const { data: proData } = await supabase
+      .from('pro_profiles')
+      .select('*, profile:profiles!pro_profiles_user_id_fkey(full_name, email, phone)')
+      .eq('user_id', user.id)
+      .single();
+
+    if (proData) {
+      const p = Array.isArray(proData.profile) ? proData.profile[0] : proData.profile;
+      setProfile({
+        fullName: p?.full_name || '',
+        email: p?.email || '',
+        phone: p?.phone || '',
+        headline: proData.headline || '',
+        bio: proData.bio || '',
+      });
+      setServiceArea({
+        address: proData.address || '',
+        city: proData.city || '',
+        province: proData.province || 'ON',
+        radius: proData.service_radius_km ?? 50,
+      });
+    }
+
+    setLoading(false);
+  }, [user, supabase]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  const showSuccess = (msg: string) => {
+    setSaveSuccess(msg);
+    setTimeout(() => setSaveSuccess(null), 3000);
+  };
+
+  const handleSaveProfile = async () => {
+    if (!user) return;
+    setSaving(true);
+
+    // Update profiles table (full_name, phone)
+    await supabase
+      .from('profiles')
+      .update({ full_name: profile.fullName, phone: profile.phone })
+      .eq('id', user.id);
+
+    // Update pro_profiles table (headline, bio)
+    await supabase
+      .from('pro_profiles')
+      .update({ headline: profile.headline, bio: profile.bio })
+      .eq('user_id', user.id);
+
+    setSaving(false);
+    showSuccess('Profile saved');
+  };
+
+  const handleSaveArea = async () => {
+    if (!user) return;
+    setSaving(true);
+
+    await supabase
+      .from('pro_profiles')
+      .update({
+        address: serviceArea.address,
+        city: serviceArea.city,
+        province: serviceArea.province,
+        service_radius_km: serviceArea.radius,
+      })
+      .eq('user_id', user.id);
+
+    setSaving(false);
+    showSuccess('Service area saved');
+  };
+
+  const initials = profile.fullName
+    ? profile.fullName
+        .split(' ')
+        .map((w) => w[0])
+        .join('')
+        .slice(0, 2)
+        .toUpperCase()
+    : '?';
+
   const sections = [
     { id: 'profile', label: 'Edit Profile', icon: User },
     { id: 'categories', label: 'Categories & Rates', icon: Tag },
@@ -66,11 +163,28 @@ export default function ProSettingsContent() {
 
   const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'] as const;
 
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center py-24">
+        <Loader2 className="h-8 w-8 animate-spin text-reno-green-dark" />
+        <p className="text-sm text-gray-400 mt-3">Loading settings...</p>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold tracking-tight text-gray-900">
-        Pro Settings
-      </h1>
+      <div className="mb-6 flex items-center justify-between">
+        <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+          Pro Settings
+        </h1>
+        {saveSuccess && (
+          <div className="flex items-center gap-1.5 text-sm font-medium text-emerald-600 animate-in fade-in slide-in-from-right-2 duration-200">
+            <CheckCircle className="h-4 w-4" />
+            {saveSuccess}
+          </div>
+        )}
+      </div>
 
       <div className="flex flex-col gap-6 lg:flex-row">
         {/* Section Nav */}
@@ -108,7 +222,7 @@ export default function ProSettingsContent() {
                     <div className="relative">
                       <Avatar className="h-20 w-20 ring-4 ring-primary-50">
                         <AvatarFallback className="bg-gradient-to-br from-reno-green to-reno-green-dark text-2xl font-bold text-white">
-                          MJ
+                          {initials}
                         </AvatarFallback>
                       </Avatar>
                       <button className="absolute bottom-0 right-0 rounded-full bg-reno-green-dark p-1.5 text-white shadow-md transition-all duration-200 hover:bg-reno-green-dark hover:shadow-lg">
@@ -179,8 +293,16 @@ export default function ProSettingsContent() {
                       />
                     </div>
                   </div>
-                  <Button className="mt-6 rounded-xl bg-reno-green-dark px-6 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-reno-green-dark hover:shadow-md hover:shadow-reno-green-light">
-                    <Save className="h-4 w-4" />
+                  <Button
+                    onClick={handleSaveProfile}
+                    disabled={saving}
+                    className="mt-6 rounded-xl bg-reno-green-dark px-6 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-reno-green-dark hover:shadow-md hover:shadow-reno-green-light"
+                  >
+                    {saving ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Save className="h-4 w-4" />
+                    )}
                     Save Profile
                   </Button>
                 </CardContent>
@@ -250,6 +372,34 @@ export default function ProSettingsContent() {
                         className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                       />
                     </div>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <div>
+                        <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                          City
+                        </Label>
+                        <Input
+                          type="text"
+                          value={serviceArea.city}
+                          onChange={(e) =>
+                            setServiceArea({ ...serviceArea, city: e.target.value })
+                          }
+                          className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                        />
+                      </div>
+                      <div>
+                        <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                          Province
+                        </Label>
+                        <Input
+                          type="text"
+                          value={serviceArea.province}
+                          onChange={(e) =>
+                            setServiceArea({ ...serviceArea, province: e.target.value })
+                          }
+                          className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                        />
+                      </div>
+                    </div>
                     <div>
                       <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
                         Service Radius: {serviceArea.radius} km
@@ -282,8 +432,16 @@ export default function ProSettingsContent() {
                       </div>
                     </div>
                   </div>
-                  <Button className="mt-6 rounded-xl bg-reno-green-dark px-6 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-reno-green-dark hover:shadow-md hover:shadow-reno-green-light">
-                    <Save className="h-4 w-4" />
+                  <Button
+                    onClick={handleSaveArea}
+                    disabled={saving}
+                    className="mt-6 rounded-xl bg-reno-green-dark px-6 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-reno-green-dark hover:shadow-md hover:shadow-reno-green-light"
+                  >
+                    {saving ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Save className="h-4 w-4" />
+                    )}
                     Save Area
                   </Button>
                 </CardContent>

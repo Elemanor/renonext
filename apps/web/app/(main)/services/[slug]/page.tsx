@@ -16,6 +16,7 @@ import {
   DollarSign,
   HardHat,
   Wrench,
+  Gift,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -429,6 +430,31 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   </Link>
                 </Button>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Rebate Banner ── */}
+        <section className="border-b border-gray-100 py-0">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-4xl">
+              <Link
+                href="/savings"
+                className="group flex items-center gap-4 rounded-2xl border-2 border-reno-green/20 bg-reno-green/5 p-6 transition-all duration-200 hover:border-reno-green/40 hover:shadow-md"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-reno-green/10 transition-colors group-hover:bg-reno-green group-hover:text-white">
+                  <Gift className="h-6 w-6 text-reno-green group-hover:text-white" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="font-bold text-gray-900">
+                    Reduce your cost — see available rebates and incentives
+                  </p>
+                  <p className="mt-0.5 text-sm text-gray-500">
+                    GTA homeowners can stack federal, provincial, and municipal programs for significant savings.
+                  </p>
+                </div>
+                <ArrowRight className="h-5 w-5 shrink-0 text-reno-green transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
           </div>
         </section>

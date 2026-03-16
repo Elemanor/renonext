@@ -383,7 +383,14 @@ export default async function SecondarySuiteCityPage({
                 </div>
                 <p className="mt-4 text-gray-600">
                   Federal and provincial programs that can help fund your
-                  secondary suite project.
+                  secondary suite project.{' '}
+                  <Link
+                    href={`/savings/${guide.slug}`}
+                    className="inline-flex items-center gap-1 font-semibold text-reno-green hover:underline"
+                  >
+                    See all rebates available in {guide.city}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
                 </p>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">

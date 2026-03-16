@@ -9,6 +9,7 @@ const footerLinks = {
     { label: 'How It Works', href: '/how-it-works' },
     { label: 'The Vault (Escrow)', href: '/how-it-works#vault' },
     { label: 'HouseFax\u2122', href: '/house-fax' },
+    { label: 'Rebates & Savings', href: '/savings' },
     { label: 'Get a Price Check', href: '/price-check' },
     { label: 'Browse Pros', href: '/pros' },
     { label: 'Start a Project', href: '/start-project' },

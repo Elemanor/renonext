@@ -55,7 +55,7 @@ export const obcRequirements = [
   {
     label: 'Fire Separation',
     value: '1-hour fire-rated ceiling assembly (Type X drywall)',
-    notes: 'Required between dwelling units. Inspected before occupancy permit.',
+    notes: 'Required between dwelling units. 2024 OBC update: smoke-tight barriers may replace full fire separations in some configurations. Inspected before occupancy permit.',
   },
   {
     label: 'Egress Windows',
@@ -168,7 +168,7 @@ The city offers streamlined permits, and federal/provincial programs provide up 
           duration: '1–2 weeks',
         },
       ],
-      fees: '$3,600–$5,500 (depends on scope)',
+      fees: '$11.53/m² of floor area + $56.33 per dwelling unit (2026 rates)',
       timeline: '3–5 months (permit + construction)',
     },
     incentives: [
@@ -181,6 +181,11 @@ The city offers streamlined permits, and federal/provincial programs provide up 
         name: 'Ontario Secondary Suite Incentive',
         amount: 'Up to $40,000 forgivable',
         details: 'Provincial grant for basement apartments. Must rent at 80% of market rate for 5 years. Stacks with federal program.',
+      },
+      {
+        name: 'CMHC Insured Refinancing',
+        amount: 'Up to 90% of post-renovation value',
+        details: 'Refinance up to $2M over 30 years at insured rates to fund your secondary suite. Must be owner-occupied. Lower interest than conventional renovation loans.',
       },
       {
         name: 'Toronto Home Energy Loan',
@@ -323,14 +328,24 @@ Typical project cost: $50,000–$120,000. Federal and provincial programs offer 
     },
     incentives: [
       {
+        name: 'Peel Region "My Home" Program',
+        amount: '$20,000–$30,000 forgivable loan',
+        details: 'Region of Peel forgivable loan for creating secondary suites. Must rent to income-qualified tenants for 15 years. Covers Mississauga and Brampton.',
+      },
+      {
         name: 'Canada Secondary Suite Loan',
         amount: 'Up to $80,000 at 0% interest',
-        details: 'Federal forgivable loan after 5 years. Stacks with provincial program.',
+        details: 'Federal forgivable loan after 5 years. Stacks with Peel Region and provincial programs.',
       },
       {
         name: 'Ontario Secondary Suite Incentive',
         amount: 'Up to $40,000 forgivable',
         details: 'Must rent at 80% of market rate for 5 years.',
+      },
+      {
+        name: 'CMHC Insured Refinancing',
+        amount: 'Up to 90% of post-renovation value',
+        details: 'Refinance up to $2M over 30 years at insured rates. Owner-occupied only.',
       },
     ],
     localNotes: [
@@ -393,8 +408,8 @@ Typical cost: $45,000–$110,000. Federal and provincial incentives provide up t
       },
       parking: {
         label: 'Parking',
-        value: '1 space required',
-        notes: 'Brampton requires 1 space per suite. Driveway widening often needed.',
+        value: '3 spaces required (2.6 m × 5.4 m each)',
+        notes: 'Brampton requires 3 parking spaces for properties with a secondary suite. Each space must be 2.6 m × 5.4 m minimum. Driveway widening often needed.',
       },
       electrical: {
         label: 'Electrical',
@@ -450,14 +465,19 @@ Typical cost: $45,000–$110,000. Federal and provincial incentives provide up t
           duration: '1 week',
         },
       ],
-      fees: '$2,500–$4,000',
+      fees: '$200 registration + ~$1,061 change-of-use permit + building permit (varies)',
       timeline: '2.5–4 months',
     },
     incentives: [
       {
+        name: 'Peel Region "My Home" Program',
+        amount: '$20,000–$30,000 forgivable loan',
+        details: 'Region of Peel forgivable loan for creating secondary suites. Must rent to income-qualified tenants for 15 years. Covers Brampton and Mississauga.',
+      },
+      {
         name: 'Canada Secondary Suite Loan',
         amount: 'Up to $80,000 at 0% interest',
-        details: 'Federal forgivable loan.',
+        details: 'Federal forgivable loan. Stacks with Peel Region program.',
       },
       {
         name: 'Ontario Secondary Suite Incentive',
@@ -467,7 +487,8 @@ Typical cost: $45,000–$110,000. Federal and provincial incentives provide up t
     ],
     localNotes: [
       'Brampton has the FASTEST permit approval in Peel Region (3–5 weeks).',
-      'Parking requirement: 1 space per suite (same as Mississauga).',
+      'Parking requirement: 3 spaces (2.6 m × 5.4 m each) — stricter than Toronto.',
+      '$200 registration fee + ~$1,061 change-of-use permit required.',
       'Pre-application meetings highly recommended — they catch issues early.',
     ],
     officialLinks: [
@@ -573,7 +594,7 @@ Typical cost: $55,000–$130,000. Federal and provincial programs provide up to 
           duration: '1–2 weeks',
         },
       ],
-      fees: '$3,200–$4,800',
+      fees: '$7.30/m² of floor area (min $195)',
       timeline: '3–4 months',
     },
     incentives: [
@@ -587,9 +608,15 @@ Typical cost: $55,000–$130,000. Federal and provincial programs provide up to 
         amount: 'Up to $40,000 forgivable',
         details: 'Must rent at 80% of market rate.',
       },
+      {
+        name: 'CMHC Insured Refinancing',
+        amount: 'Up to 90% of post-renovation value',
+        details: 'Refinance up to $2M over 30 years at insured rates. Owner-occupied only.',
+      },
     ],
     localNotes: [
       'Vaughan offers pre-approved drawings for standard layouts.',
+      'Permit fee: $7.30/m² of floor area (minimum $195) — lower than Toronto.',
       'Parking: 1 space required per suite.',
       'Heritage districts may require design review.',
     ],
@@ -613,10 +640,10 @@ Typical cost: $55,000–$130,000. Federal and provincial programs provide up to 
     region: 'York (GTA)',
     metaTitle: 'Markham Secondary Suite Guide 2026 | Basement Apartment Permits & Costs',
     metaDescription: 'Build a legal secondary suite in Markham. Zoning rules, permit fees ($3,000+), OBC requirements, and up to $120K in federal incentives.',
-    heroTagline: 'Create a legal basement apartment in Markham — permits, zoning, building code, and federal incentives up to $120,000.',
-    overview: `Markham permits secondary suites in all residential zones. The city has a streamlined approval process and offers free pre-consultation meetings.
+    heroTagline: 'Markham is the most restrictive GTA municipality for secondary suites — only select areas qualify.',
+    overview: `Markham is the most restrictive GTA municipality for secondary suites. Unlike Toronto or Brampton, Markham only permits them in select areas: Markham Centre, Cornell, and Cathedraltown. Most older subdivisions in Unionville and Markham Village are NOT eligible.
 
-Typical cost: $50,000–$125,000. Federal and provincial programs provide up to $120,000 in incentives.`,
+Typical cost: $50,000–$125,000. Federal and provincial programs provide up to $120,000 in incentives, but check your zoning first — many Markham properties simply don't qualify.`,
     requirements: {
       ceilingHeight: {
         label: 'Ceiling Height',
@@ -655,15 +682,15 @@ Typical cost: $50,000–$125,000. Federal and provincial programs provide up to 
       },
       zoning: {
         label: 'Zoning',
-        value: 'Permitted city-wide',
-        notes: 'No variance needed.',
+        value: 'Select areas only: Markham Centre, Cornell, Cathedraltown',
+        notes: 'Most restrictive in the GTA. Older subdivisions (Unionville, Markham Village) are NOT eligible. Verify with Planning at 905-477-5530.',
       },
     },
     permitProcess: {
       steps: [
         {
           title: 'Pre-Consultation',
-          description: 'Free meeting with Markham Building.',
+          description: 'Free meeting with Markham Building. CRITICAL: confirm your address is in an eligible area before investing in drawings.',
           duration: '1–2 weeks',
         },
         {
@@ -708,9 +735,10 @@ Typical cost: $50,000–$125,000. Federal and provincial programs provide up to 
       },
     ],
     localNotes: [
-      'Markham offers free pre-consultation meetings.',
+      'MOST RESTRICTIVE in the GTA — only Markham Centre, Cornell, and Cathedraltown areas are eligible.',
+      'Verify your address with Planning (905-477-5530) BEFORE investing in design drawings.',
       'Parking: 1 space required per suite.',
-      'Fast approval times (3–6 weeks for simple projects).',
+      'If your property is not in an eligible area, consider a minor variance — but success is not guaranteed.',
     ],
     officialLinks: [
       {
@@ -1053,9 +1081,15 @@ Typical cost: $50,000–$125,000. Federal and provincial programs provide up to 
     },
     incentives: [
       {
+        name: 'Burlington CIP Forgivable Loan',
+        amount: 'Forgivable loan + permit fee waiver',
+        details: 'Burlington Community Improvement Plan offers forgivable loans and building permit fee waivers for new secondary suites. Program runs through December 2026.',
+        deadline: 'December 2026',
+      },
+      {
         name: 'Canada Secondary Suite Loan',
         amount: 'Up to $80,000 at 0% interest',
-        details: 'Federal forgivable loan.',
+        details: 'Federal forgivable loan. Stacks with Burlington CIP.',
       },
       {
         name: 'Ontario Secondary Suite Incentive',
@@ -1064,6 +1098,7 @@ Typical cost: $50,000–$125,000. Federal and provincial programs provide up to 
       },
     ],
     localNotes: [
+      'Burlington CIP: forgivable loans + permit fee waivers for secondary suites (through Dec 2026).',
       'Burlington offers pre-consultation meetings.',
       'Parking: 1 space required per suite.',
     ],
@@ -1423,10 +1458,11 @@ All ARUs must be self-contained with a kitchen, sleeping area, and bathroom for 
       },
     ],
     localNotes: [
-      'ARU registration is mandatory — $340 one-time fee per unit, in person at Town Hall or online.',
+      'ARU registration is MANDATORY — $340 one-time fee per unit. Non-compliance fines start at $10,000+.',
       'Milton\'s ARU Building Permit Application Guide (June 2025) is the best starting resource.',
       'Zoning amendments allow up to 3 ARUs in urban residential areas — check your specific zone.',
       'Contact Zoning Division at 905-878-7252 x2329 for zoning-specific questions.',
+      'Milton actively enforces registration — unregistered units face fines and potential court orders.',
     ],
     officialLinks: [
       {
@@ -1549,8 +1585,8 @@ The town launched its e-permitting portal (eapply.ajax.ca) in April 2025, reduci
     incentives: [
       {
         name: 'Build More, Get More Grant',
-        amount: 'Varies — contact Ajax for current amounts',
-        details: 'Ajax\'s grant program for new additional dwelling units including basement apartments, garden suites, and garage conversions.',
+        amount: '$4,000 per unit, max $12,000',
+        details: 'Ajax cash-back grant for new additional dwelling units — basement apartments, garden suites, and garage conversions. Up to 3 units eligible per property.',
       },
       {
         name: 'Canada Secondary Suite Loan',
@@ -1704,6 +1740,7 @@ Notable Pickering rules: minimum 3 on-site parking spaces required on the proper
       'Parking: 3 on-site spaces required — stricter than most GTA cities. Plan your driveway carefully.',
       'Home-based business is prohibited in EITHER unit of a dwelling with a basement apartment.',
       'Registration fee: $500. Register with the City after all inspections pass.',
+      'Pre-approved ADU designs available (shared program with Whitby) — saves $2,000–$4,000 in design fees.',
     ],
     officialLinks: [
       {
@@ -1734,9 +1771,9 @@ Notable Pickering rules: minimum 3 on-site parking spaces required on the proper
     metaTitle: 'Oshawa Accessory Apartment Guide 2026 | Permits, Zoning & Requirements',
     metaDescription: 'Build a legal accessory apartment in Oshawa. Permitted in R1, R2, R5 zones, 11m lot frontage minimum, 3 parking spaces. OBC requirements and incentives.',
     heroTagline: 'Oshawa requires 11m lot frontage and 3 parking spaces for accessory apartments — check your lot before you start.',
-    overview: `Oshawa permits accessory apartments (basement apartments) in single detached and semi-detached dwellings in specific zones: R1, R2, R5, OSR-A, OS-ORM, AG-A, AG-B, and AG-ORM. Your lot must have at least 11 m (36 ft) of frontage.
+    overview: `Oshawa permits accessory apartments (basement apartments) in single detached and semi-detached dwellings in specific zones: R1, R2, R3, R5, OSR-A, OS-ORM, AG-A, AG-B, and AG-ORM. Your lot must have at least 11 m (36 ft) of frontage. Zones were expanded to include R3 in recent amendments.
 
-If your second or third unit was created after July 1994, a building permit is required to legalize the use. Oshawa requires 3 parking spaces (2 accessible to the street at all times). The city is part of Durham Region, sharing regional services with Ajax, Pickering, and Whitby.`,
+If your second or third unit was created after July 1994, a building permit is required to legalize the use. Oshawa requires 3 parking spaces (2 accessible to the street at all times) and a 30-minute fire rating between units (less than the standard 1-hour in some configurations). The city is part of Durham Region, sharing regional services with Ajax, Pickering, and Whitby.`,
     requirements: {
       ceilingHeight: {
         label: 'Ceiling Height',
@@ -1775,15 +1812,15 @@ If your second or third unit was created after July 1994, a building permit is r
       },
       zoning: {
         label: 'Zoning',
-        value: 'R1, R2, R5, OSR-A, OS-ORM, AG-A, AG-B, AG-ORM zones only',
-        notes: 'Minimum 11 m (36 ft) lot frontage required. Single detached and semi-detached only.',
+        value: 'R1, R2, R3, R5, OSR-A, OS-ORM, AG-A, AG-B, AG-ORM zones',
+        notes: 'R3 added in recent amendments. Minimum 11 m (36 ft) lot frontage required. Single detached and semi-detached only.',
       },
     },
     permitProcess: {
       steps: [
         {
           title: 'Verify Zoning',
-          description: 'Confirm your property is in R1, R2, R5, OSR-A, OS-ORM, AG-A, AG-B, or AG-ORM zone. Check lot frontage is at least 11 m.',
+          description: 'Confirm your property is in R1, R2, R3, R5, OSR-A, OS-ORM, AG-A, AG-B, or AG-ORM zone. Check lot frontage is at least 11 m.',
           duration: '1-2 days',
         },
         {
@@ -1828,7 +1865,7 @@ If your second or third unit was created after July 1994, a building permit is r
       },
     ],
     localNotes: [
-      'Limited to specific zones: R1, R2, R5, OSR-A, OS-ORM, AG-A, AG-B, AG-ORM. Check your zoning before investing in drawings.',
+      'Limited to specific zones: R1, R2, R3, R5, OSR-A, OS-ORM, AG-A, AG-B, AG-ORM. R3 added recently. Check your zoning before investing in drawings.',
       'Minimum lot frontage: 11 m (36 ft). Narrow lots may not qualify.',
       '3 parking spaces required with 2 accessible to the street at all times.',
       'Units created after July 1994 need a building permit to be legalized — if your existing apartment was never permitted, start the legalization process now.',
@@ -1847,7 +1884,7 @@ If your second or third unit was created after July 1994, a building permit is r
     faqs: [
       {
         q: 'What zones allow accessory apartments in Oshawa?',
-        a: 'R1, R2, R5, OSR-A, OS-ORM, AG-A, AG-B, and AG-ORM zones. Only single detached and semi-detached dwellings qualify. Check your property\'s zoning on the City of Oshawa website or call their planning department.',
+        a: 'R1, R2, R3, R5, OSR-A, OS-ORM, AG-A, AG-B, and AG-ORM zones. R3 was added in recent amendments. Only single detached and semi-detached dwellings qualify. Check your property\'s zoning on the City of Oshawa website or call their planning department.',
       },
       {
         q: 'My basement apartment has been there since the 1980s — do I need a permit?',
@@ -1949,9 +1986,14 @@ As part of Durham Region, Whitby shares regional water and sewer services with A
     },
     incentives: [
       {
+        name: 'Whitby Fee Reimbursement Program',
+        amount: 'Full building permit fee reimbursement',
+        details: 'Whitby reimburses the full cost of building permit fees for new secondary suites. Apply after occupancy permit is issued.',
+      },
+      {
         name: 'Canada Secondary Suite Loan',
         amount: 'Up to $80,000 at 2% interest',
-        details: 'Federal loan program. 15-year repayment.',
+        details: 'Federal loan program. 15-year repayment. Stacks with Whitby reimbursement.',
       },
       {
         name: 'Ontario Secondary Suite Incentive',
@@ -1960,10 +2002,11 @@ As part of Durham Region, Whitby shares regional water and sewer services with A
       },
     ],
     localNotes: [
+      'Whitby reimburses full building permit fees for secondary suites — one of the best incentives in Durham Region.',
+      'Pre-approved ADU designs available (shared program with Pickering) — saves $2,000–$4,000 in design fees.',
       'Whitby allows second suites in more zones than some Durham Region neighbors — but always verify your specific zone.',
       'Fire safety upgrades are a key focus: interconnected alarms, fire-rated doors, self-closing devices.',
       'Durham Region shares water and sewer services — verify connection capacity with the Region.',
-      'Building Division: contact for current fee schedules and zoning verification.',
     ],
     officialLinks: [
       {

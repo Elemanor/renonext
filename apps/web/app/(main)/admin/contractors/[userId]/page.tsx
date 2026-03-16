@@ -150,31 +150,25 @@ export default function AdminContractorDetailPage() {
     if (!user) return;
     setActionLoading(action);
 
-    const updates: Record<string, unknown> = {
-      application_status: action,
-      application_reviewed_at: new Date().toISOString(),
-      application_reviewed_by: user.id,
-      application_notes: adminNotes || null,
-    };
+    try {
+      const res = await fetch(`/api/admin/contractors/${userId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action,
+          notes: adminNotes || undefined,
+          rejection_reason: action === 'rejected' ? rejectionReason || undefined : undefined,
+        }),
+      });
 
-    if (action === 'approved') {
-      await supabase
-        .from('profiles')
-        .update({ is_verified: true })
-        .eq('id', userId);
-    }
-
-    if (action === 'rejected') {
-      updates.rejection_reason = rejectionReason || null;
-    }
-
-    const { error } = await supabase
-      .from('pro_profiles')
-      .update(updates)
-      .eq('user_id', userId);
-
-    if (error) {
-      alert(error.message);
+      if (!res.ok) {
+        const err = await res.json();
+        alert(err.error || 'Failed to update application');
+        setActionLoading(null);
+        return;
+      }
+    } catch {
+      alert('Network error. Please try again.');
       setActionLoading(null);
       return;
     }

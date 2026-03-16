@@ -22,6 +22,7 @@ import {
   Mail,
   ArrowRight,
   Wrench,
+  Gift,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -91,6 +92,7 @@ const serviceGroups = [
 ];
 
 const resourceItems = [
+  { icon: Gift, label: 'Savings Calculator', desc: 'See all rebates for your city.', href: '/savings' },
   { icon: BookOpen, label: 'Blog', desc: 'Guides, market data, case studies.', href: '/blog' },
   { icon: HelpCircle, label: 'Help Centre', desc: 'FAQ by role. How-to guides.', href: '/help' },
   { icon: Info, label: 'About Us', desc: 'The team, BCIN + P.QS credentials.', href: '/about' },
