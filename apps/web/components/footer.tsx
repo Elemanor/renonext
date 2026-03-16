@@ -26,8 +26,8 @@ const footerLinks = {
     { label: 'Foundation Repair', href: '/services/foundation-repair' },
     { label: 'Electrical', href: '/services/electrical' },
     { label: 'Plumbing', href: '/services/plumbing' },
+    { label: 'Basement Apartments', href: '/services/basement-second-unit' },
     { label: 'Home Additions', href: '/services/additions' },
-    { label: 'Decks', href: '/services/decks' },
     { label: 'All Services →', href: '/services' },
   ],
   Company: [

@@ -27,6 +27,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { services, getServiceBySlug } from '@/lib/data/services';
+import { cityGuides } from '@/lib/data/secondary-suite-cities';
 import { fetchProsByCategory } from '@/lib/supabase/queries/profiles';
 
 // ---------------------------------------------------------------------------
@@ -603,6 +604,50 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </div>
           </div>
         </section>
+
+        {/* ── City-Specific Guides (only for basement-second-unit) ── */}
+        {service.slug === 'basement-second-unit' && (
+          <section className="border-b border-gray-100 bg-gray-50 py-16 md:py-20">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-4xl">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-reno-teal/10">
+                    <MapPin className="h-5 w-5 text-reno-teal" />
+                  </div>
+                  <div>
+                    <h2 className="font-display text-3xl font-bold tracking-tight text-reno-dark md:text-4xl">
+                      City-Specific Guides
+                    </h2>
+                    <p className="mt-1 text-gray-500">
+                      Requirements vary by municipality — find your city
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {cityGuides.map((city) => (
+                    <Link key={city.slug} href={`/services/basement-second-unit/${city.slug}`}>
+                      <Card className="h-full rounded-xl border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
+                        <CardContent className="p-5">
+                          <div className="flex items-center gap-2">
+                            <MapPin className="h-4 w-4 text-reno-teal" />
+                            <h3 className="font-bold text-gray-900">{city.city}</h3>
+                          </div>
+                          <p className="mt-1 text-xs text-gray-500">{city.region}</p>
+                          <p className="mt-2 text-sm text-gray-600 line-clamp-2">{city.heroTagline}</p>
+                          <div className="mt-3 flex items-center gap-1 text-xs font-semibold text-reno-teal">
+                            View guide
+                            <ArrowRight className="h-3 w-3" />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ── Section 9: FAQ ── */}
         <section className="py-16 md:py-20">
