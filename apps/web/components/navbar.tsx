@@ -21,6 +21,7 @@ import {
   Info,
   Mail,
   ArrowRight,
+  Wrench,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -41,6 +42,54 @@ const hiwItems = [
   { icon: Home, label: 'HouseFax\u2122', desc: 'Permanent digital property record. Transfers on sale.', href: '/how-it-works#house-fax', badge: 'Unique' },
 ];
 
+const serviceGroups = [
+  {
+    heading: 'Structural',
+    items: [
+      { label: 'Underpinning', href: '/services/underpinning' },
+      { label: 'Foundation Repair', href: '/services/foundation-repair' },
+      { label: 'Waterproofing', href: '/services/waterproofing' },
+      { label: 'Concrete Works', href: '/services/concrete-works' },
+      { label: 'Masonry', href: '/services/masonry' },
+      { label: 'Framing', href: '/services/framing' },
+    ],
+  },
+  {
+    heading: 'Trades',
+    items: [
+      { label: 'Electrical', href: '/services/electrical' },
+      { label: 'Plumbing', href: '/services/plumbing' },
+      { label: 'HVAC', href: '/services/hvac' },
+      { label: 'Insulation', href: '/services/insulation' },
+      { label: 'Drains', href: '/services/drains' },
+      { label: 'Painting', href: '/services/painting' },
+      { label: 'Handyman', href: '/services/handyman' },
+      { label: 'Cleaning', href: '/services/cleaning' },
+    ],
+  },
+  {
+    heading: 'Building',
+    items: [
+      { label: 'Home Additions', href: '/services/additions' },
+      { label: 'Basement Second Unit', href: '/services/basement-second-unit' },
+      { label: 'Roofing', href: '/services/roofing' },
+      { label: 'Demolition', href: '/services/demolition' },
+      { label: 'Decks', href: '/services/decks' },
+    ],
+  },
+  {
+    heading: 'Professional',
+    items: [
+      { label: 'General Contractor', href: '/services/general-contractor' },
+      { label: 'Project Management', href: '/services/project-management' },
+      { label: 'Building Permits', href: '/services/building-permit' },
+      { label: 'Drafting', href: '/services/drafting' },
+      { label: 'Estimating', href: '/services/estimating' },
+      { label: 'Equipment Rental', href: '/services/equipment-rental' },
+    ],
+  },
+];
+
 const resourceItems = [
   { icon: BookOpen, label: 'Blog', desc: 'Guides, market data, case studies.', href: '/blog' },
   { icon: HelpCircle, label: 'Help Centre', desc: 'FAQ by role. How-to guides.', href: '/help' },
@@ -56,9 +105,12 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hiwOpen, setHiwOpen] = useState(false);
   const [resOpen, setResOpen] = useState(false);
+  const [svcOpen, setSvcOpen] = useState(false);
   const [mobileHiwOpen, setMobileHiwOpen] = useState(false);
+  const [mobileSvcOpen, setMobileSvcOpen] = useState(false);
   const [mobileResOpen, setMobileResOpen] = useState(false);
   const hiwRef = useRef<HTMLDivElement>(null);
+  const svcRef = useRef<HTMLDivElement>(null);
   const resRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -70,19 +122,23 @@ export function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
     setHiwOpen(false);
+    setSvcOpen(false);
     setResOpen(false);
     setMobileHiwOpen(false);
+    setMobileSvcOpen(false);
     setMobileResOpen(false);
   }, [pathname]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (hiwRef.current && !hiwRef.current.contains(e.target as Node)) setHiwOpen(false);
+      if (svcRef.current && !svcRef.current.contains(e.target as Node)) setSvcOpen(false);
       if (resRef.current && !resRef.current.contains(e.target as Node)) setResOpen(false);
     }
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
         setHiwOpen(false);
+        setSvcOpen(false);
         setResOpen(false);
       }
     }
@@ -137,7 +193,7 @@ export function Navbar() {
               {/* How It Works (dropdown) */}
               <div ref={hiwRef} className="relative">
                 <button
-                  onClick={() => { setHiwOpen(!hiwOpen); setResOpen(false); }}
+                  onClick={() => { setHiwOpen(!hiwOpen); setSvcOpen(false); setResOpen(false); }}
                   aria-expanded={hiwOpen}
                   aria-haspopup="true"
                   className={`flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium transition-all duration-200 ${
@@ -219,10 +275,51 @@ export function Navbar() {
                 Browse Pros
               </Link>
 
+              {/* Services (mega dropdown) */}
+              <div ref={svcRef} className="relative">
+                <button
+                  onClick={() => { setSvcOpen(!svcOpen); setHiwOpen(false); setResOpen(false); }}
+                  aria-expanded={svcOpen}
+                  aria-haspopup="true"
+                  className={`flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium transition-all duration-200 ${
+                    scrolled
+                      ? 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                      : 'text-white/60 hover:bg-white/10 hover:text-white'
+                  }`}
+                >
+                  Services
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${svcOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {svcOpen && (
+                  <div role="menu" className="absolute left-1/2 top-full z-50 mt-2 w-[540px] -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-4 shadow-xl">
+                    <div className="grid grid-cols-3 gap-4">
+                      {serviceGroups.map((group) => (
+                        <div key={group.heading}>
+                          <p className="mb-2 px-2 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400">{group.heading}</p>
+                          <div className="flex flex-col gap-0.5">
+                            {group.items.map((item) => (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setSvcOpen(false)}
+                                role="menuitem"
+                                className="rounded-lg px-2 py-1.5 text-sm text-gray-700 transition-all duration-150 hover:bg-reno-green-light hover:text-reno-green"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
               {/* Resources (dropdown) */}
               <div ref={resRef} className="relative">
                 <button
-                  onClick={() => { setResOpen(!resOpen); setHiwOpen(false); }}
+                  onClick={() => { setResOpen(!resOpen); setHiwOpen(false); setSvcOpen(false); }}
                   aria-expanded={resOpen}
                   aria-haspopup="true"
                   className={`flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium transition-all duration-200 ${
@@ -388,6 +485,41 @@ export function Navbar() {
                 <Link href="/pros" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50">
                   Browse Pros
                 </Link>
+
+                {/* Services - Accordion */}
+                <div>
+                  <button
+                    onClick={() => setMobileSvcOpen(!mobileSvcOpen)}
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  >
+                    Services
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileSvcOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      mobileSvcOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="flex flex-col gap-0.5 pl-3 pt-1">
+                      {serviceGroups.map((group) => (
+                        <div key={group.heading}>
+                          <p className="px-3 pt-2 pb-1 text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400">{group.heading}</p>
+                          {group.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setMobileOpen(false)}
+                              className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
+                            >
+                              <Wrench className="h-3.5 w-3.5 text-gray-400" />
+                              <span>{item.label}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
 
                 {/* Resources - Accordion */}
                 <div>

@@ -20,6 +20,16 @@ const footerLinks = {
     { label: 'Field App', href: '/contractors#field' },
     { label: '24hr Payouts', href: '/contractors#payouts' },
   ],
+  Services: [
+    { label: 'Underpinning', href: '/services/underpinning' },
+    { label: 'Waterproofing', href: '/services/waterproofing' },
+    { label: 'Foundation Repair', href: '/services/foundation-repair' },
+    { label: 'Electrical', href: '/services/electrical' },
+    { label: 'Plumbing', href: '/services/plumbing' },
+    { label: 'Home Additions', href: '/services/additions' },
+    { label: 'Decks', href: '/services/decks' },
+    { label: 'All Services →', href: '/services' },
+  ],
   Company: [
     { label: 'About Us', href: '/about' },
     { label: 'Blog', href: '/blog' },
@@ -64,7 +74,7 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-reno-dark">
       <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-7">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="mb-6 inline-block">
