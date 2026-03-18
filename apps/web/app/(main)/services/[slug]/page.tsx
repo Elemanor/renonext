@@ -28,6 +28,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { services, getServiceBySlug } from '@/lib/data/services';
+import { FaqJsonLd } from '@/components/costs/faq-jsonld';
 import { cityGuides } from '@/lib/data/secondary-suite-cities';
 import { fetchProsByCategory } from '@/lib/supabase/queries/profiles';
 
@@ -103,6 +104,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <FaqJsonLd faqs={service.faqs} />
 
       <div className="min-h-screen bg-white">
         {/* ── Section 1: Hero ── */}
@@ -430,6 +432,15 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   </Link>
                 </Button>
               </div>
+
+              {/* Cost guide cross-link */}
+              <Link
+                href={`/costs/${service.slug}`}
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-reno-teal hover:underline"
+              >
+                See detailed cost breakdown with city-by-city pricing
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
           </div>
         </section>

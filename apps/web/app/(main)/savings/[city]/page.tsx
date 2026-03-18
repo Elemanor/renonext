@@ -494,6 +494,31 @@ export default async function CitySavingsPage({ params }: CityPageProps) {
           </div>
         </section>
 
+        {/* ── Cost Guides Cross-link ── */}
+        <section className="border-b border-gray-100 py-10">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-4xl">
+              <Link
+                href={`/costs/underpinning/${city}`}
+                className="group flex items-center gap-4 rounded-2xl border-2 border-reno-teal/20 bg-reno-teal/5 p-6 transition-all duration-200 hover:border-reno-teal/40 hover:shadow-md"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-reno-teal/10 transition-colors group-hover:bg-reno-teal group-hover:text-white">
+                  <Calculator className="h-6 w-6 text-reno-teal group-hover:text-white" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="font-bold text-gray-900">
+                    See how much renovation work costs in {summary?.city}
+                  </p>
+                  <p className="mt-0.5 text-sm text-gray-500">
+                    25 detailed cost guides with labour/material breakdowns, permit fees, and money-saving tips.
+                  </p>
+                </div>
+                <ArrowRight className="h-5 w-5 shrink-0 text-reno-teal transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── FAQ ── */}
         <section className="border-b border-gray-100 py-16 md:py-20">
           <div className="container mx-auto px-4">

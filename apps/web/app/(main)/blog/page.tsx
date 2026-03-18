@@ -23,7 +23,7 @@ const categories: { key: BlogCategory | 'all'; label: string }[] = [
 
 // Top contributors based on mock data
 const topContributors = [
-  { name: 'RenoNext Team', avatar: '/logo-icon.svg', posts: 3 },
+  { name: 'RenoNext Team', avatar: '/logo-icon.svg', posts: 11 },
   { name: 'Marcus Johnson', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face', posts: 2 },
   { name: 'Tom Chen', avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face', posts: 1 },
   { name: 'Sarah Chen', avatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop&crop=face', posts: 1 },
@@ -31,8 +31,8 @@ const topContributors = [
 ];
 
 const popularTags = [
-  'electrical', 'plumbing', 'renovation', 'hvac', 'toronto',
-  'home-safety', 'winter', 'budgeting', 'ev-charger', 'energy-efficiency',
+  'underpinning', 'waterproofing', 'toronto', 'ontario', 'renovation',
+  'basement-apartment', 'escrow', 'building-permits', 'costs', 'rebates',
 ];
 
 export default function BlogPage() {

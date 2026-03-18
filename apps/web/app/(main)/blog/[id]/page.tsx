@@ -129,7 +129,40 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const readingTime = estimateReadingTime(post.content);
   const relatedPosts = mockBlogPosts.filter((p) => p.id !== post.id).slice(0, 3);
 
+  // Article JSON-LD for SEO
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.coverImage,
+    datePublished: post.createdAt,
+    dateModified: post.updatedAt,
+    author: {
+      '@type': post.authorId === 'renonext' ? 'Organization' : 'Person',
+      name: post.authorName,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'RenoNext',
+      url: 'https://renonext.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://renonext.com/logo-icon.svg',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://renonext.com/blog/${post.id}`,
+    },
+  };
+
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+    />
     <div className="min-h-screen bg-gray-50">
       {/* Cover Image */}
       <div className="relative h-64 overflow-hidden md:h-80">
@@ -364,5 +397,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
     </div>
+    </>
   );
 }

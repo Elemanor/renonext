@@ -59,5 +59,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...servicePages, ...cityPages, ...cityServicePages];
+  // Cost guides: 1 hub + 25 service pages + 375 city pages = 401 URLs
+  const costHubPage: MetadataRoute.Sitemap = [
+    { url: `${BASE}/costs`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+  ];
+
+  const costServicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
+    url: `${BASE}/costs/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  const costCityPages: MetadataRoute.Sitemap = serviceSlugs.flatMap((svc) =>
+    citySlugs.map((city) => ({
+      url: `${BASE}/costs/${svc}/${city}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+  );
+
+  // App pages: 1 hub + 5 individual app pages = 6 URLs
+  const appSlugs = ['equipment-fix', 'drawing-viewer', 'attendance', 'ar-survey', 'concrete-pour'];
+  const appHubPage: MetadataRoute.Sitemap = [
+    { url: `${BASE}/apps`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+  ];
+  const appPages: MetadataRoute.Sitemap = appSlugs.map((slug) => ({
+    url: `${BASE}/apps/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...cityPages,
+    ...cityServicePages,
+    ...costHubPage,
+    ...costServicePages,
+    ...costCityPages,
+    ...appHubPage,
+    ...appPages,
+  ];
 }
