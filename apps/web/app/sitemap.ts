@@ -81,7 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   // App pages: 1 hub + 5 individual app pages = 6 URLs
-  const appSlugs = ['equipment-fix', 'drawing-viewer', 'attendance', 'ar-survey', 'concrete-pour'];
+  const appSlugs = ['equipment-fix', 'drawing-viewer', 'attendance', 'ar-survey', 'concrete-pour', 'jsa'];
   const appHubPage: MetadataRoute.Sitemap = [
     { url: `${BASE}/apps`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ];

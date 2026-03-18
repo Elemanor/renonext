@@ -438,6 +438,92 @@ export const apps: AppData[] = [
     ctaLabel: 'Request Early Access',
     ctaHref: '/contact',
   },
+  {
+    slug: 'jsa',
+    name: 'JSA',
+    tagline: 'Safety docs done before the trucks arrive.',
+    description:
+      'A full-stack construction management platform: Job Safety Analysis forms, daily field reports, concrete pour tracking, GPS attendance, incident reports, toolbox meetings, and AR visualization — all in one app.',
+    heroDescription:
+      'JSA is the command center your superintendent wishes they had ten years ago. Two-page safety forms with crew signatures, GPS-verified attendance, concrete pour metrics, real-time weather alerts, material request approval chains, and a georeferenced AR viewer — all wired together so nothing falls through the cracks. Supervisor, foreman, worker, and client dashboards mean everyone sees exactly what they need.',
+    audience: 'Field + Office',
+    audienceLabel: 'For Supervisors, Foremen & Crews',
+    color: 'from-amber-600 to-orange-700',
+    icon: 'ClipboardList',
+    platform: 'Web + iOS & Android (React Native)',
+    features: [
+      {
+        icon: 'ClipboardList',
+        title: 'Two-Page JSA Forms',
+        description:
+          'Job steps, hazard identification, safety controls, weather tracking, and crew digital signatures — generated as PDF with one tap.',
+      },
+      {
+        icon: 'MapPin',
+        title: 'GPS Attendance & Timesheets',
+        description:
+          'Workers clock in with GPS proof. Foremen see who is on site in real-time. Weekly timesheets flow to supervisor approval.',
+      },
+      {
+        icon: 'Droplets',
+        title: 'Concrete Pour Tracking',
+        description:
+          'Planned vs. actual volume, slump measurements, crew size, pump type, weather conditions, and pour efficiency charts.',
+      },
+      {
+        icon: 'AlertTriangle',
+        title: 'Incident & Safety Tickets',
+        description:
+          'Full incident reports with damage tracking and investigation workflow. Real-time safety violation ticketing.',
+      },
+      {
+        icon: 'Eye',
+        title: 'Georeferenced AR Viewer',
+        description:
+          'Overlay 3D models onto the live camera feed with GPS + accelerometer dead reckoning. Verify as-built against design.',
+      },
+      {
+        icon: 'Camera',
+        title: 'Daily Field Reports & Photos',
+        description:
+          'Categorized photo uploads (safety, progress, issues, quality) with tagging, descriptions, and one-click sharing.',
+      },
+    ],
+    benefits: [
+      'One login for safety, attendance, pours, incidents, and field reports — zero duplicate entry',
+      'Role-based dashboards: supervisor sees KPIs, foremen manage crews, workers clock in and submit',
+      'Automatic PDF generation for JSA forms, toolbox meetings, and incident reports',
+      'Real-time weather alerts with wind speed and temperature thresholds',
+      'Full audit trail for WSIB, MOL inspections, and insurance compliance',
+      'Client dashboard gives owners read-only visibility into project progress',
+    ],
+    useCases: [
+      'Foremen completing JSA forms on their phone before the crew starts work each morning',
+      'Supervisors approving material requests, reviewing timesheets, and checking attendance from the office',
+      'Safety managers running toolbox meetings with digital attendance and certificate expiry alerts',
+      'Concrete supervisors tracking pour volume, slump, and efficiency across multiple active pours',
+      'Project managers generating weekly executive summaries and 3-week lookahead schedules',
+      'Clients checking the project dashboard for daily progress photos and schedule status',
+    ],
+    techHighlights: [
+      'React 19 + TypeScript 5.8 + Vite 7 (web)',
+      'Expo 53 / React Native 0.79 (mobile)',
+      'Three.js for 3D building viewer + AR overlay',
+      'TanStack React Query + Socket.io real-time',
+      'Express 5 + SQLite/PostgreSQL backend',
+      'Tesseract.js OCR + Sharp image processing',
+      'Recharts + Chart.js data visualization',
+      'AWS S3 + Vercel deployment',
+    ],
+    screenshots: [
+      { label: 'Supervisor Dashboard', description: 'Calendar view with JSA forms, daily photos, and project widgets' },
+      { label: 'JSA Form', description: 'Two-page safety form with hazards, controls, and crew signatures' },
+      { label: 'Concrete Tracker', description: 'Pour metrics, efficiency charts, and crew status in real-time' },
+      { label: 'AR Viewer', description: 'Georeferenced 3D model overlay on the live camera feed' },
+    ],
+    ctaLabel: 'Get Started',
+    ctaHref: '/contact',
+  },
 ];
 
 // ---------------------------------------------------------------------------
