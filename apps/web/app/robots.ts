@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,11 +7,14 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
         disallow: [
-          '/dashboard/*',
-          '/admin/*',
-          '/pro-dashboard/*',
-          '/pro-network/*',
-          '/api/*',
+          '/dashboard/',
+          '/pro-dashboard/',
+          '/pro-network/',
+          '/admin/',
+          '/login',
+          '/signup',
+          '/join/',
+          '/api/',
         ],
       },
     ],

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -22,16 +22,23 @@ export default function ContactPage() {
     subject: '',
     message: '',
   });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Message sent! We will get back to you within 24 hours.');
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error();
+      setStatus('sent');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch {
+      setStatus('error');
+    }
   };
 
   const handleInputChange = (
@@ -202,13 +209,26 @@ export default function ContactPage() {
                 />
               </div>
 
+              {status === 'sent' && (
+                <div className="flex items-center gap-2 rounded-lg bg-green-50 p-4 text-green-800">
+                  <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
+                  <p>Message sent! We&apos;ll get back to you within 24 hours.</p>
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="rounded-lg bg-red-50 p-4 text-red-800">
+                  Something went wrong. Please email us at hello@renonext.com instead.
+                </div>
+              )}
+
               {/* Submit Button */}
               <Button
                 type="submit"
+                disabled={status === 'sending'}
                 className="w-full bg-gradient-to-r from-reno-green-dark to-reno-green hover:from-reno-green-dark hover:to-reno-green-dark"
               >
                 <Send className="w-4 h-4 mr-2" />
-                Send Message
+                {status === 'sending' ? 'Sending...' : 'Send Message'}
               </Button>
             </form>
           </CardContent>

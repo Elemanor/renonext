@@ -47,6 +47,435 @@ export const categoryColors: Record<BlogCategory, string> = {
 };
 
 export const mockBlogPosts: BlogPost[] = [
+  // ── Launch articles (RenoNext Team) ──────────────────────────────
+  {
+    id: 'launch-1',
+    authorId: 'renonext',
+    authorName: 'RenoNext Team',
+    authorAvatar: '/logo-icon.svg',
+    authorHeadline: 'RenoNext — Renovation, Reinvented',
+    title: 'Why Renovation Escrow Protects Your Money (and Your Sanity)',
+    slug: 'why-renovation-escrow-protects-your-money',
+    excerpt:
+      'Handing a contractor a $30,000 deposit and hoping for the best? There\'s a better way. Learn how bank-held escrow accounts protect every dollar of your renovation budget.',
+    content: `# Why Renovation Escrow Protects Your Money (and Your Sanity)
+
+Picture this: you've just handed a contractor a $30,000 deposit for your basement renovation. Two weeks later, they've ghosted you, the materials never arrived, and your money is gone. This nightmare scenario plays out across Ontario more often than most homeowners realize — and it's entirely preventable with one financial tool: **renovation escrow**.
+
+## What Is Renovation Escrow?
+
+Renovation escrow is a financial arrangement where your project funds are held by a neutral third party — typically a bank or trust company — rather than paid directly to the contractor upfront. The money is released in stages as the contractor completes agreed-upon milestones.
+
+Think of it as a referee holding the prize money until both sides have delivered. Nobody gets paid until the work is actually done and verified.
+
+### How It Works
+
+1. **Homeowner deposits funds** into the escrow account before work begins
+2. **Contractor and homeowner agree on milestones** (e.g., demolition complete, framing done, final inspection passed)
+3. **Work is completed and verified** at each stage
+4. **Funds are released** from escrow to the contractor after milestone approval
+5. **Process repeats** until the project is finished
+
+## The Ontario Renovation Problem
+
+Ontario homeowners face a unique challenge: unlike lawyers, doctors, or engineers, general contractors aren't regulated by a provincial body. There's no mandatory licensing system, no professional standards board, and limited recourse when things go wrong.
+
+Consumer protection agencies across Ontario receive thousands of renovation-related complaints annually, with advance payment fraud and abandoned projects ranking among the most common issues.
+
+The current system essentially operates on trust and hope — two things that shouldn't protect your life savings.
+
+## Paying Contractors Directly: The Risks
+
+### Upfront Payment Disasters
+
+Traditional contractor payment structures often require substantial deposits — sometimes 30 to 50% of the total project cost. This creates several problems:
+
+**Incentive Misalignment** — Once a contractor has your money, they have less urgency to complete your project. Your kitchen renovation might get deprioritized while they chase new deposits from other homeowners.
+
+**Disappearing Act** — Bad actors can collect multiple large deposits, complete minimal work, and vanish. By the time you realize something's wrong, they've moved on.
+
+**Pyramiding** — Even honest contractors can run into financial trouble. If they use your deposit to pay debts from previous projects, you're funding someone else's renovation while yours hasn't started.
+
+## How Escrow Changes Everything
+
+### Milestone-Based Protection
+
+Properly structured escrow accounts release funds only when specific, measurable milestones are achieved:
+
+| Milestone | Payment Released |
+|-----------|-----------------|
+| Permits pulled, demolition complete | 15% |
+| Rough-in inspections passed | 25% |
+| Drywall and flooring installed | 25% |
+| Fixtures and finishes complete | 25% |
+| Final inspection passed | 10% |
+
+### Bank-Held Security
+
+RenoNext uses **bank-held escrow accounts**, which means your renovation funds are held by a federally regulated financial institution — not a person, not a company, but a bank. This provides:
+
+- **Regulatory Protection** — Banks are subject to strict oversight and insurance requirements
+- **Separation of Funds** — Your money is segregated from operational business accounts
+- **Neutral Third Party** — The bank has no incentive to favour contractor or homeowner
+- **Professional Administration** — Financial institutions have established dispute resolution procedures
+
+## What Good Contractors Say
+
+Here's a truth that surprises many homeowners: reputable contractors *support* escrow arrangements. Why?
+
+- They know they'll get paid promptly when work is complete
+- They avoid cash flow nightmares from chasing late payments
+- They benefit from dispute resolution if homeowners make unreasonable demands
+- They stand out from bad actors who avoid accountability
+
+**If a contractor refuses to work with escrow, that's a red flag.**
+
+## The Ontario Holdback Requirement
+
+Ontario's Construction Act requires a 10% holdback on most construction projects, retained for 45–60 days after substantial completion to protect against liens. While this provides some protection, it only covers the final 10% — escrow protects the entire project amount throughout the process.
+
+## How RenoNext Makes Escrow Simple
+
+Setting up traditional escrow can be complex and expensive, which is why many homeowners skip it. RenoNext built milestone-based escrow directly into every project:
+
+1. **Automatic Setup** — Escrow accounts are created when you start a project
+2. **Bank-Held Security** — Funds held by regulated financial institutions
+3. **Clear Milestones** — Work scopes include predefined, measurable milestones
+4. **Photo Verification** — Contractors submit proof of completion for each stage
+5. **Fast Releases** — Payments released within 24–48 hours once verified
+
+Your home is likely your largest asset. Protecting the money you invest in improving it isn't paranoia — it's common sense.`,
+    category: 'how-to',
+    tags: ['escrow', 'renovation', 'homeowner-protection', 'payments', 'ontario'],
+    coverImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop',
+    upvotes: 0,
+    downvotes: 0,
+    commentCount: 0,
+    createdAt: '2026-03-18',
+    updatedAt: '2026-03-18',
+  },
+  {
+    id: 'launch-2',
+    authorId: 'renonext',
+    authorName: 'RenoNext Team',
+    authorAvatar: '/logo-icon.svg',
+    authorHeadline: 'RenoNext — Renovation, Reinvented',
+    title: 'What Is HouseFax? The Permanent Record Your Home Deserves',
+    slug: 'what-is-housefax-permanent-record-your-home-deserves',
+    excerpt:
+      'When you buy a used car, you ask for the Carfax. Why doesn\'t your home — worth 10 to 20 times more — have the same thing? Meet HouseFax.',
+    content: `# What Is HouseFax? The Permanent Record Your Home Deserves
+
+When you buy a used car, you ask for the Carfax report. You want to know if it's been in accidents, how it was maintained, whether the oil changes happened on schedule.
+
+Now ask yourself: **why doesn't your home have the same record?**
+
+Your house is worth 10 to 20 times more than any car you'll ever own, yet there's no standardised way to prove its renovation history, verify the quality of work done, or show future buyers that everything was built to code by licensed professionals.
+
+Until now.
+
+## The Information Gap in Real Estate
+
+### What Buyers Don't Know
+
+When you tour a house, you see finished surfaces: fresh paint, new flooring, an updated kitchen. What you *don't* see:
+
+- Whether that beautiful basement has proper waterproofing
+- If the electrical panel upgrade was done by a licensed electrician or a handyman
+- Whether permits were pulled for structural changes
+- What materials are behind the drywall
+- If the roof was installed correctly or is a leak waiting to happen
+
+### What Sellers Can't Prove
+
+Imagine you spent $80,000 on a proper basement renovation: licensed trades, all permits, spray foam insulation, proper drainage. Your neighbour spent $35,000 with a cash contractor and cut every corner.
+
+When you both sell, how do buyers tell the difference? They can't. Both basements look finished. The market treats you the same because the information simply doesn't exist in a verifiable format.
+
+## What Is HouseFax?
+
+HouseFax is a comprehensive, verified record of work done on a property, including:
+
+**Verified Photos** — Time-stamped images of work in progress, showing what's behind the walls before they're closed up.
+
+**Licensed Trade Verification** — Confirmation that electricians, plumbers, and other specialists were properly licensed and insured.
+
+**Material Records** — Documentation of what was actually installed — not just "insulation" but "spray foam, R-20 rating, installed March 2026."
+
+**Permit Documentation** — Records of building permits pulled, inspections passed, and code compliance verified.
+
+**Inspection Reports** — Professional inspection results tied to specific work milestones.
+
+### What Gets Recorded
+
+| Milestone | What's Recorded | Verification |
+|-----------|-----------------|--------------|
+| Pre-Construction | Site photos, existing conditions | Timestamp, GPS |
+| Permits | Building permit numbers, inspection schedules | Municipal records |
+| Rough-In | Behind-wall photos of framing, electrical, plumbing | Licensed trade confirmation |
+| Inspections | Pass/fail results, inspector notes | Municipal inspection records |
+| Materials | Product specs, installation dates, warranties | Contractor submission |
+| Final Completion | Completion photos, final inspection | Multiple verification points |
+
+## Why HouseFax Increases Home Value
+
+### Buyer Confidence Premium
+
+Research consistently shows that buyers pay premiums for certainty. When buyers see a complete HouseFax:
+
+- **Risk Reduction** — Verified records eliminate the fear of hidden problems
+- **Faster Decisions** — Confident buyers make faster offers with fewer conditions
+- **Competitive Differentiation** — In multiple-offer situations, the house with a HouseFax stands out
+
+### Insurance Benefits
+
+A HouseFax can reduce insurance premiums by proving electrical and plumbing systems are up to code, simplify claims with pre-loss documentation, and prevent coverage denials due to unpermitted work.
+
+### Refinancing Advantages
+
+Banks want to verify your home's value when refinancing. A HouseFax provides documentation supporting higher appraisals and proof that renovations were permitted and code-compliant.
+
+## HouseFax vs. Home Inspections
+
+| Feature | Home Inspection | HouseFax |
+|---------|----------------|----------|
+| **Timing** | Single point in time (during sale) | Continuous record built over ownership |
+| **Scope** | Visible conditions only | Behind-wall documentation + visible |
+| **Verification** | Inspector opinion | Licensed trade confirmation + permits |
+| **History** | No historical information | Complete renovation timeline |
+| **Future Value** | Report for one transaction | Permanent record that adds value over time |
+
+Think of HouseFax as the maintenance records and Carfax report, while home inspections are the pre-purchase mechanical check. Both are valuable — they serve different purposes.
+
+## How HouseFax Is Built Through RenoNext
+
+The easiest way to build a HouseFax is automatically through a RenoNext renovation project:
+
+1. **Project Start** — HouseFax record is created and linked to your property address
+2. **Milestone Photos** — Contractors upload verified photos at each project stage
+3. **Trade Verification** — Licensed professional credentials are confirmed and recorded
+4. **Permit Integration** — Building permit data is pulled from municipal systems
+5. **Inspection Records** — Results are added as they occur
+6. **Final Documentation** — Completed project details are sealed and added to the permanent record
+
+The homeowner doesn't need to do anything — the record builds automatically as the project progresses.
+
+## The Transparency Revolution
+
+HouseFax creates a fundamental shift in how renovation quality affects property values:
+
+**Good Work Gets Rewarded** — Homeowners who invest in proper renovations will finally see that investment reflected in sale prices.
+
+**Bad Work Gets Exposed** — Properties with unpermitted work or poor-quality renovations will face pricing pressure.
+
+**Contractor Accountability** — When work becomes part of a permanent record, contractors have stronger incentives to do things right the first time.
+
+If you're planning any renovation in 2026, you're not just improving your home — you're building a permanent record that will add value for decades. That's what HouseFax delivers, and that's why it's the permanent record your home deserves.`,
+    category: 'industry-news',
+    tags: ['housefax', 'property-record', 'renovation-history', 'home-value', 'transparency'],
+    coverImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=400&fit=crop',
+    upvotes: 0,
+    downvotes: 0,
+    commentCount: 0,
+    createdAt: '2026-03-15',
+    updatedAt: '2026-03-15',
+  },
+  {
+    id: 'launch-3',
+    authorId: 'renonext',
+    authorName: 'RenoNext Team',
+    authorAvatar: '/logo-icon.svg',
+    authorHeadline: 'RenoNext — Renovation, Reinvented',
+    title: 'How to Vet a Contractor in Ontario: The Complete 2026 Checklist',
+    slug: 'how-to-vet-contractor-ontario-complete-checklist',
+    excerpt:
+      'Hiring a contractor is one of the biggest financial decisions you\'ll make. Here\'s the step-by-step checklist every Ontario homeowner should follow before signing anything.',
+    content: `# How to Vet a Contractor in Ontario: The Complete 2026 Checklist
+
+Hiring a contractor in Ontario isn't like buying a product online. You're inviting someone into your home, trusting them with tens of thousands of dollars, and depending on their expertise to modify your largest asset correctly and safely.
+
+Get it wrong, and you're facing incomplete work, code violations, legal disputes, or dangerous conditions. Get it right, and you've found a professional partner who'll deliver quality work on time and on budget.
+
+## Step 1: Verify WSIB Clearance
+
+The Workplace Safety and Insurance Board (WSIB) provides injury insurance for workers in Ontario. If a contractor doesn't have WSIB coverage and someone gets hurt on your property, **you could be held financially responsible** for their medical costs and lost wages.
+
+### How to Check
+
+1. Ask for their WSIB clearance certificate (should be recent)
+2. Verify directly with WSIB at 1-800-387-0750 or online
+3. Confirm it covers the specific work they'll be doing
+4. Check the expiration date
+
+**Red Flag:** If a contractor claims they "don't need WSIB" or offers to "work around" requirements, walk away.
+
+## Step 2: Confirm Liability Insurance
+
+General liability insurance protects you if the contractor damages your property or causes injury during the renovation. Minimum coverage: **$2 million**.
+
+### Verification Process
+
+1. Request a Certificate of Insurance from their insurance broker (not the contractor)
+2. Confirm your project address is listed as additional insured
+3. Check coverage dates span your project timeline
+4. Call the insurance company directly to verify the policy is active
+
+## Step 3: Verify Trade Licences
+
+Ontario doesn't have universal contractor licensing, but specific trades require licences:
+
+| Trade | Licensing Body | How to Verify |
+|-------|---------------|---------------|
+| Electrical | ESA (Electrical Safety Authority) | esasafe.com or 1-877-372-7233 |
+| Gas Fitting | TSSA (Technical Standards & Safety Authority) | tssa.org or 1-877-682-8772 |
+| HVAC (refrigerant) | TSSA | tssa.org |
+| General Contractor | Municipal | Your city's licensing department |
+
+### Building Permits
+
+For structural work, additions, or major renovations, building permits are required under the Ontario Building Code. Your contractor should:
+
+- Know when permits are required
+- Handle the permit application process
+- Be familiar with local inspection schedules
+
+**Warning:** If a contractor suggests skipping permits to "save money," that's a dealbreaker. Unpermitted work can make your home uninsurable, create liability during future sales, and result in forced removal plus municipal fines.
+
+## Step 4: Check References and Past Work
+
+Don't just collect phone numbers — actually call them.
+
+### Questions to Ask References
+
+1. "Was the project completed on time and on budget?"
+2. "How did the contractor handle unexpected issues?"
+3. "Would you hire them again?"
+4. "How was communication throughout the project?"
+5. "Were there any warranty issues, and how were they handled?"
+
+### Red Flags
+
+- References seem scripted or overly rehearsed
+- You can't reach references (disconnected numbers)
+- Only relatives or friends provided
+- Contractor refuses to provide references for "privacy reasons"
+
+## Step 5: Review the Written Contract
+
+A professional contractor will provide a detailed written contract. Essential elements:
+
+**Scope of Work** — Detailed description including specific materials, fixtures, and finishes.
+
+**Payment Schedule** — Clear milestones tied to work completion. Never more than 10% deposit upfront.
+
+**Timeline** — Start date, estimated completion date, and process for handling delays.
+
+**Warranty** — What's covered, for how long, and how claims are handled.
+
+**Change Order Process** — How changes to the scope will be priced and approved in writing.
+
+**Permits** — Who obtains them, who pays, and confirmation that required inspections will be completed.
+
+### Contract Red Flags
+
+- Verbal agreement only
+- Large upfront deposits (30%+)
+- Vague descriptions like "renovate kitchen"
+- No payment schedule tied to milestones
+- Pressure to sign immediately
+
+## Step 6: Verify Business Legitimacy
+
+1. **Business Registration** — Search the Ontario business registry
+2. **Business Address** — Verify it's real (not just a P.O. box)
+3. **Online Presence** — Professional website, Google Business profile
+4. **Years in Business** — How long under their current name?
+
+## Step 7: Check for Complaints
+
+**Where to Search:**
+
+- **Better Business Bureau** — Rating and complaint history
+- **Ontario Consumer Protection** — Violations or enforcement actions
+- **Google Reviews** — Look for patterns, not just star ratings
+- **Court Records** — For large projects, consider searching for judgments or liens
+
+Look for **patterns**, not individual complaints. How the contractor responds to negative reviews tells you more than the review itself.
+
+## Step 8: Trust Your Instincts
+
+**Good Signs:**
+- Arrives on time for estimates
+- Listens carefully and asks clarifying questions
+- Provides detailed written estimates without pressure
+- Points out potential issues you hadn't considered
+- Responds to messages within 24 hours
+
+**Red Flags:**
+- Pressure tactics ("this price is only good today")
+- Dismissive of your questions
+- Pushes for cash payments
+- Badmouths previous clients or competitors
+- Can't explain their approach
+
+## Ontario-Specific Considerations
+
+### Construction Act Holdback
+
+Ontario's Construction Act gives contractors, subcontractors, and suppliers the right to place liens on your property if they're not paid. Protect yourself by retaining the statutory 10% holdback for 45–60 days after substantial completion.
+
+### Tarion Warranty
+
+If your renovation involves building new living space (an addition), you may fall under Tarion warranty requirements. Verify whether your contractor is Tarion-registered if this applies.
+
+## The Quick-Reference Checklist
+
+**Documentation:**
+- ☐ WSIB clearance certificate verified
+- ☐ Certificate of insurance received and confirmed
+- ☐ Trade licences verified (ESA, TSSA, municipal)
+- ☐ Business registration confirmed
+- ☐ Written contract reviewed
+- ☐ Building permit plan confirmed
+
+**Due Diligence:**
+- ☐ Three references contacted and checked
+- ☐ Past work viewed (if possible)
+- ☐ BBB, Google reviews checked
+- ☐ Ontario Consumer Protection search done
+- ☐ Business address and phone verified
+
+**Project Planning:**
+- ☐ Detailed scope of work documented
+- ☐ Payment schedule tied to milestones
+- ☐ Timeline with start and completion dates
+- ☐ Warranty terms clearly stated
+- ☐ Change order process defined
+
+## The RenoNext Shortcut
+
+Following this complete checklist takes 10–20 hours of research per contractor. RenoNext pre-verifies all these checkpoints for every pro on the platform:
+
+✓ WSIB clearance verified and current
+✓ Liability insurance confirmed ($2M+ coverage)
+✓ Trade licences verified for specialised work
+✓ Identity verification completed
+✓ Business registration confirmed
+✓ Work quality reviewed through past projects
+
+When you hire through RenoNext, the vetting is already done. You can focus on finding the right fit for your project rather than spending weeks verifying credentials.
+
+Professional contractors expect these questions and welcome the scrutiny. Anyone who's defensive about verification isn't someone you want working on your home.`,
+    category: 'tips',
+    tags: ['contractor-vetting', 'ontario', 'checklist', 'hiring', 'due-diligence', 'wsib', 'insurance'],
+    coverImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=400&fit=crop',
+    upvotes: 0,
+    downvotes: 0,
+    commentCount: 0,
+    createdAt: '2026-03-10',
+    updatedAt: '2026-03-10',
+  },
+  // ── Community contributor articles ───────────────────────────────
   {
     id: 'b1',
     authorId: '1',
