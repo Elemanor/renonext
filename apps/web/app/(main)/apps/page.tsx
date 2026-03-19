@@ -320,6 +320,45 @@ export default function AppsPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
+          FieldForce Featured Banner
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="py-6 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <Link href="/apps/field-force" className="group block">
+            <div className="relative overflow-hidden bg-reno-dark rounded-2xl p-8 md:p-10 border border-white/10 shadow-float hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300">
+              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#E8AA42]/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+              <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
+                <div className="w-14 h-14 rounded-2xl bg-[#E8AA42]/20 flex items-center justify-center flex-shrink-0">
+                  <span
+                    className="material-symbols-outlined text-[#E8AA42] text-2xl"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    engineering
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="font-display text-2xl font-bold text-white group-hover:text-[#E8AA42] transition-colors">
+                      FieldForce
+                    </h3>
+                    <span className="px-2 py-0.5 rounded-full bg-[#E8AA42]/20 text-[#E8AA42] text-[10px] font-bold uppercase tracking-wider">
+                      Mobile
+                    </span>
+                  </div>
+                  <p className="text-gray-400 leading-relaxed max-w-xl">
+                    Field Worker Mobile App — GPS check-in, project briefs, attendance history, and shift management for every crew member.
+                  </p>
+                </div>
+                <span className="material-symbols-outlined text-[#E8AA42] text-2xl group-hover:translate-x-1 transition-transform">
+                  arrow_forward
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
           Section 2 — Homeowner Experience (Bento Grid)
       ═══════════════════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 px-6 bg-[#f6f8f8]">

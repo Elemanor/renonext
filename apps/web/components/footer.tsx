@@ -23,6 +23,7 @@ const footerLinks = {
     { label: 'Obsidian Sentinel', href: '/apps/sentinel' },
     { label: 'The Proof', href: '/apps/the-proof' },
     { label: 'LocalPro', href: '/apps/local-pro' },
+    { label: 'FieldForce', href: '/apps/field-force' },
     { label: 'Apps', href: '/apps' },
     { label: 'Field App', href: '/contractors#field' },
     { label: '24hr Payouts', href: '/contractors#payouts' },
