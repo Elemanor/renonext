@@ -355,6 +355,515 @@ export default function TheProofPage() {
       </section>
 
       {/* ================================================================
+          SECTION 3.5 — INSIDE THE ENGINE
+          Forensic Proof Engine dashboard visual (desktop + mobile)
+          ================================================================ */}
+      <section className="bg-[#102122] py-24 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest">
+                Inside the Engine
+              </span>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
+                Live Data. No Guesswork.
+              </h2>
+              <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
+                The Forensic Proof Engine gives site managers a real-time
+                dashboard of GPS attendance, quantity verification, OCR receipts,
+                and timestamped photo evidence.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="relative">
+              {/* ── Desktop Browser Frame ── */}
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/[0.08]">
+                {/* Browser chrome */}
+                <div className="bg-[#e6e9e7] px-4 py-3 flex items-center gap-3">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                    <div className="w-3 h-3 rounded-full bg-[#28c840]" />
+                  </div>
+                  <div className="flex-1 flex justify-center">
+                    <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-gray-500 font-medium">
+                      proof.renonext.com/dashboard
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dashboard body */}
+                <div className="bg-[#f8faf8] p-5 lg:p-6">
+                  {/* Top header bar */}
+                  <div className="flex justify-between items-center mb-5">
+                    <div>
+                      <h3 className="text-base font-bold text-[#102122] tracking-tight">
+                        The Forensic Proof Engine
+                      </h3>
+                      <p className="text-[11px] text-gray-500">
+                        Live, verifiable data from the job site. No guesswork.
+                      </p>
+                    </div>
+                    <div className="hidden md:flex items-center gap-3">
+                      <div className="bg-[#f2f4f2] rounded-full px-4 py-1.5 flex items-center gap-2">
+                        <span className="material-symbols-outlined text-gray-400 text-sm">
+                          search
+                        </span>
+                        <span className="text-[11px] text-gray-400">
+                          Search evidence logs...
+                        </span>
+                      </div>
+                      <span className="material-symbols-outlined text-gray-400 text-xl">
+                        notifications
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span className="text-[10px] font-bold text-primary">
+                          JM
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bento grid */}
+                  <div className="grid grid-cols-12 gap-4">
+                    {/* ── GPS Site Attendance (8 col) ── */}
+                    <div className="col-span-12 lg:col-span-8 bg-white rounded-xl shadow-sm overflow-hidden">
+                      <div className="p-4 flex justify-between items-center">
+                        <div>
+                          <h4 className="text-sm font-bold text-[#102122]">
+                            GPS Site Attendance
+                          </h4>
+                          <p className="text-[10px] text-gray-500">
+                            Verified geofence entry/exit logs
+                          </p>
+                        </div>
+                        <span className="px-2.5 py-0.5 bg-primary/10 text-primary text-[9px] font-bold rounded-full flex items-center gap-1">
+                          <span
+                            className="material-symbols-outlined text-[10px]"
+                            style={{
+                              fontVariationSettings: "'FILL' 1",
+                            }}
+                          >
+                            check_circle
+                          </span>
+                          LIVE TRACKING
+                        </span>
+                      </div>
+                      <div className="flex min-h-[200px]">
+                        {/* Map placeholder */}
+                        <div className="w-3/5 relative bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 overflow-hidden">
+                          <div
+                            className="absolute inset-0 opacity-10"
+                            style={{
+                              backgroundImage:
+                                'linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)',
+                              backgroundSize: '20px 20px',
+                            }}
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-20 h-20 border-[3px] border-primary/30 bg-primary/10 rounded-full" />
+                            <div className="absolute w-3 h-3 bg-primary border-2 border-white rounded-full shadow-sm" />
+                          </div>
+                          <div className="absolute bottom-3 left-3 bg-white/80 backdrop-blur-sm p-2 rounded text-[9px] font-mono text-[#102122] shadow-sm">
+                            LAT: 41.8781&deg; N
+                            <br />
+                            LON: 87.6298&deg; W
+                          </div>
+                        </div>
+                        {/* Check-in timeline */}
+                        <div className="w-2/5 bg-[#f2f4f2] p-4 space-y-4">
+                          {[
+                            {
+                              name: 'J. Miller (Site Super)',
+                              time: 'Checked In: 07:02 AM',
+                              active: true,
+                            },
+                            {
+                              name: 'D. Vance (Plumbing)',
+                              time: 'Checked In: 07:15 AM',
+                              active: true,
+                            },
+                            {
+                              name: 'K. Thompson',
+                              time: 'Expected: 08:30 AM',
+                              active: false,
+                            },
+                          ].map((entry) => (
+                            <div key={entry.name} className="flex gap-2.5">
+                              <div className="flex flex-col items-center">
+                                <div
+                                  className={`w-1.5 h-1.5 rounded-full mt-1.5 ${
+                                    entry.active
+                                      ? 'bg-primary'
+                                      : 'bg-gray-300'
+                                  }`}
+                                />
+                                <div className="w-px flex-1 bg-gray-200 my-0.5" />
+                              </div>
+                              <div>
+                                <div className="text-[10px] font-bold text-[#102122]">
+                                  {entry.name}
+                                </div>
+                                <div className="text-[9px] text-gray-500">
+                                  {entry.time}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                          <div className="text-center text-[10px] font-bold text-primary pt-1">
+                            View All Logs
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* ── Quantity Match (4 col) ── */}
+                    <div className="col-span-12 lg:col-span-4 bg-[#e6e9e7] rounded-xl p-5 flex flex-col justify-between">
+                      <div>
+                        <h4 className="text-sm font-bold text-[#102122] mb-0.5">
+                          Quantity Match
+                        </h4>
+                        <p className="text-[10px] text-gray-500">
+                          Design vs. Field Installation
+                        </p>
+                      </div>
+                      <div className="flex flex-col items-center py-3">
+                        <div className="relative w-24 h-24">
+                          <svg
+                            className="w-full h-full -rotate-90"
+                            viewBox="0 0 160 160"
+                          >
+                            <circle
+                              cx="80"
+                              cy="80"
+                              r="66"
+                              fill="transparent"
+                              stroke="#d1d5db"
+                              strokeWidth="10"
+                            />
+                            <circle
+                              cx="80"
+                              cy="80"
+                              r="66"
+                              fill="transparent"
+                              stroke="#0fbabd"
+                              strokeWidth="10"
+                              strokeDasharray="415"
+                              strokeDashoffset="0"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                          <div className="absolute inset-0 flex flex-col items-center justify-center">
+                            <span className="text-xl font-black text-primary tracking-tighter">
+                              100%
+                            </span>
+                            <span className="text-[7px] font-bold text-gray-500 uppercase tracking-widest">
+                              Match
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-white/50 p-2.5 rounded-lg">
+                          <div className="text-[8px] text-gray-500 font-bold uppercase">
+                            Target
+                          </div>
+                          <div className="text-sm font-bold text-primary">
+                            1,240
+                          </div>
+                        </div>
+                        <div className="bg-white/50 p-2.5 rounded-lg">
+                          <div className="text-[8px] text-gray-500 font-bold uppercase">
+                            Verified
+                          </div>
+                          <div className="text-sm font-bold text-primary">
+                            1,240
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-3 flex items-center justify-center gap-1.5 text-primary text-[10px] font-bold bg-primary/10 py-2 rounded-lg">
+                        <span
+                          className="material-symbols-outlined text-xs"
+                          style={{ fontVariationSettings: "'FILL' 1" }}
+                        >
+                          verified
+                        </span>
+                        ENGINE VERIFIED
+                      </div>
+                    </div>
+
+                    {/* ── Material Receipt OCR (4 col) ── */}
+                    <div className="col-span-12 lg:col-span-4 bg-white rounded-xl shadow-sm overflow-hidden">
+                      <div className="p-4 border-b border-gray-100">
+                        <h4 className="text-sm font-bold text-[#102122]">
+                          Material Receipt OCR
+                        </h4>
+                        <p className="text-[10px] text-gray-500">
+                          Automated validation from scan
+                        </p>
+                      </div>
+                      <div className="p-4">
+                        {/* Receipt skeleton with OCR highlight */}
+                        <div className="relative bg-gray-50 rounded-lg p-3.5 border border-gray-100 min-h-[100px]">
+                          <div className="space-y-2 opacity-40">
+                            <div className="h-3 w-2/3 bg-gray-200 rounded" />
+                            <div className="h-2 w-1/2 bg-gray-100 rounded" />
+                            <div className="h-px w-full bg-gray-100" />
+                            <div className="flex justify-between">
+                              <div className="h-2.5 w-1/3 bg-gray-200 rounded" />
+                              <div className="h-2.5 w-5 bg-primary/30 rounded" />
+                            </div>
+                            <div className="flex justify-between">
+                              <div className="h-2.5 w-1/2 bg-gray-200 rounded" />
+                              <div className="h-2.5 w-7 bg-primary/30 rounded" />
+                            </div>
+                            <div className="h-px w-full bg-gray-100" />
+                          </div>
+                          {/* OCR validated line */}
+                          <div className="absolute top-1/2 -translate-y-1/2 left-2.5 right-2.5 h-5 bg-primary/10 border-y border-primary/30 flex items-center px-2">
+                            <span className="text-[8px] font-mono text-primary font-bold">
+                              TOTAL: $4,520.12 &mdash; VALIDATED
+                            </span>
+                          </div>
+                        </div>
+                        <div className="mt-3 space-y-1">
+                          <div className="flex justify-between text-[10px]">
+                            <span className="text-gray-500">Vendor</span>
+                            <span className="font-bold text-[#102122]">
+                              Build-Right Supply Co.
+                            </span>
+                          </div>
+                          <div className="flex justify-between text-[10px]">
+                            <span className="text-gray-500">
+                              Match Confidence
+                            </span>
+                            <span className="font-bold text-primary">
+                              99.8%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* ── Timestamped Photo Logs (8 col) ── */}
+                    <div className="col-span-12 lg:col-span-8 bg-white rounded-xl shadow-sm overflow-hidden">
+                      <div className="p-4 flex justify-between items-center">
+                        <div>
+                          <h4 className="text-sm font-bold text-[#102122]">
+                            Timestamped Photo Logs
+                          </h4>
+                          <p className="text-[10px] text-gray-500">
+                            Forensic visual evidence archive
+                          </p>
+                        </div>
+                        <div className="flex gap-1.5">
+                          <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
+                            <span className="material-symbols-outlined text-gray-400 text-xs">
+                              chevron_left
+                            </span>
+                          </div>
+                          <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
+                            <span className="material-symbols-outlined text-gray-400 text-xs">
+                              chevron_right
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="px-4 pb-4 flex gap-3">
+                        {[
+                          {
+                            label: 'Foundation Slab 04',
+                            time: '14:20:05 UTC',
+                            icon: 'foundation',
+                          },
+                          {
+                            label: 'Electrical Riser A',
+                            time: '15:45:12 UTC',
+                            icon: 'electrical_services',
+                          },
+                          {
+                            label: 'Rebar Inspection',
+                            time: '16:10:33 UTC',
+                            icon: 'straighten',
+                          },
+                        ].map((photo) => (
+                          <div
+                            key={photo.label}
+                            className="w-1/3 relative rounded-lg overflow-hidden"
+                          >
+                            <div className="h-28 bg-gradient-to-br from-gray-300 via-gray-200 to-gray-300 flex items-center justify-center">
+                              <span className="material-symbols-outlined text-white/40 text-3xl">
+                                {photo.icon}
+                              </span>
+                            </div>
+                            <div className="absolute top-1.5 right-1.5 bg-white/80 backdrop-blur-sm px-1.5 py-0.5 rounded text-[8px] font-bold text-primary">
+                              {photo.time}
+                            </div>
+                            <div className="absolute bottom-0 inset-x-0 p-2 bg-gradient-to-t from-black/70 to-transparent">
+                              <span className="text-[9px] font-bold text-white">
+                                {photo.label}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Status footer */}
+                  <div className="mt-4 flex justify-between items-center py-2 border-t border-gray-200">
+                    <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                        <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest">
+                          Engine Status: Optimal
+                        </span>
+                      </div>
+                      <div className="hidden md:block h-3 w-px bg-gray-200" />
+                      <span className="hidden md:block text-[9px] text-gray-400">
+                        Last Audit: 2 minutes ago
+                      </span>
+                    </div>
+                    <div className="bg-gray-100 px-3 py-1 rounded text-[9px] font-bold text-gray-500">
+                      Generate Report
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* ── Mobile Phone Overlay (desktop only) ── */}
+              <div className="hidden lg:block absolute -bottom-16 -right-2 xl:right-6 z-10">
+                <div className="w-56 bg-zinc-900 rounded-[2.5rem] p-2 shadow-2xl border-[6px] border-zinc-800">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-4 bg-zinc-800 rounded-b-xl" />
+                  <div className="h-[380px] rounded-[2rem] overflow-hidden bg-[#f8faf8] flex flex-col">
+                    {/* Mobile header */}
+                    <div className="px-3.5 pt-6 pb-1.5 flex justify-between items-center">
+                      <span className="text-[11px] font-bold text-[#102122] tracking-tight">
+                        Proof Engine
+                      </span>
+                      <span className="material-symbols-outlined text-gray-400 text-sm">
+                        notifications
+                      </span>
+                    </div>
+
+                    {/* Session info */}
+                    <div className="px-3.5 py-1.5">
+                      <div className="flex items-center gap-1">
+                        <span className="text-[7px] font-bold text-primary uppercase tracking-widest">
+                          Live Session
+                        </span>
+                        <div className="w-1 h-1 rounded-full bg-primary" />
+                      </div>
+                      <h3 className="text-base font-black text-[#102122] tracking-tighter leading-tight">
+                        Project Alpha
+                      </h3>
+                      <p className="text-[8px] text-gray-500">
+                        Site 402-B &bull; 12 Oct 2024
+                      </p>
+                    </div>
+
+                    {/* Quantity Match card */}
+                    <div className="mx-3.5 mt-1.5 bg-[#e6e9e7] rounded-lg p-3">
+                      <p className="text-[7px] font-bold text-gray-500 uppercase tracking-widest mb-1.5">
+                        Quantity Match
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="relative w-12 h-12">
+                          <svg className="w-full h-full" viewBox="0 0 36 36">
+                            <circle
+                              cx="18"
+                              cy="18"
+                              r="15"
+                              fill="transparent"
+                              stroke="#d1d5db"
+                              strokeWidth="2.5"
+                            />
+                            <circle
+                              cx="18"
+                              cy="18"
+                              r="15"
+                              fill="transparent"
+                              stroke="#0fbabd"
+                              strokeWidth="2.5"
+                              strokeDasharray="89, 95"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-[9px] font-black tracking-tighter">
+                              94%
+                            </span>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-base font-black text-primary tracking-tighter">
+                            4,280
+                          </div>
+                          <p className="text-[7px] text-gray-500">
+                            Units Verified
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* GPS card */}
+                    <div className="mx-3.5 mt-2 bg-[#f2f4f2] rounded-lg p-3 flex items-center gap-2.5">
+                      <div className="w-7 h-7 rounded bg-[#e6e9e7] flex items-center justify-center flex-shrink-0">
+                        <span className="material-symbols-outlined text-primary text-sm">
+                          location_on
+                        </span>
+                      </div>
+                      <div>
+                        <h4 className="text-[10px] font-bold text-[#102122]">
+                          Geofence: Active
+                        </h4>
+                        <p className="text-[8px] text-gray-500">
+                          42 Personnel on site
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Map area */}
+                    <div className="mx-3.5 mt-2 flex-1 rounded-lg overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 relative">
+                      <div className="absolute bottom-1.5 left-2 flex items-center gap-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary ring-2 ring-primary/20" />
+                        <span className="text-[7px] font-bold text-[#102122]">
+                          &plusmn; 2.4m
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Bottom nav tabs */}
+                    <div className="flex justify-around items-center px-1 py-2.5 mt-auto border-t border-gray-100">
+                      {['dashboard', 'location_on', 'receipt_long', 'photo_camera', 'fact_check'].map(
+                        (icon, idx) => (
+                          <span
+                            key={icon}
+                            className={`material-symbols-outlined text-sm ${
+                              idx === 0 ? 'text-primary' : 'text-gray-400'
+                            }`}
+                            style={
+                              idx === 0
+                                ? { fontVariationSettings: "'FILL' 1" }
+                                : undefined
+                            }
+                          >
+                            {icon}
+                          </span>
+                        ),
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ================================================================
           SECTION 4 — PROOF ARCHIVE
           Recent verifications as receipt-style cards
           ================================================================ */}
