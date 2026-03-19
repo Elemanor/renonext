@@ -24,6 +24,7 @@ const footerLinks = {
     { label: 'The Proof', href: '/apps/the-proof' },
     { label: 'LocalPro', href: '/apps/local-pro' },
     { label: 'FieldForce', href: '/apps/field-force' },
+    { label: 'Precision Layer', href: '/apps/precision-layer' },
     { label: 'Apps', href: '/apps' },
     { label: 'Field App', href: '/contractors#field' },
     { label: '24hr Payouts', href: '/contractors#payouts' },

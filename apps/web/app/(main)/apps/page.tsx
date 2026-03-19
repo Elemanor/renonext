@@ -359,6 +359,51 @@ export default function AppsPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
+          Precision Layer Featured Banner
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="py-6 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <Link href="/apps/precision-layer" className="group block">
+            <div className="relative overflow-hidden bg-white rounded-2xl p-8 md:p-10 border border-[#E8AA42]/15 shadow-float hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300">
+              <div
+                className="absolute inset-0 pointer-events-none opacity-[0.04]"
+                style={{
+                  backgroundImage: 'linear-gradient(rgba(232,170,66,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(232,170,66,.3) 1px, transparent 1px)',
+                  backgroundSize: '32px 32px',
+                }}
+              />
+              <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
+                <div className="w-14 h-14 rounded-2xl bg-[#E8AA42]/10 flex items-center justify-center flex-shrink-0">
+                  <span
+                    className="material-symbols-outlined text-[#E8AA42] text-2xl"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    architecture
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="font-display text-2xl font-bold text-reno-dark group-hover:text-[#E8AA42] transition-colors">
+                      Precision Layer
+                    </h3>
+                    <span className="px-2 py-0.5 rounded-full bg-[#E8AA42]/10 text-[#E8AA42] text-[10px] font-bold uppercase tracking-wider">
+                      Drawings
+                    </span>
+                  </div>
+                  <p className="text-gray-500 leading-relaxed max-w-xl">
+                    Blueprint Drawing Reader — pixel-perfect rendering, real-time markup tools, layer toggles, and project management for construction teams.
+                  </p>
+                </div>
+                <span className="material-symbols-outlined text-[#E8AA42] text-2xl group-hover:translate-x-1 transition-transform">
+                  arrow_forward
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
           Section 2 — Homeowner Experience (Bento Grid)
       ═══════════════════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 px-6 bg-[#f6f8f8]">
