@@ -54,6 +54,7 @@ export interface AuditResult {
   summary: {
     totalPages: number;
     critical: number;
+    byType: Record<string, number>;
     warning: number;
     info: number;
   };
@@ -445,6 +446,12 @@ export function runAudit(options: { offset?: number; limit?: number } = {}): Aud
   const warning = allIssues.filter((i) => i.severity === 'warning').length;
   const info = allIssues.filter((i) => i.severity === 'info').length;
 
+  // Count by issue type
+  const byType: Record<string, number> = {};
+  for (const issue of allIssues) {
+    byType[issue.issueType] = (byType[issue.issueType] || 0) + 1;
+  }
+
   return {
     issues: allIssues.slice(offset, offset + limit),
     total: allIssues.length,
@@ -453,6 +460,7 @@ export function runAudit(options: { offset?: number; limit?: number } = {}): Aud
     summary: {
       totalPages: pages.length,
       critical,
+      byType,
       warning,
       info,
     },
