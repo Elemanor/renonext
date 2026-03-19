@@ -20,6 +20,7 @@ const footerLinks = {
     { label: 'Why RenoNext', href: '/contractors' },
     { label: 'Apply for Network', href: '/join' },
     { label: 'Pro Dashboard', href: '/pro-dashboard' },
+    { label: 'Obsidian Sentinel', href: '/apps/sentinel' },
     { label: 'Apps', href: '/apps' },
     { label: 'Field App', href: '/contractors#field' },
     { label: '24hr Payouts', href: '/contractors#payouts' },
@@ -76,13 +77,13 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-reno-dark">
+    <footer className="relative overflow-hidden bg-[#102122]">
       <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-7">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="mb-6 inline-block">
-              <span className="font-display text-2xl text-white">RenoNext</span>
+              <span className="font-body text-2xl text-white">RenoNext</span>
             </Link>
             <p className="mb-8 max-w-xs text-sm leading-relaxed text-gray-400">
               Bank-held escrow. GPS-verified proof. Fair market pricing.
@@ -108,13 +109,13 @@ export function Footer() {
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Your email"
                         disabled={isSubmitting}
-                        className="w-full rounded-lg border border-gray-800 bg-gray-900 py-2.5 pl-10 pr-4 text-sm text-gray-200 placeholder-gray-600 outline-none transition-all focus:border-reno-green focus:ring-1 focus:ring-reno-green/30 disabled:opacity-50"
+                        className="w-full rounded-lg border border-gray-800 bg-gray-900 py-2.5 pl-10 pr-4 text-sm text-gray-200 placeholder-gray-600 outline-none transition-all focus:border-[#0fbabd] focus:ring-1 focus:ring-[#0fbabd]/30 disabled:opacity-50"
                       />
                     </div>
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="flex items-center justify-center rounded-lg bg-reno-green px-4 text-white transition-colors hover:bg-reno-green-dark disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex items-center justify-center rounded-lg bg-[#0fbabd] px-4 text-white transition-colors hover:bg-[#0fbabd]-dark disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
                         <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
@@ -157,15 +158,15 @@ export function Footer() {
         <div className="mt-16 border-t border-gray-800/60 pt-8">
           <div className="mb-6 flex flex-wrap items-center justify-center gap-6">
             <div className="flex items-center gap-1.5 text-xs text-gray-500">
-              <CreditCard className="h-3.5 w-3.5 text-reno-green" />
+              <CreditCard className="h-3.5 w-3.5 text-[#0fbabd]" />
               <span>Secure Payments</span>
             </div>
             <div className="flex items-center gap-1.5 text-xs text-gray-500">
-              <Lock className="h-3.5 w-3.5 text-reno-teal" />
+              <Lock className="h-3.5 w-3.5 text-[#0D9FA1]" />
               <span>Bank-Held Escrow</span>
             </div>
             <div className="flex items-center gap-1.5 text-xs text-gray-500">
-              <Shield className="h-3.5 w-3.5 text-reno-purple" />
+              <Shield className="h-3.5 w-3.5 text-[#0fbabd]" />
               <span>Licensed & Insured</span>
             </div>
             <div className="flex items-center gap-1.5 text-xs text-gray-500">
