@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { LayoutDashboard, CalendarDays, Wallet, MessageSquare, Settings } from 'lucide-react';
+import { LayoutDashboard, CalendarDays, Wallet, MessageSquare, Bot } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const tabs = [
@@ -11,7 +11,7 @@ const tabs = [
   { icon: CalendarDays, label: 'Schedule', href: '/dashboard/my-project' },
   { icon: Wallet, label: 'Escrow', href: '/dashboard/wallet' },
   { icon: MessageSquare, label: 'Messages', href: '/dashboard/messages', badge: 2 },
-  { icon: Settings, label: 'Settings', href: '/dashboard/settings' },
+  { icon: Bot, label: 'AI', href: '/dashboard/assistant' },
 ];
 
 export function BottomTabBar() {

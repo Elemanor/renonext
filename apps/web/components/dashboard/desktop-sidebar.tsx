@@ -11,6 +11,7 @@ import {
   MessageSquare,
   Settings,
   LogOut,
+  Bot,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -21,6 +22,7 @@ const navLinks = [
   { icon: Wallet, label: 'Escrow', href: '/dashboard/wallet' },
   { icon: Users, label: 'Team', href: '/dashboard/site' },
   { icon: MessageSquare, label: 'Messages', href: '/dashboard/messages' },
+  { icon: Bot, label: 'AI Assistant', href: '/dashboard/assistant' },
   { icon: Settings, label: 'Settings', href: '/dashboard/settings' },
 ];
 

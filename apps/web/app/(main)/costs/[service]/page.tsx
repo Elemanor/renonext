@@ -373,10 +373,11 @@ export default async function ServiceCostPage({ params }: ServiceCostPageProps) 
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/pros"
+              href="/contracts"
               className="flex items-center gap-2 rounded-lg border border-gray-700 px-6 py-3 text-sm font-semibold text-gray-300 transition-colors hover:border-gray-500 hover:text-white"
             >
-              Browse Pros
+              <FileText className="h-4 w-4" />
+              Generate a Contract
             </Link>
           </div>
         </section>

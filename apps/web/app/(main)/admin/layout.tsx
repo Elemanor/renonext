@@ -8,6 +8,7 @@ import {
   Tag,
   Settings,
   HardHat,
+  Search,
 } from 'lucide-react';
 import { DashboardSidebar } from '@/components/dashboard-sidebar';
 
@@ -18,6 +19,7 @@ const adminLinks = [
   { icon: Briefcase, label: 'Jobs', href: '/admin/jobs' },
   { icon: AlertTriangle, label: 'Reports', href: '/admin/reports' },
   { icon: Tag, label: 'Categories', href: '/admin/categories' },
+  { icon: Search, label: 'SEO', href: '/admin/seo' },
   { icon: Settings, label: 'Settings', href: '/admin/settings' },
 ];
 

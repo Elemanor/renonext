@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { DM_Sans, Instrument_Serif } from 'next/font/google';
+import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Providers } from '@/components/providers';
@@ -70,6 +71,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-50R3L19GZV"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-50R3L19GZV');
+          `}
+        </Script>
+      </head>
       <body className="min-h-screen bg-white font-body antialiased">
         <Providers>
           {children}

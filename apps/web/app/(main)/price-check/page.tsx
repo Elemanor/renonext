@@ -369,6 +369,13 @@ export default function PriceCheckPage() {
               >
                 Get a certified QS review — $250
               </a>
+              {/* Contract CTA */}
+              <a
+                href="/contracts"
+                className="block w-full bg-white hover:bg-reno-teal/5 border-2 border-reno-teal text-reno-teal font-semibold py-4 px-6 rounded-lg transition-colors text-center"
+              >
+                Generate a free contract for this project
+              </a>
               {/* Capture CTA */}
               <button
                 onClick={handleDownloadPDF}

@@ -1,4 +1,4 @@
-import { HeroAnimated } from '@/components/landing/hero-animated';
+import { HeroFloating } from '@/components/landing/hero-floating';
 import { PainPoints } from '@/components/landing/pain-points';
 
 import { VaultSection } from '@/components/landing/vault-section';
@@ -11,7 +11,7 @@ import { FinalCtaAnimated } from '@/components/landing/final-cta-animated';
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      <HeroAnimated />
+      <HeroFloating />
       <PainPoints />
       <VaultSection />
       <HouseFaxKicker />

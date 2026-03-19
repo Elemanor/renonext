@@ -25,6 +25,7 @@ import {
   Gift,
   DollarSign,
   Smartphone,
+  FileText,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -96,6 +97,7 @@ const serviceGroups = [
 const resourceItems = [
   { icon: Smartphone, label: 'Apps', desc: '5 field + office apps for your crew.', href: '/apps' },
   { icon: DollarSign, label: 'Cost Guides', desc: '25 trades, 15 cities, real pricing.', href: '/costs' },
+  { icon: FileText, label: 'Contract Generator', desc: 'Free Ontario-compliant contracts.', href: '/contracts' },
   { icon: Gift, label: 'Savings Calculator', desc: 'See all rebates for your city.', href: '/savings' },
   { icon: BookOpen, label: 'Blog', desc: 'Guides, market data, case studies.', href: '/blog' },
   { icon: HelpCircle, label: 'Help Centre', desc: 'FAQ by role. How-to guides.', href: '/help' },

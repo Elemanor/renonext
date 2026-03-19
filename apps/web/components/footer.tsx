@@ -10,6 +10,7 @@ const footerLinks = {
     { label: 'The Vault (Escrow)', href: '/how-it-works#vault' },
     { label: 'HouseFax\u2122', href: '/house-fax' },
     { label: 'Cost Guides', href: '/costs' },
+    { label: 'Contract Generator', href: '/contracts' },
     { label: 'Rebates & Savings', href: '/savings' },
     { label: 'Get a Price Check', href: '/price-check' },
     { label: 'Browse Pros', href: '/pros' },
