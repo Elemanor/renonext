@@ -54,7 +54,10 @@ export async function generateMetadata({ params }: ServiceCostPageProps): Promis
       const full = `${svc.title} Cost Ontario | ${rangeStr}`;
       return full.length <= 60 ? full : `${svc.title} Cost Ontario | Pricing`;
     })(),
-    description: `How much does ${svc.title.toLowerCase()} cost in Ontario? Prices range from ${rangeStr}. See scope breakdowns, labour vs material split, city-by-city pricing, and tips to save.`,
+    description: (() => {
+      const full = `How much does ${svc.title.toLowerCase()} cost in Ontario? Prices range from ${rangeStr}. See scope breakdowns, labour vs material split, city-by-city pricing, and tips to save.`;
+      return full.length <= 160 ? full : `${svc.title} cost in Ontario: ${rangeStr}. Scope breakdowns, labour/material split, city pricing, and savings tips.`;
+    })(),
     alternates: {
       canonical: `https://renonext.com/costs/${service}`,
     },
