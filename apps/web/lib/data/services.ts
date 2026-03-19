@@ -71,8 +71,8 @@ export const services: ServicePageContent[] = [
   slug: 'underpinning',
   title: 'Underpinning',
   categorySlug: 'underpinning',
-  metaTitle: 'Underpinning in Ontario | Bench Method & Helical Piles | OBC Part 9',
-  metaDescription: 'Bench underpinning for basement lowering and foundation stabilization. Toronto clay bearing capacity 75-100 kPa, 25-32 MPa concrete, #15M rebar. OBC Part 9.15 frost depth compliance.',
+  metaTitle: 'Underpinning Ontario | Bench Method & Helical Piles',
+  metaDescription: 'Expert underpinning for basement lowering in Ontario. OBC-compliant foundation work. Get reliable quotes from licensed contractors.',
   heroTagline: 'Dig under your existing foundation to add basement height or fix settlement. Do it right with alternating 4-ft pins and 7-day cures — dig adjacent sections too soon and you redistribute load paths into failure.',
   overview: {
     summary: 'Underpinning extends or reinforces existing foundations by excavating beneath them in controlled sections, pouring new footings at a lower depth, and tying the old foundation to the new. Used to add basement height (lowering the floor) or stabilize settling foundations.',
@@ -261,8 +261,8 @@ export const services: ServicePageContent[] = [
   slug: 'waterproofing',
   title: 'Waterproofing',
   categorySlug: 'waterproofing',
-  metaTitle: 'Basement Waterproofing Ontario | Exterior Membrane & Weeping Tile | Hydrostatic Pressure',
-  metaDescription: 'Exterior waterproofing with rubberized membrane, weeping tile, and sump pump systems. Stop hydrostatic pressure (0.43 PSI/ft), efflorescence, and foundation water intrusion.',
+  metaTitle: 'Basement Waterproofing Ontario | Exterior & Interior',
+  metaDescription: 'Stop basement flooding in Ontario. Exterior waterproofing, weeping tile, sump pumps. Protect your foundation today.',
   heroTagline: 'Water finds every crack, every porous seam, every failed joint. Hydrostatic pressure is 0.43 PSI per foot of depth — your basement floor sees 3-4 PSI pushing water through concrete. Dampproofing tar won\'t stop it. Rubberized membranes will.',
   overview: {
     summary: 'Waterproofing prevents water from penetrating foundation walls and basement floors by installing exterior drainage (weeping tile), applying waterproof membranes, and managing groundwater with sump pumps. It addresses hydrostatic pressure, surface runoff, and soil moisture.',
@@ -472,8 +472,8 @@ export const services: ServicePageContent[] = [
   slug: 'foundation-repair',
   title: 'Foundation Repair',
   categorySlug: 'foundation-repair',
-  metaTitle: 'Foundation Repair Ontario | Crack Injection, Carbon Fiber, Helical Piers | OBC Compliance',
-  metaDescription: 'Foundation crack repair with epoxy (7,000 PSI bond) and polyurethane injection. Carbon fiber for bowing walls (150,000 PSI tensile). Helical piers for settlement. OBC Part 9 standards.',
+  metaTitle: 'Foundation Repair Ontario | Cracks & Structural',
+  metaDescription: 'Fix foundation cracks, bowing walls, and settlement in Ontario. Epoxy injection, carbon fiber, helical piers. OBC-compliant repairs.',
   heroTagline: 'Foundation cracks tell a story: vertical = settlement, horizontal = lateral earth pressure, stair-step = differential movement. Read the crack wrong and you fix the symptom, not the cause. Get it right and the repair lasts decades.',
   overview: {
     summary: 'Foundation repair addresses structural damage to concrete or masonry foundations — cracks, bowing walls, settlement, and deterioration. Methods include crack injection (epoxy or polyurethane), carbon fiber reinforcement, wall anchors, helical piers, and parging.',
@@ -679,8 +679,8 @@ export const services: ServicePageContent[] = [
   slug: 'concrete-works',
   title: 'Concrete Works',
   categorySlug: 'concrete-masonry',
-  metaTitle: 'Concrete Works Ontario | Driveways, Foundations, Slabs | 28-Day Cure, Air Entrainment',
-  metaDescription: 'Residential concrete: driveways, walkways, basement slabs, footings. Water-cement ratio 0.45-0.50, 4-7% air entrainment, 28-day strength curve. OBC Part 9 compliance.',
+  metaTitle: 'Concrete Works Ontario | Driveways & Foundations',
+  metaDescription: 'Quality concrete work in Ontario: driveways, slabs, foundations. OBC-compliant mix design and installation. Get trusted quotes.',
   heroTagline: 'Concrete chemistry is simple: water + cement + aggregate + time = strength. But the ratio is everything. Too much water and your driveway cracks in 3 years. Too little and it won\'t pour. The difference between 0.45 and 0.60 water-cement ratio is 30% strength loss.',
   overview: {
     summary: 'Concrete works include pouring driveways, walkways, patios, basement slabs, foundation walls, footings, and retaining walls. Quality depends on mix design, placement technique, curing, and joint placement.',
@@ -895,8 +895,8 @@ export const services: ServicePageContent[] = [
   slug: 'masonry',
   title: 'Masonry',
   categorySlug: 'concrete-masonry',
-  metaTitle: 'Masonry Ontario | Brick, Block, Stone, Tuckpointing | Mortar Types M/S/N, Freeze-Thaw',
-  metaDescription: 'Brick, block, and stone masonry. Mortar types M/S/N/O for different applications. Tuckpointing depth 2.5x joint width. Freeze-thaw durability, efflorescence control, heritage repair.',
+  metaTitle: 'Masonry Ontario | Brick, Block & Stone | RenoNext',
+  metaDescription: 'Expert brick, block, and stone masonry in Ontario. Tuckpointing, heritage repair, new construction. Freeze-thaw durable work.',
   heroTagline: 'Mortar is the weak link by design — it\'s softer than brick so it sacrifices itself to freeze-thaw damage instead of the brick. Use Type N mortar (soft) on heritage homes; Type M (hard Portland cement) on modern brick, and you\'ll crack the brick within 10 years.',
   overview: {
     summary: 'Masonry includes brick, block, and stone work — structural walls, veneer, chimneys, retaining walls, and decorative features. Quality depends on mortar selection, joint tooling, brick grade, and proper drainage.',
@@ -1121,8 +1121,8 @@ export const services: ServicePageContent[] = [
   slug: 'electrical',
   title: 'Electrical',
   categorySlug: 'electrical',
-  metaTitle: 'Electrical Services Ontario | ESA-Licensed Electricians | RenoNext',
-  metaDescription: 'ESA-licensed electrical work in Ontario. Panel upgrades, rewiring, AFCI/GFCI protection. We explain wire gauges, why Federal Pacific panels fail, and what permits you need.',
+  metaTitle: 'Electrical Services Ontario | ESA Licensed | RenoNext',
+  metaDescription: 'ESA-licensed electricians in Ontario. Panel upgrades, rewiring, AFCI/GFCI. Safe, code-compliant work. Get trusted quotes today.',
   heroTagline: 'Wire gauges matter — 14 AWG carries 15A, 12 carries 20A, and undersized wire starts fires. ESA-licensed electricians get it right.',
   overview: {
     summary: 'Electrical work in Ontario requires ESA (Electrical Safety Authority) permits and licensed electricians (442A or 309A ticket). From service upgrades to new circuits, outlets to panel replacements — electrical systems follow physics: too much current through too-small wire generates heat. Heat starts fires.',
@@ -1688,8 +1688,8 @@ export const services: ServicePageContent[] = [
   slug: 'hvac',
   title: 'HVAC',
   categorySlug: 'hvac',
-  metaTitle: 'HVAC Services Ontario | Furnace, AC, Heat Pump Installation | RenoNext',
-  metaDescription: 'HVAC installation and repair in Ontario. We explain Manual J load calculations, AFUE vs SEER, heat pump COP, why cracked heat exchangers kill, and proper ductwork sizing.',
+  metaTitle: 'HVAC Services Ontario | Furnace & AC | RenoNext',
+  metaDescription: 'HVAC installation and repair in Ontario. Furnaces, AC, heat pumps. Right-sized equipment, proper installation. Get quotes now.',
   heroTagline: 'Oversized furnaces short-cycle and waste energy — Manual J load calculations size equipment right, not "rule-of-thumb" guesses.',
   overview: {
     summary: 'HVAC (Heating, Ventilation, Air Conditioning) systems control indoor temperature, humidity, and air quality. Three components must work together: heating (furnace, boiler, heat pump), cooling (air conditioner, heat pump), and distribution (ductwork, vents). Proper sizing matters — oversized equipment short-cycles (wastes energy, wears faster), undersized equipment runs constantly and never reaches setpoint.',
@@ -1899,7 +1899,7 @@ export const services: ServicePageContent[] = [
   slug: 'insulation',
   title: 'Insulation',
   categorySlug: 'insulation',
-  metaTitle: 'Insulation Services Ontario | Spray Foam, Batt, Blown-In | RenoNext',
+  metaTitle: 'Insulation Ontario | Spray Foam & Batt | RenoNext',
   metaDescription: 'Insulation upgrades in Ontario. We explain R-value vs U-value, thermal bridging, spray foam types, vapor barrier placement, stack effect, and why ice dams form.',
   heroTagline: 'Thermal bridging through studs drops R-20 batt insulation to R-14 effective — continuous exterior insulation eliminates the weak link.',
   overview: {
@@ -2095,7 +2095,7 @@ export const services: ServicePageContent[] = [
   slug: 'basement-second-unit',
   title: 'Basement Second Unit',
   categorySlug: 'basement-second-unit',
-  metaTitle: 'Basement Second Unit Conversion | Ontario Building Code Compliant | RenoNext',
+  metaTitle: 'Basement Second Unit Ontario | OBC Compliant | RenoNext',
   metaDescription: 'Legal basement apartment conversion in Ontario. OBC 9.36.2 fire separation, egress windows, separate services. Bill 23 compliant. $75,000-$125,000.',
   heroTagline: 'A legal second unit isn\'t just drywall and paint — it\'s fire separation assemblies, egress windows, and life safety systems. The unpermitted basement apartment is a fire trap.',
   overview: {
@@ -2229,7 +2229,7 @@ export const services: ServicePageContent[] = [
   slug: 'demolition',
   title: 'Demolition & Selective Demo',
   categorySlug: 'demolition',
-  metaTitle: 'Demolition Services Ontario | Asbestos, Load-Bearing Walls, Structural Demo | RenoNext',
+  metaTitle: 'Demolition Services Ontario | Structural | RenoNext',
   metaDescription: 'Safe demolition and selective demo in Ontario. Asbestos abatement, load-bearing wall removal, structural shoring. O.Reg 278/05 compliant. $3,000-$25,000.',
   heroTagline: 'Demolition is reverse engineering — you can\'t un-remove a load-bearing wall. The floor sags slowly over 6 months, not immediately, so you don\'t realize the mistake until the damage is done.',
   overview: {
@@ -2356,7 +2356,7 @@ export const services: ServicePageContent[] = [
   slug: 'additions',
   title: 'Home Additions',
   categorySlug: 'additions',
-  metaTitle: 'Home Additions Ontario | Second Storey, Rear, Side Extensions | RenoNext',
+  metaTitle: 'Home Additions Ontario | Second Storey | RenoNext',
   metaDescription: 'Home additions in Ontario: foundations, structural integration, roof tie-ins, zoning setbacks, OBC Part 9 compliance. $200-$400 per sq ft.',
   heroTagline: 'An addition is a new building attached to an old one — and the junction where they meet is where everything goes wrong. Differential settlement, thermal bridging, and roof valleys that leak.',
   overview: {
@@ -2509,7 +2509,7 @@ export const services: ServicePageContent[] = [
   slug: 'roofing',
   title: 'Roofing',
   categorySlug: 'roofing',
-  metaTitle: 'Roofing Services Ontario | Asphalt Shingles, Ice Dams, Flashing | RenoNext',
+  metaTitle: 'Roofing Services Ontario | Shingles | RenoNext',
   metaDescription: 'Residential roofing in Ontario: asphalt shingles, underlayment, flashing, ventilation, ice dam prevention. OBC compliant. $4,000-$15,000.',
   heroTagline: 'Shingles are just the waterproof layer — the underlayment, flashing, and ventilation are what keep your roof from leaking. The roof that failed leaked at the wall junction because the roofer skipped the kick-out flashing.',
   overview: {
@@ -2643,7 +2643,7 @@ export const services: ServicePageContent[] = [
     slug: 'decks',
     title: 'Decks',
     categorySlug: 'decks',
-    metaTitle: 'Deck Building & Repair in Ontario | Design, Code, and Construction',
+    metaTitle: 'Deck Building Ontario | Design & Code | RenoNext',
     metaDescription: 'Professional deck construction and repair in Ontario. Footings, framing, railings, stairs, and materials — built to Ontario Building Code with proper permits.',
     heroTagline: 'From footings to railings — decks built right last 25 years. Decks built wrong collapse.',
     overview: {
@@ -2805,7 +2805,7 @@ export const services: ServicePageContent[] = [
   title: 'General Contractor',
   categorySlug: 'general-contractor',
   metaTitle: 'Hire a General Contractor in Ontario | RenoNext',
-  metaDescription: 'What Ontario GCs actually do, what they charge (15-25% markup), when you need one vs hiring trades yourself. HCRA licensing, WSIB requirements, contract red flags.',
+  metaDescription: 'Hire trusted general contractors in Ontario. HCRA-licensed, WSIB-compliant. Learn costs, what GCs do, and contract tips. Get quotes.',
   heroTagline: 'A general contractor coordinates all the trades, pulls permits, and carries the liability for your renovation. They mark up sub costs 15-25% but save you hundreds of hours of scheduling, inspections, and firefighting. Whether you need a GC or can manage trades yourself depends on project size, your time, and tolerance for problems.',
   overview: {
     summary: 'General contractors manage the full construction process: hiring and scheduling trades, obtaining permits, ordering materials, handling inspections, and resolving issues. They carry liability insurance and WSIB coverage for workers. You pay a markup (15-25%) on sub costs or a fixed contract price. GCs make sense for projects over $50K, multi-trade work, or when you lack construction experience.',
@@ -3028,7 +3028,7 @@ export const services: ServicePageContent[] = [
   title: 'Construction Project Management',
   categorySlug: 'project-management',
   metaTitle: 'Renovation Project Management in Ontario | RenoNext',
-  metaDescription: 'How to manage your own renovation project: trade sequencing, scheduling, budget tracking, inspection coordination. Save 15-25% GC markup but expect 10-20 hrs/week effort.',
+  metaDescription: 'Manage your Ontario renovation project yourself. Trade sequencing, scheduling, budgets. Save 15-25% but invest time. Learn how.',
   heroTagline: 'Project management is what a general contractor does: schedule trades in the right order, coordinate inspections, track costs, solve problems daily. You can act as your own PM and hire trades directly, saving 15-25% GC markup. The tradeoff: you need 10-20 hours per week, construction knowledge, and tolerance for mistakes. Or hire a PM consultant at 5-10% to guide you without taking full GC responsibility.',
   overview: {
     summary: 'Construction project management involves scheduling all trades in correct sequence (demo → structural → rough-in → close-in → finishes), coordinating building/ESA/TSSA inspections, tracking budget and change orders, ordering materials with correct lead times, documenting progress, and solving daily issues. Homeowners can act as their own PM to save GC markup but need time, organization skills, and some construction knowledge. PM consultants charge $75-$150/hr or 5-10% of project cost to guide you.',
@@ -3252,8 +3252,8 @@ export const services: ServicePageContent[] = [
   slug: 'framing',
   title: 'Framing',
   categorySlug: 'framing',
-  metaTitle: 'Residential Framing Services in Ontario | Wood & Engineered Lumber',
-  metaDescription: 'Wood framing for walls, floors, and roofs in Ontario. OBC Part 9 compliant construction, load-bearing analysis, engineered lumber. Get transparent pricing and verified contractors.',
+  metaTitle: 'Framing Services Ontario | Wood & Lumber | RenoNext',
+  metaDescription: 'Professional framing in Ontario. Walls, floors, roofs. OBC Part 9 compliant, engineered lumber. Get verified contractor quotes.',
   heroTagline: 'Build the bones of your home right — walls, floors, roofs.',
   overview: {
     summary: 'Residential wood framing is the skeleton of your home: vertical studs, horizontal joists, and roof rafters that define rooms and carry loads to the foundation. Ontario builders work mostly with SPF (spruce-pine-fir) dimensional lumber and engineered products like LVL beams and I-joists. Every stud wall, floor system, and roof truss must follow OBC Part 9 spacing rules and pass municipal inspections before you can close it up.',
@@ -3456,7 +3456,7 @@ export const services: ServicePageContent[] = [
   slug: 'painting',
   title: 'Painting',
   categorySlug: 'painting',
-  metaTitle: 'Interior & Exterior Painting Services in Ontario | Residential Painters',
+  metaTitle: 'Painting Services Ontario | Interior & Exterior | RenoNext',
   metaDescription: 'Professional painting for Ontario homes. Interior and exterior, prep work, primer, low-VOC options. Get verified painters and honest pricing for your project.',
   heroTagline: 'Fresh paint changes everything — inside and out.',
   overview: {
@@ -3648,8 +3648,8 @@ export const services: ServicePageContent[] = [
   slug: 'drains',
   title: 'Drain Repair & Replacement',
   categorySlug: 'plumbing',
-  metaTitle: 'Drain Repair, Sewer Line Replacement & Backwater Valves | Ontario',
-  metaDescription: 'Camera inspection, drain snaking, hydro-jetting, sewer lateral replacement, and backwater valve installation in Ontario. Real CAD pricing, OBC requirements, and city rebates.',
+  metaTitle: 'Drain Repair Ontario | Sewer & Backwater | RenoNext',
+  metaDescription: 'Fix drains and sewers in Ontario. Camera inspection, hydro-jetting, lateral replacement, backwater valves. City rebates available.',
   heroTagline: 'Fix slow drains, blocked sewers, and prevent basement flooding',
   overview: {
     summary: 'Your drain-waste-vent (DWV) system carries wastewater and sewage out of your house using gravity. When drains clog or break, you need camera inspection to diagnose the problem, then snaking, hydro-jetting, spot repair, or full sewer lateral replacement. Backwater valves prevent sewer backup during heavy rain.',
@@ -3852,7 +3852,7 @@ export const services: ServicePageContent[] = [
   title: 'Construction & Post-Renovation Cleaning',
   categorySlug: 'cleaning',
   metaTitle: 'Post-Renovation & Construction Cleaning | Ontario',
-  metaDescription: 'Construction cleaning after renovation: debris removal, dust control, HVAC duct cleaning, window washing, and final touch-up. Real CAD pricing and safety requirements.',
+  metaDescription: 'Post-renovation cleaning in Ontario. Debris removal, HVAC duct cleaning, final touch-up. Move-in ready results. Get quotes.',
   heroTagline: 'Remove construction dust and debris after your renovation',
   overview: {
     summary: 'Construction cleaning happens in three phases: rough clean during the project (debris removal and sweeping), final clean after drywall and painting (wash surfaces, clean windows, vacuum ducts), and touch-up clean before move-in. Construction dust gets everywhere — behind fixtures, inside HVAC ducts, inside electrical outlets.',
@@ -4033,7 +4033,7 @@ export const services: ServicePageContent[] = [
   slug: 'building-permit',
   title: 'Building Permits',
   categorySlug: 'building-permit',
-  metaTitle: 'Building Permits in Ontario | When You Need One & How to Apply',
+  metaTitle: 'Building Permits Ontario | When & How to Apply',
   metaDescription: 'Ontario building permit guide: OBC requirements, Toronto permit process, what needs a permit vs. what doesn\'t, typical fees, inspections, and how to avoid stop-work orders.',
   heroTagline: 'Get the right permit before you start building',
   overview: {
@@ -4222,8 +4222,8 @@ export const services: ServicePageContent[] = [
   slug: 'drafting',
   title: 'Drafting',
   categorySlug: 'drafting',
-  metaTitle: 'Architectural Drafting & Design Services Ontario | Permit Drawings',
-  metaDescription: 'Residential drafting services: floor plans, elevations, permit drawings. When you need an architect vs. drafter, OAA requirements, structural engineering, typical costs.',
+  metaTitle: 'Drafting Services Ontario | Permit Drawings | RenoNext',
+  metaDescription: 'Residential drafting in Ontario. Floor plans, elevations, permit drawings. Architect vs. drafter explained. Get accurate quotes.',
   heroTagline: 'Turn your renovation ideas into buildable plans',
   overview: {
     summary: 'Drafting services produce the construction drawings required for building permits and contractor quotes. This includes floor plans, elevations, sections, site plans, and construction details. Architects, architectural technologists, and drafters all provide these services at different price points.',
@@ -4410,8 +4410,8 @@ export const services: ServicePageContent[] = [
   slug: 'estimating',
   title: 'Construction Estimating',
   categorySlug: 'estimating',
-  metaTitle: 'Construction Cost Estimating Ontario | Renovation Budget Planning',
-  metaDescription: 'Professional construction estimating services in Ontario. Get accurate renovation budgets with material takeoffs, labour pricing, and contingency planning. ROM, preliminary, and detailed estimates.',
+  metaTitle: 'Cost Estimating Ontario | Renovation Budget | RenoNext',
+  metaDescription: 'Accurate construction estimates in Ontario. Material takeoffs, labour pricing, contingencies. ROM to detailed budgets. Get quotes now.',
   heroTagline: 'Know what your renovation will actually cost before you start',
   overview: {
     summary: 'Construction cost estimating breaks down your renovation into measurable units — square footage, linear feet, fixture counts — and prices each component using current material costs, labour rates, and subcontractor quotes. A proper estimate includes overhead, profit, contingency, and HST.',
@@ -4587,8 +4587,8 @@ export const services: ServicePageContent[] = [
   slug: 'equipment-rental',
   title: 'Construction Equipment Rental',
   categorySlug: 'equipment-rental',
-  metaTitle: 'Construction Equipment Rental Ontario | Tools, Excavators, Dumpsters',
-  metaDescription: 'Rent construction equipment in Ontario: mini excavators, skid steers, scaffolding, dumpsters, power tools. Daily and weekly rates, delivery available. WSIB and MOL safety requirements.',
+  metaTitle: 'Equipment Rental Ontario | Tools & Excavators | RenoNext',
+  metaDescription: 'Rent excavators, scaffolding, dumpsters in Ontario. Daily/weekly rates, delivery available. WSIB compliant. Get quotes today.',
   heroTagline: 'Rent the equipment you need for a day, week, or month',
   overview: {
     summary: 'Construction equipment rental gives you access to excavators, lifts, scaffolding, dumpsters, and specialized tools without the cost of ownership. Rental companies deliver, service, and pick up equipment. You pay for usage time, operator training (if required), fuel, and any damage beyond normal wear.',

@@ -4,7 +4,14 @@
  */
 
 import { services, type ServicePageContent } from '@/lib/data/services';
-import { serviceCosts, cityMultipliers, type ServiceCostData } from '@/lib/data/costs';
+import {
+  serviceCosts,
+  cityMultipliers,
+  getCityAdjustedPrice,
+  formatPriceRange,
+  type ServiceCostData,
+  type CityMultiplier,
+} from '@/lib/data/costs';
 import { mockBlogPosts, type BlogPost } from '@/lib/mock-data/blog';
 
 const BASE_URL = 'https://renonext.com';
@@ -91,6 +98,8 @@ function getSitemapUrls(): Set<string> {
   ['equipment-fix', 'drawing-viewer', 'attendance', 'ar-survey', 'concrete-pour', 'jsa'].forEach(
     (a) => urls.add(`${BASE_URL}/apps/${a}`)
   );
+  // Blog posts
+  mockBlogPosts.forEach((p) => urls.add(`${BASE_URL}/blog/${p.slug}`));
 
   return urls;
 }
@@ -142,37 +151,50 @@ function buildAuditPages(): AuditPage[] {
       heroTagline: s.heroTagline,
       title: s.title,
       faqCount: s.faqs?.length || 0,
-      hasJsonLd: false, // Services don't have JSON-LD in data files
+      hasJsonLd: true, // Service pages render FAQPage + Service JSON-LD
       wordCount,
     });
   });
 
-  // Cost service pages
+  // Cost service pages — generate meta descriptions matching the actual page template
   serviceCosts.forEach((c: ServiceCostData) => {
+    const baseRange = c.priceRanges[0];
+    const rangeStr = baseRange ? formatPriceRange(baseRange.minCAD, baseRange.maxCAD) : '';
+    const servicePage = services.find((s) => s.slug === c.slug);
+    const faqCount = servicePage?.faqs?.length || 0;
+
     pages.push({
       url: `${BASE_URL}/costs/${c.slug}`,
       pageType: 'cost',
-      metaTitle: `${c.title} Cost in Ontario | 2026 Pricing | RenoNext`,
-      metaDescription: undefined, // Cost pages don't have explicit meta descriptions in data
+      metaTitle: `${c.title} Cost in Ontario 2026 | ${rangeStr} | RenoNext`,
+      metaDescription: `How much does ${c.title.toLowerCase()} cost in Ontario? Prices from ${rangeStr}. See breakdowns by scope, labour/material split, city-by-city comparison, and money-saving tips.`,
       title: c.title,
-      faqCount: 0,
-      hasJsonLd: false,
+      faqCount: Math.min(faqCount, 5), // Page shows up to 5 inherited FAQs
+      hasJsonLd: true, // Page renders Service + BreadcrumbList + FAQPage JSON-LD
       wordCount: estimateCostPageWords(c),
     });
   });
 
-  // Cost city pages (sample — too many to enumerate fully, but we check patterns)
+  // Cost city pages — generate meta descriptions matching the actual page template
   serviceCosts.forEach((c: ServiceCostData) => {
-    cityMultipliers.forEach((city) => {
+    const baseRange = c.priceRanges[0];
+    const servicePage = services.find((s) => s.slug === c.slug);
+
+    cityMultipliers.forEach((city: CityMultiplier) => {
+      const adjusted = baseRange
+        ? getCityAdjustedPrice(baseRange.minCAD, baseRange.maxCAD, baseRange.labourPct, baseRange.materialPct, city)
+        : { min: 0, max: 0 };
+      const cityRange = formatPriceRange(adjusted.min, adjusted.max);
+
       pages.push({
         url: `${BASE_URL}/costs/${c.slug}/${city.slug}`,
         pageType: 'cost_city',
-        metaTitle: `${c.title} Cost in ${city.name} | 2026 Pricing | RenoNext`,
-        metaDescription: undefined,
+        metaTitle: `${c.title} Cost in ${city.name} 2026 | ${cityRange} | RenoNext`,
+        metaDescription: `How much does ${c.title.toLowerCase()} cost in ${city.name}? Prices range from ${cityRange}. See labour/material split, permit costs, available rebates, and compare nearby cities.`,
         title: `${c.title} in ${city.name}`,
-        faqCount: 0,
-        hasJsonLd: false,
-        wordCount: estimateCostPageWords(c), // Similar content with city multiplier
+        faqCount: 5, // Page generates 5 city-specific FAQs via generateCityFaqs()
+        hasJsonLd: true, // Page renders Service + BreadcrumbList + FAQPage JSON-LD
+        wordCount: estimateCostPageWords(c),
       });
     });
   });
@@ -186,7 +208,7 @@ function buildAuditPages(): AuditPage[] {
       metaDescription: b.excerpt,
       title: b.title,
       faqCount: 0,
-      hasJsonLd: false,
+      hasJsonLd: true, // Blog pages render Article JSON-LD
       wordCount: b.content?.split(/\s+/).length || 0,
     });
   });

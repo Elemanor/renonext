@@ -552,7 +552,7 @@ Don't wait for a problem to become an emergency. If you're experiencing any of t
     authorHeadline: 'Master Plumber - Toronto & GTA',
     title: 'How to Prevent Frozen Pipes This Winter: A Toronto Homeowner\'s Guide',
     slug: 'prevent-frozen-pipes-winter-toronto-guide',
-    excerpt: 'Toronto winters are brutal on your plumbing. Learn the essential steps every homeowner should take before the first freeze to protect their pipes and avoid costly repairs.',
+    excerpt: 'Toronto winters are brutal on plumbing. Protect your pipes before the first freeze and avoid thousands in burst pipe repairs.',
     content: `# How to Prevent Frozen Pipes This Winter
 
 Toronto's freeze-thaw cycles are notorious for wreaking havoc on residential plumbing. After 12 years of emergency calls during cold snaps, I've put together this comprehensive guide to help you protect your home.
@@ -884,7 +884,7 @@ In Ontario, this work requires an ESA inspection. Your electrician should pull t
     title: 'What Is Bench Underpinning? The Complete Ontario Guide (2026)',
     slug: 'what-is-bench-underpinning-complete-ontario-guide',
     excerpt:
-      'Bench underpinning (bench footing) is one of two ways to lower your basement floor. Learn how it works, what it costs, how it compares to full underpinning, and whether it\'s right for your Ontario home.',
+      'Bench underpinning costs 30-40% less than full underpinning. Learn how it works, what it costs, and whether it\'s right for your basement.',
     content: `# What Is Bench Underpinning? The Complete Ontario Guide (2026)
 
 If your basement ceiling is too low to stand comfortably, you have two options to gain height: **full underpinning** or **bench underpinning** (also called bench footing or bench pinning). Both lower the basement floor, but they work in fundamentally different ways, cost different amounts, and suit different situations.
@@ -1139,7 +1139,7 @@ Ready to explore bench underpinning for your Ontario home? Get a detailed cost e
     title: 'How to Avoid Renovation Scams in Ontario: The 2026 Protection Guide',
     slug: 'how-to-avoid-renovation-scams-ontario-protection-guide',
     excerpt:
-      'Ontario homeowners lose millions to contractor fraud every year. Here are the red flags, the laws that protect you, and the modern tools that make renovation scams nearly impossible.',
+      'Ontario homeowners lose millions to contractor fraud annually. Learn the red flags, legal protections, and tools that stop renovation scams.',
     content: `# How to Avoid Renovation Scams in Ontario: The 2026 Protection Guide
 
 Every year, thousands of Ontario homeowners lose money to contractor fraud. The Canadian Anti-Fraud Centre and provincial consumer protection agencies consistently rank home renovation scams among the most reported types of consumer fraud.
@@ -1355,7 +1355,7 @@ Your home is your largest asset. Protect the money you invest in it.
     title: 'CMHC Secondary Suite Loan: How Ontario Homeowners Can Get $80,000 (2026)',
     slug: 'cmhc-secondary-suite-loan-ontario-guide',
     excerpt:
-      'The federal government doubled the Secondary Suite Loan to $80,000. Here is how Ontario homeowners can access low-interest financing for basement apartments, garden suites, and ADUs.',
+      'The federal government doubled the Secondary Suite Loan to $80,000. Here is how Ontario homeowners can access low-interest financing for ADUs.',
     content: `# CMHC Secondary Suite Loan: How Ontario Homeowners Can Get $80,000 (2026)
 
 Canada is in a housing crisis, and governments at every level are trying to unlock new supply. One of the most direct programs available to individual homeowners is the **CMHC Secondary Suite Loan Program**, which was doubled from $40,000 to $80,000 in late 2024.
@@ -1879,7 +1879,7 @@ Planning a renovation that needs a permit? Start by understanding your costs:
     title: 'Interior vs Exterior Waterproofing: Which One Does Your Basement Need?',
     slug: 'interior-vs-exterior-waterproofing-which-one',
     excerpt:
-      'Interior waterproofing manages water after it enters. Exterior waterproofing stops it before it reaches your foundation. Here is how to decide which method is right for your Ontario home.',
+      'Interior waterproofing manages water after entry. Exterior stops it at the foundation. Learn which method saves your Ontario basement.',
     content: `# Interior vs Exterior Waterproofing: Which One Does Your Basement Need?
 
 A wet basement is one of the most common problems Ontario homeowners face. The freeze-thaw cycles, clay-heavy soil, and high water tables across the GTA mean that most homes will experience some form of basement moisture during their lifetime.
@@ -2097,7 +2097,7 @@ Generally, no. Interior waterproofing and exterior waterproofing of existing hom
     title: 'Foundation Cracks: Which Ones Are Dangerous? A Visual Guide for Ontario Homeowners',
     slug: 'foundation-cracks-which-ones-are-dangerous',
     excerpt:
-      'Not all foundation cracks are created equal. Some are cosmetic, others signal serious structural problems. Here is how to identify what you are looking at and when to call an engineer.',
+      'Not all foundation cracks are dangerous. Some are cosmetic, others are structural. Learn how to identify what you have and when to call help.',
     content: `# Foundation Cracks: Which Ones Are Dangerous? A Visual Guide for Ontario Homeowners
 
 Every concrete foundation cracks. Concrete shrinks as it cures, the soil beneath it shifts with moisture and frost, and the building above it applies constant load. The question is not whether your foundation will crack, but **what kind of crack it is and what it means**.
@@ -2326,7 +2326,7 @@ If you have identified a concerning crack, get a professional assessment. The co
     title: 'The True Cost of a Legal Basement Apartment in Ontario (2026)',
     slug: 'true-cost-legal-basement-apartment-ontario',
     excerpt:
-      'A legal basement apartment costs $80,000-$200,000 in Ontario. Here is exactly where that money goes, how to reduce it with government programs, and the ROI you can expect.',
+      'A legal basement apartment costs $80K-$200K in Ontario. Here is where that money goes, how rebates reduce it, and the ROI you can expect.',
     content: `# The True Cost of a Legal Basement Apartment in Ontario (2026)
 
 A legal basement apartment is one of the best investments an Ontario homeowner can make. Monthly rental income of $1,500-$2,500, a property value increase of 15-25%, and government programs that can cover $80,000-$145,000 of the cost.
@@ -2544,7 +2544,7 @@ Proper waterproofing (interior weeping tile, sump pump, backwater valve) is esse
     title: 'Concrete Driveway vs Asphalt in Ontario: The 20-Year Cost Comparison',
     slug: 'concrete-driveway-vs-asphalt-ontario-cost-comparison',
     excerpt:
-      'Concrete costs more upfront but lasts twice as long. Asphalt is cheaper to install but needs regular sealing. Here is the full 20-year cost comparison for Ontario homeowners.',
+      'Concrete costs more upfront but lasts twice as long. Asphalt is cheaper initially. Here is the full 20-year cost comparison for Ontario.',
     content: `# Concrete Driveway vs Asphalt in Ontario: The 20-Year Cost Comparison
 
 Replacing a driveway is a $5,000-$25,000 decision that you will live with for 15-30+ years. In Ontario, the two most popular materials are concrete and asphalt, and the right choice depends on your budget, aesthetic preferences, maintenance tolerance, and how long you plan to stay in your home.
@@ -3497,7 +3497,7 @@ For more on protecting yourself during renovations, see our article on [Renovati
     authorHeadline: 'RenoNext — Renovation, Reinvented',
     title: 'How to Save 20% on Your Renovation: The Independent Trades Strategy',
     slug: 'save-20-percent-independent-trades-strategy',
-    excerpt: 'General contractors charge 15-25% markup for coordination. Learn which trades you can hire directly, which ones need a GC, and how the right tools make self-managing a renovation realistic.',
+    excerpt: 'General contractors charge 15-25% markup. Learn which trades you can hire directly and how the right tools make self-managing realistic.',
     content: `# How to Save 20% on Your Renovation: The Independent Trades Strategy
 
 Every general contractor adds a markup to your renovation — typically 15% to 25% of the total project cost. On an $80,000 kitchen renovation, that is $12,000 to $20,000 that does not go toward materials, labour, or finishes. It goes toward coordination: scheduling trades, ordering materials, managing timelines, and solving problems.
@@ -3685,7 +3685,7 @@ Think of it as having a GC's brain without the GC's markup. The coordination kno
     authorHeadline: 'RenoNext — Renovation, Reinvented',
     title: 'Stack Your Rebates: How Ontario Homeowners Can Save $30K+ on Renovations',
     slug: 'stack-rebates-ontario-homeowners-save-30k',
-    excerpt: 'Ontario homeowners can stack federal, provincial, municipal, and utility rebates to save over $30,000 on a single renovation project. Here is exactly how to combine programs for maximum savings.',
+    excerpt: 'Ontario homeowners can stack federal, provincial, and utility rebates to save $30,000+ on one project. Here is how to combine them legally.',
     content: `# Stack Your Rebates: How Ontario Homeowners Can Save $30K+ on Renovations
 
 Most Ontario homeowners know about one or two rebate programs. Very few realize that you can stack three, four, or even five programs on a single renovation project — legally combining federal grants, provincial incentives, municipal programs, and utility rebates to save $30,000 or more.
@@ -3867,7 +3867,7 @@ For detailed cost breakdowns by service type, visit our cost guides at /costs �
     authorHeadline: 'RenoNext — Renovation, Reinvented',
     title: 'The True Cost of a General Contractor vs. Managing Trades Yourself',
     slug: 'true-cost-general-contractor-vs-self-manage',
-    excerpt: 'Is hiring a general contractor worth the 15-25% markup? We break down the real numbers on an $80K kitchen renovation — GC vs. self-managed — so you can make an informed decision.',
+    excerpt: 'Is a general contractor worth the 15-25% markup? Real numbers on an $80K kitchen renovation: GC vs. self-managed. Make an informed decision.',
     content: `# The True Cost of a General Contractor vs. Managing Trades Yourself
 
 The most expensive line item on your renovation quote might not be materials, labour, or permits. It is the general contractor's markup — and understanding exactly what you are paying for is the first step to deciding whether you need it.
@@ -4064,7 +4064,7 @@ The Virtual GC will not replace the need for skilled tradespeople — you still 
     authorHeadline: 'RenoNext — Renovation, Reinvented',
     title: '2026 Ontario Building Code & WSIB Updates: What Changed and Why It Matters',
     slug: '2026-ontario-building-code-wsib-updates',
-    excerpt: 'Major changes to the Ontario Building Code and WSIB rules took effect in 2026. From higher insulation requirements to mandatory worker coverage, here is what every renovating homeowner needs to know.',
+    excerpt: 'Major Ontario Building Code and WSIB changes took effect in 2026. Higher insulation standards and mandatory worker coverage affect your reno.',
     content: `# 2026 Ontario Building Code & WSIB Updates: What Changed and Why It Matters
 
 Ontario's building regulations saw significant updates heading into 2026. The Ontario Building Code (OBC) raised energy efficiency requirements substantially, and WSIB expanded mandatory coverage rules for construction workers. Both changes directly affect renovation costs, timelines, and what homeowners need to verify before paying any invoice.
@@ -4251,7 +4251,7 @@ Browse verified, WSIB-compliant contractors at /pros.
     authorHeadline: 'RenoNext — Renovation, Reinvented',
     title: 'The Pre-Construction Checklist: 47 Things to Do Before Breaking Ground',
     slug: 'pre-construction-checklist-47-things-before-breaking-ground',
-    excerpt: 'The weeks before your renovation starts are the most important. This 47-item checklist covers everything from permits and financing to utility locates and neighbour notification.',
+    excerpt: 'The weeks before your reno starts are critical. This 47-item checklist covers permits, financing, utility locates, and neighbour notices.',
     content: `# The Pre-Construction Checklist: 47 Things to Do Before Breaking Ground
 
 The difference between a renovation that stays on budget and one that spirals out of control is almost always decided before the first hammer swings. The pre-construction phase — those 4-8 weeks between signing a contract and starting demolition — is where smart homeowners save thousands of dollars and avoid weeks of delays.
@@ -4471,7 +4471,7 @@ Renovations are stressful even when they go perfectly. Expect noise from 7 AM, d
     authorHeadline: 'RenoNext — Renovation, Reinvented',
     title: 'Inspections & Permits Demystified: What Happens at Every Stage of Your Renovation',
     slug: 'inspections-permits-demystified-every-stage-renovation',
-    excerpt: 'Permits and inspections confuse most homeowners. This guide explains every permit type, every inspection stage, what inspectors look for, and how to schedule them without costly idle days.',
+    excerpt: 'Permits and inspections confuse most homeowners. Learn every permit type, inspection stage, and how to schedule them without costly delays.',
     content: `# Inspections & Permits Demystified: What Happens at Every Stage of Your Renovation
 
 Building permits and inspections are the most misunderstood part of home renovation. Most homeowners see them as bureaucratic obstacles — paperwork that slows things down and costs money. In reality, permits and inspections are your strongest protection against shoddy work, unsafe conditions, and future resale problems.
@@ -4686,7 +4686,7 @@ Use our Contract Generator at /contracts to include inspection milestone terms i
     authorHeadline: 'RenoNext — Renovation, Reinvented',
     title: 'The Right Order: Why Construction Sequencing Can Make or Break Your Budget',
     slug: 'construction-sequencing-right-order-save-budget',
-    excerpt: 'Calling trades in the wrong order is the most expensive mistake in renovation. Learn the universal construction sequence, trade dependencies, material lead times, and how proper sequencing saves thousands.',
+    excerpt: 'Calling trades in the wrong order is the costliest renovation mistake. Learn the right construction sequence and save thousands in rework.',
     content: `# The Right Order: Why Construction Sequencing Can Make or Break Your Budget
 
 Construction sequencing — the order in which trades work on your project — is the single biggest factor that separates on-budget renovations from disasters. Call the drywaller before the electrician finishes, and you are tearing open walls. Schedule the cabinet installer before the floor is level, and nothing fits. Order countertops before cabinets are installed, and the template measurements are wrong.
@@ -4952,7 +4952,7 @@ The goal is to give every homeowner the same sequencing intelligence that experi
     authorHeadline: 'RenoNext — Renovation, Reinvented',
     title: 'The 10% Holdback: Your Most Powerful Negotiation Tool as a Homeowner',
     slug: '10-percent-holdback-negotiation-tool-homeowner',
-    excerpt: 'Ontario law requires you to hold back 10% of every contractor payment for 60 days. This is not optional — and it is the most powerful protection you have. Here is exactly how it works.',
+    excerpt: 'Ontario law requires a 10% holdback on contractor payments for 60 days. It is your most powerful protection tool. Here is how it works.',
     content: `# The 10% Holdback: Your Most Powerful Negotiation Tool as a Homeowner
 
 There is one financial tool in Ontario renovation law that every homeowner should understand but almost nobody uses correctly: the 10% statutory holdback. It is required by the Construction Act, it protects you from paying for incomplete or defective work, and it is your strongest leverage for getting punch list items completed after the contractor thinks they are done.

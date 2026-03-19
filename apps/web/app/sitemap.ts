@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { mockBlogPosts } from '@/lib/mock-data/blog';
 
 const BASE = 'https://renonext.com';
 
@@ -93,6 +94,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const blogPages: MetadataRoute.Sitemap = mockBlogPosts.map((post) => ({
+    url: `${BASE}/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt || post.createdAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
   return [
     ...staticPages,
     ...servicePages,
@@ -103,5 +111,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...costCityPages,
     ...appHubPage,
     ...appPages,
+    ...blogPages,
   ];
 }
