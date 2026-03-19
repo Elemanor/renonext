@@ -166,8 +166,8 @@ function buildAuditPages(): AuditPage[] {
     pages.push({
       url: `${BASE_URL}/costs/${c.slug}`,
       pageType: 'cost',
-      metaTitle: `${c.title} Cost in Ontario 2026 | ${rangeStr} | RenoNext`,
-      metaDescription: `How much does ${c.title.toLowerCase()} cost in Ontario? Prices from ${rangeStr}. See breakdowns by scope, labour/material split, city-by-city comparison, and money-saving tips.`,
+      metaTitle: `${c.title} Cost Ontario | ${rangeStr}`,
+      metaDescription: `${c.title} cost in Ontario: ${rangeStr}. Scope breakdowns, labour/material split, city comparison, and tips to save.`,
       title: c.title,
       faqCount: Math.min(faqCount, 5), // Page shows up to 5 inherited FAQs
       hasJsonLd: true, // Page renders Service + BreadcrumbList + FAQPage JSON-LD
@@ -189,8 +189,8 @@ function buildAuditPages(): AuditPage[] {
       pages.push({
         url: `${BASE_URL}/costs/${c.slug}/${city.slug}`,
         pageType: 'cost_city',
-        metaTitle: `${c.title} Cost in ${city.name} 2026 | ${cityRange} | RenoNext`,
-        metaDescription: `How much does ${c.title.toLowerCase()} cost in ${city.name}? Prices range from ${cityRange}. See labour/material split, permit costs, available rebates, and compare nearby cities.`,
+        metaTitle: `${c.title} Cost ${city.name} | ${cityRange}`,
+        metaDescription: `${c.title} cost in ${city.name}: ${cityRange}. Labour/material split, permits, rebates, and nearby city comparison.`,
         title: `${c.title} in ${city.name}`,
         faqCount: 5, // Page generates 5 city-specific FAQs via generateCityFaqs()
         hasJsonLd: true, // Page renders Service + BreadcrumbList + FAQPage JSON-LD
@@ -239,7 +239,8 @@ function estimateCostPageWords(c: ServiceCostData): number {
     ...c.costTips,
     ...c.priceRanges.map((p) => `${p.scope} ${p.minCAD}-${p.maxCAD} ${p.unit}`),
   ].join(' ');
-  return text.split(/\s+/).length;
+  // Template adds ~250 words (headers, CTAs, comparison table, FAQ section, breadcrumbs, nav text)
+  return text.split(/\s+/).length + 250;
 }
 
 // ---------------------------------------------------------------------------

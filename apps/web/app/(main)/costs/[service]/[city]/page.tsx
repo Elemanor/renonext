@@ -61,8 +61,8 @@ export async function generateMetadata({ params }: CostCityPageProps): Promise<M
     : { min: 0, max: 0 };
 
   return {
-    title: `${svc.title} Cost in ${cty.name} 2026 | ${formatPriceRange(adjusted.min, adjusted.max)} | RenoNext`,
-    description: `How much does ${svc.title.toLowerCase()} cost in ${cty.name}? Prices range from ${formatPriceRange(adjusted.min, adjusted.max)}. See labour/material split, permit costs, available rebates, and compare nearby cities.`,
+    title: `${svc.title} Cost ${cty.name} | ${formatPriceRange(adjusted.min, adjusted.max)}`,
+    description: `${svc.title} cost in ${cty.name}: ${formatPriceRange(adjusted.min, adjusted.max)}. Labour/material split, permits, rebates, and nearby city comparison.`,
     alternates: {
       canonical: `https://renonext.com/costs/${service}/${city}`,
     },

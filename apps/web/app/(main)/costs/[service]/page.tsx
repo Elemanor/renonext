@@ -50,8 +50,8 @@ export async function generateMetadata({ params }: ServiceCostPageProps): Promis
   const rangeStr = baseRange ? formatPriceRange(baseRange.minCAD, baseRange.maxCAD) : '';
 
   return {
-    title: `${svc.title} Cost in Ontario 2026 | ${rangeStr} | RenoNext`,
-    description: `How much does ${svc.title.toLowerCase()} cost in Ontario? Prices from ${rangeStr}. See breakdowns by scope, labour/material split, city-by-city comparison, and money-saving tips.`,
+    title: `${svc.title} Cost Ontario | ${rangeStr}`,
+    description: `${svc.title} cost in Ontario: ${rangeStr}. Scope breakdowns, labour/material split, city comparison, and tips to save.`,
     alternates: {
       canonical: `https://renonext.com/costs/${service}`,
     },
