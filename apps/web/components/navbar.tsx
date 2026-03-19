@@ -76,6 +76,7 @@ const serviceGroups = [
 
 const resourceItems = [
   { icon: 'security', label: 'Obsidian Sentinel', desc: 'Construction intelligence platform — 11 modules.', href: '/apps/sentinel' },
+  { icon: 'verified_user', label: 'The Proof', desc: 'Immutable verification ledger — GPS-stamped records.', href: '/apps/the-proof' },
   { icon: 'smartphone', label: 'Apps', desc: '5 field + office apps for your crew.', href: '/apps' },
   { icon: 'attach_money', label: 'Cost Guides', desc: '25 trades, 15 cities, real pricing.', href: '/costs' },
   { icon: 'description', label: 'Contract Generator', desc: 'Free Ontario-compliant contracts.', href: '/contracts' },

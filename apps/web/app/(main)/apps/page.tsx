@@ -236,6 +236,51 @@ export default function AppsPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
+          The Proof Featured Banner
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="py-6 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <Link href="/apps/the-proof" className="group block">
+            <div className="relative overflow-hidden bg-white rounded-2xl p-8 md:p-10 border border-gray-200 shadow-float hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300">
+              <div
+                className="absolute inset-0 pointer-events-none opacity-[0.06]"
+                style={{
+                  backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)',
+                  backgroundSize: '32px 32px',
+                }}
+              />
+              <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <span
+                    className="material-symbols-outlined text-primary text-2xl"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    verified_user
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="font-display text-2xl font-bold text-reno-dark group-hover:text-primary transition-colors">
+                      The Proof
+                    </h3>
+                    <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">
+                      Verification
+                    </span>
+                  </div>
+                  <p className="text-gray-500 leading-relaxed max-w-xl">
+                    Immutable Verification Ledger — GPS-stamped, time-locked, cryptographically secured proof for every delivery and inspection.
+                  </p>
+                </div>
+                <span className="material-symbols-outlined text-primary text-2xl group-hover:translate-x-1 transition-transform">
+                  arrow_forward
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
           Section 2 — Homeowner Experience (Bento Grid)
       ═══════════════════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 px-6 bg-[#f6f8f8]">
