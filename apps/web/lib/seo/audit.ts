@@ -167,8 +167,11 @@ function buildAuditPages(): AuditPage[] {
     pages.push({
       url: `${BASE_URL}/costs/${c.slug}`,
       pageType: 'cost',
-      metaTitle: `${c.title} Cost Ontario | ${rangeStr}`,
-      metaDescription: `${c.title} cost in Ontario: ${rangeStr}. Scope breakdowns, labour/material split, city comparison, and tips to save.`,
+      metaTitle: (() => {
+        const full = `${c.title} Cost Ontario | ${rangeStr}`;
+        return full.length <= 60 ? full : `${c.title} Cost Ontario | Pricing`;
+      })(),
+      metaDescription: `How much does ${c.title.toLowerCase()} cost in Ontario? Prices range from ${rangeStr}. See scope breakdowns, labour vs material split, city-by-city pricing, and tips to save.`,
       title: c.title,
       faqCount: Math.min(faqCount, 5), // Page shows up to 5 inherited FAQs
       hasJsonLd: true, // Page renders Service + BreadcrumbList + FAQPage JSON-LD
@@ -190,8 +193,14 @@ function buildAuditPages(): AuditPage[] {
       pages.push({
         url: `${BASE_URL}/costs/${c.slug}/${city.slug}`,
         pageType: 'cost_city',
-        metaTitle: `${c.title} Cost ${city.name} | ${cityRange}`,
-        metaDescription: `${c.title} cost in ${city.name}: ${cityRange}. Labour/material split, permits, rebates, and nearby city comparison.`,
+        metaTitle: (() => {
+          const full = `${c.title} Cost ${city.name} | ${cityRange}`;
+          return full.length <= 60 ? full : `${c.title} Cost ${city.name} | Pricing`;
+        })(),
+        metaDescription: (() => {
+          const full = `How much does ${c.title.toLowerCase()} cost in ${city.name}? Prices from ${cityRange}. See labour vs material split, permit costs, rebates, and nearby city pricing.`;
+          return full.length <= 160 ? full : `${c.title} cost in ${city.name}: ${cityRange}. Labour/material split, permits, rebates, and city comparison.`;
+        })(),
         title: `${c.title} in ${city.name}`,
         faqCount: 5, // Page generates 5 city-specific FAQs via generateCityFaqs()
         hasJsonLd: true, // Page renders Service + BreadcrumbList + FAQPage JSON-LD
