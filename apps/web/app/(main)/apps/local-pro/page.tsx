@@ -694,6 +694,344 @@ export default function LocalProPage() {
       </section>
 
       {/* ================================================================
+          SECTION 4.5 — ADDENDUM & CHANGE ORDERS
+          Browser frame showing the change-order approval workflow
+          ================================================================ */}
+      <section className="bg-white py-24 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest">
+                Change Orders
+              </span>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
+                Handle the Unexpected
+              </h2>
+              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+                When unforeseen conditions arise on site, LocalPro documents
+                everything &mdash; GPS evidence, cost impact, and escrow funding
+                &mdash; so both parties can resolve addendums with full transparency.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+              {/* Browser chrome */}
+              <div className="bg-[#e7e8e9] px-4 py-3 flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                  <div className="w-3 h-3 rounded-full bg-[#28c840]" />
+                </div>
+                <div className="flex-1 flex justify-center">
+                  <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-gray-500 font-medium">
+                    app.renonext.com/local-pro/vault/addendum/LP-77241
+                  </div>
+                </div>
+              </div>
+
+              {/* App body */}
+              <div className="bg-[#f8f9fa] flex min-h-[580px]">
+                {/* Sidebar */}
+                <div className="hidden lg:flex flex-col w-48 bg-[#f3f4f5] p-3 border-r border-gray-200/30">
+                  <div className="px-3 py-4 mb-3">
+                    <h3 className="text-xs font-black text-[#102122]">
+                      Project Control
+                    </h3>
+                    <p className="text-[7px] uppercase tracking-widest text-gray-500 font-semibold">
+                      Precision Management
+                    </p>
+                  </div>
+                  <div className="space-y-0.5 flex-1">
+                    {[
+                      { icon: 'dashboard', label: 'Dashboard', active: false },
+                      { icon: 'construction', label: 'Active Sites', active: true },
+                      { icon: 'payments', label: 'Financials', active: false },
+                      { icon: 'folder_shared', label: 'Documents', active: false },
+                      { icon: 'history', label: 'Archive', active: false },
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className={`flex items-center gap-2 px-3 py-2 rounded-md text-[10px] ${
+                          item.active
+                            ? 'bg-white text-primary font-bold shadow-sm'
+                            : 'text-gray-500'
+                        }`}
+                      >
+                        <span className="material-symbols-outlined text-sm">
+                          {item.icon}
+                        </span>
+                        {item.label}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-auto pt-4 border-t border-gray-200 space-y-0.5">
+                    <div className="flex items-center gap-2 px-3 py-1.5 text-[10px] text-gray-500">
+                      <span className="material-symbols-outlined text-xs">
+                        help_center
+                      </span>
+                      Support
+                    </div>
+                    <div className="flex items-center gap-2 px-3 py-1.5 text-[10px] text-gray-500">
+                      <span className="material-symbols-outlined text-xs">
+                        logout
+                      </span>
+                      Sign Out
+                    </div>
+                  </div>
+                </div>
+
+                {/* Main content */}
+                <div className="flex-1 flex flex-col">
+                  {/* Top nav bar */}
+                  <div className="px-5 py-3 flex justify-between items-center border-b border-gray-100">
+                    <div className="flex items-center gap-6">
+                      <span className="text-base font-bold text-[#102122] tracking-tight">
+                        LocalPro
+                      </span>
+                      <div className="hidden md:flex gap-4">
+                        <span className="text-xs text-gray-500">Projects</span>
+                        <span className="text-xs text-gray-500">Schedule</span>
+                        <span className="text-xs font-semibold text-primary border-b-2 border-primary pb-0.5">
+                          Vault
+                        </span>
+                        <span className="text-xs text-gray-500">Teams</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="material-symbols-outlined text-gray-400 text-lg">
+                        notifications
+                      </span>
+                      <span className="material-symbols-outlined text-gray-400 text-lg">
+                        settings
+                      </span>
+                      <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span className="text-[8px] font-bold text-primary">
+                          MT
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Page content */}
+                  <div className="p-5 space-y-5 flex-1">
+                    {/* Blueprint grid bg */}
+                    <div className="relative">
+                      {/* Alert Banner */}
+                      <div className="bg-red-50 border border-red-200/60 text-red-800 p-3.5 rounded-xl flex items-center gap-3">
+                        <div className="bg-red-500 text-white p-1.5 rounded-lg shrink-0">
+                          <span className="material-symbols-outlined text-sm">
+                            warning
+                          </span>
+                        </div>
+                        <div>
+                          <h3 className="text-xs font-bold">
+                            Addendum Requested: Unforeseen Site Condition
+                          </h3>
+                          <p className="text-[10px] opacity-80">
+                            Project ID: #LP-77241-EAST &bull; Priority: High
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bento grid */}
+                    <div className="grid grid-cols-12 gap-5">
+                      {/* ── Left: Visual Evidence (7 col) ── */}
+                      <div className="col-span-12 lg:col-span-7">
+                        <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                          {/* Photo with metadata overlays */}
+                          <div className="aspect-video w-full relative bg-gradient-to-br from-amber-200 via-amber-100 to-amber-200 overflow-hidden">
+                            {/* Construction scene pattern */}
+                            <div
+                              className="absolute inset-0 opacity-15"
+                              style={{
+                                backgroundImage:
+                                  'repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(0,0,0,0.04) 12px, rgba(0,0,0,0.04) 24px)',
+                              }}
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <span className="material-symbols-outlined text-amber-400/40 text-8xl">
+                                construction
+                              </span>
+                            </div>
+                            {/* GPS + Time overlays */}
+                            <div className="absolute top-3 left-3 flex flex-col gap-1.5">
+                              <div className="bg-black/70 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+                                <span className="material-symbols-outlined text-xs">
+                                  location_on
+                                </span>
+                                <span className="text-[8px] uppercase tracking-widest">
+                                  40.7128&deg; N, 74.0060&deg; W (GPS Verified)
+                                </span>
+                              </div>
+                              <div className="bg-black/70 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+                                <span className="material-symbols-outlined text-xs">
+                                  schedule
+                                </span>
+                                <span className="text-[8px] uppercase tracking-widest">
+                                  Oct 24, 2023 - 09:42 AM EST
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          {/* Pro Insight */}
+                          <div className="p-4">
+                            <div className="flex items-start gap-3">
+                              <div className="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                                <span className="material-symbols-outlined text-primary text-sm">
+                                  person
+                                </span>
+                              </div>
+                              <div>
+                                <h4 className="text-xs font-bold text-primary mb-1">
+                                  Pro Insight
+                                </h4>
+                                <p className="text-[11px] text-[#102122] leading-relaxed italic">
+                                  &ldquo;Hit an unexpected buried slab while digging the
+                                  east wall. Need a breaker to remove it before we can
+                                  proceed with foundation forms.&rdquo;
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* ── Right: Financial & Actions (5 col) ── */}
+                      <div className="col-span-12 lg:col-span-5 space-y-4">
+                        {/* Financial Breakdown */}
+                        <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                          <h4 className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-4">
+                            Financial Impact
+                          </h4>
+                          <div className="space-y-3">
+                            <div className="flex justify-between items-center">
+                              <div className="flex items-center gap-2">
+                                <span className="material-symbols-outlined text-gray-400 text-sm">
+                                  construction
+                                </span>
+                                <span className="text-[11px] text-[#102122]">
+                                  Machine Breaker Rental (4 hrs)
+                                </span>
+                              </div>
+                              <span className="text-xs font-bold text-[#102122]">
+                                $850.00
+                              </span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <div className="flex items-center gap-2">
+                                <span className="material-symbols-outlined text-gray-400 text-sm">
+                                  delete_sweep
+                                </span>
+                                <span className="text-[11px] text-[#102122]">
+                                  Disposal Bin Swap
+                                </span>
+                              </div>
+                              <span className="text-xs font-bold text-[#102122]">
+                                $400.00
+                              </span>
+                            </div>
+                            <div className="pt-3 border-t border-gray-100 flex justify-between items-end">
+                              <span className="text-[10px] uppercase tracking-widest text-primary font-bold">
+                                Total Change Order
+                              </span>
+                              <span className="text-2xl font-extrabold text-primary">
+                                $1,250.00
+                              </span>
+                            </div>
+                          </div>
+                          {/* Comparison */}
+                          <div className="mt-5 p-3 bg-[#f3f4f5] rounded-lg space-y-1.5">
+                            <div className="flex justify-between text-[9px] uppercase tracking-widest text-gray-500">
+                              <span>Original Contract</span>
+                              <span>$65,000.00</span>
+                            </div>
+                            <div className="flex justify-between text-xs font-bold text-[#102122]">
+                              <span>New Contract Total</span>
+                              <span>$66,250.00</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Action buttons */}
+                        <div className="space-y-2">
+                          <div className="bg-primary text-white py-3 rounded-xl font-bold text-xs text-center flex items-center justify-center gap-2 shadow-md">
+                            <span
+                              className="material-symbols-outlined text-sm"
+                              style={{ fontVariationSettings: "'FILL' 1" }}
+                            >
+                              account_balance_wallet
+                            </span>
+                            Approve &amp; Fund $1,250 to Escrow
+                          </div>
+                          <div className="border border-red-200 text-red-600 py-3 rounded-xl font-bold text-xs text-center flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-sm">
+                              gavel
+                            </span>
+                            Reject &amp; Request Mediation
+                          </div>
+                          <p className="text-center text-[8px] text-gray-400 leading-tight px-2">
+                            Approving instantly updates the contract and allows work to
+                            resume. Funds held in secure escrow until milestone
+                            verification.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Footer meta */}
+                    <div className="pt-4 flex flex-col md:flex-row justify-between items-center border-t border-gray-200/30 gap-3">
+                      <div className="flex items-center gap-5">
+                        <div>
+                          <span className="text-[8px] uppercase tracking-widest text-gray-500 font-bold block">
+                            Review Deadline
+                          </span>
+                          <span className="text-[11px] font-bold text-[#102122]">
+                            22 Oct 2023, 5:00 PM
+                          </span>
+                        </div>
+                        <div className="w-px h-6 bg-gray-200" />
+                        <div>
+                          <span className="text-[8px] uppercase tracking-widest text-gray-500 font-bold block">
+                            Verified Inspector
+                          </span>
+                          <span className="text-[11px] font-bold text-[#102122] flex items-center gap-1">
+                            James R.
+                            <span
+                              className="material-symbols-outlined text-primary text-xs"
+                              style={{ fontVariationSettings: "'FILL' 1" }}
+                            >
+                              verified
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        <span className="text-[8px] uppercase tracking-widest text-gray-400 flex items-center gap-1">
+                          <span className="material-symbols-outlined text-xs">
+                            print
+                          </span>
+                          Print Proof
+                        </span>
+                        <span className="text-[8px] uppercase tracking-widest text-gray-400 flex items-center gap-1">
+                          <span className="material-symbols-outlined text-xs">
+                            download
+                          </span>
+                          Download PDF
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ================================================================
           SECTION 5 — CTA
           Dark CTA with trust badges
           ================================================================ */}
