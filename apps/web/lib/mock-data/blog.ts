@@ -286,7 +286,7 @@ If you're planning any renovation in 2026, you're not just improving your home �
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'How to Vet a Contractor in Ontario: The Complete 2026 Checklist',
+    title: 'Vet a Contractor in Ontario | Complete Checklist (2026)',
     slug: 'how-to-vet-contractor-ontario-complete-checklist',
     excerpt:
       'Hiring a contractor is one of the biggest financial decisions you\'ll make. Here\'s the step-by-step checklist every Ontario homeowner should follow before signing anything.',
@@ -550,7 +550,7 @@ Don't wait for a problem to become an emergency. If you're experiencing any of t
     authorName: 'Sarah Chen',
     authorAvatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop&crop=face',
     authorHeadline: 'Master Plumber - Toronto & GTA',
-    title: 'How to Prevent Frozen Pipes This Winter: A Toronto Homeowner\'s Guide',
+    title: 'Prevent Frozen Pipes This Winter | Toronto Homeowner Guide',
     slug: 'prevent-frozen-pipes-winter-toronto-guide',
     excerpt: 'Toronto winters are brutal on plumbing. Protect your pipes before the first freeze and avoid thousands in burst pipe repairs.',
     content: `# How to Prevent Frozen Pipes This Winter
@@ -618,7 +618,7 @@ The math speaks for itself.
     authorName: 'Alex Rivera',
     authorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
     authorHeadline: 'General Contractor & Renovation Specialist',
-    title: 'From Dated to Modern: A Complete Kitchen Renovation Case Study',
+    title: 'Dated to Modern | Complete Kitchen Renovation Case Study',
     slug: 'dated-to-modern-complete-kitchen-renovation-case-study',
     excerpt: 'Follow along as we transform a 1990s kitchen into a modern open-concept space. Includes timeline, budget breakdown, and lessons learned.',
     content: `# From Dated to Modern: A Complete Kitchen Renovation
@@ -686,7 +686,7 @@ The homeowners were thrilled with the result and the open layout completely chan
     authorName: 'Priya Sharma',
     authorAvatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face',
     authorHeadline: 'Interior Designer & Home Stager',
-    title: 'Small Space, Big Impact: Bathroom Design Tips for Toronto Condos',
+    title: 'Small Space Big Impact | Bathroom Design for Toronto Condos',
     slug: 'small-space-big-impact-bathroom-design-tips-toronto-condos',
     excerpt: 'Living in a Toronto condo doesn\'t mean your bathroom has to feel cramped. Here are my top design strategies for maximizing style and function in compact bathrooms.',
     content: `# Small Space, Big Impact: Bathroom Design Tips for Toronto Condos
@@ -740,7 +740,7 @@ The key is picking ONE statement element and keeping everything else simple.
     authorName: 'Tom Chen',
     authorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face',
     authorHeadline: 'HVAC Technician - Heating & Cooling Expert',
-    title: 'Ontario\'s Heat Pump Rebate Program: What Homeowners Need to Know in 2025',
+    title: 'Ontario Heat Pump Rebate | What Homeowners Need to Know',
     slug: 'ontario-heat-pump-rebate-program-homeowners-2025',
     excerpt: 'Ontario is offering significant rebates for heat pump installations. Here\'s everything you need to know about qualifying, the application process, and choosing the right system.',
     content: `# Ontario's Heat Pump Rebate Program: What You Need to Know
@@ -881,7 +881,7 @@ In Ontario, this work requires an ESA inspection. Your electrician should pull t
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'What Is Bench Underpinning? The Complete Ontario Guide (2026)',
+    title: 'What Is Bench Underpinning? Complete Ontario Guide',
     slug: 'what-is-bench-underpinning-complete-ontario-guide',
     excerpt:
       'Bench underpinning costs 30-40% less than full underpinning. Learn how it works, what it costs, and whether it\'s right for your basement.',
@@ -1136,7 +1136,7 @@ Ready to explore bench underpinning for your Ontario home? Get a detailed cost e
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'How to Avoid Renovation Scams in Ontario: The 2026 Protection Guide',
+    title: 'Avoid Renovation Scams in Ontario | Protection Guide 2026',
     slug: 'how-to-avoid-renovation-scams-ontario-protection-guide',
     excerpt:
       'Ontario homeowners lose millions to contractor fraud annually. Learn the red flags, legal protections, and tools that stop renovation scams.',
@@ -1352,7 +1352,7 @@ Your home is your largest asset. Protect the money you invest in it.
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'CMHC Secondary Suite Loan: How Ontario Homeowners Can Get $80,000 (2026)',
+    title: 'CMHC Secondary Suite Loan | Get $80K for Ontario Homeowners',
     slug: 'cmhc-secondary-suite-loan-ontario-guide',
     excerpt:
       'The federal government doubled the Secondary Suite Loan to $80,000. Here is how Ontario homeowners can access low-interest financing for ADUs.',
@@ -1591,7 +1591,7 @@ From initial planning to move-in ready, expect 6-12 months: 1-2 months for desig
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'Building Permits in Toronto: The Homeowner\'s Plain-English Guide (2026)',
+    title: 'Building Permits in Toronto | Plain-English Guide (2026)',
     slug: 'building-permits-toronto-homeowner-guide',
     excerpt:
       'Building permits in Toronto don\'t have to be confusing. This plain-English guide covers what needs a permit, how to apply, what it costs, how long it takes, and the mistakes that delay approval.',
@@ -1876,7 +1876,7 @@ Planning a renovation that needs a permit? Start by understanding your costs:
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'Interior vs Exterior Waterproofing: Which One Does Your Basement Need?',
+    title: 'Interior vs Exterior Waterproofing | Which for Basement?',
     slug: 'interior-vs-exterior-waterproofing-which-one',
     excerpt:
       'Interior waterproofing manages water after entry. Exterior stops it at the foundation. Learn which method saves your Ontario basement.',
@@ -2094,7 +2094,7 @@ Generally, no. Interior waterproofing and exterior waterproofing of existing hom
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'Foundation Cracks: Which Ones Are Dangerous? A Visual Guide for Ontario Homeowners',
+    title: 'Foundation Cracks | Which Are Dangerous? Ontario Guide',
     slug: 'foundation-cracks-which-ones-are-dangerous',
     excerpt:
       'Not all foundation cracks are dangerous. Some are cosmetic, others are structural. Learn how to identify what you have and when to call help.',
@@ -2323,7 +2323,7 @@ If you have identified a concerning crack, get a professional assessment. The co
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'The True Cost of a Legal Basement Apartment in Ontario (2026)',
+    title: 'True Cost of a Legal Basement Apartment in Ontario (2026)',
     slug: 'true-cost-legal-basement-apartment-ontario',
     excerpt:
       'A legal basement apartment costs $80K-$200K in Ontario. Here is where that money goes, how rebates reduce it, and the ROI you can expect.',
@@ -2541,7 +2541,7 @@ Proper waterproofing (interior weeping tile, sump pump, backwater valve) is esse
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'Concrete Driveway vs Asphalt in Ontario: The 20-Year Cost Comparison',
+    title: 'Concrete vs Asphalt Driveway in Ontario | 20-Year Costs',
     slug: 'concrete-driveway-vs-asphalt-ontario-cost-comparison',
     excerpt:
       'Concrete costs more upfront but lasts twice as long. Asphalt is cheaper initially. Here is the full 20-year cost comparison for Ontario.',
@@ -2737,7 +2737,7 @@ Ready to replace your driveway? Compare costs in your city:
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'Ontario Renovation Contracts: What the Law Requires in Every Agreement (2026)',
+    title: 'Ontario Renovation Contracts | What the Law Requires (2026)',
     slug: 'ontario-renovation-contracts-what-law-requires-2026',
     excerpt: 'Ontario law mandates written contracts for renovations over $50. Here is exactly what must be included and what happens if you skip it.',
     content: `# Ontario Renovation Contracts: What the Law Requires in Every Agreement (2026)
@@ -2963,7 +2963,7 @@ You can generate a contract with a professional milestone schedule using our fre
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'The 2026 Ontario Construction Act Changes: What Homeowners Need to Know',
+    title: '2026 Ontario Construction Act Changes | What Homeowners Know',
     slug: 'ontario-construction-act-2026-changes-homeowners',
     excerpt: 'Ontario has modernized its Construction Act with new holdback, prompt payment, and adjudication rules. Here is how they affect your renovation.',
     content: `# The 2026 Ontario Construction Act Changes: What Homeowners Need to Know
@@ -3101,7 +3101,7 @@ For more on how escrow protects your renovation funds, see our guide on [Why Ren
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'Underpinning & Foundation Contracts: What to Include Beyond the Basics',
+    title: 'Underpinning & Foundation Contracts | Beyond the Basics',
     slug: 'underpinning-foundation-contracts-what-to-include',
     excerpt: 'Foundation work is the most structurally consequential renovation you can do. Your contract needs to reflect that complexity.',
     content: `# Underpinning & Foundation Contracts: What to Include Beyond the Basics
@@ -3220,7 +3220,7 @@ You can generate a complete underpinning contract with all these provisions usin
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'Basement Apartment Contracts: Protecting Your $100K+ Investment',
+    title: 'Basement Apartment Contracts | Protect Your $100K Investment',
     slug: 'basement-apartment-contracts-protecting-investment',
     excerpt: 'Basement second units involve more trades, more permits, and more risk than any other residential renovation. Your contract must match that complexity.',
     content: `# Basement Apartment Contracts: Protecting Your $100K+ Investment
@@ -3353,7 +3353,7 @@ Generate a complete basement apartment contract with our free [Contract Generato
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'Change Orders: How to Handle Scope Changes Without Getting Burned',
+    title: 'Change Orders | Handle Scope Changes Without Getting Burned',
     slug: 'change-orders-handle-scope-changes-without-getting-burned',
     excerpt: 'Scope changes happen on every renovation. Without a proper change order process, they become the number one source of disputes and cost overruns.',
     content: `# Change Orders: How to Handle Scope Changes Without Getting Burned
@@ -3495,7 +3495,7 @@ For more on protecting yourself during renovations, see our article on [Renovati
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'How to Save 20% on Your Renovation: The Independent Trades Strategy',
+    title: 'Save 20% on Renovation | Independent Trades Strategy',
     slug: 'save-20-percent-independent-trades-strategy',
     excerpt: 'General contractors charge 15-25% markup. Learn which trades you can hire directly and how the right tools make self-managing realistic.',
     content: `# How to Save 20% on Your Renovation: The Independent Trades Strategy
@@ -3683,7 +3683,7 @@ Think of it as having a GC's brain without the GC's markup. The coordination kno
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'Stack Your Rebates: How Ontario Homeowners Can Save $30K+ on Renovations',
+    title: 'Stack Your Rebates | Ontario Homeowners Save $30K+ on Renos',
     slug: 'stack-rebates-ontario-homeowners-save-30k',
     excerpt: 'Ontario homeowners can stack federal, provincial, and utility rebates to save $30,000+ on one project. Here is how to combine them legally.',
     content: `# Stack Your Rebates: How Ontario Homeowners Can Save $30K+ on Renovations
@@ -3865,7 +3865,7 @@ For detailed cost breakdowns by service type, visit our cost guides at /costs �
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'The True Cost of a General Contractor vs. Managing Trades Yourself',
+    title: 'General Contractor vs Managing Trades Yourself | True Cost',
     slug: 'true-cost-general-contractor-vs-self-manage',
     excerpt: 'Is a general contractor worth the 15-25% markup? Real numbers on an $80K kitchen renovation: GC vs. self-managed. Make an informed decision.',
     content: `# The True Cost of a General Contractor vs. Managing Trades Yourself
@@ -4062,7 +4062,7 @@ The Virtual GC will not replace the need for skilled tradespeople — you still 
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: '2026 Ontario Building Code & WSIB Updates: What Changed and Why It Matters',
+    title: '2026 Ontario Building Code & WSIB Updates | What Changed',
     slug: '2026-ontario-building-code-wsib-updates',
     excerpt: 'Major Ontario Building Code and WSIB changes took effect in 2026. Higher insulation standards and mandatory worker coverage affect your reno.',
     content: `# 2026 Ontario Building Code & WSIB Updates: What Changed and Why It Matters
@@ -4249,7 +4249,7 @@ Browse verified, WSIB-compliant contractors at /pros.
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'The Pre-Construction Checklist: 47 Things to Do Before Breaking Ground',
+    title: 'Pre-Construction Checklist | 47 Things Before You Break',
     slug: 'pre-construction-checklist-47-things-before-breaking-ground',
     excerpt: 'The weeks before your reno starts are critical. This 47-item checklist covers permits, financing, utility locates, and neighbour notices.',
     content: `# The Pre-Construction Checklist: 47 Things to Do Before Breaking Ground
@@ -4469,7 +4469,7 @@ Renovations are stressful even when they go perfectly. Expect noise from 7 AM, d
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'Inspections & Permits Demystified: What Happens at Every Stage of Your Renovation',
+    title: 'Inspections & Permits Demystified | Every Renovation Stage',
     slug: 'inspections-permits-demystified-every-stage-renovation',
     excerpt: 'Permits and inspections confuse most homeowners. Learn every permit type, inspection stage, and how to schedule them without costly delays.',
     content: `# Inspections & Permits Demystified: What Happens at Every Stage of Your Renovation
@@ -4684,7 +4684,7 @@ Use our Contract Generator at /contracts to include inspection milestone terms i
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'The Right Order: Why Construction Sequencing Can Make or Break Your Budget',
+    title: 'Construction Sequencing | Why Order Makes or Breaks Budget',
     slug: 'construction-sequencing-right-order-save-budget',
     excerpt: 'Calling trades in the wrong order is the costliest renovation mistake. Learn the right construction sequence and save thousands in rework.',
     content: `# The Right Order: Why Construction Sequencing Can Make or Break Your Budget
@@ -4950,7 +4950,7 @@ The goal is to give every homeowner the same sequencing intelligence that experi
     authorName: 'RenoNext Team',
     authorAvatar: '/logo-icon.svg',
     authorHeadline: 'RenoNext — Renovation, Reinvented',
-    title: 'The 10% Holdback: Your Most Powerful Negotiation Tool as a Homeowner',
+    title: 'The 10% Holdback | Your Most Powerful Negotiation Tool',
     slug: '10-percent-holdback-negotiation-tool-homeowner',
     excerpt: 'Ontario law requires a 10% holdback on contractor payments for 60 days. It is your most powerful protection tool. Here is how it works.',
     content: `# The 10% Holdback: Your Most Powerful Negotiation Tool as a Homeowner
