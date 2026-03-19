@@ -864,6 +864,520 @@ export default function TheProofPage() {
       </section>
 
       {/* ================================================================
+          SECTION 3.6 — REVIEW & RELEASE FUNDS
+          Forensic fund-release workflow in browser frame
+          ================================================================ */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest">
+                Fund Release
+              </span>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
+                Verified Proof, Secured Payment
+              </h2>
+              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+                Every milestone release is backed by GPS presence, material OCR,
+                visual evidence, and a forensic transaction log. No proof, no payment.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+              {/* Browser chrome */}
+              <div className="bg-[#e6e9e7] px-4 py-3 flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                  <div className="w-3 h-3 rounded-full bg-[#28c840]" />
+                </div>
+                <div className="flex-1 flex justify-center">
+                  <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-gray-500 font-medium">
+                    proof.renonext.com/verify/MS-402-B-08
+                  </div>
+                </div>
+              </div>
+
+              {/* App body */}
+              <div className="bg-[#f4f5f4] flex min-h-[640px]">
+                {/* Sidebar */}
+                <div className="hidden lg:flex w-52 bg-[#f2f4f2] border-r border-gray-200/50 flex-col p-4">
+                  <div className="mb-6">
+                    <div className="text-sm font-black text-primary tracking-tighter uppercase italic">
+                      Project Alpha
+                    </div>
+                    <div className="text-[8px] text-gray-500 uppercase tracking-widest font-bold">
+                      Site 402-B
+                    </div>
+                  </div>
+
+                  <nav className="space-y-0.5 flex-1">
+                    {[
+                      { icon: 'dashboard', label: 'Dashboard', active: false },
+                      { icon: 'location_on', label: 'Attendance', active: false },
+                      { icon: 'receipt_long', label: 'Material Logs', active: false },
+                      { icon: 'photo_camera', label: 'Photo Evidence', active: false },
+                      { icon: 'fact_check', label: 'Verification', active: true },
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[11px] font-medium ${
+                          item.active
+                            ? 'bg-white text-primary shadow-sm font-bold'
+                            : 'text-gray-500 hover:bg-white/50'
+                        }`}
+                      >
+                        <span
+                          className="material-symbols-outlined text-[16px]"
+                          style={item.active ? { fontVariationSettings: "'FILL' 1" } : undefined}
+                        >
+                          {item.icon}
+                        </span>
+                        {item.label}
+                      </div>
+                    ))}
+                  </nav>
+
+                  <div className="mt-auto">
+                    <div className="bg-primary text-white rounded-lg py-2 px-3 flex items-center justify-center gap-1.5 text-[10px] font-bold">
+                      <span className="material-symbols-outlined text-xs">add</span>
+                      New Verification
+                    </div>
+                  </div>
+                </div>
+
+                {/* Main content */}
+                <div className="flex-1 flex flex-col">
+                  {/* Top header bar */}
+                  <div className="sticky top-0 bg-[#f4f5f4]/95 backdrop-blur-sm flex justify-between items-center px-5 py-3 border-b border-gray-200/30">
+                    <div>
+                      <h3 className="text-sm font-extrabold text-[#102122] tracking-tight">
+                        The Forensic Proof Engine
+                      </h3>
+                      <p className="text-[10px] text-gray-500">
+                        Live, verifiable data from the job site.
+                      </p>
+                    </div>
+                    <div className="hidden md:flex items-center gap-3">
+                      <div className="bg-[#f2f4f2] rounded-lg px-3 py-1.5 flex items-center gap-1.5 border border-gray-200/30">
+                        <span className="material-symbols-outlined text-gray-400 text-sm">
+                          search
+                        </span>
+                        <span className="text-[10px] text-gray-400">
+                          Search proof logs...
+                        </span>
+                      </div>
+                      <span className="material-symbols-outlined text-gray-400 text-lg relative">
+                        notifications
+                        <span className="absolute top-0 right-0 w-1.5 h-1.5 bg-red-500 rounded-full" />
+                      </span>
+                      <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
+                        <span className="text-[9px] font-bold text-white">JM</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Page body */}
+                  <div className="p-5 space-y-5 flex-1">
+                    {/* Page header row */}
+                    <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end pb-5 border-b border-gray-200/30 gap-4">
+                      <div>
+                        <div className="flex items-center gap-1.5 text-primary font-black text-[8px] uppercase tracking-widest mb-1">
+                          <span
+                            className="material-symbols-outlined text-[10px]"
+                            style={{ fontVariationSettings: "'FILL' 1" }}
+                          >
+                            security
+                          </span>
+                          Forensic Industrial Audit
+                        </div>
+                        <h2 className="text-2xl lg:text-3xl font-black text-[#102122] tracking-tighter leading-none">
+                          Review &amp; Release Funds
+                        </h2>
+                        <p className="text-[11px] text-gray-500 mt-1">
+                          Milestone ID:{' '}
+                          <span className="text-primary font-black">
+                            MS-402-B-08
+                          </span>{' '}
+                          &bull; Foundation Poured &amp; Inspected
+                        </p>
+                      </div>
+                      <div className="bg-primary/5 border border-primary/20 px-4 py-3 rounded-xl flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-white">
+                          <span
+                            className="material-symbols-outlined text-lg"
+                            style={{ fontVariationSettings: "'FILL' 1" }}
+                          >
+                            verified
+                          </span>
+                        </div>
+                        <div>
+                          <p className="text-[8px] font-black uppercase tracking-widest text-primary/60">
+                            Audit Status
+                          </p>
+                          <p className="text-xs font-black text-primary leading-tight">
+                            Ready for Forensic Release
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Two-column content */}
+                    <div className="grid grid-cols-12 gap-5">
+                      {/* ── Left: Evidence & Log (7 col) ── */}
+                      <div className="col-span-12 lg:col-span-7 space-y-5">
+                        {/* Evidence Viewer */}
+                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                          <div className="p-4 flex justify-between items-center border-b border-gray-100">
+                            <div>
+                              <h4 className="text-[11px] font-black text-[#102122] uppercase tracking-widest">
+                                Primary Visual Evidence
+                              </h4>
+                              <p className="text-[9px] text-gray-500">
+                                Verified field proof archive
+                              </p>
+                            </div>
+                            <div className="flex bg-[#f2f4f2] p-0.5 rounded-md border border-gray-200/30">
+                              <span className="px-3 py-1 text-[8px] font-black uppercase rounded bg-primary text-white">
+                                Photos (4)
+                              </span>
+                              <span className="px-3 py-1 text-[8px] font-black uppercase text-gray-400">
+                                Receipts
+                              </span>
+                              <span className="px-3 py-1 text-[8px] font-black uppercase text-gray-400">
+                                GPS
+                              </span>
+                            </div>
+                          </div>
+                          <div className="p-4">
+                            {/* Photo area */}
+                            <div className="relative rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-gray-300 via-gray-200 to-gray-300 aspect-video">
+                              <div
+                                className="absolute inset-0 opacity-20"
+                                style={{
+                                  backgroundImage:
+                                    'repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(0,0,0,0.03) 8px, rgba(0,0,0,0.03) 16px)',
+                                }}
+                              />
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <span className="material-symbols-outlined text-gray-300/60 text-7xl">
+                                  foundation
+                                </span>
+                              </div>
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                              {/* Timestamp badge */}
+                              <div className="absolute top-3 left-3 bg-white/70 backdrop-blur-sm px-2.5 py-1 rounded-md">
+                                <p className="text-[8px] font-black text-[#102122] uppercase tracking-widest">
+                                  Oct 14, 2023 &bull; 14:30:12
+                                </p>
+                              </div>
+                              {/* Bottom overlay */}
+                              <div className="absolute bottom-3 left-3 right-3 flex justify-between items-end">
+                                <div className="bg-white/80 backdrop-blur-sm px-4 py-3 rounded-lg max-w-[80%]">
+                                  <div className="flex items-center gap-1.5 mb-1.5">
+                                    <span
+                                      className="material-symbols-outlined text-primary text-xs"
+                                      style={{ fontVariationSettings: "'FILL' 1" }}
+                                    >
+                                      verified_user
+                                    </span>
+                                    <p className="text-[8px] font-black text-primary uppercase tracking-widest">
+                                      Geofence Verified &bull; Site 402-B
+                                    </p>
+                                  </div>
+                                  <p className="text-[11px] text-[#102122] font-bold leading-snug">
+                                    &ldquo;Slab poured, floated, and edged. Curing compound applied.
+                                    Ready for inspection.&rdquo;
+                                  </p>
+                                </div>
+                                <div className="w-8 h-8 rounded-lg bg-white text-primary flex items-center justify-center shadow-lg">
+                                  <span className="material-symbols-outlined text-sm">
+                                    zoom_in
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Metrics row */}
+                            <div className="grid grid-cols-2 gap-3">
+                              <div className="bg-[#f2f4f2]/50 rounded-lg p-3 border border-gray-100">
+                                <div className="flex items-center gap-2 mb-1.5">
+                                  <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center">
+                                    <span className="material-symbols-outlined text-primary text-sm">
+                                      location_on
+                                    </span>
+                                  </div>
+                                  <p className="text-[8px] font-black text-gray-500 uppercase tracking-widest">
+                                    Geo-Coordinates
+                                  </p>
+                                </div>
+                                <p className="text-xs font-black text-[#102122] tracking-tight">
+                                  34.0522&deg; N, 118.2437&deg; W
+                                </p>
+                                <p className="text-[7px] text-primary font-black uppercase mt-0.5">
+                                  Active Precision: &plusmn; 2.4m
+                                </p>
+                              </div>
+                              <div className="bg-[#f2f4f2]/50 rounded-lg p-3 border border-gray-100">
+                                <div className="flex items-center gap-2 mb-1.5">
+                                  <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center">
+                                    <span className="material-symbols-outlined text-primary text-sm">
+                                      inventory_2
+                                    </span>
+                                  </div>
+                                  <p className="text-[8px] font-black text-gray-500 uppercase tracking-widest">
+                                    Material Audit
+                                  </p>
+                                </div>
+                                <p className="text-xs font-black text-[#102122] tracking-tight">
+                                  12.5m&sup3; Grade A Concrete
+                                </p>
+                                <p className="text-[7px] text-gray-500 font-bold uppercase mt-0.5">
+                                  Batch: #4421-B AUTHENTICATED
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Forensic Transaction Log */}
+                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4">
+                          <div className="flex items-center justify-between mb-5 pb-3 border-b border-gray-100">
+                            <h4 className="text-[11px] font-black text-[#102122] uppercase tracking-widest flex items-center gap-2">
+                              <span className="material-symbols-outlined text-primary text-sm">
+                                history
+                              </span>
+                              Forensic Transaction Log
+                            </h4>
+                            <span className="text-[9px] font-black text-primary uppercase tracking-widest">
+                              View Full Audit Trail
+                            </span>
+                          </div>
+                          <div className="space-y-4 relative before:absolute before:left-[5px] before:top-1 before:bottom-1 before:w-[1.5px] before:bg-gray-100">
+                            <div className="relative pl-7">
+                              <div className="absolute left-0 top-1 w-[11px] h-[11px] rounded-full bg-primary ring-[3px] ring-primary/10" />
+                              <div className="flex justify-between items-start gap-4">
+                                <div>
+                                  <p className="text-[10px] font-black text-[#102122] uppercase">
+                                    Material Entry Verified
+                                  </p>
+                                  <p className="text-[9px] text-gray-500 mt-0.5 italic leading-relaxed">
+                                    &ldquo;Batch #4421-B Concrete Slump Test uploaded by Foreman
+                                    J. Miller. Metadata matched shipping manifest.&rdquo;
+                                  </p>
+                                </div>
+                                <span className="text-[8px] font-black text-gray-400 bg-[#f2f4f2] px-1.5 py-0.5 rounded shrink-0">
+                                  14:45
+                                </span>
+                              </div>
+                            </div>
+                            <div className="relative pl-7 opacity-60">
+                              <div className="absolute left-[2px] top-1 w-[7px] h-[7px] rounded-full bg-gray-300" />
+                              <div className="flex justify-between items-start gap-4">
+                                <div>
+                                  <p className="text-[10px] font-bold text-gray-500 uppercase">
+                                    GPS Presence Confirmed
+                                  </p>
+                                  <p className="text-[9px] text-gray-500 mt-0.5 italic leading-relaxed">
+                                    Device verified within site geofence for 4.5 continuous
+                                    hours. No geofence breaks detected.
+                                  </p>
+                                </div>
+                                <span className="text-[8px] font-black text-gray-400 bg-[#f2f4f2] px-1.5 py-0.5 rounded shrink-0">
+                                  13:12
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* ── Right: Financials & Checklist (5 col) ── */}
+                      <div className="col-span-12 lg:col-span-5 space-y-5">
+                        {/* Financial Settlement Card */}
+                        <div className="bg-gradient-to-br from-[#102122] to-[#0a1718] rounded-xl p-6 relative overflow-hidden shadow-xl">
+                          <div className="relative z-10">
+                            <div className="flex items-center gap-1.5 mb-1.5 text-white/60">
+                              <span className="material-symbols-outlined text-xs">
+                                account_balance_wallet
+                              </span>
+                              <p className="text-[8px] font-black uppercase tracking-[0.25em]">
+                                Release Milestone Amount
+                              </p>
+                            </div>
+                            <div className="flex items-baseline gap-1 mb-7">
+                              <span className="text-lg font-black text-white/50">$</span>
+                              <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tighter leading-none">
+                                3,100.
+                                <span className="text-2xl text-white/40">00</span>
+                              </h2>
+                            </div>
+                            <div className="space-y-2.5 pt-5 border-t border-white/10">
+                              {[
+                                { label: 'Escrow Vault Balance', value: '$4,960.00' },
+                                { label: 'Base Milestone Payout', value: '$2,850.00' },
+                                { label: 'Forensic Verification Fee', value: '$250.00' },
+                              ].map((row) => (
+                                <div key={row.label} className="flex justify-between items-center text-[9px]">
+                                  <span className="text-white/50 font-black uppercase tracking-widest">
+                                    {row.label}
+                                  </span>
+                                  <span className="font-black text-white">{row.value}</span>
+                                </div>
+                              ))}
+                              <div className="flex justify-between items-center pt-3 border-t border-white/15">
+                                <span className="text-[9px] font-black uppercase tracking-widest text-white/30">
+                                  Project Residual Balance
+                                </span>
+                                <span className="text-base font-black text-white">
+                                  $1,860.00
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          {/* Decorative */}
+                          <div className="absolute top-0 right-0 p-5 opacity-[0.04]">
+                            <span className="material-symbols-outlined text-[80px] text-white">
+                              shield
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Verification Checklist */}
+                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4">
+                          <h4 className="text-[11px] font-black text-[#102122] uppercase tracking-widest mb-4 pb-3 border-b border-gray-100">
+                            Verification Checklist
+                          </h4>
+                          <div className="space-y-2">
+                            {[
+                              {
+                                label: 'Material Compliance',
+                                detail: '12.5m\u00B3 Volume Matched via Receipt OCR',
+                                done: true,
+                              },
+                              {
+                                label: 'Presence Verification',
+                                detail: 'GPS Site Attendance Verified',
+                                done: true,
+                              },
+                              {
+                                label: 'Visual Integrity',
+                                detail: 'Forensic Visual Proof Uploaded',
+                                done: true,
+                              },
+                              {
+                                label: 'Authority Release',
+                                detail: 'Awaiting Slider Trigger',
+                                done: false,
+                              },
+                            ].map((item) => (
+                              <div
+                                key={item.label}
+                                className={`flex items-start gap-3 p-3 rounded-lg border ${
+                                  item.done
+                                    ? 'bg-primary/5 border-primary/10'
+                                    : 'bg-[#f2f4f2] border-gray-200/50 opacity-50'
+                                }`}
+                              >
+                                <div
+                                  className={`w-5 h-5 rounded-md flex items-center justify-center shrink-0 ${
+                                    item.done
+                                      ? 'bg-primary text-white'
+                                      : 'bg-gray-300 text-white'
+                                  }`}
+                                >
+                                  <span className="material-symbols-outlined text-xs">
+                                    {item.done ? 'check' : 'hourglass_top'}
+                                  </span>
+                                </div>
+                                <div>
+                                  <p className="text-[10px] font-black text-[#102122] uppercase tracking-tight">
+                                    {item.label}
+                                  </p>
+                                  <p className={`text-[8px] font-bold mt-0.5 ${item.done ? 'text-primary' : 'text-gray-500'}`}>
+                                    {item.detail}
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Slide to Release */}
+                        <div className="space-y-2.5">
+                          <div className="relative h-14 bg-[#f2f4f2] rounded-xl p-1.5 flex items-center border border-gray-200/30 overflow-hidden">
+                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                              <p className="text-[8px] font-black uppercase tracking-[0.3em] text-primary/30">
+                                Slide to Secure Release
+                              </p>
+                            </div>
+                            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-primary/10 to-transparent" />
+                            <div className="relative z-20 h-full aspect-square bg-primary rounded-lg flex items-center justify-center shadow-lg border border-white/20">
+                              <span
+                                className="material-symbols-outlined text-white text-xl"
+                                style={{ fontVariationSettings: "'wght' 200" }}
+                              >
+                                lock_open
+                              </span>
+                            </div>
+                            <div className="ml-auto pr-4 flex gap-0.5 text-primary/25">
+                              <span className="material-symbols-outlined text-sm">
+                                chevron_right
+                              </span>
+                              <span className="material-symbols-outlined text-sm -ml-3">
+                                chevron_right
+                              </span>
+                            </div>
+                          </div>
+                          <div className="py-2.5 rounded-lg border border-dashed border-gray-200 text-[8px] font-black uppercase tracking-widest text-gray-400 flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-sm">
+                              flag_circle
+                            </span>
+                            Flag for Forensic Manual Audit
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Footer */}
+                  <div className="mt-auto border-t border-gray-200/30 px-5 py-2.5 flex justify-between items-center bg-white/50 backdrop-blur-sm">
+                    <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        <span className="text-[8px] font-extrabold text-gray-500 uppercase tracking-widest">
+                          Engine Status: Optimal
+                        </span>
+                      </div>
+                      <div className="hidden md:block h-3 w-px bg-gray-200" />
+                      <span className="hidden md:block text-[8px] text-gray-400">
+                        Last Audit Check: 2 minutes ago
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex -space-x-1">
+                        <div className="w-5 h-5 rounded-md border-2 border-white bg-primary/20 flex items-center justify-center text-[7px] font-black text-primary">
+                          AR
+                        </div>
+                        <div className="w-5 h-5 rounded-md border-2 border-white bg-gray-100 flex items-center justify-center text-[7px] font-black text-gray-500">
+                          +2
+                        </div>
+                      </div>
+                      <div className="bg-gray-100 px-2.5 py-1 rounded text-[8px] font-bold text-gray-500 border border-gray-200/30">
+                        Export Forensic Report
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ================================================================
           SECTION 4 — PROOF ARCHIVE
           Recent verifications as receipt-style cards
           ================================================================ */}
