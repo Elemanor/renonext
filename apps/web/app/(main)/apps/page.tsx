@@ -281,6 +281,45 @@ export default function AppsPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
+          LocalPro Featured Banner
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="py-6 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <Link href="/apps/local-pro" className="group block">
+            <div className="relative overflow-hidden bg-[#f6f8f8] rounded-2xl p-8 md:p-10 border border-primary/10 shadow-float hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+              <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <span
+                    className="material-symbols-outlined text-primary text-2xl"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    location_on
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="font-display text-2xl font-bold text-reno-dark group-hover:text-primary transition-colors">
+                      LocalPro
+                    </h3>
+                    <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">
+                      Field Ops
+                    </span>
+                  </div>
+                  <p className="text-gray-500 leading-relaxed max-w-xl">
+                    Project Control Platform — GPS check-in, photo compliance logs, escrow vault, and team management in one dashboard.
+                  </p>
+                </div>
+                <span className="material-symbols-outlined text-primary text-2xl group-hover:translate-x-1 transition-transform">
+                  arrow_forward
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
           Section 2 — Homeowner Experience (Bento Grid)
       ═══════════════════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 px-6 bg-[#f6f8f8]">
