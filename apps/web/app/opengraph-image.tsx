@@ -20,7 +20,7 @@ export default async function OGImage() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#1A1A1A',
+          backgroundColor: '#102122',
           padding: '80px',
           position: 'relative',
         }}
@@ -47,7 +47,7 @@ export default async function OGImage() {
           <div
             style={{
               fontSize: 40,
-              color: '#F6F5F1',
+              color: '#f6f8f8',
               textAlign: 'center',
               maxWidth: '900px',
               lineHeight: 1.4,
@@ -63,7 +63,7 @@ export default async function OGImage() {
             left: 0,
             right: 0,
             height: '8px',
-            background: 'linear-gradient(90deg, #1D6B3F 0%, #0D7377 100%)',
+            background: 'linear-gradient(90deg, #0fbabd 0%, #0D9FA1 100%)',
           }}
         />
       </div>

@@ -184,14 +184,14 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
         <div className="pt-8 pb-6">
           <Link
             href="/pro-network/tenders"
-            className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-[#1D6B3F] mb-4 transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-[#0fbabd] mb-4 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Tenders
           </Link>
 
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-gradient-to-br from-[#1D6B3F] to-[#0D7377]">
+            <div className="p-2 rounded-xl bg-gradient-to-br from-[#0fbabd] to-[#0D9FA1]">
               <Calculator className="h-6 w-6 text-white" />
             </div>
             <div>
@@ -244,7 +244,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
             <Card className="border-slate-200 shadow-sm">
               <CardHeader className="border-b border-slate-200">
                 <div className="flex items-center gap-2">
-                  <ClipboardList className="h-5 w-5 text-[#1D6B3F]" />
+                  <ClipboardList className="h-5 w-5 text-[#0fbabd]" />
                   <CardTitle className="text-lg">Bill of Quantities</CardTitle>
                 </div>
                 <p className="text-sm text-slate-600 mt-1">Pre-calculated material and labour breakdown</p>
@@ -351,7 +351,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
             <Card className="border-slate-200 shadow-sm">
               <CardHeader className="border-b border-slate-200">
                 <div className="flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-[#1D6B3F]" />
+                  <TrendingUp className="h-5 w-5 text-[#0fbabd]" />
                   <CardTitle className="text-lg">Margin Calculator</CardTitle>
                 </div>
                 <p className="text-sm text-slate-600 mt-1">Adjust overhead and profit margins</p>
@@ -375,7 +375,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
                     <div className="flex items-center justify-between">
                       <label className="text-sm font-medium text-slate-700">Overhead</label>
                       <div className="flex items-center gap-2">
-                        <span className="text-lg font-bold text-[#1D6B3F]">{overheadPercent}%</span>
+                        <span className="text-lg font-bold text-[#0fbabd]">{overheadPercent}%</span>
                         <span className="text-sm text-slate-600">({formatCurrency(overheadAmount)})</span>
                       </div>
                     </div>
@@ -386,7 +386,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
                       min={0}
                       max={30}
                       step={1}
-                      className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-slate-200 accent-[#1D6B3F]"
+                      className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-slate-200 accent-[#0fbabd]"
                     />
                   </div>
 
@@ -395,7 +395,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
                     <div className="flex items-center justify-between">
                       <label className="text-sm font-medium text-slate-700">Profit Margin</label>
                       <div className="flex items-center gap-2">
-                        <span className="text-lg font-bold text-[#1D6B3F]">{profitMarginPercent}%</span>
+                        <span className="text-lg font-bold text-[#0fbabd]">{profitMarginPercent}%</span>
                         <span className="text-sm text-slate-600">({formatCurrency(profitAmount)})</span>
                       </div>
                     </div>
@@ -406,7 +406,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
                       min={0}
                       max={40}
                       step={1}
-                      className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-slate-200 accent-[#1D6B3F]"
+                      className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-slate-200 accent-[#0fbabd]"
                     />
                   </div>
 
@@ -431,7 +431,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
             <Card className="border-slate-200 shadow-sm">
               <CardHeader className="border-b border-slate-200">
                 <div className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-[#1D6B3F]" />
+                  <Calendar className="h-5 w-5 text-[#0fbabd]" />
                   <CardTitle className="text-lg">Timeline & Conditions</CardTitle>
                 </div>
               </CardHeader>
@@ -447,7 +447,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
                       placeholder="e.g., March 1, 2026"
                       value={startDate}
                       onChange={(e) => setStartDate(e.target.value)}
-                      className="rounded-xl border-slate-300 focus:border-[#1D6B3F] focus:ring-[#1D6B3F]"
+                      className="rounded-xl border-slate-300 focus:border-[#0fbabd] focus:ring-[#0fbabd]"
                     />
                   </div>
 
@@ -457,7 +457,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
                     <select
                       value={duration}
                       onChange={(e) => setDuration(e.target.value)}
-                      className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm focus:border-[#1D6B3F] focus:ring-[#1D6B3F] focus:outline-none"
+                      className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm focus:border-[#0fbabd] focus:ring-[#0fbabd] focus:outline-none"
                     >
                       <option value="1-week">1 week</option>
                       <option value="2-weeks">2 weeks</option>
@@ -477,7 +477,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
                         max={20}
                         value={crewSize}
                         onChange={(e) => setCrewSize(parseInt(e.target.value) || 1)}
-                        className="rounded-xl border-slate-300 focus:border-[#1D6B3F] focus:ring-[#1D6B3F]"
+                        className="rounded-xl border-slate-300 focus:border-[#0fbabd] focus:ring-[#0fbabd]"
                       />
                       <span className="text-sm text-slate-600">workers</span>
                     </div>
@@ -491,7 +491,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
                       value={specialConditions}
                       onChange={(e) => setSpecialConditions(e.target.value)}
                       rows={4}
-                      className="rounded-xl border-slate-300 focus:border-[#1D6B3F] focus:ring-[#1D6B3F] resize-none"
+                      className="rounded-xl border-slate-300 focus:border-[#0fbabd] focus:ring-[#0fbabd] resize-none"
                     />
                   </div>
                 </div>
@@ -530,7 +530,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-semibold text-slate-700">Total Bid Amount</span>
                       </div>
-                      <div className="p-4 rounded-xl bg-gradient-to-br from-[#1D6B3F] to-[#0D7377]">
+                      <div className="p-4 rounded-xl bg-gradient-to-br from-[#0fbabd] to-[#0D9FA1]">
                         <p className="text-3xl font-bold text-white">{formatCurrency(totalBid)}</p>
                       </div>
                     </div>
@@ -566,7 +566,7 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
               {/* Submit Button */}
               <Button
                 onClick={handleSubmit}
-                className="w-full h-auto py-4 text-lg font-semibold bg-gradient-to-r from-[#1D6B3F] to-[#0D7377] hover:from-[#164d2e] hover:to-[#0a5c5f] text-white shadow-lg hover:shadow-xl transition-all rounded-xl"
+                className="w-full h-auto py-4 text-lg font-semibold bg-gradient-to-r from-[#0fbabd] to-[#0D9FA1] hover:from-[#0da8ab] hover:to-[#0b8d90] text-white shadow-lg hover:shadow-xl transition-all rounded-xl"
               >
                 <CheckCircle2 className="mr-2 h-5 w-5" />
                 Submit Bid — {formatCurrency(totalBid)}

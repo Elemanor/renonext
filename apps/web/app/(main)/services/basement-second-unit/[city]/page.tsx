@@ -109,7 +109,7 @@ export default async function SecondarySuiteCityPage({
       <div className="min-h-screen bg-white">
         {/* ── Section 1: Hero ── */}
         <section className="relative overflow-hidden bg-gradient-to-b from-reno-cream to-white py-16 md:py-24">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(29,107,63,0.06),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(15,186,189,0.06),transparent_50%)]" />
           <div className="container relative mx-auto px-4">
             {/* Breadcrumb */}
             <nav className="mb-8 flex items-center gap-2 text-sm text-gray-500">

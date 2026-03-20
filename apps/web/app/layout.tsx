@@ -1,22 +1,14 @@
 import type { Metadata } from 'next';
-import { DM_Sans, Instrument_Serif } from 'next/font/google';
+import { Work_Sans } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Providers } from '@/components/providers';
 import './globals.css';
 
-const dmSans = DM_Sans({
+const workSans = Work_Sans({
   subsets: ['latin'],
   variable: '--font-body',
-  display: 'swap',
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
-  variable: '--font-display',
   display: 'swap',
 });
 
@@ -70,8 +62,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" className={workSans.variable}>
       <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-50R3L19GZV"
           strategy="afterInteractive"
@@ -85,7 +81,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="min-h-screen bg-white font-body antialiased">
+      <body className="min-h-screen bg-[#f6f8f8] font-body antialiased">
         <Providers>
           {children}
         </Providers>

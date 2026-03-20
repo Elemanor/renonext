@@ -153,7 +153,7 @@ export default function TendersPage() {
         {/* Header Section */}
         <div className="pt-8 pb-6">
           <div className="flex items-center gap-3 mb-3">
-            <div className="p-2 rounded-xl bg-gradient-to-br from-[#1D6B3F] to-[#0D7377]">
+            <div className="p-2 rounded-xl bg-gradient-to-br from-[#0fbabd] to-[#0D9FA1]">
               <FileText className="h-6 w-6 text-white" />
             </div>
             <div>
@@ -223,7 +223,7 @@ export default function TendersPage() {
                       className={cn(
                         'px-4 py-2 rounded-xl text-sm font-medium transition-all',
                         selectedTrade === trade
-                          ? 'bg-[#1D6B3F] text-white shadow-md'
+                          ? 'bg-[#0fbabd] text-white shadow-md'
                           : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                       )}
                     >
@@ -244,7 +244,7 @@ export default function TendersPage() {
                       className={cn(
                         'px-4 py-2 rounded-xl text-sm font-medium transition-all',
                         selectedStatus === status
-                          ? 'bg-[#1D6B3F] text-white shadow-md'
+                          ? 'bg-[#0fbabd] text-white shadow-md'
                           : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                       )}
                     >
@@ -266,7 +266,7 @@ export default function TendersPage() {
                   placeholder="Search tenders..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-11 rounded-xl border-slate-300 focus:border-[#1D6B3F] focus:ring-[#1D6B3F]"
+                  className="pl-10 h-11 rounded-xl border-slate-300 focus:border-[#0fbabd] focus:ring-[#0fbabd]"
                 />
               </div>
             </div>
@@ -282,7 +282,7 @@ export default function TendersPage() {
             return (
               <Card
                 key={tender.id}
-                className="border-slate-200 shadow-sm hover:shadow-lg transition-all duration-200 hover:border-[#1D6B3F]/30"
+                className="border-slate-200 shadow-sm hover:shadow-lg transition-all duration-200 hover:border-[#0fbabd]/30"
               >
                 <CardContent className="p-6">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
@@ -369,7 +369,7 @@ export default function TendersPage() {
                           <Link href={`/pro-network/bid/${tender.id}`} className="w-full">
                             <Button
                               variant="outline"
-                              className="w-full border-slate-300 hover:border-[#1D6B3F] hover:bg-slate-50"
+                              className="w-full border-slate-300 hover:border-[#0fbabd] hover:bg-slate-50"
                             >
                               View Bid
                             </Button>
@@ -377,7 +377,7 @@ export default function TendersPage() {
                         </div>
                       ) : (
                         <Link href={`/pro-network/bid/${tender.id}`} className="w-full">
-                          <Button className="w-full bg-gradient-to-r from-[#1D6B3F] to-[#0D7377] hover:from-[#164d2e] hover:to-[#0a5c5f] text-white shadow-md hover:shadow-lg transition-all">
+                          <Button className="w-full bg-gradient-to-r from-[#0fbabd] to-[#0D9FA1] hover:from-[#0da8ab] hover:to-[#0b8d90] text-white shadow-md hover:shadow-lg transition-all">
                             Submit Bid
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>

@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Star, Check } from 'lucide-react';
 
 interface ProCardData {
   name: string;
@@ -11,24 +10,20 @@ interface ProCardData {
   gradientTo: string;
   rating: number;
   projectCount: number;
-  proofCompletion: number;
   specialty: string;
   location: string;
-  sparklineData: number[];
 }
 
 const contractors: ProCardData[] = [
   {
     name: 'DrySpace Waterproofing',
     initials: 'DS',
-    gradientFrom: '#1D6B3F',
-    gradientTo: '#0D7377',
+    gradientFrom: '#0fbabd',
+    gradientTo: '#0D9FA1',
     rating: 0,
     projectCount: 0,
-    proofCompletion: 0,
     specialty: 'Waterproofing & Foundation',
     location: 'Toronto · GTA',
-    sparklineData: [0, 0, 0, 0, 0, 0],
   },
   {
     name: 'Imperial Form',
@@ -37,92 +32,47 @@ const contractors: ProCardData[] = [
     gradientTo: '#60a5fa',
     rating: 0,
     projectCount: 0,
-    proofCompletion: 0,
     specialty: 'Concrete & Masonry',
     location: 'Toronto · GTA',
-    sparklineData: [0, 0, 0, 0, 0, 0],
   },
   {
     name: 'Spaders',
     initials: 'SP',
-    gradientFrom: '#0D7377',
+    gradientFrom: '#0D9FA1',
     gradientTo: '#14919B',
     rating: 0,
     projectCount: 0,
-    proofCompletion: 0,
     specialty: 'Underpinning & Basements',
     location: 'Toronto · GTA',
-    sparklineData: [0, 0, 0, 0, 0, 0],
   },
 ];
-
-function Sparkline({ data }: { data: number[] }) {
-  const width = 60;
-  const height = 20;
-  const max = Math.max(...data);
-  const min = Math.min(...data);
-  const range = max - min;
-
-  const points = data
-    .map((value, index) => {
-      const x = (index / (data.length - 1)) * width;
-      const y = height - ((value - min) / range) * height;
-      return `${x},${y}`;
-    })
-    .join(' ');
-
-  return (
-    <svg width={width} height={height} className="inline-block ml-2">
-      <polyline
-        points={points}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="text-gray-400"
-      />
-    </svg>
-  );
-}
 
 function ProCard({
   contractor,
   index,
-  isVisible
+  isVisible,
 }: {
   contractor: ProCardData;
   index: number;
   isVisible: boolean;
 }) {
-  const [proofProgress, setProofProgress] = useState(0);
-
-  useEffect(() => {
-    if (isVisible) {
-      const timeout = setTimeout(() => {
-        setProofProgress(contractor.proofCompletion);
-      }, 200 + index * 150);
-      return () => clearTimeout(timeout);
-    }
-  }, [isVisible, contractor.proofCompletion, index]);
+  const isNewPro = contractor.rating === 0 && contractor.projectCount === 0;
 
   return (
     <div
       className={`
-        bg-white rounded-xl p-6 shadow-md
+        bg-white rounded-2xl p-6 md:p-7 shadow-float
         transition-all duration-700 ease-out
-        hover:-translate-y-1 hover:shadow-xl hover:scale-[1.02]
-        border-2 border-gray-100 hover:border-reno-green
+        hover:-translate-y-1 hover:shadow-float-hover
+        border border-primary/5
         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
       `}
-      style={{
-        transitionDelay: `${index * 150}ms`,
-      }}
+      style={{ transitionDelay: `${index * 150}ms` }}
     >
-      {/* Avatar and Rating */}
-      <div className="flex items-start justify-between mb-4">
+      {/* Avatar and Badge */}
+      <div className="flex items-start justify-between mb-5">
         <div
-          className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-xl"
+          className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-lg"
           style={{
             background: `linear-gradient(135deg, ${contractor.gradientFrom}, ${contractor.gradientTo})`,
           }}
@@ -130,47 +80,74 @@ function ProCard({
           {contractor.initials}
         </div>
 
-        <div className="flex items-center gap-1 bg-reno-amber-light px-3 py-1 rounded-full">
-          <Star className="w-4 h-4 fill-reno-amber text-reno-amber" />
-          <span className="font-semibold text-reno-dark">{contractor.rating}</span>
-        </div>
+        {isNewPro ? (
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10">
+            <span
+              className="material-symbols-outlined text-primary text-xs"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              fiber_new
+            </span>
+            <span className="text-xs font-bold text-primary">New</span>
+          </div>
+        ) : (
+          <div className="flex items-center gap-1.5 bg-amber-50 px-3 py-1 rounded-full">
+            <span
+              className="material-symbols-outlined text-amber-400 text-sm"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              star
+            </span>
+            <span className="font-bold text-sm text-reno-dark">
+              {contractor.rating.toFixed(1)}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Name */}
-      <h4 className="font-display text-xl text-reno-dark mb-2">
+      <h4 className="font-display text-xl font-bold text-reno-dark mb-1">
         {contractor.name}
       </h4>
 
-      {/* Projects and Proof Bar */}
-      <div className="mb-4">
-        <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
-          <span>{contractor.projectCount} verified projects</span>
-          <Sparkline data={contractor.sparklineData} />
-        </div>
+      {/* Specialty */}
+      <p className="text-sm text-gray-500 mb-4">{contractor.specialty}</p>
 
-        {/* Proof completion bar */}
-        <div className="relative h-2 bg-gray-100 rounded-full overflow-hidden">
-          <div
-            className="absolute inset-y-0 left-0 bg-gradient-to-r from-reno-green to-reno-green-light rounded-full transition-all duration-1000 ease-out"
-            style={{
-              width: `${proofProgress}%`,
-            }}
-          />
-        </div>
-        <p className="text-xs text-gray-500 mt-1">
-          {contractor.proofCompletion}% proof completion
-        </p>
+      {/* Location */}
+      <div className="flex items-center gap-1.5 mb-5">
+        <span className="material-symbols-outlined text-gray-400 text-base">
+          location_on
+        </span>
+        <span className="text-sm text-gray-500">{contractor.location}</span>
       </div>
 
-      {/* Specialty and Location */}
-      <p className="text-sm text-gray-600 mb-3">
-        {contractor.specialty} · {contractor.location}
-      </p>
+      {/* Trust badges row */}
+      <div className="flex flex-wrap gap-2 mb-5">
+        {['WSIB', 'Insured', 'Licensed'].map((badge) => (
+          <div
+            key={badge}
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#f6f8f8] text-xs font-semibold text-gray-500"
+          >
+            <span
+              className="material-symbols-outlined text-primary text-xs"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              check_circle
+            </span>
+            {badge}
+          </div>
+        ))}
+      </div>
 
-      {/* Verified Badge */}
-      <div className="inline-flex items-center gap-1.5 bg-reno-green-light text-reno-green px-3 py-1.5 rounded-full text-sm font-medium">
-        <Check className="w-4 h-4" strokeWidth={3} />
-        <span>Verified</span>
+      {/* Verified Pro Badge */}
+      <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-sm font-semibold">
+        <span
+          className="material-symbols-outlined text-base"
+          style={{ fontVariationSettings: "'FILL' 1" }}
+        >
+          verified
+        </span>
+        Verified Pro
       </div>
     </div>
   );
@@ -181,6 +158,15 @@ export function ProsPreview() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (prefersReducedMotion) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -197,33 +183,34 @@ export function ProsPreview() {
     return () => observer.disconnect();
   }, []);
 
-  // Support reduced motion
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mediaQuery.matches) {
-      setIsVisible(true);
-    }
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="py-24 px-4 bg-white"
-    >
+    <section ref={sectionRef} className="py-24 md:py-28 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        {/* Headline */}
-        <h2
-          className={`
-            font-display text-4xl md:text-5xl text-center text-reno-dark mb-16
-            transition-all duration-700
-            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
-          `}
+        {/* Header */}
+        <header
+          className={`text-center mb-14 transition-all duration-700 ${
+            isVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-4'
+          }`}
         >
-          Real contractors. Real track records.
-        </h2>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-5">
+            <span
+              className="material-symbols-outlined text-sm"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              workspace_premium
+            </span>
+            Verified Network
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-reno-dark leading-[1.1]">
+            Real Contractors.{' '}
+            <span className="text-primary italic">Real Track Records.</span>
+          </h2>
+        </header>
 
         {/* Contractor Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-6 mb-14">
           {contractors.map((contractor, index) => (
             <ProCard
               key={contractor.name}
@@ -241,30 +228,19 @@ export function ProsPreview() {
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
           `}
         >
-          <Link href="/pros">
-            <button
-              className="
-                inline-flex items-center gap-2 px-8 py-3
-                bg-reno-dark text-white rounded-lg font-medium
-                transition-all duration-300
-                hover:bg-reno-dark/90 hover:shadow-lg hover:-translate-y-0.5
-              "
-            >
-              <span>Browse All Pros</span>
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
+          <Link
+            href="/pros"
+            className="
+              inline-flex items-center gap-2 px-8 py-3.5
+              bg-reno-dark text-white rounded-full font-semibold
+              transition-all duration-300
+              hover:bg-reno-dark/90 hover:shadow-lg hover:-translate-y-0.5
+            "
+          >
+            Browse All Pros
+            <span className="material-symbols-outlined text-lg">
+              arrow_forward
+            </span>
           </Link>
         </div>
       </div>

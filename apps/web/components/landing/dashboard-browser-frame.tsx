@@ -19,15 +19,15 @@ interface DashboardBrowserFrameProps {
 
 const variants = {
   green: {
-    primary: '#1D6B3F',
-    secondary: '#0D7377',
+    primary: '#0fbabd',
+    secondary: '#0D9FA1',
     badgeClasses: 'border-reno-green/20 bg-reno-green/10 text-reno-green',
     dotClasses: 'bg-reno-green',
     lockColor: 'text-reno-green',
   },
   teal: {
-    primary: '#0D7377',
-    secondary: '#6B4E8D',
+    primary: '#0D9FA1',
+    secondary: '#E8AA42',
     badgeClasses: 'border-reno-teal/20 bg-reno-teal/10 text-reno-teal',
     dotClasses: 'bg-reno-teal',
     lockColor: 'text-reno-teal',

@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
-import { X, ArrowRight, ChevronRight, Landmark, ShieldCheck, Star } from 'lucide-react'
 
 export function HeroFloating() {
   const [focusedCard, setFocusedCard] = useState<'escrow' | 'contractor' | null>(null)
@@ -10,7 +9,6 @@ export function HeroFloating() {
   const [selectedProjectType, setSelectedProjectType] = useState<string | null>(null)
   const [selectedBudget, setSelectedBudget] = useState<string | null>(null)
 
-  // Lock body scroll when modal is open
   useEffect(() => {
     if (showModal) {
       document.body.style.overflow = 'hidden'
@@ -20,7 +18,6 @@ export function HeroFloating() {
     return () => { document.body.style.overflow = '' }
   }, [showModal])
 
-  // Close modal on Escape
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setShowModal(false)
@@ -35,715 +32,290 @@ export function HeroFloating() {
 
   return (
     <>
-      <style>{`
-        @import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=general-sans@200,300,400,500,600,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+      {/* ── HERO SECTION ── */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#f6f8f8]">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 bg-[#f6f8f8]/90 backdrop-blur-[2px] z-10" />
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-40"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
+            }}
+          />
+          {/* Subtle teal gradient accent */}
+          <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[#0fbabd]/5 blur-[120px] rounded-full mix-blend-multiply z-10" />
+        </div>
 
-        :root {
-          --hero-display: 'Clash Display', system-ui, sans-serif;
-          --hero-body: 'General Sans', system-ui, sans-serif;
-          --hero-mono: 'Space Grotesk', 'SF Mono', monospace;
-          --hero-primary: #0F3D3E;
-          --hero-bg: #F6F4F0;
-          --hero-surface: #FFFFFF;
-          --hero-text: #121212;
-          --hero-muted: #8A8A8A;
-          --hero-accent: #E8AA42;
-          --hero-success: #2E7D32;
-          --hero-radius: 24px;
-          --hero-shadow: 0 20px 40px -10px rgba(15, 61, 62, 0.12),
-                         0 8px 16px -8px rgba(15, 61, 62, 0.08);
-          --hero-shadow-hover: 0 30px 60px -12px rgba(15, 61, 62, 0.18),
-                               0 12px 24px -12px rgba(15, 61, 62, 0.12);
-        }
+        <div className="container mx-auto px-6 lg:px-12 relative z-20 h-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 py-16 lg:py-0">
+          {/* Left: Typographic Lockup (55%) */}
+          <div className="w-full lg:w-[55%] flex flex-col gap-8 text-left pt-10 lg:pt-0">
+            <h1 className="text-5xl lg:text-[64px] font-bold leading-[1.1] tracking-tight text-slate-900">
+              Build with confidence.
+              <br />
+              <span className="text-[#0fbabd]">Pay with certainty.</span>
+            </h1>
 
-        /* ── Entrance animations ── */
-        @keyframes heroFadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes heroCardIn {
-          from { opacity: 0; transform: translateY(40px) scale(0.97); }
-          to   { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        @keyframes heroPulseRing {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
-          50%      { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
-        }
-        @keyframes heroSlideIn {
-          from { transform: translateX(100%); }
-          to   { transform: translateX(0); }
-        }
-        @keyframes heroOverlayIn {
-          from { opacity: 0; }
-          to   { opacity: 1; }
-        }
-        @keyframes heroStatusPulse {
-          0%, 100% { opacity: 1; }
-          50%      { opacity: 0.4; }
-        }
-        @keyframes heroFloatIdle {
-          0%, 100% { transform: translateY(0); }
-          50%      { transform: translateY(-6px); }
-        }
+            <p className="text-lg lg:text-xl text-slate-600 font-normal leading-relaxed max-w-xl">
+              The only renovation platform where your funds are secured in
+              escrow until milestones are met.
+            </p>
 
-        /* ── Staggered text entries ── */
-        .hf-badge    { animation: heroFadeInUp 0.7s cubic-bezier(0.22,0.68,0,1) 0.05s both; }
-        .hf-headline { animation: heroFadeInUp 0.7s cubic-bezier(0.22,0.68,0,1) 0.12s both; }
-        .hf-sub      { animation: heroFadeInUp 0.7s cubic-bezier(0.22,0.68,0,1) 0.22s both; }
-        .hf-ctas     { animation: heroFadeInUp 0.7s cubic-bezier(0.22,0.68,0,1) 0.34s both; }
-        .hf-trust    { animation: heroFadeInUp 0.7s cubic-bezier(0.22,0.68,0,1) 0.48s both; }
-
-        /* ── Card entries ── */
-        .hf-card-1 { animation: heroCardIn 0.65s cubic-bezier(0.22,0.68,0,1) 0.25s both; }
-        .hf-card-2 { animation: heroCardIn 0.65s cubic-bezier(0.22,0.68,0,1) 0.45s both; }
-
-        /* ── Card idle float ── */
-        .hf-float-idle-1 { animation: heroFloatIdle 6s ease-in-out infinite; }
-        .hf-float-idle-2 { animation: heroFloatIdle 7s ease-in-out 1s infinite; }
-
-        /* ── Interactive transitions ── */
-        .hf-card {
-          transition: transform 0.5s cubic-bezier(0.22,0.68,0,1),
-                      box-shadow 0.5s cubic-bezier(0.22,0.68,0,1),
-                      opacity 0.4s ease,
-                      width 0.5s cubic-bezier(0.22,0.68,0,1);
-        }
-
-        .hf-pulse { animation: heroPulseRing 2s ease-in-out infinite; }
-        .hf-status-pulse { animation: heroStatusPulse 2s ease-in-out infinite; }
-
-        /* ── Modal ── */
-        .hf-modal-overlay { animation: heroOverlayIn 0.3s ease-out both; }
-        .hf-modal-panel   { animation: heroSlideIn 0.4s cubic-bezier(0.22,0.68,0,1) both; }
-
-        .hf-radio {
-          transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
-        }
-        .hf-radio:hover { border-color: rgba(15,61,62,0.3); }
-        .hf-radio:active { transform: scale(0.98); }
-
-        /* ── Expand / collapse for card details ── */
-        .hf-expand {
-          transition: max-height 0.5s cubic-bezier(0.22,0.68,0,1),
-                      opacity 0.4s ease,
-                      margin-top 0.4s ease;
-        }
-
-        /* ── CTA hover glow ── */
-        .hf-cta-primary {
-          transition: box-shadow 0.3s ease, transform 0.15s ease;
-        }
-        .hf-cta-primary:hover {
-          box-shadow: 0 8px 30px -6px rgba(15, 61, 62, 0.35);
-        }
-        .hf-cta-primary:active { transform: scale(0.98); }
-
-        .hf-cta-outline {
-          transition: background 0.3s ease, transform 0.15s ease;
-        }
-        .hf-cta-outline:hover {
-          background: rgba(15, 61, 62, 0.04);
-        }
-        .hf-cta-outline:active { transform: scale(0.98); }
-
-        /* ── Reduced motion ── */
-        @media (prefers-reduced-motion: reduce) {
-          .hf-badge, .hf-headline, .hf-sub, .hf-ctas, .hf-trust,
-          .hf-card-1, .hf-card-2, .hf-float-idle-1, .hf-float-idle-2,
-          .hf-pulse, .hf-status-pulse,
-          .hf-modal-overlay, .hf-modal-panel {
-            animation: none !important;
-            opacity: 1 !important;
-            transform: none !important;
-          }
-          .hf-card, .hf-expand, .hf-radio,
-          .hf-cta-primary, .hf-cta-outline {
-            transition: none !important;
-          }
-        }
-      `}</style>
-
-      {/* ────────────────────────────────────────────────────────────
-          HERO SECTION
-      ──────────────────────────────────────────────────────────── */}
-      <section
-        className="relative min-h-screen flex items-center overflow-hidden"
-        style={{ background: 'var(--hero-bg)' }}
-      >
-        {/* Subtle dot pattern */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(15,61,62,0.06) 1px, transparent 1px)',
-            backgroundSize: '32px 32px',
-          }}
-        />
-
-        {/* Background dim overlay (for card focus states) */}
-        <div
-          className="absolute inset-0 z-[5] pointer-events-none"
-          style={{
-            background: 'rgba(15,15,15,0.3)',
-            opacity: focusedCard ? 1 : 0,
-            transition: 'opacity 0.5s ease',
-          }}
-        />
-
-        {/* ── Main content grid ── */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center py-24 lg:py-0 lg:min-h-screen">
-
-            {/* ── LEFT COLUMN (3/5 = 60%) ── */}
-            <div className="lg:col-span-3 space-y-7">
-              {/* Badge pill */}
-              <div
-                className="hf-badge inline-flex items-center gap-2.5 px-4 py-2 rounded-full"
-                style={{
-                  background: 'rgba(15,61,62,0.05)',
-                  border: '1px solid rgba(15,61,62,0.08)',
-                }}
+            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+              <button
+                onClick={() => setShowModal(true)}
+                className="group flex items-center justify-center rounded-lg h-14 px-8 bg-[#0fbabd] text-white text-base font-semibold shadow-lg shadow-[#0fbabd]/30 hover:shadow-[#0fbabd]/50 hover:-translate-y-0.5 transition-all duration-300"
               >
-                <span className="relative flex h-2 w-2">
-                  <span
-                    className="absolute inline-flex h-full w-full rounded-full opacity-75 hf-status-pulse"
-                    style={{ background: 'var(--hero-success)' }}
-                  />
-                  <span
-                    className="relative inline-flex rounded-full h-2 w-2"
-                    style={{ background: 'var(--hero-success)' }}
-                  />
+                Secure Your Renovation
+                <span className="material-symbols-outlined ml-2 text-lg transition-transform group-hover:translate-x-1">
+                  arrow_forward
                 </span>
+              </button>
+
+              <Link
+                href="/join"
+                className="flex items-center justify-center rounded-lg h-14 px-8 border-2 border-[#0fbabd] text-[#0fbabd] text-base font-semibold hover:bg-[#0fbabd]/5 transition-all duration-300"
+              >
+                I&apos;m a Contractor
+                <span className="material-symbols-outlined ml-2 text-lg">
+                  chevron_right
+                </span>
+              </Link>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex items-center gap-6 pt-4 text-sm text-slate-500 font-medium">
+              <div className="flex items-center gap-2">
                 <span
-                  className="text-[13px] tracking-wide"
-                  style={{
-                    fontFamily: 'var(--hero-body)',
-                    fontWeight: 500,
-                    color: 'rgba(15,61,62,0.7)',
-                  }}
+                  className="material-symbols-outlined text-[#0fbabd] text-lg"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
                 >
-                  Escrow-Secured Platform
+                  shield
+                </span>
+                <span>Bank-grade Escrow</span>
+              </div>
+              <div className="w-1 h-1 rounded-full bg-slate-300" />
+              <div className="flex items-center gap-2">
+                <span
+                  className="material-symbols-outlined text-[#0fbabd] text-lg"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  verified
+                </span>
+                <span>Vetted Pros</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Floating Cards Composition (45%) */}
+          <div className="w-full lg:w-[45%] relative h-[450px] lg:h-[600px] hidden lg:flex items-center justify-center lg:justify-end pr-0 lg:pr-8">
+            {/* ── ESCROW CARD ── */}
+            <div
+              className={`absolute top-[10%] right-[5%] lg:right-[15%] w-[320px] bg-white rounded-2xl p-6 shadow-float hover:shadow-float-hover hover:-translate-y-2 transition-all duration-300 border border-[#0fbabd]/10 z-10 animate-float-in-1 cursor-pointer ${
+                focusedCard === 'contractor' ? 'opacity-25' : ''
+              }`}
+              onMouseEnter={() => setFocusedCard('escrow')}
+              onMouseLeave={clearFocus}
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-green-50 text-green-600">
+                  <span
+                    className="material-symbols-outlined text-2xl"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    shield_locked
+                  </span>
+                </div>
+                <span className="px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full border border-green-200">
+                  Secured
                 </span>
               </div>
-
-              {/* Headline */}
-              <h1
-                className="hf-headline leading-[1.08] tracking-[-0.025em]"
-                style={{
-                  fontFamily: 'var(--hero-display)',
-                  fontWeight: 600,
-                  fontSize: 'clamp(36px, 5vw, 64px)',
-                  color: 'var(--hero-text)',
-                }}
-              >
-                Build with confidence.
-                <br />
-                <span style={{ color: 'var(--hero-primary)' }}>
-                  Pay with certainty.
-                </span>
-              </h1>
-
-              {/* Subheadline */}
-              <p
-                className="hf-sub max-w-xl"
-                style={{
-                  fontFamily: 'var(--hero-body)',
-                  fontSize: '18px',
-                  lineHeight: 1.7,
-                  color: 'var(--hero-muted)',
-                }}
-              >
-                The only renovation platform where your funds are secured in
-                escrow until milestones are met. Verified contractors.
-                Transparent costs. Zero surprises.
-              </p>
-
-              {/* CTAs */}
-              <div className="hf-ctas flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={() => setShowModal(true)}
-                  className="hf-cta-primary group inline-flex items-center justify-center gap-2 px-8 text-white"
-                  style={{
-                    fontFamily: 'var(--hero-body)',
-                    fontSize: '16px',
-                    fontWeight: 600,
-                    height: '56px',
-                    background: 'var(--hero-primary)',
-                    borderRadius: '8px',
-                    border: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  Secure Your Renovation
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
-
-                <Link
-                  href="/join"
-                  className="hf-cta-outline group inline-flex items-center justify-center gap-2 px-8"
-                  style={{
-                    fontFamily: 'var(--hero-body)',
-                    fontSize: '16px',
-                    fontWeight: 600,
-                    height: '56px',
-                    color: 'var(--hero-primary)',
-                    border: '2px solid var(--hero-primary)',
-                    borderRadius: '8px',
-                  }}
-                >
-                  I&apos;m a Contractor
-                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <div className="flex flex-col gap-1">
+                <p className="text-slate-500 text-sm font-medium">Secured in Escrow</p>
+                <p className="text-slate-900 text-[32px] font-bold tracking-tight font-mono">
+                  $45,000
+                </p>
               </div>
 
-              {/* Inline trust indicators */}
-              <div className="hf-trust flex flex-wrap items-center gap-x-8 gap-y-3 pt-2">
-                <TrustItem icon={<Landmark className="w-3.5 h-3.5" />} label="Bank-held escrow" />
-                <TrustItem icon={<ShieldCheck className="w-3.5 h-3.5" />} label="Licensed & insured" />
-                <TrustItem icon={<Star className="w-3.5 h-3.5" />} label="4.9/5 homeowner rating" />
+              {/* Milestone hint / Expanded timeline on hover */}
+              <div
+                className="overflow-hidden transition-all duration-500 ease-out"
+                style={{
+                  maxHeight: focusedCard === 'escrow' ? '220px' : '52px',
+                }}
+              >
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-green-500 relative">
+                    <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75" />
+                  </div>
+                  <p className="text-xs text-slate-600 font-medium">
+                    Next: Demolition ($15k)
+                  </p>
+                </div>
+
+                {/* Expanded timeline */}
+                <div
+                  className="transition-all duration-500"
+                  style={{
+                    opacity: focusedCard === 'escrow' ? 1 : 0,
+                    marginTop: focusedCard === 'escrow' ? '16px' : '0px',
+                  }}
+                >
+                  <div className="relative pl-7">
+                    {/* Vertical connector */}
+                    <div
+                      className="absolute left-[7px] top-2 bottom-2 w-0.5 rounded"
+                      style={{
+                        background: 'linear-gradient(to bottom, #16a34a, #2563EB, #D1D5DB)',
+                      }}
+                    />
+                    {/* Node 1 — Completed */}
+                    <div className="relative flex items-start gap-3 mb-4">
+                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-green-600 flex items-center justify-center">
+                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                          <path d="M1.5 4L3.5 6L6.5 2" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-[13px] font-semibold text-slate-900">Deposit</p>
+                        <p className="text-sm font-mono text-green-600">
+                          $10,000 <span className="text-[11px] font-sans text-slate-400">Released</span>
+                        </p>
+                      </div>
+                    </div>
+                    {/* Node 2 — Active */}
+                    <div className="relative flex items-start gap-3 mb-4">
+                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center animate-pulse">
+                        <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                      </div>
+                      <div>
+                        <p className="text-[13px] font-semibold text-slate-900">Demolition</p>
+                        <p className="text-sm font-mono text-blue-600">
+                          $15,000 <span className="text-[11px] font-sans text-slate-400">Secured</span>
+                        </p>
+                      </div>
+                    </div>
+                    {/* Node 3 — Pending */}
+                    <div className="relative flex items-start gap-3">
+                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-gray-300 flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                      </div>
+                      <div>
+                        <p className="text-[13px] font-semibold text-slate-900">Final Inspection</p>
+                        <p className="text-sm font-mono text-slate-400">
+                          $20,000 <span className="text-[11px] font-sans">Pending</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* ── RIGHT COLUMN (2/5 = 40%) — floating cards ── */}
-            <div className="lg:col-span-2 relative h-[460px] lg:h-[540px] hidden lg:block">
-              {/* Decorative radial glow behind cards */}
-              <div
-                className="absolute -z-10 pointer-events-none"
-                style={{
-                  width: '400px',
-                  height: '400px',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  background: 'radial-gradient(circle, rgba(15,61,62,0.04) 0%, transparent 70%)',
-                }}
-              />
-
-              {/* ── ESCROW CARD ── */}
-              <div
-                className={`hf-card-1 hf-card absolute ${focusedCard === null ? 'hf-float-idle-1' : ''}`}
-                style={{
-                  top: '20px',
-                  right: '0px',
-                  width: focusedCard === 'escrow' ? '380px' : '310px',
-                  zIndex: focusedCard === 'escrow' ? 30 : 10,
-                  opacity: focusedCard === 'contractor' ? 0.25 : 1,
-                  transform: focusedCard === 'escrow'
-                    ? 'translateY(-8px)'
-                    : undefined,
-                  background: 'var(--hero-surface)',
-                  borderRadius: 'var(--hero-radius)',
-                  padding: '24px',
-                  border: '1px solid rgba(15,61,62,0.08)',
-                  boxShadow: focusedCard === 'escrow'
-                    ? 'var(--hero-shadow-hover)'
-                    : 'var(--hero-shadow)',
-                  cursor: 'pointer',
-                }}
-                onMouseEnter={() => setFocusedCard('escrow')}
-                onMouseLeave={clearFocus}
-              >
-                {/* Card header */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ background: 'rgba(46,125,50,0.08)' }}
-                    >
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path
-                          d="M10 2l6 3v5c0 4.5-2.5 8.5-6 10-3.5-1.5-6-5.5-6-10V5l6-3z"
-                          stroke="#2E7D32" strokeWidth="1.5" strokeLinejoin="round"
-                          fill="rgba(46,125,50,0.06)"
-                        />
-                        <path
-                          d="M7.5 10.5l2 2 3.5-3.5"
-                          stroke="#2E7D32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
+            {/* ── CONTRACTOR CARD ── */}
+            <div
+              className={`absolute bottom-[15%] left-[5%] lg:left-[5%] w-[320px] bg-white rounded-2xl p-6 shadow-float hover:shadow-float-hover hover:-translate-y-2 transition-all duration-300 border border-[#0fbabd]/10 z-20 animate-float-in-2 cursor-pointer ${
+                focusedCard === 'escrow' ? 'opacity-25' : ''
+              }`}
+              onMouseEnter={() => setFocusedCard('contractor')}
+              onMouseLeave={clearFocus}
+            >
+              <div className="flex items-center gap-4 mb-5">
+                <div className="relative">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0fbabd] to-[#0D9FA1] flex items-center justify-center text-white text-xl font-bold">
+                    A
+                  </div>
+                  <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-blue-500 rounded-full border-2 border-white flex items-center justify-center">
                     <span
-                      style={{
-                        fontFamily: 'var(--hero-body)',
-                        fontSize: '13px',
-                        fontWeight: 500,
-                        color: 'var(--hero-muted)',
-                      }}
+                      className="material-symbols-outlined text-white text-[12px]"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
                     >
-                      Secured in Escrow
+                      check
                     </span>
                   </div>
-                  <span
-                    className="px-2.5 py-1 rounded-md"
-                    style={{
-                      fontFamily: 'var(--hero-body)',
-                      fontSize: '11px',
-                      fontWeight: 600,
-                      letterSpacing: '0.04em',
-                      background: 'rgba(46,125,50,0.08)',
-                      color: 'var(--hero-success)',
-                    }}
-                  >
-                    PROTECTED
-                  </span>
                 </div>
-
-                {/* Amount */}
-                <p
-                  style={{
-                    fontFamily: 'var(--hero-mono)',
-                    fontSize: '32px',
-                    fontWeight: 500,
-                    color: 'var(--hero-text)',
-                    letterSpacing: '-0.02em',
-                    lineHeight: 1.2,
-                  }}
-                >
-                  $45,000
-                </p>
-                <p
-                  style={{
-                    fontFamily: 'var(--hero-body)',
-                    fontSize: '13px',
-                    color: 'var(--hero-muted)',
-                    marginTop: '4px',
-                  }}
-                >
-                  Kitchen renovation &mdash; 3 milestones
-                </p>
-
-                {/* ── Expanded timeline (hover) ── */}
-                <div
-                  className="hf-expand overflow-hidden"
-                  style={{
-                    maxHeight: focusedCard === 'escrow' ? '240px' : '0px',
-                    opacity: focusedCard === 'escrow' ? 1 : 0,
-                    marginTop: focusedCard === 'escrow' ? '20px' : '0px',
-                  }}
-                >
-                  <div
-                    style={{
-                      borderTop: '1px solid rgba(15,61,62,0.06)',
-                      paddingTop: '16px',
-                    }}
-                  >
-                    <div className="relative" style={{ paddingLeft: '28px' }}>
-                      {/* Vertical connector line */}
-                      <div
-                        className="absolute"
-                        style={{
-                          left: '7px',
-                          top: '8px',
-                          bottom: '8px',
-                          width: '2px',
-                          background: 'linear-gradient(to bottom, var(--hero-success), #2563EB, #D1D5DB)',
-                          borderRadius: '1px',
-                        }}
-                      />
-
-                      {/* Node 1 — Completed */}
-                      <div className="relative flex items-start gap-3 mb-5">
-                        <div
-                          className="absolute flex items-center justify-center"
-                          style={{
-                            left: '-21px',
-                            top: '2px',
-                            width: '16px',
-                            height: '16px',
-                            borderRadius: '50%',
-                            background: 'var(--hero-success)',
-                          }}
-                        >
-                          <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                            <path d="M1.5 4L3.5 6L6.5 2" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <div>
-                          <p style={{ fontFamily: 'var(--hero-body)', fontSize: '13px', fontWeight: 600, color: 'var(--hero-text)' }}>
-                            Deposit
-                          </p>
-                          <p style={{ fontFamily: 'var(--hero-mono)', fontSize: '14px', fontWeight: 500, color: 'var(--hero-success)' }}>
-                            $10,000{' '}
-                            <span style={{ fontFamily: 'var(--hero-body)', fontSize: '11px', color: 'var(--hero-muted)' }}>
-                              Released
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Node 2 — Active */}
-                      <div className="relative flex items-start gap-3 mb-5">
-                        <div
-                          className="absolute hf-pulse flex items-center justify-center"
-                          style={{
-                            left: '-21px',
-                            top: '2px',
-                            width: '16px',
-                            height: '16px',
-                            borderRadius: '50%',
-                            background: '#2563EB',
-                          }}
-                        >
-                          <div
-                            style={{
-                              width: '6px',
-                              height: '6px',
-                              borderRadius: '50%',
-                              background: 'white',
-                            }}
-                          />
-                        </div>
-                        <div>
-                          <p style={{ fontFamily: 'var(--hero-body)', fontSize: '13px', fontWeight: 600, color: 'var(--hero-text)' }}>
-                            Demolition
-                          </p>
-                          <p style={{ fontFamily: 'var(--hero-mono)', fontSize: '14px', fontWeight: 500, color: '#2563EB' }}>
-                            $15,000{' '}
-                            <span style={{ fontFamily: 'var(--hero-body)', fontSize: '11px', color: 'var(--hero-muted)' }}>
-                              Secured
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Node 3 — Pending */}
-                      <div className="relative flex items-start gap-3">
-                        <div
-                          className="absolute flex items-center justify-center"
-                          style={{
-                            left: '-21px',
-                            top: '2px',
-                            width: '16px',
-                            height: '16px',
-                            borderRadius: '50%',
-                            background: '#D1D5DB',
-                          }}
-                        >
-                          <div
-                            style={{
-                              width: '6px',
-                              height: '6px',
-                              borderRadius: '50%',
-                              background: 'white',
-                            }}
-                          />
-                        </div>
-                        <div>
-                          <p style={{ fontFamily: 'var(--hero-body)', fontSize: '13px', fontWeight: 600, color: 'var(--hero-text)' }}>
-                            Final Inspection
-                          </p>
-                          <p style={{ fontFamily: 'var(--hero-mono)', fontSize: '14px', fontWeight: 500, color: 'var(--hero-muted)' }}>
-                            $20,000{' '}
-                            <span style={{ fontFamily: 'var(--hero-body)', fontSize: '11px' }}>
-                              Pending
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div>
+                  <h3 className="text-slate-900 text-lg font-bold">Apex Builders</h3>
+                  <p className="text-slate-500 text-xs font-medium">
+                    Kitchen &amp; Bath Specialists
+                  </p>
                 </div>
               </div>
 
-              {/* ── CONTRACTOR CARD ── */}
-              <div
-                className={`hf-card-2 hf-card absolute ${focusedCard === null ? 'hf-float-idle-2' : ''}`}
-                style={{
-                  bottom: '30px',
-                  right: '50px',
-                  width: focusedCard === 'contractor' ? '380px' : '310px',
-                  zIndex: focusedCard === 'contractor' ? 30 : 20,
-                  opacity: focusedCard === 'escrow' ? 0.25 : 1,
-                  transform: focusedCard === 'contractor'
-                    ? 'translateY(-8px)'
-                    : undefined,
-                  background: 'var(--hero-surface)',
-                  borderRadius: 'var(--hero-radius)',
-                  padding: '24px',
-                  border: '1px solid rgba(15,61,62,0.08)',
-                  boxShadow: focusedCard === 'contractor'
-                    ? 'var(--hero-shadow-hover)'
-                    : 'var(--hero-shadow)',
-                  cursor: 'pointer',
-                }}
-                onMouseEnter={() => setFocusedCard('contractor')}
-                onMouseLeave={clearFocus}
-              >
-                {/* Contractor header */}
-                <div className="flex items-center gap-3 mb-3">
-                  {/* Avatar */}
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-white shrink-0"
-                    style={{
-                      background: 'linear-gradient(135deg, var(--hero-primary), #1a5c5d)',
-                      fontFamily: 'var(--hero-display)',
-                      fontWeight: 600,
-                      fontSize: '18px',
-                    }}
-                  >
-                    A
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p
-                      style={{
-                        fontFamily: 'var(--hero-display)',
-                        fontSize: '18px',
-                        fontWeight: 600,
-                        color: 'var(--hero-text)',
-                        lineHeight: 1.3,
-                      }}
+              <div className="flex items-center justify-between p-3 bg-slate-50 rounded-xl mb-4">
+                <div className="flex items-center gap-1 text-[#E8AA42]">
+                  {[1, 2, 3, 4, 5].map(i => (
+                    <span
+                      key={i}
+                      className="material-symbols-outlined text-base"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
                     >
-                      Apex Builders
-                    </p>
-                    <div className="flex items-center gap-1">
-                      {[1, 2, 3, 4, 5].map(i => (
-                        <svg key={i} width="14" height="14" viewBox="0 0 14 14">
-                          <path
-                            d="M7 1l1.76 3.57 3.94.57-2.85 2.78.67 3.93L7 10.07l-3.52 1.78.67-3.93L1.3 5.14l3.94-.57L7 1z"
-                            fill="var(--hero-accent)"
-                          />
-                        </svg>
-                      ))}
-                      <span
-                        style={{
-                          fontFamily: 'var(--hero-body)',
-                          fontSize: '13px',
-                          color: 'var(--hero-muted)',
-                          marginLeft: '4px',
-                        }}
-                      >
-                        5.0
+                      star
+                    </span>
+                  ))}
+                </div>
+                <span className="text-slate-700 text-sm font-semibold">
+                  5.0 <span className="text-slate-400 font-normal">(42)</span>
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2 text-xs font-medium text-slate-600">
+                <span className="material-symbols-outlined text-[#0fbabd] text-[16px]">
+                  workspace_premium
+                </span>
+                <span>Verified License &amp; Insurance</span>
+              </div>
+
+              {/* Expanded details on hover */}
+              <div
+                className="overflow-hidden transition-all duration-500 ease-out"
+                style={{
+                  maxHeight: focusedCard === 'contractor' ? '200px' : '0px',
+                  opacity: focusedCard === 'contractor' ? 1 : 0,
+                  marginTop: focusedCard === 'contractor' ? '16px' : '0px',
+                }}
+              >
+                <div className="border-t border-slate-100 pt-4 space-y-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-5 h-5 rounded flex items-center justify-center bg-green-50">
+                      <span className="material-symbols-outlined text-green-600 text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                        verified_user
                       </span>
                     </div>
+                    <span className="text-[13px] text-slate-900">
+                      License #ABC-12345 <span className="text-green-600 font-semibold">(Active)</span>
+                    </span>
                   </div>
-                </div>
-
-                {/* Verified badge */}
-                <div
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
-                  style={{
-                    background: 'rgba(15,61,62,0.05)',
-                    border: '1px solid rgba(15,61,62,0.08)',
-                  }}
-                >
-                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                    <path
-                      d="M7 1l1.5 1.2 1.8-.3-.3 1.8L11.2 5 9.7 6.5l.3 1.8-1.8-.3L7 9.2 5.8 8l-1.8.3.3-1.8L3 5l1.5-1.3-.3-1.8 1.8.3L7 1z"
-                      fill="var(--hero-primary)"
-                    />
-                    <path
-                      d="M5 7l1.2 1.2L8.5 5.8"
-                      stroke="white" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"
-                    />
-                  </svg>
-                  <span
-                    style={{
-                      fontFamily: 'var(--hero-body)',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      color: 'var(--hero-primary)',
-                    }}
-                  >
-                    Verified License
-                  </span>
-                </div>
-
-                {/* ── Expanded details (hover) ── */}
-                <div
-                  className="hf-expand overflow-hidden"
-                  style={{
-                    maxHeight: focusedCard === 'contractor' ? '220px' : '0px',
-                    opacity: focusedCard === 'contractor' ? 1 : 0,
-                    marginTop: focusedCard === 'contractor' ? '16px' : '0px',
-                  }}
-                >
-                  <div
-                    style={{
-                      borderTop: '1px solid rgba(15,61,62,0.06)',
-                      paddingTop: '16px',
-                    }}
-                  >
-                    {/* License & insurance details */}
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-2.5">
-                        <div
-                          className="w-5 h-5 rounded flex items-center justify-center"
-                          style={{ background: 'rgba(46,125,50,0.08)' }}
-                        >
-                          <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-                            <path d="M6 1l4 2v3c0 3-1.7 5.7-4 6.7C3.7 11.7 2 9 2 6V3l4-2z" fill="rgba(46,125,50,0.15)" stroke="#2E7D32" strokeWidth="1" />
-                            <path d="M4.5 6l1 1 2-2" stroke="#2E7D32" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span style={{ fontFamily: 'var(--hero-body)', fontSize: '13px', color: 'var(--hero-text)' }}>
-                          License #ABC-12345{' '}
-                          <span style={{ color: 'var(--hero-success)', fontWeight: 600 }}>(Active)</span>
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-2.5">
-                        <div
-                          className="w-5 h-5 rounded flex items-center justify-center"
-                          style={{ background: 'rgba(15,61,62,0.06)' }}
-                        >
-                          <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-                            <rect x="1.5" y="3" width="9" height="7" rx="1" stroke="var(--hero-primary)" strokeWidth="1" fill="rgba(15,61,62,0.06)" />
-                            <path d="M1.5 5.5h9" stroke="var(--hero-primary)" strokeWidth="0.8" />
-                            <rect x="3" y="7" width="2.5" height="1.5" rx="0.3" fill="var(--hero-primary)" opacity="0.3" />
-                          </svg>
-                        </div>
-                        <span style={{ fontFamily: 'var(--hero-body)', fontSize: '13px', color: 'var(--hero-text)' }}>
-                          Insured up to <strong>$2M</strong>
-                        </span>
-                      </div>
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-5 h-5 rounded flex items-center justify-center bg-[#0fbabd]/10">
+                      <span className="material-symbols-outlined text-[#0fbabd] text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                        security
+                      </span>
                     </div>
-
-                    {/* Recent projects */}
-                    <p
-                      style={{
-                        fontFamily: 'var(--hero-body)',
-                        fontSize: '11px',
-                        fontWeight: 600,
-                        color: 'var(--hero-muted)',
-                        marginTop: '16px',
-                        marginBottom: '8px',
-                        textTransform: 'uppercase' as const,
-                        letterSpacing: '0.06em',
-                      }}
-                    >
-                      Recent Projects
-                    </p>
-                    <div className="flex gap-2">
-                      {[
-                        { label: 'Kitchen', gradient: ['#c9bda3', '#b5a892'] },
-                        { label: 'Bath', gradient: ['#a8c4cb', '#96b2b9'] },
-                        { label: 'Deck', gradient: ['#b3c4a8', '#a1b296'] },
-                      ].map(p => (
-                        <div
-                          key={p.label}
-                          className="relative overflow-hidden"
-                          style={{
-                            width: '64px',
-                            height: '64px',
-                            borderRadius: '8px',
-                            background: `linear-gradient(135deg, ${p.gradient[0]}, ${p.gradient[1]})`,
-                          }}
-                        >
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <span
-                              style={{
-                                fontFamily: 'var(--hero-body)',
-                                fontSize: '10px',
-                                fontWeight: 600,
-                                color: 'rgba(255,255,255,0.85)',
-                                textShadow: '0 1px 2px rgba(0,0,0,0.2)',
-                              }}
-                            >
-                              {p.label}
-                            </span>
-                          </div>
+                    <span className="text-[13px] text-slate-900">
+                      Insured up to <strong>$2M</strong>
+                    </span>
+                  </div>
+                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mt-3 mb-2">
+                    Recent Projects
+                  </p>
+                  <div className="flex gap-2">
+                    {[
+                      { label: 'Kitchen', color: 'from-primary/30 to-primary/50' },
+                      { label: 'Bath', color: 'from-[#E8AA42]/30 to-[#E8AA42]/50' },
+                      { label: 'Deck', color: 'from-primary/15 to-primary/30' },
+                    ].map(p => (
+                      <div
+                        key={p.label}
+                        className={`relative overflow-hidden w-16 h-16 rounded-lg bg-gradient-to-br ${p.color}`}
+                      >
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="text-[10px] font-semibold text-white/85 drop-shadow-sm">
+                            {p.label}
+                          </span>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -751,85 +323,44 @@ export function HeroFloating() {
           </div>
         </div>
 
-        {/* ────────────────────────────────────────────────────────────
-            PROJECT INITIATION MODAL
-        ──────────────────────────────────────────────────────────── */}
+        {/* ── PROJECT INITIATION MODAL ── */}
         {showModal && (
           <div className="fixed inset-0 z-50 flex justify-end">
             {/* Overlay */}
             <div
-              className="hf-modal-overlay absolute inset-0"
-              style={{ background: 'rgba(15,61,62,0.65)' }}
+              className="absolute inset-0 bg-[#102122]/65 animate-fade-in"
               onClick={() => setShowModal(false)}
             />
 
             {/* Slide-in panel */}
             <div
-              className="hf-modal-panel relative h-full overflow-y-auto"
-              style={{
-                width: 'min(480px, 92vw)',
-                background: 'var(--hero-surface)',
-              }}
+              className="relative h-full overflow-y-auto bg-white animate-slide-in-right"
+              style={{ width: 'min(480px, 92vw)' }}
             >
               <div className="p-8 lg:p-12">
                 {/* Close */}
                 <button
                   onClick={() => setShowModal(false)}
-                  className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center"
-                  style={{
-                    border: 'none',
-                    background: 'transparent',
-                    cursor: 'pointer',
-                    transition: 'background 0.2s',
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.background = 'rgba(0,0,0,0.05)')}
-                  onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+                  className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/5 transition-colors"
                   aria-label="Close"
                 >
-                  <X className="w-5 h-5" style={{ color: 'var(--hero-muted)' }} />
+                  <span className="material-symbols-outlined text-slate-400">close</span>
                 </button>
 
                 {/* Header */}
                 <div className="mb-10">
-                  <h2
-                    style={{
-                      fontFamily: 'var(--hero-display)',
-                      fontSize: '28px',
-                      fontWeight: 600,
-                      color: 'var(--hero-text)',
-                      marginBottom: '8px',
-                      lineHeight: 1.2,
-                    }}
-                  >
+                  <h2 className="text-[28px] font-bold text-slate-900 mb-2 leading-tight">
                     Start your secure project
                   </h2>
-                  <p
-                    style={{
-                      fontFamily: 'var(--hero-body)',
-                      fontSize: '15px',
-                      color: 'var(--hero-muted)',
-                      lineHeight: 1.6,
-                    }}
-                  >
+                  <p className="text-[15px] text-slate-500 leading-relaxed">
                     Tell us about your renovation and we&apos;ll match you with
                     verified contractors.
                   </p>
                 </div>
 
-                {/* ── Project Type ── */}
-                <fieldset className="mb-8" style={{ border: 'none', padding: 0, margin: 0 }}>
-                  <legend
-                    style={{
-                      fontFamily: 'var(--hero-body)',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      color: 'var(--hero-text)',
-                      textTransform: 'uppercase' as const,
-                      letterSpacing: '0.06em',
-                      marginBottom: '12px',
-                      display: 'block',
-                    }}
-                  >
+                {/* Project Type */}
+                <fieldset className="mb-8 border-none p-0 m-0">
+                  <legend className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 block">
                     Project Type
                   </legend>
                   <div className="grid grid-cols-1 gap-3">
@@ -840,58 +371,23 @@ export function HeroFloating() {
                     ].map(opt => (
                       <button
                         key={opt.id}
-                        className="hf-radio text-left p-4"
-                        style={{
-                          borderRadius: '12px',
-                          border: selectedProjectType === opt.id
-                            ? '2px solid var(--hero-primary)'
-                            : '1px solid rgba(15,61,62,0.1)',
-                          background: selectedProjectType === opt.id
-                            ? 'rgba(15,61,62,0.03)'
-                            : 'transparent',
-                          cursor: 'pointer',
-                        }}
+                        className={`text-left p-4 rounded-xl border-2 transition-all duration-200 hover:border-[#0fbabd]/30 active:scale-[0.98] ${
+                          selectedProjectType === opt.id
+                            ? 'border-[#0fbabd] bg-[#0fbabd]/5'
+                            : 'border-slate-200'
+                        }`}
                         onClick={() => setSelectedProjectType(opt.id)}
                       >
-                        <p
-                          style={{
-                            fontFamily: 'var(--hero-body)',
-                            fontSize: '15px',
-                            fontWeight: 600,
-                            color: 'var(--hero-text)',
-                          }}
-                        >
-                          {opt.label}
-                        </p>
-                        <p
-                          style={{
-                            fontFamily: 'var(--hero-body)',
-                            fontSize: '13px',
-                            color: 'var(--hero-muted)',
-                            marginTop: '2px',
-                          }}
-                        >
-                          {opt.desc}
-                        </p>
+                        <p className="text-[15px] font-semibold text-slate-900">{opt.label}</p>
+                        <p className="text-[13px] text-slate-500 mt-0.5">{opt.desc}</p>
                       </button>
                     ))}
                   </div>
                 </fieldset>
 
-                {/* ── Budget ── */}
-                <fieldset className="mb-10" style={{ border: 'none', padding: 0, margin: 0 }}>
-                  <legend
-                    style={{
-                      fontFamily: 'var(--hero-body)',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      color: 'var(--hero-text)',
-                      textTransform: 'uppercase' as const,
-                      letterSpacing: '0.06em',
-                      marginBottom: '12px',
-                      display: 'block',
-                    }}
-                  >
+                {/* Budget */}
+                <fieldset className="mb-10 border-none p-0 m-0">
+                  <legend className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 block">
                     Estimated Budget
                   </legend>
                   <div className="grid grid-cols-3 gap-3">
@@ -902,27 +398,14 @@ export function HeroFloating() {
                     ].map(opt => (
                       <button
                         key={opt.id}
-                        className="hf-radio text-center p-4"
-                        style={{
-                          borderRadius: '12px',
-                          border: selectedBudget === opt.id
-                            ? '2px solid var(--hero-primary)'
-                            : '1px solid rgba(15,61,62,0.1)',
-                          background: selectedBudget === opt.id
-                            ? 'rgba(15,61,62,0.03)'
-                            : 'transparent',
-                          cursor: 'pointer',
-                        }}
+                        className={`text-center p-4 rounded-xl border-2 transition-all duration-200 hover:border-[#0fbabd]/30 active:scale-[0.98] ${
+                          selectedBudget === opt.id
+                            ? 'border-[#0fbabd] bg-[#0fbabd]/5'
+                            : 'border-slate-200'
+                        }`}
                         onClick={() => setSelectedBudget(opt.id)}
                       >
-                        <p
-                          style={{
-                            fontFamily: 'var(--hero-mono)',
-                            fontSize: '16px',
-                            fontWeight: 600,
-                            color: 'var(--hero-text)',
-                          }}
-                        >
+                        <p className="text-[16px] font-semibold text-slate-900 font-mono">
                           {opt.label}
                         </p>
                       </button>
@@ -930,32 +413,15 @@ export function HeroFloating() {
                   </div>
                 </fieldset>
 
-                {/* ── Submit ── */}
-                <button
-                  className="hf-cta-primary w-full flex items-center justify-center gap-2 text-white"
-                  style={{
-                    fontFamily: 'var(--hero-body)',
-                    fontSize: '16px',
-                    fontWeight: 600,
-                    height: '56px',
-                    background: 'var(--hero-primary)',
-                    borderRadius: '8px',
-                    border: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
+                {/* Submit */}
+                <button className="group w-full flex items-center justify-center gap-2 text-white h-14 rounded-lg bg-[#0fbabd] text-base font-semibold shadow-lg shadow-[#0fbabd]/30 hover:shadow-[#0fbabd]/50 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
                   Get Matched with Contractors
-                  <ArrowRight className="w-4 h-4" />
+                  <span className="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">
+                    arrow_forward
+                  </span>
                 </button>
 
-                <p
-                  className="text-center mt-4"
-                  style={{
-                    fontFamily: 'var(--hero-body)',
-                    fontSize: '12px',
-                    color: 'var(--hero-muted)',
-                  }}
-                >
+                <p className="text-center mt-4 text-xs text-slate-400">
                   No commitment. Free estimates from verified pros.
                 </p>
               </div>
@@ -964,24 +430,5 @@ export function HeroFloating() {
         )}
       </section>
     </>
-  )
-}
-
-/* ── Small helper component ── */
-function TrustItem({ icon, label }: { icon: React.ReactNode; label: string }) {
-  return (
-    <div className="flex items-center gap-2" style={{ color: 'rgba(18,18,18,0.4)' }}>
-      {icon}
-      <span
-        style={{
-          fontFamily: 'var(--hero-body)',
-          fontSize: '13px',
-          fontWeight: 500,
-          color: 'rgba(18,18,18,0.45)',
-        }}
-      >
-        {label}
-      </span>
-    </div>
   )
 }

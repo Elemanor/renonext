@@ -1,46 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import {
-  Search,
-  Shield,
-  CheckCircle2,
-  MapPin,
-  Star,
-  AlertCircle,
-  Camera,
-  TrendingUp,
-  Calendar,
-  HelpCircle,
-} from 'lucide-react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-    },
-  },
-};
 
 interface Contractor {
   id: string;
@@ -61,530 +23,613 @@ interface Contractor {
   photos: string[];
 }
 
-const tradeOptions = [
-  'All Trades',
-  'General Contractor',
-  'Electrical',
-  'Plumbing',
-  'Painting',
-  'Framing',
-  'Roofing',
-  'HVAC',
-  'Concrete',
-  'Underpinning',
-];
-
-const areaOptions = [
-  'GTA Area',
-  'Toronto',
-  'Mississauga',
-  'Brampton',
-  'Oakville',
-  'Burlington',
-  'Hamilton',
-  'Markham',
-  'Vaughan',
-];
-
 interface ProsBrowserClientProps {
   contractors: Contractor[];
 }
 
+const tradeOptions = [
+  'All Trades',
+  'Kitchen & Bath',
+  'Waterproofing',
+  'Foundation Repair',
+  'Concrete & Masonry',
+  'Underpinning',
+  'Electrical',
+  'Plumbing',
+  'Handyman',
+  'HVAC',
+];
+
 export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
-  const [showOnlyVerified, setShowOnlyVerified] = useState(true);
-  const [proofFilter, setProofFilter] = useState('any');
-  const [passRateFilter, setPassRateFilter] = useState('any');
-  const [disputesFilter, setDisputesFilter] = useState('any');
-  const [lastJobFilter, setLastJobFilter] = useState('any');
-  const [wsibFilter, setWsibFilter] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [tradeFilter, setTradeFilter] = useState('All Trades');
+  const [showOnlyVerified, setShowOnlyVerified] = useState(false);
 
-  // Filter contractors based on all criteria
-  const filteredContractors = contractors.filter((contractor) => {
-    if (showOnlyVerified && !contractor.verified) return false;
+  const filteredContractors = useMemo(() => {
+    return contractors.filter((c) => {
+      if (showOnlyVerified && !c.verified) return false;
 
-    if (proofFilter === '90' && contractor.proofCompleteness < 90) return false;
-    if (proofFilter === '80' && contractor.proofCompleteness < 80) return false;
-    if (proofFilter === '70' && contractor.proofCompleteness < 70) return false;
+      if (tradeFilter !== 'All Trades') {
+        if (!c.trade.toLowerCase().includes(tradeFilter.toLowerCase()))
+          return false;
+      }
 
-    if (passRateFilter === '100' && contractor.inspectionPassRate < 100) return false;
-    if (passRateFilter === '95' && contractor.inspectionPassRate < 95) return false;
-    if (passRateFilter === '90' && contractor.inspectionPassRate < 90) return false;
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        if (
+          !c.company.toLowerCase().includes(q) &&
+          !c.trade.toLowerCase().includes(q) &&
+          !c.location.toLowerCase().includes(q)
+        )
+          return false;
+      }
 
-    if (disputesFilter === '0' && contractor.disputeCount > 0) return false;
-    if (disputesFilter === '1-2' && contractor.disputeCount > 2) return false;
-    if (disputesFilter === '3+' && contractor.disputeCount < 3) return false;
-
-    if (lastJobFilter === '7' && contractor.lastJobDays > 7) return false;
-    if (lastJobFilter === '30' && contractor.lastJobDays > 30) return false;
-    if (lastJobFilter === '90' && contractor.lastJobDays > 90) return false;
-
-    if (wsibFilter && !contractor.wsib) return false;
-
-    return true;
-  });
+      return true;
+    });
+  }, [contractors, searchQuery, tradeFilter, showOnlyVerified]);
 
   return (
-    <div className="min-h-screen bg-reno-warm">
-      {/* S1: Thesis Bar - Improved */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="border-b border-reno-purple/20 bg-reno-purple-light"
-      >
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-            <div className="flex-1">
-              <h1 className="font-display text-3xl font-bold text-reno-dark md:text-4xl">
-                Verified work, not profiles.
-              </h1>
-              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-reno-dark/70 md:text-base">
-                Every photo is GPS-tagged from a real job site. Every rating is linked to a verified milestone.
-                Every stat is calculated from actual project data — not self-reported.
-              </p>
-            </div>
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => setShowOnlyVerified(!showOnlyVerified)}
-                className={cn(
-                  "flex cursor-pointer items-center gap-3 rounded-full px-5 py-3 shadow-md transition-all hover:shadow-lg",
-                  showOnlyVerified
-                    ? "bg-reno-purple text-white"
-                    : "bg-white text-reno-dark"
-                )}
-              >
-                <div
-                  className={cn(
-                    "relative h-6 w-11 rounded-full transition-colors",
-                    showOnlyVerified ? "bg-white/30" : "bg-gray-300"
-                  )}
-                >
-                  <div
-                    className={cn(
-                      "absolute top-1 h-4 w-4 rounded-full transition-all",
-                      showOnlyVerified
-                        ? "left-6 bg-white"
-                        : "left-1 bg-white"
-                    )}
-                  />
-                </div>
-                <span className="text-sm font-semibold">Show only verified pros</span>
+    <div className="min-h-screen">
+      {/* ===== Hero Section ===== */}
+      <section className="relative pt-20 pb-32 px-6 overflow-hidden">
+        {/* Mesh background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+          <div>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-xs tracking-widest uppercase mb-6">
+              Engineered Trust
+            </span>
+            <h1 className="font-display text-5xl md:text-6xl font-extrabold tracking-tighter leading-[1.1] text-reno-dark mb-8">
+              Work with the{' '}
+              <span className="text-primary">Top 5%</span> of Verified Pros.
+            </h1>
+            <p className="text-xl text-gray-500 leading-relaxed mb-10 max-w-lg">
+              Our Discovery Engine matches you with elite professionals vetted
+              through a multi-point architectural and financial integrity audit.
+            </p>
+
+            {/* Hero Search */}
+            <div className="flex p-2 bg-white rounded-2xl shadow-float max-w-xl border border-primary/10">
+              <div className="flex-1 flex items-center px-4 gap-3">
+                <span className="material-symbols-outlined text-gray-400">
+                  search
+                </span>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search Trade, Project, or Location..."
+                  className="w-full border-none focus:ring-0 bg-transparent text-reno-dark placeholder:text-gray-400 font-medium outline-none"
+                />
+              </div>
+              <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all shrink-0">
+                Search
               </button>
             </div>
           </div>
-        </div>
-      </motion.div>
 
-      {/* S2: Search + Trust Filters Bar */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="border-b border-gray-200 bg-gray-50"
-      >
-        <div className="container mx-auto px-4 py-6">
-          <div className="mb-6 flex items-center gap-3">
-            <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search by trade, location, specialty..."
-                className="h-12 w-full rounded-xl border border-gray-200 bg-white pl-12 pr-4 text-sm font-medium text-reno-dark placeholder-gray-400 shadow-sm transition-all focus:border-reno-purple focus:outline-none focus:ring-2 focus:ring-reno-purple/20"
-              />
+          {/* Floating Trust Cards */}
+          <div className="relative hidden lg:block h-[460px]">
+            {/* Escrow Card */}
+            <div className="absolute -top-8 left-0 w-64 p-6 bg-white rounded-2xl shadow-float border border-primary/5 z-20">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center">
+                  <span
+                    className="material-symbols-outlined text-amber-600"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    shield_with_heart
+                  </span>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-reno-dark">$448M</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+                    Secured in Escrow
+                  </div>
+                </div>
+              </div>
+              <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                <div className="h-full bg-primary w-3/4 rounded-full" />
+              </div>
             </div>
-            <Button className="h-12 rounded-xl bg-reno-purple px-6 text-sm font-semibold text-white shadow-sm hover:bg-reno-purple/90">
-              Search
-            </Button>
+
+            {/* Verified Partners Card */}
+            <div className="absolute top-24 right-0 w-72 p-6 bg-white rounded-2xl shadow-float border border-primary/5 z-10">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <span
+                    className="material-symbols-outlined text-primary"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    verified_user
+                  </span>
+                </div>
+                <span className="text-sm font-bold text-reno-dark">
+                  Verified Gold Partners
+                </span>
+              </div>
+              <div className="flex -space-x-3 mt-4">
+                {['DS', 'IF', 'MX', 'SP'].map((initials, i) => (
+                  <div
+                    key={i}
+                    className="w-10 h-10 rounded-full border-4 border-white flex items-center justify-center text-[10px] font-bold text-white"
+                    style={{
+                      backgroundColor: ['#0fbabd', '#0D9FA1', '#08696A', '#E8AA42'][i],
+                    }}
+                  >
+                    {initials}
+                  </div>
+                ))}
+                <div className="w-10 h-10 rounded-full border-4 border-white bg-gray-100 flex items-center justify-center text-[10px] font-bold text-gray-500">
+                  +{Math.max(0, contractors.length - 4)}
+                </div>
+              </div>
+            </div>
+
+            {/* Featured Project Image */}
+            <div className="absolute bottom-0 left-8 right-8 h-72 rounded-[2rem] overflow-hidden shadow-2xl border border-primary/10">
+              <Image
+                src="/images/pros/dryspace/interior.webp"
+                alt="Featured renovation project"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-reno-dark/60 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <div className="text-xs uppercase tracking-widest font-bold opacity-80 mb-1">
+                  Featured Project
+                </div>
+                <div className="text-lg font-bold">
+                  Complete Basement Waterproofing
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          {/* Basic Filters */}
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">
-              Filters:
-            </span>
-
-            {/* Trade Filter */}
-            <select className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-reno-dark shadow-sm transition-all hover:border-gray-300 focus:border-reno-purple focus:outline-none focus:ring-2 focus:ring-reno-purple/20">
+      {/* ===== Discovery Controls ===== */}
+      <section className="px-6 max-w-7xl mx-auto mb-16">
+        <div className="bg-white/60 backdrop-blur-xl p-6 rounded-2xl flex flex-wrap gap-6 md:gap-8 items-center border border-white shadow-float">
+          {/* Trade Filter */}
+          <div className="flex flex-col gap-1 flex-1 min-w-[180px]">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">
+              Trade Specialization
+            </label>
+            <select
+              value={tradeFilter}
+              onChange={(e) => setTradeFilter(e.target.value)}
+              className="bg-transparent border-none font-semibold text-reno-dark focus:ring-0 cursor-pointer"
+            >
               {tradeOptions.map((trade) => (
                 <option key={trade}>{trade}</option>
               ))}
             </select>
-
-            {/* Area Filter */}
-            <select className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-reno-dark shadow-sm transition-all hover:border-gray-300 focus:border-reno-purple focus:outline-none focus:ring-2 focus:ring-reno-purple/20">
-              {areaOptions.map((area) => (
-                <option key={area}>{area}</option>
-              ))}
-            </select>
           </div>
 
-          {/* S2: Trust Filters Row */}
-          <div className="flex flex-wrap items-center gap-2 rounded-lg border-2 border-reno-purple/20 bg-reno-purple-light/30 p-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-reno-purple">
-              TRUST FILTERS:
-            </span>
+          <div className="h-10 w-px bg-gray-200 hidden md:block" />
 
-            {/* Proof % Filter */}
-            <select
-              value={proofFilter}
-              onChange={(e) => setProofFilter(e.target.value)}
-              className="rounded-lg border-2 border-reno-purple/30 bg-white px-3 py-2 text-sm font-medium text-reno-dark shadow-sm transition-all hover:border-reno-purple focus:border-reno-purple focus:outline-none focus:ring-2 focus:ring-reno-purple/20"
-            >
-              <option value="any">Proof % (Any)</option>
-              <option value="90">90%+</option>
-              <option value="80">80%+</option>
-              <option value="70">70%+</option>
-            </select>
+          {/* Verification Toggle */}
+          <div className="flex flex-col gap-1 flex-1 min-w-[180px]">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">
+              Verification Tier
+            </label>
+            <div className="flex items-center gap-2 mt-1">
+              <button
+                onClick={() => setShowOnlyVerified(true)}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-widest transition-colors ${
+                  showOnlyVerified
+                    ? 'bg-amber-50 text-amber-700'
+                    : 'text-gray-400 hover:text-gray-600'
+                }`}
+              >
+                <span
+                  className="material-symbols-outlined text-[14px]"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  star
+                </span>
+                Gold Tier
+              </button>
+              <span className="text-gray-300 text-xs">/</span>
+              <button
+                onClick={() => setShowOnlyVerified(false)}
+                className={`text-xs font-semibold transition-colors ${
+                  !showOnlyVerified
+                    ? 'text-primary'
+                    : 'text-gray-400 hover:text-gray-600'
+                }`}
+              >
+                All Pros
+              </button>
+            </div>
+          </div>
 
-            {/* Pass Rate Filter */}
-            <select
-              value={passRateFilter}
-              onChange={(e) => setPassRateFilter(e.target.value)}
-              className="rounded-lg border-2 border-reno-purple/30 bg-white px-3 py-2 text-sm font-medium text-reno-dark shadow-sm transition-all hover:border-reno-purple focus:border-reno-purple focus:outline-none focus:ring-2 focus:ring-reno-purple/20"
-            >
-              <option value="any">Pass Rate (Any)</option>
-              <option value="100">100%</option>
-              <option value="95">95%+</option>
-              <option value="90">90%+</option>
-            </select>
+          <div className="h-10 w-px bg-gray-200 hidden md:block" />
 
-            {/* Disputes Filter */}
-            <select
-              value={disputesFilter}
-              onChange={(e) => setDisputesFilter(e.target.value)}
-              className="rounded-lg border-2 border-reno-purple/30 bg-white px-3 py-2 text-sm font-medium text-reno-dark shadow-sm transition-all hover:border-reno-purple focus:border-reno-purple focus:outline-none focus:ring-2 focus:ring-reno-purple/20"
-            >
-              <option value="any">Disputes (Any)</option>
-              <option value="0">0</option>
-              <option value="1-2">1-2</option>
-              <option value="3+">3+</option>
-            </select>
-
-            {/* Last Job Filter */}
-            <select
-              value={lastJobFilter}
-              onChange={(e) => setLastJobFilter(e.target.value)}
-              className="rounded-lg border-2 border-reno-purple/30 bg-white px-3 py-2 text-sm font-medium text-reno-dark shadow-sm transition-all hover:border-reno-purple focus:border-reno-purple focus:outline-none focus:ring-2 focus:ring-reno-purple/20"
-            >
-              <option value="any">Last Job (Any)</option>
-              <option value="7">7 days</option>
-              <option value="30">30 days</option>
-              <option value="90">90 days</option>
-            </select>
-
-            {/* WSIB Toggle */}
-            <button
-              onClick={() => setWsibFilter(!wsibFilter)}
-              className={cn(
-                "flex items-center gap-2 rounded-lg border-2 px-3 py-2 text-sm font-semibold transition-all",
-                wsibFilter
-                  ? "border-reno-purple bg-reno-purple text-white"
-                  : "border-reno-purple/30 bg-white text-reno-dark hover:border-reno-purple"
-              )}
-            >
-              <Shield className="h-4 w-4" />
-              <span>WSIB</span>
-              {wsibFilter && <span>✓</span>}
-            </button>
+          {/* Results Count */}
+          <div className="flex flex-col gap-1 min-w-[120px]">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">
+              Results
+            </label>
+            <p className="font-semibold text-reno-dark">
+              {filteredContractors.length} Pros Found
+            </p>
           </div>
         </div>
-      </motion.div>
+      </section>
 
-      {/* Results Section */}
-      <div className="container mx-auto px-4 py-8">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mb-6 flex items-center justify-between"
-        >
-          <p className="text-sm text-gray-600">
-            Showing <span className="font-bold text-reno-dark">{filteredContractors.length}</span> verified contractors
-          </p>
-          <p className="text-xs text-gray-500">
-            Updated 3 minutes ago
-          </p>
-        </motion.div>
-
-        {/* Empty State */}
-        {filteredContractors.length === 0 && (
-          <div className="py-16 text-center">
-            <p className="text-lg font-semibold text-gray-600">No verified contractors yet</p>
-            <p className="mt-2 text-sm text-gray-400">Contractors will appear here once approved.</p>
+      {/* ===== Main Directory Grid ===== */}
+      <section className="px-6 max-w-7xl mx-auto pb-24">
+        {filteredContractors.length === 0 ? (
+          <div className="py-20 text-center">
+            <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto flex items-center justify-center mb-6">
+              <span className="material-symbols-outlined text-primary text-3xl">
+                search_off
+              </span>
+            </div>
+            <h3 className="font-display text-2xl font-bold text-reno-dark mb-2">
+              No pros found
+            </h3>
+            <p className="text-gray-500 max-w-md mx-auto">
+              Try adjusting your filters or search query to find verified
+              contractors in your area.
+            </p>
           </div>
-        )}
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredContractors.map((contractor, index) => (
+              <ContractorCard key={contractor.id} contractor={contractor} />
+            ))}
 
-        {/* S3: Contractor Cards Grid with Animation */}
-        {filteredContractors.length > 0 && (
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-          >
-            {filteredContractors.map((contractor) => (
-              <motion.div key={contractor.id} variants={cardVariants}>
-                <Card
-                  className={cn(
-                    "group overflow-hidden rounded-2xl border bg-white shadow-sm transition-all hover:shadow-lg",
-                    contractor.verified
-                      ? "border-gray-200"
-                      : "border-gray-300 opacity-60"
-                  )}
-                >
-                  <Link href={`/pros/${contractor.id}`} className="block">
-                    {/* Photos or Placeholder */}
-                    {contractor.verified && contractor.photos.length > 0 ? (
-                      <div className="grid grid-cols-3 gap-1 bg-gray-100 p-2">
-                        {contractor.photos.slice(0, 3).map((photo, idx) => (
-                          <div
-                            key={idx}
-                            className="relative aspect-square overflow-hidden rounded-lg bg-gray-200"
-                          >
-                            <img
-                              src={photo}
-                              alt={`${contractor.company} work ${idx + 1}`}
-                              className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                            />
-                            <div className="absolute right-1 top-1 rounded-full bg-black/40 p-1 backdrop-blur-sm">
-                              <Camera className="h-3 w-3 text-white" />
-                            </div>
-                          </div>
-                        ))}
+            {/* Success Story Card — injected after first 2 cards */}
+            {filteredContractors.length >= 2 && (
+              <div className="bg-primary p-8 rounded-2xl flex flex-col justify-between shadow-float relative overflow-hidden order-3">
+                <div className="absolute -right-12 -top-12 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
+                <div className="relative z-10">
+                  <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-4 block">
+                    Success Story
+                  </span>
+                  <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                    &ldquo;RenoNext secured our $85k project from day
+                    one.&rdquo;
+                  </h3>
+                  <p className="text-white/80 text-sm leading-relaxed mb-6">
+                    DrySpace Waterproofing delivered 2 weeks early. Our escrow
+                    system ensured every milestone was paid the moment inspection
+                    cleared.
+                  </p>
+                </div>
+                <div className="relative z-10 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white/20">
+                    <Image
+                      src="/images/pros/dryspace/hero.webp"
+                      alt="DrySpace Waterproofing"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-sm">
+                      DrySpace Waterproofing
+                    </div>
+                    <div className="text-white/60 text-[10px] uppercase font-bold tracking-widest">
+                      Sub-Grade Specialist, GTA
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Pro Edge Section — injected as wide card */}
+            {filteredContractors.length >= 3 && (
+              <div className="lg:col-span-2 bg-reno-dark rounded-3xl p-10 md:p-12 flex flex-col md:flex-row gap-12 items-center relative overflow-hidden shadow-float order-[6]">
+                <div className="absolute inset-0 opacity-20 pointer-events-none">
+                  <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+                </div>
+                <div className="relative z-10 md:w-1/2">
+                  <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter leading-tight mb-6">
+                    The Pro Edge:{' '}
+                    <br />
+                    <span className="text-primary">
+                      Secured Milestone Engine
+                    </span>
+                  </h2>
+                  <p className="text-gray-400 leading-relaxed mb-8">
+                    We don&apos;t just list pros; we back them. RenoNext holds
+                    project funds in a neutral escrow vault, releasing payments
+                    only when you approve the digital milestone sign-off.
+                  </p>
+                  <div className="flex flex-col gap-4">
+                    {[
+                      {
+                        icon: 'assured_workload',
+                        label: '100% Financial Insulation',
+                      },
+                      {
+                        icon: 'architecture',
+                        label: 'On-site Verification Checks',
+                      },
+                    ].map((item) => (
+                      <div
+                        key={item.icon}
+                        className="flex items-center gap-4"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                          <span className="material-symbols-outlined text-primary text-lg">
+                            {item.icon}
+                          </span>
+                        </div>
+                        <span className="text-white font-semibold">
+                          {item.label}
+                        </span>
                       </div>
-                    ) : (
-                      <div className="bg-gray-100 p-2">
-                        <div className="flex aspect-[3/1] items-center justify-center rounded-lg bg-gray-200">
-                          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-300">
-                            <HelpCircle className="h-10 w-10 text-gray-400" />
+                    ))}
+                  </div>
+                </div>
+                <div className="relative z-10 md:w-1/2 w-full">
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+                    <div className="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-4">
+                      Live Escrow Activity
+                    </div>
+                    <div className="space-y-4">
+                      {[
+                        {
+                          label: 'Milestone 2: Rough-in',
+                          status: 'RELEASED',
+                          active: true,
+                        },
+                        {
+                          label: 'Milestone 3: Drywall',
+                          status: 'PENDING',
+                          active: false,
+                        },
+                        {
+                          label: 'Milestone 4: Finishes',
+                          status: 'LOCKED',
+                          active: false,
+                        },
+                      ].map((m, i) => (
+                        <div
+                          key={i}
+                          className={`flex justify-between items-center py-2 ${
+                            i < 2 ? 'border-b border-white/5' : ''
+                          }`}
+                        >
+                          <div className="text-white text-sm">{m.label}</div>
+                          <div
+                            className={`text-xs font-bold px-2 py-1 rounded ${
+                              m.active
+                                ? 'text-primary bg-primary/10'
+                                : 'text-gray-500 bg-white/5'
+                            }`}
+                          >
+                            {m.status}
                           </div>
                         </div>
-                      </div>
-                    )}
-
-                    {/* Content */}
-                    <div className="p-5">
-                      {/* Header */}
-                      <div className="mb-3">
-                        <h3 className="font-display text-lg font-bold text-reno-dark group-hover:text-reno-purple">
-                          {contractor.company}
-                        </h3>
-                        <p className="mt-0.5 flex items-center gap-1.5 text-sm text-gray-600">
-                          <span className="font-medium">{contractor.trade}</span>
-                          <span className="text-gray-300">•</span>
-                          <MapPin className="h-3.5 w-3.5" />
-                          <span>{contractor.location}</span>
-                        </p>
-                      </div>
-
-                      {contractor.verified ? (
-                        <>
-                          {/* Rating & Projects */}
-                          <div className="mb-4 flex items-center gap-3">
-                            <div className="flex items-center gap-1">
-                              <Star className="h-4 w-4 fill-reno-amber text-reno-amber" />
-                              <span className="text-sm font-bold text-reno-dark">{contractor.rating}</span>
-                              <span className="text-xs text-gray-500">({contractor.reviewCount})</span>
-                            </div>
-                            <span className="text-gray-300">•</span>
-                            <span className="text-sm text-gray-600">
-                              {contractor.projectCount.toLocaleString()} projects
-                            </span>
-                          </div>
-
-                          {/* Trust Metrics — show only when platform data exists */}
-                          {contractor.proofCompleteness > 0 || contractor.inspectionPassRate > 0 ? (
-                            <div className="space-y-3 border-t border-gray-100 pt-4">
-                              {/* Proof Completeness */}
-                              <div>
-                                <div className="mb-1.5 flex items-center justify-between">
-                                  <span className="text-xs font-semibold text-gray-600">Proof completeness</span>
-                                  <span className="text-xs font-bold text-reno-teal">
-                                    {contractor.proofCompleteness}%
-                                  </span>
-                                </div>
-                                <div className="h-2 overflow-hidden rounded-full bg-gray-100">
-                                  <div
-                                    className="h-full rounded-full bg-gradient-to-r from-reno-teal to-reno-green transition-all"
-                                    style={{ width: `${contractor.proofCompleteness}%` }}
-                                  />
-                                </div>
-                              </div>
-
-                              {/* Pass Rate & Disputes */}
-                              <div className="grid grid-cols-2 gap-3">
-                                <div className="rounded-lg border border-reno-green/20 bg-reno-green-light/30 p-2.5">
-                                  <div className="flex items-center gap-1.5">
-                                    <CheckCircle2 className="h-3.5 w-3.5 text-reno-green" />
-                                    <span className="text-xs font-semibold text-gray-600">Pass Rate</span>
-                                  </div>
-                                  <p className="mt-1 text-lg font-bold text-reno-green">
-                                    {contractor.inspectionPassRate}%
-                                  </p>
-                                </div>
-                                <div
-                                  className={cn(
-                                    "rounded-lg border p-2.5",
-                                    contractor.disputeCount === 0
-                                      ? "border-reno-green/20 bg-reno-green-light/30"
-                                      : contractor.disputeCount <= 2
-                                      ? "border-reno-amber/20 bg-reno-amber-light/30"
-                                      : "border-red-200 bg-red-50"
-                                  )}
-                                >
-                                  <div className="flex items-center gap-1.5">
-                                    <AlertCircle
-                                      className={cn(
-                                        "h-3.5 w-3.5",
-                                        contractor.disputeCount === 0
-                                          ? "text-reno-green"
-                                          : contractor.disputeCount <= 2
-                                          ? "text-reno-amber"
-                                          : "text-red-500"
-                                      )}
-                                    />
-                                    <span className="text-xs font-semibold text-gray-600">Disputes</span>
-                                  </div>
-                                  <p
-                                    className={cn(
-                                      "mt-1 text-lg font-bold",
-                                      contractor.disputeCount === 0
-                                        ? "text-reno-green"
-                                        : contractor.disputeCount <= 2
-                                        ? "text-reno-amber"
-                                        : "text-red-600"
-                                    )}
-                                  >
-                                    {contractor.disputeCount}
-                                  </p>
-                                </div>
-                              </div>
-
-                              {/* Last Job */}
-                              <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
-                                <div className="flex items-center gap-1.5 text-xs text-gray-600">
-                                  <Calendar className="h-3.5 w-3.5" />
-                                  <span>Last job</span>
-                                </div>
-                                <span className="text-xs font-bold text-reno-dark">
-                                  {contractor.lastJobDays} days ago
-                                </span>
-                              </div>
-                            </div>
-                          ) : (
-                            <div className="border-t border-gray-100 pt-4">
-                              <div className="rounded-lg border border-blue-100 bg-blue-50/50 p-3 text-center">
-                                <p className="text-xs font-semibold text-blue-700">New to RenoNext</p>
-                                <p className="mt-1 text-[10px] leading-relaxed text-blue-600/70">
-                                  Platform trust metrics appear after the first verified project through RenoNext.
-                                </p>
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Trust Badges */}
-                          <div className="mt-4 flex items-center gap-2 border-t border-gray-100 pt-4">
-                            {contractor.wsib && (
-                              <Badge className="border-reno-green/20 bg-reno-green-light/50 text-xs font-semibold text-reno-green hover:bg-reno-green-light">
-                                <Shield className="mr-1 h-3 w-3" />
-                                WSIB ✓
-                              </Badge>
-                            )}
-                            {contractor.insured && (
-                              <Badge className="border-reno-teal/20 bg-reno-teal-light/50 text-xs font-semibold text-reno-teal hover:bg-reno-teal-light">
-                                <CheckCircle2 className="mr-1 h-3 w-3" />
-                                Insured ✓
-                              </Badge>
-                            )}
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          {/* Unverified State */}
-                          <div className="mb-4 rounded-lg border-2 border-gray-300 bg-gray-50 p-4 text-center">
-                            <Badge className="mb-2 border-gray-400 bg-gray-200 text-xs font-semibold text-gray-600">
-                              Not Yet Verified
-                            </Badge>
-                            <p className="text-xs leading-relaxed text-gray-600">
-                              This contractor has applied but hasn't completed a verified project yet.
-                            </p>
-                          </div>
-
-                          {/* Pending Trust Badges */}
-                          <div className="flex items-center gap-2 border-t border-gray-200 pt-4">
-                            <Badge className="border-gray-300 bg-gray-100 text-xs font-semibold text-gray-500">
-                              <Shield className="mr-1 h-3 w-3" />
-                              WSIB Pending
-                            </Badge>
-                            <Badge className="border-gray-300 bg-gray-100 text-xs font-semibold text-gray-500">
-                              <CheckCircle2 className="mr-1 h-3 w-3" />
-                              Insurance Pending
-                            </Badge>
-                          </div>
-                        </>
-                      )}
+                      ))}
                     </div>
-                  </Link>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         )}
 
-        {/* S5: Bottom CTA - Dual-Sided */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-12"
-        >
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Left: Homeowners */}
-            <Card className="overflow-hidden rounded-2xl border border-reno-green/20 bg-gradient-to-br from-reno-green-light to-white shadow-lg">
-              <div className="p-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-reno-green/10">
-                  <CheckCircle2 className="h-6 w-6 text-reno-green" />
-                </div>
-                <h2 className="font-display text-2xl font-bold text-reno-dark">
-                  Found someone you like?
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-gray-700">
-                  Start a project with escrow protection. Your money is held safely until each milestone is verified.
-                </p>
-                <Button
-                  asChild
-                  className="mt-6 w-full rounded-xl bg-reno-green px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-reno-green/90 md:w-auto"
-                >
-                  <Link href="/price-check">Start Project</Link>
-                </Button>
-              </div>
-            </Card>
-
-            {/* Right: Contractors */}
-            <Card className="overflow-hidden rounded-2xl border border-reno-purple/20 bg-gradient-to-br from-reno-purple-light to-white shadow-lg">
-              <div className="p-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-reno-purple/10">
-                  <TrendingUp className="h-6 w-6 text-reno-purple" />
-                </div>
-                <h2 className="font-display text-2xl font-bold text-reno-dark">
-                  Want to be listed here with verified stats?
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-gray-700">
-                  Join the network. Get verified, build your reputation with real project data, and attract quality clients.
-                </p>
-                <Button
-                  asChild
-                  className="mt-6 w-full rounded-xl bg-reno-purple px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-reno-purple/90 md:w-auto"
-                >
-                  <Link href="/join">Apply</Link>
-                </Button>
-              </div>
-            </Card>
+        {/* Bottom Dual CTA */}
+        <div className="grid gap-6 md:grid-cols-2 mt-16">
+          {/* Homeowners CTA */}
+          <div className="bg-white rounded-2xl p-8 shadow-float border border-primary/5">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+              <span
+                className="material-symbols-outlined text-primary text-2xl"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                check_circle
+              </span>
+            </div>
+            <h2 className="font-display text-2xl font-bold text-reno-dark mb-3">
+              Found someone you like?
+            </h2>
+            <p className="text-sm text-gray-500 leading-relaxed mb-6">
+              Start a project with escrow protection. Your money is held safely
+              until each milestone is verified.
+            </p>
+            <Link
+              href="/price-check"
+              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-primary/20 hover:-translate-y-0.5 transition-all"
+            >
+              Start Project
+              <span className="material-symbols-outlined text-lg">
+                arrow_forward
+              </span>
+            </Link>
           </div>
-        </motion.div>
-      </div>
+
+          {/* Contractors CTA */}
+          <div className="bg-white rounded-2xl p-8 shadow-float border border-primary/5">
+            <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-4">
+              <span
+                className="material-symbols-outlined text-amber-600 text-2xl"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                trending_up
+              </span>
+            </div>
+            <h2 className="font-display text-2xl font-bold text-reno-dark mb-3">
+              Want to be listed here?
+            </h2>
+            <p className="text-sm text-gray-500 leading-relaxed mb-6">
+              Join the network. Get verified, build your reputation with real
+              project data, and attract quality clients.
+            </p>
+            <Link
+              href="/join"
+              className="inline-flex items-center gap-2 bg-reno-dark text-white px-6 py-3 rounded-xl font-bold hover:-translate-y-0.5 transition-all"
+            >
+              Apply Now
+              <span className="material-symbols-outlined text-lg">
+                arrow_forward
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
+  );
+}
+
+/* ===== Contractor Card Component ===== */
+function ContractorCard({ contractor }: { contractor: Contractor }) {
+  const coverPhoto = contractor.photos[0];
+
+  return (
+    <Link
+      href={`/pros/${contractor.id}`}
+      className="group bg-white rounded-2xl border border-primary/5 shadow-float overflow-hidden hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300 block"
+    >
+      {/* Cover Image */}
+      <div className="relative h-48 overflow-hidden bg-[#f6f8f8]">
+        {coverPhoto ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={coverPhoto}
+            alt={`${contractor.company} work`}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="text-center">
+              <span className="material-symbols-outlined text-gray-300 text-5xl block mb-2">
+                construction
+              </span>
+              <span className="text-xs text-gray-400 font-medium">
+                Portfolio Coming Soon
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* Verification Badge */}
+        <div className="absolute top-4 left-4">
+          {contractor.verified ? (
+            <span className="flex items-center gap-1 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-black text-primary shadow-sm uppercase tracking-widest">
+              <span
+                className="material-symbols-outlined text-[14px]"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                verified
+              </span>
+              Gold Verified
+            </span>
+          ) : (
+            <span className="flex items-center gap-1 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-black text-gray-500 shadow-sm uppercase tracking-widest border border-gray-100">
+              <span
+                className="material-symbols-outlined text-[14px]"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                verified
+              </span>
+              Verified
+            </span>
+          )}
+        </div>
+
+        {/* Hover overlay */}
+        {contractor.photos.length > 1 && (
+          <div className="absolute inset-0 bg-reno-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+            <span className="text-white text-xs font-bold tracking-widest flex items-center gap-2">
+              <span className="material-symbols-outlined">photo_library</span>
+              VIEW PORTFOLIO
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <div className="flex justify-between items-start mb-4">
+          <div>
+            <h3 className="text-xl font-bold text-reno-dark group-hover:text-primary transition-colors">
+              {contractor.company}
+            </h3>
+            <p className="text-sm text-gray-500 font-medium">
+              {contractor.trade}
+            </p>
+          </div>
+          {contractor.rating > 0 && (
+            <div className="text-right">
+              <div className="flex items-center text-amber-500 font-black text-lg">
+                {contractor.rating.toFixed(1)}
+                <span
+                  className="material-symbols-outlined ml-1 text-sm"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  star
+                </span>
+              </div>
+              <div className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">
+                {contractor.reviewCount} Reviews
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Stats Row */}
+        <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-50">
+          <div>
+            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
+              Location
+            </div>
+            <div className="text-sm font-bold text-reno-dark tracking-tight flex items-center gap-1">
+              <span className="material-symbols-outlined text-sm text-gray-400">
+                location_on
+              </span>
+              {contractor.location}
+            </div>
+          </div>
+          <div>
+            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
+              Credentials
+            </div>
+            <div className="flex items-center gap-1.5">
+              {contractor.wsib && (
+                <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
+                  WSIB
+                </span>
+              )}
+              {contractor.insured && (
+                <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
+                  Insured
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* New to Platform indicator */}
+        {contractor.verified &&
+          contractor.proofCompleteness === 0 &&
+          contractor.inspectionPassRate === 0 && (
+            <div className="mt-4 pt-4 border-t border-gray-50">
+              <div className="flex items-center gap-2 text-xs text-primary font-semibold">
+                <span
+                  className="material-symbols-outlined text-sm"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  new_releases
+                </span>
+                New to RenoNext — Trust metrics build with verified projects
+              </div>
+            </div>
+          )}
+      </div>
+    </Link>
   );
 }

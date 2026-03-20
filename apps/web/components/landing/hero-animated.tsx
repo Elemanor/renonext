@@ -49,8 +49,8 @@ export function HeroAnimated() {
         }
 
         @keyframes borderCycle {
-          0%, 100% { border-color: #1D6B3F; }
-          50% { border-color: #0D7377; }
+          0%, 100% { border-color: #0fbabd; }
+          50% { border-color: #0D9FA1; }
         }
 
         @keyframes iconFloat {
@@ -105,7 +105,7 @@ export function HeroAnimated() {
         }
 
         .animated-bg {
-          background: linear-gradient(135deg, #1A1A1A 0%, #1D6B3F 50%, #0D7377 100%);
+          background: linear-gradient(135deg, #102122 0%, #0fbabd 50%, #0D9FA1 100%);
           background-size: 400% 400%;
           animation: gradientShift 15s ease infinite;
         }
@@ -122,35 +122,35 @@ export function HeroAnimated() {
 
         .shape-1 {
           width: 100px; height: 100px;
-          border: 2px solid #1D6B3F; border-radius: 50%;
+          border: 2px solid #0fbabd; border-radius: 50%;
           top: 10%; left: 10%;
           animation: float 20s ease-in-out infinite;
         }
 
         .shape-2 {
           width: 60px; height: 60px;
-          border: 2px solid #0D7377;
+          border: 2px solid #0D9FA1;
           top: 60%; right: 15%;
           animation: floatSlow 25s ease-in-out infinite;
         }
 
         .shape-3 {
           width: 80px; height: 80px;
-          border: 2px solid #1D6B3F; border-radius: 50%;
+          border: 2px solid #0fbabd; border-radius: 50%;
           bottom: 20%; left: 20%;
           animation: float 30s ease-in-out infinite reverse;
         }
 
         .shape-4 {
           width: 120px; height: 2px;
-          background: linear-gradient(90deg, transparent, #0D7377, transparent);
+          background: linear-gradient(90deg, transparent, #0D9FA1, transparent);
           top: 30%; right: 10%;
           animation: floatSlow 18s ease-in-out infinite;
         }
 
         .shape-5 {
           width: 40px; height: 40px;
-          border: 2px solid #1D6B3F; border-radius: 50%;
+          border: 2px solid #0fbabd; border-radius: 50%;
           top: 40%; left: 80%;
           animation: float 22s ease-in-out infinite;
         }
@@ -175,7 +175,7 @@ export function HeroAnimated() {
         }
 
         .btn-outline {
-          border: 2px solid #1D6B3F;
+          border: 2px solid #0fbabd;
           animation: borderCycle 3s ease-in-out infinite;
         }
 
@@ -236,7 +236,7 @@ export function HeroAnimated() {
           <div className="hero-ctas flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Link
               href="/signup"
-              className="btn-shine group px-8 py-4 bg-[#1D6B3F] hover:bg-[#145530] text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2"
+              className="btn-shine group px-8 py-4 bg-[#0fbabd] hover:bg-[#0da8ab] text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2"
             >
               Start a Project
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

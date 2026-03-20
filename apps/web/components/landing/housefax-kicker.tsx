@@ -16,10 +16,10 @@ export function HouseFaxKicker() {
   const [isVisible, setIsVisible] = useState(false);
   const [headerVisible, setHeaderVisible] = useState(false);
   const [stats, setStats] = useState([
-    { icon: <Camera className="w-5 h-5" />, value: 0, label: 'verified photos', color: '#0D7377', target: 47 },
-    { icon: <ClipboardCheck className="w-5 h-5" />, value: 0, label: 'inspections passed', color: '#1D6B3F', target: 6 },
-    { icon: <Users className="w-5 h-5" />, value: 0, label: 'licensed trades', color: '#0D7377', target: 12 },
-    { icon: <Package className="w-5 h-5" />, value: 0, label: 'materials logged', color: '#1D6B3F', target: 24 },
+    { icon: <Camera className="w-5 h-5" />, value: 0, label: 'verified photos', color: '#0fbabd', target: 47 },
+    { icon: <ClipboardCheck className="w-5 h-5" />, value: 0, label: 'inspections passed', color: '#0fbabd', target: 6 },
+    { icon: <Users className="w-5 h-5" />, value: 0, label: 'licensed trades', color: '#0fbabd', target: 12 },
+    { icon: <Package className="w-5 h-5" />, value: 0, label: 'materials logged', color: '#0fbabd', target: 24 },
   ]);
   const [verifiedVisible, setVerifiedVisible] = useState(false);
   const [timelineProgress, setTimelineProgress] = useState(0);
@@ -260,7 +260,7 @@ export function HouseFaxKicker() {
                       y1="50%"
                       x2={`${2 + (96 * timelineProgress) / 100}%`}
                       y2="50%"
-                      stroke="#0D7377"
+                      stroke="#0fbabd"
                       strokeWidth="2"
                       className="transition-all duration-300"
                     />

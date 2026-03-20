@@ -163,8 +163,8 @@ export function VaultSection() {
             className="absolute inset-0"
             style={{
               backgroundImage: `
-                linear-gradient(to right, #1D6B3F10 1px, transparent 1px),
-                linear-gradient(to bottom, #1D6B3F10 1px, transparent 1px)
+                linear-gradient(to right, #0fbabd10 1px, transparent 1px),
+                linear-gradient(to bottom, #0fbabd10 1px, transparent 1px)
               `,
               backgroundSize: '60px 60px',
             }}
@@ -206,7 +206,7 @@ export function VaultSection() {
                 y1="60"
                 x2="250"
                 y2="60"
-                stroke={activeStage >= 1 ? '#1D6B3F' : '#E5E7EB'}
+                stroke={activeStage >= 1 ? '#0fbabd' : '#E5E7EB'}
                 strokeWidth="2"
                 className={activeStage >= 1 ? 'flow-line' : ''}
               />
@@ -215,7 +215,7 @@ export function VaultSection() {
                 y1="60"
                 x2="500"
                 y2="60"
-                stroke={activeStage >= 2 ? '#1D6B3F' : '#E5E7EB'}
+                stroke={activeStage >= 2 ? '#0fbabd' : '#E5E7EB'}
                 strokeWidth="2"
                 className={activeStage >= 2 ? 'flow-line' : ''}
               />
@@ -224,7 +224,7 @@ export function VaultSection() {
                 y1="60"
                 x2="750"
                 y2="60"
-                stroke={activeStage >= 3 ? '#1D6B3F' : '#E5E7EB'}
+                stroke={activeStage >= 3 ? '#0fbabd' : '#E5E7EB'}
                 strokeWidth="2"
                 className={activeStage >= 3 ? 'flow-line' : ''}
               />
@@ -235,8 +235,8 @@ export function VaultSection() {
                   cx="25"
                   cy="30"
                   r="28"
-                  fill={activeStage === 0 ? '#E4F0E8' : '#F3F4F6'}
-                  stroke={activeStage === 0 ? '#1D6B3F' : '#D1D5DB'}
+                  fill={activeStage === 0 ? '#E0F7F7' : '#F3F4F6'}
+                  stroke={activeStage === 0 ? '#0fbabd' : '#D1D5DB'}
                   strokeWidth="2"
                   className={activeStage === 0 ? 'stage-glow' : ''}
                 />
@@ -244,7 +244,7 @@ export function VaultSection() {
                   cx="25"
                   cy="30"
                   r="18"
-                  fill={activeStage === 0 ? '#1D6B3F' : '#9CA3AF'}
+                  fill={activeStage === 0 ? '#0fbabd' : '#9CA3AF'}
                 />
                 <path
                   d="M 25 24 L 18 35 L 20 35 L 20 40 L 30 40 L 30 35 L 32 35 Z"
@@ -255,7 +255,7 @@ export function VaultSection() {
                   y="75"
                   textAnchor="middle"
                   className="text-sm font-medium"
-                  fill={activeStage === 0 ? '#1D6B3F' : '#6B7280'}
+                  fill={activeStage === 0 ? '#0fbabd' : '#6B7280'}
                 >
                   Fund
                 </text>
@@ -267,8 +267,8 @@ export function VaultSection() {
                   cx="25"
                   cy="30"
                   r="28"
-                  fill={activeStage === 1 ? '#E4F0E8' : '#F3F4F6'}
-                  stroke={activeStage === 1 ? '#1D6B3F' : '#D1D5DB'}
+                  fill={activeStage === 1 ? '#E0F7F7' : '#F3F4F6'}
+                  stroke={activeStage === 1 ? '#0fbabd' : '#D1D5DB'}
                   strokeWidth="2"
                   className={activeStage === 1 ? 'stage-glow' : ''}
                 />
@@ -276,7 +276,7 @@ export function VaultSection() {
                   cx="25"
                   cy="30"
                   r="18"
-                  fill={activeStage === 1 ? '#1D6B3F' : '#9CA3AF'}
+                  fill={activeStage === 1 ? '#0fbabd' : '#9CA3AF'}
                 />
                 <rect
                   x="18"
@@ -301,7 +301,7 @@ export function VaultSection() {
                   y="75"
                   textAnchor="middle"
                   className="text-sm font-medium"
-                  fill={activeStage === 1 ? '#1D6B3F' : '#6B7280'}
+                  fill={activeStage === 1 ? '#0fbabd' : '#6B7280'}
                 >
                   Secured
                 </text>
@@ -313,8 +313,8 @@ export function VaultSection() {
                   cx="25"
                   cy="30"
                   r="28"
-                  fill={activeStage === 2 ? '#E4F0E8' : '#F3F4F6'}
-                  stroke={activeStage === 2 ? '#1D6B3F' : '#D1D5DB'}
+                  fill={activeStage === 2 ? '#E0F7F7' : '#F3F4F6'}
+                  stroke={activeStage === 2 ? '#0fbabd' : '#D1D5DB'}
                   strokeWidth="2"
                   className={activeStage === 2 ? 'stage-glow' : ''}
                 />
@@ -322,7 +322,7 @@ export function VaultSection() {
                   cx="25"
                   cy="30"
                   r="18"
-                  fill={activeStage === 2 ? '#1D6B3F' : '#9CA3AF'}
+                  fill={activeStage === 2 ? '#0fbabd' : '#9CA3AF'}
                 />
                 <path
                   d="M 20 30 L 23 33 L 30 26"
@@ -337,7 +337,7 @@ export function VaultSection() {
                   y="75"
                   textAnchor="middle"
                   className="text-sm font-medium"
-                  fill={activeStage === 2 ? '#1D6B3F' : '#6B7280'}
+                  fill={activeStage === 2 ? '#0fbabd' : '#6B7280'}
                 >
                   Verified
                 </text>
@@ -349,8 +349,8 @@ export function VaultSection() {
                   cx="25"
                   cy="30"
                   r="28"
-                  fill={activeStage === 3 ? '#E4F0E8' : '#F3F4F6'}
-                  stroke={activeStage === 3 ? '#1D6B3F' : '#D1D5DB'}
+                  fill={activeStage === 3 ? '#E0F7F7' : '#F3F4F6'}
+                  stroke={activeStage === 3 ? '#0fbabd' : '#D1D5DB'}
                   strokeWidth="2"
                   className={activeStage === 3 ? 'stage-glow' : ''}
                 />
@@ -358,7 +358,7 @@ export function VaultSection() {
                   cx="25"
                   cy="30"
                   r="18"
-                  fill={activeStage === 3 ? '#1D6B3F' : '#9CA3AF'}
+                  fill={activeStage === 3 ? '#0fbabd' : '#9CA3AF'}
                 />
                 <rect
                   x="18"
@@ -379,7 +379,7 @@ export function VaultSection() {
                   y="75"
                   textAnchor="middle"
                   className="text-sm font-medium"
-                  fill={activeStage === 3 ? '#1D6B3F' : '#6B7280'}
+                  fill={activeStage === 3 ? '#0fbabd' : '#6B7280'}
                 >
                   Released
                 </text>
@@ -432,7 +432,7 @@ export function VaultSection() {
                           cx="32"
                           cy="32"
                           r="28"
-                          stroke="#1D6B3F"
+                          stroke="#0fbabd"
                           strokeWidth="6"
                           fill="none"
                           strokeDasharray="339"

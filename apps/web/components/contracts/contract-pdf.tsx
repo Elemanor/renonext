@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   header: {
     marginBottom: 20,
-    borderBottom: '2 solid #1D6B3F',
+    borderBottom: '2 solid #0fbabd',
     paddingBottom: 16,
   },
   title: {
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 13,
     fontFamily: 'Helvetica-Bold',
-    color: '#1D6B3F',
+    color: '#0fbabd',
     marginTop: 16,
     marginBottom: 6,
   },
@@ -128,13 +128,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     padding: 12,
     backgroundColor: '#fff9e6',
-    border: '2 solid #1D6B3F',
+    border: '2 solid #0fbabd',
     borderRadius: 4,
   },
   noticeTitle: {
     fontSize: 11,
     fontFamily: 'Helvetica-Bold',
-    color: '#1D6B3F',
+    color: '#0fbabd',
     marginBottom: 4,
   },
   noticeContent: {

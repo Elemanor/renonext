@@ -1,663 +1,498 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
-import {
-  ArrowRight,
-  Shield,
-  Lock,
-  Eye,
-  CheckCircle,
-  BadgeCheck,
-  Camera,
-  MapPin,
-  FileText,
-  TrendingUp,
-  UserCheck,
-  Star,
-  HelpCircle,
-  DollarSign,
-  Clock,
-  Home,
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import { DashboardPhoneFrame } from '@/components/landing/dashboard-phone-frame';
-import { DashboardBrowserFrame } from '@/components/landing/dashboard-browser-frame';
-import { EscrowStatus } from '@/components/dashboard/escrow-status';
-import { SiteBriefing } from '@/components/dashboard/site-briefing';
-import { WeatherHub } from '@/components/dashboard/weather-hub';
-import { NoiseForecast } from '@/components/dashboard/noise-forecast';
-import { ClientDashboardShowcase } from '@/components/landing/jsa-showcases/client-dashboard-showcase';
-import { PhotoTimelineShowcase } from '@/components/landing/jsa-showcases/photo-timeline-showcase';
 
 export const metadata: Metadata = {
-  title: 'For Homeowners',
-  description: 'Protect your money. See the work. Own the record forever.',
+  title: 'For Homeowners | RenoNext',
+  description:
+    'Renovate with absolute certainty. Escrow-backed payments, vetted contractors, and real-time milestone tracking protect every dollar.',
 };
 
 export default function HomeownersPage() {
   return (
     <div className="min-h-screen">
-      {/* Section 1: Protect your money. */}
-      <section className="relative overflow-hidden bg-white py-20 md:py-28 lg:py-36">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(29,107,63,0.08),transparent_50%)]" />
-        <div className="container relative mx-auto px-4">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-              {/* Text content */}
-              <div>
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-reno-green/20 bg-reno-green-light px-4 py-2 text-sm font-medium text-reno-green">
-                  <Shield className="h-4 w-4" />
-                  The Vault
-                </div>
+      {/* ============================================= */}
+      {/* HERO — Renovate with Absolute Certainty       */}
+      {/* ============================================= */}
+      <section className="relative min-h-[680px] lg:min-h-[780px] flex items-center overflow-hidden bg-[#f6f8f8]">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(15,186,189,0.06),transparent_60%)]" />
 
-                <h1 className="font-display text-4xl font-bold leading-tight text-reno-dark md:text-5xl lg:text-6xl">
-                  Protect your money.
-                </h1>
-
-                <p className="mt-6 text-lg leading-relaxed text-gray-700 md:text-xl">
-                  Every dollar sits in a bank account that neither you nor the contractor can
-                  touch alone.
-                </p>
-
-                <p className="mt-4 text-base leading-relaxed text-gray-600">
-                  Your renovation funds are held in a neutral milestone vault. The contractor
-                  can&apos;t withdraw without your approval. You can&apos;t withhold payment
-                  unfairly. The system ensures both sides play by the rules.
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Link
-                    href="/how-it-works#vault"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-reno-green hover:text-reno-green-dark"
-                  >
-                    Learn how the Vault works
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-
-                {/* Trust signals */}
-                <div className="mt-10 space-y-4">
-                  {[
-                    {
-                      icon: Lock,
-                      text: 'Bank-grade security',
-                      color: 'text-reno-green',
-                    },
-                    {
-                      icon: CheckCircle,
-                      text: 'Released only after verified proof',
-                      color: 'text-reno-teal',
-                    },
-                    {
-                      icon: Shield,
-                      text: 'Built-in dispute resolution',
-                      color: 'text-reno-purple',
-                    },
-                  ].map((item) => (
-                    <div key={item.text} className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-reno-cream">
-                        <item.icon className={`h-5 w-5 ${item.color}`} />
-                      </div>
-                      <span className="text-sm font-medium text-gray-700">{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Vault — interactive dashboard widget */}
-              <div className="relative">
-                {/* Phone frame (mobile + default) */}
-                <div className="lg:hidden">
-                  <DashboardPhoneFrame variant="green">
-                    <EscrowStatus />
-                  </DashboardPhoneFrame>
-                </div>
-                {/* Browser frame (lg+) */}
-                <div className="hidden lg:block">
-                  <DashboardBrowserFrame variant="green">
-                    <EscrowStatus />
-                  </DashboardBrowserFrame>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2: See the work. Every day. */}
-      <section className="relative overflow-hidden bg-reno-cream py-20 md:py-28 lg:py-36">
-        <div className="container relative mx-auto px-4">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-              {/* Daily dashboard — interactive widgets */}
-              <div className="order-2 lg:order-1">
-                {/* Phone frame (mobile + default) */}
-                <div className="lg:hidden">
-                  <DashboardPhoneFrame variant="teal">
-                    <SiteBriefing />
-                    <WeatherHub />
-                    <NoiseForecast />
-                  </DashboardPhoneFrame>
-                </div>
-                {/* Browser frame (lg+) */}
-                <div className="hidden lg:block">
-                  <DashboardBrowserFrame variant="teal">
-                    <SiteBriefing />
-                    <WeatherHub />
-                    <NoiseForecast />
-                  </DashboardBrowserFrame>
-                </div>
-              </div>
-
-              {/* Text content */}
-              <div className="order-1 lg:order-2">
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-reno-teal/20 bg-reno-teal-light px-4 py-2 text-sm font-medium text-reno-teal">
-                  <Eye className="h-4 w-4" />
-                  Daily Dashboard
-                </div>
-
-                <h2 className="font-display text-4xl font-bold leading-tight text-reno-dark md:text-5xl">
-                  See the work. Every day.
-                </h2>
-
-                <p className="mt-6 text-lg leading-relaxed text-gray-700">
-                  You see everything from your phone. No surprises.
-                </p>
-
-                <div className="mt-8 space-y-6">
-                  {[
-                    {
-                      icon: Clock,
-                      title: 'Noise timeline',
-                      desc: 'Know when the crew arrives and when they leave.',
-                    },
-                    {
-                      icon: UserCheck,
-                      title: 'Crew tracking',
-                      desc: 'See exactly who is working in your home.',
-                    },
-                    {
-                      icon: Camera,
-                      title: 'Progress photos',
-                      desc: 'GPS-stamped photos throughout the day.',
-                    },
-                    {
-                      icon: FileText,
-                      title: 'Work log',
-                      desc: 'Daily summaries of completed tasks.',
-                    },
-                  ].map((feature) => (
-                    <div key={feature.title} className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
-                        <feature.icon className="h-6 w-6 text-reno-teal" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">{feature.title}</h3>
-                        <p className="mt-1 text-sm text-gray-600">{feature.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8">
-                  <Link
-                    href="/how-it-works#proof"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-reno-teal hover:text-reno-teal/80"
-                  >
-                    See how daily tracking works
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Client Dashboard Showcase */}
-            <div className="mt-16">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-reno-teal">
-                Your project dashboard
-              </p>
-              <h3 className="mb-8 font-display text-2xl font-bold text-reno-dark">
-                Everything. Real-time. From your phone.
-              </h3>
-              <ClientDashboardShowcase />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3: Choose a contractor you can trust. */}
-      <section className="relative overflow-hidden bg-white py-20 md:py-28 lg:py-36">
-        <div className="container relative mx-auto px-4">
-          <div className="mx-auto max-w-6xl">
-            {/* Header */}
-            <div className="mb-16 text-center">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-reno-purple/20 bg-reno-purple-light px-4 py-2 text-sm font-medium text-reno-purple">
-                <BadgeCheck className="h-4 w-4" />
-                Verified Contractors
-              </div>
-
-              <h2 className="font-display text-4xl font-bold leading-tight text-reno-dark md:text-5xl">
-                Choose a contractor you can trust.
-              </h2>
-
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-700">
-                Verified portfolios, not marketing. GPS-tagged photos from real jobs, inspection
-                pass rates, dispute history.
-              </p>
-
-              <p className="mt-4 font-display text-xl italic text-gray-600">
-                Real contractors. Real track records.
-              </p>
-            </div>
-
-            {/* Contractor preview cards */}
-            <div className="grid gap-6 md:grid-cols-3">
-              {[
-                {
-                  name: 'DrySpace Waterproofing',
-                  specialty: 'Waterproofing & Foundation',
-                  rating: 'New',
-                  jobs: '20+ yrs',
-                  passRate: 'Verified',
-                },
-                {
-                  name: 'Imperial Form',
-                  specialty: 'Concrete & Masonry',
-                  rating: 'New',
-                  jobs: '15+ yrs',
-                  passRate: 'Verified',
-                },
-                {
-                  name: 'Spaders',
-                  specialty: 'Underpinning & Basements',
-                  rating: 'New',
-                  jobs: '15+ yrs',
-                  passRate: 'Verified',
-                },
-              ].map((contractor, idx) => (
-                <div
-                  key={idx}
-                  className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
-                >
-                  {/* Avatar */}
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-reno-green to-reno-teal text-xl font-bold text-white">
-                    {contractor.name[0]}
-                  </div>
-
-                  {/* Info */}
-                  <h3 className="font-semibold text-gray-900">{contractor.name}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{contractor.specialty}</p>
-
-                  {/* Stats */}
-                  <div className="mt-4 grid grid-cols-3 gap-3 border-t border-gray-100 pt-4">
-                    <div>
-                      <div className="flex items-center gap-1">
-                        <Star className="h-4 w-4 fill-reno-amber text-reno-amber" />
-                        <span className="text-sm font-bold text-gray-900">
-                          {contractor.rating}
-                        </span>
-                      </div>
-                      <div className="text-xs text-gray-500">Rating</div>
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-gray-900">{contractor.jobs}</div>
-                      <div className="text-xs text-gray-500">Jobs</div>
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-reno-green">
-                        {contractor.passRate}
-                      </div>
-                      <div className="text-xs text-gray-500">Pass rate</div>
-                    </div>
-                  </div>
-
-                  {/* Badges */}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <div className="flex items-center gap-1 rounded-full bg-reno-green-light px-2.5 py-1 text-xs font-medium text-reno-green">
-                      <Shield className="h-3 w-3" />
-                      Verified
-                    </div>
-                    <div className="flex items-center gap-1 rounded-full bg-reno-teal-light px-2.5 py-1 text-xs font-medium text-reno-teal">
-                      <MapPin className="h-3 w-3" />
-                      GPS Photos
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-10 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 py-24 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left — Copy */}
+          <div className="max-w-xl">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-reno-dark tracking-tight leading-[1.08] mb-6">
+              Renovate with{' '}
+              <br />
+              <span className="text-primary">Absolute Certainty</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-500 leading-relaxed mb-10 max-w-lg">
+              The RenoNext escrow-backed platform ensures your renovation funds
+              are protected. We only release payments to contractors when
+              milestones are met and you approve the work.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/pros"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-reno-purple hover:text-reno-purple/80"
+                href="/price-check"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg shadow-float hover:-translate-y-0.5 hover:shadow-float-hover active:scale-[0.98] transition-all duration-200"
               >
-                Browse verified contractors
-                <ArrowRight className="h-4 w-4" />
+                Start Your Project
+              </Link>
+              <Link
+                href="/how-it-works"
+                className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 px-8 py-4 rounded-xl font-bold text-lg text-reno-dark hover:bg-gray-50 transition-colors"
+              >
+                View Protected Projects
               </Link>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Section 4: Own the record forever. HouseFax™ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-reno-teal-light to-white py-20 md:py-28 lg:py-36">
-        <div className="container relative mx-auto px-4">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-              {/* Text content */}
-              <div>
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-reno-teal/20 bg-white px-4 py-2 text-sm font-medium text-reno-teal">
-                  <Home className="h-4 w-4" />
-                  HouseFax™
-                </div>
-
-                <h2 className="font-display text-4xl font-bold leading-tight text-reno-dark md:text-5xl">
-                  Own the record forever.
-                </h2>
-
-                <p className="mt-6 text-lg leading-relaxed text-gray-700">
-                  Permanent digital record: materials, trades, inspections, warranties, photos.
-                  Transferable when your home sells.
-                </p>
-
-                <p className="mt-4 font-display text-xl italic text-gray-600">
-                  When your home sells, the buyer sees verified history.
-                </p>
-
-                <div className="mt-8 space-y-4">
-                  {[
-                    {
-                      icon: FileText,
-                      text: 'Every permit and inspection record',
-                      color: 'text-reno-teal',
-                    },
-                    {
-                      icon: Camera,
-                      text: 'GPS-stamped photos with timestamps',
-                      color: 'text-reno-purple',
-                    },
-                    {
-                      icon: CheckCircle,
-                      text: 'Material specs and warranties',
-                      color: 'text-reno-green',
-                    },
-                    {
-                      icon: TrendingUp,
-                      text: 'Verified home value impact',
-                      color: 'text-reno-amber',
-                    },
-                  ].map((item) => (
-                    <div key={item.text} className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white shadow-sm">
-                        <item.icon className={`h-5 w-5 ${item.color}`} />
-                      </div>
-                      <span className="text-sm font-medium text-gray-700">{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8">
-                  <Link
-                    href="/house-fax/sample"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-reno-teal hover:text-reno-teal/80"
+          {/* Right — Floating UI Cards (desktop) */}
+          <div className="relative hidden lg:block h-[500px]">
+            {/* Escrow Card */}
+            <div className="absolute top-8 right-8 w-72 p-6 rounded-2xl bg-white/80 backdrop-blur-xl shadow-float border border-primary/5 z-20 hover:-translate-y-1 hover:shadow-float-hover transition-all duration-300">
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <span
+                    className="material-symbols-outlined"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
                   >
-                    View a sample HouseFax report
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
+                    account_balance_wallet
+                  </span>
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                  Escrow Secured
+                </span>
+              </div>
+              <p className="text-gray-500 text-sm font-medium">
+                Project Balance
+              </p>
+              <h3 className="text-3xl font-bold text-reno-dark tracking-tight">
+                $45,000.00
+              </h3>
+              <div className="mt-3 h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+                <div className="h-full bg-primary w-2/3 rounded-full" />
+              </div>
+              <p className="mt-2 text-xs text-gray-400 text-right">
+                Phase 2 of 4
+              </p>
+            </div>
+
+            {/* Contractor Card */}
+            <div className="absolute bottom-16 left-0 w-80 p-5 rounded-2xl bg-white shadow-float z-30 hover:-translate-y-1 hover:shadow-float-hover transition-all duration-300">
+              <div className="flex items-center gap-3">
+                <div className="w-14 h-14 rounded-xl overflow-hidden bg-gray-100">
+                  <Image
+                    src="/images/pros/dryspace/hero.webp"
+                    alt="DrySpace Waterproofing"
+                    width={56}
+                    height={56}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-bold text-reno-dark">
+                    DrySpace Waterproofing
+                  </h4>
+                  <div className="flex items-center gap-1 text-amber-400">
+                    {[...Array(5)].map((_, i) => (
+                      <span
+                        key={i}
+                        className="material-symbols-outlined text-xs"
+                        style={{ fontVariationSettings: "'FILL' 1" }}
+                      >
+                        star
+                      </span>
+                    ))}
+                    <span className="text-gray-400 text-xs font-medium ml-1">
+                      5.0
+                    </span>
+                  </div>
                 </div>
               </div>
-
-              {/* HouseFax card mockup */}
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-reno-teal/20 to-reno-purple/20 blur-2xl" />
-                <div className="relative rounded-2xl border border-gray-200 bg-white p-8 shadow-xl">
-                  {/* Header */}
-                  <div className="mb-6 border-b border-gray-200 pb-4">
-                    <div className="mb-2 flex items-center gap-2">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-reno-teal text-white">
-                        <Home className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-gray-900">HouseFax™</h3>
-                        <p className="text-xs text-gray-500">Property Record</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Property info */}
-                  <div className="mb-6">
-                    <div className="text-sm font-medium text-gray-500">Property</div>
-                    <div className="font-semibold text-gray-900">42 Maple Drive</div>
-                    <div className="text-sm text-gray-600">Toronto, ON</div>
-                  </div>
-
-                  {/* Records */}
-                  <div className="space-y-3">
-                    {[
-                      {
-                        title: 'Foundation Underpinning',
-                        date: 'Oct 2024',
-                        value: '$85,600',
-                        status: 'Verified',
-                      },
-                      {
-                        title: 'Waterproofing System',
-                        date: 'Nov 2024',
-                        value: '$12,400',
-                        status: 'Verified',
-                      },
-                      {
-                        title: 'ESA Inspection',
-                        date: 'Nov 2024',
-                        value: 'Passed',
-                        status: 'Certified',
-                      },
-                    ].map((record, idx) => (
-                      <div
-                        key={idx}
-                        className="rounded-lg border border-gray-200 bg-gray-50 p-3"
-                      >
-                        <div className="mb-1 flex items-start justify-between">
-                          <div className="text-sm font-semibold text-gray-900">
-                            {record.title}
-                          </div>
-                          <div className="rounded-full bg-reno-green-light px-2 py-0.5 text-xs font-medium text-reno-green">
-                            {record.status}
-                          </div>
-                        </div>
-                        <div className="flex items-center justify-between text-xs text-gray-600">
-                          <span>{record.date}</span>
-                          <span className="font-semibold">{record.value}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Footer */}
-                  <div className="mt-6 rounded-lg bg-reno-teal-light p-3 text-center">
-                    <div className="text-xs font-semibold text-reno-teal">
-                      Transferable to new owner
-                    </div>
-                  </div>
+              <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span
+                    className="material-symbols-outlined text-primary text-lg"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    verified
+                  </span>
+                  <span className="text-xs font-bold text-gray-600 uppercase">
+                    Verified Pro
+                  </span>
                 </div>
+                <span className="px-2 py-1 rounded bg-amber-50 text-amber-600 text-[10px] font-black uppercase">
+                  Gold Badge
+                </span>
               </div>
             </div>
 
-            {/* Photo Timeline Showcase */}
-            <div className="mt-16">
-              <PhotoTimelineShowcase />
+            {/* Milestone Card (blurred, background) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-primary/10 shadow-float z-10 scale-90 opacity-70">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="material-symbols-outlined text-primary text-lg">
+                  photo_camera
+                </span>
+                <span className="text-sm font-bold text-reno-dark">
+                  Foundation Waterproofing
+                </span>
+              </div>
+              <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                <Image
+                  src="/images/pros/dryspace/exterior-1.webp"
+                  alt="Waterproofing progress"
+                  width={240}
+                  height={135}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="mt-2 text-xs text-center font-medium text-gray-400">
+                Awaiting Homeowner Approval
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 5: Pricing & FAQ */}
-      <section className="relative overflow-hidden bg-reno-cream py-20 md:py-28 lg:py-36">
-        <div className="container relative mx-auto px-4">
-          <div className="mx-auto max-w-4xl">
-            {/* Pricing header */}
-            <div className="mb-16 text-center">
-              <h2 className="font-display text-4xl font-bold leading-tight text-reno-dark md:text-5xl">
-                Pricing & FAQ
-              </h2>
+      {/* ============================================= */}
+      {/* BENEFITS — Built on Trust                     */}
+      {/* ============================================= */}
+      <section className="py-20 md:py-28 px-6 bg-[#f6f8f8]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-black text-reno-dark tracking-tight mb-4">
+              Built on Trust, Delivered with Precision
+            </h2>
+            <p className="text-gray-500 text-lg">
+              We&apos;ve redesigned the renovation experience to prioritize
+              homeowner safety and contractor accountability.
+            </p>
+          </div>
 
-              <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-reno-green/20 bg-white p-8 shadow-lg">
-                <div className="mb-4 flex items-center justify-center gap-2">
-                  <DollarSign className="h-6 w-6 text-reno-green" />
-                  <h3 className="text-2xl font-bold text-reno-dark">Free to start</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: 'shield_with_heart',
+                title: 'Escrow Vault',
+                desc: 'Your funds are held safely in a secure escrow account and only released when you approve the completed milestone.',
+              },
+              {
+                icon: 'verified_user',
+                title: 'Vetted Pros',
+                desc: 'Only the top 5% of contractors pass our audit — license checks, insurance verification, WSIB, and identity confirmed.',
+              },
+              {
+                icon: 'query_stats',
+                title: 'Milestone Tracking',
+                desc: 'Track progress in real-time with photo proof and time-stamped logs for every project phase.',
+              },
+            ].map((card) => (
+              <div
+                key={card.title}
+                className="p-8 md:p-10 rounded-2xl bg-white shadow-float hover:-translate-y-1 hover:shadow-float-hover transition-all duration-300 group"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-7 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <span
+                    className="material-symbols-outlined text-3xl"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    {card.icon}
+                  </span>
                 </div>
-                <p className="text-lg text-gray-700">
-                  No platform fees upfront. No subscription. No credit card required.
-                </p>
-                <div className="mt-4 rounded-lg bg-reno-green-light p-4">
-                  <p className="text-sm text-gray-700">
-                    The 3% platform fee comes from the contractor side. You pay only for the
-                    work that gets done.
+                <h3 className="text-xl md:text-2xl font-bold text-reno-dark mb-3 tracking-tight">
+                  {card.title}
+                </h3>
+                <p className="text-gray-500 leading-relaxed">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================= */}
+      {/* HOW IT WORKS — 4 Steps                        */}
+      {/* ============================================= */}
+      <section className="py-20 md:py-28 px-6 bg-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -mr-48 -mt-48 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <h2 className="font-display text-3xl md:text-4xl font-black text-reno-dark tracking-tight text-center mb-16 md:mb-20">
+            How it Works for Homeowners
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+            {[
+              {
+                num: '1',
+                title: 'Define Project',
+                desc: 'Outline your vision and budget. Our project advisors help you refine the scope for accurate bidding.',
+              },
+              {
+                num: '2',
+                title: 'Get Vetted Bids',
+                desc: 'Receive detailed proposals from pre-screened contractors who specialize in your specific project type.',
+              },
+              {
+                num: '3',
+                title: 'Fund Escrow',
+                desc: 'Deposit your project funds into the secure RenoNext vault. You retain control over all releases.',
+              },
+              {
+                num: '4',
+                title: 'Track & Approve',
+                desc: 'Review milestone photos, approve successful phases, and release payments — all from your phone.',
+              },
+            ].map((step) => (
+              <div key={step.num} className="relative">
+                <div className="text-8xl font-black text-gray-50 absolute -top-10 -left-3 select-none pointer-events-none">
+                  {step.num}
+                </div>
+                <div className="relative pt-6">
+                  <h4 className="text-xl font-bold text-reno-dark mb-3">
+                    {step.title}
+                  </h4>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    {step.desc}
                   </p>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* FAQ Accordion */}
-            <div className="mb-12">
-              <h3 className="mb-6 text-center text-2xl font-bold text-reno-dark">
-                Frequently Asked Questions
-              </h3>
-
-              <Accordion type="single" collapsible className="space-y-4">
-                <AccordionItem
-                  value="item-1"
-                  className="rounded-xl border border-gray-200 bg-white px-6 shadow-sm"
-                >
-                  <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline">
-                    <div className="flex items-center gap-3">
-                      <HelpCircle className="h-5 w-5 shrink-0 text-reno-green" />
-                      <span>Is my money safe?</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 text-gray-600">
-                    Yes. Your funds are held in a bank-grade escrow account. Neither you nor the
-                    contractor can access the money without verified milestone completion and
-                    mutual approval. The vault uses the same infrastructure as major financial
-                    institutions.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem
-                  value="item-2"
-                  className="rounded-xl border border-gray-200 bg-white px-6 shadow-sm"
-                >
-                  <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline">
-                    <div className="flex items-center gap-3">
-                      <HelpCircle className="h-5 w-5 shrink-0 text-reno-green" />
-                      <span>What if the contractor disappears?</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 text-gray-600">
-                    Your remaining funds stay protected in the vault. You can request a full
-                    refund of unspent milestones, or hire a replacement contractor to complete
-                    the work. The dispute resolution team mediates if needed, with photo evidence
-                    and work logs as proof.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem
-                  value="item-3"
-                  className="rounded-xl border border-gray-200 bg-white px-6 shadow-sm"
-                >
-                  <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline">
-                    <div className="flex items-center gap-3">
-                      <HelpCircle className="h-5 w-5 shrink-0 text-reno-green" />
-                      <span>What if I disagree with the work?</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 text-gray-600">
-                    Every milestone includes GPS-stamped photos and third-party verification. If
-                    you disagree with quality, you can withhold approval and request an
-                    independent inspector. The work must match the scope and standards agreed in
-                    the contract before payment is released.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem
-                  value="item-4"
-                  className="rounded-xl border border-gray-200 bg-white px-6 shadow-sm"
-                >
-                  <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline">
-                    <div className="flex items-center gap-3">
-                      <HelpCircle className="h-5 w-5 shrink-0 text-reno-green" />
-                      <span>Do I own the records?</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 text-gray-600">
-                    Yes, 100%. Your HouseFax record is yours forever. You can download it as a
-                    PDF at any time, share it with buyers when selling, or use it for insurance
-                    claims. The record stays with the property even if you change owners.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem
-                  value="item-5"
-                  className="rounded-xl border border-gray-200 bg-white px-6 shadow-sm"
-                >
-                  <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline">
-                    <div className="flex items-center gap-3">
-                      <HelpCircle className="h-5 w-5 shrink-0 text-reno-green" />
-                      <span>How do inspections work?</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 text-gray-600">
-                    For major milestones (foundation, framing, mechanical), mandatory inspections
-                    are built into the schedule. The system automatically notifies you and the
-                    contractor when an inspection is required. Payment is only released after the
-                    inspection passes and results are uploaded to your project vault.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
-
-            {/* Final CTA */}
-            <div className="rounded-2xl border border-reno-green/20 bg-gradient-to-br from-white to-reno-green-light p-8 text-center shadow-lg md:p-12">
-              <h3 className="font-display text-3xl font-bold text-reno-dark md:text-4xl">
-                Ready to protect your renovation?
-              </h3>
-              <p className="mx-auto mt-4 max-w-xl text-lg text-gray-700">
-                Start your project with complete financial protection and full transparency.
+      {/* ============================================= */}
+      {/* SUCCESS STORIES — Real Results                 */}
+      {/* ============================================= */}
+      <section className="py-20 md:py-28 px-6 bg-[#f6f8f8]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-12">
+            <div>
+              <h2 className="font-display text-3xl md:text-4xl font-black text-reno-dark tracking-tight mb-3">
+                Real Results, Verified Proof
+              </h2>
+              <p className="text-gray-500">
+                Explore transformations powered by RenoNext contractors.
               </p>
+            </div>
+            <Link
+              href="/pros"
+              className="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all text-sm"
+            >
+              All Stories
+              <span className="material-symbols-outlined text-base">
+                arrow_forward
+              </span>
+            </Link>
+          </div>
 
-              <Button
-                asChild
-                size="lg"
-                className="mt-8 h-14 rounded-full bg-reno-green px-8 text-base font-semibold text-white hover:bg-reno-green-dark"
-              >
-                <Link href="/start-project">
-                  Start Your Project — Free
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-
-              <p className="mt-4 text-sm text-gray-600">No credit card required</p>
-
-              {/* Trust badges */}
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2">
-                  <Lock className="h-4 w-4 text-reno-green" />
-                  <span>Bank-grade security</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <BadgeCheck className="h-4 w-4 text-reno-teal" />
-                  <span>Verified contractors</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-reno-purple" />
-                  <span>24/7 support</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Story 1 — DrySpace Waterproofing */}
+            <div className="group rounded-2xl overflow-hidden bg-white shadow-float flex flex-col md:flex-row">
+              <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+                <Image
+                  src="/images/pros/dryspace/interior.webp"
+                  alt="Completed waterproofing system"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                />
+                <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur rounded text-[10px] font-black uppercase tracking-widest text-reno-dark">
+                  Before &amp; After
                 </div>
               </div>
+              <div className="md:w-1/2 p-7 flex flex-col justify-center">
+                <h3 className="text-xl font-bold text-reno-dark mb-2">
+                  Basement Waterproofing
+                </h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span
+                    className="material-symbols-outlined text-primary text-sm"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    location_on
+                  </span>
+                  <span className="text-gray-500 text-xs font-bold uppercase tracking-wide">
+                    Toronto, ON
+                  </span>
+                </div>
+                <p className="text-gray-500 text-sm mb-5 italic">
+                  &ldquo;The escrow system gave us the peace of mind to finally
+                  fix our decade-old flooding issue.&rdquo;
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xs font-bold text-primary">JK</span>
+                  </div>
+                  <span className="text-sm font-bold text-reno-dark">
+                    James K.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Story 2 — Foundation Work */}
+            <div className="group rounded-2xl overflow-hidden bg-white shadow-float flex flex-col md:flex-row">
+              <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+                <Image
+                  src="/images/pros/dryspace/exterior-2.webp"
+                  alt="Foundation excavation and waterproofing"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                />
+                <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur rounded text-[10px] font-black uppercase tracking-widest text-reno-dark">
+                  Full Remodel
+                </div>
+              </div>
+              <div className="md:w-1/2 p-7 flex flex-col justify-center">
+                <h3 className="text-xl font-bold text-reno-dark mb-2">
+                  Foundation &amp; Exterior
+                </h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span
+                    className="material-symbols-outlined text-primary text-sm"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    location_on
+                  </span>
+                  <span className="text-gray-500 text-xs font-bold uppercase tracking-wide">
+                    Mississauga, ON
+                  </span>
+                </div>
+                <p className="text-gray-500 text-sm mb-5 italic">
+                  &ldquo;Seeing photo updates every week kept the project on
+                  schedule and gave us complete visibility.&rdquo;
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xs font-bold text-primary">MP</span>
+                  </div>
+                  <span className="text-sm font-bold text-reno-dark">
+                    Maria P.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================= */}
+      {/* FAQ                                           */}
+      {/* ============================================= */}
+      <section className="py-20 md:py-28 px-6 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl font-black text-reno-dark tracking-tight text-center mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-gray-500 text-center mb-12">
+            Everything you need to know about renovating with RenoNext.
+          </p>
+
+          <div className="space-y-3">
+            {[
+              {
+                q: 'Is my money safe?',
+                a: 'Yes. Your funds are held in a bank-grade escrow account. Neither you nor the contractor can access the money without verified milestone completion and mutual approval.',
+              },
+              {
+                q: 'What if the contractor disappears?',
+                a: 'Your remaining funds stay protected in the vault. You can request a full refund of unspent milestones, or hire a replacement contractor. The dispute resolution team mediates if needed.',
+              },
+              {
+                q: 'What if I disagree with the work?',
+                a: 'Every milestone includes GPS-stamped photos and third-party verification. You can withhold approval and request an independent inspector before payment is released.',
+              },
+              {
+                q: 'Do I own the records?',
+                a: 'Yes, 100%. Your HouseFax record is yours forever. Download it as a PDF, share it with buyers when selling, or use it for insurance claims.',
+              },
+              {
+                q: 'How much does it cost?',
+                a: 'Free to start — no platform fees upfront, no subscription, no credit card required. The 3% platform fee comes from the contractor side. You pay only for the work that gets done.',
+              },
+            ].map((faq, i) => (
+              <details
+                key={i}
+                className="group rounded-xl border border-gray-200 bg-white px-6 shadow-sm"
+              >
+                <summary className="flex items-center justify-between cursor-pointer py-5 text-left font-semibold text-reno-dark list-none [&::-webkit-details-marker]:hidden">
+                  <div className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-primary text-lg">
+                      help
+                    </span>
+                    <span>{faq.q}</span>
+                  </div>
+                  <span className="material-symbols-outlined text-gray-400 text-lg transition-transform duration-200 group-open:rotate-180 ml-4 flex-shrink-0">
+                    expand_more
+                  </span>
+                </summary>
+                <div className="pt-1 pb-5 text-gray-500 leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================= */}
+      {/* FINAL CTA — Dark                              */}
+      {/* ============================================= */}
+      <section className="py-20 md:py-28 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-reno-dark z-0">
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage:
+                'radial-gradient(#0fbabd 1px, transparent 1px)',
+              backgroundSize: '30px 30px',
+            }}
+          />
+        </div>
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <h2 className="font-display text-4xl md:text-5xl font-black text-white tracking-tight mb-6">
+            Ready to Build with Confidence?
+          </h2>
+          <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+            Join homeowners who have eliminated renovation risk. Your dream home
+            is one click away.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/price-check"
+              className="inline-flex items-center justify-center bg-primary text-white px-10 py-5 rounded-xl font-bold text-lg hover:scale-[1.03] active:scale-[0.98] transition-transform"
+            >
+              Start Your Project
+            </Link>
+            <Link
+              href="/how-it-works"
+              className="inline-flex items-center justify-center bg-white/10 text-white border border-white/20 px-10 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition-colors"
+            >
+              Talk to an Advisor
+            </Link>
+          </div>
+          <div className="mt-10 flex items-center justify-center gap-8 text-gray-500 text-sm font-bold">
+            <div className="flex items-center gap-2">
+              <span
+                className="material-symbols-outlined text-primary text-lg"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                security
+              </span>
+              Bank-Level Escrow
+            </div>
+            <div className="flex items-center gap-2">
+              <span
+                className="material-symbols-outlined text-primary text-lg"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                verified
+              </span>
+              Vetted Contractors
             </div>
           </div>
         </div>

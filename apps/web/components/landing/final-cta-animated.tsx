@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 export function FinalCtaAnimated() {
@@ -28,7 +27,7 @@ export function FinalCtaAnimated() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#1A1A1A] py-24 md:py-32"
+      className="relative overflow-hidden bg-[#102122] py-24 md:py-32"
     >
       {/* Animated Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden">
@@ -57,7 +56,7 @@ export function FinalCtaAnimated() {
             >
               <path
                 d="M0 6 Q50 3, 100 6 T200 6"
-                stroke="#1D6B3F"
+                stroke="#0fbabd"
                 strokeWidth="3"
                 fill="none"
                 strokeLinecap="round"
@@ -99,25 +98,29 @@ export function FinalCtaAnimated() {
             className="group relative inline-flex items-center justify-center"
           >
             {/* Animated Glow Ring */}
-            <span className="absolute inset-0 rounded-full bg-[#1D6B3F] blur-xl opacity-50 group-hover:opacity-75 animate-pulse-glow" />
+            <span className="absolute inset-0 rounded-full bg-[#0fbabd] blur-xl opacity-50 group-hover:opacity-75 animate-pulse-glow" />
 
             {/* Button */}
-            <span className="relative inline-flex items-center gap-2 px-8 py-4 bg-[#1D6B3F] text-white font-semibold rounded-full transition-all duration-300 group-hover:scale-105 overflow-hidden">
+            <span className="relative inline-flex items-center gap-2 px-8 py-4 bg-[#0fbabd] text-white font-semibold rounded-full transition-all duration-300 group-hover:scale-105 overflow-hidden">
               {/* Shine Sweep Effect */}
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
               <span className="relative">Start a Project</span>
-              <ArrowRight className="relative w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <span className="relative material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
             </span>
           </Link>
 
           {/* Outline Button with Animated Border */}
           <Link
             href="/price-check"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 font-semibold rounded-full transition-all duration-300 hover:scale-105 overflow-hidden border-2 border-[#1D6B3F] text-white hover:bg-[#1D6B3F]/10 animated-border"
+            className="group relative inline-flex items-center gap-2 px-8 py-4 font-semibold rounded-full transition-all duration-300 hover:scale-105 overflow-hidden border-2 border-[#0fbabd] text-white hover:bg-[#0fbabd]/10 animated-border"
           >
             Get a Price Check
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
+              arrow_forward
+            </span>
           </Link>
         </div>
 
@@ -130,7 +133,7 @@ export function FinalCtaAnimated() {
           {/* Animated Separator Line */}
           <div className="relative mb-6 h-[1px] max-w-md mx-auto">
             <div
-              className={`absolute left-1/2 top-0 h-full bg-gradient-to-r from-transparent via-[#1D6B3F] to-transparent transition-all duration-1000 ${
+              className={`absolute left-1/2 top-0 h-full bg-gradient-to-r from-transparent via-[#0fbabd] to-transparent transition-all duration-1000 ${
                 isVisible ? 'w-full -translate-x-1/2 delay-1200' : 'w-0 -translate-x-1/2'
               }`}
             />
@@ -152,9 +155,9 @@ export function FinalCtaAnimated() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.15; }
-        .orb-green { width: 500px; height: 500px; background: #1D6B3F; top: -200px; left: -100px; animation: fc-drift-green 20s ease-in-out infinite; }
-        .orb-teal { width: 400px; height: 400px; background: #0D7377; bottom: -150px; right: -50px; animation: fc-drift-teal 25s ease-in-out infinite; }
-        .orb-purple { width: 450px; height: 450px; background: #6B4E8D; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: fc-drift-purple 30s ease-in-out infinite; }
+        .orb-green { width: 500px; height: 500px; background: #0fbabd; top: -200px; left: -100px; animation: fc-drift-green 20s ease-in-out infinite; }
+        .orb-teal { width: 400px; height: 400px; background: #0D9FA1; bottom: -150px; right: -50px; animation: fc-drift-teal 25s ease-in-out infinite; }
+        .orb-purple { width: 450px; height: 450px; background: #E8AA42; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: fc-drift-purple 30s ease-in-out infinite; }
         @keyframes fc-drift-green { 0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.15; } 33% { transform: translate(50px, -30px) rotate(120deg); opacity: 0.2; } 66% { transform: translate(-30px, 40px) rotate(240deg); opacity: 0.1; } }
         @keyframes fc-drift-teal { 0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.15; } 40% { transform: translate(-60px, 30px) rotate(140deg); opacity: 0.2; } 80% { transform: translate(40px, -50px) rotate(280deg); opacity: 0.1; } }
         @keyframes fc-drift-purple { 0%, 100% { transform: translate(-50%, -50%) rotate(0deg); opacity: 0.12; } 50% { transform: translate(calc(-50% + 40px), calc(-50% - 40px)) rotate(180deg); opacity: 0.18; } }
@@ -163,10 +166,10 @@ export function FinalCtaAnimated() {
         .animate-draw-underline .underline-path { animation: fc-draw-underline 1s ease-out forwards; }
         @keyframes fc-pulse-glow { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 0.7; } }
         .animate-pulse-glow { animation: fc-pulse-glow 3s ease-in-out infinite; }
-        @keyframes fc-border-cycle { 0%, 100% { border-color: #1D6B3F; } 50% { border-color: #0D7377; } }
+        @keyframes fc-border-cycle { 0%, 100% { border-color: #0fbabd; } 50% { border-color: #0D9FA1; } }
         .animated-border { animation: fc-border-cycle 4s ease-in-out infinite; }
         .floating-particles { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 60px; pointer-events: none; }
-        .particle { position: absolute; width: 3px; height: 3px; background: #1D6B3F; border-radius: 50%; bottom: 0; opacity: 0; }
+        .particle { position: absolute; width: 3px; height: 3px; background: #0fbabd; border-radius: 50%; bottom: 0; opacity: 0; }
         .particle-1 { left: 30%; animation: fc-float-up 3s ease-in infinite; }
         .particle-2 { left: 45%; animation: fc-float-up 3.5s ease-in infinite 0.5s; }
         .particle-3 { left: 55%; animation: fc-float-up 3.2s ease-in infinite 1s; }

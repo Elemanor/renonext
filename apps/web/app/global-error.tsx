@@ -23,8 +23,8 @@ export default function GlobalError({
             alignItems: 'center',
             justifyContent: 'center',
             minHeight: '100vh',
-            backgroundColor: '#1A1A1A',
-            color: '#F6F5F1',
+            backgroundColor: '#102122',
+            color: '#f6f8f8',
             fontFamily: 'system-ui, -apple-system, sans-serif',
             padding: '24px',
             textAlign: 'center',
@@ -40,7 +40,7 @@ export default function GlobalError({
                 fontSize: '48px',
                 fontWeight: 'bold',
                 marginBottom: '16px',
-                color: '#1D6B3F',
+                color: '#0fbabd',
               }}
             >
               Something went wrong
@@ -57,7 +57,7 @@ export default function GlobalError({
             <button
               onClick={reset}
               style={{
-                backgroundColor: '#1D6B3F',
+                backgroundColor: '#0fbabd',
                 color: 'white',
                 padding: '12px 32px',
                 fontSize: '16px',
@@ -67,10 +67,10 @@ export default function GlobalError({
                 cursor: 'pointer',
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.backgroundColor = '#155a33';
+                e.currentTarget.style.backgroundColor = '#0da8ab';
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.backgroundColor = '#1D6B3F';
+                e.currentTarget.style.backgroundColor = '#0fbabd';
               }}
             >
               Try again

@@ -439,8 +439,8 @@ export const apps: AppData[] = [
     ctaHref: '/contact',
   },
   {
-    slug: 'jsa',
-    name: 'JSA',
+    slug: 'safety',
+    name: 'SafetyHub',
     tagline: 'Safety docs done before the trucks arrive.',
     description:
       'A full-stack construction management platform: Job Safety Analysis forms, daily field reports, concrete pour tracking, GPS attendance, incident reports, toolbox meetings, and AR visualization — all in one app.',
