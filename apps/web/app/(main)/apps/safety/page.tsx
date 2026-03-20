@@ -1328,6 +1328,12 @@ export default function SafetyPage() {
                 Try Toolbox Talk Free
               </Link>
               <Link
+                href="/whmis"
+                className="bg-gradient-to-r from-teal-600 to-cyan-700 hover:from-teal-500 hover:to-cyan-600 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-all shadow-lg shadow-teal-900/20"
+              >
+                Free WHMIS Training
+              </Link>
+              <Link
                 href="/apps"
                 className="border border-white/20 text-white hover:bg-white/5 px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-colors"
               >

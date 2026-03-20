@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <polygon points="100,8 192,100 100,192 8,100" fill="white" stroke="#C8102E" stroke-width="5"/>
+  <path d="M60,55 L65,50 L75,55 L75,70 Q75,75 70,80 L65,85 Q60,80 60,75 Z" fill="none" stroke="#000000" stroke-width="4"/>
+  <circle cx="62" cy="90" r="2" fill="#000000"/>
+  <circle cx="68" cy="93" r="2" fill="#000000"/>
+  <circle cx="72" cy="88" r="2" fill="#000000"/>
+  <rect x="50" y="100" width="45" height="8" fill="none" stroke="#000000" stroke-width="4"/>
+  <path d="M55,108 L55,118 M65,108 L62,118 M75,108 L78,118 M85,108 L88,118" stroke="#000000" stroke-width="3"/>
+  <path d="M125,55 L130,50 L140,55 L140,70 Q140,75 135,80 L130,85 Q125,80 125,75 Z" fill="none" stroke="#000000" stroke-width="4"/>
+  <circle cx="127" cy="90" r="2" fill="#000000"/>
+  <circle cx="133" cy="93" r="2" fill="#000000"/>
+  <circle cx="137" cy="88" r="2" fill="#000000"/>
+  <path d="M115,105 L120,100 L135,100 Q145,100 150,105 L155,112 Q155,122 150,127 L145,132 Q140,135 130,135 L115,135 Z" fill="none" stroke="#000000" stroke-width="4"/>
+  <path d="M125,110 L125,125 M135,108 L132,128 M145,110 L148,125" stroke="#000000" stroke-width="3"/>
+</svg>

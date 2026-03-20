@@ -94,6 +94,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  // WHMIS training pages: landing + 7 modules + quiz + certificate = 10 URLs
+  const whmisPages: MetadataRoute.Sitemap = [
+    { url: `${BASE}/whmis`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    ...[1, 2, 3, 4, 5, 6, 7].map((id) => ({
+      url: `${BASE}/whmis/module/${id}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+    { url: `${BASE}/whmis/quiz`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/whmis/certificate`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+  ];
+
   const blogPages: MetadataRoute.Sitemap = mockBlogPosts.map((post) => ({
     url: `${BASE}/blog/${post.slug}`,
     lastModified: new Date(post.updatedAt || post.createdAt),
@@ -111,6 +124,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...costCityPages,
     ...appHubPage,
     ...appPages,
+    ...whmisPages,
     ...blogPages,
   ];
 }
