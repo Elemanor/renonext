@@ -38,6 +38,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/help`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/toolbox-talk`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/daily-report`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/safety-inspection`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/pour-calculator`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/jsa`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/renovation-cost-report`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/wbs-generator`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/renovation-calculator`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
   ];
 
   const servicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
@@ -82,6 +90,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  // Shop pages: 1 hub + 10 category pages = 11 URLs (individual product pages are dynamic)
+  const shopCategorySlugs = [
+    'power-tools', 'hand-tools', 'safety-equipment', 'concrete-masonry',
+    'waterproofing', 'plumbing', 'electrical', 'fasteners-hardware',
+    'paint-finishing', 'lumber-framing',
+    'bathroom-kitchen', 'home-essentials',
+    'no-drill-bathroom', 'no-drill-kitchen', 'no-drill-storage', 'no-drill-decor',
+  ];
+  const shopPages: MetadataRoute.Sitemap = [
+    { url: `${BASE}/shop`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    ...shopCategorySlugs.map((slug) => ({
+      url: `${BASE}/shop/${slug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    })),
+  ];
+
   // App pages: 1 hub + 5 individual app pages = 6 URLs
   const appSlugs = ['equipment-fix', 'drawing-viewer', 'attendance', 'ar-survey', 'concrete-pour', 'jsa'];
   const appHubPage: MetadataRoute.Sitemap = [
@@ -114,6 +140,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  // Best waterproofing city pages: 15 URLs
+  const bestWaterproofingPages: MetadataRoute.Sitemap = citySlugs.map((slug) => ({
+    url: `${BASE}/best-waterproofing/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  // Best underpinning city pages: 15 URLs
+  const bestUnderpinningPages: MetadataRoute.Sitemap = citySlugs.map((slug) => ({
+    url: `${BASE}/best-underpinning/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  // Basement renovation cost city pages: 15 URLs
+  const basementRenovationCostPages: MetadataRoute.Sitemap = citySlugs.map((slug) => ({
+    url: `${BASE}/basement-renovation-cost/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  // Basement leak repair city pages: 15 URLs
+  const basementLeakRepairPages: MetadataRoute.Sitemap = citySlugs.map((slug) => ({
+    url: `${BASE}/basement-leak-repair/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   return [
     ...staticPages,
     ...servicePages,
@@ -122,9 +180,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...costHubPage,
     ...costServicePages,
     ...costCityPages,
+    ...shopPages,
     ...appHubPage,
     ...appPages,
     ...whmisPages,
     ...blogPages,
+    ...bestWaterproofingPages,
+    ...bestUnderpinningPages,
+    ...basementRenovationCostPages,
+    ...basementLeakRepairPages,
   ];
 }

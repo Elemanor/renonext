@@ -43,10 +43,10 @@ export function WeekDayCard({ day, isTomorrow }: WeekDayCardProps) {
         <CardContent className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <h4 className="font-medium text-gray-900">{day_label}</h4>
-              <p className="text-sm text-gray-500">{formatDate(date)}</p>
+              <h4 className="font-medium text-slate-900">{day_label}</h4>
+              <p className="text-sm text-slate-500">{formatDate(date)}</p>
             </div>
-            <Badge variant="secondary" className="text-gray-600">
+            <Badge variant="secondary" className="text-slate-600">
               No work
             </Badge>
           </div>
@@ -62,26 +62,26 @@ export function WeekDayCard({ day, isTomorrow }: WeekDayCardProps) {
         <div className="flex items-start justify-between">
           <div>
             <div className="flex items-center gap-2">
-              <h4 className="font-medium text-gray-900">{day_label}</h4>
+              <h4 className="font-medium text-slate-900">{day_label}</h4>
               {isTomorrow && (
                 <Badge variant="default" className="text-xs">
                   Tomorrow
                 </Badge>
               )}
             </div>
-            <p className="text-sm text-gray-500">{formatDate(date)}</p>
+            <p className="text-sm text-slate-500">{formatDate(date)}</p>
           </div>
           <div className="text-right">
-            <p className="text-sm font-medium text-gray-900">{crew_size} crew</p>
+            <p className="text-sm font-medium text-slate-900">{crew_size} crew</p>
             {work_hours && (
-              <p className="text-xs text-gray-500">{work_hours.start} — {work_hours.end}</p>
+              <p className="text-xs text-slate-500">{work_hours.start} — {work_hours.end}</p>
             )}
           </div>
         </div>
 
         {/* Work planned */}
         <div>
-          <p className="text-sm text-gray-700">{work_planned}</p>
+          <p className="text-sm text-slate-700">{work_planned}</p>
         </div>
 
         {/* Disruption warnings */}
@@ -94,7 +94,7 @@ export function WeekDayCard({ day, isTomorrow }: WeekDayCardProps) {
 
         {/* Client presence required */}
         {requires_client_home && (
-          <div className="flex items-center gap-2 text-blue-700">
+          <div className="flex items-center gap-2 text-primary-700">
             <Home className="h-4 w-4 flex-shrink-0" />
             <p className="text-sm">You may need to be home</p>
           </div>

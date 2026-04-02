@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 type ProgressTier = 'high' | 'medium' | 'low' | 'default';
 
 const tierColors: Record<ProgressTier, string> = {
-  high: 'bg-emerald-500',
+  high: 'bg-reno-green-500',
   medium: 'bg-amber-500',
   low: 'bg-red-500',
   default: 'bg-primary',

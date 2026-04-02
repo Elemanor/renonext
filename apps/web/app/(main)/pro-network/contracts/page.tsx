@@ -78,8 +78,8 @@ const contracts = [
 ];
 
 const statusConfig = {
-  active: { label: 'Active', color: 'bg-emerald-50 text-emerald-700' },
-  completed: { label: 'Completed', color: 'bg-gray-100 text-gray-600' },
+  active: { label: 'Active', color: 'bg-reno-green-50 text-reno-green-700' },
+  completed: { label: 'Completed', color: 'bg-slate-100 text-slate-600' },
   disputed: { label: 'Disputed', color: 'bg-red-50 text-red-700' },
 };
 
@@ -89,16 +89,16 @@ export default function ContractsPage() {
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">
             Contracts
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-slate-500">
             Track active contracts, milestones, and payments
           </p>
         </div>
         <Button
           variant="outline"
-          className="h-auto rounded-xl border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700"
+          className="h-auto rounded-xl border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700"
         >
           <Download className="mr-1.5 h-4 w-4" />
           Export All
@@ -107,24 +107,24 @@ export default function ContractsPage() {
 
       {/* Summary */}
       <div className="mb-6 grid gap-4 sm:grid-cols-3">
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-none">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-none">
           <CardContent className="p-5">
-            <p className="text-sm font-medium text-gray-500">Active Contracts</p>
-            <p className="mt-1 text-2xl font-bold text-gray-900">
+            <p className="text-sm font-medium text-slate-500">Active Contracts</p>
+            <p className="mt-1 text-2xl font-bold text-slate-900">
               {contracts.filter((c) => c.status === 'active').length}
             </p>
           </CardContent>
         </Card>
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-none">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-none">
           <CardContent className="p-5">
-            <p className="text-sm font-medium text-gray-500">Total Value</p>
-            <p className="mt-1 text-2xl font-bold text-gray-900">$156K</p>
+            <p className="text-sm font-medium text-slate-500">Total Value</p>
+            <p className="mt-1 text-2xl font-bold text-slate-900">$156K</p>
           </CardContent>
         </Card>
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-none">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-none">
           <CardContent className="p-5">
-            <p className="text-sm font-medium text-gray-500">Paid Out</p>
-            <p className="mt-1 text-2xl font-bold text-emerald-600">$63,450</p>
+            <p className="text-sm font-medium text-slate-500">Paid Out</p>
+            <p className="mt-1 text-2xl font-bold text-reno-green-600">$63,450</p>
           </CardContent>
         </Card>
       </div>
@@ -139,38 +139,38 @@ export default function ContractsPage() {
           return (
             <Card
               key={contract.id}
-              className="rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+              className="rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
             >
               <CardContent className="p-5">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-semibold text-gray-900">{contract.title}</h3>
+                      <h3 className="font-semibold text-slate-900">{contract.title}</h3>
                       <Badge
                         className={`shrink-0 rounded-full border-transparent px-2 py-0.5 text-[10px] font-semibold ${config.color}`}
                       >
                         {config.label}
                       </Badge>
                     </div>
-                    <p className="mt-1 text-sm text-gray-500">
+                    <p className="mt-1 text-sm text-slate-500">
                       Sub: {contract.sub} — {contract.startDate} to {contract.endDate}
                     </p>
 
                     {/* Milestone progress */}
                     <div className="mt-3">
-                      <div className="flex items-center justify-between text-xs text-gray-500">
+                      <div className="flex items-center justify-between text-xs text-slate-500">
                         <span>
                           Milestones: {contract.milestones.completed} of{' '}
                           {contract.milestones.total}
                         </span>
                         <span>{progressPercent}%</span>
                       </div>
-                      <div className="mt-1 h-2 w-full rounded-full bg-gray-100">
+                      <div className="mt-1 h-2 w-full rounded-full bg-slate-100">
                         <div
                           className={`h-2 rounded-full transition-all ${
                             progressPercent === 100
-                              ? 'bg-gray-400'
-                              : 'bg-violet-500'
+                              ? 'bg-slate-400'
+                              : 'bg-reno-purple-500'
                           }`}
                           style={{ width: `${progressPercent}%` }}
                         />
@@ -180,16 +180,16 @@ export default function ContractsPage() {
 
                   <div className="flex shrink-0 items-start gap-6">
                     <div className="text-right">
-                      <p className="text-lg font-bold text-gray-900">{contract.value}</p>
-                      <p className="text-xs text-gray-500">contract value</p>
+                      <p className="text-lg font-bold text-slate-900">{contract.value}</p>
+                      <p className="text-xs text-slate-500">contract value</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-lg font-bold text-emerald-600">{contract.paid}</p>
-                      <p className="text-xs text-gray-500">paid</p>
+                      <p className="text-lg font-bold text-reno-green-600">{contract.paid}</p>
+                      <p className="text-xs text-slate-500">paid</p>
                     </div>
                     <Button
                       variant="outline"
-                      className="h-auto rounded-lg border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700"
+                      className="h-auto rounded-lg border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700"
                     >
                       <Eye className="mr-1 h-3 w-3" />
                       View

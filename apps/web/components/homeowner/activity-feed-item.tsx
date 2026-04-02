@@ -14,11 +14,11 @@ interface ActivityFeedItemProps {
 }
 
 const typeConfig = {
-  daily_report: { icon: FileText, color: 'bg-blue-100 text-blue-600' },
+  daily_report: { icon: FileText, color: 'bg-primary-100 text-primary-600' },
   decision_needed: { icon: MessageCircle, color: 'bg-amber-100 text-amber-600' },
-  milestone: { icon: Flag, color: 'bg-emerald-100 text-emerald-600' },
+  milestone: { icon: Flag, color: 'bg-reno-green-100 text-reno-green-600' },
   delivery: { icon: Package, color: 'bg-purple-100 text-purple-600' },
-  inspection: { icon: ClipboardCheck, color: 'bg-indigo-100 text-indigo-600' },
+  inspection: { icon: ClipboardCheck, color: 'bg-primary-100 text-primary-600' },
 };
 
 export function ActivityFeedItem({ item }: ActivityFeedItemProps) {
@@ -59,18 +59,18 @@ export function ActivityFeedItem({ item }: ActivityFeedItemProps) {
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1">
             <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="font-medium text-gray-900">{item.title}</h3>
+              <h3 className="font-medium text-slate-900">{item.title}</h3>
               {item.actionRequired && (
                 <Badge variant="outline" className="bg-amber-50 text-amber-700 border-amber-200">
                   Action needed
                 </Badge>
               )}
             </div>
-            <p className="text-sm text-gray-500 mt-1">{item.description}</p>
+            <p className="text-sm text-slate-500 mt-1">{item.description}</p>
             {item.actionRequired && item.actionHref && (
               <a
                 href={item.actionHref}
-                className="text-sm text-blue-600 hover:text-blue-700 font-medium mt-2 inline-block"
+                className="text-sm text-primary-600 hover:text-primary-700 font-medium mt-2 inline-block"
               >
                 {item.actionLabel || 'View details →'}
               </a>
@@ -90,7 +90,7 @@ export function ActivityFeedItem({ item }: ActivityFeedItemProps) {
         </div>
 
         {/* Date */}
-        <p className="text-xs text-gray-400 mt-1">{formatRelativeDate(item.date)}</p>
+        <p className="text-xs text-slate-400 mt-1">{formatRelativeDate(item.date)}</p>
       </div>
     </div>
   );

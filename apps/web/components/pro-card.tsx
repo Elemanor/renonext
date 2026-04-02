@@ -67,7 +67,7 @@ export function ProCard({
 
   return (
     <Link href={`/pros/${id}`} className="group block">
-      <Card className="shine relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-card transition-all duration-300 hover:border-reno-green-light hover:shadow-card-hover hover:scale-[1.02]">
+      <Card className="shine relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card transition-all duration-300 hover:border-reno-green-light hover:shadow-card-hover hover:scale-[1.02]">
         {/* Cover/Banner Area */}
         <div className="relative h-28 overflow-hidden">
           {coverUrl ? (
@@ -77,7 +77,7 @@ export function ProCard({
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
           ) : (
-            <div className="h-full w-full bg-gradient-to-br from-reno-green via-reno-green-dark to-violet-600" />
+            <div className="h-full w-full bg-gradient-to-br from-reno-green via-reno-green-dark to-reno-purple-600" />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
 
@@ -92,7 +92,7 @@ export function ProCard({
 
           {/* Hover arrow */}
           <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 opacity-0 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
-            <ArrowUpRight className="h-4 w-4 text-gray-700" />
+            <ArrowUpRight className="h-4 w-4 text-slate-700" />
           </div>
         </div>
 
@@ -119,7 +119,7 @@ export function ProCard({
         <CardContent className="px-5 pb-5 pt-3">
           {/* Name & Verified */}
           <div className="mb-0.5 flex items-center gap-1.5">
-            <h3 className="font-bold text-gray-900 transition-colors duration-200 group-hover:text-reno-green-dark">
+            <h3 className="font-bold text-slate-900 transition-colors duration-200 group-hover:text-reno-green-dark">
               {name}
             </h3>
           </div>
@@ -128,13 +128,13 @@ export function ProCard({
           <div className="mb-2 flex items-center gap-3 text-sm">
             <div className="flex items-center gap-1">
               <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-              <span className="font-bold text-gray-900">{rating.toFixed(1)}</span>
-              <span className="text-xs text-gray-400">({reviewCount})</span>
+              <span className="font-bold text-slate-900">{rating.toFixed(1)}</span>
+              <span className="text-xs text-slate-400">({reviewCount})</span>
             </div>
             {completedJobs !== undefined && completedJobs > 0 && (
               <>
-                <span className="text-gray-200">|</span>
-                <span className="flex items-center gap-1 text-xs text-gray-500">
+                <span className="text-slate-200">|</span>
+                <span className="flex items-center gap-1 text-xs text-slate-500">
                   <Briefcase className="h-3 w-3" />
                   {completedJobs} jobs done
                 </span>
@@ -144,15 +144,15 @@ export function ProCard({
 
           {/* Headline */}
           {headline && (
-            <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-gray-500">{headline}</p>
+            <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-slate-500">{headline}</p>
           )}
 
           {/* Price - prominent left-aligned */}
           <div className="mb-3">
-            <span className="text-xs text-gray-400">Starting from</span>
-            <p className="text-lg font-bold tracking-tight text-gray-900">
+            <span className="text-xs text-slate-400">Starting from</span>
+            <p className="text-lg font-bold tracking-tight text-slate-900">
               {formatRate()}
-              <span className="text-sm font-normal text-gray-400">/hr</span>
+              <span className="text-sm font-normal text-slate-400">/hr</span>
             </p>
           </div>
 
@@ -162,7 +162,7 @@ export function ProCard({
               <Badge
                 key={cat}
                 variant="secondary"
-                className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
+                className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600 hover:bg-slate-100"
               >
                 {cat}
               </Badge>
@@ -170,7 +170,7 @@ export function ProCard({
             {categories.length > 3 && (
               <Badge
                 variant="outline"
-                className="rounded-full border-gray-200 px-2.5 py-0.5 text-xs font-medium text-gray-400"
+                className="rounded-full border-slate-200 px-2.5 py-0.5 text-xs font-medium text-slate-400"
               >
                 +{categories.length - 3}
               </Badge>
@@ -178,7 +178,7 @@ export function ProCard({
           </div>
 
           {/* Footer stats */}
-          <div className="flex items-center gap-3 border-t border-gray-100 pt-3 text-xs text-gray-400">
+          <div className="flex items-center gap-3 border-t border-slate-100 pt-3 text-xs text-slate-400">
             {city && (
               <span className="flex items-center gap-1">
                 <MapPin className="h-3.5 w-3.5" />

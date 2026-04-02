@@ -16,10 +16,10 @@ export function PathSelection() {
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
         <div className="mx-auto mb-14 max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
             What Brings You Here?
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-lg text-gray-500">
+          <p className="mx-auto mt-4 max-w-lg text-lg text-slate-500">
             We already built a system for your exact situation.
           </p>
         </div>
@@ -27,19 +27,19 @@ export function PathSelection() {
         {/* 3-Lane Cards */}
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
           {serviceLanes.map((lane) => (
-            <Link key={lane.title} href={lane.href} aria-label={`Go to ${lane.title}`} className="group block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+            <Link key={lane.title} href={lane.href} aria-label={`Go to ${lane.title}`} className="group block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
               <Card
                 className={[
                   'relative h-full overflow-hidden rounded-2xl border-2 bg-white p-0 shadow-sm transition-all duration-300',
-                  'group-hover:-translate-y-1 group-hover:shadow-xl group-hover:border-gray-300',
-                  'ring-1 ring-transparent group-hover:ring-gray-900/5',
+                  'group-hover:-translate-y-1 group-hover:shadow-xl group-hover:border-slate-300',
+                  'ring-1 ring-transparent group-hover:ring-slate-900/5',
                   'motion-reduce:transform-none',
                   lane.borderColor,
                 ].join(' ')}
               >
                 {/* Featured badge */}
                 {lane.featured && (
-                  <span className="absolute right-4 top-4 z-10 rounded-full bg-gray-900/90 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur">
+                  <span className="absolute right-4 top-4 z-10 rounded-full bg-slate-900/90 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur">
                     Most popular
                   </span>
                 )}
@@ -68,8 +68,8 @@ export function PathSelection() {
                       <lane.icon className={`h-6 w-6 ${lane.textColor}`} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900">{lane.title}</h3>
-                      <p className="text-sm text-gray-500">{lane.subtitle}</p>
+                      <h3 className="text-lg font-bold text-slate-900">{lane.title}</h3>
+                      <p className="text-sm text-slate-500">{lane.subtitle}</p>
                     </div>
                   </div>
 
@@ -81,7 +81,7 @@ export function PathSelection() {
                   </Badge>
 
                   {/* Best For */}
-                  <p className="mb-3 text-[11px] font-medium text-gray-400">
+                  <p className="mb-3 text-[11px] font-medium text-slate-400">
                     {lane.bestFor}
                   </p>
 
@@ -90,7 +90,7 @@ export function PathSelection() {
                     {lane.examples.map((ex) => (
                       <span
                         key={ex}
-                        className="rounded-full border border-gray-200/70 bg-white px-2.5 py-0.5 text-[11px] font-medium text-gray-600"
+                        className="rounded-full border border-slate-200/70 bg-white px-2.5 py-0.5 text-[11px] font-medium text-slate-600"
                       >
                         {ex}
                       </span>

@@ -31,19 +31,19 @@ export function BottomTabBar() {
               {isActive && (
                 <motion.div
                   layoutId="bottom-tab"
-                  className="absolute -top-px left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-b-full bg-emerald-400"
+                  className="absolute -top-px left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-b-full bg-reno-green-400"
                   transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                 />
               )}
               <div className="relative">
-                <tab.icon className={cn('h-[22px] w-[22px]', isActive ? 'text-emerald-400' : 'text-gray-600')} />
+                <tab.icon className={cn('h-[22px] w-[22px]', isActive ? 'text-reno-green-400' : 'text-slate-600')} />
                 {tab.badge && (
-                  <span className="absolute -right-1.5 -top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-emerald-500 text-[8px] font-bold text-white">
+                  <span className="absolute -right-1.5 -top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-reno-green-500 text-[8px] font-bold text-white">
                     {tab.badge}
                   </span>
                 )}
               </div>
-              <span className={cn('text-[10px]', isActive ? 'text-emerald-400' : 'text-gray-600')}>
+              <span className={cn('text-[10px]', isActive ? 'text-reno-green-400' : 'text-slate-600')}>
                 {tab.label}
               </span>
             </Link>

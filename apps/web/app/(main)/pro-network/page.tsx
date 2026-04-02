@@ -33,24 +33,24 @@ const stats = [
     label: 'Active Tenders',
     value: '6',
     trend: { value: 20, isPositive: true },
-    iconColor: 'text-violet-600',
-    iconBg: 'bg-violet-50',
+    iconColor: 'text-reno-purple-600',
+    iconBg: 'bg-reno-purple-50',
   },
   {
     icon: Users,
     label: 'Verified Subs',
     value: '42',
     trend: { value: 15, isPositive: true },
-    iconColor: 'text-blue-600',
-    iconBg: 'bg-blue-50',
+    iconColor: 'text-primary-600',
+    iconBg: 'bg-primary-50',
   },
   {
     icon: DollarSign,
     label: 'Total Contract Value',
     value: '$284K',
     trend: { value: 32, isPositive: true },
-    iconColor: 'text-emerald-600',
-    iconBg: 'bg-emerald-50',
+    iconColor: 'text-reno-green-600',
+    iconBg: 'bg-reno-green-50',
   },
   {
     icon: Shield,
@@ -138,8 +138,8 @@ const complianceAlerts = [
     id: 'ca-3',
     type: 'verified',
     icon: CheckCircle,
-    iconColor: 'text-emerald-500',
-    iconBg: 'bg-emerald-50',
+    iconColor: 'text-reno-green-500',
+    iconBg: 'bg-reno-green-50',
     title: 'ProWall Inc. — all certifications current',
     action: 'Last verified 2 days ago',
   },
@@ -209,16 +209,16 @@ export default function ProNetworkDashboard() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">
             GC Dashboard
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-slate-500">
             Manage tenders, sub-trades, and compliance
           </p>
         </div>
         <Button
           asChild
-          className="rounded-xl bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-violet-700 hover:shadow-md h-auto"
+          className="rounded-xl bg-reno-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-reno-purple-700 hover:shadow-md h-auto"
         >
           <Link href="/pro-network/tenders">
             <ClipboardList className="mr-1.5 h-4 w-4" />
@@ -247,9 +247,9 @@ export default function ProNetworkDashboard() {
           formatter={(v) => `${v} bids`}
           ariaLabel="Bid volume trend over 8 weeks"
         />
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-semibold text-gray-900">Compliance Rate</CardTitle>
+            <CardTitle className="text-sm font-semibold text-slate-900">Compliance Rate</CardTitle>
           </CardHeader>
           <CardContent>
             <WebPieChart data={compliancePie} height={120} donut innerLabel="94%" />
@@ -269,16 +269,16 @@ export default function ProNetworkDashboard() {
       </div>
 
       {/* Active Tenders Quick View */}
-      <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardHeader className="pb-4">
           <div className="flex items-center justify-between">
-            <CardTitle className="text-lg font-bold text-gray-900">
+            <CardTitle className="text-lg font-bold text-slate-900">
               Active Tenders
             </CardTitle>
             <Button
               asChild
               variant="link"
-              className="h-auto p-0 text-sm font-semibold text-violet-600 no-underline transition-colors duration-200 hover:text-violet-700 hover:no-underline"
+              className="h-auto p-0 text-sm font-semibold text-reno-purple-600 no-underline transition-colors duration-200 hover:text-reno-purple-700 hover:no-underline"
             >
               <Link href="/pro-network/tenders">
                 View All <ArrowRight className="ml-1 h-4 w-4" />
@@ -291,34 +291,34 @@ export default function ProNetworkDashboard() {
             {activeTenders.map((tender) => (
               <div
                 key={tender.id}
-                className="flex items-center gap-4 rounded-xl border border-gray-200 p-4 transition-all duration-200 hover:border-violet-200 hover:bg-violet-50/30"
+                className="flex items-center gap-4 rounded-xl border border-slate-200 p-4 transition-all duration-200 hover:border-reno-purple-200 hover:bg-reno-purple-50/30"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-100">
-                  <ClipboardList className="h-5 w-5 text-violet-600" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-reno-purple-100">
+                  <ClipboardList className="h-5 w-5 text-reno-purple-600" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="font-semibold text-gray-900">{tender.title}</p>
-                  <p className="text-xs text-gray-500">{tender.project}</p>
+                  <p className="font-semibold text-slate-900">{tender.title}</p>
+                  <p className="text-xs text-slate-500">{tender.project}</p>
                 </div>
                 <div className="hidden items-center gap-3 sm:flex">
                   <div className="text-center">
-                    <p className="text-sm font-bold text-gray-900">
+                    <p className="text-sm font-bold text-slate-900">
                       {tender.bidsReceived}/{tender.bidsTarget}
                     </p>
-                    <p className="text-[10px] text-gray-500">bids</p>
+                    <p className="text-[10px] text-slate-500">bids</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-sm font-bold text-emerald-600">
+                    <p className="text-sm font-bold text-reno-green-600">
                       {tender.topBid}
                     </p>
-                    <p className="text-[10px] text-gray-500">top bid</p>
+                    <p className="text-[10px] text-slate-500">top bid</p>
                   </div>
                 </div>
                 <Badge
                   className={`shrink-0 rounded-full border-transparent px-2.5 py-0.5 text-[10px] font-semibold ${
                     tender.status === 'closing'
                       ? 'bg-amber-50 text-amber-700'
-                      : 'bg-emerald-50 text-emerald-700'
+                      : 'bg-reno-green-50 text-reno-green-700'
                   }`}
                 >
                   {tender.status === 'closing'
@@ -333,11 +333,11 @@ export default function ProNetworkDashboard() {
 
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Live P&L Widget */}
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardHeader className="pb-4">
             <div className="flex items-center justify-between">
-              <CardTitle className="flex items-center gap-2 text-lg font-bold text-gray-900">
-                <TrendingUp className="h-5 w-5 text-violet-600" />
+              <CardTitle className="flex items-center gap-2 text-lg font-bold text-slate-900">
+                <TrendingUp className="h-5 w-5 text-reno-purple-600" />
                 Project P&L — Live
               </CardTitle>
             </div>
@@ -347,11 +347,11 @@ export default function ProNetworkDashboard() {
               {mockProjectPL.map((project) => (
                 <div key={project.name} className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <p className="text-sm font-semibold text-gray-900 truncate">{project.name}</p>
+                    <p className="text-sm font-semibold text-slate-900 truncate">{project.name}</p>
                     <Badge
                       className={`shrink-0 rounded-full border-transparent px-2 py-0.5 text-[10px] font-bold ${
                         project.margin >= 15
-                          ? 'bg-emerald-50 text-emerald-700'
+                          ? 'bg-reno-green-50 text-reno-green-700'
                           : project.margin >= 5
                             ? 'bg-amber-50 text-amber-700'
                             : 'bg-red-50 text-red-700'
@@ -360,11 +360,11 @@ export default function ProNetworkDashboard() {
                       {project.margin}% margin
                     </Badge>
                   </div>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-gray-100">
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100">
                     <div
                       className={`h-full rounded-full transition-all duration-500 ${
                         project.margin >= 15
-                          ? 'bg-emerald-500'
+                          ? 'bg-reno-green-500'
                           : project.margin >= 5
                             ? 'bg-amber-500'
                             : 'bg-red-500'
@@ -372,7 +372,7 @@ export default function ProNetworkDashboard() {
                       style={{ width: `${project.progress}%` }}
                     />
                   </div>
-                  <div className="flex items-center justify-between text-[10px] text-gray-500">
+                  <div className="flex items-center justify-between text-[10px] text-slate-500">
                     <span>Escrow: ${(project.escrow / 1000).toFixed(1)}K</span>
                     <span>${(project.spent / 1000).toFixed(0)}K / ${(project.budget / 1000).toFixed(0)}K budget</span>
                   </div>
@@ -381,7 +381,7 @@ export default function ProNetworkDashboard() {
             </div>
             <Link
               href="/pro-network/financials"
-              className="mt-4 flex items-center gap-1 text-sm font-semibold text-violet-600 transition-colors hover:text-violet-700"
+              className="mt-4 flex items-center gap-1 text-sm font-semibold text-reno-purple-600 transition-colors hover:text-reno-purple-700"
             >
               View Full P&L <ArrowRight className="h-4 w-4" />
             </Link>
@@ -389,9 +389,9 @@ export default function ProNetworkDashboard() {
         </Card>
 
         {/* Incoming Bids */}
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardHeader className="pb-4">
-            <CardTitle className="text-lg font-bold text-gray-900">
+            <CardTitle className="text-lg font-bold text-slate-900">
               Incoming Bids
             </CardTitle>
           </CardHeader>
@@ -402,18 +402,18 @@ export default function ProNetworkDashboard() {
                   key={bid.id}
                   className={`rounded-xl border p-3 transition-all duration-200 ${
                     bid.wsib
-                      ? 'border-gray-200 hover:bg-gray-50'
+                      ? 'border-slate-200 hover:bg-slate-50'
                       : 'border-red-200 bg-red-50/50'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <p className="text-sm font-semibold text-gray-900">
+                        <p className="text-sm font-semibold text-slate-900">
                           {bid.sub}
                         </p>
                         {bid.wsib ? (
-                          <Badge className="rounded-full border-transparent bg-emerald-50 px-1.5 py-0 text-[8px] font-bold text-emerald-700">
+                          <Badge className="rounded-full border-transparent bg-reno-green-50 px-1.5 py-0 text-[8px] font-bold text-reno-green-700">
                             WSIB OK
                           </Badge>
                         ) : (
@@ -422,7 +422,7 @@ export default function ProNetworkDashboard() {
                           </Badge>
                         )}
                       </div>
-                      <div className="mt-1 flex items-center gap-2 text-xs text-gray-500">
+                      <div className="mt-1 flex items-center gap-2 text-xs text-slate-500">
                         <span>{bid.crew}</span>
                         <span>|</span>
                         <div className="flex items-center gap-0.5">
@@ -434,10 +434,10 @@ export default function ProNetworkDashboard() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-base font-bold text-gray-900">
+                      <p className="text-base font-bold text-slate-900">
                         {bid.amount}
                       </p>
-                      <p className="text-[10px] text-gray-500">
+                      <p className="text-[10px] text-slate-500">
                         {bid.tender}
                       </p>
                     </div>
@@ -449,16 +449,16 @@ export default function ProNetworkDashboard() {
         </Card>
 
         {/* Safety Gate / Compliance Alerts — Tabbed */}
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardHeader className="pb-3">
             <div className="flex items-center justify-between">
-              <div className="flex gap-1 rounded-lg bg-gray-100 p-0.5">
+              <div className="flex gap-1 rounded-lg bg-slate-100 p-0.5">
                 <button
                   onClick={() => setSafetyTab('gate')}
                   className={`rounded-md px-3 py-1.5 text-xs font-semibold transition-all ${
                     safetyTab === 'gate'
-                      ? 'bg-white text-gray-900 shadow-sm'
-                      : 'text-gray-500 hover:text-gray-700'
+                      ? 'bg-white text-slate-900 shadow-sm'
+                      : 'text-slate-500 hover:text-slate-700'
                   }`}
                 >
                   Safety Gate
@@ -467,8 +467,8 @@ export default function ProNetworkDashboard() {
                   onClick={() => setSafetyTab('alerts')}
                   className={`rounded-md px-3 py-1.5 text-xs font-semibold transition-all ${
                     safetyTab === 'alerts'
-                      ? 'bg-white text-gray-900 shadow-sm'
-                      : 'text-gray-500 hover:text-gray-700'
+                      ? 'bg-white text-slate-900 shadow-sm'
+                      : 'text-slate-500 hover:text-slate-700'
                   }`}
                 >
                   Compliance
@@ -476,15 +476,15 @@ export default function ProNetworkDashboard() {
               </div>
               {safetyTab === 'gate' && (
                 <div className="flex items-center gap-1.5">
-                  <div className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-                  <span className="text-[10px] font-bold text-emerald-600">LIVE</span>
+                  <div className="h-2 w-2 animate-pulse rounded-full bg-reno-green-500" />
+                  <span className="text-[10px] font-bold text-reno-green-600">LIVE</span>
                 </div>
               )}
               {safetyTab === 'alerts' && (
                 <Button
                   asChild
                   variant="link"
-                  className="h-auto p-0 text-sm font-semibold text-violet-600 no-underline transition-colors duration-200 hover:text-violet-700 hover:no-underline"
+                  className="h-auto p-0 text-sm font-semibold text-reno-purple-600 no-underline transition-colors duration-200 hover:text-reno-purple-700 hover:no-underline"
                 >
                   <Link href="/pro-network/compliance">
                     View All <ArrowRight className="ml-1 h-4 w-4" />
@@ -499,25 +499,25 @@ export default function ProNetworkDashboard() {
                 {mockSafetyGate.map((worker) => (
                   <div
                     key={worker.name}
-                    className="flex items-center gap-3 rounded-xl border border-gray-200 p-3 transition-all duration-200 hover:bg-gray-50"
+                    className="flex items-center gap-3 rounded-xl border border-slate-200 p-3 transition-all duration-200 hover:bg-slate-50"
                   >
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100">
                       <HardHat className="h-4 w-4 text-slate-600" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <p className="text-sm font-semibold text-gray-900 truncate">{worker.name}</p>
+                        <p className="text-sm font-semibold text-slate-900 truncate">{worker.name}</p>
                         <Badge className="shrink-0 rounded-full border-transparent bg-slate-100 px-1.5 py-0 text-[9px] font-semibold text-slate-600">
                           {worker.trade}
                         </Badge>
                       </div>
-                      <p className="text-[10px] text-gray-500">{worker.site} · In at {worker.checkedIn}</p>
+                      <p className="text-[10px] text-slate-500">{worker.site} · In at {worker.checkedIn}</p>
                     </div>
                     <div className="flex shrink-0 items-center gap-1.5">
                       <Badge
                         className={`rounded-full border-transparent px-1.5 py-0 text-[8px] font-bold ${
                           worker.jsa === 'signed'
-                            ? 'bg-emerald-50 text-emerald-700'
+                            ? 'bg-reno-green-50 text-reno-green-700'
                             : worker.jsa === 'pending'
                               ? 'bg-amber-50 text-amber-700'
                               : 'bg-red-50 text-red-700'
@@ -528,7 +528,7 @@ export default function ProNetworkDashboard() {
                       <Badge
                         className={`rounded-full border-transparent px-1.5 py-0 text-[8px] font-bold ${
                           worker.wsib
-                            ? 'bg-emerald-50 text-emerald-700'
+                            ? 'bg-reno-green-50 text-reno-green-700'
                             : 'bg-red-50 text-red-700'
                         }`}
                       >
@@ -537,9 +537,9 @@ export default function ProNetworkDashboard() {
                     </div>
                   </div>
                 ))}
-                <div className="rounded-xl bg-gray-50 p-3">
-                  <p className="text-xs text-gray-500">
-                    <span className="font-semibold text-gray-700">12 workers</span> across <span className="font-semibold text-gray-700">3 sites</span> · <span className="font-semibold text-emerald-600">92% JSA compliance</span>
+                <div className="rounded-xl bg-slate-50 p-3">
+                  <p className="text-xs text-slate-500">
+                    <span className="font-semibold text-slate-700">12 workers</span> across <span className="font-semibold text-slate-700">3 sites</span> · <span className="font-semibold text-reno-green-600">92% JSA compliance</span>
                   </p>
                 </div>
               </div>
@@ -549,7 +549,7 @@ export default function ProNetworkDashboard() {
                   {complianceAlerts.map((alert) => (
                     <div
                       key={alert.id}
-                      className="flex items-start gap-3 rounded-xl border border-gray-200 p-3 transition-all duration-200 hover:bg-gray-50"
+                      className="flex items-start gap-3 rounded-xl border border-slate-200 p-3 transition-all duration-200 hover:bg-slate-50"
                     >
                       <div
                         className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${alert.iconBg}`}
@@ -557,18 +557,18 @@ export default function ProNetworkDashboard() {
                         <alert.icon className={`h-4 w-4 ${alert.iconColor}`} />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-sm font-medium text-gray-900">
+                        <p className="text-sm font-medium text-slate-900">
                           {alert.title}
                         </p>
-                        <p className="text-xs text-gray-500">{alert.action}</p>
+                        <p className="text-xs text-slate-500">{alert.action}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 rounded-xl bg-gray-50 p-3">
+                <div className="mt-4 rounded-xl bg-slate-50 p-3">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-gray-500">38 of 42 subs fully compliant</span>
-                    <span className="font-semibold text-emerald-600">94%</span>
+                    <span className="text-slate-500">38 of 42 subs fully compliant</span>
+                    <span className="font-semibold text-reno-green-600">94%</span>
                   </div>
                 </div>
               </>

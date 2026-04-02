@@ -228,7 +228,7 @@ export function HeroAnimated() {
           </h1>
 
           {/* Subtext */}
-          <p className="hero-subtext text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+          <p className="hero-subtext text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto">
             Connect with verified contractors, track every milestone, and only release funds when the work is done right.
           </p>
 

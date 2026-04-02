@@ -13,25 +13,25 @@ export function WeatherBar() {
           <div>
             <div className="flex items-baseline gap-1">
               <span className="text-white/90 text-lg tracking-tight">18°C</span>
-              <span className="text-gray-500 text-[10px]">Partly Cloudy</span>
+              <span className="text-slate-500 text-[10px]">Partly Cloudy</span>
             </div>
-            <p className="text-gray-600 text-[10px]">Sunset 7:42 PM</p>
+            <p className="text-slate-600 text-[10px]">Sunset 7:42 PM</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
           <div className="flex flex-col items-center gap-0.5">
             <Wind className="w-3.5 h-3.5 text-sky-400/70" />
-            <span className="text-[9px] text-gray-500">12 km/h</span>
+            <span className="text-[9px] text-slate-500">12 km/h</span>
           </div>
           <div className="w-[1px] h-6 bg-white/[0.06]" />
           <div className="flex flex-col items-center gap-0.5">
-            <Droplets className="w-3.5 h-3.5 text-blue-400/70" />
-            <span className="text-[9px] text-gray-500">45%</span>
+            <Droplets className="w-3.5 h-3.5 text-primary-400/70" />
+            <span className="text-[9px] text-slate-500">45%</span>
           </div>
           <div className="w-[1px] h-6 bg-white/[0.06]" />
           <div className="flex flex-col items-center gap-0.5">
-            <Thermometer className="w-3.5 h-3.5 text-orange-400/70" />
-            <span className="text-[9px] text-gray-500">UV 3</span>
+            <Thermometer className="w-3.5 h-3.5 text-reno-amber-400/70" />
+            <span className="text-[9px] text-slate-500">UV 3</span>
           </div>
         </div>
       </div>

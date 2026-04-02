@@ -21,8 +21,8 @@ const adminStats = [
     label: 'Total Users',
     value: '4,128',
     trend: { value: 15, isPositive: true },
-    iconColor: 'text-blue-600',
-    iconBg: 'bg-blue-50',
+    iconColor: 'text-primary-600',
+    iconBg: 'bg-primary-50',
   },
   {
     icon: Briefcase,
@@ -37,8 +37,8 @@ const adminStats = [
     label: 'Monthly Revenue',
     value: '$18,450',
     trend: { value: 22, isPositive: true },
-    iconColor: 'text-green-600',
-    iconBg: 'bg-green-50',
+    iconColor: 'text-reno-green-600',
+    iconBg: 'bg-reno-green-50',
   },
   {
     icon: AlertTriangle,
@@ -122,8 +122,8 @@ const platformActivity = [
 ];
 
 const activityDotColor: Record<string, string> = {
-  completed: 'bg-green-500',
-  new: 'bg-blue-500',
+  completed: 'bg-reno-green-500',
+  new: 'bg-primary-500',
   dispute: 'bg-amber-500',
   verified: 'bg-purple-500',
 };
@@ -158,7 +158,7 @@ const quickActions = [
 export default function AdminDashboardPage() {
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold tracking-tight text-gray-900">Admin Dashboard</h1>
+      <h1 className="text-2xl font-bold tracking-tight text-slate-900">Admin Dashboard</h1>
 
       {/* Stats */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -169,11 +169,11 @@ export default function AdminDashboardPage() {
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Recent Signups */}
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardHeader className="pb-4">
             <div className="flex items-center gap-2">
               <UserPlus className="h-5 w-5 text-reno-green-dark" />
-              <CardTitle className="text-lg font-bold text-gray-900">
+              <CardTitle className="text-lg font-bold text-slate-900">
                 Recent Signups
               </CardTitle>
             </div>
@@ -183,7 +183,7 @@ export default function AdminDashboardPage() {
               {recentSignups.map((user, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-between rounded-xl border border-gray-200 p-3 transition-all duration-200 hover:bg-gray-50"
+                  className="flex items-center justify-between rounded-xl border border-slate-200 p-3 transition-all duration-200 hover:bg-slate-50"
                 >
                   <div className="flex items-center gap-3">
                     <Avatar className="h-9 w-9">
@@ -193,17 +193,17 @@ export default function AdminDashboardPage() {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <p className="text-sm font-medium text-gray-900">
+                      <p className="text-sm font-medium text-slate-900">
                         {user.name}
                       </p>
-                      <p className="text-xs text-gray-500">{user.date}</p>
+                      <p className="text-xs text-slate-500">{user.date}</p>
                     </div>
                   </div>
                   <Badge
                     className={`rounded-full px-2.5 py-0.5 text-xs font-medium capitalize border-transparent ${
                       user.role === 'pro'
                         ? 'bg-purple-100 text-purple-700'
-                        : 'bg-blue-100 text-blue-700'
+                        : 'bg-primary-100 text-primary-700'
                     }`}
                   >
                     {user.role}
@@ -215,11 +215,11 @@ export default function AdminDashboardPage() {
         </Card>
 
         {/* Platform Activity */}
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardHeader className="pb-4">
             <div className="flex items-center gap-2">
               <Activity className="h-5 w-5 text-reno-green-dark" />
-              <CardTitle className="text-lg font-bold text-gray-900">
+              <CardTitle className="text-lg font-bold text-slate-900">
                 Platform Activity
               </CardTitle>
             </div>
@@ -227,13 +227,13 @@ export default function AdminDashboardPage() {
           <CardContent>
             <div className="space-y-2">
               {platformActivity.map((item, i) => (
-                <div key={i} className="flex items-start gap-3 rounded-xl p-3 transition-all duration-200 hover:bg-gray-50">
+                <div key={i} className="flex items-start gap-3 rounded-xl p-3 transition-all duration-200 hover:bg-slate-50">
                   <div
                     className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${activityDotColor[item.type] ?? 'bg-reno-green'}`}
                   />
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm text-gray-900">{item.event}</p>
-                    <p className="text-xs text-gray-400">{item.time}</p>
+                    <p className="text-sm text-slate-900">{item.event}</p>
+                    <p className="text-xs text-slate-400">{item.time}</p>
                   </div>
                 </div>
               ))}
@@ -243,9 +243,9 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Quick Actions */}
-      <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardHeader className="pb-4">
-          <CardTitle className="text-lg font-bold text-gray-900">
+          <CardTitle className="text-lg font-bold text-slate-900">
             Quick Actions
           </CardTitle>
         </CardHeader>
@@ -255,16 +255,16 @@ export default function AdminDashboardPage() {
               <Button
                 key={action.label}
                 variant="outline"
-                className="h-auto flex-col items-start gap-2 rounded-xl border-gray-200 p-4 text-left transition-all duration-200 hover:border-reno-green hover:bg-reno-green-light hover:shadow-sm"
+                className="h-auto flex-col items-start gap-2 rounded-xl border-slate-200 p-4 text-left transition-all duration-200 hover:border-reno-green hover:bg-reno-green-light hover:shadow-sm"
                 asChild
               >
                 <Link href={action.href}>
                   <action.icon className="h-5 w-5 text-reno-green-dark" />
                   <div>
-                    <p className="text-sm font-semibold text-gray-900">
+                    <p className="text-sm font-semibold text-slate-900">
                       {action.label}
                     </p>
-                    <p className="text-xs font-normal text-gray-500">
+                    <p className="text-xs font-normal text-slate-500">
                       {action.description}
                     </p>
                   </div>

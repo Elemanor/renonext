@@ -68,12 +68,12 @@ const pillars = [
     title: 'Trust Built with Physics, Not Reviews',
     accent: 'emerald',
     icon: Shield,
-    bgGradient: 'from-emerald-500/10 to-emerald-600/5',
-    borderColor: 'border-emerald-500/30',
-    badgeClass: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
-    iconBg: 'bg-emerald-500/10',
-    iconColor: 'text-emerald-400',
-    numberColor: 'text-emerald-500',
+    bgGradient: 'from-reno-green-500/10 to-reno-green-600/5',
+    borderColor: 'border-reno-green-500/30',
+    badgeClass: 'bg-reno-green-500/10 text-reno-green-400 border-reno-green-500/30',
+    iconBg: 'bg-reno-green-500/10',
+    iconColor: 'text-reno-green-400',
+    numberColor: 'text-reno-green-500',
     oldWay: '5-star reviews (fakeable, buyable, pressurable)',
     newWay: 'Hard Data',
     bullets: [
@@ -101,12 +101,12 @@ const pillars = [
     title: 'Service Turned into a Financial Product',
     accent: 'violet',
     icon: CircleDollarSign,
-    bgGradient: 'from-violet-500/10 to-violet-600/5',
-    borderColor: 'border-violet-500/30',
-    badgeClass: 'bg-violet-500/10 text-violet-400 border-violet-500/30',
-    iconBg: 'bg-violet-500/10',
-    iconColor: 'text-violet-400',
-    numberColor: 'text-violet-500',
+    bgGradient: 'from-reno-purple-500/10 to-reno-purple-600/5',
+    borderColor: 'border-reno-purple-500/30',
+    badgeClass: 'bg-reno-purple-500/10 text-reno-purple-400 border-reno-purple-500/30',
+    iconBg: 'bg-reno-purple-500/10',
+    iconColor: 'text-reno-purple-400',
+    numberColor: 'text-reno-purple-500',
     oldWay: 'Pay 50% deposit and pray',
     newWay: 'Escrow as a Service',
     bullets: [
@@ -133,12 +133,12 @@ const pillars = [
     title: 'Supply Chain Integration',
     accent: 'blue',
     icon: Truck,
-    bgGradient: 'from-blue-500/10 to-blue-600/5',
-    borderColor: 'border-blue-500/30',
-    badgeClass: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
-    iconBg: 'bg-blue-500/10',
-    iconColor: 'text-blue-400',
-    numberColor: 'text-blue-500',
+    bgGradient: 'from-primary-500/10 to-primary-600/5',
+    borderColor: 'border-primary-500/30',
+    badgeClass: 'bg-primary-500/10 text-primary-400 border-primary-500/30',
+    iconBg: 'bg-primary-500/10',
+    iconColor: 'text-primary-400',
+    numberColor: 'text-primary-500',
     oldWay: 'Contractor spends 2 hours/day driving to Home Depot',
     newWay: 'Just-in-Time Logistics',
     bullets: [
@@ -197,12 +197,12 @@ const pillars = [
     title: 'Automated Compliance \u2014 The GC Insurance Policy',
     accent: 'rose',
     icon: ShieldCheck,
-    bgGradient: 'from-rose-500/10 to-rose-600/5',
-    borderColor: 'border-rose-500/30',
-    badgeClass: 'bg-rose-500/10 text-rose-400 border-rose-500/30',
-    iconBg: 'bg-rose-500/10',
-    iconColor: 'text-rose-400',
-    numberColor: 'text-rose-500',
+    bgGradient: 'from-reno-red-500/10 to-reno-red-600/5',
+    borderColor: 'border-reno-red-500/30',
+    badgeClass: 'bg-reno-red-500/10 text-reno-red-400 border-reno-red-500/30',
+    iconBg: 'bg-reno-red-500/10',
+    iconColor: 'text-reno-red-400',
+    numberColor: 'text-reno-red-500',
     oldWay: "GC uses a messy rolodex. Don't know if sub's WSIB expired yesterday.",
     newWay: 'Compliance Gate',
     bullets: [
@@ -257,13 +257,13 @@ const revenueStreams = [
 ];
 
 const economySteps = [
-  { label: 'Client Deposits', icon: Users, color: 'bg-blue-500' },
-  { label: 'Escrow Vault', icon: Lock, color: 'bg-violet-500' },
-  { label: 'GC Receives Milestone', icon: CheckCircle, color: 'bg-emerald-500' },
+  { label: 'Client Deposits', icon: Users, color: 'bg-primary-500' },
+  { label: 'Escrow Vault', icon: Lock, color: 'bg-reno-purple-500' },
+  { label: 'GC Receives Milestone', icon: CheckCircle, color: 'bg-reno-green-500' },
   { label: 'GC Pays Sub-Trades', icon: DollarSign, color: 'bg-amber-500' },
-  { label: 'Sub Buys Materials', icon: Package, color: 'bg-blue-500' },
-  { label: 'Workers Get Instant Pay', icon: Zap, color: 'bg-violet-500' },
-  { label: 'Material Suppliers Paid', icon: Truck, color: 'bg-emerald-500' },
+  { label: 'Sub Buys Materials', icon: Package, color: 'bg-primary-500' },
+  { label: 'Workers Get Instant Pay', icon: Zap, color: 'bg-reno-purple-500' },
+  { label: 'Material Suppliers Paid', icon: Truck, color: 'bg-reno-green-500' },
 ];
 
 const moatPoints = [
@@ -279,13 +279,13 @@ export default function WhyRenoNextPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* ─── HERO ─── */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900">
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900">
         {/* decorative grid */}
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
-        <div className="pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-violet-600/10 blur-[120px]" />
+        <div className="pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-reno-purple-600/10 blur-[120px]" />
 
         <div className="relative mx-auto max-w-5xl px-6 pb-24 pt-28 text-center sm:pt-36">
-          <Badge className="mb-6 border-violet-500/30 bg-violet-500/10 text-violet-300 hover:bg-violet-500/10">
+          <Badge className="mb-6 border-reno-purple-500/30 bg-reno-purple-500/10 text-reno-purple-300 hover:bg-reno-purple-500/10">
             <Sparkles className="mr-1.5 h-3.5 w-3.5" />
             Fintech &amp; Logistics for Construction
           </Badge>
@@ -293,23 +293,23 @@ export default function WhyRenoNextPage() {
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             This Isn&apos;t Another
             <br />
-            <span className="bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-reno-purple-400 to-primary-400 bg-clip-text text-transparent">
               &ldquo;Find a Contractor&rdquo; App.
             </span>
           </h1>
 
-          <div className="mx-auto mt-8 max-w-2xl space-y-4 text-lg leading-relaxed text-gray-400">
+          <div className="mx-auto mt-8 max-w-2xl space-y-4 text-lg leading-relaxed text-slate-400">
             <p>
               The market is flooded with contractor matching apps.
               <br className="hidden sm:inline" />
               They&apos;re all dating apps&nbsp;&mdash;&nbsp;they introduce you and walk
               away.
             </p>
-            <p className="text-xl font-semibold text-gray-200">
+            <p className="text-xl font-semibold text-slate-200">
               RenoNext stays in the middle of every transaction
               <br className="hidden sm:inline" />
               as the{' '}
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-reno-green-400 to-cyan-400 bg-clip-text text-transparent">
                 Digital Superintendent.
               </span>
             </p>
@@ -318,7 +318,7 @@ export default function WhyRenoNextPage() {
           <div className="mt-10">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-violet-600 to-blue-600 text-white hover:from-violet-500 hover:to-blue-500"
+              className="bg-gradient-to-r from-reno-purple-600 to-primary-600 text-white hover:from-reno-purple-500 hover:to-primary-500"
               onClick={() =>
                 document
                   .getElementById('pillars')
@@ -333,29 +333,29 @@ export default function WhyRenoNextPage() {
       </section>
 
       {/* ─── THE FATAL FLAW ─── */}
-      <section className="relative overflow-hidden bg-gray-50 py-24">
+      <section className="relative overflow-hidden bg-slate-50 py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
             <Badge variant="outline" className="mb-4 border-red-200 text-red-600">
               <AlertTriangle className="mr-1.5 h-3.5 w-3.5" />
               The Fatal Flaw
             </Badge>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               Same problem. Radically different solution.
             </h2>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-2">
             {/* Old Way */}
-            <Card className="border-gray-200 bg-white/80 shadow-sm">
+            <Card className="border-slate-200 bg-white/80 shadow-sm">
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg font-bold text-gray-700">
+                  <CardTitle className="text-lg font-bold text-slate-700">
                     The Old Way
                   </CardTitle>
                   <Badge
                     variant="secondary"
-                    className="bg-gray-100 text-gray-500"
+                    className="bg-slate-100 text-slate-500"
                   >
                     HomeStars / Jiffy / Thumbtack
                   </Badge>
@@ -367,26 +367,26 @@ export default function WhyRenoNextPage() {
                     <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-100">
                       <X className="h-3.5 w-3.5 text-red-500" />
                     </div>
-                    <span className="text-gray-600">{item.text}</span>
+                    <span className="text-slate-600">{item.text}</span>
                   </div>
                 ))}
-                <div className="mt-6 rounded-lg border border-gray-200 bg-gray-50 p-3 text-center">
-                  <p className="text-sm font-medium text-gray-500">
+                <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-sm font-medium text-slate-500">
                     Marketing Companies&nbsp;&mdash;&nbsp;
-                    <span className="text-gray-400">They sell leads</span>
+                    <span className="text-slate-400">They sell leads</span>
                   </p>
                 </div>
               </CardContent>
             </Card>
 
             {/* RenoNext Way */}
-            <Card className="border-emerald-200 bg-gradient-to-br from-emerald-50/80 to-white shadow-md ring-1 ring-emerald-100">
+            <Card className="border-reno-green-200 bg-gradient-to-br from-reno-green-50/80 to-white shadow-md ring-1 ring-emerald-100">
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg font-bold text-gray-900">
+                  <CardTitle className="text-lg font-bold text-slate-900">
                     The RenoNext Way
                   </CardTitle>
-                  <Badge className="border-emerald-200 bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
+                  <Badge className="border-reno-green-200 bg-reno-green-100 text-reno-green-700 hover:bg-reno-green-100">
                     <Sparkles className="mr-1 h-3 w-3" />
                     Different
                   </Badge>
@@ -395,16 +395,16 @@ export default function WhyRenoNextPage() {
               <CardContent className="space-y-4">
                 {localProWayItems.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100">
-                      <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-reno-green-100">
+                      <CheckCircle className="h-3.5 w-3.5 text-reno-green-600" />
                     </div>
-                    <span className="text-gray-700">{item.text}</span>
+                    <span className="text-slate-700">{item.text}</span>
                   </div>
                 ))}
-                <div className="mt-6 rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-center">
-                  <p className="text-sm font-medium text-emerald-700">
+                <div className="mt-6 rounded-lg border border-reno-green-200 bg-reno-green-50 p-3 text-center">
+                  <p className="text-sm font-medium text-reno-green-700">
                     Fintech &amp; Logistics Company&nbsp;&mdash;&nbsp;
-                    <span className="text-emerald-600">We sell security</span>
+                    <span className="text-reno-green-600">We sell security</span>
                   </p>
                 </div>
               </CardContent>
@@ -414,16 +414,16 @@ export default function WhyRenoNextPage() {
       </section>
 
       {/* ─── 5 PILLARS ─── */}
-      <section id="pillars" className="bg-gray-950 py-24">
+      <section id="pillars" className="bg-slate-950 py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-20 text-center">
-            <Badge className="mb-4 border-white/10 bg-white/5 text-gray-300 hover:bg-white/5">
+            <Badge className="mb-4 border-white/10 bg-white/5 text-slate-300 hover:bg-white/5">
               <Target className="mr-1.5 h-3.5 w-3.5" />5 Pillars
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Why RenoNext Wins
             </h2>
-            <p className="mt-4 text-lg text-gray-500">
+            <p className="mt-4 text-lg text-slate-500">
               Five structural advantages that can&apos;t be copied with a weekend
               hackathon.
             </p>
@@ -435,7 +435,7 @@ export default function WhyRenoNextPage() {
               return (
                 <Card
                   key={pillar.number}
-                  className={`border ${pillar.borderColor} bg-gradient-to-br ${pillar.bgGradient} to-gray-950 shadow-lg`}
+                  className={`border ${pillar.borderColor} bg-gradient-to-br ${pillar.bgGradient} to-slate-950 shadow-lg`}
                 >
                   <CardContent className="p-8 sm:p-10">
                     {/* header row */}
@@ -461,10 +461,10 @@ export default function WhyRenoNextPage() {
 
                     {/* old vs new badges */}
                     <div className="mb-8 flex flex-col gap-3 sm:flex-row">
-                      <div className="flex items-center gap-2 rounded-lg border border-gray-700/50 bg-gray-800/50 px-4 py-2">
+                      <div className="flex items-center gap-2 rounded-lg border border-slate-700/50 bg-slate-800/50 px-4 py-2">
                         <X className="h-4 w-4 text-red-400" />
-                        <span className="text-sm text-gray-400">
-                          <span className="font-medium text-gray-300">
+                        <span className="text-sm text-slate-400">
+                          <span className="font-medium text-slate-300">
                             Old Way:
                           </span>{' '}
                           {pillar.oldWay}
@@ -476,7 +476,7 @@ export default function WhyRenoNextPage() {
                         <CheckCircle
                           className={`h-4 w-4 ${pillar.iconColor}`}
                         />
-                        <span className="text-sm text-gray-300">
+                        <span className="text-sm text-slate-300">
                           <span className="font-medium text-white">
                             RenoNext:
                           </span>{' '}
@@ -492,7 +492,7 @@ export default function WhyRenoNextPage() {
                         return (
                           <div
                             key={bullet.label}
-                            className="rounded-xl border border-gray-800 bg-gray-900/60 p-5"
+                            className="rounded-xl border border-slate-800 bg-slate-900/60 p-5"
                           >
                             <BIcon
                               className={`mb-3 h-5 w-5 ${pillar.iconColor}`}
@@ -500,7 +500,7 @@ export default function WhyRenoNextPage() {
                             <p className="mb-1 text-sm font-semibold text-white">
                               {bullet.label}
                             </p>
-                            <p className="text-sm leading-relaxed text-gray-400">
+                            <p className="text-sm leading-relaxed text-slate-400">
                               {bullet.text}
                             </p>
                           </div>
@@ -509,8 +509,8 @@ export default function WhyRenoNextPage() {
                     </div>
 
                     {/* conclusion */}
-                    <div className="rounded-lg border border-gray-800 bg-gray-900/40 px-6 py-4">
-                      <p className="text-base font-medium italic text-gray-300">
+                    <div className="rounded-lg border border-slate-800 bg-slate-900/40 px-6 py-4">
+                      <p className="text-base font-medium italic text-slate-300">
                         &ldquo;{pillar.conclusion}&rdquo;
                       </p>
                     </div>
@@ -528,15 +528,15 @@ export default function WhyRenoNextPage() {
           <div className="mb-16 text-center">
             <Badge
               variant="outline"
-              className="mb-4 border-violet-200 text-violet-600"
+              className="mb-4 border-reno-purple-200 text-reno-purple-600"
             >
               <TrendingUp className="mr-1.5 h-3.5 w-3.5" />
               The Closed Loop
             </Badge>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               The RenoNext Economy
             </h2>
-            <p className="mt-4 text-lg text-gray-500">
+            <p className="mt-4 text-lg text-slate-500">
               Every dollar tracked. Every transaction recorded.
               <br />
               Money never leaves the ecosystem until work is proven.
@@ -556,18 +556,18 @@ export default function WhyRenoNextPage() {
                     >
                       <SIcon className="h-6 w-6" />
                     </div>
-                    <p className="mt-2 text-center text-sm font-medium text-gray-700">
+                    <p className="mt-2 text-center text-sm font-medium text-slate-700">
                       {step.label}
                     </p>
                     {i < economySteps.length - 1 && (
-                      <ChevronRight className="my-1 h-5 w-5 rotate-90 text-gray-300" />
+                      <ChevronRight className="my-1 h-5 w-5 rotate-90 text-slate-300" />
                     )}
                   </div>
                 );
               })}
               {/* loop arrow back to top */}
-              <div className="mt-2 rounded-full border-2 border-dashed border-violet-300 px-4 py-1.5">
-                <span className="text-xs font-semibold text-violet-500">
+              <div className="mt-2 rounded-full border-2 border-dashed border-reno-purple-300 px-4 py-1.5">
+                <span className="text-xs font-semibold text-reno-purple-500">
                   Cycle Repeats
                 </span>
               </div>
@@ -585,21 +585,21 @@ export default function WhyRenoNextPage() {
                       >
                         <SIcon className="h-7 w-7" />
                       </div>
-                      <p className="mt-2 max-w-[100px] text-center text-xs font-medium text-gray-700">
+                      <p className="mt-2 max-w-[100px] text-center text-xs font-medium text-slate-700">
                         {step.label}
                       </p>
                     </div>
                     {i < economySteps.length - 1 && (
-                      <ArrowRight className="mx-1 h-5 w-5 shrink-0 text-gray-300" />
+                      <ArrowRight className="mx-1 h-5 w-5 shrink-0 text-slate-300" />
                     )}
                   </div>
                 );
               })}
               {/* loop indicator */}
               <div className="flex items-center gap-2">
-                <ArrowRight className="mx-1 h-5 w-5 shrink-0 text-violet-400" />
-                <div className="rounded-full border-2 border-dashed border-violet-300 px-4 py-2">
-                  <span className="text-xs font-semibold text-violet-500">
+                <ArrowRight className="mx-1 h-5 w-5 shrink-0 text-reno-purple-400" />
+                <div className="rounded-full border-2 border-dashed border-reno-purple-300 px-4 py-2">
+                  <span className="text-xs font-semibold text-reno-purple-500">
                     Loop
                   </span>
                 </div>
@@ -610,17 +610,17 @@ export default function WhyRenoNextPage() {
       </section>
 
       {/* ─── REVENUE MODEL ─── */}
-      <section className="bg-gray-50 py-24">
+      <section className="bg-slate-50 py-24">
         <div className="mx-auto max-w-4xl px-6">
           <div className="mb-16 text-center">
             <Badge
               variant="outline"
-              className="mb-4 border-emerald-200 text-emerald-600"
+              className="mb-4 border-reno-green-200 text-reno-green-600"
             >
               <DollarSign className="mr-1.5 h-3.5 w-3.5" />
               Revenue Model
             </Badge>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               How RenoNext Makes Money
             </h2>
           </div>
@@ -631,17 +631,17 @@ export default function WhyRenoNextPage() {
               return (
                 <Card
                   key={i}
-                  className="border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
+                  className="border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
                 >
                   <CardContent className="flex items-center gap-5 p-5">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gray-100">
-                      <SIcon className="h-6 w-6 text-gray-700" />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-100">
+                      <SIcon className="h-6 w-6 text-slate-700" />
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">
+                      <p className="font-semibold text-slate-900">
                         {stream.label}
                       </p>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-slate-500">
                         {stream.description}
                       </p>
                     </div>
@@ -651,11 +651,11 @@ export default function WhyRenoNextPage() {
             })}
           </div>
 
-          <div className="mt-12 rounded-xl border border-gray-200 bg-white p-8 text-center">
-            <p className="text-lg text-gray-600">
+          <div className="mt-12 rounded-xl border border-slate-200 bg-white p-8 text-center">
+            <p className="text-lg text-slate-600">
               We&apos;re not selling leads at $15/each.
             </p>
-            <p className="mt-2 text-xl font-bold text-gray-900">
+            <p className="mt-2 text-xl font-bold text-slate-900">
               We&apos;re capturing 2&ndash;3% of every dollar that flows through
               construction.
             </p>
@@ -664,12 +664,12 @@ export default function WhyRenoNextPage() {
       </section>
 
       {/* ─── THE MOAT ─── */}
-      <section className="relative overflow-hidden bg-gray-950 py-24">
+      <section className="relative overflow-hidden bg-slate-950 py-24">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.015)_1px,transparent_1px)] bg-[size:48px_48px]" />
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-rose-600/5 blur-[100px]" />
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-reno-red-600/5 blur-[100px]" />
 
         <div className="relative mx-auto max-w-4xl px-6 text-center">
-          <Badge className="mb-6 border-rose-500/30 bg-rose-500/10 text-rose-300 hover:bg-rose-500/10">
+          <Badge className="mb-6 border-reno-red-500/30 bg-reno-red-500/10 text-reno-red-300 hover:bg-reno-red-500/10">
             <KeyRound className="mr-1.5 h-3.5 w-3.5" />
             The Moat
           </Badge>
@@ -679,7 +679,7 @@ export default function WhyRenoNextPage() {
           </h2>
 
           <blockquote className="mx-auto mt-10 max-w-2xl">
-            <p className="text-xl font-medium leading-relaxed text-gray-300 sm:text-2xl">
+            <p className="text-xl font-medium leading-relaxed text-slate-300 sm:text-2xl">
               &ldquo;A contractor might switch lead-gen apps.
               <br />
               But they will{' '}
@@ -694,17 +694,17 @@ export default function WhyRenoNextPage() {
               return (
                 <div
                   key={i}
-                  className="flex items-center gap-3 rounded-xl border border-gray-800 bg-gray-900/60 px-5 py-4 text-left"
+                  className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/60 px-5 py-4 text-left"
                 >
-                  <MIcon className="h-5 w-5 shrink-0 text-violet-400" />
-                  <span className="text-sm text-gray-300">{point.text}</span>
+                  <MIcon className="h-5 w-5 shrink-0 text-reno-purple-400" />
+                  <span className="text-sm text-slate-300">{point.text}</span>
                 </div>
               );
             })}
           </div>
 
-          <div className="mt-12 inline-block rounded-full border border-violet-500/30 bg-violet-500/10 px-6 py-2.5">
-            <p className="text-sm font-semibold text-violet-300">
+          <div className="mt-12 inline-block rounded-full border border-reno-purple-500/30 bg-reno-purple-500/10 px-6 py-2.5">
+            <p className="text-sm font-semibold text-reno-purple-300">
               Network effects + financial lock-in = unbreakable moat
             </p>
           </div>
@@ -712,20 +712,20 @@ export default function WhyRenoNextPage() {
       </section>
 
       {/* ─── BOTTOM CTA ─── */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white py-24">
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-100/50 blur-[100px]" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white py-24">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-reno-purple-100/50 blur-[100px]" />
 
         <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             We&apos;re Not Building an App.
           </h2>
           <p className="mt-4 text-2xl font-bold sm:text-3xl">
-            <span className="bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-reno-purple-600 to-primary-600 bg-clip-text text-transparent">
               We&apos;re Building the Operating System for Construction.
             </span>
           </p>
 
-          <p className="mx-auto mt-6 max-w-xl text-lg text-gray-500">
+          <p className="mx-auto mt-6 max-w-xl text-lg text-slate-500">
             From Permit to Paint. From Payment to Payroll.
             <br />
             One platform. Every stakeholder. Zero gaps.
@@ -735,7 +735,7 @@ export default function WhyRenoNextPage() {
             <Link href="/post-job">
               <Button
                 size="lg"
-                className="w-full bg-gradient-to-r from-violet-600 to-blue-600 text-white hover:from-violet-500 hover:to-blue-500 sm:w-auto"
+                className="w-full bg-gradient-to-r from-reno-purple-600 to-primary-600 text-white hover:from-reno-purple-500 hover:to-primary-500 sm:w-auto"
               >
                 <Home className="mr-2 h-4 w-4" />
                 Join as Homeowner
@@ -754,7 +754,7 @@ export default function WhyRenoNextPage() {
             <Button
               size="lg"
               variant="ghost"
-              className="w-full text-gray-600 sm:w-auto"
+              className="w-full text-slate-600 sm:w-auto"
             >
               <Landmark className="mr-2 h-4 w-4" />
               Investor Inquiry

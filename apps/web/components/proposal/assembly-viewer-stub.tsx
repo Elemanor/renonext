@@ -14,14 +14,14 @@ export function AssemblyViewerStub({ stepCount }: AssemblyViewerStubProps) {
     <section>
       <div className="mb-4 flex items-center gap-2">
         <Layers className="h-5 w-5 text-reno-green" />
-        <h2 className="text-lg font-bold text-gray-900">Assembly Viewer</h2>
-        <span className="rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-semibold text-violet-600">
+        <h2 className="text-lg font-bold text-slate-900">Assembly Viewer</h2>
+        <span className="rounded-full bg-reno-purple-100 px-2 py-0.5 text-[10px] font-semibold text-reno-purple-600">
           Coming Soon
         </span>
       </div>
 
       <Tabs defaultValue="3d" className="overflow-hidden rounded-2xl border bg-white shadow-sm">
-        <TabsList className="w-full justify-start gap-0 rounded-none border-b bg-gray-50/80 p-0">
+        <TabsList className="w-full justify-start gap-0 rounded-none border-b bg-slate-50/80 p-0">
           {[
             { value: '3d', label: '3D View', icon: RotateCcw },
             { value: 'overlay', label: 'Step Overlay', icon: Layers },
@@ -66,12 +66,12 @@ export function AssemblyViewerStub({ stepCount }: AssemblyViewerStubProps) {
         ))}
 
         {/* Step scrubber dots */}
-        <div className="flex items-center justify-center gap-1.5 border-t border-gray-100 bg-gray-50/50 px-4 py-3">
-          <span className="mr-2 text-[10px] font-medium text-gray-400">Step</span>
+        <div className="flex items-center justify-center gap-1.5 border-t border-slate-100 bg-slate-50/50 px-4 py-3">
+          <span className="mr-2 text-[10px] font-medium text-slate-400">Step</span>
           {dots.map((n) => (
             <button
               key={n}
-              className="flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-semibold text-gray-400 ring-1 ring-gray-200 transition-all hover:bg-reno-green-light hover:text-reno-green-dark hover:ring-reno-green"
+              className="flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-semibold text-slate-400 ring-1 ring-slate-200 transition-all hover:bg-reno-green-light hover:text-reno-green-dark hover:ring-reno-green"
             >
               {n}
             </button>

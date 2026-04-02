@@ -20,26 +20,26 @@ export function VaultStatusWidget() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full max-w-[340px] overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-2xl">
+    <div className="relative mx-auto w-full max-w-[340px] overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl">
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-50 text-primary-600">
             <Lock className="h-4 w-4" />
           </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-wider text-gray-400">Vault Status</p>
-            <p className="text-sm font-bold text-gray-900">Project Milestone 3</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Vault Status</p>
+            <p className="text-sm font-bold text-slate-900">Project Milestone 3</p>
           </div>
         </div>
         <div className="text-right">
-          <p className="text-xs font-medium text-gray-400">Locked Funds</p>
-          <p className="text-sm font-bold text-gray-900">$14,500.00</p>
+          <p className="text-xs font-medium text-slate-400">Locked Funds</p>
+          <p className="text-sm font-bold text-slate-900">$14,500.00</p>
         </div>
       </div>
 
-      <div className="relative h-2 w-full rounded-full bg-gray-100">
+      <div className="relative h-2 w-full rounded-full bg-slate-100">
         <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-blue-500 to-emerald-500"
+          className="h-full rounded-full bg-gradient-to-r from-primary-500 to-reno-green-500"
           initial={{ width: '30%' }}
           animate={{ 
             width: status === 'locked' ? '30%' : status === 'verifying' ? '75%' : '100%' 
@@ -56,7 +56,7 @@ export function VaultStatusWidget() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-xs font-bold text-blue-600"
+              className="flex items-center gap-2 rounded-full bg-primary-50 px-4 py-1.5 text-xs font-bold text-primary-600"
             >
               <Lock className="h-3 w-3" />
               FUNDS SECURED IN VAULT
@@ -80,7 +80,7 @@ export function VaultStatusWidget() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-1.5 text-xs font-bold text-emerald-600"
+              className="flex items-center gap-2 rounded-full bg-reno-green-50 px-4 py-1.5 text-xs font-bold text-reno-green-600"
             >
               <CheckCircle className="h-3 w-3" />
               FUNDS RELEASED TO PRO
@@ -88,7 +88,7 @@ export function VaultStatusWidget() {
           )}
         </AnimatePresence>
 
-        <p className="text-center text-[11px] leading-relaxed text-gray-500">
+        <p className="text-center text-[11px] leading-relaxed text-slate-500">
           Neutral milestone-protected vault ensures your money only moves after proof of work.
         </p>
       </div>
@@ -133,13 +133,13 @@ export function PayoutNotification() {
               className="rounded-2xl bg-white/10 p-4 backdrop-blur-xl border border-white/20 shadow-2xl"
             >
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500 shadow-lg shadow-emerald-500/40">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-reno-green-500 shadow-lg shadow-emerald-500/40">
                   <DollarSign className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <p className="text-[13px] font-bold text-white">Payment Received</p>
                   <p className="text-[11px] text-white/60">Milestone: Foundation Pour</p>
-                  <p className="mt-2 text-lg font-black text-emerald-400">$8,250.00</p>
+                  <p className="mt-2 text-lg font-black text-reno-green-400">$8,250.00</p>
                 </div>
               </div>
             </motion.div>

@@ -119,9 +119,9 @@ export function WebBarChart({
   if (!title) return chart;
 
   return (
-    <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+    <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
       <CardHeader className="pb-2">
-        <CardTitle className="text-sm font-semibold text-gray-900">{title}</CardTitle>
+        <CardTitle className="text-sm font-semibold text-slate-900">{title}</CardTitle>
       </CardHeader>
       <CardContent>{chart}</CardContent>
     </Card>

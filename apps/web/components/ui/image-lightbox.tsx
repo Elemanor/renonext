@@ -48,7 +48,7 @@ export function ImageLightbox({ images, activeIndex, open, onOpenChange, onNavig
         </DialogTitle>
         <div className="relative flex min-h-[300px] items-center justify-center bg-black/5 sm:min-h-[400px]">
           {/* Placeholder — in production this would be <Image /> */}
-          <div className="flex flex-col items-center gap-2 text-gray-400">
+          <div className="flex flex-col items-center gap-2 text-slate-400">
             <Camera className="h-12 w-12" />
             <p className="text-sm">{currentImage}</p>
             <p className="text-xs">Photo {activeIndex + 1} of {images.length}</p>

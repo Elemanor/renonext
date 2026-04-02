@@ -20,10 +20,10 @@ const features = [
 
 export function HomeownerPreview() {
   return (
-    <section className="relative overflow-hidden border-y border-gray-100 bg-white py-24 md:py-32">
+    <section className="relative overflow-hidden border-y border-slate-100 bg-white py-24 md:py-32">
       {/* Background scaffold */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200/70 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200/70 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white to-white" />
         <div className="absolute inset-0 bg-grid opacity-[0.08] [mask-image:radial-gradient(ellipse_at_center,black_55%,transparent_100%)]" />
       </div>
@@ -40,14 +40,14 @@ export function HomeownerPreview() {
               Homeowner Dashboard
             </Badge>
 
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
               Your Home.{' '}
               <span className="bg-gradient-to-r from-amber-500 to-teal-500 text-gradient">
                 Complete Peace of Mind.
               </span>
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
               Know exactly what&apos;s happening at your property — who&apos;s there, what&apos;s next,
               and when you need to act. No construction jargon, just clarity.
             </p>
@@ -59,11 +59,11 @@ export function HomeownerPreview() {
             <div className="grid gap-3">
               {features.map((feature, i) => (
                 <ScrollReveal key={feature.text} delay={i * 0.08}>
-                  <div className="flex items-start gap-4 rounded-2xl border border-gray-200/60 bg-gray-50/50 p-4 shadow-sm backdrop-blur">
+                  <div className="flex items-start gap-4 rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 shadow-sm backdrop-blur">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100">
                       <feature.icon className="h-5 w-5 text-amber-600" />
                     </div>
-                    <span className="pt-1 text-sm leading-relaxed text-gray-700">
+                    <span className="pt-1 text-sm leading-relaxed text-slate-700">
                       {feature.text}
                     </span>
                   </div>

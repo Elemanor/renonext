@@ -153,9 +153,9 @@ const projects: Project[] = [
 const marginStatusConfig = {
   healthy: {
     label: 'Healthy',
-    bg: 'bg-emerald-50',
-    text: 'text-emerald-700',
-    border: 'border-emerald-200',
+    bg: 'bg-reno-green-50',
+    text: 'text-reno-green-700',
+    border: 'border-reno-green-200',
     icon: CheckCircle,
   },
   warning: {
@@ -177,18 +177,18 @@ const marginStatusConfig = {
 const stageStatusConfig = {
   complete: {
     label: 'Complete',
-    bg: 'bg-emerald-50',
-    text: 'text-emerald-700',
+    bg: 'bg-reno-green-50',
+    text: 'text-reno-green-700',
   },
   in_progress: {
     label: 'In Progress',
-    bg: 'bg-blue-50',
-    text: 'text-blue-700',
+    bg: 'bg-primary-50',
+    text: 'text-primary-700',
   },
   pending: {
     label: 'Pending',
-    bg: 'bg-gray-50',
-    text: 'text-gray-500',
+    bg: 'bg-slate-50',
+    text: 'text-slate-500',
   },
 };
 
@@ -225,22 +225,22 @@ export default function GCFinancialsPage() {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">
             Live P&L
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-slate-500">
             Real-time profit margins — not last month&apos;s numbers
           </p>
         </div>
         <div className="flex gap-2">
           <Button
             variant="outline"
-            className="h-auto rounded-xl border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700"
+            className="h-auto rounded-xl border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700"
           >
             <BarChart3 className="mr-1.5 h-4 w-4" />
             Export Report
           </Button>
-          <Button className="h-auto rounded-xl bg-violet-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-violet-700">
+          <Button className="h-auto rounded-xl bg-reno-purple-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-reno-purple-700">
             <Shield className="mr-1.5 h-4 w-4" />
             Set Alerts
           </Button>
@@ -249,54 +249,54 @@ export default function GCFinancialsPage() {
 
       {/* Portfolio P&L Summary */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-none">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-none">
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
-              <div className="rounded-xl bg-violet-50 p-2.5">
-                <DollarSign className="h-5 w-5 text-violet-600" />
+              <div className="rounded-xl bg-reno-purple-50 p-2.5">
+                <DollarSign className="h-5 w-5 text-reno-purple-600" />
               </div>
             </div>
-            <p className="mt-3 text-sm font-medium text-gray-500">Total Revenue</p>
-            <p className="mt-1 text-2xl font-bold tracking-tight text-gray-900">
+            <p className="mt-3 text-sm font-medium text-slate-500">Total Revenue</p>
+            <p className="mt-1 text-2xl font-bold tracking-tight text-slate-900">
               ${totalRevenue.toLocaleString()}
             </p>
-            <p className="mt-1 text-xs text-gray-400">
+            <p className="mt-1 text-xs text-slate-400">
               Across {projects.length} active projects
             </p>
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-none">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-none">
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
-              <div className="rounded-xl bg-blue-50 p-2.5">
-                <Activity className="h-5 w-5 text-blue-600" />
+              <div className="rounded-xl bg-primary-50 p-2.5">
+                <Activity className="h-5 w-5 text-primary-600" />
               </div>
             </div>
-            <p className="mt-3 text-sm font-medium text-gray-500">Total Cost (Live)</p>
-            <p className="mt-1 text-2xl font-bold tracking-tight text-blue-600">
+            <p className="mt-3 text-sm font-medium text-slate-500">Total Cost (Live)</p>
+            <p className="mt-1 text-2xl font-bold tracking-tight text-primary-600">
               ${totalCostLive.toLocaleString()}
             </p>
-            <p className="mt-1 text-xs text-gray-400">GPS clock-ins + platform orders</p>
+            <p className="mt-1 text-xs text-slate-400">GPS clock-ins + platform orders</p>
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-none">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-none">
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
-              <div className="rounded-xl bg-emerald-50 p-2.5">
-                <Target className="h-5 w-5 text-emerald-600" />
+              <div className="rounded-xl bg-reno-green-50 p-2.5">
+                <Target className="h-5 w-5 text-reno-green-600" />
               </div>
-              <Badge className="rounded-full border-transparent bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">
+              <Badge className="rounded-full border-transparent bg-reno-green-50 px-2 py-0.5 text-xs font-semibold text-reno-green-700">
                 <TrendingUp className="mr-0.5 h-3 w-3" />
                 +2.1%
               </Badge>
             </div>
-            <p className="mt-3 text-sm font-medium text-gray-500">Portfolio Margin</p>
-            <p className="mt-1 text-2xl font-bold tracking-tight text-emerald-600">
+            <p className="mt-3 text-sm font-medium text-slate-500">Portfolio Margin</p>
+            <p className="mt-1 text-2xl font-bold tracking-tight text-reno-green-600">
               {portfolioMargin}%
             </p>
-            <p className="mt-1 text-xs text-gray-400">
+            <p className="mt-1 text-xs text-slate-400">
               ${(totalRevenue - totalCostLive).toLocaleString()} total profit
             </p>
           </CardContent>
@@ -309,7 +309,7 @@ export default function GCFinancialsPage() {
                 <AlertTriangle className="h-5 w-5 text-amber-600" />
               </div>
             </div>
-            <p className="mt-3 text-sm font-medium text-gray-500">At-Risk Projects</p>
+            <p className="mt-3 text-sm font-medium text-slate-500">At-Risk Projects</p>
             <p className="mt-1 text-2xl font-bold tracking-tight text-amber-700">
               {atRiskCount}
             </p>
@@ -320,7 +320,7 @@ export default function GCFinancialsPage() {
 
       {/* Per-Project P&L Cards */}
       <div className="space-y-4">
-        <h2 className="text-lg font-bold text-gray-900">Per-Project P&L</h2>
+        <h2 className="text-lg font-bold text-slate-900">Per-Project P&L</h2>
 
         {projects.map((project) => {
           const config = marginStatusConfig[project.marginStatus];
@@ -333,15 +333,15 @@ export default function GCFinancialsPage() {
           return (
             <Card
               key={project.id}
-              className="rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+              className="rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
             >
               <CardContent className="p-0">
                 {/* Project Header */}
-                <div className="border-b border-gray-100 p-5">
+                <div className="border-b border-slate-100 p-5">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <div className="flex items-center gap-2">
-                        <h3 className="text-lg font-bold text-gray-900">{project.name}</h3>
+                        <h3 className="text-lg font-bold text-slate-900">{project.name}</h3>
                         <Badge
                           className={`shrink-0 rounded-full border-transparent px-2.5 py-0.5 text-[10px] font-semibold ${config.bg} ${config.text}`}
                         >
@@ -349,39 +349,39 @@ export default function GCFinancialsPage() {
                           {config.label}
                         </Badge>
                       </div>
-                      <p className="mt-1 text-sm text-gray-500">{project.address}</p>
+                      <p className="mt-1 text-sm text-slate-500">{project.address}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold text-gray-900">
+                      <p className="text-2xl font-bold text-slate-900">
                         ${project.jobValue.toLocaleString()}
                       </p>
-                      <p className="text-xs text-gray-500">Fixed Price Contract</p>
+                      <p className="text-xs text-slate-500">Fixed Price Contract</p>
                     </div>
                   </div>
                 </div>
 
                 {/* P&L Section */}
-                <div className="border-b border-gray-100 p-5">
-                  <p className="mb-3 text-xs font-bold uppercase tracking-wider text-gray-400">
+                <div className="border-b border-slate-100 p-5">
+                  <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">
                     Profit & Loss (Live)
                   </p>
                   <div className="space-y-2">
                     {/* Job Value */}
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Job Value</span>
-                      <span className="text-sm font-semibold text-gray-900">
+                      <span className="text-sm text-slate-600">Job Value</span>
+                      <span className="text-sm font-semibold text-slate-900">
                         ${project.jobValue.toLocaleString()}
                       </span>
                     </div>
 
                     {/* Divider */}
-                    <div className="border-t border-dashed border-gray-200" />
+                    <div className="border-t border-dashed border-slate-200" />
 
                     {/* Labor */}
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-slate-500">
                         Labor Cost (Live)
-                        <span className="ml-1 text-[10px] text-gray-400">GPS clock-ins x rates</span>
+                        <span className="ml-1 text-[10px] text-slate-400">GPS clock-ins x rates</span>
                       </span>
                       <span className="text-sm font-medium text-red-600">
                         -${project.laborCostLive.toLocaleString()}
@@ -390,9 +390,9 @@ export default function GCFinancialsPage() {
 
                     {/* Materials */}
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-slate-500">
                         Material Cost (Live)
-                        <span className="ml-1 text-[10px] text-gray-400">Platform orders</span>
+                        <span className="ml-1 text-[10px] text-slate-400">Platform orders</span>
                       </span>
                       <span className="text-sm font-medium text-red-600">
                         -${project.materialCostLive.toLocaleString()}
@@ -401,7 +401,7 @@ export default function GCFinancialsPage() {
 
                     {/* Sub-Contract */}
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">Sub-Contract Cost</span>
+                      <span className="text-sm text-slate-500">Sub-Contract Cost</span>
                       <span className="text-sm font-medium text-red-600">
                         -${project.subContractCost.toLocaleString()}
                       </span>
@@ -409,20 +409,20 @@ export default function GCFinancialsPage() {
 
                     {/* Overhead */}
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">Overhead</span>
+                      <span className="text-sm text-slate-500">Overhead</span>
                       <span className="text-sm font-medium text-red-600">
                         -${project.overheadAllocation.toLocaleString()}
                       </span>
                     </div>
 
                     {/* Divider */}
-                    <div className="border-t border-dashed border-gray-200" />
+                    <div className="border-t border-dashed border-slate-200" />
 
                     {/* Current Margin - Highlighted */}
                     <div
                       className={`flex items-center justify-between rounded-xl px-3 py-2.5 ${
                         project.marginStatus === 'healthy'
-                          ? 'bg-emerald-50'
+                          ? 'bg-reno-green-50'
                           : project.marginStatus === 'warning'
                             ? 'bg-amber-50'
                             : 'bg-red-50'
@@ -431,7 +431,7 @@ export default function GCFinancialsPage() {
                       <span
                         className={`text-sm font-bold ${
                           project.marginStatus === 'healthy'
-                            ? 'text-emerald-800'
+                            ? 'text-reno-green-800'
                             : project.marginStatus === 'warning'
                               ? 'text-amber-800'
                               : 'text-red-800'
@@ -443,7 +443,7 @@ export default function GCFinancialsPage() {
                         <span
                           className={`text-sm font-bold ${
                             project.marginStatus === 'healthy'
-                              ? 'text-emerald-700'
+                              ? 'text-reno-green-700'
                               : project.marginStatus === 'warning'
                                 ? 'text-amber-700'
                                 : 'text-red-700'
@@ -452,7 +452,7 @@ export default function GCFinancialsPage() {
                           ${marginDollar.toLocaleString()} ({project.currentMargin}%)
                         </span>
                         {project.marginStatus === 'healthy' ? (
-                          <CheckCircle className="h-4 w-4 text-emerald-500" />
+                          <CheckCircle className="h-4 w-4 text-reno-green-500" />
                         ) : (
                           <AlertTriangle className="h-4 w-4 text-amber-500" />
                         )}
@@ -461,8 +461,8 @@ export default function GCFinancialsPage() {
 
                     {/* Estimated Margin */}
                     <div className="flex items-center justify-between px-3">
-                      <span className="text-xs text-gray-500">Estimated Margin</span>
-                      <span className="text-xs font-medium text-gray-500">
+                      <span className="text-xs text-slate-500">Estimated Margin</span>
+                      <span className="text-xs font-medium text-slate-500">
                         {project.estimatedMargin}%
                         {project.currentMargin < project.estimatedMargin ? (
                           <span className="ml-1.5 text-amber-600">
@@ -470,7 +470,7 @@ export default function GCFinancialsPage() {
                             {(project.estimatedMargin - project.currentMargin).toFixed(1)}% below
                           </span>
                         ) : (
-                          <span className="ml-1.5 text-emerald-600">
+                          <span className="ml-1.5 text-reno-green-600">
                             <ArrowUpRight className="inline h-3 w-3" />
                             {(project.currentMargin - project.estimatedMargin).toFixed(1)}% above
                           </span>
@@ -481,8 +481,8 @@ export default function GCFinancialsPage() {
                 </div>
 
                 {/* EVM Section */}
-                <div className="border-b border-gray-100 p-5">
-                  <p className="mb-3 text-xs font-bold uppercase tracking-wider text-gray-400">
+                <div className="border-b border-slate-100 p-5">
+                  <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">
                     Earned Value Management
                   </p>
 
@@ -491,14 +491,14 @@ export default function GCFinancialsPage() {
                     {/* Work Done Bar */}
                     <div>
                       <div className="mb-1.5 flex items-center justify-between text-xs">
-                        <span className="font-medium text-gray-600">Work Done</span>
-                        <span className="font-semibold text-emerald-700">
+                        <span className="font-medium text-slate-600">Work Done</span>
+                        <span className="font-semibold text-reno-green-700">
                           {project.percentComplete}%
                         </span>
                       </div>
-                      <div className="h-3 w-full overflow-hidden rounded-full bg-gray-100">
+                      <div className="h-3 w-full overflow-hidden rounded-full bg-slate-100">
                         <div
-                          className="h-3 rounded-full bg-emerald-500 transition-all"
+                          className="h-3 rounded-full bg-reno-green-500 transition-all"
                           style={{ width: `${project.percentComplete}%` }}
                         />
                       </div>
@@ -507,19 +507,19 @@ export default function GCFinancialsPage() {
                     {/* Budget Spent Bar */}
                     <div>
                       <div className="mb-1.5 flex items-center justify-between text-xs">
-                        <span className="font-medium text-gray-600">Budget Spent</span>
+                        <span className="font-medium text-slate-600">Budget Spent</span>
                         <span
                           className={`font-semibold ${
-                            evmGap ? 'text-red-600' : 'text-violet-700'
+                            evmGap ? 'text-red-600' : 'text-reno-purple-700'
                           }`}
                         >
                           {project.percentSpent}%
                         </span>
                       </div>
-                      <div className="h-3 w-full overflow-hidden rounded-full bg-gray-100">
+                      <div className="h-3 w-full overflow-hidden rounded-full bg-slate-100">
                         <div
                           className={`h-3 rounded-full transition-all ${
-                            evmGap ? 'bg-red-500' : 'bg-violet-500'
+                            evmGap ? 'bg-red-500' : 'bg-reno-purple-500'
                           }`}
                           style={{ width: `${project.percentSpent}%` }}
                         />
@@ -531,19 +531,19 @@ export default function GCFinancialsPage() {
                   <div
                     className={`mt-4 flex items-start gap-3 rounded-xl p-3 ${
                       cpiHealthy
-                        ? 'border border-emerald-200 bg-emerald-50'
+                        ? 'border border-reno-green-200 bg-reno-green-50'
                         : 'border border-red-200 bg-red-50'
                     }`}
                   >
                     <Gauge
                       className={`mt-0.5 h-4 w-4 shrink-0 ${
-                        cpiHealthy ? 'text-emerald-500' : 'text-red-500'
+                        cpiHealthy ? 'text-reno-green-500' : 'text-red-500'
                       }`}
                     />
                     <div className="min-w-0 flex-1">
                       <p
                         className={`text-sm font-medium ${
-                          cpiHealthy ? 'text-emerald-800' : 'text-red-800'
+                          cpiHealthy ? 'text-reno-green-800' : 'text-red-800'
                         }`}
                       >
                         Efficiency: {project.cpi.toFixed(2)} —{' '}
@@ -551,12 +551,12 @@ export default function GCFinancialsPage() {
                           ? 'On track'
                           : `You will lose $${Math.abs(project.varianceAtCompletion).toLocaleString()} unless you speed up.`}
                       </p>
-                      <div className="mt-1 flex items-center gap-4 text-xs text-gray-500">
+                      <div className="mt-1 flex items-center gap-4 text-xs text-slate-500">
                         <span>
                           CPI:{' '}
                           <span
                             className={`font-semibold ${
-                              project.cpi >= 1.0 ? 'text-emerald-700' : 'text-red-600'
+                              project.cpi >= 1.0 ? 'text-reno-green-700' : 'text-red-600'
                             }`}
                           >
                             {project.cpi.toFixed(2)}
@@ -566,7 +566,7 @@ export default function GCFinancialsPage() {
                           SPI:{' '}
                           <span
                             className={`font-semibold ${
-                              project.spi >= 1.0 ? 'text-emerald-700' : 'text-red-600'
+                              project.spi >= 1.0 ? 'text-reno-green-700' : 'text-red-600'
                             }`}
                           >
                             {project.spi.toFixed(2)}
@@ -574,7 +574,7 @@ export default function GCFinancialsPage() {
                         </span>
                         <span>
                           EAC:{' '}
-                          <span className="font-semibold text-gray-700">
+                          <span className="font-semibold text-slate-700">
                             ${project.estimateAtCompletion.toLocaleString()}
                           </span>
                         </span>
@@ -583,7 +583,7 @@ export default function GCFinancialsPage() {
                           <span
                             className={`font-semibold ${
                               project.varianceAtCompletion >= 0
-                                ? 'text-emerald-700'
+                                ? 'text-reno-green-700'
                                 : 'text-red-600'
                             }`}
                           >
@@ -598,7 +598,7 @@ export default function GCFinancialsPage() {
 
                 {/* Burn Rate Alert */}
                 {burnWarning && (
-                  <div className="border-b border-gray-100 p-5">
+                  <div className="border-b border-slate-100 p-5">
                     <div
                       className={`flex items-start gap-3 rounded-xl p-3 ${
                         project.marginStatus === 'danger'
@@ -623,7 +623,7 @@ export default function GCFinancialsPage() {
                         >
                           {burnWarning}
                         </p>
-                        <p className="mt-1 text-xs text-gray-500">
+                        <p className="mt-1 text-xs text-slate-500">
                           Daily burn: ${project.dailyLaborBurn.toLocaleString()} labor +{' '}
                           ${project.dailyMaterialBurn.toLocaleString()} materials ={' '}
                           ${(project.dailyLaborBurn + project.dailyMaterialBurn).toLocaleString()}/day
@@ -631,7 +631,7 @@ export default function GCFinancialsPage() {
                       </div>
                       <Button
                         variant="outline"
-                        className="h-auto shrink-0 rounded-lg border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-700"
+                        className="h-auto shrink-0 rounded-lg border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700"
                       >
                         Investigate
                       </Button>
@@ -641,29 +641,29 @@ export default function GCFinancialsPage() {
 
                 {/* Stage Breakdown */}
                 <div className="p-5">
-                  <p className="mb-3 text-xs font-bold uppercase tracking-wider text-gray-400">
+                  <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">
                     Stage Breakdown
                   </p>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="border-b border-gray-100">
-                          <th className="pb-2 pr-4 text-left text-xs font-medium text-gray-500">
+                        <tr className="border-b border-slate-100">
+                          <th className="pb-2 pr-4 text-left text-xs font-medium text-slate-500">
                             Stage
                           </th>
-                          <th className="pb-2 pr-4 text-right text-xs font-medium text-gray-500">
+                          <th className="pb-2 pr-4 text-right text-xs font-medium text-slate-500">
                             Budgeted
                           </th>
-                          <th className="pb-2 pr-4 text-right text-xs font-medium text-gray-500">
+                          <th className="pb-2 pr-4 text-right text-xs font-medium text-slate-500">
                             Actual
                           </th>
-                          <th className="pb-2 pr-4 text-right text-xs font-medium text-gray-500">
+                          <th className="pb-2 pr-4 text-right text-xs font-medium text-slate-500">
                             Variance
                           </th>
-                          <th className="pb-2 pr-4 text-center text-xs font-medium text-gray-500">
+                          <th className="pb-2 pr-4 text-center text-xs font-medium text-slate-500">
                             Status
                           </th>
-                          <th className="pb-2 text-left text-xs font-medium text-gray-500">
+                          <th className="pb-2 text-left text-xs font-medium text-slate-500">
                             Progress
                           </th>
                         </tr>
@@ -687,24 +687,24 @@ export default function GCFinancialsPage() {
                           return (
                             <tr
                               key={stage.name}
-                              className="border-b border-gray-50 last:border-0"
+                              className="border-b border-slate-50 last:border-0"
                             >
-                              <td className="py-2.5 pr-4 font-medium text-gray-700">
+                              <td className="py-2.5 pr-4 font-medium text-slate-700">
                                 {stage.name}
                               </td>
-                              <td className="py-2.5 pr-4 text-right text-gray-600">
+                              <td className="py-2.5 pr-4 text-right text-slate-600">
                                 ${stage.budgeted.toLocaleString()}
                               </td>
-                              <td className="py-2.5 pr-4 text-right font-medium text-gray-900">
+                              <td className="py-2.5 pr-4 text-right font-medium text-slate-900">
                                 ${stage.actual.toLocaleString()}
                               </td>
                               <td className="py-2.5 pr-4 text-right">
                                 {stage.actual === 0 ? (
-                                  <span className="text-gray-400">--</span>
+                                  <span className="text-slate-400">--</span>
                                 ) : (
                                   <span
                                     className={`font-medium ${
-                                      variance >= 0 ? 'text-emerald-600' : 'text-red-600'
+                                      variance >= 0 ? 'text-reno-green-600' : 'text-red-600'
                                     }`}
                                   >
                                     {variance >= 0 ? '+' : ''}${variance.toLocaleString()}
@@ -720,19 +720,19 @@ export default function GCFinancialsPage() {
                               </td>
                               <td className="py-2.5">
                                 <div className="flex items-center gap-2">
-                                  <div className="h-1.5 w-16 overflow-hidden rounded-full bg-gray-100">
+                                  <div className="h-1.5 w-16 overflow-hidden rounded-full bg-slate-100">
                                     <div
                                       className={`h-1.5 rounded-full transition-all ${
                                         stage.status === 'complete'
-                                          ? 'bg-emerald-500'
+                                          ? 'bg-reno-green-500'
                                           : stage.status === 'in_progress'
-                                            ? 'bg-blue-500'
-                                            : 'bg-gray-200'
+                                            ? 'bg-primary-500'
+                                            : 'bg-slate-200'
                                       }`}
                                       style={{ width: `${progressPercent}%` }}
                                     />
                                   </div>
-                                  <span className="text-[10px] text-gray-400">
+                                  <span className="text-[10px] text-slate-400">
                                     {progressPercent}%
                                   </span>
                                 </div>
@@ -748,7 +748,7 @@ export default function GCFinancialsPage() {
                   <div className="mt-4 flex items-center justify-end">
                     <Button
                       variant="outline"
-                      className="h-auto rounded-xl border-gray-200 px-3 py-2 text-xs font-medium text-gray-700"
+                      className="h-auto rounded-xl border-slate-200 px-3 py-2 text-xs font-medium text-slate-700"
                     >
                       <BarChart3 className="mr-1 h-3.5 w-3.5" />
                       Full Report
@@ -763,42 +763,42 @@ export default function GCFinancialsPage() {
       </div>
 
       {/* Bottom CTA Card */}
-      <Card className="rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50 to-blue-50 shadow-sm">
+      <Card className="rounded-2xl border border-reno-purple-200 bg-gradient-to-br from-reno-purple-50 to-primary-50 shadow-sm">
         <CardContent className="p-6">
           <div className="mb-4 flex items-center gap-2">
-            <div className="rounded-xl bg-violet-100 p-2">
-              <Zap className="h-5 w-5 text-violet-600" />
+            <div className="rounded-xl bg-reno-purple-100 p-2">
+              <Zap className="h-5 w-5 text-reno-purple-600" />
             </div>
             <div>
-              <h3 className="font-bold text-gray-900">
+              <h3 className="font-bold text-slate-900">
                 QuickBooks Looks Backward. RenoNext Looks Forward.
               </h3>
-              <p className="text-xs text-gray-500">Real-time financial intelligence</p>
+              <p className="text-xs text-slate-500">Real-time financial intelligence</p>
             </div>
           </div>
-          <p className="text-sm leading-relaxed text-gray-600">
+          <p className="text-sm leading-relaxed text-slate-600">
             Traditional accounting tells you what happened last month. RenoNext tells you what&apos;s
             happening right now. Every GPS clock-in, every material order, every sub-trade invoice —
             calculated in real-time so you never get surprised by a loss.
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-2">
-            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm">
-              <Clock className="mr-1 h-3 w-3 text-violet-500" />
+            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm">
+              <Clock className="mr-1 h-3 w-3 text-reno-purple-500" />
               GPS Clock-ins
             </Badge>
-            <ChevronRight className="h-4 w-4 text-gray-400" />
-            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm">
-              <DollarSign className="mr-1 h-3 w-3 text-violet-500" />
+            <ChevronRight className="h-4 w-4 text-slate-400" />
+            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm">
+              <DollarSign className="mr-1 h-3 w-3 text-reno-purple-500" />
               Live Cost Calc
             </Badge>
-            <ChevronRight className="h-4 w-4 text-gray-400" />
-            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm">
-              <TrendingUp className="mr-1 h-3 w-3 text-violet-500" />
+            <ChevronRight className="h-4 w-4 text-slate-400" />
+            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm">
+              <TrendingUp className="mr-1 h-3 w-3 text-reno-purple-500" />
               Margin Alert
             </Badge>
-            <ChevronRight className="h-4 w-4 text-gray-400" />
-            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm">
-              <Shield className="mr-1 h-3 w-3 text-violet-500" />
+            <ChevronRight className="h-4 w-4 text-slate-400" />
+            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm">
+              <Shield className="mr-1 h-3 w-3 text-reno-purple-500" />
               No Surprises
             </Badge>
           </div>

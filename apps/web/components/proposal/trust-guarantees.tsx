@@ -14,22 +14,22 @@ const protections = [
     icon: Lock,
     label: 'Payment Hold',
     description: 'Funds released only after your confirmation',
-    color: 'text-blue-400',
-    bg: 'bg-blue-400/10',
+    color: 'text-primary-400',
+    bg: 'bg-primary-400/10',
   },
   {
     icon: CreditCard,
     label: 'Pay As You Go',
     description: 'Milestone-based payments tied to progress',
-    color: 'text-emerald-400',
-    bg: 'bg-emerald-400/10',
+    color: 'text-reno-green-400',
+    bg: 'bg-reno-green-400/10',
   },
   {
     icon: ShieldCheck,
     label: 'Verified Contractor',
     description: 'Licensed, insured, and quality-checked at every stage',
-    color: 'text-violet-400',
-    bg: 'bg-violet-400/10',
+    color: 'text-reno-purple-400',
+    bg: 'bg-reno-purple-400/10',
   },
 ];
 
@@ -91,7 +91,7 @@ export function TrustGuarantees() {
     >
       {/* Header */}
       <div className="text-center">
-        <Shield className="mx-auto h-8 w-8 text-emerald-400" />
+        <Shield className="mx-auto h-8 w-8 text-reno-green-400" />
         <h2 className="mt-3 text-2xl font-bold text-white">{TRUST_TITLE}</h2>
         <p className="mt-1 text-sm text-muted-foreground">{TRUST_SUBTITLE}</p>
       </div>
@@ -137,7 +137,7 @@ export function TrustGuarantees() {
         {/* Daily Updates — calendar strip + photo tiles */}
         <div className="rounded-xl bg-white/5 p-4">
           <div className="flex items-center gap-2">
-            <Camera className="h-5 w-5 text-blue-400" />
+            <Camera className="h-5 w-5 text-primary-400" />
             <h3 className="text-sm font-semibold text-white">Daily Updates</h3>
           </div>
           <p className="mt-1 text-xs text-muted-foreground">
@@ -156,7 +156,7 @@ export function TrustGuarantees() {
                 <p className="text-[10px] font-medium text-muted-foreground">{d.day}</p>
                 <p className="text-xs font-bold text-white">{d.date.split(' ')[1]}</p>
                 {d.hasPhotos && (
-                  <div className="mx-auto mt-1 h-1 w-1 rounded-full bg-blue-400" />
+                  <div className="mx-auto mt-1 h-1 w-1 rounded-full bg-primary-400" />
                 )}
               </div>
             ))}

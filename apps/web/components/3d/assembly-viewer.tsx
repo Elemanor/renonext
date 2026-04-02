@@ -266,12 +266,12 @@ export function AssemblyViewer({ steps, assembly }: AssemblyViewerProps) {
     <section>
       <div className="mb-4 flex items-center gap-2">
         <Layers className="h-5 w-5 text-reno-green" />
-        <h2 className="text-lg font-bold text-gray-900">{assembly.name}</h2>
+        <h2 className="text-lg font-bold text-slate-900">{assembly.name}</h2>
       </div>
 
       <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
         {/* Tab bar */}
-        <div className="flex w-full border-b bg-gray-50/80">
+        <div className="flex w-full border-b bg-slate-50/80">
           {TABS.map((tab) => (
             <button
               key={tab.value}
@@ -279,7 +279,7 @@ export function AssemblyViewer({ steps, assembly }: AssemblyViewerProps) {
               className={`flex items-center gap-1.5 border-b-2 px-4 py-3 text-xs font-medium transition-colors ${
                 viewMode === tab.value
                   ? 'border-reno-green bg-white text-reno-green-dark'
-                  : 'border-transparent text-gray-500 hover:text-gray-700'
+                  : 'border-transparent text-slate-500 hover:text-slate-700'
               }`}
             >
               <tab.Icon className="h-3.5 w-3.5" />
@@ -297,8 +297,8 @@ export function AssemblyViewer({ steps, assembly }: AssemblyViewerProps) {
 
         {/* Step scrubber (overlay mode only) */}
         {viewMode === 'overlay' && (
-          <div className="flex items-center justify-center gap-1.5 border-t border-gray-100 bg-gray-50/50 px-4 py-3">
-            <span className="mr-2 text-[10px] font-medium text-gray-400">
+          <div className="flex items-center justify-center gap-1.5 border-t border-slate-100 bg-slate-50/50 px-4 py-3">
+            <span className="mr-2 text-[10px] font-medium text-slate-400">
               Step
             </span>
             {stepDots.map((n) => (
@@ -308,7 +308,7 @@ export function AssemblyViewer({ steps, assembly }: AssemblyViewerProps) {
                 className={`flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-semibold transition-all ring-1 ${
                   currentStep === n
                     ? 'bg-reno-green text-white ring-reno-green'
-                    : 'text-gray-400 ring-gray-200 hover:bg-reno-green-light hover:text-reno-green-dark hover:ring-reno-green'
+                    : 'text-slate-400 ring-slate-200 hover:bg-reno-green-light hover:text-reno-green-dark hover:ring-reno-green'
                 }`}
               >
                 {n}

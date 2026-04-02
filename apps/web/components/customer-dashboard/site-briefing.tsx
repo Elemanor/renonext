@@ -24,7 +24,7 @@ export function ProgressRing({ current, total }: { current: number; total: numbe
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="text-white/90 text-xs tracking-tight">{current}</span>
-        <span className="text-gray-600 text-[8px] -mt-0.5">of {total}</span>
+        <span className="text-slate-600 text-[8px] -mt-0.5">of {total}</span>
       </div>
     </div>
   );
@@ -42,10 +42,10 @@ export function SiteBriefing() {
       <div className="flex items-center justify-between">
         <div className="flex-1">
           <div className="flex items-center gap-2 ml-1">
-            <MapPin className="w-3.5 h-3.5 text-gray-500 flex-shrink-0" />
+            <MapPin className="w-3.5 h-3.5 text-slate-500 flex-shrink-0" />
             <p className="text-white/80">42 Maple Drive</p>
           </div>
-          <p className="text-gray-500 text-sm mt-1.5 lg:mt-0.5 ml-1 tracking-tight">Great progress! Day 14 of 42 · Foundation Stage Complete</p>
+          <p className="text-slate-500 text-sm mt-1.5 lg:mt-0.5 ml-1 tracking-tight">Great progress! Day 14 of 42 · Foundation Stage Complete</p>
         </div>
         <ProgressRing current={14} total={42} />
       </div>

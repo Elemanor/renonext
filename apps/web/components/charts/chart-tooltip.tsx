@@ -26,7 +26,7 @@ export function ChartTooltip({ active, payload, label, formatter }: ChartTooltip
       }}
     >
       {label && (
-        <p className="mb-1 text-xs font-medium text-gray-500">{label}</p>
+        <p className="mb-1 text-xs font-medium text-slate-500">{label}</p>
       )}
       {payload.map((p, i) => (
         <div key={i} className="flex items-center gap-2 text-xs">
@@ -34,8 +34,8 @@ export function ChartTooltip({ active, payload, label, formatter }: ChartTooltip
             className="inline-block h-2 w-2 rounded-full"
             style={{ backgroundColor: p.color }}
           />
-          <span className="text-gray-600">{p.name}:</span>
-          <span className="font-semibold text-gray-900">
+          <span className="text-slate-600">{p.name}:</span>
+          <span className="font-semibold text-slate-900">
             {formatter ? formatter(p.value, p.name) : p.value}
           </span>
         </div>

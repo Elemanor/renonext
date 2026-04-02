@@ -239,7 +239,7 @@ export default function AdminManagedDetailPage({ params }: AdminManagedDetailPag
                 {project.status === "assigned" && (
                   <Button
                     onClick={() => handleStatusChange("active")}
-                    className="bg-green-600 hover:bg-green-700"
+                    className="bg-reno-green-600 hover:bg-reno-green-700"
                   >
                     Start Project
                   </Button>

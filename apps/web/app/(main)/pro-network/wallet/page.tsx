@@ -172,15 +172,15 @@ const recentTransactions = [
 ];
 
 const statusColors = {
-  on_track: { label: 'On Track', bg: 'bg-emerald-50', text: 'text-emerald-700', icon: CheckCircle },
+  on_track: { label: 'On Track', bg: 'bg-reno-green-50', text: 'text-reno-green-700', icon: CheckCircle },
   warning: { label: 'Variance Alert', bg: 'bg-amber-50', text: 'text-amber-700', icon: AlertTriangle },
   over_budget: { label: 'Over Budget', bg: 'bg-red-50', text: 'text-red-700', icon: AlertTriangle },
 };
 
 const txTypeIcons = {
-  payout: { icon: Send, color: 'text-blue-500', bg: 'bg-blue-50' },
-  inflow: { icon: ArrowDownRight, color: 'text-emerald-500', bg: 'bg-emerald-50' },
-  material: { icon: Package, color: 'text-violet-500', bg: 'bg-violet-50' },
+  payout: { icon: Send, color: 'text-primary-500', bg: 'bg-primary-50' },
+  inflow: { icon: ArrowDownRight, color: 'text-reno-green-500', bg: 'bg-reno-green-50' },
+  material: { icon: Package, color: 'text-reno-purple-500', bg: 'bg-reno-purple-50' },
   expense: { icon: Banknote, color: 'text-amber-500', bg: 'bg-amber-50' },
 };
 
@@ -190,22 +190,22 @@ export default function GCWalletPage() {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">
             Project Wallet
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-slate-500">
             Real-time job costing, payouts, and cash flow across all projects
           </p>
         </div>
         <div className="flex gap-2">
           <Button
             variant="outline"
-            className="h-auto rounded-xl border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700"
+            className="h-auto rounded-xl border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700"
           >
             <BarChart3 className="mr-1.5 h-4 w-4" />
             Reports
           </Button>
-          <Button className="h-auto rounded-xl bg-violet-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-violet-700">
+          <Button className="h-auto rounded-xl bg-reno-purple-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-reno-purple-700">
             <Send className="mr-1.5 h-4 w-4" />
             Send Payout
           </Button>
@@ -214,54 +214,54 @@ export default function GCWalletPage() {
 
       {/* Portfolio Summary */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-none">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-none">
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
-              <div className="rounded-xl bg-violet-50 p-2.5">
-                <Wallet className="h-5 w-5 text-violet-600" />
+              <div className="rounded-xl bg-reno-purple-50 p-2.5">
+                <Wallet className="h-5 w-5 text-reno-purple-600" />
               </div>
             </div>
-            <p className="mt-3 text-sm font-medium text-gray-500">Total Balance</p>
-            <p className="mt-1 text-2xl font-bold tracking-tight text-gray-900">
+            <p className="mt-3 text-sm font-medium text-slate-500">Total Balance</p>
+            <p className="mt-1 text-2xl font-bold tracking-tight text-slate-900">
               {portfolioSummary.totalBalance}
             </p>
-            <p className="mt-1 text-xs text-gray-400">
+            <p className="mt-1 text-xs text-slate-400">
               Across {portfolioSummary.activeProjects} projects
             </p>
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-none">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-none">
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
-              <div className="rounded-xl bg-blue-50 p-2.5">
-                <Clock className="h-5 w-5 text-blue-600" />
+              <div className="rounded-xl bg-primary-50 p-2.5">
+                <Clock className="h-5 w-5 text-primary-600" />
               </div>
             </div>
-            <p className="mt-3 text-sm font-medium text-gray-500">Pending Inflows</p>
-            <p className="mt-1 text-2xl font-bold tracking-tight text-blue-600">
+            <p className="mt-3 text-sm font-medium text-slate-500">Pending Inflows</p>
+            <p className="mt-1 text-2xl font-bold tracking-tight text-primary-600">
               {portfolioSummary.pendingInflows}
             </p>
-            <p className="mt-1 text-xs text-gray-400">From client escrow releases</p>
+            <p className="mt-1 text-xs text-slate-400">From client escrow releases</p>
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-none">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-none">
           <CardContent className="p-5">
             <div className="flex items-center justify-between">
-              <div className="rounded-xl bg-emerald-50 p-2.5">
-                <Target className="h-5 w-5 text-emerald-600" />
+              <div className="rounded-xl bg-reno-green-50 p-2.5">
+                <Target className="h-5 w-5 text-reno-green-600" />
               </div>
-              <Badge className="rounded-full border-transparent bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">
+              <Badge className="rounded-full border-transparent bg-reno-green-50 px-2 py-0.5 text-xs font-semibold text-reno-green-700">
                 <TrendingUp className="mr-0.5 h-3 w-3" />
                 {portfolioSummary.profitMargin}
               </Badge>
             </div>
-            <p className="mt-3 text-sm font-medium text-gray-500">Projected Profit</p>
-            <p className="mt-1 text-2xl font-bold tracking-tight text-emerald-600">
+            <p className="mt-3 text-sm font-medium text-slate-500">Projected Profit</p>
+            <p className="mt-1 text-2xl font-bold tracking-tight text-reno-green-600">
               {portfolioSummary.projectedProfit}
             </p>
-            <p className="mt-1 text-xs text-gray-400">All projects combined</p>
+            <p className="mt-1 text-xs text-slate-400">All projects combined</p>
           </CardContent>
         </Card>
 
@@ -272,7 +272,7 @@ export default function GCWalletPage() {
                 <AlertTriangle className="h-5 w-5 text-amber-600" />
               </div>
             </div>
-            <p className="mt-3 text-sm font-medium text-gray-500">Variance Alerts</p>
+            <p className="mt-3 text-sm font-medium text-slate-500">Variance Alerts</p>
             <p className="mt-1 text-2xl font-bold tracking-tight text-amber-700">2</p>
             <p className="mt-1 text-xs text-amber-600">Requires investigation</p>
           </CardContent>
@@ -281,7 +281,7 @@ export default function GCWalletPage() {
 
       {/* Project Wallets */}
       <div className="space-y-4">
-        <h2 className="text-lg font-bold text-gray-900">Project Wallets</h2>
+        <h2 className="text-lg font-bold text-slate-900">Project Wallets</h2>
 
         {projectWallets.map((project) => {
           const budgetUsedPercent = Math.round((project.spent / project.budget) * 100);
@@ -291,15 +291,15 @@ export default function GCWalletPage() {
           return (
             <Card
               key={project.id}
-              className="rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+              className="rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
             >
               <CardContent className="p-0">
                 {/* Project Header */}
-                <div className="border-b border-gray-100 p-5">
+                <div className="border-b border-slate-100 p-5">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <div className="flex items-center gap-2">
-                        <h3 className="text-lg font-bold text-gray-900">{project.name}</h3>
+                        <h3 className="text-lg font-bold text-slate-900">{project.name}</h3>
                         <Badge
                           className={`shrink-0 rounded-full border-transparent px-2.5 py-0.5 text-[10px] font-semibold ${config.bg} ${config.text}`}
                         >
@@ -307,47 +307,47 @@ export default function GCWalletPage() {
                           {config.label}
                         </Badge>
                       </div>
-                      <p className="mt-1 text-sm text-gray-500">{project.address}</p>
+                      <p className="mt-1 text-sm text-slate-500">{project.address}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold text-gray-900">
+                      <p className="text-2xl font-bold text-slate-900">
                         ${project.budget.toLocaleString()}
                       </p>
-                      <p className="text-xs text-gray-500">total budget</p>
+                      <p className="text-xs text-slate-500">total budget</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Real-Time Job Costing */}
-                <div className="border-b border-gray-100 p-5">
+                <div className="border-b border-slate-100 p-5">
                   <div className="mb-4 grid grid-cols-2 gap-4 sm:grid-cols-5">
                     <div>
-                      <p className="text-xs font-medium text-gray-500">Spent (Live)</p>
-                      <p className="text-lg font-bold text-gray-900">
+                      <p className="text-xs font-medium text-slate-500">Spent (Live)</p>
+                      <p className="text-lg font-bold text-slate-900">
                         ${project.spent.toLocaleString()}
                       </p>
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-gray-500">Labor</p>
-                      <p className="text-lg font-bold text-blue-600">
+                      <p className="text-xs font-medium text-slate-500">Labor</p>
+                      <p className="text-lg font-bold text-primary-600">
                         ${project.labor.toLocaleString()}
                       </p>
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-gray-500">Materials</p>
-                      <p className="text-lg font-bold text-violet-600">
+                      <p className="text-xs font-medium text-slate-500">Materials</p>
+                      <p className="text-lg font-bold text-reno-purple-600">
                         ${project.materials.toLocaleString()}
                       </p>
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-gray-500">In Escrow</p>
+                      <p className="text-xs font-medium text-slate-500">In Escrow</p>
                       <p className="text-lg font-bold text-amber-600">
                         ${project.inEscrow.toLocaleString()}
                       </p>
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-gray-500">Projected Profit</p>
-                      <p className="text-lg font-bold text-emerald-600">
+                      <p className="text-xs font-medium text-slate-500">Projected Profit</p>
+                      <p className="text-lg font-bold text-reno-green-600">
                         ${project.projectedProfit.toLocaleString()}
                         <span className="ml-1 text-xs font-medium">
                           ({project.profitMargin}%)
@@ -359,18 +359,18 @@ export default function GCWalletPage() {
                   {/* Budget Progress Bar */}
                   <div>
                     <div className="mb-1.5 flex items-center justify-between text-xs">
-                      <span className="text-gray-500">Budget used</span>
-                      <span className="font-semibold text-gray-700">{budgetUsedPercent}%</span>
+                      <span className="text-slate-500">Budget used</span>
+                      <span className="font-semibold text-slate-700">{budgetUsedPercent}%</span>
                     </div>
-                    <div className="h-3 w-full overflow-hidden rounded-full bg-gray-100">
+                    <div className="h-3 w-full overflow-hidden rounded-full bg-slate-100">
                       <div className="flex h-3">
                         <div
-                          className="bg-blue-500 transition-all"
+                          className="bg-primary-500 transition-all"
                           style={{ width: `${Math.round((project.labor / project.budget) * 100)}%` }}
                           title="Labor"
                         />
                         <div
-                          className="bg-violet-500 transition-all"
+                          className="bg-reno-purple-500 transition-all"
                           style={{ width: `${Math.round((project.materials / project.budget) * 100)}%` }}
                           title="Materials"
                         />
@@ -381,13 +381,13 @@ export default function GCWalletPage() {
                         />
                       </div>
                     </div>
-                    <div className="mt-1.5 flex items-center gap-4 text-[10px] text-gray-400">
+                    <div className="mt-1.5 flex items-center gap-4 text-[10px] text-slate-400">
                       <span className="flex items-center gap-1">
-                        <span className="h-2 w-2 rounded-full bg-blue-500" />
+                        <span className="h-2 w-2 rounded-full bg-primary-500" />
                         Labor
                       </span>
                       <span className="flex items-center gap-1">
-                        <span className="h-2 w-2 rounded-full bg-violet-500" />
+                        <span className="h-2 w-2 rounded-full bg-reno-purple-500" />
                         Materials
                       </span>
                       <span className="flex items-center gap-1">
@@ -403,8 +403,8 @@ export default function GCWalletPage() {
 
                 {/* Smart Variance Alerts */}
                 {project.variances.length > 0 && (
-                  <div className="border-b border-gray-100 p-5">
-                    <p className="mb-3 text-xs font-bold uppercase tracking-wider text-gray-400">
+                  <div className="border-b border-slate-100 p-5">
+                    <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">
                       Smart Variance Alerts
                     </p>
                     <div className="space-y-2">
@@ -416,11 +416,11 @@ export default function GCWalletPage() {
                               ? 'border border-red-200 bg-red-50'
                               : v.severity === 'warning'
                                 ? 'border border-amber-200 bg-amber-50'
-                                : 'border border-emerald-200 bg-emerald-50'
+                                : 'border border-reno-green-200 bg-reno-green-50'
                           }`}
                         >
                           {v.severity === 'positive' ? (
-                            <TrendingDown className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                            <TrendingDown className="mt-0.5 h-4 w-4 shrink-0 text-reno-green-500" />
                           ) : (
                             <AlertTriangle
                               className={`mt-0.5 h-4 w-4 shrink-0 ${
@@ -435,19 +435,19 @@ export default function GCWalletPage() {
                                   ? 'text-red-800'
                                   : v.severity === 'warning'
                                     ? 'text-amber-800'
-                                    : 'text-emerald-800'
+                                    : 'text-reno-green-800'
                               }`}
                             >
                               {v.message}
                             </p>
-                            <p className="mt-0.5 text-xs text-gray-500">
+                            <p className="mt-0.5 text-xs text-slate-500">
                               {v.trade} — {v.type} — {v.variance > 0 ? '+' : ''}{v.variance}% vs estimate
                             </p>
                           </div>
                           {v.severity !== 'positive' && (
                             <Button
                               variant="outline"
-                              className="h-auto shrink-0 rounded-lg border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-700"
+                              className="h-auto shrink-0 rounded-lg border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700"
                             >
                               Investigate
                             </Button>
@@ -464,7 +464,7 @@ export default function GCWalletPage() {
                     {project.trades.map((trade) => (
                       <Badge
                         key={trade}
-                        className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-0.5 text-[10px] font-medium text-gray-600"
+                        className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[10px] font-medium text-slate-600"
                       >
                         {trade}
                       </Badge>
@@ -472,7 +472,7 @@ export default function GCWalletPage() {
                   </div>
                   <Button
                     variant="outline"
-                    className="h-auto rounded-xl border-gray-200 px-3 py-2 text-xs font-medium text-gray-700"
+                    className="h-auto rounded-xl border-slate-200 px-3 py-2 text-xs font-medium text-slate-700"
                   >
                     <Eye className="mr-1 h-3.5 w-3.5" />
                     Full Breakdown
@@ -486,15 +486,15 @@ export default function GCWalletPage() {
       </div>
 
       {/* Recent Transactions */}
-      <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardHeader className="pb-4">
           <div className="flex items-center justify-between">
-            <CardTitle className="text-lg font-bold text-gray-900">
+            <CardTitle className="text-lg font-bold text-slate-900">
               Recent Transactions
             </CardTitle>
             <Button
               variant="outline"
-              className="h-auto rounded-xl border-gray-200 px-3 py-2 text-xs font-medium text-gray-700"
+              className="h-auto rounded-xl border-slate-200 px-3 py-2 text-xs font-medium text-slate-700"
             >
               View All
             </Button>
@@ -509,7 +509,7 @@ export default function GCWalletPage() {
               return (
                 <div
                   key={tx.id}
-                  className="flex items-center gap-3 rounded-xl border border-gray-200 p-3 transition-all duration-200 hover:bg-gray-50"
+                  className="flex items-center gap-3 rounded-xl border border-slate-200 p-3 transition-all duration-200 hover:bg-slate-50"
                 >
                   <div
                     className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${txConfig.bg}`}
@@ -517,12 +517,12 @@ export default function GCWalletPage() {
                     <TxIcon className={`h-4 w-4 ${txConfig.color}`} />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-medium text-gray-900">{tx.description}</p>
-                    <p className="text-xs text-gray-500">{tx.project} — {tx.date}</p>
+                    <p className="text-sm font-medium text-slate-900">{tx.description}</p>
+                    <p className="text-xs text-slate-500">{tx.project} — {tx.date}</p>
                   </div>
                   <span
                     className={`text-sm font-bold ${
-                      isInflow ? 'text-emerald-600' : 'text-gray-900'
+                      isInflow ? 'text-reno-green-600' : 'text-slate-900'
                     }`}
                   >
                     {tx.amount}
@@ -540,35 +540,35 @@ export default function GCWalletPage() {
       </Card>
 
       {/* The Loop - Closed Economic System */}
-      <Card className="rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50 to-blue-50 shadow-sm">
+      <Card className="rounded-2xl border border-reno-purple-200 bg-gradient-to-br from-reno-purple-50 to-primary-50 shadow-sm">
         <CardContent className="p-6">
           <div className="mb-4 flex items-center gap-2">
-            <div className="rounded-xl bg-violet-100 p-2">
-              <Wallet className="h-5 w-5 text-violet-600" />
+            <div className="rounded-xl bg-reno-purple-100 p-2">
+              <Wallet className="h-5 w-5 text-reno-purple-600" />
             </div>
             <div>
-              <h3 className="font-bold text-gray-900">The RenoNext Loop</h3>
-              <p className="text-xs text-gray-500">Money stays in the ecosystem</p>
+              <h3 className="font-bold text-slate-900">The RenoNext Loop</h3>
+              <p className="text-xs text-slate-500">Money stays in the ecosystem</p>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2 text-sm">
-            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm">
+            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm">
               Client pays into Safe
             </Badge>
-            <ChevronRight className="h-4 w-4 text-gray-400" />
-            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm">
+            <ChevronRight className="h-4 w-4 text-slate-400" />
+            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm">
               GC receives milestone
             </Badge>
-            <ChevronRight className="h-4 w-4 text-gray-400" />
-            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm">
+            <ChevronRight className="h-4 w-4 text-slate-400" />
+            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm">
               GC pays sub-trades
             </Badge>
-            <ChevronRight className="h-4 w-4 text-gray-400" />
-            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm">
+            <ChevronRight className="h-4 w-4 text-slate-400" />
+            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm">
               Sub buys materials
             </Badge>
-            <ChevronRight className="h-4 w-4 text-gray-400" />
-            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm">
+            <ChevronRight className="h-4 w-4 text-slate-400" />
+            <Badge className="rounded-full border-transparent bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm">
               Workers get instant pay
             </Badge>
           </div>

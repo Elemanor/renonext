@@ -53,7 +53,7 @@ export function ChatInput({
       className={`flex items-end gap-2 rounded-xl border p-2 ${
         isDark
           ? 'border-white/10 bg-white/[0.04]'
-          : 'border-gray-200 bg-white'
+          : 'border-slate-200 bg-white'
       }`}
     >
       {showUpload && onFileUpload && (
@@ -61,8 +61,8 @@ export function ChatInput({
           onClick={onFileUpload}
           className={`shrink-0 rounded-lg p-2 transition-colors ${
             isDark
-              ? 'text-gray-500 hover:bg-white/10 hover:text-gray-300'
-              : 'text-gray-400 hover:bg-gray-100 hover:text-gray-600'
+              ? 'text-slate-500 hover:bg-white/10 hover:text-slate-300'
+              : 'text-slate-400 hover:bg-slate-100 hover:text-slate-600'
           }`}
           title="Upload PDF"
         >
@@ -78,8 +78,8 @@ export function ChatInput({
         placeholder={placeholder}
         rows={1}
         disabled={isLoading}
-        className={`flex-1 resize-none bg-transparent text-sm outline-none placeholder:text-gray-500 disabled:opacity-50 ${
-          isDark ? 'text-white' : 'text-gray-900'
+        className={`flex-1 resize-none bg-transparent text-sm outline-none placeholder:text-slate-500 disabled:opacity-50 ${
+          isDark ? 'text-white' : 'text-slate-900'
         }`}
         style={{ maxHeight: '120px' }}
       />
@@ -87,7 +87,7 @@ export function ChatInput({
       <button
         onClick={onSubmit}
         disabled={!value.trim() || isLoading}
-        className="shrink-0 rounded-lg bg-emerald-600 p-2 text-white transition-colors hover:bg-emerald-700 disabled:opacity-40 disabled:hover:bg-emerald-600"
+        className="shrink-0 rounded-lg bg-reno-green-600 p-2 text-white transition-colors hover:bg-reno-green-700 disabled:opacity-40 disabled:hover:bg-reno-green-600"
       >
         {isLoading ? (
           <Loader2 className="h-4 w-4 animate-spin" />

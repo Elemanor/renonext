@@ -39,16 +39,16 @@ const earningsStats = [
     label: 'Total Earnings',
     value: '$24,350',
     trend: { value: 12, isPositive: true },
-    iconColor: 'text-green-600',
-    iconBg: 'bg-green-50',
+    iconColor: 'text-reno-green-600',
+    iconBg: 'bg-reno-green-50',
   },
   {
     icon: TrendingUp,
     label: 'This Month',
     value: '$3,280',
     trend: { value: 8, isPositive: true },
-    iconColor: 'text-blue-600',
-    iconBg: 'bg-blue-50',
+    iconColor: 'text-primary-600',
+    iconBg: 'bg-primary-50',
   },
   {
     icon: Clock,
@@ -150,8 +150,8 @@ export default function EarningsPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900">Earnings</h1>
-        <Button variant="outline" className="rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50">
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Earnings</h1>
+        <Button variant="outline" className="rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50">
           <Download className="h-4 w-4" />
           Export
         </Button>
@@ -189,12 +189,12 @@ export default function EarningsPage() {
       />
 
       {/* Transactions */}
-      <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-lg font-bold text-gray-900">Transactions</CardTitle>
+            <CardTitle className="text-lg font-bold text-slate-900">Transactions</CardTitle>
             <Select value={filterPeriod} onValueChange={setFilterPeriod}>
-              <SelectTrigger className="w-[140px] rounded-xl border border-gray-200 px-3 py-2 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light">
+              <SelectTrigger className="w-[140px] rounded-xl border border-slate-200 px-3 py-2 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -208,25 +208,25 @@ export default function EarningsPage() {
         <CardContent>
           <Table>
             <TableHeader>
-              <TableRow className="border-b border-gray-100">
-                <TableHead className="text-xs font-bold uppercase tracking-widest text-gray-400">Description</TableHead>
-                <TableHead className="text-xs font-bold uppercase tracking-widest text-gray-400">Date</TableHead>
-                <TableHead className="text-xs font-bold uppercase tracking-widest text-gray-400">Status</TableHead>
-                <TableHead className="text-right text-xs font-bold uppercase tracking-widest text-gray-400">Amount</TableHead>
+              <TableRow className="border-b border-slate-100">
+                <TableHead className="text-xs font-bold uppercase tracking-widest text-slate-400">Description</TableHead>
+                <TableHead className="text-xs font-bold uppercase tracking-widest text-slate-400">Date</TableHead>
+                <TableHead className="text-xs font-bold uppercase tracking-widest text-slate-400">Status</TableHead>
+                <TableHead className="text-right text-xs font-bold uppercase tracking-widest text-slate-400">Amount</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {transactions.map((tx) => (
-                <TableRow key={tx.id} className="border-b border-gray-100 last:border-0">
+                <TableRow key={tx.id} className="border-b border-slate-100 last:border-0">
                   <TableCell className="py-4">
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-sm font-medium text-slate-900">
                       {tx.description}
                     </p>
                     {tx.client && (
-                      <p className="text-xs text-gray-500">{tx.client}</p>
+                      <p className="text-xs text-slate-500">{tx.client}</p>
                     )}
                   </TableCell>
-                  <TableCell className="py-4 text-sm text-gray-500">
+                  <TableCell className="py-4 text-sm text-slate-500">
                     {new Date(tx.date).toLocaleDateString('en-CA', {
                       month: 'short',
                       day: 'numeric',
@@ -236,7 +236,7 @@ export default function EarningsPage() {
                     <Badge
                       className={`rounded-full px-2.5 py-0.5 text-xs font-medium border-transparent ${
                         tx.status === 'completed'
-                          ? 'bg-green-100 text-green-700'
+                          ? 'bg-reno-green-100 text-reno-green-700'
                           : 'bg-amber-100 text-amber-700'
                       }`}
                     >
@@ -247,8 +247,8 @@ export default function EarningsPage() {
                     <span
                       className={`flex items-center justify-end gap-1 text-sm font-semibold ${
                         tx.type === 'income'
-                          ? 'text-green-600'
-                          : 'text-gray-900'
+                          ? 'text-reno-green-600'
+                          : 'text-slate-900'
                       }`}
                     >
                       {tx.type === 'income' ? (
@@ -267,28 +267,28 @@ export default function EarningsPage() {
       </Card>
 
       {/* Payout Settings */}
-      <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardHeader>
-          <CardTitle className="text-lg font-bold text-gray-900">
+          <CardTitle className="text-lg font-bold text-slate-900">
             Payout Settings
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center justify-between rounded-xl border border-gray-200 p-4">
+          <div className="flex items-center justify-between rounded-xl border border-slate-200 p-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-100">
-                <CreditCard className="h-5 w-5 text-green-600" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-reno-green-100">
+                <CreditCard className="h-5 w-5 text-reno-green-600" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-900">
+                <p className="text-sm font-semibold text-slate-900">
                   Bank Account ending in 4567
                 </p>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-slate-500">
                   Weekly payouts every Friday
                 </p>
               </div>
             </div>
-            <Button variant="outline" className="rounded-xl border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50">
+            <Button variant="outline" className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50">
               Update
             </Button>
           </div>

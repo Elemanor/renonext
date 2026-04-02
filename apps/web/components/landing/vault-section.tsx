@@ -102,10 +102,10 @@ export function VaultSection() {
       icon: Shield,
       title: 'Bank-Level Security',
       description: 'FDIC-insured escrow accounts',
-      color: 'from-emerald-500/10 to-emerald-600/20',
-      hoverColor: 'group-hover:from-emerald-500/20 group-hover:to-emerald-600/30',
-      iconColor: 'text-emerald-600',
-      iconBg: 'bg-emerald-50',
+      color: 'from-reno-green-500/10 to-reno-green-600/20',
+      hoverColor: 'group-hover:from-reno-green-500/20 group-hover:to-reno-green-600/30',
+      iconColor: 'text-reno-green-600',
+      iconBg: 'bg-reno-green-50',
     },
     {
       icon: MapPin,
@@ -187,7 +187,7 @@ export function VaultSection() {
             <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl text-reno-dark mb-6">
               Your Money, Secured
             </h2>
-            <p className="text-lg lg:text-xl text-gray-600">
+            <p className="text-lg lg:text-xl text-slate-600">
               Bank-held escrow accounts release payments only when work is verified.
               No more trust issues. No more disputes.
             </p>
@@ -389,9 +389,9 @@ export function VaultSection() {
 
           {/* Interactive Vault Card */}
           <div className="max-w-2xl mx-auto mb-16">
-            <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+            <div className="relative bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
               {/* Vault header */}
-              <div className="relative bg-gradient-to-br from-reno-dark via-reno-dark to-gray-800 px-8 py-10">
+              <div className="relative bg-gradient-to-br from-reno-dark via-reno-dark to-slate-800 px-8 py-10">
                 <div className="absolute inset-0 opacity-10">
                   <div
                     style={{
@@ -412,7 +412,7 @@ export function VaultSection() {
                         <Lock className="w-6 h-6 text-reno-green-light" />
                       </div>
                       <div>
-                        <div className="text-gray-400 text-sm">Escrow Balance</div>
+                        <div className="text-slate-400 text-sm">Escrow Balance</div>
                         <div className="text-white/60 text-xs">Bank-held · 58% secured</div>
                       </div>
                     </div>
@@ -460,7 +460,7 @@ export function VaultSection() {
                   return (
                     <div
                       key={milestone.title}
-                      className={`flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50/50 transition-all hover:bg-gray-50 hover:border-gray-200 ${
+                      className={`flex items-center justify-between p-4 rounded-lg border border-slate-100 bg-slate-50/50 transition-all hover:bg-slate-50 hover:border-slate-200 ${
                         isVisible ? `slide-in-${index + 1}` : 'opacity-0'
                       }`}
                     >
@@ -468,27 +468,27 @@ export function VaultSection() {
                         <div
                           className={`w-10 h-10 rounded-full flex items-center justify-center ${
                             milestone.status === 'approved'
-                              ? 'bg-emerald-100'
+                              ? 'bg-reno-green-100'
                               : milestone.status === 'review'
                               ? 'bg-amber-100'
-                              : 'bg-gray-100'
+                              : 'bg-slate-100'
                           }`}
                         >
                           <Icon
                             className={`w-5 h-5 ${
                               milestone.status === 'approved'
-                                ? 'text-emerald-600'
+                                ? 'text-reno-green-600'
                                 : milestone.status === 'review'
                                 ? 'text-amber-600'
-                                : 'text-gray-400'
+                                : 'text-slate-400'
                             }`}
                           />
                         </div>
                         <div>
-                          <div className="font-medium text-gray-900">
+                          <div className="font-medium text-slate-900">
                             {milestone.title}
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-sm text-slate-500">
                             ${milestone.amount.toLocaleString()}
                           </div>
                         </div>
@@ -498,10 +498,10 @@ export function VaultSection() {
                         <div
                           className={`px-3 py-1 rounded-full text-sm font-medium ${
                             milestone.status === 'approved'
-                              ? 'bg-emerald-100 text-emerald-700'
+                              ? 'bg-reno-green-100 text-reno-green-700'
                               : milestone.status === 'review'
                               ? 'bg-amber-100 text-amber-700'
-                              : 'bg-gray-100 text-gray-500'
+                              : 'bg-slate-100 text-slate-500'
                           }`}
                         >
                           {milestone.status === 'approved'
@@ -543,7 +543,7 @@ export function VaultSection() {
               return (
                 <div
                   key={indicator.title}
-                  className={`group relative bg-white rounded-xl p-6 border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                  className={`group relative bg-white rounded-xl p-6 border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
                     isVisible
                       ? `slide-in-${index + 2}`
                       : 'opacity-0'
@@ -558,10 +558,10 @@ export function VaultSection() {
                     >
                       <Icon className={`w-6 h-6 ${indicator.iconColor}`} />
                     </div>
-                    <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                    <h3 className="font-semibold text-lg text-slate-900 mb-2">
                       {indicator.title}
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-slate-600 text-sm">
                       {indicator.description}
                     </p>
                   </div>

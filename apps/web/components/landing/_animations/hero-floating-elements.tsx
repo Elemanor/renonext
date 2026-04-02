@@ -83,8 +83,8 @@ export function HeroFloatingElements({ siteThumb }: HeroFloatingElementsProps) {
         className="absolute -right-6 top-6 z-20 hidden lg:block"
       >
         <div className={`flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 ${glass}`}>
-          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 ring-1 ring-emerald-500/20">
-            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-reno-green-500/15 ring-1 ring-emerald-500/20">
+            <CheckCircle2 className="h-3.5 w-3.5 text-reno-green-400" />
           </div>
           <div>
             <p className="text-[11px] font-semibold text-white">Inspection Passed</p>
@@ -102,8 +102,8 @@ export function HeroFloatingElements({ siteThumb }: HeroFloatingElementsProps) {
         className="absolute -left-5 bottom-28 z-20 hidden lg:block"
       >
         <div className={`flex items-center gap-2 rounded-xl px-3 py-2 ${glass}`}>
-          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-blue-500/15 ring-1 ring-blue-500/20">
-            <MapPin className="h-3 w-3 text-blue-400" />
+          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-primary-500/15 ring-1 ring-primary-500/20">
+            <MapPin className="h-3 w-3 text-primary-400" />
           </div>
           <div>
             <p className="text-[10px] font-semibold text-white">GPS Verified</p>
@@ -149,7 +149,7 @@ export function HeroFloatingElements({ siteThumb }: HeroFloatingElementsProps) {
               </defs>
             </svg>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[9px] font-extrabold tabular-nums text-emerald-400">94</span>
+              <span className="text-[9px] font-extrabold tabular-nums text-reno-green-400">94</span>
             </div>
           </div>
           <div>
@@ -200,8 +200,8 @@ export function HeroFloatingElements({ siteThumb }: HeroFloatingElementsProps) {
         className="absolute -top-3 left-1/2 z-20 hidden -translate-x-1/2 lg:block"
       >
         <div className={`flex items-center gap-2 rounded-xl px-3.5 py-2 ${glass}`}>
-          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-violet-500/15 ring-1 ring-violet-500/20">
-            <Sparkles className="h-3 w-3 text-violet-400" />
+          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-reno-purple-500/15 ring-1 ring-violet-500/20">
+            <Sparkles className="h-3 w-3 text-reno-purple-400" />
           </div>
           <div>
             <p className="text-[10px] font-semibold text-white">AI Estimate Ready</p>

@@ -107,7 +107,7 @@ export function HeroCustomerMobile() {
           <div className="relative mx-auto" style={{ width: phoneWidth, perspective: '1200px' }}>
             {/* Pulsing ambient glow behind phone */}
             <m.div
-              className="absolute -inset-8 z-0 rounded-[4rem] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-500/[0.12] via-blue-500/[0.08] to-transparent blur-3xl"
+              className="absolute -inset-8 z-0 rounded-[4rem] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-reno-green-500/[0.12] via-primary-500/[0.08] to-transparent blur-3xl"
               style={{ opacity: glowOp }}
             />
 

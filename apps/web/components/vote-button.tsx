@@ -65,8 +65,8 @@ export function VoteButton({
         className={cn(
           'rounded-md p-1 transition-all duration-150',
           vote === 'up'
-            ? 'bg-orange-100 text-orange-600'
-            : 'text-gray-400 hover:bg-gray-100 hover:text-gray-600'
+            ? 'bg-reno-amber-100 text-reno-amber-600'
+            : 'text-slate-400 hover:bg-slate-100 hover:text-slate-600'
         )}
       >
         <ArrowBigUp
@@ -77,9 +77,9 @@ export function VoteButton({
       <span
         className={cn(
           'min-w-[2ch] text-center text-sm font-bold tabular-nums',
-          vote === 'up' && 'text-orange-600',
-          vote === 'down' && 'text-blue-600',
-          !vote && 'text-gray-700'
+          vote === 'up' && 'text-reno-amber-600',
+          vote === 'down' && 'text-primary-600',
+          !vote && 'text-slate-700'
         )}
       >
         {netScore}
@@ -91,8 +91,8 @@ export function VoteButton({
         className={cn(
           'rounded-md p-1 transition-all duration-150',
           vote === 'down'
-            ? 'bg-blue-100 text-blue-600'
-            : 'text-gray-400 hover:bg-gray-100 hover:text-gray-600'
+            ? 'bg-primary-100 text-primary-600'
+            : 'text-slate-400 hover:bg-slate-100 hover:text-slate-600'
         )}
       >
         <ArrowBigDown

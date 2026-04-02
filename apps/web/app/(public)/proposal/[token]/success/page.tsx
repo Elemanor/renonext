@@ -28,8 +28,8 @@ export default async function SuccessPage({
 
   return (
     <div className="mx-auto max-w-lg px-4 py-16 text-center">
-      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100">
-        <CheckCircle className="h-10 w-10 text-emerald-600" />
+      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-reno-green-100">
+        <CheckCircle className="h-10 w-10 text-reno-green-600" />
       </div>
 
       <h1 className="mt-6 text-2xl font-bold text-foreground">
@@ -50,7 +50,7 @@ export default async function SuccessPage({
           </h2>
           <ul className="mt-4 space-y-4">
             <li className="flex gap-3">
-              <FileText className="mt-0.5 h-5 w-5 shrink-0 text-blue-500" />
+              <FileText className="mt-0.5 h-5 w-5 shrink-0 text-primary-500" />
               <div>
                 <p className="text-sm font-medium text-foreground">
                   Contract finalized
@@ -72,7 +72,7 @@ export default async function SuccessPage({
               </div>
             </li>
             <li className="flex gap-3">
-              <CreditCard className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+              <CreditCard className="mt-0.5 h-5 w-5 shrink-0 text-reno-green-500" />
               <div>
                 <p className="text-sm font-medium text-foreground">
                   Milestone payments

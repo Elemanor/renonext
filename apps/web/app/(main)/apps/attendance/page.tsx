@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: 'SiteSafe — GPS Attendance App | RenoNext',
   description:
     'GPS-verified construction attendance with automated timesheets. Clock in with location proof, track crew presence, and export payroll-ready data.',
+  alternates: {
+    canonical: '/apps/attendance',
+  },
 };
 
 export default function AttendancePage() {
@@ -47,7 +50,7 @@ export default function AttendancePage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-500 max-w-xl font-light leading-relaxed mb-10">
+            <p className="text-lg md:text-xl text-slate-500 max-w-xl font-light leading-relaxed mb-10">
               GPS-verified clock-ins, automated timesheets, real-time crew
               boards, and one-click payroll export — the attendance system
               built for construction.
@@ -57,10 +60,10 @@ export default function AttendancePage() {
             <div className="flex flex-wrap gap-5">
               {heroStats.map((stat) => (
                 <div key={stat.label} className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-medium">
+                  <span className="text-[10px] uppercase tracking-widest text-slate-400 mb-1 font-medium">
                     {stat.label}
                   </span>
-                  <div className="bg-gray-100 px-5 py-2.5">
+                  <div className="bg-slate-100 px-5 py-2.5">
                     <span className="font-black text-[#102122] text-lg">
                       {stat.value}
                     </span>
@@ -76,7 +79,7 @@ export default function AttendancePage() {
           SECTION 2 — CREW PRESENCE BOARD
           Dark bg with tablet-style mockup
           ================================================================ */}
-      <section className="bg-[#102122] py-24 overflow-hidden">
+      <section className="bg-reno-dark py-24 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal>
             <div className="text-center mb-14">
@@ -86,7 +89,7 @@ export default function AttendancePage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
                 Who&apos;s On Site Right Now
               </h2>
-              <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-400 mt-4 max-w-2xl mx-auto text-lg">
                 Real-time headcount across every project. See who clocked in,
                 who&apos;s late, and who hasn&apos;t shown up — at a glance.
               </p>
@@ -115,10 +118,10 @@ export default function AttendancePage() {
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className="text-[8px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
+                        <span className="text-[8px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
                           Lakeshore Condos
                         </span>
-                        <span className="material-symbols-outlined text-gray-400 text-lg">
+                        <span className="material-symbols-outlined text-slate-400 text-lg">
                           notifications
                         </span>
                       </div>
@@ -131,20 +134,20 @@ export default function AttendancePage() {
                       </h3>
                       <div className="flex items-center gap-3 mt-1">
                         <div className="flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                          <span className="text-[8px] font-bold text-gray-500">
+                          <span className="w-1.5 h-1.5 rounded-full bg-reno-green-500" />
+                          <span className="text-[8px] font-bold text-slate-500">
                             4 On Site
                           </span>
                         </div>
                         <div className="flex items-center gap-1">
                           <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                          <span className="text-[8px] font-bold text-gray-500">
+                          <span className="text-[8px] font-bold text-slate-500">
                             1 Late
                           </span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
-                          <span className="text-[8px] font-bold text-gray-500">
+                          <span className="w-1.5 h-1.5 rounded-full bg-reno-red-400" />
+                          <span className="text-[8px] font-bold text-slate-500">
                             1 Absent
                           </span>
                         </div>
@@ -169,7 +172,7 @@ export default function AttendancePage() {
                             <p className="text-[10px] font-bold text-[#102122] truncate">
                               {m.name}
                             </p>
-                            <p className="text-[8px] text-gray-500">
+                            <p className="text-[8px] text-slate-500">
                               {m.role}
                             </p>
                           </div>
@@ -177,10 +180,10 @@ export default function AttendancePage() {
                             <span
                               className={`text-[7px] font-bold uppercase px-1.5 py-0.5 rounded-full ${
                                 m.status === 'on-site'
-                                  ? 'bg-emerald-100 text-emerald-700'
+                                  ? 'bg-reno-green-100 text-reno-green-700'
                                   : m.status === 'late'
                                     ? 'bg-amber-100 text-amber-700'
-                                    : 'bg-rose-100 text-rose-700'
+                                    : 'bg-reno-red-100 text-reno-red-700'
                               }`}
                             >
                               {m.status === 'on-site'
@@ -189,7 +192,7 @@ export default function AttendancePage() {
                                   ? 'Late'
                                   : 'Absent'}
                             </span>
-                            <p className="text-[8px] text-gray-400 mt-0.5">
+                            <p className="text-[8px] text-slate-400 mt-0.5">
                               {m.time}
                             </p>
                           </div>
@@ -206,7 +209,7 @@ export default function AttendancePage() {
                   <h3 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-3">
                     One screen. Every crew member.
                   </h3>
-                  <p className="text-gray-400 leading-relaxed max-w-lg">
+                  <p className="text-slate-400 leading-relaxed max-w-lg">
                     Foremen and superintendents see the full picture — who
                     clocked in, who&apos;s running late, and who hasn&apos;t
                     shown up. Filter by site or view all projects at once.
@@ -240,7 +243,7 @@ export default function AttendancePage() {
                         <h4 className="text-white font-bold text-sm mb-0.5">
                           {item.label}
                         </h4>
-                        <p className="text-gray-500 text-sm">{item.desc}</p>
+                        <p className="text-slate-500 text-sm">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -265,7 +268,7 @@ export default function AttendancePage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
                 Five Modules, Zero Paper
               </h2>
-              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
                 Every module is designed for field conditions — large touch
                 targets, offline reliability, and workflows that finish in
                 seconds.
@@ -276,9 +279,9 @@ export default function AttendancePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {attendanceModules.map((mod, i) => (
               <ScrollReveal key={mod.id} delay={i * 80}>
-                <div className="bg-[#f6f8f8] p-8 rounded-xl border border-gray-100 h-full">
+                <div className="bg-[#f6f8f8] p-8 rounded-xl border border-slate-100 h-full">
                   <div className="flex items-start gap-4 mb-5">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-gray-100 flex-shrink-0">
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-slate-100 flex-shrink-0">
                       <span className="material-symbols-outlined text-primary text-xl">
                         {mod.icon}
                       </span>
@@ -292,7 +295,7 @@ export default function AttendancePage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-5">
+                  <p className="text-slate-500 text-sm leading-relaxed mb-5">
                     {mod.description}
                   </p>
                   <ul className="space-y-2">
@@ -307,7 +310,7 @@ export default function AttendancePage() {
                         >
                           check_circle
                         </span>
-                        <span className="text-gray-600">{feat}</span>
+                        <span className="text-slate-600">{feat}</span>
                       </li>
                     ))}
                   </ul>
@@ -332,7 +335,7 @@ export default function AttendancePage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
                 Clock In + Timesheet
               </h2>
-              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
                 One tap to clock in with GPS proof. One screen to review
                 and approve your weekly hours.
               </p>
@@ -363,7 +366,7 @@ export default function AttendancePage() {
                           SiteSafe
                         </span>
                       </div>
-                      <span className="material-symbols-outlined text-gray-400 text-lg">
+                      <span className="material-symbols-outlined text-slate-400 text-lg">
                         notifications
                       </span>
                     </div>
@@ -373,13 +376,13 @@ export default function AttendancePage() {
                       <h3 className="text-xl font-extrabold text-primary tracking-tight">
                         Clock In
                       </h3>
-                      <p className="text-[9px] text-gray-500">
+                      <p className="text-[9px] text-slate-500">
                         Verify your location to start your shift
                       </p>
                     </div>
 
                     {/* Map placeholder */}
-                    <div className="mx-4 h-32 rounded-xl overflow-hidden relative bg-gradient-to-br from-gray-300 via-gray-200 to-gray-300 mb-3">
+                    <div className="mx-4 h-32 rounded-xl overflow-hidden relative bg-gradient-to-br from-slate-300 via-slate-200 to-slate-300 mb-3">
                       <div className="absolute inset-0 bg-primary/5" />
                       {/* Geofence ring */}
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -395,7 +398,7 @@ export default function AttendancePage() {
                             Lakeshore Condos — Phase 2
                           </p>
                         </div>
-                        <span className="text-[7px] font-bold bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded-full">
+                        <span className="text-[7px] font-bold bg-reno-green-100 text-reno-green-700 px-1.5 py-0.5 rounded-full">
                           Inside
                         </span>
                       </div>
@@ -410,7 +413,7 @@ export default function AttendancePage() {
                           </span>
                         </div>
                         <div>
-                          <p className="text-[8px] text-gray-500">
+                          <p className="text-[8px] text-slate-500">
                             GPS Accuracy
                           </p>
                           <p className="text-[10px] font-bold text-[#102122]">
@@ -425,7 +428,7 @@ export default function AttendancePage() {
                           </span>
                         </div>
                         <div>
-                          <p className="text-[8px] text-gray-500">
+                          <p className="text-[8px] text-slate-500">
                             Current Time
                           </p>
                           <p className="text-[10px] font-bold text-[#102122]">
@@ -471,7 +474,7 @@ export default function AttendancePage() {
                     </div>
 
                     {/* Bottom nav */}
-                    <div className="mt-auto flex justify-around items-center px-2 py-2.5 border-t border-gray-100">
+                    <div className="mt-auto flex justify-around items-center px-2 py-2.5 border-t border-slate-100">
                       {[
                         { icon: 'dashboard', label: 'Home', active: false },
                         { icon: 'location_on', label: 'Clock In', active: true },
@@ -488,7 +491,7 @@ export default function AttendancePage() {
                         >
                           <span
                             className={`material-symbols-outlined text-sm ${
-                              tab.active ? 'text-primary' : 'text-gray-400'
+                              tab.active ? 'text-primary' : 'text-slate-400'
                             }`}
                             style={
                               tab.active
@@ -500,7 +503,7 @@ export default function AttendancePage() {
                           </span>
                           <span
                             className={`text-[7px] font-medium ${
-                              tab.active ? 'text-primary' : 'text-gray-400'
+                              tab.active ? 'text-primary' : 'text-slate-400'
                             }`}
                           >
                             {tab.label}
@@ -536,7 +539,7 @@ export default function AttendancePage() {
                           SiteSafe
                         </span>
                       </div>
-                      <span className="material-symbols-outlined text-gray-400 text-lg">
+                      <span className="material-symbols-outlined text-slate-400 text-lg">
                         notifications
                       </span>
                     </div>
@@ -546,7 +549,7 @@ export default function AttendancePage() {
                       <h3 className="text-xl font-extrabold text-primary tracking-tight">
                         Weekly Timesheet
                       </h3>
-                      <p className="text-[9px] text-gray-500">
+                      <p className="text-[9px] text-slate-500">
                         Week of March 16 — 20, 2026
                       </p>
                     </div>
@@ -554,13 +557,13 @@ export default function AttendancePage() {
                     {/* Summary stats */}
                     <div className="mx-4 grid grid-cols-2 gap-2 mb-3">
                       <div className="bg-white rounded-xl p-3 shadow-sm">
-                        <span className="text-[7px] uppercase tracking-widest text-gray-500 font-bold">
+                        <span className="text-[7px] uppercase tracking-widest text-slate-500 font-bold">
                           Total Hours
                         </span>
                         <div className="text-lg font-bold text-primary mt-0.5">
                           27.0
                         </div>
-                        <div className="flex items-center gap-0.5 text-gray-500 text-[8px] font-medium mt-1">
+                        <div className="flex items-center gap-0.5 text-slate-500 text-[8px] font-medium mt-1">
                           <span className="material-symbols-outlined text-[10px]">
                             calendar_today
                           </span>
@@ -568,7 +571,7 @@ export default function AttendancePage() {
                         </div>
                       </div>
                       <div className="bg-white rounded-xl p-3 shadow-sm">
-                        <span className="text-[7px] uppercase tracking-widest text-gray-500 font-bold">
+                        <span className="text-[7px] uppercase tracking-widest text-slate-500 font-bold">
                           Overtime
                         </span>
                         <div className="text-lg font-bold text-amber-600 mt-0.5">
@@ -585,7 +588,7 @@ export default function AttendancePage() {
 
                     {/* Daily entries */}
                     <div className="mx-4 space-y-2 mb-3">
-                      <span className="text-[7px] font-bold text-gray-500 uppercase tracking-widest">
+                      <span className="text-[7px] font-bold text-slate-500 uppercase tracking-widest">
                         Daily Entries
                       </span>
                       {timesheetEntries.map((entry) => (
@@ -595,7 +598,7 @@ export default function AttendancePage() {
                         >
                           <div className="flex justify-between items-start mb-1.5">
                             <div>
-                              <span className="text-[7px] font-bold text-gray-500 uppercase tracking-widest">
+                              <span className="text-[7px] font-bold text-slate-500 uppercase tracking-widest">
                                 {entry.date}
                               </span>
                               <p className="text-[10px] font-bold text-primary">
@@ -612,10 +615,10 @@ export default function AttendancePage() {
                               </span>
                             )}
                           </div>
-                          <div className="flex justify-between items-center pt-1.5 border-t border-gray-100">
+                          <div className="flex justify-between items-center pt-1.5 border-t border-slate-100">
                             <div className="flex gap-3">
                               <div>
-                                <span className="text-[7px] text-gray-400 uppercase">
+                                <span className="text-[7px] text-slate-400 uppercase">
                                   In
                                 </span>
                                 <p className="text-[9px] font-semibold text-[#102122]">
@@ -623,7 +626,7 @@ export default function AttendancePage() {
                                 </p>
                               </div>
                               <div>
-                                <span className="text-[7px] text-gray-400 uppercase">
+                                <span className="text-[7px] text-slate-400 uppercase">
                                   Out
                                 </span>
                                 <p className="text-[9px] font-semibold text-[#102122]">
@@ -632,7 +635,7 @@ export default function AttendancePage() {
                               </div>
                             </div>
                             <div className="text-right">
-                              <span className="text-[7px] text-gray-400 uppercase">
+                              <span className="text-[7px] text-slate-400 uppercase">
                                 Hours
                               </span>
                               <p className="text-sm font-bold text-primary">
@@ -660,7 +663,7 @@ export default function AttendancePage() {
                     </div>
 
                     {/* Bottom nav */}
-                    <div className="mt-auto flex justify-around items-center px-2 py-2.5 border-t border-gray-100">
+                    <div className="mt-auto flex justify-around items-center px-2 py-2.5 border-t border-slate-100">
                       {[
                         { icon: 'dashboard', label: 'Home', active: false },
                         { icon: 'location_on', label: 'Clock In', active: false },
@@ -677,7 +680,7 @@ export default function AttendancePage() {
                         >
                           <span
                             className={`material-symbols-outlined text-sm ${
-                              tab.active ? 'text-primary' : 'text-gray-400'
+                              tab.active ? 'text-primary' : 'text-slate-400'
                             }`}
                             style={
                               tab.active
@@ -689,7 +692,7 @@ export default function AttendancePage() {
                           </span>
                           <span
                             className={`text-[7px] font-medium ${
-                              tab.active ? 'text-primary' : 'text-gray-400'
+                              tab.active ? 'text-primary' : 'text-slate-400'
                             }`}
                           >
                             {tab.label}
@@ -723,7 +726,7 @@ export default function AttendancePage() {
                   <br />
                   Straight to Payroll
                 </h2>
-                <p className="text-gray-500 leading-relaxed max-w-lg">
+                <p className="text-slate-500 leading-relaxed max-w-lg">
                   Once foremen approve the weekly timesheets, export a
                   payroll-ready CSV grouped by contract, cost code, or worker.
                   No re-keying. No disputes. No paper.
@@ -739,7 +742,7 @@ export default function AttendancePage() {
                       <span className="material-symbols-outlined text-primary text-lg">
                         {item.icon}
                       </span>
-                      <span className="text-sm text-gray-600 font-medium">
+                      <span className="text-sm text-slate-600 font-medium">
                         {item.text}
                       </span>
                     </div>
@@ -756,8 +759,8 @@ export default function AttendancePage() {
                   <div className="flex items-center gap-2 px-4 py-3 bg-zinc-800">
                     <div className="flex gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-reno-amber-500/60" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-reno-green-500/60" />
                     </div>
                     <div className="flex-1 bg-zinc-700 rounded-md px-3 py-1 text-[10px] text-zinc-400 text-center">
                       app.renonext.com/reports/timesheets
@@ -772,7 +775,7 @@ export default function AttendancePage() {
                         <h4 className="text-sm font-extrabold text-[#102122]">
                           Timesheet Report
                         </h4>
-                        <p className="text-[9px] text-gray-500">
+                        <p className="text-[9px] text-slate-500">
                           Lakeshore Condos — Week of Mar 16, 2026
                         </p>
                       </div>
@@ -783,7 +786,7 @@ export default function AttendancePage() {
                           </span>
                           CSV
                         </div>
-                        <div className="bg-gray-100 text-gray-500 text-[8px] font-bold px-2 py-1 rounded-md flex items-center gap-1">
+                        <div className="bg-slate-100 text-slate-500 text-[8px] font-bold px-2 py-1 rounded-md flex items-center gap-1">
                           <span className="material-symbols-outlined text-[10px]">
                             picture_as_pdf
                           </span>
@@ -804,7 +807,7 @@ export default function AttendancePage() {
                           key={s.label}
                           className="bg-[#f6f8f8] rounded-lg p-2"
                         >
-                          <span className="text-[7px] uppercase tracking-widest text-gray-400 font-bold">
+                          <span className="text-[7px] uppercase tracking-widest text-slate-400 font-bold">
                             {s.label}
                           </span>
                           <p className="text-sm font-bold text-[#102122]">
@@ -815,8 +818,8 @@ export default function AttendancePage() {
                     </div>
 
                     {/* Table */}
-                    <div className="border border-gray-100 rounded-lg overflow-hidden">
-                      <div className="grid grid-cols-5 bg-gray-50 px-3 py-2 text-[7px] font-bold text-gray-500 uppercase tracking-widest">
+                    <div className="border border-slate-100 rounded-lg overflow-hidden">
+                      <div className="grid grid-cols-5 bg-slate-50 px-3 py-2 text-[7px] font-bold text-slate-500 uppercase tracking-widest">
                         <span>Worker</span>
                         <span>Cost Code</span>
                         <span className="text-right">Reg</span>
@@ -832,21 +835,21 @@ export default function AttendancePage() {
                         <div
                           key={row.name}
                           className={`grid grid-cols-5 px-3 py-2 text-[9px] ${
-                            idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
+                            idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'
                           }`}
                         >
                           <span className="font-semibold text-[#102122]">
                             {row.name}
                           </span>
-                          <span className="text-gray-500">{row.code}</span>
-                          <span className="text-right text-gray-600">
+                          <span className="text-slate-500">{row.code}</span>
+                          <span className="text-right text-slate-600">
                             {row.reg}
                           </span>
                           <span
                             className={`text-right ${
                               row.ot !== '0.0'
                                 ? 'text-amber-600 font-semibold'
-                                : 'text-gray-400'
+                                : 'text-slate-400'
                             }`}
                           >
                             {row.ot}
@@ -859,14 +862,14 @@ export default function AttendancePage() {
                     </div>
 
                     {/* Approved badge */}
-                    <div className="flex items-center gap-2 mt-4 pt-3 border-t border-gray-100">
+                    <div className="flex items-center gap-2 mt-4 pt-3 border-t border-slate-100">
                       <span
-                        className="material-symbols-outlined text-emerald-600 text-lg"
+                        className="material-symbols-outlined text-reno-green-600 text-lg"
                         style={{ fontVariationSettings: "'FILL' 1" }}
                       >
                         verified
                       </span>
-                      <span className="text-[9px] font-bold text-emerald-700">
+                      <span className="text-[9px] font-bold text-reno-green-700">
                         Approved by Foreman — Ready for payroll export
                       </span>
                     </div>
@@ -882,7 +885,7 @@ export default function AttendancePage() {
           SECTION 6 — CTA
           Dark CTA with trust badges
           ================================================================ */}
-      <section className="bg-[#102122] py-24">
+      <section className="bg-reno-dark py-24">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <ScrollReveal>
             <span
@@ -898,7 +901,7 @@ export default function AttendancePage() {
               Disputes
             </h2>
 
-            <p className="text-gray-400 mt-6 max-w-xl mx-auto text-lg">
+            <p className="text-slate-400 mt-6 max-w-xl mx-auto text-lg">
               GPS clock-in. Digital timesheets. Real-time crew boards. Payroll
               export. One app replaces the clipboard, the spreadsheet, and the
               argument.

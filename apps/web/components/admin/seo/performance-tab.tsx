@@ -82,16 +82,16 @@ export function PerformanceTab() {
   }
 
   function scoreColor(score: number): string {
-    if (score >= 90) return 'text-emerald-700 bg-emerald-50';
+    if (score >= 90) return 'text-reno-green-700 bg-reno-green-50';
     if (score >= 50) return 'text-amber-700 bg-amber-50';
     return 'text-red-700 bg-red-50';
   }
 
   return (
     <div className="space-y-4">
-      <Card className="border-gray-200/60 shadow-sm">
+      <Card className="border-slate-200/60 shadow-sm">
         <CardContent className="p-5">
-          <h3 className="font-semibold text-gray-900 mb-3">Trigger PageSpeed Scan</h3>
+          <h3 className="font-semibold text-slate-900 mb-3">Trigger PageSpeed Scan</h3>
           <div className="flex flex-col sm:flex-row gap-3">
             <Input
               placeholder="https://renonext.com/services/underpinning"
@@ -100,7 +100,7 @@ export function PerformanceTab() {
               className="flex-1"
             />
             <Select value={strategy} onValueChange={(v) => setStrategy(v as 'mobile' | 'desktop')}>
-              <SelectTrigger className="w-32 h-9 rounded-lg border-gray-200">
+              <SelectTrigger className="w-32 h-9 rounded-lg border-slate-200">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -130,10 +130,10 @@ export function PerformanceTab() {
         </CardContent>
       </Card>
 
-      <Card className="border-gray-200/60 shadow-sm overflow-hidden">
+      <Card className="border-slate-200/60 shadow-sm overflow-hidden">
         <CardContent className="p-0">
-          <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100">
-            <h3 className="font-semibold text-gray-900">Cached Scores</h3>
+          <div className="flex items-center justify-between px-5 py-3 border-b border-slate-100">
+            <h3 className="font-semibold text-slate-900">Cached Scores</h3>
             <Button variant="ghost" size="sm" onClick={loadScores} className="h-7 text-xs rounded-lg">
               <RefreshCw className={`h-3 w-3 mr-1 ${loading ? 'animate-spin' : ''}`} />
               Refresh
@@ -141,16 +141,16 @@ export function PerformanceTab() {
           </div>
           {loading ? (
             <div className="flex items-center justify-center py-10">
-              <Loader2 className="h-6 w-6 animate-spin text-gray-400" />
+              <Loader2 className="h-6 w-6 animate-spin text-slate-400" />
             </div>
           ) : scores.length === 0 ? (
-            <div className="text-center py-10 text-gray-500 text-sm">
+            <div className="text-center py-10 text-slate-500 text-sm">
               No scores yet. Trigger a scan above.
             </div>
           ) : (
             <Table>
               <TableHeader>
-                <TableRow className="bg-gray-50/60">
+                <TableRow className="bg-slate-50/60">
                   <TableHead>URL</TableHead>
                   <TableHead className="text-center">Strategy</TableHead>
                   <TableHead className="text-center">Performance</TableHead>
@@ -165,10 +165,10 @@ export function PerformanceTab() {
               <TableBody>
                 {scores.map((score) => (
                   <TableRow key={score.id}>
-                    <TableCell className="font-mono text-xs text-gray-600 max-w-[200px] truncate">
+                    <TableCell className="font-mono text-xs text-slate-600 max-w-[200px] truncate">
                       {score.url.replace('https://renonext.com', '') || '/'}
                     </TableCell>
-                    <TableCell className="text-center text-xs text-gray-500">{score.strategy}</TableCell>
+                    <TableCell className="text-center text-xs text-slate-500">{score.strategy}</TableCell>
                     <TableCell className="text-center">
                       <span className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${scoreColor(score.performance_score)}`}>
                         {score.performance_score}
@@ -184,16 +184,16 @@ export function PerformanceTab() {
                         {score.accessibility_score}
                       </span>
                     </TableCell>
-                    <TableCell className="text-center hidden lg:table-cell text-xs text-gray-500">
+                    <TableCell className="text-center hidden lg:table-cell text-xs text-slate-500">
                       {score.fcp_ms}ms
                     </TableCell>
-                    <TableCell className="text-center hidden lg:table-cell text-xs text-gray-500">
+                    <TableCell className="text-center hidden lg:table-cell text-xs text-slate-500">
                       {score.lcp_ms}ms
                     </TableCell>
-                    <TableCell className="text-center hidden lg:table-cell text-xs text-gray-500">
+                    <TableCell className="text-center hidden lg:table-cell text-xs text-slate-500">
                       {score.cls?.toFixed(3)}
                     </TableCell>
-                    <TableCell className="hidden sm:table-cell text-xs text-gray-500">
+                    <TableCell className="hidden sm:table-cell text-xs text-slate-500">
                       {new Date(score.created_at).toLocaleDateString('en-CA', { month: 'short', day: 'numeric' })}
                     </TableCell>
                   </TableRow>

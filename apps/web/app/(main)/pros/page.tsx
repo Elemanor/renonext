@@ -6,6 +6,9 @@ import { ProsBrowserClient } from './pros-client';
 export const metadata: Metadata = {
   title: 'Browse Verified Pros | RenoNext',
   description: 'Find verified contractors with GPS-tagged proof, real ratings, and escrow protection.',
+  alternates: {
+    canonical: '/pros',
+  },
 };
 
 export default async function BrowseProsPage() {

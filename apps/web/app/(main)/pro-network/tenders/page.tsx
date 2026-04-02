@@ -128,11 +128,11 @@ export default function TendersPage() {
   const getStatusConfig = (status: Tender['status']) => {
     switch (status) {
       case 'open':
-        return { label: 'Open', color: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20' };
+        return { label: 'Open', color: 'bg-reno-green-500/10 text-reno-green-600 border-reno-green-500/20' };
       case 'closing-soon':
         return { label: 'Closing Soon', color: 'bg-amber-500/10 text-amber-600 border-amber-500/20' };
       case 'submitted':
-        return { label: 'Bid Submitted', color: 'bg-blue-500/10 text-blue-600 border-blue-500/20' };
+        return { label: 'Bid Submitted', color: 'bg-primary-500/10 text-primary-600 border-primary-500/20' };
       case 'awarded':
         return { label: 'Awarded', color: 'bg-teal-500/10 text-teal-600 border-teal-500/20' };
     }
@@ -172,8 +172,8 @@ export default function TendersPage() {
                   <p className="text-sm font-medium text-slate-600">Open Invitations</p>
                   <p className="text-3xl font-bold text-slate-900 mt-1">{openInvitations}</p>
                 </div>
-                <div className="p-3 rounded-xl bg-emerald-500/10">
-                  <Target className="h-6 w-6 text-emerald-600" />
+                <div className="p-3 rounded-xl bg-reno-green-500/10">
+                  <Target className="h-6 w-6 text-reno-green-600" />
                 </div>
               </div>
             </CardContent>
@@ -186,8 +186,8 @@ export default function TendersPage() {
                   <p className="text-sm font-medium text-slate-600">Avg Budget</p>
                   <p className="text-3xl font-bold text-slate-900 mt-1">{formatCurrency(avgBudget)}</p>
                 </div>
-                <div className="p-3 rounded-xl bg-blue-500/10">
-                  <DollarSign className="h-6 w-6 text-blue-600" />
+                <div className="p-3 rounded-xl bg-primary-500/10">
+                  <DollarSign className="h-6 w-6 text-primary-600" />
                 </div>
               </div>
             </CardContent>
@@ -348,9 +348,9 @@ export default function TendersPage() {
                       {isSubmitted && tender.submittedBid && (
                         <div className="pt-2 border-t border-slate-200">
                           <div className="flex items-center gap-2">
-                            <CheckCircle2 className="h-5 w-5 text-blue-600" />
+                            <CheckCircle2 className="h-5 w-5 text-primary-600" />
                             <span className="text-sm font-medium text-slate-700">Your Bid:</span>
-                            <span className="text-lg font-bold text-blue-600">
+                            <span className="text-lg font-bold text-primary-600">
                               {formatCurrency(tender.submittedBid)}
                             </span>
                           </div>
@@ -362,7 +362,7 @@ export default function TendersPage() {
                     <div className="flex flex-col items-end gap-2 min-w-[180px]">
                       {isSubmitted ? (
                         <div className="flex flex-col items-end gap-2 w-full">
-                          <Badge className="bg-blue-500/10 text-blue-600 border-blue-500/20 px-4 py-2">
+                          <Badge className="bg-primary-500/10 text-primary-600 border-primary-500/20 px-4 py-2">
                             <CheckCircle2 className="h-4 w-4 mr-2" />
                             Bid Submitted
                           </Badge>

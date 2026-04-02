@@ -27,8 +27,8 @@ export function SocialProof() {
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200/70 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50/60 via-white to-white" />
-        <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-blue-500/5 blur-3xl" />
-        <div className="absolute -right-24 bottom-24 h-72 w-72 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-primary-500/5 blur-3xl" />
+        <div className="absolute -right-24 bottom-24 h-72 w-72 rounded-full bg-reno-purple-500/5 blur-3xl" />
         <div className="absolute inset-0 bg-grid opacity-[0.12] [mask-image:radial-gradient(ellipse_at_center,black_55%,transparent_100%)]" />
       </div>
 
@@ -38,15 +38,15 @@ export function SocialProof() {
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <Badge
               variant="secondary"
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-sm font-medium text-blue-700"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-1.5 text-sm font-medium text-primary-700"
             >
               Testimonials
             </Badge>
 
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
               What Homeowners Say
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-gray-500">
+            <p className="mx-auto mt-4 max-w-xl text-lg text-slate-500">
               Real stories from people who booked a verified pro — and stayed in control.
             </p>
           </div>
@@ -60,9 +60,9 @@ export function SocialProof() {
                   key={index}
                   tabIndex={0}
                   className={[
-                    'group relative overflow-hidden rounded-2xl border border-gray-200 bg-white/70 shadow-sm backdrop-blur transition-all duration-300',
-                    'hover:-translate-y-1 hover:shadow-xl hover:ring-2 hover:ring-gray-900/5',
-                    'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
+                    'group relative overflow-hidden rounded-2xl border border-slate-200 bg-white/70 shadow-sm backdrop-blur transition-all duration-300',
+                    'hover:-translate-y-1 hover:shadow-xl hover:ring-2 hover:ring-slate-900/5',
+                    'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
                     'motion-reduce:hover:translate-y-0',
                   ].join(' ')}
                 >
@@ -86,7 +86,7 @@ export function SocialProof() {
                   <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/40" />
 
                   {/* quote mark */}
-                  <Quote className="pointer-events-none absolute right-7 top-7 h-10 w-10 text-blue-500/10" />
+                  <Quote className="pointer-events-none absolute right-7 top-7 h-10 w-10 text-primary-500/10" />
 
                   <CardContent className="p-8 pt-4">
                     {/* Stars */}
@@ -96,13 +96,13 @@ export function SocialProof() {
                           <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
                         ))}
                       </div>
-                      <span className="text-xs font-medium text-gray-400">{t.rating}.0</span>
+                      <span className="text-xs font-medium text-slate-400">{t.rating}.0</span>
                     </div>
 
                     {/* Job type badge */}
                     <Badge
                       variant="secondary"
-                      className="mb-4 rounded-full border border-blue-200/40 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700"
+                      className="mb-4 rounded-full border border-primary-200/40 bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700"
                     >
                       {t.jobType}
                     </Badge>
@@ -111,7 +111,7 @@ export function SocialProof() {
                     <div className="relative">
                       <p
                         className={[
-                          'text-base leading-relaxed text-gray-600 md:text-[15px]',
+                          'text-base leading-relaxed text-slate-600 md:text-[15px]',
                           'line-clamp-5 md:line-clamp-6',
                           'transition-all duration-300',
                           'group-hover:line-clamp-none group-focus:line-clamp-none',
@@ -121,32 +121,32 @@ export function SocialProof() {
                       </p>
 
                       {/* subtle "read more" hint when clamped */}
-                      <div className="mt-2 text-xs font-semibold text-gray-400 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100">
+                      <div className="mt-2 text-xs font-semibold text-slate-400 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100">
                         Read more
                       </div>
                     </div>
 
                     {/* Author */}
                     <div className="mt-8 flex items-center gap-4">
-                      <Avatar className="h-12 w-12 ring-2 ring-gray-100">
+                      <Avatar className="h-12 w-12 ring-2 ring-slate-100">
                         <AvatarImage src={t.avatar} alt={t.name} />
-                        <AvatarFallback className="bg-gradient-to-br from-blue-500 to-violet-600 text-sm font-bold text-white">
+                        <AvatarFallback className="bg-gradient-to-br from-primary-500 to-reno-purple-600 text-sm font-bold text-white">
                           {t.name.charAt(0)}
                         </AvatarFallback>
                       </Avatar>
 
                       <div className="min-w-0">
                         <div className="flex items-center gap-2">
-                          <p className="truncate font-semibold text-gray-900">{t.name}</p>
+                          <p className="truncate font-semibold text-slate-900">{t.name}</p>
 
                           {t.verified && (
-                            <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
-                              <BadgeCheck className="h-3.5 w-3.5 text-emerald-600" />
+                            <span className="inline-flex items-center gap-1 rounded-full border border-reno-green-200 bg-reno-green-50 px-2 py-0.5 text-[10px] font-semibold text-reno-green-700">
+                              <BadgeCheck className="h-3.5 w-3.5 text-reno-green-600" />
                               Verified
                             </span>
                           )}
                         </div>
-                        <p className="truncate text-sm text-gray-500">{t.role}</p>
+                        <p className="truncate text-sm text-slate-500">{t.role}</p>
                       </div>
                     </div>
                   </CardContent>

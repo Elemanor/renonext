@@ -92,8 +92,8 @@ const statusConfig: Record<
   approved: {
     label: 'Approved',
     icon: CheckCircle,
-    color: 'bg-emerald-100 text-emerald-700 border-emerald-200',
-    gradient: 'from-emerald-400 to-emerald-600',
+    color: 'bg-reno-green-100 text-reno-green-700 border-reno-green-200',
+    gradient: 'from-reno-green-400 to-reno-green-600',
   },
   rejected: {
     label: 'Rejected',
@@ -104,8 +104,8 @@ const statusConfig: Record<
   changes_requested: {
     label: 'Changes Requested',
     icon: AlertCircle,
-    color: 'bg-blue-100 text-blue-700 border-blue-200',
-    gradient: 'from-blue-400 to-blue-600',
+    color: 'bg-primary-100 text-primary-700 border-primary-200',
+    gradient: 'from-primary-400 to-primary-600',
   },
 };
 
@@ -181,7 +181,7 @@ export default function AdminContractorDetailPage() {
     return (
       <div className="flex flex-col items-center justify-center py-24">
         <Loader2 className="h-8 w-8 animate-spin text-reno-green-dark" />
-        <p className="text-sm text-gray-400 mt-3">Loading application...</p>
+        <p className="text-sm text-slate-400 mt-3">Loading application...</p>
       </div>
     );
   }
@@ -191,12 +191,12 @@ export default function AdminContractorDetailPage() {
       <div className="text-center py-24">
         <GradientIcon
           icon={XCircle}
-          gradient="from-gray-300 to-gray-400"
+          gradient="from-slate-300 to-slate-400"
           size="md"
           className="mx-auto mb-4"
         />
-        <p className="text-gray-600 font-medium text-lg">Application not found</p>
-        <p className="text-gray-400 text-sm mt-1">
+        <p className="text-slate-600 font-medium text-lg">Application not found</p>
+        <p className="text-slate-400 text-sm mt-1">
           This application may have been removed or the link is invalid.
         </p>
         <Button asChild variant="outline" className="mt-6 rounded-xl">
@@ -227,18 +227,18 @@ export default function AdminContractorDetailPage() {
     value: string | null | undefined;
     icon?: typeof Building2;
   }) => (
-    <div className="flex items-start gap-3 py-2.5 group/row transition-colors rounded-lg px-2 -mx-2 hover:bg-gray-50">
+    <div className="flex items-start gap-3 py-2.5 group/row transition-colors rounded-lg px-2 -mx-2 hover:bg-slate-50">
       {Icon && (
-        <div className="h-8 w-8 rounded-lg bg-gray-100 flex items-center justify-center shrink-0 group-hover/row:bg-reno-green-light transition-colors">
-          <Icon className="h-4 w-4 text-gray-400 group-hover/row:text-reno-green transition-colors" />
+        <div className="h-8 w-8 rounded-lg bg-slate-100 flex items-center justify-center shrink-0 group-hover/row:bg-reno-green-light transition-colors">
+          <Icon className="h-4 w-4 text-slate-400 group-hover/row:text-reno-green transition-colors" />
         </div>
       )}
       <div className="min-w-0 pt-0.5">
-        <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">
+        <p className="text-xs text-slate-400 font-medium uppercase tracking-wider">
           {label}
         </p>
-        <p className="text-sm font-medium text-gray-900 break-words mt-0.5">
-          {value || <span className="text-gray-300">&mdash;</span>}
+        <p className="text-sm font-medium text-slate-900 break-words mt-0.5">
+          {value || <span className="text-slate-300">&mdash;</span>}
         </p>
       </div>
     </div>
@@ -252,7 +252,7 @@ export default function AdminContractorDetailPage() {
           asChild
           variant="ghost"
           size="sm"
-          className="-ml-2 text-gray-500 hover:text-gray-700 rounded-lg"
+          className="-ml-2 text-slate-500 hover:text-slate-700 rounded-lg"
         >
           <Link href="/admin/contractors">
             <ChevronLeft className="h-4 w-4 mr-1" />
@@ -263,8 +263,8 @@ export default function AdminContractorDetailPage() {
 
       {/* Profile Header */}
       <ScrollReveal delay={0.05}>
-        <Card className="border-gray-200/60 shadow-xl shadow-gray-200/50 overflow-hidden">
-          <div className={`h-1.5 w-full bg-gradient-to-r ${status?.gradient || 'from-gray-400 to-gray-600'}`} />
+        <Card className="border-slate-200/60 shadow-xl shadow-gray-200/50 overflow-hidden">
+          <div className={`h-1.5 w-full bg-gradient-to-r ${status?.gradient || 'from-slate-400 to-slate-600'}`} />
           <CardContent className="p-6 md:p-8">
             <div className="flex flex-col sm:flex-row items-start gap-5">
               {/* Avatar */}
@@ -273,7 +273,7 @@ export default function AdminContractorDetailPage() {
                   {initials}
                 </div>
                 {data.profile?.is_verified && (
-                  <div className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-emerald-500 flex items-center justify-center ring-2 ring-white">
+                  <div className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-reno-green-500 flex items-center justify-center ring-2 ring-white">
                     <CheckCircle className="h-3.5 w-3.5 text-white" />
                   </div>
                 )}
@@ -282,7 +282,7 @@ export default function AdminContractorDetailPage() {
               {/* Name + Meta */}
               <div className="flex-1 min-w-0">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                  <h1 className="text-2xl font-bold text-gray-900 truncate">
+                  <h1 className="text-2xl font-bold text-slate-900 truncate">
                     {data.profile?.full_name || 'Unknown Contractor'}
                   </h1>
                   <Badge
@@ -293,7 +293,7 @@ export default function AdminContractorDetailPage() {
                     {status?.label || data.application_status}
                   </Badge>
                 </div>
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-slate-500">
                   {data.company_name && (
                     <span className="flex items-center gap-1.5">
                       <Building2 className="h-3.5 w-3.5" />
@@ -331,7 +331,7 @@ export default function AdminContractorDetailPage() {
       <div className="grid gap-6 md:grid-cols-2">
         {/* Business Info */}
         <ScrollReveal delay={0.1}>
-          <Card className="border-gray-200/60 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
+          <Card className="border-slate-200/60 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
             <div className="h-1 w-full bg-gradient-to-r from-reno-green to-reno-green-dark opacity-60" />
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-semibold flex items-center gap-3">
@@ -365,11 +365,11 @@ export default function AdminContractorDetailPage() {
               />
               <InfoRow label="Headline" value={data.headline} icon={User} />
               {data.bio && (
-                <div className="pt-3 mt-2 border-t border-gray-100">
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">
+                <div className="pt-3 mt-2 border-t border-slate-100">
+                  <p className="text-xs text-slate-400 font-medium uppercase tracking-wider">
                     Bio
                   </p>
-                  <p className="text-sm text-gray-700 mt-1.5 whitespace-pre-wrap leading-relaxed">
+                  <p className="text-sm text-slate-700 mt-1.5 whitespace-pre-wrap leading-relaxed">
                     {data.bio}
                   </p>
                 </div>
@@ -380,13 +380,13 @@ export default function AdminContractorDetailPage() {
 
         {/* Credentials */}
         <ScrollReveal delay={0.15}>
-          <Card className="border-gray-200/60 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
-            <div className="h-1 w-full bg-gradient-to-r from-violet-400 to-violet-600 opacity-60" />
+          <Card className="border-slate-200/60 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
+            <div className="h-1 w-full bg-gradient-to-r from-reno-purple-400 to-reno-purple-600 opacity-60" />
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-semibold flex items-center gap-3">
                 <GradientIcon
                   icon={Award}
-                  gradient="from-violet-400 to-violet-600"
+                  gradient="from-reno-purple-400 to-reno-purple-600"
                   size="sm"
                 />
                 Credentials
@@ -412,13 +412,13 @@ export default function AdminContractorDetailPage() {
 
         {/* Insurance */}
         <ScrollReveal delay={0.2}>
-          <Card className="border-gray-200/60 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
-            <div className="h-1 w-full bg-gradient-to-r from-emerald-400 to-emerald-600 opacity-60" />
+          <Card className="border-slate-200/60 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
+            <div className="h-1 w-full bg-gradient-to-r from-reno-green-400 to-reno-green-600 opacity-60" />
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-semibold flex items-center gap-3">
                 <GradientIcon
                   icon={Shield}
-                  gradient="from-emerald-400 to-emerald-600"
+                  gradient="from-reno-green-400 to-reno-green-600"
                   size="sm"
                 />
                 Insurance
@@ -446,12 +446,12 @@ export default function AdminContractorDetailPage() {
                 icon={Calendar}
               />
               {data.insurance_certificate_url && (
-                <div className="pt-3 mt-2 border-t border-gray-100">
+                <div className="pt-3 mt-2 border-t border-slate-100">
                   <Button
                     asChild
                     variant="outline"
                     size="sm"
-                    className="rounded-lg border-emerald-200 text-emerald-700 hover:bg-emerald-50"
+                    className="rounded-lg border-reno-green-200 text-reno-green-700 hover:bg-reno-green-50"
                   >
                     <a
                       href={data.insurance_certificate_url}
@@ -470,13 +470,13 @@ export default function AdminContractorDetailPage() {
 
         {/* WSIB */}
         <ScrollReveal delay={0.25}>
-          <Card className="border-gray-200/60 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
-            <div className="h-1 w-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-60" />
+          <Card className="border-slate-200/60 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
+            <div className="h-1 w-full bg-gradient-to-r from-primary-400 to-primary-600 opacity-60" />
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-semibold flex items-center gap-3">
                 <GradientIcon
                   icon={FileCheck}
-                  gradient="from-blue-400 to-blue-600"
+                  gradient="from-primary-400 to-primary-600"
                   size="sm"
                 />
                 WSIB
@@ -490,12 +490,12 @@ export default function AdminContractorDetailPage() {
               />
               <InfoRow label="WSIB Number" value={data.wsib_number} icon={Hash} />
               {data.wsib_certificate_url && (
-                <div className="pt-3 mt-2 border-t border-gray-100">
+                <div className="pt-3 mt-2 border-t border-slate-100">
                   <Button
                     asChild
                     variant="outline"
                     size="sm"
-                    className="rounded-lg border-blue-200 text-blue-700 hover:bg-blue-50"
+                    className="rounded-lg border-primary-200 text-primary-700 hover:bg-primary-50"
                   >
                     <a
                       href={data.wsib_certificate_url}
@@ -515,13 +515,13 @@ export default function AdminContractorDetailPage() {
 
       {/* Portfolio & Rates */}
       <ScrollReveal delay={0.3}>
-        <Card className="border-gray-200/60 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-          <div className="h-1 w-full bg-gradient-to-r from-pink-400 to-rose-600 opacity-60" />
+        <Card className="border-slate-200/60 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+          <div className="h-1 w-full bg-gradient-to-r from-pink-400 to-reno-red-600 opacity-60" />
           <CardHeader className="pb-3">
             <CardTitle className="text-sm font-semibold flex items-center gap-3">
               <GradientIcon
                 icon={Camera}
-                gradient="from-pink-400 to-rose-600"
+                gradient="from-pink-400 to-reno-red-600"
                 size="sm"
               />
               Portfolio & Rates
@@ -530,14 +530,14 @@ export default function AdminContractorDetailPage() {
           <CardContent>
             <div className="grid gap-6 sm:grid-cols-3">
               <div className="flex items-start gap-3">
-                <div className="h-8 w-8 rounded-lg bg-gray-100 flex items-center justify-center shrink-0">
-                  <DollarSign className="h-4 w-4 text-gray-400" />
+                <div className="h-8 w-8 rounded-lg bg-slate-100 flex items-center justify-center shrink-0">
+                  <DollarSign className="h-4 w-4 text-slate-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">
+                  <p className="text-xs text-slate-400 font-medium uppercase tracking-wider">
                     Hourly Rate
                   </p>
-                  <p className="text-sm font-semibold text-gray-900 mt-0.5">
+                  <p className="text-sm font-semibold text-slate-900 mt-0.5">
                     {data.hourly_rate_min || data.hourly_rate_max
                       ? `$${data.hourly_rate_min || '?'} \u2013 $${data.hourly_rate_max || '?'}`
                       : '\u2014'}
@@ -545,20 +545,20 @@ export default function AdminContractorDetailPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="h-8 w-8 rounded-lg bg-gray-100 flex items-center justify-center shrink-0">
-                  <Ruler className="h-4 w-4 text-gray-400" />
+                <div className="h-8 w-8 rounded-lg bg-slate-100 flex items-center justify-center shrink-0">
+                  <Ruler className="h-4 w-4 text-slate-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">
+                  <p className="text-xs text-slate-400 font-medium uppercase tracking-wider">
                     Service Radius
                   </p>
-                  <p className="text-sm font-semibold text-gray-900 mt-0.5">
+                  <p className="text-sm font-semibold text-slate-900 mt-0.5">
                     {data.service_radius_km} km
                   </p>
                 </div>
               </div>
               <div>
-                <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">
+                <p className="text-xs text-slate-400 font-medium uppercase tracking-wider">
                   Portfolio Links
                 </p>
                 {data.portfolio_urls?.filter(Boolean).length > 0 ? (
@@ -577,7 +577,7 @@ export default function AdminContractorDetailPage() {
                     ))}
                   </div>
                 ) : (
-                  <p className="text-sm text-gray-300 mt-0.5">&mdash;</p>
+                  <p className="text-sm text-slate-300 mt-0.5">&mdash;</p>
                 )}
               </div>
             </div>
@@ -602,8 +602,8 @@ export default function AdminContractorDetailPage() {
           <CardContent className="space-y-5">
             {/* Existing review info */}
             {data.application_reviewed_at && (
-              <div className="rounded-xl bg-gray-50 border border-gray-200/60 p-4">
-                <p className="text-xs text-gray-500 flex items-center gap-1.5">
+              <div className="rounded-xl bg-slate-50 border border-slate-200/60 p-4">
+                <p className="text-xs text-slate-500 flex items-center gap-1.5">
                   <Clock className="h-3.5 w-3.5" />
                   Last reviewed:{' '}
                   {new Date(data.application_reviewed_at).toLocaleString()}
@@ -629,7 +629,7 @@ export default function AdminContractorDetailPage() {
                 rows={3}
                 value={adminNotes}
                 onChange={(e) => setAdminNotes(e.target.value)}
-                className="rounded-xl border-gray-200 transition-all focus:border-reno-green focus:ring-reno-green/20 resize-none"
+                className="rounded-xl border-slate-200 transition-all focus:border-reno-green focus:ring-reno-green/20 resize-none"
               />
             </div>
 
@@ -680,7 +680,7 @@ export default function AdminContractorDetailPage() {
                 <Button
                   onClick={() => handleAction('approved')}
                   disabled={!!actionLoading}
-                  className="rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white shadow-lg shadow-emerald-600/25 hover:shadow-xl transition-all duration-300"
+                  className="rounded-xl bg-gradient-to-r from-reno-green-600 to-reno-green-500 hover:from-reno-green-700 hover:to-reno-green-600 text-white shadow-lg shadow-emerald-600/25 hover:shadow-xl transition-all duration-300"
                 >
                   {actionLoading === 'approved' ? (
                     <Loader2 className="h-4 w-4 animate-spin mr-2" />
@@ -693,7 +693,7 @@ export default function AdminContractorDetailPage() {
                   variant="outline"
                   onClick={() => handleAction('changes_requested')}
                   disabled={!!actionLoading}
-                  className="rounded-xl border-blue-300 text-blue-700 hover:bg-blue-50 transition-all duration-300"
+                  className="rounded-xl border-primary-300 text-primary-700 hover:bg-primary-50 transition-all duration-300"
                 >
                   {actionLoading === 'changes_requested' ? (
                     <Loader2 className="h-4 w-4 animate-spin mr-2" />

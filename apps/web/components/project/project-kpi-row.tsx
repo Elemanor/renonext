@@ -22,7 +22,7 @@ export function ProjectKpiRow({ project }: ProjectKpiRowProps) {
       label: 'Progress',
       value: `${project.percent_complete}%`,
       Icon: TrendingUp,
-      color: 'text-blue-600 bg-blue-50',
+      color: 'text-primary-600 bg-primary-50',
       sparkline: kpiSparklines.progress,
       sparkColor: CHART_COLORS.primary,
     },
@@ -30,7 +30,7 @@ export function ProjectKpiRow({ project }: ProjectKpiRowProps) {
       label: 'Schedule Confidence',
       value: project.schedule_confidence != null ? `${project.schedule_confidence}%` : '—',
       Icon: CalendarCheck,
-      color: 'text-emerald-600 bg-emerald-50',
+      color: 'text-reno-green-600 bg-reno-green-50',
       tooltip: 'Based on permits, inspections, and material readiness',
       sparkline: kpiSparklines.scheduleConfidence,
       sparkColor: CHART_COLORS.success,
@@ -39,7 +39,7 @@ export function ProjectKpiRow({ project }: ProjectKpiRowProps) {
       label: 'Workers on Site',
       value: String(project.workers_on_site),
       Icon: Users,
-      color: 'text-violet-600 bg-violet-50',
+      color: 'text-reno-purple-600 bg-reno-purple-50',
       sparkline: kpiSparklines.workers,
       sparkColor: '#8b5cf6',
     },
@@ -57,7 +57,7 @@ export function ProjectKpiRow({ project }: ProjectKpiRowProps) {
     <TooltipProvider>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         {kpis.map((kpi) => (
-          <div key={kpi.label} className="rounded-xl border border-gray-200 bg-white p-4">
+          <div key={kpi.label} className="rounded-xl border border-slate-200 bg-white p-4">
             <div className="mb-2 flex items-center justify-between">
               <div className={cn('flex h-8 w-8 items-center justify-center rounded-lg', kpi.color)}>
                 <kpi.Icon className="h-4 w-4" />
@@ -69,7 +69,7 @@ export function ProjectKpiRow({ project }: ProjectKpiRowProps) {
                 {kpi.tooltip && (
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="text-gray-400 hover:text-gray-600">
+                      <button className="text-slate-400 hover:text-slate-600">
                         <Info className="h-3.5 w-3.5" />
                       </button>
                     </TooltipTrigger>
@@ -80,8 +80,8 @@ export function ProjectKpiRow({ project }: ProjectKpiRowProps) {
                 )}
               </div>
             </div>
-            <p className="text-xl font-bold tabular-nums text-gray-900">{kpi.value}</p>
-            <p className="text-xs text-gray-500">{kpi.label}</p>
+            <p className="text-xl font-bold tabular-nums text-slate-900">{kpi.value}</p>
+            <p className="text-xs text-slate-500">{kpi.label}</p>
           </div>
         ))}
       </div>

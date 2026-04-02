@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: 'Digital Foreman | GPS-Verified Material Tracking | RenoNext',
   description:
     'Log deliveries in under 60 seconds. GPS-stamped photo verification, material compliance checks, and automated billing for construction sites.',
+  alternates: {
+    canonical: '/apps/digital-foreman',
+  },
   openGraph: {
     title: 'Digital Foreman — GPS-Verified Material Tracking',
     description:
@@ -84,7 +87,7 @@ export default function DigitalForemanPage() {
               Compliance-checked.
             </p>
 
-            <p className="text-base text-blue-200/50 leading-relaxed mb-8 max-w-xl">
+            <p className="text-base text-primary-200/50 leading-relaxed mb-8 max-w-xl">
               When the trucks are rolling, your foreman needs to log fast — not
               fill out paper forms back at the trailer. Digital Foreman captures
               material type, quantity, supplier, GPS coordinates, and photo proof
@@ -217,7 +220,7 @@ export default function DigitalForemanPage() {
                   </div>
 
                   {/* Bottom nav */}
-                  <div className="bg-white/80 border-t border-gray-200 px-4 py-2">
+                  <div className="bg-white/80 border-t border-slate-200 px-4 py-2">
                     <div className="flex justify-between">
                       {[
                         { icon: 'inventory', label: 'Log', active: false },
@@ -228,7 +231,7 @@ export default function DigitalForemanPage() {
                         <div key={tab.label} className="text-center">
                           <span
                             className={`material-symbols-outlined text-xs ${
-                              tab.active ? 'text-[#002547]' : 'text-gray-400'
+                              tab.active ? 'text-[#002547]' : 'text-slate-400'
                             }`}
                             style={
                               tab.active
@@ -240,7 +243,7 @@ export default function DigitalForemanPage() {
                           </span>
                           <p
                             className={`text-[6px] font-medium ${
-                              tab.active ? 'text-[#002547]' : 'text-gray-400'
+                              tab.active ? 'text-[#002547]' : 'text-slate-400'
                             }`}
                           >
                             {tab.label}
@@ -254,7 +257,7 @@ export default function DigitalForemanPage() {
             </div>
 
             {/* Floating badges */}
-            <div className="absolute -left-8 top-1/4 z-30 bg-white rounded-xl p-3 border border-gray-100 shadow-lg animate-float-in-1">
+            <div className="absolute -left-8 top-1/4 z-30 bg-white rounded-xl p-3 border border-slate-100 shadow-lg animate-float-in-1">
               <div className="flex items-center gap-2">
                 <span
                   className="material-symbols-outlined text-[#002547] text-sm"
@@ -264,22 +267,22 @@ export default function DigitalForemanPage() {
                 </span>
                 <div>
                   <p className="text-[9px] text-[#002547] font-bold">GPS Auto-Capture</p>
-                  <p className="text-[7px] text-gray-500">Every entry geotagged</p>
+                  <p className="text-[7px] text-slate-500">Every entry geotagged</p>
                 </div>
               </div>
             </div>
 
-            <div className="absolute -right-6 bottom-1/3 z-30 bg-white rounded-xl p-3 border border-gray-100 shadow-lg animate-float-in-2">
+            <div className="absolute -right-6 bottom-1/3 z-30 bg-white rounded-xl p-3 border border-slate-100 shadow-lg animate-float-in-2">
               <div className="flex items-center gap-2">
                 <span
-                  className="material-symbols-outlined text-emerald-600 text-sm"
+                  className="material-symbols-outlined text-reno-green-600 text-sm"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   verified
                 </span>
                 <div>
                   <p className="text-[9px] text-[#002547] font-bold">SHA-256 Hash</p>
-                  <p className="text-[7px] text-gray-500">Tamper-proof records</p>
+                  <p className="text-[7px] text-slate-500">Tamper-proof records</p>
                 </div>
               </div>
             </div>
@@ -311,7 +314,7 @@ export default function DigitalForemanPage() {
                   <span className="text-[#002547]">Under 60 Seconds</span>
                 </h2>
 
-                <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-lg">
+                <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-lg">
                   One screen. Material type, quantity, truck ID, photo proof —
                   GPS coordinates and timestamp captured automatically. No paper
                   forms, no back-at-the-trailer data entry.
@@ -328,7 +331,7 @@ export default function DigitalForemanPage() {
                           check
                         </span>
                       </div>
-                      <span className="text-gray-600 leading-relaxed pt-1">
+                      <span className="text-slate-600 leading-relaxed pt-1">
                         {f}
                       </span>
                     </li>
@@ -337,10 +340,10 @@ export default function DigitalForemanPage() {
               </div>
 
               {/* Right — Entry Form Mockup */}
-              <div className="bg-[#f7f9fc] rounded-2xl border border-gray-100 p-5 md:p-6 shadow-float">
+              <div className="bg-[#f7f9fc] rounded-2xl border border-slate-100 p-5 md:p-6 shadow-float">
                 <div className="flex items-center justify-between mb-5">
                   <div>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-wider font-bold">
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider font-bold">
                       New Delivery Entry
                     </p>
                     <div className="flex items-center gap-1.5 mt-1">
@@ -359,7 +362,7 @@ export default function DigitalForemanPage() {
 
                 {/* Material type */}
                 <div className="bg-white p-5 rounded-xl border-l-4 border-[#002547] mb-4">
-                  <p className="text-[9px] text-gray-500 uppercase tracking-wider font-bold mb-2">
+                  <p className="text-[9px] text-slate-500 uppercase tracking-wider font-bold mb-2">
                     Material Type
                   </p>
                   <p className="text-lg font-extrabold text-[#002547]">
@@ -370,7 +373,7 @@ export default function DigitalForemanPage() {
                 {/* Quantity + Truck ID */}
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div className="bg-white p-5 rounded-xl">
-                    <p className="text-[9px] text-gray-500 uppercase tracking-wider font-bold mb-2">
+                    <p className="text-[9px] text-slate-500 uppercase tracking-wider font-bold mb-2">
                       Quantity
                     </p>
                     <p className="text-2xl font-extrabold text-[#002547]">
@@ -381,11 +384,11 @@ export default function DigitalForemanPage() {
                     </p>
                   </div>
                   <div className="bg-white p-5 rounded-xl">
-                    <p className="text-[9px] text-gray-500 uppercase tracking-wider font-bold mb-2">
+                    <p className="text-[9px] text-slate-500 uppercase tracking-wider font-bold mb-2">
                       Truck ID
                     </p>
                     <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-gray-400">
+                      <span className="material-symbols-outlined text-slate-400">
                         local_shipping
                       </span>
                       <p className="text-2xl font-extrabold text-[#002547]">
@@ -396,7 +399,7 @@ export default function DigitalForemanPage() {
                 </div>
 
                 {/* Photo capture area */}
-                <div className="bg-white p-6 rounded-xl border-2 border-dashed border-gray-200 text-center mb-4">
+                <div className="bg-white p-6 rounded-xl border-2 border-dashed border-slate-200 text-center mb-4">
                   <div className="w-14 h-14 rounded-full bg-[#002547]/5 flex items-center justify-center mx-auto mb-3">
                     <span
                       className="material-symbols-outlined text-[#002547] text-2xl"
@@ -408,7 +411,7 @@ export default function DigitalForemanPage() {
                   <p className="text-sm font-bold text-[#002547]">
                     Capture Proof of Delivery
                   </p>
-                  <p className="text-xs text-gray-400 mt-1">
+                  <p className="text-xs text-slate-400 mt-1">
                     GPS-stamped verification photo
                   </p>
                 </div>
@@ -420,7 +423,7 @@ export default function DigitalForemanPage() {
                       schedule
                     </span>
                     <div>
-                      <p className="text-[8px] text-gray-400 uppercase font-bold">
+                      <p className="text-[8px] text-slate-400 uppercase font-bold">
                         Timestamp
                       </p>
                       <p className="text-[10px] font-bold text-[#002547]">
@@ -433,7 +436,7 @@ export default function DigitalForemanPage() {
                       person_pin_circle
                     </span>
                     <div>
-                      <p className="text-[8px] text-gray-400 uppercase font-bold">
+                      <p className="text-[8px] text-slate-400 uppercase font-bold">
                         Foreman
                       </p>
                       <p className="text-[10px] font-bold text-[#002547]">
@@ -481,7 +484,7 @@ export default function DigitalForemanPage() {
                 Every Delivery,{' '}
                 <span className="text-[#002547]">Searchable &amp; Verified</span>
               </h2>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
                 Bento-style dashboard with daily intake statistics, featured
                 entries, and a full searchable delivery log.
               </p>
@@ -493,7 +496,7 @@ export default function DigitalForemanPage() {
             <ScrollReveal className="md:col-span-8" delay={100}>
               <div className="bg-white rounded-2xl overflow-hidden shadow-float border border-primary/5 flex flex-col md:flex-row h-full">
                 {/* Image side */}
-                <div className="md:w-1/2 relative h-48 md:h-auto bg-gray-100">
+                <div className="md:w-1/2 relative h-48 md:h-auto bg-slate-100">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#002547]/20 to-transparent" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="material-symbols-outlined text-[#002547]/20 text-[100px]">
@@ -517,10 +520,10 @@ export default function DigitalForemanPage() {
                 <div className="md:w-1/2 p-6 flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-start mb-2">
-                      <span className="text-[10px] font-mono text-gray-400 uppercase tracking-widest">
+                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
                         {recentDeliveries[0].ticketId}
                       </span>
-                      <span className="text-[10px] font-mono text-gray-400">
+                      <span className="text-[10px] font-mono text-slate-400">
                         {recentDeliveries[0].date} {recentDeliveries[0].time}
                       </span>
                     </div>
@@ -528,14 +531,14 @@ export default function DigitalForemanPage() {
                       {recentDeliveries[0].material}
                     </h3>
                     <div className="space-y-2.5">
-                      <div className="flex justify-between items-center border-b border-gray-100 py-1.5">
-                        <span className="text-xs text-gray-500">Quantity</span>
+                      <div className="flex justify-between items-center border-b border-slate-100 py-1.5">
+                        <span className="text-xs text-slate-500">Quantity</span>
                         <span className="text-sm font-bold text-[#002547]">
                           {recentDeliveries[0].quantity} {recentDeliveries[0].unit}
                         </span>
                       </div>
-                      <div className="flex justify-between items-center border-b border-gray-100 py-1.5">
-                        <span className="text-xs text-gray-500">Supplier</span>
+                      <div className="flex justify-between items-center border-b border-slate-100 py-1.5">
+                        <span className="text-xs text-slate-500">Supplier</span>
                         <span className="text-sm font-bold text-[#002547] uppercase">
                           {recentDeliveries[0].supplier}
                         </span>
@@ -543,10 +546,10 @@ export default function DigitalForemanPage() {
                     </div>
                   </div>
                   <div className="mt-5 flex items-center gap-2">
-                    <span className="material-symbols-outlined text-gray-400 text-sm">
+                    <span className="material-symbols-outlined text-slate-400 text-sm">
                       location_on
                     </span>
-                    <span className="text-[10px] text-gray-400 font-mono uppercase tracking-tight">
+                    <span className="text-[10px] text-slate-400 font-mono uppercase tracking-tight">
                       LAT {recentDeliveries[0].lat}, LONG {recentDeliveries[0].lng}
                     </span>
                   </div>
@@ -599,17 +602,17 @@ export default function DigitalForemanPage() {
                   return (
                     <div
                       key={d.ticketId}
-                      className="bg-white rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-4 shadow-sm border border-gray-50 hover:shadow-float transition-all duration-300"
+                      className="bg-white rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-4 shadow-sm border border-slate-50 hover:shadow-float transition-all duration-300"
                     >
                       {/* Icon placeholder */}
-                      <div className="w-16 h-16 bg-[#f2f4f7] rounded-lg flex items-center justify-center flex-shrink-0 border border-gray-100">
+                      <div className="w-16 h-16 bg-[#f2f4f7] rounded-lg flex items-center justify-center flex-shrink-0 border border-slate-100">
                         <span className="material-symbols-outlined text-[#002547]/30 text-2xl">
                           inventory_2
                         </span>
                       </div>
                       <div className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-3 items-center">
                         <div>
-                          <p className="text-[10px] text-gray-400 font-bold uppercase mb-0.5">
+                          <p className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">
                             Material
                           </p>
                           <p className="text-sm font-bold text-[#002547] uppercase">
@@ -617,7 +620,7 @@ export default function DigitalForemanPage() {
                           </p>
                         </div>
                         <div>
-                          <p className="text-[10px] text-gray-400 font-bold uppercase mb-0.5">
+                          <p className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">
                             Amount
                           </p>
                           <p className="text-sm font-bold text-reno-dark">
@@ -625,10 +628,10 @@ export default function DigitalForemanPage() {
                           </p>
                         </div>
                         <div className="hidden md:block">
-                          <p className="text-[10px] text-gray-400 font-bold uppercase mb-0.5">
+                          <p className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">
                             Time
                           </p>
-                          <p className="text-xs text-gray-500">
+                          <p className="text-xs text-slate-500">
                             {d.time} &middot; {d.date}
                           </p>
                         </div>
@@ -663,7 +666,7 @@ export default function DigitalForemanPage() {
           <ScrollReveal>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Left — Verification mockup */}
-              <div className="bg-[#f7f9fc] rounded-2xl border border-gray-100 p-5 md:p-6 shadow-float">
+              <div className="bg-[#f7f9fc] rounded-2xl border border-slate-100 p-5 md:p-6 shadow-float">
                 {/* GPS photo card */}
                 <div className="bg-white rounded-xl overflow-hidden mb-4 shadow-sm">
                   <div className="h-48 bg-gradient-to-br from-[#002547]/10 to-[#002547]/5 relative flex items-center justify-center">
@@ -684,24 +687,24 @@ export default function DigitalForemanPage() {
                   </div>
                   <div className="p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
                     <div>
-                      <p className="text-[9px] text-gray-400 uppercase tracking-widest mb-1">
+                      <p className="text-[9px] text-slate-400 uppercase tracking-widest mb-1">
                         Geospatial Stamp
                       </p>
                       <div className="flex items-center gap-3">
                         <span className="text-sm font-extrabold text-[#002547] tracking-tight">
                           {verificationMetrics.gpsCoords}
                         </span>
-                        <span className="w-px h-4 bg-gray-200" />
+                        <span className="w-px h-4 bg-slate-200" />
                         <span className="text-sm font-extrabold text-[#002547] tracking-tight">
                           {verificationMetrics.timestamp}
                         </span>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-[9px] text-gray-400 uppercase tracking-widest mb-1">
+                      <p className="text-[9px] text-slate-400 uppercase tracking-widest mb-1">
                         Asset Hash
                       </p>
-                      <span className="text-xs text-gray-500 font-medium">
+                      <span className="text-xs text-slate-500 font-medium">
                         {verificationMetrics.assetHash}
                       </span>
                     </div>
@@ -710,7 +713,7 @@ export default function DigitalForemanPage() {
 
                 {/* Specs */}
                 <div className="bg-white rounded-xl p-5 mb-4 shadow-sm">
-                  <p className="text-[9px] text-gray-400 uppercase tracking-widest font-bold mb-4">
+                  <p className="text-[9px] text-slate-400 uppercase tracking-widest font-bold mb-4">
                     Material Specifications
                   </p>
                   <div className="space-y-3">
@@ -719,7 +722,7 @@ export default function DigitalForemanPage() {
                         key={s.label}
                         className="flex justify-between items-center"
                       >
-                        <span className="text-sm text-gray-500">{s.label}</span>
+                        <span className="text-sm text-slate-500">{s.label}</span>
                         <span className="font-bold text-[#002547]">{s.value}</span>
                       </div>
                     ))}
@@ -732,7 +735,7 @@ export default function DigitalForemanPage() {
                     <p className="text-3xl font-extrabold text-[#002547] tracking-tight">
                       {verificationMetrics.netTonnage}
                     </p>
-                    <p className="text-[10px] text-gray-400 uppercase">
+                    <p className="text-[10px] text-slate-400 uppercase">
                       Metric Tonnes
                     </p>
                   </div>
@@ -740,7 +743,7 @@ export default function DigitalForemanPage() {
                     <p className="text-3xl font-extrabold text-[#002547] tracking-tight">
                       {verificationMetrics.volume}
                     </p>
-                    <p className="text-[10px] text-gray-400 uppercase">
+                    <p className="text-[10px] text-slate-400 uppercase">
                       Cubic Metres
                     </p>
                   </div>
@@ -748,9 +751,9 @@ export default function DigitalForemanPage() {
 
                 {/* Compliance */}
                 <div className="bg-[#00423a]/5 rounded-xl p-4 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-reno-green-50 flex items-center justify-center flex-shrink-0">
                     <span
-                      className="material-symbols-outlined text-emerald-600 text-sm"
+                      className="material-symbols-outlined text-reno-green-600 text-sm"
                       style={{ fontVariationSettings: "'FILL' 1" }}
                     >
                       check_circle
@@ -760,7 +763,7 @@ export default function DigitalForemanPage() {
                     <p className="text-sm font-bold text-[#002547]">
                       {verificationMetrics.compliance}
                     </p>
-                    <p className="text-xs text-gray-500 mt-0.5">
+                    <p className="text-xs text-slate-500 mt-0.5">
                       {verificationMetrics.complianceNote}
                     </p>
                   </div>
@@ -784,7 +787,7 @@ export default function DigitalForemanPage() {
                   <span className="text-[#002547]">You Can Trust</span>
                 </h2>
 
-                <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-lg">
+                <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-lg">
                   Every delivery photo is geotagged, timestamped, and SHA-256 hashed.
                   Material specs are cross-checked against project blueprints for
                   automatic compliance verification.
@@ -801,7 +804,7 @@ export default function DigitalForemanPage() {
                           check
                         </span>
                       </div>
-                      <span className="text-gray-600 leading-relaxed pt-1">
+                      <span className="text-slate-600 leading-relaxed pt-1">
                         {f}
                       </span>
                     </li>
@@ -833,7 +836,7 @@ export default function DigitalForemanPage() {
                 From Delivery to{' '}
                 <span className="text-[#002547]">Invoice, Automated</span>
               </h2>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
                 Auto-generated invoices from verified deliveries, HST
                 calculation, and fiscal period summaries.
               </p>
@@ -843,12 +846,12 @@ export default function DigitalForemanPage() {
           <div className="grid lg:grid-cols-12 gap-6">
             {/* Receipt card (5-col) */}
             <ScrollReveal className="lg:col-span-5" delay={100}>
-              <div className="bg-white rounded-2xl shadow-float border border-gray-50 p-6 md:p-8">
-                <div className="text-center border-b border-dashed border-gray-200 pb-6 mb-6">
+              <div className="bg-white rounded-2xl shadow-float border border-slate-50 p-6 md:p-8">
+                <div className="text-center border-b border-dashed border-slate-200 pb-6 mb-6">
                   <h3 className="font-extrabold text-xl text-[#002547] uppercase tracking-tight">
                     Invoice #DF-8829
                   </h3>
-                  <p className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">
+                  <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">
                     Authorized Digital Record
                   </p>
                 </div>
@@ -861,7 +864,7 @@ export default function DigitalForemanPage() {
                         <p className="text-sm font-bold text-[#002547] uppercase">
                           {line.item}
                         </p>
-                        <p className="text-[10px] text-gray-400">
+                        <p className="text-[10px] text-slate-400">
                           {line.detail}
                         </p>
                       </div>
@@ -873,13 +876,13 @@ export default function DigitalForemanPage() {
                 </div>
 
                 {/* Totals */}
-                <div className="pt-4 border-t border-dashed border-gray-200 space-y-2 mb-6">
+                <div className="pt-4 border-t border-dashed border-slate-200 space-y-2 mb-6">
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-500">Subtotal</span>
+                    <span className="text-slate-500">Subtotal</span>
                     <span>{formatCurrency(receiptTotals.subtotal)}</span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-500">
+                    <span className="text-slate-500">
                       HST ({(receiptTotals.taxRate * 100).toFixed(0)}%)
                     </span>
                     <span>{formatCurrency(receiptTotals.tax)}</span>
@@ -908,7 +911,7 @@ export default function DigitalForemanPage() {
                     )}
                   </div>
                 </div>
-                <p className="text-center text-[9px] text-gray-400 tracking-widest">
+                <p className="text-center text-[9px] text-slate-400 tracking-widest">
                   002547 882900 139894
                 </p>
               </div>
@@ -927,7 +930,7 @@ export default function DigitalForemanPage() {
                     return (
                       <div
                         key={inv.invoiceId}
-                        className="bg-white rounded-xl p-4 flex items-center justify-between shadow-sm border border-gray-50 hover:shadow-float transition-all duration-300"
+                        className="bg-white rounded-xl p-4 flex items-center justify-between shadow-sm border border-slate-50 hover:shadow-float transition-all duration-300"
                       >
                         <div className="flex items-center gap-4">
                           <div
@@ -944,7 +947,7 @@ export default function DigitalForemanPage() {
                             <p className="font-bold text-[#002547]">
                               #{inv.invoiceId}
                             </p>
-                            <p className="text-xs text-gray-400">
+                            <p className="text-xs text-slate-400">
                               {inv.date} &middot; {inv.description}
                             </p>
                           </div>
@@ -967,7 +970,7 @@ export default function DigitalForemanPage() {
                 {/* Fiscal summary */}
                 <div className="bg-[#002547] rounded-2xl p-6 relative overflow-hidden">
                   <div className="relative z-10">
-                    <p className="text-[10px] text-blue-200/60 uppercase tracking-widest mb-1">
+                    <p className="text-[10px] text-primary-200/60 uppercase tracking-widest mb-1">
                       Fiscal Summary — {fiscalSummary.month}
                     </p>
                     <p className="text-3xl font-extrabold text-white tracking-tight">
@@ -975,7 +978,7 @@ export default function DigitalForemanPage() {
                     </p>
                     <div className="mt-4 flex gap-8">
                       <div>
-                        <p className="text-[9px] text-blue-200/60 uppercase">
+                        <p className="text-[9px] text-primary-200/60 uppercase">
                           Paid Total
                         </p>
                         <p className="text-sm font-bold text-white">
@@ -983,7 +986,7 @@ export default function DigitalForemanPage() {
                         </p>
                       </div>
                       <div>
-                        <p className="text-[9px] text-blue-200/60 uppercase">
+                        <p className="text-[9px] text-primary-200/60 uppercase">
                           Outstanding
                         </p>
                         <p className="text-sm font-bold text-white">
@@ -1018,7 +1021,7 @@ export default function DigitalForemanPage() {
               <span className="text-[#abc8f4]">Paperwork</span>
             </h2>
 
-            <p className="text-lg text-blue-200/60 leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p className="text-lg text-primary-200/60 leading-relaxed mb-10 max-w-2xl mx-auto">
               Digital Foreman gives your site crew GPS-verified material logging,
               automatic compliance checks, and invoice generation — all from one
               app that works offline.
@@ -1059,7 +1062,7 @@ export default function DigitalForemanPage() {
                   >
                     {badge.icon}
                   </span>
-                  <span className="text-sm font-bold text-blue-100/70">
+                  <span className="text-sm font-bold text-primary-100/70">
                     {badge.label}
                   </span>
                 </div>

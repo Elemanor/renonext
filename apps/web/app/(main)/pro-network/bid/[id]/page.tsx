@@ -412,14 +412,14 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
 
                   {/* Margin Summary */}
                   <div className="pt-4 border-t border-slate-200">
-                    <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200">
+                    <div className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-br from-reno-green-50 to-teal-50 border border-reno-green-200">
                       <div>
                         <p className="text-sm font-medium text-slate-700">Your Margin</p>
                         <p className="text-xs text-slate-600 mt-0.5">Overhead + Profit</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-xl font-bold text-emerald-700">{formatCurrency(totalMargin)}</p>
-                        <p className="text-sm text-emerald-600">{marginPercent}%</p>
+                        <p className="text-xl font-bold text-reno-green-700">{formatCurrency(totalMargin)}</p>
+                        <p className="text-sm text-reno-green-600">{marginPercent}%</p>
                       </div>
                     </div>
                   </div>
@@ -540,20 +540,20 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
                       className={cn(
                         'p-3 rounded-xl flex items-start gap-2',
                         isWithinBudget
-                          ? 'bg-emerald-50 border border-emerald-200'
+                          ? 'bg-reno-green-50 border border-reno-green-200'
                           : 'bg-amber-50 border border-amber-200'
                       )}
                     >
                       {isWithinBudget ? (
-                        <CheckCircle2 className="h-5 w-5 text-emerald-600 mt-0.5 shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-reno-green-600 mt-0.5 shrink-0" />
                       ) : (
                         <AlertCircle className="h-5 w-5 text-amber-600 mt-0.5 shrink-0" />
                       )}
                       <div>
-                        <p className={cn('text-sm font-medium', isWithinBudget ? 'text-emerald-700' : 'text-amber-700')}>
+                        <p className={cn('text-sm font-medium', isWithinBudget ? 'text-reno-green-700' : 'text-amber-700')}>
                           {isWithinBudget ? 'Within Budget Range' : 'Outside Budget Range'}
                         </p>
-                        <p className={cn('text-xs mt-0.5', isWithinBudget ? 'text-emerald-600' : 'text-amber-600')}>
+                        <p className={cn('text-xs mt-0.5', isWithinBudget ? 'text-reno-green-600' : 'text-amber-600')}>
                           Budget: {formatCurrencyCompact(mockTender.budgetMin)} -{' '}
                           {formatCurrencyCompact(mockTender.budgetMax)}
                         </p>
@@ -573,13 +573,13 @@ export default function BidBuilderPage({ params }: { params: Promise<{ id: strin
               </Button>
 
               {/* Info Card */}
-              <Card className="border-blue-200 bg-blue-50/30 shadow-sm">
+              <Card className="border-primary-200 bg-primary-50/30 shadow-sm">
                 <CardContent className="p-4">
                   <div className="flex items-start gap-2">
-                    <DollarSign className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                    <DollarSign className="h-4 w-4 text-primary-600 mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-xs font-medium text-blue-900">Bid Protection</p>
-                      <p className="text-xs text-blue-700 mt-1">
+                      <p className="text-xs font-medium text-primary-900">Bid Protection</p>
+                      <p className="text-xs text-primary-700 mt-1">
                         Your bid is locked for 30 days. GC must respond within the tender closing period.
                       </p>
                     </div>

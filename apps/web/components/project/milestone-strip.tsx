@@ -8,7 +8,7 @@ interface MilestoneStripProps {
 
 export function MilestoneStrip({ stages }: MilestoneStripProps) {
   return (
-    <div className="flex items-center gap-1 overflow-x-auto rounded-xl border border-gray-200 bg-white p-3">
+    <div className="flex items-center gap-1 overflow-x-auto rounded-xl border border-slate-200 bg-white p-3">
       {stages.map((stage, i) => {
         const isComplete = stage.status === 'completed';
         const isActive = stage.status === 'active';
@@ -18,22 +18,22 @@ export function MilestoneStrip({ stages }: MilestoneStripProps) {
               <div
                 className={cn(
                   'h-0.5 w-6 shrink-0 sm:w-10',
-                  isComplete ? 'bg-emerald-400' : 'bg-gray-200'
+                  isComplete ? 'bg-reno-green-400' : 'bg-slate-200'
                 )}
               />
             )}
             <div className="flex shrink-0 items-center gap-1.5">
               {isComplete ? (
-                <CheckCircle className="h-4 w-4 text-emerald-600" />
+                <CheckCircle className="h-4 w-4 text-reno-green-600" />
               ) : isActive ? (
-                <Loader2 className="h-4 w-4 text-blue-600" />
+                <Loader2 className="h-4 w-4 text-primary-600" />
               ) : (
-                <Circle className="h-4 w-4 text-gray-300" />
+                <Circle className="h-4 w-4 text-slate-300" />
               )}
               <span
                 className={cn(
                   'whitespace-nowrap text-xs font-medium',
-                  isComplete ? 'text-emerald-700' : isActive ? 'text-blue-700' : 'text-gray-400'
+                  isComplete ? 'text-reno-green-700' : isActive ? 'text-primary-700' : 'text-slate-400'
                 )}
               >
                 {stage.title}

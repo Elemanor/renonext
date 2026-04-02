@@ -6,7 +6,7 @@ export function BentoShowcase() {
   return (
     <section
       id="capabilities"
-      className="relative overflow-hidden border-b border-gray-100 bg-slate-50 py-20 md:py-28"
+      className="relative overflow-hidden border-b border-slate-100 bg-slate-50 py-20 md:py-28"
     >
       {/* Background scaffold */}
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -19,20 +19,20 @@ export function BentoShowcase() {
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <Badge
             variant="secondary"
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-sm font-medium text-blue-700"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-1.5 text-sm font-medium text-primary-700"
           >
             <Layers className="h-4 w-4" />
             Everything You Need
           </Badge>
 
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
             One Platform.{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-violet-600 text-gradient">
+            <span className="bg-gradient-to-r from-primary-600 to-reno-purple-600 text-gradient">
               Complete Control.
             </span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-gray-600">
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
             Post jobs, verify contractors, lock payments in escrow, track work
             in real time, and build a permanent home service record — all in
             one platform.

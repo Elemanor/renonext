@@ -59,23 +59,23 @@ const TABS: Tab[] = [
 
 function PortfolioBlock() {
   const projects = [
-    { label: 'Exterior WP', color: 'bg-emerald-100' },
-    { label: 'Foundation Fix', color: 'bg-violet-100' },
-    { label: 'Sump Pump', color: 'bg-blue-100' },
+    { label: 'Exterior WP', color: 'bg-reno-green-100' },
+    { label: 'Foundation Fix', color: 'bg-reno-purple-100' },
+    { label: 'Sump Pump', color: 'bg-primary-100' },
     { label: 'Crack Repair', color: 'bg-amber-100' },
   ];
 
   return (
     <m.div variants={stagger} initial="hidden" animate="show" className="p-3">
       <m.div variants={fadeUp} className="mb-2 flex items-center justify-between">
-        <span className="text-[10px] font-bold text-gray-800">Recent Projects</span>
-        <span className="text-[8px] text-gray-400">487 total</span>
+        <span className="text-[10px] font-bold text-slate-800">Recent Projects</span>
+        <span className="text-[8px] text-slate-400">487 total</span>
       </m.div>
       <m.div variants={fadeUp} className="grid grid-cols-2 gap-2">
         {projects.map((p) => (
           <div key={p.label} className={`rounded-lg ${p.color} p-3`}>
             <div className="mb-1.5 h-8 rounded bg-white/60" />
-            <p className="text-[8px] font-semibold text-gray-700">{p.label}</p>
+            <p className="text-[8px] font-semibold text-slate-700">{p.label}</p>
           </div>
         ))}
       </m.div>
@@ -93,8 +93,8 @@ function CredentialsBlock() {
   return (
     <m.div variants={stagger} initial="hidden" animate="show" className="p-3">
       <m.div variants={fadeUp} className="mb-2 flex items-center justify-between">
-        <span className="text-[10px] font-bold text-gray-800">Verified Credentials</span>
-        <span className="rounded-full bg-emerald-100 px-1.5 py-0.5 text-[7px] font-bold text-emerald-700">All Verified</span>
+        <span className="text-[10px] font-bold text-slate-800">Verified Credentials</span>
+        <span className="rounded-full bg-reno-green-100 px-1.5 py-0.5 text-[7px] font-bold text-reno-green-700">All Verified</span>
       </m.div>
       {creds.map((c) => (
         <m.div key={c.label} variants={fadeUp} className={`mb-1.5 rounded-lg border border-${c.color}-200 bg-${c.color}-50/60 p-2`}>
@@ -103,8 +103,8 @@ function CredentialsBlock() {
               <CheckCircle className="h-2.5 w-2.5 text-white" />
             </div>
             <div>
-              <p className="text-[8px] font-semibold text-gray-800">{c.label}</p>
-              <p className="text-[6px] text-gray-500">{c.detail}</p>
+              <p className="text-[8px] font-semibold text-slate-800">{c.label}</p>
+              <p className="text-[6px] text-slate-500">{c.detail}</p>
             </div>
           </div>
         </m.div>
@@ -122,20 +122,20 @@ function ReviewsBlock() {
   return (
     <m.div variants={stagger} initial="hidden" animate="show" className="p-3">
       <m.div variants={fadeUp} className="mb-2 flex items-center justify-between">
-        <span className="text-[10px] font-bold text-gray-800">Recent Reviews</span>
-        <span className="text-[8px] text-gray-400">487 total</span>
+        <span className="text-[10px] font-bold text-slate-800">Recent Reviews</span>
+        <span className="text-[8px] text-slate-400">487 total</span>
       </m.div>
       {reviews.map((r) => (
-        <m.div key={r.name} variants={fadeUp} className="mb-1.5 rounded-lg border border-gray-200 bg-white p-2.5">
+        <m.div key={r.name} variants={fadeUp} className="mb-1.5 rounded-lg border border-slate-200 bg-white p-2.5">
           <div className="mb-1 flex items-center justify-between">
-            <span className="text-[8px] font-semibold text-gray-800">{r.name}</span>
+            <span className="text-[8px] font-semibold text-slate-800">{r.name}</span>
             <div className="flex gap-0.5">
               {Array.from({ length: r.stars }).map((_, i) => (
                 <Star key={i} className="h-2 w-2 fill-amber-400 text-amber-400" />
               ))}
             </div>
           </div>
-          <p className="text-[7px] leading-relaxed text-gray-600">{r.text}</p>
+          <p className="text-[7px] leading-relaxed text-slate-600">{r.text}</p>
         </m.div>
       ))}
     </m.div>
@@ -149,8 +149,8 @@ function AvailabilityBlock() {
   return (
     <m.div variants={stagger} initial="hidden" animate="show" className="p-3">
       <m.div variants={fadeUp} className="mb-2 flex items-center justify-between">
-        <span className="text-[10px] font-bold text-gray-800">This Week</span>
-        <span className="rounded-full bg-emerald-100 px-1.5 py-0.5 text-[7px] font-bold text-emerald-700">5 slots open</span>
+        <span className="text-[10px] font-bold text-slate-800">This Week</span>
+        <span className="rounded-full bg-reno-green-100 px-1.5 py-0.5 text-[7px] font-bold text-reno-green-700">5 slots open</span>
       </m.div>
 
       <m.div variants={fadeUp} className="mb-2 grid grid-cols-7 gap-1">
@@ -159,8 +159,8 @@ function AvailabilityBlock() {
             key={d}
             className={`rounded-md py-1.5 text-center text-[6px] font-medium ${
               available[i]
-                ? 'bg-emerald-100 text-emerald-700'
-                : 'bg-gray-100 text-gray-400'
+                ? 'bg-reno-green-100 text-reno-green-700'
+                : 'bg-slate-100 text-slate-400'
             }`}
           >
             {d}
@@ -168,20 +168,20 @@ function AvailabilityBlock() {
         ))}
       </m.div>
 
-      <m.div variants={fadeUp} className="rounded-lg border border-violet-200 bg-violet-50/60 p-2">
+      <m.div variants={fadeUp} className="rounded-lg border border-reno-purple-200 bg-reno-purple-50/60 p-2">
         <div className="flex items-center gap-1.5">
-          <Clock className="h-3 w-3 text-violet-600" />
+          <Clock className="h-3 w-3 text-reno-purple-600" />
           <div>
-            <p className="text-[8px] font-semibold text-violet-800">Responds in 28 min</p>
-            <p className="text-[6px] text-violet-600">Faster than 92% of pros</p>
+            <p className="text-[8px] font-semibold text-reno-purple-800">Responds in 28 min</p>
+            <p className="text-[6px] text-reno-purple-600">Faster than 92% of pros</p>
           </div>
         </div>
       </m.div>
 
-      <m.div variants={fadeUp} className="mt-1.5 rounded-lg border border-emerald-200 bg-emerald-50/60 p-2">
+      <m.div variants={fadeUp} className="mt-1.5 rounded-lg border border-reno-green-200 bg-reno-green-50/60 p-2">
         <div className="flex items-center gap-1.5">
-          <CheckCircle className="h-3 w-3 text-emerald-600" />
-          <p className="text-[8px] font-semibold text-emerald-800">Next available: Tomorrow, 9 AM</p>
+          <CheckCircle className="h-3 w-3 text-reno-green-600" />
+          <p className="text-[8px] font-semibold text-reno-green-800">Next available: Tomorrow, 9 AM</p>
         </div>
       </m.div>
     </m.div>
@@ -232,21 +232,21 @@ export function ContractorProfilePreview() {
 
   if (skip) {
     return (
-      <div className="overflow-hidden rounded-2xl border border-gray-200/60 bg-white shadow-xl">
-        <div className="border-b border-gray-200 bg-white px-4 py-2">
+      <div className="overflow-hidden rounded-2xl border border-slate-200/60 bg-white shadow-xl">
+        <div className="border-b border-slate-200 bg-white px-4 py-2">
           <div className="flex items-center gap-2">
             <span className="h-3 w-3 rounded-full bg-red-400" />
             <span className="h-3 w-3 rounded-full bg-amber-400" />
-            <span className="h-3 w-3 rounded-full bg-green-400" />
-            <span className="ml-3 text-xs text-gray-400">renonext.com/pros/dryspace-waterproofing</span>
+            <span className="h-3 w-3 rounded-full bg-reno-green-400" />
+            <span className="ml-3 text-xs text-slate-400">renonext.com/pros/dryspace-waterproofing</span>
           </div>
         </div>
-        <div className="divide-y divide-gray-100">
+        <div className="divide-y divide-slate-100">
           {TABS.map((tab) => {
             const Comp = CONTENT[tab.id];
             return (
               <div key={tab.id}>
-                <div className="flex items-center gap-1 px-3 pt-2 text-[9px] font-bold text-gray-400">
+                <div className="flex items-center gap-1 px-3 pt-2 text-[9px] font-bold text-slate-400">
                   <tab.Icon className="h-3 w-3" />
                   {tab.label}
                 </div>
@@ -266,25 +266,25 @@ export function ContractorProfilePreview() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease }}
-        className="overflow-hidden rounded-2xl border border-gray-200/60 bg-white shadow-xl"
+        className="overflow-hidden rounded-2xl border border-slate-200/60 bg-white shadow-xl"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
         {/* Browser chrome */}
-        <div className="border-b border-gray-200 bg-white px-4 py-2">
+        <div className="border-b border-slate-200 bg-white px-4 py-2">
           <div className="flex items-center gap-2">
             <span className="h-3 w-3 rounded-full bg-red-400" />
             <span className="h-3 w-3 rounded-full bg-amber-400" />
-            <span className="h-3 w-3 rounded-full bg-green-400" />
-            <div className="ml-3 flex flex-1 items-center gap-1 rounded-md bg-gray-100 px-2 py-0.5">
-              <Lock className="h-2 w-2 text-emerald-500" />
-              <span className="text-[8px] text-gray-400">renonext.com/pros/dryspace-waterproofing</span>
+            <span className="h-3 w-3 rounded-full bg-reno-green-400" />
+            <div className="ml-3 flex flex-1 items-center gap-1 rounded-md bg-slate-100 px-2 py-0.5">
+              <Lock className="h-2 w-2 text-reno-green-500" />
+              <span className="text-[8px] text-slate-400">renonext.com/pros/dryspace-waterproofing</span>
             </div>
           </div>
         </div>
 
         {/* Profile header */}
-        <div className="border-b border-gray-100 bg-gradient-to-r from-emerald-600 to-violet-600 px-4 py-3">
+        <div className="border-b border-slate-100 bg-gradient-to-r from-reno-green-600 to-reno-purple-600 px-4 py-3">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-sm font-bold text-white">
               DS
@@ -292,7 +292,7 @@ export function ContractorProfilePreview() {
             <div>
               <div className="flex items-center gap-1.5">
                 <p className="text-[11px] font-bold text-white">DrySpace Waterproofing</p>
-                <BadgeCheck className="h-3 w-3 text-emerald-200" />
+                <BadgeCheck className="h-3 w-3 text-reno-green-200" />
               </div>
               <div className="flex items-center gap-2 text-[8px] text-white/80">
                 <span>Waterproofing & Foundation</span>
@@ -307,15 +307,15 @@ export function ContractorProfilePreview() {
         </div>
 
         {/* Tab strip */}
-        <div className="flex items-center gap-0.5 border-b border-gray-200 bg-gray-50 px-2 py-1">
+        <div className="flex items-center gap-0.5 border-b border-slate-200 bg-slate-50 px-2 py-1">
           {TABS.map((tab, i) => (
             <button
               key={tab.id}
               onClick={() => goTo(i)}
               className={`relative flex items-center gap-1 rounded-md px-2 py-1 text-[7px] font-medium transition-all duration-200 ${
                 i === activeIndex
-                  ? 'bg-white text-emerald-700 shadow-sm ring-1 ring-gray-200'
-                  : 'text-gray-400 hover:text-gray-600'
+                  ? 'bg-white text-reno-green-700 shadow-sm ring-1 ring-slate-200'
+                  : 'text-slate-400 hover:text-slate-600'
               }`}
             >
               <tab.Icon className="h-2.5 w-2.5" />
@@ -323,7 +323,7 @@ export function ContractorProfilePreview() {
               {i === activeIndex && !hovered && (
                 <m.div
                   key={`bar-${resetKey}-${i}`}
-                  className="absolute inset-x-0 bottom-0 h-[2px] rounded-full bg-emerald-400/40"
+                  className="absolute inset-x-0 bottom-0 h-[2px] rounded-full bg-reno-green-400/40"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: CYCLE_MS / 1000, ease: 'linear' }}

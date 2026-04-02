@@ -8,7 +8,7 @@ import type { JobTask } from '@/lib/mock-data/jobs';
 const statusConfig = {
   pending: {
     label: 'Pending',
-    className: 'bg-gray-100 text-gray-600',
+    className: 'bg-slate-100 text-slate-600',
   },
   in_progress: {
     label: 'In Progress',
@@ -16,7 +16,7 @@ const statusConfig = {
   },
   completed: {
     label: 'Completed',
-    className: 'bg-green-50 text-green-700',
+    className: 'bg-reno-green-50 text-reno-green-700',
   },
 };
 
@@ -29,7 +29,7 @@ export function TaskPhotoCard({ task }: TaskPhotoCardProps) {
   const status = statusConfig[task.status];
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white transition-all duration-200">
+    <div className="rounded-xl border border-slate-200 bg-white transition-all duration-200">
       {/* Header */}
       <button
         onClick={() => setExpanded(!expanded)}
@@ -41,27 +41,27 @@ export function TaskPhotoCard({ task }: TaskPhotoCardProps) {
           >
             {status.label}
           </Badge>
-          <span className="font-medium text-gray-900">{task.name}</span>
+          <span className="font-medium text-slate-900">{task.name}</span>
         </div>
         <div className="flex items-center gap-2">
           {task.photos.length > 0 && (
-            <span className="flex items-center gap-1 text-xs text-gray-400">
+            <span className="flex items-center gap-1 text-xs text-slate-400">
               <Camera className="h-3 w-3" />
               {task.photos.length}
             </span>
           )}
           {expanded ? (
-            <ChevronUp className="h-4 w-4 text-gray-400" />
+            <ChevronUp className="h-4 w-4 text-slate-400" />
           ) : (
-            <ChevronDown className="h-4 w-4 text-gray-400" />
+            <ChevronDown className="h-4 w-4 text-slate-400" />
           )}
         </div>
       </button>
 
       {/* Expanded Content */}
       {expanded && (
-        <div className="border-t border-gray-100 px-4 pb-4 pt-3">
-          <div className="mb-2 flex items-center gap-4 text-xs text-gray-500">
+        <div className="border-t border-slate-100 px-4 pb-4 pt-3">
+          <div className="mb-2 flex items-center gap-4 text-xs text-slate-500">
             <span>
               Assigned:{' '}
               {new Date(task.assignedDate + 'T00:00:00').toLocaleDateString('en-CA', {
@@ -99,7 +99,7 @@ export function TaskPhotoCard({ task }: TaskPhotoCardProps) {
               ))}
             </div>
           ) : (
-            <p className="text-sm text-gray-400">No photos uploaded yet</p>
+            <p className="text-sm text-slate-400">No photos uploaded yet</p>
           )}
         </div>
       )}

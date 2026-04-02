@@ -49,7 +49,7 @@ export function NotificationsPanel({ notifications }: NotificationsPanelProps) {
         return 'bg-amber-500';
       case 'info':
       default:
-        return 'bg-blue-500';
+        return 'bg-primary-500';
     }
   };
 
@@ -57,7 +57,7 @@ export function NotificationsPanel({ notifications }: NotificationsPanelProps) {
     <div className="space-y-4">
       {/* Header */}
       <div className="flex items-center gap-2">
-        <Bell className="h-5 w-5 text-gray-700" />
+        <Bell className="h-5 w-5 text-slate-700" />
         <h2 className="text-lg font-semibold">Notifications</h2>
         {unreadNotifications.length > 0 && (
           <Badge variant="secondary" className="ml-auto">
@@ -69,7 +69,7 @@ export function NotificationsPanel({ notifications }: NotificationsPanelProps) {
       {/* Notifications List */}
       <div className="space-y-3">
         {displayedNotifications.length === 0 ? (
-          <p className="text-sm text-gray-500">No new notifications</p>
+          <p className="text-sm text-slate-500">No new notifications</p>
         ) : (
           displayedNotifications.map((notification) => (
             <div
@@ -92,7 +92,7 @@ export function NotificationsPanel({ notifications }: NotificationsPanelProps) {
               {/* Content */}
               <div className="flex-1 space-y-1">
                 <div className="font-medium">{notification.title}</div>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-slate-500">
                   {notification.description}
                 </p>
 
@@ -102,14 +102,14 @@ export function NotificationsPanel({ notifications }: NotificationsPanelProps) {
                   notification.action_href && (
                     <a
                       href={notification.action_href}
-                      className="inline-block text-sm font-medium text-blue-600 hover:underline"
+                      className="inline-block text-sm font-medium text-primary-600 hover:underline"
                     >
                       {notification.action_label} →
                     </a>
                   )}
 
                 {/* Time */}
-                <div className="text-xs text-gray-400">
+                <div className="text-xs text-slate-400">
                   {getTimeAgo(notification.created_at)}
                 </div>
               </div>
@@ -122,7 +122,7 @@ export function NotificationsPanel({ notifications }: NotificationsPanelProps) {
       {hasMore && !showAll && (
         <button
           onClick={() => setShowAll(true)}
-          className="text-sm font-medium text-blue-600 hover:underline"
+          className="text-sm font-medium text-primary-600 hover:underline"
         >
           View all ({unreadNotifications.length})
         </button>

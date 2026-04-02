@@ -11,6 +11,9 @@ import type { BlogCategory } from '@/lib/mock-data/blog';
 export const metadata = {
   title: 'Blog - Pro Knowledge Hub | RenoNext',
   description: 'Learn from verified pros. Tips, how-to guides, case studies, and industry news from Toronto\'s top home service professionals.',
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 const categories: { key: BlogCategory | 'all'; label: string }[] = [
@@ -37,7 +40,7 @@ const popularTags = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-50">
       {/* Hero */}
       <div className="bg-gradient-to-br from-reno-green-dark via-reno-green-dark to-secondary-700 py-16">
         <div className="container mx-auto px-4 text-center">
@@ -76,7 +79,7 @@ export default function BlogPage() {
                 className={`cursor-pointer rounded-full px-4 py-2 text-sm font-semibold transition-colors border-transparent ${
                   i === 0
                     ? 'bg-reno-green-dark text-white hover:bg-reno-green-dark'
-                    : 'bg-white text-gray-600 ring-1 ring-gray-200 hover:bg-gray-50'
+                    : 'bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50'
                 }`}
               >
                 {cat.label}
@@ -104,8 +107,8 @@ export default function BlogPage() {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Top Contributors */}
-            <Card className="rounded-2xl border-gray-200 bg-white p-5">
-              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-400">
+            <Card className="rounded-2xl border-slate-200 bg-white p-5">
+              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-400">
                 <TrendingUp className="h-4 w-4" />
                 Top Contributors
               </h3>
@@ -114,20 +117,20 @@ export default function BlogPage() {
                   <div key={contributor.name} className="flex items-center gap-3">
                     <Avatar className="h-8 w-8">
                       <AvatarImage src={contributor.avatar} alt={contributor.name} className="object-cover" />
-                      <AvatarFallback className="bg-gray-100 text-xs">{contributor.name.charAt(0)}</AvatarFallback>
+                      <AvatarFallback className="bg-slate-100 text-xs">{contributor.name.charAt(0)}</AvatarFallback>
                     </Avatar>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold text-gray-700 truncate">{contributor.name}</p>
+                      <p className="text-sm font-semibold text-slate-700 truncate">{contributor.name}</p>
                     </div>
-                    <span className="text-xs text-gray-400">{contributor.posts} posts</span>
+                    <span className="text-xs text-slate-400">{contributor.posts} posts</span>
                   </div>
                 ))}
               </div>
             </Card>
 
             {/* Popular Tags */}
-            <Card className="rounded-2xl border-gray-200 bg-white p-5">
-              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-400">
+            <Card className="rounded-2xl border-slate-200 bg-white p-5">
+              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-400">
                 <Hash className="h-4 w-4" />
                 Popular Tags
               </h3>
@@ -135,7 +138,7 @@ export default function BlogPage() {
                 {popularTags.map((tag) => (
                   <Badge
                     key={tag}
-                    className="cursor-pointer rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600 transition-colors hover:bg-reno-green-light hover:text-reno-green-dark border-transparent"
+                    className="cursor-pointer rounded-full bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:bg-reno-green-light hover:text-reno-green-dark border-transparent"
                   >
                     #{tag}
                   </Badge>
@@ -145,8 +148,8 @@ export default function BlogPage() {
 
             {/* Write CTA */}
             <Card className="rounded-2xl border-reno-green-light bg-gradient-to-br from-reno-green-light to-secondary-50/50 p-6 text-center">
-              <h3 className="mb-2 text-lg font-bold text-gray-900">Share Your Expertise</h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <h3 className="mb-2 text-lg font-bold text-slate-900">Share Your Expertise</h3>
+              <p className="mb-4 text-sm text-slate-600">
                 Are you a verified pro? Write articles to build your reputation and help homeowners.
               </p>
               <Button asChild className="w-full rounded-xl bg-reno-green-dark py-2.5 text-sm font-semibold text-white hover:bg-reno-green-dark h-auto">

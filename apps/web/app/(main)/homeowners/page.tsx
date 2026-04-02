@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'For Homeowners | RenoNext',
   description:
     'Renovate with absolute certainty. Escrow-backed payments, vetted contractors, and real-time milestone tracking protect every dollar.',
+  alternates: {
+    canonical: '/homeowners',
+  },
 };
 
 export default function HomeownersPage() {
@@ -14,7 +17,7 @@ export default function HomeownersPage() {
       {/* ============================================= */}
       {/* HERO — Renovate with Absolute Certainty       */}
       {/* ============================================= */}
-      <section className="relative min-h-[680px] lg:min-h-[780px] flex items-center overflow-hidden bg-[#f6f8f8]">
+      <section className="relative min-h-[680px] lg:min-h-[780px] flex items-center overflow-hidden bg-reno-cream">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(15,186,189,0.06),transparent_60%)]" />
 
@@ -26,7 +29,7 @@ export default function HomeownersPage() {
               <br />
               <span className="text-primary">Absolute Certainty</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-500 leading-relaxed mb-10 max-w-lg">
+            <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10 max-w-lg">
               The RenoNext escrow-backed platform ensures your renovation funds
               are protected. We only release payments to contractors when
               milestones are met and you approve the work.
@@ -40,7 +43,7 @@ export default function HomeownersPage() {
               </Link>
               <Link
                 href="/how-it-works"
-                className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 px-8 py-4 rounded-xl font-bold text-lg text-reno-dark hover:bg-gray-50 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg text-reno-dark hover:bg-slate-50 transition-colors"
               >
                 View Protected Projects
               </Link>
@@ -60,20 +63,20 @@ export default function HomeownersPage() {
                     account_balance_wallet
                   </span>
                 </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
                   Escrow Secured
                 </span>
               </div>
-              <p className="text-gray-500 text-sm font-medium">
+              <p className="text-slate-500 text-sm font-medium">
                 Project Balance
               </p>
               <h3 className="text-3xl font-bold text-reno-dark tracking-tight">
                 $45,000.00
               </h3>
-              <div className="mt-3 h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+              <div className="mt-3 h-2 w-full bg-slate-100 rounded-full overflow-hidden">
                 <div className="h-full bg-primary w-2/3 rounded-full" />
               </div>
-              <p className="mt-2 text-xs text-gray-400 text-right">
+              <p className="mt-2 text-xs text-slate-400 text-right">
                 Phase 2 of 4
               </p>
             </div>
@@ -81,7 +84,7 @@ export default function HomeownersPage() {
             {/* Contractor Card */}
             <div className="absolute bottom-16 left-0 w-80 p-5 rounded-2xl bg-white shadow-float z-30 hover:-translate-y-1 hover:shadow-float-hover transition-all duration-300">
               <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-xl overflow-hidden bg-gray-100">
+                <div className="w-14 h-14 rounded-xl overflow-hidden bg-slate-100">
                   <Image
                     src="/images/pros/dryspace/hero.webp"
                     alt="DrySpace Waterproofing"
@@ -104,13 +107,13 @@ export default function HomeownersPage() {
                         star
                       </span>
                     ))}
-                    <span className="text-gray-400 text-xs font-medium ml-1">
+                    <span className="text-slate-400 text-xs font-medium ml-1">
                       5.0
                     </span>
                   </div>
                 </div>
               </div>
-              <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between">
+              <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span
                     className="material-symbols-outlined text-primary text-lg"
@@ -118,7 +121,7 @@ export default function HomeownersPage() {
                   >
                     verified
                   </span>
-                  <span className="text-xs font-bold text-gray-600 uppercase">
+                  <span className="text-xs font-bold text-slate-600 uppercase">
                     Verified Pro
                   </span>
                 </div>
@@ -138,7 +141,7 @@ export default function HomeownersPage() {
                   Foundation Waterproofing
                 </span>
               </div>
-              <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+              <div className="aspect-video rounded-lg overflow-hidden bg-slate-100">
                 <Image
                   src="/images/pros/dryspace/exterior-1.webp"
                   alt="Waterproofing progress"
@@ -147,7 +150,7 @@ export default function HomeownersPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="mt-2 text-xs text-center font-medium text-gray-400">
+              <div className="mt-2 text-xs text-center font-medium text-slate-400">
                 Awaiting Homeowner Approval
               </div>
             </div>
@@ -158,13 +161,13 @@ export default function HomeownersPage() {
       {/* ============================================= */}
       {/* BENEFITS — Built on Trust                     */}
       {/* ============================================= */}
-      <section className="py-20 md:py-28 px-6 bg-[#f6f8f8]">
+      <section className="py-20 md:py-28 px-6 bg-reno-cream">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-display text-3xl md:text-4xl font-black text-reno-dark tracking-tight mb-4">
               Built on Trust, Delivered with Precision
             </h2>
-            <p className="text-gray-500 text-lg">
+            <p className="text-slate-500 text-lg">
               We&apos;ve redesigned the renovation experience to prioritize
               homeowner safety and contractor accountability.
             </p>
@@ -203,7 +206,7 @@ export default function HomeownersPage() {
                 <h3 className="text-xl md:text-2xl font-bold text-reno-dark mb-3 tracking-tight">
                   {card.title}
                 </h3>
-                <p className="text-gray-500 leading-relaxed">{card.desc}</p>
+                <p className="text-slate-500 leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -246,14 +249,14 @@ export default function HomeownersPage() {
               },
             ].map((step) => (
               <div key={step.num} className="relative">
-                <div className="text-8xl font-black text-gray-50 absolute -top-10 -left-3 select-none pointer-events-none">
+                <div className="text-8xl font-black text-slate-50 absolute -top-10 -left-3 select-none pointer-events-none">
                   {step.num}
                 </div>
                 <div className="relative pt-6">
                   <h4 className="text-xl font-bold text-reno-dark mb-3">
                     {step.title}
                   </h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="text-slate-500 text-sm leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
@@ -266,14 +269,14 @@ export default function HomeownersPage() {
       {/* ============================================= */}
       {/* SUCCESS STORIES — Real Results                 */}
       {/* ============================================= */}
-      <section className="py-20 md:py-28 px-6 bg-[#f6f8f8]">
+      <section className="py-20 md:py-28 px-6 bg-reno-cream">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-12">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-black text-reno-dark tracking-tight mb-3">
                 Real Results, Verified Proof
               </h2>
-              <p className="text-gray-500">
+              <p className="text-slate-500">
                 Explore transformations powered by RenoNext contractors.
               </p>
             </div>
@@ -314,11 +317,11 @@ export default function HomeownersPage() {
                   >
                     location_on
                   </span>
-                  <span className="text-gray-500 text-xs font-bold uppercase tracking-wide">
+                  <span className="text-slate-500 text-xs font-bold uppercase tracking-wide">
                     Toronto, ON
                   </span>
                 </div>
-                <p className="text-gray-500 text-sm mb-5 italic">
+                <p className="text-slate-500 text-sm mb-5 italic">
                   &ldquo;The escrow system gave us the peace of mind to finally
                   fix our decade-old flooding issue.&rdquo;
                 </p>
@@ -358,11 +361,11 @@ export default function HomeownersPage() {
                   >
                     location_on
                   </span>
-                  <span className="text-gray-500 text-xs font-bold uppercase tracking-wide">
+                  <span className="text-slate-500 text-xs font-bold uppercase tracking-wide">
                     Mississauga, ON
                   </span>
                 </div>
-                <p className="text-gray-500 text-sm mb-5 italic">
+                <p className="text-slate-500 text-sm mb-5 italic">
                   &ldquo;Seeing photo updates every week kept the project on
                   schedule and gave us complete visibility.&rdquo;
                 </p>
@@ -388,7 +391,7 @@ export default function HomeownersPage() {
           <h2 className="font-display text-3xl md:text-4xl font-black text-reno-dark tracking-tight text-center mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-500 text-center mb-12">
+          <p className="text-slate-500 text-center mb-12">
             Everything you need to know about renovating with RenoNext.
           </p>
 
@@ -417,7 +420,7 @@ export default function HomeownersPage() {
             ].map((faq, i) => (
               <details
                 key={i}
-                className="group rounded-xl border border-gray-200 bg-white px-6 shadow-sm"
+                className="group rounded-xl border border-slate-200 bg-white px-6 shadow-sm"
               >
                 <summary className="flex items-center justify-between cursor-pointer py-5 text-left font-semibold text-reno-dark list-none [&::-webkit-details-marker]:hidden">
                   <div className="flex items-center gap-3">
@@ -426,11 +429,11 @@ export default function HomeownersPage() {
                     </span>
                     <span>{faq.q}</span>
                   </div>
-                  <span className="material-symbols-outlined text-gray-400 text-lg transition-transform duration-200 group-open:rotate-180 ml-4 flex-shrink-0">
+                  <span className="material-symbols-outlined text-slate-400 text-lg transition-transform duration-200 group-open:rotate-180 ml-4 flex-shrink-0">
                     expand_more
                   </span>
                 </summary>
-                <div className="pt-1 pb-5 text-gray-500 leading-relaxed">
+                <div className="pt-1 pb-5 text-slate-500 leading-relaxed">
                   {faq.a}
                 </div>
               </details>
@@ -457,7 +460,7 @@ export default function HomeownersPage() {
           <h2 className="font-display text-4xl md:text-5xl font-black text-white tracking-tight mb-6">
             Ready to Build with Confidence?
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+          <p className="text-slate-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
             Join homeowners who have eliminated renovation risk. Your dream home
             is one click away.
           </p>
@@ -475,7 +478,7 @@ export default function HomeownersPage() {
               Talk to an Advisor
             </Link>
           </div>
-          <div className="mt-10 flex items-center justify-center gap-8 text-gray-500 text-sm font-bold">
+          <div className="mt-10 flex items-center justify-center gap-8 text-slate-500 text-sm font-bold">
             <div className="flex items-center gap-2">
               <span
                 className="material-symbols-outlined text-primary text-lg"

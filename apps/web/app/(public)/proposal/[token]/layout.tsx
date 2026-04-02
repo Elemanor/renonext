@@ -11,7 +11,7 @@ export default function ProposalLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50/50 to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50/50 to-slate-50">
       <ProposalTopBar />
       {children}
     </div>

@@ -58,8 +58,8 @@ function getCertStatusBadge(status: 'expired' | 'warning' | 'ok' | 'unknown') {
   const styles = {
     expired: { bg: 'bg-red-50', text: 'text-red-700', border: 'border-red-200', label: 'EXPIRED' },
     warning: { bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200', label: '' },
-    ok: { bg: 'bg-green-50', text: 'text-green-700', border: 'border-green-200', label: 'OK' },
-    unknown: { bg: 'bg-gray-50', text: 'text-gray-500', border: 'border-gray-200', label: 'NOT SET' },
+    ok: { bg: 'bg-reno-green-50', text: 'text-reno-green-700', border: 'border-reno-green-200', label: 'OK' },
+    unknown: { bg: 'bg-slate-50', text: 'text-slate-500', border: 'border-slate-200', label: 'NOT SET' },
   };
   return styles[status];
 }
@@ -103,7 +103,7 @@ export default function ProDashboardPage() {
     return (
       <div className="flex flex-col items-center justify-center py-24">
         <Loader2 className="h-8 w-8 animate-spin text-reno-green-dark" />
-        <p className="text-sm text-gray-400 mt-3">Loading dashboard...</p>
+        <p className="text-sm text-slate-400 mt-3">Loading dashboard...</p>
       </div>
     );
   }
@@ -142,7 +142,7 @@ export default function ProDashboardPage() {
     <div className="space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Dashboard</h1>
         <Button asChild variant="link" className="flex items-center gap-1.5 text-sm font-semibold text-reno-green-dark transition-colors duration-200 hover:text-reno-green-dark no-underline hover:no-underline">
           <Link href="/pro-dashboard/gallery">
             My Portfolio <ArrowRight className="h-4 w-4" />
@@ -156,8 +156,8 @@ export default function ProDashboardPage() {
           'rounded-2xl border shadow-sm overflow-hidden',
           appStatus === 'pending_review' && 'border-amber-200 bg-amber-50/50',
           appStatus === 'rejected' && 'border-red-200 bg-red-50/50',
-          appStatus === 'changes_requested' && 'border-blue-200 bg-blue-50/50',
-          appStatus === 'draft' && 'border-gray-200 bg-gray-50/50',
+          appStatus === 'changes_requested' && 'border-primary-200 bg-primary-50/50',
+          appStatus === 'draft' && 'border-slate-200 bg-slate-50/50',
         )}>
           <CardContent className="p-5">
             <div className="flex items-center gap-3">
@@ -188,26 +188,26 @@ export default function ProDashboardPage() {
               )}
               {appStatus === 'changes_requested' && (
                 <>
-                  <div className="p-2 rounded-xl bg-blue-100">
-                    <AlertCircle className="h-5 w-5 text-blue-600" />
+                  <div className="p-2 rounded-xl bg-primary-100">
+                    <AlertCircle className="h-5 w-5 text-primary-600" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-blue-800">Changes Requested</p>
-                    <p className="text-sm text-blue-700 mt-0.5">The admin has requested changes to your application.</p>
+                    <p className="font-semibold text-primary-800">Changes Requested</p>
+                    <p className="text-sm text-primary-700 mt-0.5">The admin has requested changes to your application.</p>
                   </div>
-                  <Button asChild size="sm" className="rounded-xl bg-blue-600 hover:bg-blue-700 text-white">
+                  <Button asChild size="sm" className="rounded-xl bg-primary-600 hover:bg-primary-700 text-white">
                     <Link href="/join">Update Application</Link>
                   </Button>
                 </>
               )}
               {appStatus === 'draft' && (
                 <>
-                  <div className="p-2 rounded-xl bg-gray-200">
-                    <FileCheck className="h-5 w-5 text-gray-600" />
+                  <div className="p-2 rounded-xl bg-slate-200">
+                    <FileCheck className="h-5 w-5 text-slate-600" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-800">Complete Your Application</p>
-                    <p className="text-sm text-gray-600 mt-0.5">Finish your application to get listed on RenoNext.</p>
+                    <p className="font-semibold text-slate-800">Complete Your Application</p>
+                    <p className="text-sm text-slate-600 mt-0.5">Finish your application to get listed on RenoNext.</p>
                   </div>
                   <Button asChild size="sm" className="rounded-xl bg-reno-green hover:bg-reno-green/90 text-white">
                     <Link href="/join">Start Application</Link>
@@ -246,23 +246,23 @@ export default function ProDashboardPage() {
           icon={ImageIcon}
           label="Portfolio Photos"
           value={String(galleryCount)}
-          iconColor="text-violet-600"
-          iconBg="bg-violet-50"
+          iconColor="text-reno-purple-600"
+          iconBg="bg-reno-purple-50"
         />
       </div>
 
       {/* Active Projects — empty state */}
-      <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardHeader className="pb-4">
-          <CardTitle className="text-lg font-bold text-gray-900">Active Projects</CardTitle>
+          <CardTitle className="text-lg font-bold text-slate-900">Active Projects</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center justify-center py-12 text-center">
-            <div className="h-12 w-12 rounded-2xl bg-gray-100 flex items-center justify-center mb-4">
-              <Briefcase className="h-6 w-6 text-gray-400" />
+            <div className="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center mb-4">
+              <Briefcase className="h-6 w-6 text-slate-400" />
             </div>
-            <p className="text-gray-500 font-medium">No active projects yet</p>
-            <p className="text-sm text-gray-400 mt-1 max-w-sm">
+            <p className="text-slate-500 font-medium">No active projects yet</p>
+            <p className="text-sm text-slate-400 mt-1 max-w-sm">
               Once you&apos;re approved and win bids, your active projects will appear here.
             </p>
           </div>
@@ -270,17 +270,17 @@ export default function ProDashboardPage() {
       </Card>
 
       {/* Incoming Tenders — empty state */}
-      <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardHeader className="pb-4">
-          <CardTitle className="text-lg font-bold text-gray-900">Incoming Tenders</CardTitle>
+          <CardTitle className="text-lg font-bold text-slate-900">Incoming Tenders</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center justify-center py-12 text-center">
-            <div className="h-12 w-12 rounded-2xl bg-gray-100 flex items-center justify-center mb-4">
-              <FileCheck className="h-6 w-6 text-gray-400" />
+            <div className="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center mb-4">
+              <FileCheck className="h-6 w-6 text-slate-400" />
             </div>
-            <p className="text-gray-500 font-medium">No tenders available</p>
-            <p className="text-sm text-gray-400 mt-1 max-w-sm">
+            <p className="text-slate-500 font-medium">No tenders available</p>
+            <p className="text-sm text-slate-400 mt-1 max-w-sm">
               New project tenders matching your categories will appear here.
             </p>
           </div>
@@ -289,9 +289,9 @@ export default function ProDashboardPage() {
 
       {/* Certifications & Licenses */}
       {certifications.length > 0 && (
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardHeader className="pb-4">
-            <CardTitle className="text-lg font-bold text-gray-900 flex items-center gap-2">
+            <CardTitle className="text-lg font-bold text-slate-900 flex items-center gap-2">
               <Shield className="h-5 w-5 text-reno-green-dark" />
               Certifications & Licenses
             </CardTitle>
@@ -303,12 +303,12 @@ export default function ProDashboardPage() {
                 return (
                   <div
                     key={cert.name}
-                    className="flex items-center justify-between p-4 rounded-xl border border-gray-200 transition-all duration-200 hover:bg-gray-50"
+                    className="flex items-center justify-between p-4 rounded-xl border border-slate-200 transition-all duration-200 hover:bg-slate-50"
                   >
                     <div className="flex-1 min-w-0 mr-3">
-                      <h3 className="font-semibold text-gray-900 mb-1">{cert.name}</h3>
+                      <h3 className="font-semibold text-slate-900 mb-1">{cert.name}</h3>
                       {cert.expiryDate ? (
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-slate-600">
                           Expires {new Date(cert.expiryDate).toLocaleDateString('en-US', {
                             month: 'short',
                             day: 'numeric',
@@ -316,7 +316,7 @@ export default function ProDashboardPage() {
                           })}
                         </p>
                       ) : (
-                        <p className="text-sm text-gray-400">
+                        <p className="text-sm text-slate-400">
                           {cert.name === 'WSIB' ? (wsibOk ? 'Active' : 'Inactive') : 'No expiry set'}
                         </p>
                       )}
@@ -378,7 +378,7 @@ export default function ProDashboardPage() {
                       size="sm"
                       variant="outline"
                       className={cn(
-                        'rounded-xl border-gray-300 hover:border-reno-green-dark hover:bg-reno-green-light hover:text-reno-green-dark flex-shrink-0',
+                        'rounded-xl border-slate-300 hover:border-reno-green-dark hover:bg-reno-green-light hover:text-reno-green-dark flex-shrink-0',
                         cert.status === 'expired' && 'border-red-300 bg-red-50 text-red-700 hover:bg-red-100 hover:border-red-400'
                       )}
                     >
@@ -397,35 +397,35 @@ export default function ProDashboardPage() {
       {/* Quick Links */}
       <div className="grid gap-4 sm:grid-cols-3">
         <Link href="/pro-dashboard/settings" className="block">
-          <Card className="rounded-2xl border border-gray-200 bg-white shadow-none transition-all duration-200 hover:shadow-md hover:border-reno-green-dark/20 p-5">
+          <Card className="rounded-2xl border border-slate-200 bg-white shadow-none transition-all duration-200 hover:shadow-md hover:border-reno-green-dark/20 p-5">
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-semibold text-gray-900">Settings</p>
-                <p className="text-sm text-gray-500 mt-0.5">Edit profile & service area</p>
+                <p className="font-semibold text-slate-900">Settings</p>
+                <p className="text-sm text-slate-500 mt-0.5">Edit profile & service area</p>
               </div>
-              <ChevronRight className="h-5 w-5 text-gray-400" />
+              <ChevronRight className="h-5 w-5 text-slate-400" />
             </div>
           </Card>
         </Link>
         <Link href="/pro-dashboard/gallery" className="block">
-          <Card className="rounded-2xl border border-gray-200 bg-white shadow-none transition-all duration-200 hover:shadow-md hover:border-reno-green-dark/20 p-5">
+          <Card className="rounded-2xl border border-slate-200 bg-white shadow-none transition-all duration-200 hover:shadow-md hover:border-reno-green-dark/20 p-5">
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-semibold text-gray-900">Portfolio</p>
-                <p className="text-sm text-gray-500 mt-0.5">{galleryCount} photos uploaded</p>
+                <p className="font-semibold text-slate-900">Portfolio</p>
+                <p className="text-sm text-slate-500 mt-0.5">{galleryCount} photos uploaded</p>
               </div>
-              <ChevronRight className="h-5 w-5 text-gray-400" />
+              <ChevronRight className="h-5 w-5 text-slate-400" />
             </div>
           </Card>
         </Link>
         <Link href="/join" className="block">
-          <Card className="rounded-2xl border border-gray-200 bg-white shadow-none transition-all duration-200 hover:shadow-md hover:border-reno-green-dark/20 p-5">
+          <Card className="rounded-2xl border border-slate-200 bg-white shadow-none transition-all duration-200 hover:shadow-md hover:border-reno-green-dark/20 p-5">
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-semibold text-gray-900">Application</p>
-                <p className="text-sm text-gray-500 mt-0.5 capitalize">{appStatus.replace('_', ' ')}</p>
+                <p className="font-semibold text-slate-900">Application</p>
+                <p className="text-sm text-slate-500 mt-0.5 capitalize">{appStatus.replace('_', ' ')}</p>
               </div>
-              <ChevronRight className="h-5 w-5 text-gray-400" />
+              <ChevronRight className="h-5 w-5 text-slate-400" />
             </div>
           </Card>
         </Link>

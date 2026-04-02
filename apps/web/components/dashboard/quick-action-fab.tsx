@@ -6,8 +6,8 @@ import { Plus, Camera, MessageSquare, Phone, FileText } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const actions = [
-  { icon: Camera, label: 'Photo', color: 'bg-blue-500/20 text-blue-400' },
-  { icon: MessageSquare, label: 'Message', color: 'bg-emerald-500/20 text-emerald-400' },
+  { icon: Camera, label: 'Photo', color: 'bg-primary-500/20 text-primary-400' },
+  { icon: MessageSquare, label: 'Message', color: 'bg-reno-green-500/20 text-reno-green-400' },
   { icon: Phone, label: 'Call', color: 'bg-amber-500/20 text-amber-400' },
   { icon: FileText, label: 'Report', color: 'bg-purple-500/20 text-purple-400' },
 ];
@@ -58,7 +58,7 @@ export function QuickActionFAB() {
         onClick={() => setOpen(!open)}
         animate={{ rotate: open ? 45 : 0 }}
         transition={{ duration: 0.2 }}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500 shadow-lg shadow-emerald-500/30"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-reno-green-500 shadow-lg shadow-emerald-500/30"
       >
         <Plus className="h-6 w-6 text-white" />
       </motion.button>

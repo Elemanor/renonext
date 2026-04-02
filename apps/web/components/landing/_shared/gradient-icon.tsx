@@ -8,7 +8,7 @@ const sizeMap = {
 
 interface GradientIconProps {
   icon: LucideIcon;
-  /** Tailwind gradient classes, e.g. "from-emerald-400 to-emerald-600" */
+  /** Tailwind gradient classes, e.g. "from-reno-green-400 to-reno-green-600" */
   gradient: string;
   size?: 'sm' | 'md' | 'lg';
   /** Add a blurred glow shadow matching the gradient */

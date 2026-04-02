@@ -20,13 +20,13 @@ export function SiteBriefing() {
               cx="20" cy="20" r="18" fill="none"
               stroke="currentColor" strokeWidth="3" strokeLinecap="round"
               strokeDasharray={circumference} strokeDashoffset={strokeOffset}
-              className="text-emerald-400"
+              className="text-reno-green-400"
             />
           </svg>
           <span className="absolute text-[10px] font-bold text-white/90">{progressPercent}%</span>
         </div>
         <div>
-          <div className="flex items-center gap-2 text-xs text-gray-500">
+          <div className="flex items-center gap-2 text-xs text-slate-500">
             <MapPin className="h-3 w-3" />
             {siteAddress}
           </div>
@@ -39,8 +39,8 @@ export function SiteBriefing() {
       {/* Right: crew on site */}
       <div className="flex items-center gap-3">
         <div className="flex items-center gap-1.5">
-          <Clock className="h-3.5 w-3.5 text-gray-500" />
-          <span className="text-xs text-gray-400">{teamMembers.filter(m => m.status === 'on-site').length} on site</span>
+          <Clock className="h-3.5 w-3.5 text-slate-500" />
+          <span className="text-xs text-slate-400">{teamMembers.filter(m => m.status === 'on-site').length} on site</span>
         </div>
         <div className="flex -space-x-2">
           {teamMembers.map((m) => (

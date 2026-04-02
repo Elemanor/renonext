@@ -22,7 +22,7 @@ const tierConfig = {
     trackStroke: '#d1fae5',
     arcStroke: '#10b981',
     progressTier: 'high' as ProgressTier,
-    tierColor: 'text-emerald-600',
+    tierColor: 'text-reno-green-600',
   },
   MEDIUM: {
     label: 'Partial Coverage',

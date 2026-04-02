@@ -17,8 +17,8 @@ export function ProjectScheduleTab({ schedule, todayDate }: ProjectScheduleTabPr
   if (schedule.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
-        <CalendarOff className="mb-3 h-10 w-10 text-gray-300" />
-        <p className="text-sm font-medium text-gray-500">No scheduled work this week.</p>
+        <CalendarOff className="mb-3 h-10 w-10 text-slate-300" />
+        <p className="text-sm font-medium text-slate-500">No scheduled work this week.</p>
       </div>
     );
   }

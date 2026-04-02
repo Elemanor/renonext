@@ -183,7 +183,7 @@ export default function JSAFormGenerator() {
       case 'B':
         return 'bg-amber-600 text-white hover:bg-amber-600';
       case 'C':
-        return 'bg-green-600 text-white hover:bg-green-600';
+        return 'bg-reno-green-600 text-white hover:bg-reno-green-600';
     }
   };
 
@@ -305,12 +305,12 @@ export default function JSAFormGenerator() {
               </span>
               <div>
                 <h1 className="text-4xl font-bold text-reno-dark">JSA Form Generator</h1>
-                <p className="text-lg text-gray-600 mt-1">
+                <p className="text-lg text-slate-600 mt-1">
                   Generate a professional Job Safety Analysis form. Fill it out and print.
                 </p>
               </div>
             </div>
-            <Badge className="bg-green-600 text-white hover:bg-green-600">
+            <Badge className="bg-reno-green-600 text-white hover:bg-reno-green-600">
               <span className="material-symbols-outlined text-sm mr-1">workspace_premium</span>
               Free Tool
             </Badge>
@@ -520,7 +520,7 @@ export default function JSAFormGenerator() {
                     </div>
                   </div>
                   <Separator />
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-slate-600">
                     Ensure that all hazards identified are addressed in JSA below | Risk Levels:{' '}
                     <span className="font-semibold">A = High</span>{' '}
                     <span className="font-semibold">B = Medium</span>{' '}
@@ -574,7 +574,7 @@ export default function JSAFormGenerator() {
                   <Separator />
 
                   {jobSteps.length === 0 && (
-                    <div className="text-center py-8 text-gray-500">
+                    <div className="text-center py-8 text-slate-500">
                       <span className="material-symbols-outlined text-5xl mb-2 opacity-50">
                         construction
                       </span>
@@ -622,7 +622,7 @@ export default function JSAFormGenerator() {
 
                           <div className="space-y-2">
                             <div>
-                              <Label className="text-xs text-gray-600">Hazards</Label>
+                              <Label className="text-xs text-slate-600">Hazards</Label>
                               {step.isCustom ? (
                                 <Textarea
                                   value={step.hazards.join('\n')}
@@ -646,7 +646,7 @@ export default function JSAFormGenerator() {
                               )}
                             </div>
                             <div>
-                              <Label className="text-xs text-gray-600">Safety Controls</Label>
+                              <Label className="text-xs text-slate-600">Safety Controls</Label>
                               {step.isCustom ? (
                                 <Textarea
                                   value={step.safetyControls.join('\n')}
@@ -671,7 +671,7 @@ export default function JSAFormGenerator() {
                             </div>
                             {step.isCustom && (
                               <div>
-                                <Label className="text-xs text-gray-600">Risk Level</Label>
+                                <Label className="text-xs text-slate-600">Risk Level</Label>
                                 <Select
                                   value={step.riskLevel}
                                   onValueChange={(value) =>
@@ -708,7 +708,7 @@ export default function JSAFormGenerator() {
                 </CardHeader>
                 <CardContent>
                   {consolidatedTools.length === 0 ? (
-                    <p className="text-gray-500 text-sm">Add job steps to see required tools</p>
+                    <p className="text-slate-500 text-sm">Add job steps to see required tools</p>
                   ) : (
                     <div className="flex flex-wrap gap-2">
                       {consolidatedTools.map((tool) => (
@@ -733,7 +733,7 @@ export default function JSAFormGenerator() {
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {consolidatedPPE.map((ppe) => (
-                      <Badge key={ppe} variant="secondary" className="bg-green-100 text-green-800">
+                      <Badge key={ppe} variant="secondary" className="bg-reno-green-100 text-reno-green-800">
                         {ppe}
                       </Badge>
                     ))}
@@ -768,7 +768,7 @@ export default function JSAFormGenerator() {
                   </div>
 
                   {crewMembers.length === 0 ? (
-                    <p className="text-gray-500 text-sm">No crew members added yet</p>
+                    <p className="text-slate-500 text-sm">No crew members added yet</p>
                   ) : (
                     <div className="grid grid-cols-2 gap-2">
                       {crewMembers.map((member) => (
@@ -802,8 +802,8 @@ export default function JSAFormGenerator() {
                       placeholder="Enter supervisor name for approval"
                       className="mt-1"
                     />
-                    <div className="mt-2 border-b-2 border-gray-400 pb-1">
-                      <p className="text-xs text-gray-500">Signature line (will show on print)</p>
+                    <div className="mt-2 border-b-2 border-slate-400 pb-1">
+                      <p className="text-xs text-slate-500">Signature line (will show on print)</p>
                     </div>
                   </div>
                 </CardContent>
@@ -820,7 +820,7 @@ export default function JSAFormGenerator() {
               </Button>
               <Button
                 onClick={handlePrint}
-                className="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800"
+                className="bg-gradient-to-r from-amber-600 to-reno-amber-700 hover:from-amber-700 hover:to-reno-amber-800"
               >
                 <span className="material-symbols-outlined mr-2">print</span>
                 Print JSA

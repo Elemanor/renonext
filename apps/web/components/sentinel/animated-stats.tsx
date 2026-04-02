@@ -75,7 +75,7 @@ function AnimatedStat({
         {count}
         {suffix}
       </p>
-      <p className="text-sm text-gray-400 font-medium mt-1">{label}</p>
+      <p className="text-sm text-slate-400 font-medium mt-1">{label}</p>
     </div>
   );
 }

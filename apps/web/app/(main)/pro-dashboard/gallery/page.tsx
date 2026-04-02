@@ -127,20 +127,20 @@ export default function PortfolioPage() {
     return (
       <div className="flex flex-col items-center justify-center py-24">
         <Loader2 className="h-8 w-8 animate-spin text-reno-green-dark" />
-        <p className="text-sm text-gray-400 mt-3">Loading portfolio...</p>
+        <p className="text-sm text-slate-400 mt-3">Loading portfolio...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-slate-50 pb-20">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">My Portfolio</h1>
-              <p className="mt-2 text-lg text-gray-600">
+              <h1 className="text-3xl font-bold text-slate-900">My Portfolio</h1>
+              <p className="mt-2 text-lg text-slate-600">
                 Showcase your verified work to attract new clients
               </p>
             </div>
@@ -155,7 +155,7 @@ export default function PortfolioPage() {
               <Button
                 onClick={handleSharePortfolio}
                 variant="outline"
-                className="px-6 rounded-xl border-gray-300"
+                className="px-6 rounded-xl border-slate-300"
               >
                 <Share2 className="w-4 h-4 mr-2" />
                 {copiedLink ? 'Link Copied!' : 'Share'}
@@ -165,23 +165,23 @@ export default function PortfolioPage() {
 
           {/* Stats Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-            <Card className="p-6 rounded-2xl border-gray-200">
+            <Card className="p-6 rounded-2xl border-slate-200">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">Photos</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-2">{totalPhotos}</p>
+                  <p className="text-sm font-medium text-slate-600">Photos</p>
+                  <p className="text-3xl font-bold text-slate-900 mt-2">{totalPhotos}</p>
                 </div>
-                <div className="h-12 w-12 bg-violet-50 rounded-xl flex items-center justify-center">
-                  <ImageIcon className="w-6 h-6 text-violet-600" />
+                <div className="h-12 w-12 bg-reno-purple-50 rounded-xl flex items-center justify-center">
+                  <ImageIcon className="w-6 h-6 text-reno-purple-600" />
                 </div>
               </div>
             </Card>
 
-            <Card className="p-6 rounded-2xl border-gray-200">
+            <Card className="p-6 rounded-2xl border-slate-200">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">Featured</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-2">{featuredImages.length}</p>
+                  <p className="text-sm font-medium text-slate-600">Featured</p>
+                  <p className="text-3xl font-bold text-slate-900 mt-2">{featuredImages.length}</p>
                 </div>
                 <div className="h-12 w-12 bg-reno-green/10 rounded-xl flex items-center justify-center">
                   <CheckCircle className="w-6 h-6 text-reno-green" />
@@ -189,11 +189,11 @@ export default function PortfolioPage() {
               </div>
             </Card>
 
-            <Card className="p-6 rounded-2xl border-gray-200">
+            <Card className="p-6 rounded-2xl border-slate-200">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">Avg Rating</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-2">
+                  <p className="text-sm font-medium text-slate-600">Avg Rating</p>
+                  <p className="text-3xl font-bold text-slate-900 mt-2">
                     {proStats.avgRating > 0 ? proStats.avgRating.toFixed(1) : '--'}
                   </p>
                 </div>
@@ -203,14 +203,14 @@ export default function PortfolioPage() {
               </div>
             </Card>
 
-            <Card className="p-6 rounded-2xl border-gray-200">
+            <Card className="p-6 rounded-2xl border-slate-200">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">Reviews</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-2">{proStats.totalReviews}</p>
+                  <p className="text-sm font-medium text-slate-600">Reviews</p>
+                  <p className="text-3xl font-bold text-slate-900 mt-2">{proStats.totalReviews}</p>
                 </div>
-                <div className="h-12 w-12 bg-emerald-50 rounded-xl flex items-center justify-center">
-                  <Star className="w-6 h-6 text-emerald-600" />
+                <div className="h-12 w-12 bg-reno-green-50 rounded-xl flex items-center justify-center">
+                  <Star className="w-6 h-6 text-reno-green-600" />
                 </div>
               </div>
             </Card>
@@ -223,15 +223,15 @@ export default function PortfolioPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <Card className="w-full max-w-md mx-4 p-6 rounded-2xl">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-gray-900">Upload Photo</h3>
-              <button onClick={() => setShowUpload(false)} className="p-1 rounded-lg hover:bg-gray-100">
-                <X className="h-5 w-5 text-gray-500" />
+              <h3 className="text-lg font-bold text-slate-900">Upload Photo</h3>
+              <button onClick={() => setShowUpload(false)} className="p-1 rounded-lg hover:bg-slate-100">
+                <X className="h-5 w-5 text-slate-500" />
               </button>
             </div>
 
             <div className="space-y-4">
               <div>
-                <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                   Caption (optional)
                 </Label>
                 <Input
@@ -272,7 +272,7 @@ export default function PortfolioPage() {
                 )}
               </Button>
 
-              <p className="text-xs text-gray-400 text-center">
+              <p className="text-xs text-slate-400 text-center">
                 JPEG, PNG, or WebP. Max 5MB.
               </p>
             </div>
@@ -283,14 +283,14 @@ export default function PortfolioPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Gallery Grid */}
         {gallery.length === 0 ? (
-          <Card className="rounded-2xl border-gray-200 p-12 text-center">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-100">
-              <ImagePlus className="h-8 w-8 text-gray-400" />
+          <Card className="rounded-2xl border-slate-200 p-12 text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100">
+              <ImagePlus className="h-8 w-8 text-slate-400" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">
+            <h3 className="text-lg font-bold text-slate-900 mb-2">
               No photos yet
             </h3>
-            <p className="text-gray-500 mb-6 max-w-sm mx-auto">
+            <p className="text-slate-500 mb-6 max-w-sm mx-auto">
               Upload photos of your completed work to build your portfolio and attract new clients.
             </p>
             <Button
@@ -304,12 +304,12 @@ export default function PortfolioPage() {
         ) : (
           <div>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">All Photos</h2>
+              <h2 className="text-2xl font-bold text-slate-900">All Photos</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {gallery.map((entry) => (
-                <Card key={entry.id} className="rounded-2xl border-gray-200 overflow-hidden group hover:shadow-lg transition-all duration-300">
+                <Card key={entry.id} className="rounded-2xl border-slate-200 overflow-hidden group hover:shadow-lg transition-all duration-300">
                   <div className="relative h-64 overflow-hidden">
                     <img
                       src={entry.image_url}
@@ -344,8 +344,8 @@ export default function PortfolioPage() {
 
                   {entry.caption && (
                     <div className="p-4">
-                      <p className="text-sm text-gray-700">{entry.caption}</p>
-                      <p className="text-xs text-gray-400 mt-1">
+                      <p className="text-sm text-slate-700">{entry.caption}</p>
+                      <p className="text-xs text-slate-400 mt-1">
                         {new Date(entry.created_at).toLocaleDateString('en-CA', {
                           month: 'short',
                           day: 'numeric',

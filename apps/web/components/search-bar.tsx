@@ -39,10 +39,10 @@ export function SearchBar() {
     >
       <div
         className={`flex flex-1 items-center gap-2.5 rounded-xl px-4 py-3 transition-all duration-200 sm:rounded-l-full ${
-          focused === 'query' ? 'bg-gray-50' : ''
+          focused === 'query' ? 'bg-slate-50' : ''
         }`}
       >
-        <Search className="h-5 w-5 shrink-0 text-gray-400" />
+        <Search className="h-5 w-5 shrink-0 text-slate-400" />
         <input
           type="text"
           placeholder="Describe your problem (e.g., leaky faucet, need to move...)"
@@ -50,18 +50,18 @@ export function SearchBar() {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setFocused('query')}
           onBlur={() => setFocused(null)}
-          className="w-full bg-transparent text-sm font-medium text-gray-900 placeholder-gray-400 outline-none"
+          className="w-full bg-transparent text-sm font-medium text-slate-900 placeholder-slate-400 outline-none"
         />
       </div>
 
-      <div className="hidden h-8 w-px self-center bg-gray-200 sm:block" />
+      <div className="hidden h-8 w-px self-center bg-slate-200 sm:block" />
 
       <div
         className={`flex items-center gap-2.5 rounded-xl px-4 py-3 transition-all duration-200 ${
-          focused === 'location' ? 'bg-gray-50' : ''
+          focused === 'location' ? 'bg-slate-50' : ''
         }`}
       >
-        <MapPin className="h-5 w-5 shrink-0 text-gray-400" />
+        <MapPin className="h-5 w-5 shrink-0 text-slate-400" />
         <input
           type="text"
           placeholder="Location"
@@ -69,17 +69,17 @@ export function SearchBar() {
           onChange={(e) => setLocation(e.target.value)}
           onFocus={() => setFocused('location')}
           onBlur={() => setFocused(null)}
-          className="w-full bg-transparent text-sm font-medium text-gray-900 placeholder-gray-400 outline-none sm:w-32"
+          className="w-full bg-transparent text-sm font-medium text-slate-900 placeholder-slate-400 outline-none sm:w-32"
         />
       </div>
 
-      <div className="hidden h-8 w-px self-center bg-gray-200 sm:block" />
+      <div className="hidden h-8 w-px self-center bg-slate-200 sm:block" />
 
       <div className="relative flex items-center rounded-xl px-4 py-3">
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="w-full cursor-pointer appearance-none bg-transparent pr-6 text-sm font-medium text-gray-700 outline-none sm:w-36"
+          className="w-full cursor-pointer appearance-none bg-transparent pr-6 text-sm font-medium text-slate-700 outline-none sm:w-36"
         >
           {categoryOptions.map((opt) => (
             <option key={opt.value} value={opt.value}>
@@ -87,7 +87,7 @@ export function SearchBar() {
             </option>
           ))}
         </select>
-        <ChevronDown className="pointer-events-none absolute right-4 h-4 w-4 text-gray-400" />
+        <ChevronDown className="pointer-events-none absolute right-4 h-4 w-4 text-slate-400" />
       </div>
 
       <button

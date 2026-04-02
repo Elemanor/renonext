@@ -44,13 +44,13 @@ const mockJobs: AdminJob[] = [
 ];
 
 const statusColors: Record<JobStatus, string> = {
-  draft: 'bg-gray-100 text-gray-600',
-  posted: 'bg-blue-100 text-blue-700',
+  draft: 'bg-slate-100 text-slate-600',
+  posted: 'bg-primary-100 text-primary-700',
   bidding: 'bg-purple-100 text-purple-700',
   accepted: 'bg-cyan-100 text-cyan-700',
   in_progress: 'bg-amber-100 text-amber-700',
-  completed: 'bg-green-100 text-green-700',
-  cancelled: 'bg-gray-100 text-gray-500',
+  completed: 'bg-reno-green-100 text-reno-green-700',
+  cancelled: 'bg-slate-100 text-slate-500',
   disputed: 'bg-red-100 text-red-700',
 };
 
@@ -80,24 +80,24 @@ export default function AdminJobsPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold tracking-tight text-gray-900">
+      <h1 className="mb-6 text-2xl font-bold tracking-tight text-slate-900">
         Job Management
       </h1>
 
       {/* Filters */}
       <div className="mb-4 flex flex-col gap-3 sm:flex-row">
         <div className="relative flex-1">
-          <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+          <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <Input
             type="text"
             placeholder="Search by title or ID..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-xl border border-gray-200 py-2.5 pl-10 pr-4 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+            className="w-full rounded-xl border border-slate-200 py-2.5 pl-10 pr-4 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
           />
         </div>
         <Select value={statusFilter} onValueChange={setStatusFilter}>
-          <SelectTrigger className="w-[160px] rounded-xl border border-gray-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light">
+          <SelectTrigger className="w-[160px] rounded-xl border border-slate-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light">
             <SelectValue placeholder="All Statuses" />
           </SelectTrigger>
           <SelectContent>
@@ -113,40 +113,40 @@ export default function AdminJobsPage() {
       </div>
 
       {/* Jobs Table */}
-      <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
         <Table>
           <TableHeader>
-            <TableRow className="border-b border-gray-100 bg-gray-50/50">
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">ID</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Job</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Client</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Pro</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Status</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Cost</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Date</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Actions</TableHead>
+            <TableRow className="border-b border-slate-100 bg-slate-50/50">
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">ID</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Job</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Client</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Pro</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Status</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Cost</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Date</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {filteredJobs.map((job) => (
               <TableRow
                 key={job.id}
-                className="border-b border-gray-100 transition-all duration-200 last:border-0 hover:bg-gray-50/50"
+                className="border-b border-slate-100 transition-all duration-200 last:border-0 hover:bg-slate-50/50"
               >
-                <TableCell className="px-4 py-3.5 font-mono text-sm text-gray-500">
+                <TableCell className="px-4 py-3.5 font-mono text-sm text-slate-500">
                   {job.id}
                 </TableCell>
                 <TableCell className="px-4 py-3.5">
-                  <p className="text-sm font-medium text-gray-900">
+                  <p className="text-sm font-medium text-slate-900">
                     {job.title}
                   </p>
-                  <p className="text-xs text-gray-500">{job.category} &middot; {job.city}</p>
+                  <p className="text-xs text-slate-500">{job.category} &middot; {job.city}</p>
                 </TableCell>
-                <TableCell className="px-4 py-3.5 text-sm text-gray-700">
+                <TableCell className="px-4 py-3.5 text-sm text-slate-700">
                   {job.client}
                 </TableCell>
-                <TableCell className="px-4 py-3.5 text-sm text-gray-700">
-                  {job.pro || <span className="text-gray-400">--</span>}
+                <TableCell className="px-4 py-3.5 text-sm text-slate-700">
+                  {job.pro || <span className="text-slate-400">--</span>}
                 </TableCell>
                 <TableCell className="px-4 py-3.5">
                   <Badge
@@ -157,12 +157,12 @@ export default function AdminJobsPage() {
                     {statusLabels[job.status]}
                   </Badge>
                 </TableCell>
-                <TableCell className="px-4 py-3.5 text-sm font-medium text-gray-900">
+                <TableCell className="px-4 py-3.5 text-sm font-medium text-slate-900">
                   {job.totalCost
                     ? `$${job.totalCost.toLocaleString()}`
-                    : <span className="text-gray-400">--</span>}
+                    : <span className="text-slate-400">--</span>}
                 </TableCell>
-                <TableCell className="px-4 py-3.5 text-sm text-gray-500">
+                <TableCell className="px-4 py-3.5 text-sm text-slate-500">
                   {new Date(job.createdAt).toLocaleDateString('en-CA', {
                     month: 'short',
                     day: 'numeric',
@@ -173,7 +173,7 @@ export default function AdminJobsPage() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="rounded-xl p-1.5 text-gray-400 transition-all duration-200 hover:bg-gray-100 hover:text-gray-600"
+                      className="rounded-xl p-1.5 text-slate-400 transition-all duration-200 hover:bg-slate-100 hover:text-slate-600"
                       title="View"
                     >
                       <Eye className="h-4 w-4" />
@@ -208,7 +208,7 @@ export default function AdminJobsPage() {
         </Table>
       </div>
 
-      <p className="mt-4 text-sm text-gray-500">
+      <p className="mt-4 text-sm text-slate-500">
         Showing {filteredJobs.length} of {mockJobs.length} jobs
       </p>
     </div>

@@ -132,14 +132,14 @@ export function SearchConsoleTab() {
       </div>
 
       {/* Controls */}
-      <Card className="border-gray-200/60 shadow-sm">
+      <Card className="border-slate-200/60 shadow-sm">
         <CardContent className="p-4">
           <div className="flex flex-col sm:flex-row gap-3 items-end">
             {view !== 'sitemaps' && view !== 'inspect' && (
               <div>
-                <label className="text-xs font-medium text-gray-500 mb-1 block">Date Range</label>
+                <label className="text-xs font-medium text-slate-500 mb-1 block">Date Range</label>
                 <Select value={days} onValueChange={setDays}>
-                  <SelectTrigger className="w-40 h-9 rounded-lg border-gray-200">
+                  <SelectTrigger className="w-40 h-9 rounded-lg border-slate-200">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -153,7 +153,7 @@ export function SearchConsoleTab() {
 
             {view === 'inspect' && (
               <div className="flex-1">
-                <label className="text-xs font-medium text-gray-500 mb-1 block">URL to Inspect</label>
+                <label className="text-xs font-medium text-slate-500 mb-1 block">URL to Inspect</label>
                 <Input
                   value={inspectUrl}
                   onChange={(e) => setInspectUrl(e.target.value)}
@@ -176,10 +176,10 @@ export function SearchConsoleTab() {
 
       {/* Keywords / Pages table */}
       {(view === 'keywords' || view === 'pages') && rows.length > 0 && (
-        <Card className="border-gray-200/60 shadow-sm overflow-hidden">
+        <Card className="border-slate-200/60 shadow-sm overflow-hidden">
           <Table>
             <TableHeader>
-              <TableRow className="bg-gray-50/60">
+              <TableRow className="bg-slate-50/60">
                 <TableHead>{view === 'keywords' ? 'Keyword' : 'Page'}</TableHead>
                 <TableHead className="text-right">Clicks</TableHead>
                 <TableHead className="text-right">Impressions</TableHead>
@@ -190,13 +190,13 @@ export function SearchConsoleTab() {
             <TableBody>
               {rows.map((row, i) => (
                 <TableRow key={i}>
-                  <TableCell className={`text-sm ${view === 'pages' ? 'font-mono text-xs text-gray-600 max-w-[300px] truncate' : 'text-gray-800'}`}>
+                  <TableCell className={`text-sm ${view === 'pages' ? 'font-mono text-xs text-slate-600 max-w-[300px] truncate' : 'text-slate-800'}`}>
                     {row.keys[0]?.replace('https://renonext.com', '') || '—'}
                   </TableCell>
                   <TableCell className="text-right text-sm font-medium">{row.clicks.toLocaleString()}</TableCell>
-                  <TableCell className="text-right text-sm text-gray-600">{row.impressions.toLocaleString()}</TableCell>
+                  <TableCell className="text-right text-sm text-slate-600">{row.impressions.toLocaleString()}</TableCell>
                   <TableCell className="text-right text-sm">
-                    <span className={row.ctr > 0.05 ? 'text-emerald-600' : 'text-gray-600'}>
+                    <span className={row.ctr > 0.05 ? 'text-reno-green-600' : 'text-slate-600'}>
                       {(row.ctr * 100).toFixed(1)}%
                     </span>
                   </TableCell>
@@ -212,17 +212,17 @@ export function SearchConsoleTab() {
 
       {/* Quick Wins */}
       {view === 'quick-wins' && quickWins.length > 0 && (
-        <Card className="border-gray-200/60 shadow-sm overflow-hidden">
+        <Card className="border-slate-200/60 shadow-sm overflow-hidden">
           <div className="h-1 w-full bg-gradient-to-r from-amber-400 to-amber-600 opacity-60" />
           <CardContent className="p-0">
-            <div className="px-5 py-3 border-b border-gray-100">
-              <p className="text-xs text-gray-500">
+            <div className="px-5 py-3 border-b border-slate-100">
+              <p className="text-xs text-slate-500">
                 High-impression keywords at positions 5-20 with low CTR. Improving these titles/descriptions could yield quick traffic gains.
               </p>
             </div>
             <Table>
               <TableHeader>
-                <TableRow className="bg-gray-50/60">
+                <TableRow className="bg-slate-50/60">
                   <TableHead>Keyword</TableHead>
                   <TableHead className="hidden md:table-cell">Page</TableHead>
                   <TableHead className="text-right">Impressions</TableHead>
@@ -234,8 +234,8 @@ export function SearchConsoleTab() {
               <TableBody>
                 {quickWins.map((win, i) => (
                   <TableRow key={i}>
-                    <TableCell className="text-sm text-gray-800 font-medium">{win.query}</TableCell>
-                    <TableCell className="hidden md:table-cell font-mono text-xs text-gray-500 max-w-[200px] truncate">
+                    <TableCell className="text-sm text-slate-800 font-medium">{win.query}</TableCell>
+                    <TableCell className="hidden md:table-cell font-mono text-xs text-slate-500 max-w-[200px] truncate">
                       {win.page.replace('https://renonext.com', '')}
                     </TableCell>
                     <TableCell className="text-right text-sm">{win.impressions.toLocaleString()}</TableCell>
@@ -254,10 +254,10 @@ export function SearchConsoleTab() {
 
       {/* Sitemaps */}
       {view === 'sitemaps' && sitemaps.length > 0 && (
-        <Card className="border-gray-200/60 shadow-sm overflow-hidden">
+        <Card className="border-slate-200/60 shadow-sm overflow-hidden">
           <Table>
             <TableHeader>
-              <TableRow className="bg-gray-50/60">
+              <TableRow className="bg-slate-50/60">
                 <TableHead>Sitemap</TableHead>
                 <TableHead className="text-center">Status</TableHead>
                 <TableHead className="text-center hidden md:table-cell">Errors</TableHead>
@@ -268,19 +268,19 @@ export function SearchConsoleTab() {
             <TableBody>
               {sitemaps.map((sm, i) => (
                 <TableRow key={i}>
-                  <TableCell className="font-mono text-xs text-gray-600">{sm.path}</TableCell>
+                  <TableCell className="font-mono text-xs text-slate-600">{sm.path}</TableCell>
                   <TableCell className="text-center">
-                    <Badge variant="outline" className={`text-xs rounded-full px-2 py-0.5 ${sm.isPending ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'}`}>
+                    <Badge variant="outline" className={`text-xs rounded-full px-2 py-0.5 ${sm.isPending ? 'bg-amber-100 text-amber-700' : 'bg-reno-green-100 text-reno-green-700'}`}>
                       {sm.isPending ? 'Pending' : 'Processed'}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-center hidden md:table-cell text-sm">
-                    <span className={sm.errors ? 'text-red-600 font-medium' : 'text-gray-400'}>{sm.errors ?? 0}</span>
+                    <span className={sm.errors ? 'text-red-600 font-medium' : 'text-slate-400'}>{sm.errors ?? 0}</span>
                   </TableCell>
                   <TableCell className="text-center hidden md:table-cell text-sm">
-                    <span className={sm.warnings ? 'text-amber-600' : 'text-gray-400'}>{sm.warnings ?? 0}</span>
+                    <span className={sm.warnings ? 'text-amber-600' : 'text-slate-400'}>{sm.warnings ?? 0}</span>
                   </TableCell>
-                  <TableCell className="hidden lg:table-cell text-xs text-gray-500">
+                  <TableCell className="hidden lg:table-cell text-xs text-slate-500">
                     {sm.lastSubmitted ? new Date(sm.lastSubmitted).toLocaleDateString('en-CA') : '—'}
                   </TableCell>
                 </TableRow>
@@ -292,38 +292,38 @@ export function SearchConsoleTab() {
 
       {/* URL Inspection */}
       {view === 'inspect' && inspectResult && (
-        <Card className="border-gray-200/60 shadow-sm">
+        <Card className="border-slate-200/60 shadow-sm">
           <CardContent className="p-5 space-y-4">
-            <h3 className="font-semibold text-gray-900">Inspection Result</h3>
+            <h3 className="font-semibold text-slate-900">Inspection Result</h3>
             {(() => {
               const idx = inspectResult.inspectionResult?.indexStatusResult;
-              if (!idx) return <p className="text-sm text-gray-500">No indexing data available.</p>;
+              if (!idx) return <p className="text-sm text-slate-500">No indexing data available.</p>;
 
               const isIndexed = idx.verdict === 'PASS';
               return (
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <Badge variant="outline" className={`text-xs rounded-full px-3 py-1 ${isIndexed ? 'bg-emerald-100 text-emerald-700' : 'bg-red-100 text-red-700'}`}>
+                    <Badge variant="outline" className={`text-xs rounded-full px-3 py-1 ${isIndexed ? 'bg-reno-green-100 text-reno-green-700' : 'bg-red-100 text-red-700'}`}>
                       {isIndexed ? 'Indexed' : 'Not Indexed'}
                     </Badge>
-                    <span className="text-sm text-gray-600">{idx.coverageState}</span>
+                    <span className="text-sm text-slate-600">{idx.coverageState}</span>
                   </div>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
                     <div>
-                      <span className="text-xs text-gray-500 block">Last Crawl</span>
-                      <span className="text-gray-800">{idx.lastCrawlTime ? new Date(idx.lastCrawlTime).toLocaleDateString('en-CA') : '—'}</span>
+                      <span className="text-xs text-slate-500 block">Last Crawl</span>
+                      <span className="text-slate-800">{idx.lastCrawlTime ? new Date(idx.lastCrawlTime).toLocaleDateString('en-CA') : '—'}</span>
                     </div>
                     <div>
-                      <span className="text-xs text-gray-500 block">Fetch State</span>
-                      <span className="text-gray-800">{idx.pageFetchState || '—'}</span>
+                      <span className="text-xs text-slate-500 block">Fetch State</span>
+                      <span className="text-slate-800">{idx.pageFetchState || '—'}</span>
                     </div>
                     <div>
-                      <span className="text-xs text-gray-500 block">Crawled As</span>
-                      <span className="text-gray-800">{idx.crawledAs || '—'}</span>
+                      <span className="text-xs text-slate-500 block">Crawled As</span>
+                      <span className="text-slate-800">{idx.crawledAs || '—'}</span>
                     </div>
                     <div>
-                      <span className="text-xs text-gray-500 block">Indexing State</span>
-                      <span className="text-gray-800">{idx.indexingState || '—'}</span>
+                      <span className="text-xs text-slate-500 block">Indexing State</span>
+                      <span className="text-slate-800">{idx.indexingState || '—'}</span>
                     </div>
                   </div>
                 </div>
@@ -335,8 +335,8 @@ export function SearchConsoleTab() {
 
       {/* Empty state */}
       {!loading && !error && rows.length === 0 && quickWins.length === 0 && sitemaps.length === 0 && !inspectResult && (
-        <Card className="border-gray-200/60 shadow-sm">
-          <CardContent className="py-12 text-center text-gray-500 text-sm">
+        <Card className="border-slate-200/60 shadow-sm">
+          <CardContent className="py-12 text-center text-slate-500 text-sm">
             Click &quot;Fetch Data&quot; to load Search Console data.
           </CardContent>
         </Card>
@@ -348,12 +348,12 @@ export function SearchConsoleTab() {
 function PositionBadge({ position }: { position: number }) {
   const rounded = Math.round(position * 10) / 10;
   const color = position <= 3
-    ? 'text-emerald-700 bg-emerald-50'
+    ? 'text-reno-green-700 bg-reno-green-50'
     : position <= 10
-      ? 'text-blue-700 bg-blue-50'
+      ? 'text-primary-700 bg-primary-50'
       : position <= 20
         ? 'text-amber-700 bg-amber-50'
-        : 'text-gray-700 bg-gray-50';
+        : 'text-slate-700 bg-slate-50';
 
   return (
     <span className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${color}`}>

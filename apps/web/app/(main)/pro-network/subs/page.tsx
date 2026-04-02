@@ -57,7 +57,7 @@ const subs = [
     certifications: ['WSIB', 'WHMIS', 'Working at Heights', 'First Aid'],
     specialties: ['Level 4/5 Finish', 'Fire-Rated', 'Sound Insulation', 'Metal Stud'],
     initials: 'PW',
-    color: 'bg-violet-600',
+    color: 'bg-reno-purple-600',
     lastJobDate: 'Feb 2, 2026',
   },
   {
@@ -77,7 +77,7 @@ const subs = [
     certifications: ['WSIB', 'WHMIS', 'ESA Licensed', 'First Aid'],
     specialties: ['Residential Rough-In', 'EV Charging', 'Smart Panels', 'Service Upgrades'],
     initials: 'SE',
-    color: 'bg-blue-600',
+    color: 'bg-primary-600',
     lastJobDate: 'Jan 28, 2026',
   },
   {
@@ -97,7 +97,7 @@ const subs = [
     certifications: ['WSIB', 'WHMIS', 'Working at Heights'],
     specialties: ['Board & Tape', 'Acoustic Ceilings', 'Bulkheads'],
     initials: 'GD',
-    color: 'bg-emerald-600',
+    color: 'bg-reno-green-600',
     lastJobDate: 'Feb 4, 2026',
   },
   {
@@ -117,7 +117,7 @@ const subs = [
     certifications: ['WHMIS'],
     specialties: ['Board & Tape', 'Patching'],
     initials: 'FF',
-    color: 'bg-gray-600',
+    color: 'bg-slate-600',
     lastJobDate: 'Jan 15, 2026',
   },
   {
@@ -165,9 +165,9 @@ const subs = [
 const wsibStatusConfig = {
   active: {
     label: 'WSIB Active',
-    color: 'bg-emerald-50 text-emerald-700',
+    color: 'bg-reno-green-50 text-reno-green-700',
     icon: CheckCircle,
-    iconColor: 'text-emerald-500',
+    iconColor: 'text-reno-green-500',
   },
   expiring: {
     label: 'WSIB Expiring',
@@ -189,14 +189,14 @@ export default function SubTradesPage() {
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">
             Sub-Trade Directory
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-slate-500">
             Browse, verify, and manage your sub-trade network
           </p>
         </div>
-        <Button className="rounded-xl bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-violet-700 hover:shadow-md h-auto">
+        <Button className="rounded-xl bg-reno-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-reno-purple-700 hover:shadow-md h-auto">
           <UserPlus className="mr-1.5 h-4 w-4" />
           Invite Sub-Trade
         </Button>
@@ -204,13 +204,13 @@ export default function SubTradesPage() {
 
       {/* Search & Filter Bar */}
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <div className="flex flex-1 items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 shadow-sm">
-          <Search className="h-4 w-4 text-gray-400" />
-          <span className="text-sm text-gray-400">Search subs by name, trade, or location...</span>
+        <div className="flex flex-1 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-sm">
+          <Search className="h-4 w-4 text-slate-400" />
+          <span className="text-sm text-slate-400">Search subs by name, trade, or location...</span>
         </div>
         <Button
           variant="outline"
-          className="h-auto rounded-xl border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700"
+          className="h-auto rounded-xl border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700"
         >
           <Filter className="mr-1.5 h-4 w-4" />
           Filters
@@ -224,8 +224,8 @@ export default function SubTradesPage() {
             key={trade}
             className={`cursor-pointer rounded-full px-3 py-1.5 text-xs font-medium transition-all ${
               i === 0
-                ? 'border-transparent bg-violet-100 text-violet-700'
-                : 'border border-gray-200 bg-white text-gray-600 hover:bg-gray-50'
+                ? 'border-transparent bg-reno-purple-100 text-reno-purple-700'
+                : 'border border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
             }`}
           >
             {trade}
@@ -244,7 +244,7 @@ export default function SubTradesPage() {
               className={`rounded-2xl border shadow-sm transition-all duration-200 hover:shadow-md ${
                 sub.wsibStatus === 'expired'
                   ? 'border-red-200 bg-red-50/20'
-                  : 'border-gray-200 bg-white'
+                  : 'border-slate-200 bg-white'
               }`}
             >
               <CardContent className="p-5">
@@ -259,7 +259,7 @@ export default function SubTradesPage() {
                   </Avatar>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-bold text-gray-900">{sub.name}</h3>
+                      <h3 className="font-bold text-slate-900">{sub.name}</h3>
                       <Badge
                         className={`shrink-0 rounded-full border-transparent px-2 py-0 text-[9px] font-semibold ${wsibConfig.color}`}
                       >
@@ -267,8 +267,8 @@ export default function SubTradesPage() {
                         {wsibConfig.label}
                       </Badge>
                     </div>
-                    <p className="text-sm text-gray-500">{sub.trade}</p>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-sm text-slate-500">{sub.trade}</p>
+                    <p className="text-xs text-slate-400">
                       Contact: {sub.contact}
                     </p>
                   </div>
@@ -276,26 +276,26 @@ export default function SubTradesPage() {
 
                 {/* Stats Row */}
                 <div className="mb-4 grid grid-cols-4 gap-2">
-                  <div className="rounded-lg bg-gray-50 px-2 py-1.5 text-center">
-                    <p className="text-sm font-bold text-gray-900">{sub.crewSize}</p>
-                    <p className="text-[9px] text-gray-500">Crew</p>
+                  <div className="rounded-lg bg-slate-50 px-2 py-1.5 text-center">
+                    <p className="text-sm font-bold text-slate-900">{sub.crewSize}</p>
+                    <p className="text-[9px] text-slate-500">Crew</p>
                   </div>
-                  <div className="rounded-lg bg-gray-50 px-2 py-1.5 text-center">
+                  <div className="rounded-lg bg-slate-50 px-2 py-1.5 text-center">
                     <div className="flex items-center justify-center gap-0.5">
                       <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-                      <span className="text-sm font-bold text-gray-900">{sub.rating}</span>
+                      <span className="text-sm font-bold text-slate-900">{sub.rating}</span>
                     </div>
-                    <p className="text-[9px] text-gray-500">{sub.reviewCount} reviews</p>
+                    <p className="text-[9px] text-slate-500">{sub.reviewCount} reviews</p>
                   </div>
-                  <div className="rounded-lg bg-gray-50 px-2 py-1.5 text-center">
-                    <p className="text-sm font-bold text-gray-900">{sub.completedJobs}</p>
-                    <p className="text-[9px] text-gray-500">Jobs</p>
+                  <div className="rounded-lg bg-slate-50 px-2 py-1.5 text-center">
+                    <p className="text-sm font-bold text-slate-900">{sub.completedJobs}</p>
+                    <p className="text-[9px] text-slate-500">Jobs</p>
                   </div>
-                  <div className="rounded-lg bg-gray-50 px-2 py-1.5 text-center">
-                    <p className="text-sm font-bold text-gray-900">
+                  <div className="rounded-lg bg-slate-50 px-2 py-1.5 text-center">
+                    <p className="text-sm font-bold text-slate-900">
                       {sub.certifications.length}
                     </p>
-                    <p className="text-[9px] text-gray-500">Certs</p>
+                    <p className="text-[9px] text-slate-500">Certs</p>
                   </div>
                 </div>
 
@@ -304,7 +304,7 @@ export default function SubTradesPage() {
                   {sub.certifications.map((cert) => (
                     <Badge
                       key={cert}
-                      className="rounded-full border-transparent bg-emerald-50 px-2 py-0.5 text-[9px] font-medium text-emerald-700"
+                      className="rounded-full border-transparent bg-reno-green-50 px-2 py-0.5 text-[9px] font-medium text-reno-green-700"
                     >
                       <CheckCircle className="mr-0.5 h-2.5 w-2.5" />
                       {cert}
@@ -317,7 +317,7 @@ export default function SubTradesPage() {
                   {sub.specialties.map((spec) => (
                     <Badge
                       key={spec}
-                      className="rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[9px] font-medium text-gray-600"
+                      className="rounded-full border border-slate-200 bg-white px-2 py-0.5 text-[9px] font-medium text-slate-600"
                     >
                       {spec}
                     </Badge>
@@ -325,7 +325,7 @@ export default function SubTradesPage() {
                 </div>
 
                 {/* Location + WSIB Expiry */}
-                <div className="mb-4 flex flex-wrap items-center gap-3 text-xs text-gray-500">
+                <div className="mb-4 flex flex-wrap items-center gap-3 text-xs text-slate-500">
                   <span className="flex items-center gap-1">
                     <MapPin className="h-3 w-3" />
                     {sub.location}
@@ -337,15 +337,15 @@ export default function SubTradesPage() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex gap-2 border-t border-gray-100 pt-3">
+                <div className="flex gap-2 border-t border-slate-100 pt-3">
                   <Button
                     variant="outline"
-                    className="h-auto flex-1 rounded-xl border-gray-200 px-3 py-2 text-xs font-medium text-gray-700"
+                    className="h-auto flex-1 rounded-xl border-slate-200 px-3 py-2 text-xs font-medium text-slate-700"
                   >
                     <Eye className="mr-1 h-3.5 w-3.5" />
                     View Profile
                   </Button>
-                  <Button className="h-auto flex-1 rounded-xl bg-violet-600 px-3 py-2 text-xs font-semibold text-white hover:bg-violet-700">
+                  <Button className="h-auto flex-1 rounded-xl bg-reno-purple-600 px-3 py-2 text-xs font-semibold text-white hover:bg-reno-purple-700">
                     <ClipboardList className="mr-1 h-3.5 w-3.5" />
                     Invite to Tender
                   </Button>

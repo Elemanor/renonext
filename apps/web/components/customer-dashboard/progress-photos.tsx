@@ -20,12 +20,12 @@ export function ProgressPhotos() {
     <div className="bg-[#141419] rounded-xl p-4 lg:p-3 border border-white/[0.06] shadow-lg shadow-black/20 h-full flex flex-col">
       <div className="flex items-center justify-between mb-3 lg:mb-2 flex-shrink-0">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-indigo-500/20 flex items-center justify-center">
-            <Camera className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="w-7 h-7 rounded-lg bg-primary-500/20 flex items-center justify-center">
+            <Camera className="w-3.5 h-3.5 text-primary-400" />
           </div>
           <h2 className="text-white/90 text-sm tracking-tight">Progress Photos</h2>
         </div>
-        <span className="text-gray-500 text-[11px]">{currentIndex + 1} / {photos.length}</span>
+        <span className="text-slate-500 text-[11px]">{currentIndex + 1} / {photos.length}</span>
       </div>
       <div className="relative flex-1 flex flex-col min-h-0">
         <div className="relative rounded-lg overflow-hidden bg-black/30 min-h-[160px]">
@@ -47,12 +47,12 @@ export function ProgressPhotos() {
           </div>
         </div>
         <div className="mt-2 flex-shrink-0">
-          <p className="text-gray-400 text-xs leading-relaxed lg:line-clamp-1">{photos[currentIndex].description}</p>
+          <p className="text-slate-400 text-xs leading-relaxed lg:line-clamp-1">{photos[currentIndex].description}</p>
         </div>
         {photos.length > 1 && (
           <div className="flex gap-1.5 mt-2 justify-center flex-shrink-0">
             {photos.map((_, i) => (
-              <button key={i} onClick={() => setCurrentIndex(i)} className={`h-1 rounded-full transition-all ${i === currentIndex ? 'w-6 bg-indigo-400' : 'w-1 bg-white/20'}`} />
+              <button key={i} onClick={() => setCurrentIndex(i)} className={`h-1 rounded-full transition-all ${i === currentIndex ? 'w-6 bg-primary-400' : 'w-1 bg-white/20'}`} />
             ))}
           </div>
         )}

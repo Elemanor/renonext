@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'For Contractors — Scale Your Business with Absolute Certainty',
   description:
     'Join the only renovation platform where verified leads meet guaranteed escrow payments. No more chasing invoices. 24-hour payouts, high-intent leads, reduced fees.',
+  alternates: {
+    canonical: '/contractors',
+  },
 };
 
 export default function ContractorsPage() {
@@ -31,7 +34,7 @@ export default function ContractorsPage() {
               <span className="text-primary">Absolute Certainty</span>
             </h1>
 
-            <p className="text-xl text-gray-500 leading-relaxed mb-10 max-w-lg">
+            <p className="text-xl text-slate-500 leading-relaxed mb-10 max-w-lg">
               Join the only renovation platform where verified leads meet
               guaranteed escrow payments. No more chasing invoices.
             </p>
@@ -45,7 +48,7 @@ export default function ContractorsPage() {
               </Link>
               <Link
                 href="/how-it-works#vault"
-                className="bg-white border-2 border-gray-200 text-reno-dark px-8 py-4 rounded-xl font-bold text-lg hover:border-primary/40 transition-all duration-300"
+                className="bg-white border-2 border-slate-200 text-reno-dark px-8 py-4 rounded-xl font-bold text-lg hover:border-primary/40 transition-all duration-300"
               >
                 View Gold Perks
               </Link>
@@ -72,7 +75,7 @@ export default function ContractorsPage() {
                   GOLD LEVEL
                 </span>
               </div>
-              <p className="text-sm font-medium text-gray-500">
+              <p className="text-sm font-medium text-slate-500">
                 Contractor Tier
               </p>
               <h4 className="text-2xl font-bold text-reno-dark">Gold Elite</h4>
@@ -89,7 +92,7 @@ export default function ContractorsPage() {
                     payments
                   </span>
                 </div>
-                <p className="text-gray-400 font-medium">Recent Earnings</p>
+                <p className="text-slate-400 font-medium">Recent Earnings</p>
               </div>
               <div className="text-4xl font-bold text-white mb-2 tracking-tight">
                 $42,850.00
@@ -113,7 +116,7 @@ export default function ContractorsPage() {
                 </span>
               </div>
               <p className="font-bold text-reno-dark">Verified Pro</p>
-              <p className="text-xs text-gray-500">Background Checked</p>
+              <p className="text-xs text-slate-500">Background Checked</p>
             </div>
           </div>
         </div>
@@ -143,7 +146,7 @@ export default function ContractorsPage() {
               <h3 className="font-display text-2xl font-bold text-reno-dark mb-4">
                 Guaranteed Payments
               </h3>
-              <p className="text-gray-500 leading-relaxed">
+              <p className="text-slate-500 leading-relaxed">
                 Funds are secured in RenoNext Escrow before you start. Automatic
                 release upon milestone approval ensures zero payment friction.
               </p>
@@ -162,7 +165,7 @@ export default function ContractorsPage() {
               <h3 className="font-display text-2xl font-bold text-reno-dark mb-4">
                 High-Intent Leads
               </h3>
-              <p className="text-gray-500 leading-relaxed">
+              <p className="text-slate-500 leading-relaxed">
                 Stop wasting time on &ldquo;just looking.&rdquo; Every project
                 is vetted for budget, timeline, and architectural feasibility
                 before it hits your dashboard.
@@ -182,7 +185,7 @@ export default function ContractorsPage() {
               <h3 className="font-display text-2xl font-bold text-reno-dark mb-4">
                 Reduced Fees
               </h3>
-              <p className="text-gray-500 leading-relaxed">
+              <p className="text-slate-500 leading-relaxed">
                 Our Gold Tier contractors enjoy industry-low 1.5% transaction
                 fees, letting you keep more of your hard-earned revenue.
               </p>
@@ -196,7 +199,7 @@ export default function ContractorsPage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           {/* Left: Dashboard Visual */}
           <div className="relative order-2 lg:order-1">
-            <div className="relative rounded-2xl border border-gray-200 bg-white shadow-2xl overflow-hidden p-6 aspect-[4/3]">
+            <div className="relative rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden p-6 aspect-[4/3]">
               {/* Window chrome */}
               <div className="flex items-center gap-2 mb-8 border-b border-[#f6f8f8] pb-4">
                 <div className="w-3 h-3 rounded-full bg-red-400" />
@@ -226,7 +229,7 @@ export default function ContractorsPage() {
                   >
                     check_circle
                   </span>
-                  <span className="text-xs font-bold text-gray-500 uppercase tracking-tighter">
+                  <span className="text-xs font-bold text-slate-500 uppercase tracking-tighter">
                     Milestone Reached
                   </span>
                 </div>
@@ -234,7 +237,7 @@ export default function ContractorsPage() {
                   Foundation Complete
                 </p>
                 <div className="mt-2 flex justify-between items-center">
-                  <span className="text-xs text-gray-500">
+                  <span className="text-xs text-slate-500">
                     Payment Processing
                   </span>
                   <span className="text-xs font-bold text-primary">
@@ -251,14 +254,14 @@ export default function ContractorsPage() {
                       mail
                     </span>
                   </div>
-                  <span className="text-xs font-medium text-gray-400">
+                  <span className="text-xs font-medium text-slate-400">
                     New High-Intent Lead
                   </span>
                 </div>
                 <p className="text-white text-sm font-bold">
                   Modern Loft Remodel
                 </p>
-                <p className="text-[10px] text-gray-500">
+                <p className="text-[10px] text-slate-500">
                   Budget: $150k &ndash; $200k
                 </p>
               </div>
@@ -271,7 +274,7 @@ export default function ContractorsPage() {
               Built for the{' '}
               <span className="text-primary">Transparent Guardian</span>
             </h2>
-            <p className="text-lg text-gray-500 mb-12 leading-relaxed">
+            <p className="text-lg text-slate-500 mb-12 leading-relaxed">
               The RenoNext dashboard is your command center. It provides total
               transparency for both you and your client, tracking every milestone
               from demolition to final walkthrough.
@@ -303,7 +306,7 @@ export default function ContractorsPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-reno-dark">{item.title}</h4>
-                    <p className="text-sm text-gray-500">{item.desc}</p>
+                    <p className="text-sm text-slate-500">{item.desc}</p>
                   </div>
                 </li>
               ))}
@@ -357,7 +360,7 @@ export default function ContractorsPage() {
                 </div>
               </div>
               <div className="mt-4 flex justify-between items-center px-2">
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                   Case Study: DrySpace
                 </span>
                 <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
@@ -398,7 +401,7 @@ export default function ContractorsPage() {
                   <p className="font-bold text-reno-dark">
                     DrySpace Waterproofing
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-slate-500">
                     Sub-Grade Waterproofing Specialist, GTA
                   </p>
                 </div>
@@ -414,7 +417,7 @@ export default function ContractorsPage() {
           <h2 className="font-display text-4xl md:text-6xl font-extrabold text-reno-dark mb-8 tracking-tighter">
             Ready to Elevate Your Craft?
           </h2>
-          <p className="text-xl text-gray-500 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-500 mb-12 max-w-2xl mx-auto">
             Take the first step toward a more professional, more profitable
             renovation business. Verification takes less than 5 minutes.
           </p>

@@ -8,8 +8,8 @@ export function AttendanceShowcase() {
   const stats = [
     { label: 'Present', count: 12, color: 'bg-reno-green-50 text-reno-green-700 border-reno-green-200' },
     { label: 'Absent', count: 2, color: 'bg-reno-red-50 text-reno-red-700 border-reno-red-200' },
-    { label: 'Vacation', count: 1, color: 'bg-blue-50 text-blue-700 border-blue-200' },
-    { label: 'Total', count: 15, color: 'bg-gray-100 text-gray-700 border-gray-300' },
+    { label: 'Vacation', count: 1, color: 'bg-primary-50 text-primary-700 border-primary-200' },
+    { label: 'Total', count: 15, color: 'bg-slate-100 text-slate-700 border-slate-300' },
   ];
 
   const workers = [
@@ -51,7 +51,7 @@ export function AttendanceShowcase() {
       status: 'absent',
       time: 'No show',
       initials: 'RK',
-      color: 'bg-gray-400',
+      color: 'bg-slate-400',
     },
     {
       name: 'Jennifer Lee',
@@ -59,22 +59,22 @@ export function AttendanceShowcase() {
       status: 'present',
       time: '6:55 AM',
       initials: 'JL',
-      color: 'bg-blue-600',
+      color: 'bg-primary-600',
     },
   ];
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
       {/* Header */}
       <div className="bg-reno-dark text-white px-6 py-4">
         <div className="flex items-center gap-2 mb-1">
           <Calendar className="w-5 h-5" />
           <h3 className="font-semibold text-lg">Site Attendance</h3>
         </div>
-        <p className="text-sm text-gray-400">February 27, 2026 • GEBOOTH Project</p>
+        <p className="text-sm text-slate-400">February 27, 2026 • GEBOOTH Project</p>
       </div>
 
-      <div className="p-6 space-y-6 bg-gray-50">
+      <div className="p-6 space-y-6 bg-slate-50">
         {/* Stats */}
         <div className="grid grid-cols-4 gap-3">
           {stats.map((stat, idx) => (
@@ -91,7 +91,7 @@ export function AttendanceShowcase() {
         {/* Worker List */}
         <div className="space-y-2">
           {workers.map((worker, idx) => (
-            <Card key={idx} className="p-3 bg-white border-gray-200">
+            <Card key={idx} className="p-3 bg-white border-slate-200">
               <div className="flex items-center gap-3">
                 {/* Avatar */}
                 <div
@@ -102,8 +102,8 @@ export function AttendanceShowcase() {
 
                 {/* Info */}
                 <div className="flex-1 min-w-0">
-                  <div className="font-semibold text-sm text-gray-900">{worker.name}</div>
-                  <div className="text-xs text-gray-600">{worker.role}</div>
+                  <div className="font-semibold text-sm text-slate-900">{worker.name}</div>
+                  <div className="text-xs text-slate-600">{worker.role}</div>
                 </div>
 
                 {/* Status */}

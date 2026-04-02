@@ -68,7 +68,7 @@ export function CircularProgress({
       {/* Center text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="text-2xl font-bold">{Math.round(percent)}</span>
-        <span className="text-xs text-gray-500">%</span>
+        <span className="text-xs text-slate-500">%</span>
       </div>
     </div>
   );

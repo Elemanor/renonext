@@ -15,7 +15,7 @@ import type { SequenceStep } from '@renonext/shared/types';
 
 export default function ProposalCreatorPage() {
   return (
-    <Suspense fallback={<div className="py-20 text-center text-sm text-gray-400">Loading...</div>}>
+    <Suspense fallback={<div className="py-20 text-center text-sm text-slate-400">Loading...</div>}>
       <ProposalCreatorContent />
     </Suspense>
   );
@@ -65,11 +65,11 @@ function ProposalCreatorContent() {
 
   const tierColor = sci
     ? sci.tier === 'HIGH'
-      ? 'bg-emerald-50 text-emerald-700'
+      ? 'bg-reno-green-50 text-reno-green-700'
       : sci.tier === 'MEDIUM'
         ? 'bg-amber-50 text-amber-700'
         : 'bg-red-50 text-red-700'
-    : 'bg-gray-100 text-gray-600';
+    : 'bg-slate-100 text-slate-600';
 
   const trade = selectedBlueprint
     ? TRADE_TYPES[selectedBlueprint.trade_type as TradeType]
@@ -80,13 +80,13 @@ function ProposalCreatorContent() {
       {/* Back link */}
       <Link
         href="/pro-network/proposals"
-        className="mb-4 inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
+        className="mb-4 inline-flex items-center gap-1 text-sm text-slate-500 hover:text-slate-700"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
         Back to Proposals
       </Link>
 
-      <h1 className="mb-6 text-2xl font-bold tracking-tight text-gray-900">
+      <h1 className="mb-6 text-2xl font-bold tracking-tight text-slate-900">
         Create Proposal
       </h1>
 
@@ -94,19 +94,19 @@ function ProposalCreatorContent() {
         {/* Left — Form */}
         <div className="min-w-0 flex-1 space-y-6">
           {/* Proposal Details */}
-          <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg font-semibold text-gray-900">Proposal Details</CardTitle>
+              <CardTitle className="text-lg font-semibold text-slate-900">Proposal Details</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <label htmlFor="title" className="mb-1 block text-xs font-medium text-gray-700">
+                <label htmlFor="title" className="mb-1 block text-xs font-medium text-slate-700">
                   Title
                 </label>
                 <input
                   id="title"
                   type="text"
-                  className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none focus:border-reno-purple-400 focus:ring-2 focus:ring-violet-100"
                   placeholder="e.g. Basement Waterproofing — 123 Maple Ave"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
@@ -114,13 +114,13 @@ function ProposalCreatorContent() {
               </div>
 
               <div>
-                <label htmlFor="coverLetter" className="mb-1 block text-xs font-medium text-gray-700">
+                <label htmlFor="coverLetter" className="mb-1 block text-xs font-medium text-slate-700">
                   Cover Letter
                 </label>
                 <textarea
                   id="coverLetter"
                   rows={4}
-                  className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none focus:border-reno-purple-400 focus:ring-2 focus:ring-violet-100"
                   placeholder="Introduce yourself and your approach..."
                   value={coverLetter}
                   onChange={(e) => setCoverLetter(e.target.value)}
@@ -129,7 +129,7 @@ function ProposalCreatorContent() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="cost" className="mb-1 block text-xs font-medium text-gray-700">
+                  <label htmlFor="cost" className="mb-1 block text-xs font-medium text-slate-700">
                     Estimated Cost ($)
                   </label>
                   <input
@@ -137,21 +137,21 @@ function ProposalCreatorContent() {
                     type="number"
                     min="0"
                     step="100"
-                    className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                    className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none focus:border-reno-purple-400 focus:ring-2 focus:ring-violet-100"
                     placeholder="18500"
                     value={estimatedCost}
                     onChange={(e) => setEstimatedCost(e.target.value)}
                   />
                 </div>
                 <div>
-                  <label htmlFor="duration" className="mb-1 block text-xs font-medium text-gray-700">
+                  <label htmlFor="duration" className="mb-1 block text-xs font-medium text-slate-700">
                     Duration (days)
                   </label>
                   <input
                     id="duration"
                     type="number"
                     min="1"
-                    className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                    className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none focus:border-reno-purple-400 focus:ring-2 focus:ring-violet-100"
                     placeholder="18"
                     value={duration}
                     onChange={(e) => setDuration(e.target.value)}
@@ -160,26 +160,26 @@ function ProposalCreatorContent() {
               </div>
 
               <div>
-                <label htmlFor="startDate" className="mb-1 block text-xs font-medium text-gray-700">
+                <label htmlFor="startDate" className="mb-1 block text-xs font-medium text-slate-700">
                   Estimated Start Date
                 </label>
                 <input
                   id="startDate"
                   type="date"
-                  className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none focus:border-reno-purple-400 focus:ring-2 focus:ring-violet-100"
                   value={startDate}
                   onChange={(e) => setStartDate(e.target.value)}
                 />
               </div>
 
               <div>
-                <label htmlFor="warranty" className="mb-1 block text-xs font-medium text-gray-700">
+                <label htmlFor="warranty" className="mb-1 block text-xs font-medium text-slate-700">
                   Warranty Terms
                 </label>
                 <textarea
                   id="warranty"
                   rows={2}
-                  className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm text-gray-900 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 outline-none focus:border-reno-purple-400 focus:ring-2 focus:ring-violet-100"
                   placeholder="e.g. 25-year transferable warranty on membrane..."
                   value={warrantyTerms}
                   onChange={(e) => setWarrantyTerms(e.target.value)}
@@ -189,9 +189,9 @@ function ProposalCreatorContent() {
           </Card>
 
           {/* Selected Blueprint */}
-          <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg font-semibold text-gray-900">Selected Blueprint</CardTitle>
+              <CardTitle className="text-lg font-semibold text-slate-900">Selected Blueprint</CardTitle>
             </CardHeader>
             <CardContent>
               {selectedBlueprint ? (
@@ -203,15 +203,15 @@ function ProposalCreatorContent() {
                       </Badge>
                     )}
                     {selectedBlueprint.is_verified && (
-                      <Badge className="rounded-full border-transparent bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
+                      <Badge className="rounded-full border-transparent bg-reno-green-50 px-2 py-0.5 text-[10px] font-semibold text-reno-green-700">
                         <CheckCircle className="mr-0.5 h-2.5 w-2.5" />
                         Verified
                       </Badge>
                     )}
                   </div>
-                  <h3 className="text-sm font-bold text-gray-900">{selectedBlueprint.name}</h3>
-                  <p className="mt-1 text-xs text-gray-500">{selectedBlueprint.plain_language_summary}</p>
-                  <div className="mt-2 flex items-center gap-3 text-xs text-gray-500">
+                  <h3 className="text-sm font-bold text-slate-900">{selectedBlueprint.name}</h3>
+                  <p className="mt-1 text-xs text-slate-500">{selectedBlueprint.plain_language_summary}</p>
+                  <div className="mt-2 flex items-center gap-3 text-xs text-slate-500">
                     <span className="flex items-center gap-1">
                       <Layers className="h-3 w-3" />
                       {steps.length} steps
@@ -223,11 +223,11 @@ function ProposalCreatorContent() {
                   </div>
                 </div>
               ) : (
-                <div className="rounded-xl border border-dashed border-gray-300 py-8 text-center">
-                  <p className="text-sm text-gray-500">No blueprint selected</p>
+                <div className="rounded-xl border border-dashed border-slate-300 py-8 text-center">
+                  <p className="text-sm text-slate-500">No blueprint selected</p>
                   <Link
                     href="/pro-network/blueprints"
-                    className="mt-2 inline-block text-xs font-semibold text-violet-600 hover:text-violet-700"
+                    className="mt-2 inline-block text-xs font-semibold text-reno-purple-600 hover:text-reno-purple-700"
                   >
                     Choose from Library →
                   </Link>
@@ -240,13 +240,13 @@ function ProposalCreatorContent() {
           <div className="flex gap-3">
             <Button
               variant="outline"
-              className="h-auto rounded-xl border-gray-200 px-5 py-2.5 text-sm font-semibold text-gray-700"
+              className="h-auto rounded-xl border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700"
               onClick={() => window.alert('Draft saved (mock). Real save coming in Phase 4.')}
             >
               Save as Draft
             </Button>
             <Button
-              className="h-auto rounded-xl bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-violet-700 hover:shadow-md"
+              className="h-auto rounded-xl bg-reno-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-reno-purple-700 hover:shadow-md"
               onClick={() => window.alert('Proposal sent (mock). Real send coming in Phase 4.')}
             >
               Send Proposal
@@ -257,14 +257,14 @@ function ProposalCreatorContent() {
         {/* Right — Preview sidebar */}
         <div className="w-full space-y-4 lg:sticky lg:top-24 lg:w-[340px] lg:self-start">
           {/* SCI Score Preview */}
-          <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-semibold text-gray-900">SCI Score Preview</CardTitle>
+              <CardTitle className="text-sm font-semibold text-slate-900">SCI Score Preview</CardTitle>
             </CardHeader>
             <CardContent>
               {sci ? (
                 <div className="text-center">
-                  <p className="text-4xl font-extrabold tabular-nums text-gray-900">
+                  <p className="text-4xl font-extrabold tabular-nums text-slate-900">
                     {Math.round(sci.score * 100)}%
                   </p>
                   <Badge className={`mt-1 rounded-full border-transparent px-2.5 py-0.5 text-[10px] font-bold ${tierColor}`}>
@@ -273,10 +273,10 @@ function ProposalCreatorContent() {
                   <div className="mt-3 space-y-1 text-left">
                     {Object.entries(sci.breakdown).map(([key, val]) => (
                       <div key={key} className="flex items-center justify-between text-xs">
-                        <span className="capitalize text-gray-500">
+                        <span className="capitalize text-slate-500">
                           {key.replace(/([A-Z])/g, ' $1').trim()}
                         </span>
-                        <span className="font-semibold text-gray-700">
+                        <span className="font-semibold text-slate-700">
                           {Math.round((val as number) * 100)}%
                         </span>
                       </div>
@@ -284,7 +284,7 @@ function ProposalCreatorContent() {
                   </div>
                 </div>
               ) : (
-                <p className="text-center text-xs text-gray-400">
+                <p className="text-center text-xs text-slate-400">
                   Select a blueprint to see SCI preview
                 </p>
               )}
@@ -292,27 +292,27 @@ function ProposalCreatorContent() {
           </Card>
 
           {/* Cost Summary */}
-          <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-semibold text-gray-900">Cost Summary</CardTitle>
+              <CardTitle className="text-sm font-semibold text-slate-900">Cost Summary</CardTitle>
             </CardHeader>
             <CardContent>
               {costNum > 0 ? (
                 <div>
-                  <p className="text-2xl font-extrabold tabular-nums text-gray-900">
+                  <p className="text-2xl font-extrabold tabular-nums text-slate-900">
                     {formatCurrency(costNum)}
                   </p>
                   {milestones.length > 0 && (
                     <div className="mt-3 space-y-2">
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
                         Payment milestones
                       </p>
                       {milestones.map((m, i) => (
                         <div key={i} className="flex items-center justify-between text-xs">
-                          <span className="text-gray-600">{m.label}</span>
+                          <span className="text-slate-600">{m.label}</span>
                           <div className="text-right">
-                            <span className="font-semibold text-gray-900">{formatCurrency(m.amount)}</span>
-                            <span className="ml-1 text-gray-400">({m.percent}%)</span>
+                            <span className="font-semibold text-slate-900">{formatCurrency(m.amount)}</span>
+                            <span className="ml-1 text-slate-400">({m.percent}%)</span>
                           </div>
                         </div>
                       ))}
@@ -320,7 +320,7 @@ function ProposalCreatorContent() {
                   )}
                 </div>
               ) : (
-                <p className="text-center text-xs text-gray-400">
+                <p className="text-center text-xs text-slate-400">
                   Enter a cost to see milestone preview
                 </p>
               )}
@@ -329,23 +329,23 @@ function ProposalCreatorContent() {
 
           {/* Blueprint Summary */}
           {selectedBlueprint && (
-            <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-semibold text-gray-900">Blueprint Summary</CardTitle>
+                <CardTitle className="text-sm font-semibold text-slate-900">Blueprint Summary</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-3 gap-3 text-center">
                   <div>
-                    <p className="text-lg font-bold text-gray-900">{steps.length}</p>
-                    <p className="text-[10px] font-medium uppercase tracking-wider text-gray-500">Steps</p>
+                    <p className="text-lg font-bold text-slate-900">{steps.length}</p>
+                    <p className="text-[10px] font-medium uppercase tracking-wider text-slate-500">Steps</p>
                   </div>
                   <div>
-                    <p className="text-lg font-bold text-gray-900">{inspections}</p>
-                    <p className="text-[10px] font-medium uppercase tracking-wider text-gray-500">Inspections</p>
+                    <p className="text-lg font-bold text-slate-900">{inspections}</p>
+                    <p className="text-[10px] font-medium uppercase tracking-wider text-slate-500">Inspections</p>
                   </div>
                   <div>
-                    <p className="text-lg font-bold text-gray-900">~{totalDays}d</p>
-                    <p className="text-[10px] font-medium uppercase tracking-wider text-gray-500">Duration</p>
+                    <p className="text-lg font-bold text-slate-900">~{totalDays}d</p>
+                    <p className="text-[10px] font-medium uppercase tracking-wider text-slate-500">Duration</p>
                   </div>
                 </div>
               </CardContent>

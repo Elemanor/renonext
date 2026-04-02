@@ -21,10 +21,10 @@ export function ProgressPhotos() {
     <AnimatedCard className="flex flex-col" delay={0.15}>
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Camera className="h-4 w-4 text-gray-500" />
+          <Camera className="h-4 w-4 text-slate-500" />
           <span className="text-xs font-medium text-white/80">Progress Photos</span>
         </div>
-        <span className="text-[10px] text-gray-500">
+        <span className="text-[10px] text-slate-500">
           {index + 1} / {progressPhotos.length}
         </span>
       </div>
@@ -42,10 +42,10 @@ export function ProgressPhotos() {
             className="absolute inset-0 flex items-center justify-center"
           >
             {/* Placeholder gradient — replace with <Image> when real photos exist */}
-            <div className="h-full w-full bg-gradient-to-br from-emerald-900/30 via-teal-900/20 to-transparent" />
+            <div className="h-full w-full bg-gradient-to-br from-reno-green-900/30 via-teal-900/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
               <p className="text-xs font-medium text-white/90">{photo.description}</p>
-              <p className="text-[10px] text-gray-400">{photo.date}</p>
+              <p className="text-[10px] text-slate-400">{photo.date}</p>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -72,7 +72,7 @@ export function ProgressPhotos() {
             key={p.id}
             onClick={() => { setDirection(i > index ? 1 : -1); setIndex(i); }}
             className={`h-1.5 rounded-full transition-all ${
-              i === index ? 'w-4 bg-emerald-400' : 'w-1.5 bg-gray-600'
+              i === index ? 'w-4 bg-reno-green-400' : 'w-1.5 bg-slate-600'
             }`}
           />
         ))}

@@ -121,7 +121,7 @@ export default async function AppPage({
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-reno-dark leading-[1.05] mb-6">
               {app.name}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-500 leading-relaxed mb-4 max-w-xl">
+            <p className="text-xl md:text-2xl text-slate-500 leading-relaxed mb-4 max-w-xl">
               {app.tagline}
             </p>
 
@@ -130,12 +130,12 @@ export default async function AppPage({
               <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">
                 {app.audienceLabel}
               </span>
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#f6f8f8] text-gray-500 text-xs font-bold border border-gray-100">
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#f6f8f8] text-slate-500 text-xs font-bold border border-slate-100">
                 {app.platform}
               </span>
             </div>
 
-            <p className="text-gray-500 leading-relaxed mb-8 max-w-xl">
+            <p className="text-slate-500 leading-relaxed mb-8 max-w-xl">
               {app.heroDescription}
             </p>
 
@@ -151,7 +151,7 @@ export default async function AppPage({
               </Link>
               <Link
                 href="/apps"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-reno-dark font-bold rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-float transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-reno-dark font-bold rounded-xl border border-slate-200 hover:border-primary/30 hover:shadow-float transition-all duration-300"
               >
                 All Apps
               </Link>
@@ -168,7 +168,7 @@ export default async function AppPage({
                   <div className="p-6 space-y-4">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-gray-500 text-[10px] uppercase tracking-wider font-bold">
+                        <p className="text-slate-500 text-[10px] uppercase tracking-wider font-bold">
                           {app.name}
                         </p>
                         <p className="text-white text-lg font-bold mt-0.5">
@@ -197,7 +197,7 @@ export default async function AppPage({
                           <p className="text-white text-xl font-extrabold">
                             {stat.value}
                           </p>
-                          <p className="text-gray-500 text-[9px] font-medium uppercase tracking-wider">
+                          <p className="text-slate-500 text-[9px] font-medium uppercase tracking-wider">
                             {stat.label}
                           </p>
                         </div>
@@ -251,12 +251,12 @@ export default async function AppPage({
                       <span className="text-[8px] font-bold text-primary uppercase tracking-wider">
                         {app.name}
                       </span>
-                      <span className="material-symbols-outlined text-gray-400 text-xs">
+                      <span className="material-symbols-outlined text-slate-400 text-xs">
                         notifications
                       </span>
                     </div>
                     <div className="bg-[#f6f8f8] rounded-lg p-2.5">
-                      <p className="text-[7px] text-gray-500 uppercase">
+                      <p className="text-[7px] text-slate-500 uppercase">
                         Quick Action
                       </p>
                       <p className="text-[10px] font-bold text-reno-dark">
@@ -282,9 +282,9 @@ export default async function AppPage({
       {/* ═══════════════════════════════════════════════════════════════
           Section 2 — Trust Bar
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="py-8 bg-white border-y border-gray-100">
+      <section className="py-8 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 opacity-60 hover:opacity-100 transition-opacity duration-500">
-          <span className="text-xs font-bold uppercase tracking-widest text-gray-500">
+          <span className="text-xs font-bold uppercase tracking-widest text-slate-500">
             Certified by the RenoNext Network
           </span>
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 items-center">
@@ -322,7 +322,7 @@ export default async function AppPage({
             <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-reno-dark mb-4">
               Engineered for Efficiency
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+            <p className="text-slate-500 max-w-2xl mx-auto text-lg">
               Every tool you need to maximize performance and minimize downtime.
             </p>
           </div>
@@ -344,26 +344,26 @@ export default async function AppPage({
                     <h3 className="text-2xl md:text-3xl font-bold text-reno-dark mb-4">
                       {bentoFeatures[0].title}
                     </h3>
-                    <p className="text-gray-500 leading-relaxed max-w-md text-lg">
+                    <p className="text-slate-500 leading-relaxed max-w-md text-lg">
                       {bentoFeatures[0].description}
                     </p>
                   </div>
 
                   {/* Decorative UI element */}
-                  <div className="mt-10 bg-[#f6f8f8] rounded-xl p-4 border border-gray-100">
+                  <div className="mt-10 bg-[#f6f8f8] rounded-xl p-4 border border-slate-100">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs font-bold uppercase text-gray-400 tracking-wider">
+                      <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">
                         Status Monitor
                       </span>
                       <span className="text-xs bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full font-bold">
                         Action Required
                       </span>
                     </div>
-                    <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
                       <div className="h-full bg-primary rounded-full w-4/5" />
                     </div>
                     <div className="flex justify-between mt-2">
-                      <span className="text-[10px] text-gray-400">
+                      <span className="text-[10px] text-slate-400">
                         Last checked: 2h ago
                       </span>
                       <span className="text-[10px] text-primary font-bold">
@@ -425,11 +425,11 @@ export default async function AppPage({
                     <h3 className="text-2xl font-bold text-reno-dark mb-4">
                       {bentoFeatures[2].title}
                     </h3>
-                    <p className="text-gray-500 leading-relaxed mb-6 max-w-lg">
+                    <p className="text-slate-500 leading-relaxed mb-6 max-w-lg">
                       {bentoFeatures[2].description}
                     </p>
                     <div className="flex flex-wrap gap-3">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#f6f8f8] rounded-lg text-xs font-medium text-gray-600 border border-gray-100">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#f6f8f8] rounded-lg text-xs font-medium text-slate-600 border border-slate-100">
                         <span
                           className="material-symbols-outlined text-primary text-sm"
                           style={{ fontVariationSettings: "'FILL' 1" }}
@@ -438,7 +438,7 @@ export default async function AppPage({
                         </span>
                         Verified Records
                       </span>
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#f6f8f8] rounded-lg text-xs font-medium text-gray-600 border border-gray-100">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#f6f8f8] rounded-lg text-xs font-medium text-slate-600 border border-slate-100">
                         <span
                           className="material-symbols-outlined text-primary text-sm"
                           style={{ fontVariationSettings: "'FILL' 1" }}
@@ -450,7 +450,7 @@ export default async function AppPage({
                     </div>
                   </div>
                   {/* Decorative side panel */}
-                  <div className="flex-1 w-full bg-[#f6f8f8] rounded-2xl p-6 border border-gray-100">
+                  <div className="flex-1 w-full bg-[#f6f8f8] rounded-2xl p-6 border border-slate-100">
                     <div className="space-y-3">
                       {app.features.slice(0, 4).map((f, i) => (
                         <div
@@ -466,7 +466,7 @@ export default async function AppPage({
                             <p className="text-xs font-bold text-reno-dark">
                               {f.title}
                             </p>
-                            <p className="text-[10px] text-gray-400">
+                            <p className="text-[10px] text-slate-400">
                               Active
                             </p>
                           </div>
@@ -488,7 +488,7 @@ export default async function AppPage({
           Section 4 — All Features Grid (remaining features)
       ═══════════════════════════════════════════════════════════════ */}
       {remainingFeatures.length > 0 && (
-        <section className="py-16 md:py-20 px-6 bg-[#f6f8f8] border-y border-gray-100">
+        <section className="py-16 md:py-20 px-6 bg-[#f6f8f8] border-y border-slate-100">
           <div className="max-w-7xl mx-auto">
             <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-reno-dark mb-8">
               More Capabilities
@@ -510,7 +510,7 @@ export default async function AppPage({
                   <h3 className="font-bold text-reno-dark mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">
+                  <p className="text-sm text-slate-500 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -529,7 +529,7 @@ export default async function AppPage({
             <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-reno-dark mb-3">
               Why {app.name}?
             </h2>
-            <p className="text-gray-500 text-lg">
+            <p className="text-slate-500 text-lg">
               Built for construction teams who need real results.
             </p>
           </div>
@@ -547,7 +547,7 @@ export default async function AppPage({
                     check
                   </span>
                 </div>
-                <p className="text-gray-600 leading-relaxed">{benefit}</p>
+                <p className="text-slate-600 leading-relaxed">{benefit}</p>
               </div>
             ))}
           </div>
@@ -563,7 +563,7 @@ export default async function AppPage({
             <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-reno-dark mb-3">
               Use Cases
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto">
               Real scenarios from real construction sites.
             </p>
           </div>
@@ -577,11 +577,11 @@ export default async function AppPage({
                   <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                     <span className="font-bold text-sm">{idx + 1}</span>
                   </div>
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
                     Scenario
                   </span>
                 </div>
-                <p className="text-gray-600 leading-relaxed">{useCase}</p>
+                <p className="text-slate-600 leading-relaxed">{useCase}</p>
               </div>
             ))}
           </div>
@@ -591,12 +591,12 @@ export default async function AppPage({
       {/* ═══════════════════════════════════════════════════════════════
           Section 7 — Tech Highlights
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 px-6 border-b border-gray-100">
+      <section className="py-16 md:py-20 px-6 border-b border-slate-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-reno-dark mb-3">
             Tech Stack
           </h2>
-          <p className="text-gray-500 mb-8">
+          <p className="text-slate-500 mb-8">
             Built with modern, production-ready technologies.
           </p>
           <div className="flex flex-wrap justify-center gap-2.5">
@@ -621,7 +621,7 @@ export default async function AppPage({
             <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-reno-dark mb-3">
               Explore the Full Suite
             </h2>
-            <p className="text-gray-500 text-lg">
+            <p className="text-slate-500 text-lg">
               {app.name} is part of RenoNext&apos;s complete construction
               toolkit.
             </p>
@@ -636,14 +636,14 @@ export default async function AppPage({
               >
                 <div className="h-full bg-white rounded-2xl border border-primary/5 shadow-float p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-float-hover">
                   <div className="w-10 h-10 rounded-xl bg-[#f6f8f8] flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
-                    <span className="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">
+                    <span className="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">
                       {getMaterialIcon(otherApp.icon)}
                     </span>
                   </div>
                   <h3 className="font-bold text-reno-dark group-hover:text-primary transition-colors mb-1">
                     {otherApp.name}
                   </h3>
-                  <p className="text-sm text-gray-500">{otherApp.tagline}</p>
+                  <p className="text-sm text-slate-500">{otherApp.tagline}</p>
                 </div>
               </Link>
             ))}
@@ -652,7 +652,7 @@ export default async function AppPage({
           <div className="mt-10 text-center">
             <Link
               href="/apps"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-reno-dark font-semibold rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-float transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-reno-dark font-semibold rounded-xl border border-slate-200 hover:border-primary/30 hover:shadow-float transition-all"
             >
               View All Apps
               <span className="material-symbols-outlined text-lg">
@@ -677,23 +677,23 @@ export default async function AppPage({
                 Ready to scale your{' '}
                 <span className="text-primary">workflow?</span>
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8">
+              <p className="text-slate-400 text-lg leading-relaxed mb-8">
                 Download {app.name} today and join the RenoNext ecosystem of
                 professional high-performance contractors.
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <Link
                   href="#"
-                  className="group flex items-center gap-4 bg-white/5 border border-gray-700 hover:border-primary px-7 py-3 rounded-xl transition-all"
+                  className="group flex items-center gap-4 bg-white/5 border border-slate-700 hover:border-primary px-7 py-3 rounded-xl transition-all"
                 >
                   <span
-                    className="material-symbols-outlined text-3xl text-gray-400 group-hover:text-primary"
+                    className="material-symbols-outlined text-3xl text-slate-400 group-hover:text-primary"
                     style={{ fontVariationSettings: "'FILL' 1" }}
                   >
                     phone_iphone
                   </span>
                   <div className="text-left">
-                    <p className="text-[10px] uppercase font-bold text-gray-500">
+                    <p className="text-[10px] uppercase font-bold text-slate-500">
                       Available on
                     </p>
                     <p className="text-white text-lg font-bold">App Store</p>
@@ -701,16 +701,16 @@ export default async function AppPage({
                 </Link>
                 <Link
                   href="#"
-                  className="group flex items-center gap-4 bg-white/5 border border-gray-700 hover:border-primary px-7 py-3 rounded-xl transition-all"
+                  className="group flex items-center gap-4 bg-white/5 border border-slate-700 hover:border-primary px-7 py-3 rounded-xl transition-all"
                 >
                   <span
-                    className="material-symbols-outlined text-3xl text-gray-400 group-hover:text-primary"
+                    className="material-symbols-outlined text-3xl text-slate-400 group-hover:text-primary"
                     style={{ fontVariationSettings: "'FILL' 1" }}
                   >
                     shop
                   </span>
                   <div className="text-left">
-                    <p className="text-[10px] uppercase font-bold text-gray-500">
+                    <p className="text-[10px] uppercase font-bold text-slate-500">
                       Get it on
                     </p>
                     <p className="text-white text-lg font-bold">Google Play</p>
@@ -722,7 +722,7 @@ export default async function AppPage({
             {/* Right: Phone mockup */}
             <div className="relative w-full max-w-xs">
               <div className="bg-primary/20 absolute inset-0 blur-3xl rounded-full pointer-events-none" />
-              <div className="relative z-10 bg-reno-dark rounded-[2.5rem] p-3 border-4 border-gray-800 shadow-2xl lg:rotate-6">
+              <div className="relative z-10 bg-reno-dark rounded-[2.5rem] p-3 border-4 border-slate-800 shadow-2xl lg:rotate-6">
                 <div className="bg-white rounded-[2rem] p-5 space-y-4 h-[420px]">
                   {/* Notch */}
                   <div className="w-20 h-5 bg-reno-dark rounded-full mx-auto -mt-1" />
@@ -737,7 +737,7 @@ export default async function AppPage({
                       </span>
                     </div>
                     <p className="font-bold text-reno-dark">{app.name}</p>
-                    <p className="text-[10px] text-gray-500">
+                    <p className="text-[10px] text-slate-500">
                       RenoNext Ecosystem
                     </p>
                   </div>
@@ -757,7 +757,7 @@ export default async function AppPage({
                           <p className="text-[10px] font-bold text-reno-dark">
                             {f.title}
                           </p>
-                          <p className="text-[8px] text-gray-400">Tap to open</p>
+                          <p className="text-[8px] text-slate-400">Tap to open</p>
                         </div>
                       </div>
                     ))}

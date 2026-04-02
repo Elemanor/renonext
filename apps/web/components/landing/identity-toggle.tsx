@@ -9,7 +9,7 @@ import { GradientIcon } from './_shared/gradient-icon';
 const lanes = [
   {
     icon: Shield,
-    gradient: 'from-emerald-400 to-emerald-600',
+    gradient: 'from-reno-green-400 to-reno-green-600',
     label: 'For Property Owners',
     headline: 'Protect your money.\nSee everything happening.',
     secondary: 'Your money moves only after proof.',
@@ -23,8 +23,8 @@ const lanes = [
     cta: 'Start Project Safely',
     ctaSub: 'Free to start. No upfront platform fees.',
     href: '/start-project',
-    checkColor: 'text-emerald-500',
-    ctaStyle: 'bg-emerald-600 text-white hover:bg-emerald-700',
+    checkColor: 'text-reno-green-500',
+    ctaStyle: 'bg-reno-green-600 text-white hover:bg-reno-green-700',
     photo: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&fit=crop',
     photoAlt: 'Modern home exterior — RenoNext property owner experience',
   },
@@ -118,7 +118,7 @@ export function IdentityToggle() {
                     </h3>
 
                     {/* Secondary tagline */}
-                    <p className="mt-2 text-sm font-semibold text-emerald-600">
+                    <p className="mt-2 text-sm font-semibold text-reno-green-600">
                       {lane.secondary}
                     </p>
 

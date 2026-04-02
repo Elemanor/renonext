@@ -235,7 +235,7 @@ export default function ToolboxTalkGenerator() {
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-2">
               <span
-                className="material-symbols-outlined text-4xl text-blue-600"
+                className="material-symbols-outlined text-4xl text-primary-600"
                 style={{ fontVariationSettings: "'FILL' 1" }}
               >
                 groups
@@ -244,12 +244,12 @@ export default function ToolboxTalkGenerator() {
                 <h1 className="text-4xl font-bold text-reno-dark">
                   Toolbox Talk Generator
                 </h1>
-                <p className="text-lg text-gray-600 mt-1">
+                <p className="text-lg text-slate-600 mt-1">
                   Create a professional Weekly Toolbox Safety Meeting form. Fill it out and print.
                 </p>
               </div>
             </div>
-            <Badge className="bg-blue-600 text-white hover:bg-blue-600">
+            <Badge className="bg-primary-600 text-white hover:bg-primary-600">
               <span className="material-symbols-outlined text-sm mr-1">workspace_premium</span>
               Free Tool
             </Badge>
@@ -360,13 +360,13 @@ export default function ToolboxTalkGenerator() {
               </Card>
 
               {/* Topic Selection from Templates */}
-              <Card className="border-blue-200 bg-blue-50">
+              <Card className="border-primary-200 bg-primary-50">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2 text-blue-900">
+                  <CardTitle className="flex items-center gap-2 text-primary-900">
                     <span className="material-symbols-outlined">menu_book</span>
                     Safety Topic Template
                   </CardTitle>
-                  <CardDescription className="text-blue-700">
+                  <CardDescription className="text-primary-700">
                     Select a pre-built topic to auto-populate key points and discussion questions
                   </CardDescription>
                 </CardHeader>
@@ -393,10 +393,10 @@ export default function ToolboxTalkGenerator() {
                   </div>
 
                   {selectedTemplate && (
-                    <div className="p-3 bg-white rounded-lg border border-blue-200">
-                      <p className="font-semibold text-blue-900">{selectedTemplate.title}</p>
-                      <p className="text-sm text-blue-700 mt-1">{selectedTemplate.description}</p>
-                      <Badge variant="outline" className="mt-2 text-blue-600 border-blue-300">
+                    <div className="p-3 bg-white rounded-lg border border-primary-200">
+                      <p className="font-semibold text-primary-900">{selectedTemplate.title}</p>
+                      <p className="text-sm text-primary-700 mt-1">{selectedTemplate.description}</p>
+                      <Badge variant="outline" className="mt-2 text-primary-600 border-primary-300">
                         {selectedTemplate.category}
                       </Badge>
                     </div>
@@ -503,7 +503,7 @@ export default function ToolboxTalkGenerator() {
                   </div>
 
                   {attendees.length === 0 ? (
-                    <div className="text-center py-6 text-gray-500">
+                    <div className="text-center py-6 text-slate-500">
                       <span className="material-symbols-outlined text-4xl mb-2 opacity-50">
                         group_add
                       </span>
@@ -511,7 +511,7 @@ export default function ToolboxTalkGenerator() {
                     </div>
                   ) : (
                     <>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-slate-600">
                         {attendees.length} attendee{attendees.length !== 1 ? 's' : ''}
                       </div>
                       <div className="grid grid-cols-1 gap-2">
@@ -552,8 +552,8 @@ export default function ToolboxTalkGenerator() {
                       placeholder="Enter supervisor name for sign-off"
                       className="mt-1"
                     />
-                    <div className="mt-2 border-b-2 border-gray-400 pb-1">
-                      <p className="text-xs text-gray-500">Signature line (will show on print)</p>
+                    <div className="mt-2 border-b-2 border-slate-400 pb-1">
+                      <p className="text-xs text-slate-500">Signature line (will show on print)</p>
                     </div>
                   </div>
                 </CardContent>
@@ -570,7 +570,7 @@ export default function ToolboxTalkGenerator() {
               </Button>
               <Button
                 onClick={handlePrint}
-                className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800"
+                className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800"
               >
                 <span className="material-symbols-outlined mr-2">print</span>
                 Print Toolbox Talk

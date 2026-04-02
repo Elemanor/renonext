@@ -58,8 +58,8 @@ const statusConfig: Record<
   approved: {
     label: 'Approved',
     icon: CheckCircle,
-    color: 'bg-emerald-100 text-emerald-700 border-emerald-200',
-    bg: 'from-emerald-400 to-emerald-600',
+    color: 'bg-reno-green-100 text-reno-green-700 border-reno-green-200',
+    bg: 'from-reno-green-400 to-reno-green-600',
   },
   rejected: {
     label: 'Rejected',
@@ -70,8 +70,8 @@ const statusConfig: Record<
   changes_requested: {
     label: 'Changes Requested',
     icon: AlertCircle,
-    color: 'bg-blue-100 text-blue-700 border-blue-200',
-    bg: 'from-blue-400 to-blue-600',
+    color: 'bg-primary-100 text-primary-700 border-primary-200',
+    bg: 'from-primary-400 to-primary-600',
   },
 };
 
@@ -137,8 +137,8 @@ export default function AdminContractorsPage() {
       label: 'Total',
       count: counts.total || 0,
       icon: Users,
-      gradient: 'from-gray-400 to-gray-600',
-      text: 'text-gray-700',
+      gradient: 'from-slate-400 to-slate-600',
+      text: 'text-slate-700',
     },
     {
       key: 'pending_review',
@@ -153,8 +153,8 @@ export default function AdminContractorsPage() {
       label: 'Approved',
       count: counts.approved || 0,
       icon: CheckCircle,
-      gradient: 'from-emerald-400 to-emerald-600',
-      text: 'text-emerald-700',
+      gradient: 'from-reno-green-400 to-reno-green-600',
+      text: 'text-reno-green-700',
     },
     {
       key: 'rejected',
@@ -178,10 +178,10 @@ export default function AdminContractorsPage() {
             glow
           />
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-2xl font-bold text-slate-900">
               Contractor Applications
             </h1>
-            <p className="text-gray-500 mt-1">
+            <p className="text-slate-500 mt-1">
               Review, approve, and manage contractor applications.
             </p>
           </div>
@@ -194,14 +194,14 @@ export default function AdminContractorsPage() {
           {summaryCards.map((card) => (
             <Card
               key={card.key}
-              className="border-gray-200/60 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group cursor-default"
+              className="border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group cursor-default"
             >
               <div className={`h-1 w-full bg-gradient-to-r ${card.gradient} opacity-60 group-hover:opacity-100 transition-opacity`} />
               <CardContent className="p-4 flex items-center gap-3">
                 <card.icon className={`h-5 w-5 ${card.text} shrink-0`} />
                 <div>
-                  <p className="text-2xl font-bold text-gray-900">{card.count}</p>
-                  <p className="text-xs text-gray-500">{card.label}</p>
+                  <p className="text-2xl font-bold text-slate-900">{card.count}</p>
+                  <p className="text-xs text-slate-500">{card.label}</p>
                 </div>
               </CardContent>
             </Card>
@@ -213,16 +213,16 @@ export default function AdminContractorsPage() {
       <ScrollReveal delay={0.15}>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <div className="relative flex-1 group">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green" />
             <Input
               placeholder="Search by name, company, or email..."
-              className="pl-10 h-11 rounded-xl border-gray-200 transition-all focus:border-reno-green focus:ring-reno-green/20"
+              className="pl-10 h-11 rounded-xl border-slate-200 transition-all focus:border-reno-green focus:ring-reno-green/20"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
           <Select value={statusFilter} onValueChange={setStatusFilter}>
-            <SelectTrigger className="w-full sm:w-52 h-11 rounded-xl border-gray-200">
+            <SelectTrigger className="w-full sm:w-52 h-11 rounded-xl border-slate-200">
               <SelectValue placeholder="All statuses" />
             </SelectTrigger>
             <SelectContent>
@@ -241,22 +241,22 @@ export default function AdminContractorsPage() {
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20">
             <Loader2 className="h-8 w-8 animate-spin text-reno-green-dark" />
-            <p className="text-sm text-gray-400 mt-3">Loading applications...</p>
+            <p className="text-sm text-slate-400 mt-3">Loading applications...</p>
           </div>
         ) : filtered.length === 0 ? (
-          <Card className="border-gray-200/60 shadow-sm">
+          <Card className="border-slate-200/60 shadow-sm">
             <CardContent className="text-center py-16">
               <div className="inline-flex mb-4">
                 <GradientIcon
                   icon={search ? FileSearch : HardHat}
-                  gradient="from-gray-300 to-gray-400"
+                  gradient="from-slate-300 to-slate-400"
                   size="md"
                 />
               </div>
-              <p className="font-semibold text-gray-700 text-lg">
+              <p className="font-semibold text-slate-700 text-lg">
                 {search ? 'No matching applications' : 'No applications yet'}
               </p>
-              <p className="text-sm text-gray-500 mt-1 max-w-sm mx-auto">
+              <p className="text-sm text-slate-500 mt-1 max-w-sm mx-auto">
                 {search
                   ? 'Try adjusting your search term or clearing the filter.'
                   : 'Contractor applications will appear here once submitted.'}
@@ -264,33 +264,33 @@ export default function AdminContractorsPage() {
             </CardContent>
           </Card>
         ) : (
-          <Card className="border-gray-200/60 shadow-xl shadow-gray-200/50 overflow-hidden">
+          <Card className="border-slate-200/60 shadow-xl shadow-gray-200/50 overflow-hidden">
             <div className="h-1 w-full bg-gradient-to-r from-reno-green via-secondary-500 to-reno-green" />
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-gray-100 bg-gray-50/60">
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">
+                  <tr className="border-b border-slate-100 bg-slate-50/60">
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
                       Contractor
                     </th>
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 hidden md:table-cell">
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-slate-500 hidden md:table-cell">
                       Location
                     </th>
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 hidden lg:table-cell">
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-slate-500 hidden lg:table-cell">
                       Experience
                     </th>
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
                       Status
                     </th>
-                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 hidden md:table-cell">
+                    <th className="px-5 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-slate-500 hidden md:table-cell">
                       Submitted
                     </th>
-                    <th className="px-5 py-3.5 text-right text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    <th className="px-5 py-3.5 text-right text-xs font-semibold uppercase tracking-wider text-slate-500">
                       Action
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100">
+                <tbody className="divide-y divide-slate-100">
                   {filtered.map((c) => {
                     const status = statusConfig[c.application_status];
                     const StatusIcon = status?.icon || Clock;
@@ -312,11 +312,11 @@ export default function AdminContractorsPage() {
                               {initials}
                             </div>
                             <div className="min-w-0">
-                              <p className="font-semibold text-gray-900 text-sm truncate">
+                              <p className="font-semibold text-slate-900 text-sm truncate">
                                 {c.profile?.full_name || 'Unknown'}
                               </p>
                               {c.company_name && (
-                                <p className="text-xs text-gray-500 flex items-center gap-1 mt-0.5 truncate">
+                                <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5 truncate">
                                   <Building2 className="h-3 w-3 shrink-0" />
                                   {c.company_name}
                                 </p>
@@ -326,16 +326,16 @@ export default function AdminContractorsPage() {
                         </td>
                         <td className="px-5 py-4 hidden md:table-cell">
                           {c.city ? (
-                            <span className="text-sm text-gray-600 flex items-center gap-1.5">
-                              <MapPin className="h-3.5 w-3.5 text-gray-400" />
+                            <span className="text-sm text-slate-600 flex items-center gap-1.5">
+                              <MapPin className="h-3.5 w-3.5 text-slate-400" />
                               {c.city}, {c.province}
                             </span>
                           ) : (
-                            <span className="text-sm text-gray-300">&mdash;</span>
+                            <span className="text-sm text-slate-300">&mdash;</span>
                           )}
                         </td>
                         <td className="px-5 py-4 hidden lg:table-cell">
-                          <span className="text-sm text-gray-600">
+                          <span className="text-sm text-slate-600">
                             {c.years_experience
                               ? `${c.years_experience} years`
                               : '\u2014'}
@@ -351,7 +351,7 @@ export default function AdminContractorsPage() {
                           </Badge>
                         </td>
                         <td className="px-5 py-4 hidden md:table-cell">
-                          <span className="text-sm text-gray-500">
+                          <span className="text-sm text-slate-500">
                             {c.application_submitted_at
                               ? new Date(
                                   c.application_submitted_at

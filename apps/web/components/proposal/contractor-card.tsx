@@ -48,7 +48,7 @@ export function ContractorCard({ profile, proProfile }: ContractorCardProps) {
             </AvatarFallback>
           </Avatar>
           {profile.is_verified && (
-            <div className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 ring-2 ring-white">
+            <div className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-reno-green-500 ring-2 ring-white">
               <Award className="h-3 w-3 text-white" />
             </div>
           )}

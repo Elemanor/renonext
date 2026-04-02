@@ -72,7 +72,7 @@ export function SecurityPillars() {
             Built for visionaries,{' '}
             <span className="text-primary">secured</span> for peace of mind.
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
+          <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
             Every dollar is protected, every contractor is vetted, and every
             milestone is tracked — so you can focus on the vision, not the risk.
           </p>
@@ -107,7 +107,7 @@ export function SecurityPillars() {
             <h3 className="font-display text-xl font-bold text-reno-dark mb-2">
               Absolute Escrow Security
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-5">
+            <p className="text-slate-600 text-sm leading-relaxed mb-5">
               Funds are held in a regulated escrow account until work is
               verified. No contractor touches your money until you approve each
               milestone.
@@ -179,7 +179,7 @@ export function SecurityPillars() {
               </div>
             </div>
 
-            <p className="text-gray-600 text-sm leading-relaxed mb-5">
+            <p className="text-slate-600 text-sm leading-relaxed mb-5">
               WSIB-active, insured, OBC-licensed, and identity-verified. Only
               the most qualified contractors make it onto our platform.
             </p>
@@ -238,21 +238,21 @@ export function SecurityPillars() {
                       className={`w-3 h-3 rounded-full flex-shrink-0 ${
                         phase.done
                           ? 'bg-primary'
-                          : 'bg-gray-200 border border-gray-300'
+                          : 'bg-slate-200 border border-slate-300'
                       }`}
                     />
                     {/* Bar (skip last) */}
                     {i < 3 && (
                       <div
                         className={`h-1 flex-1 rounded-full ${
-                          phase.done ? 'bg-primary/30' : 'bg-gray-200'
+                          phase.done ? 'bg-primary/30' : 'bg-slate-200'
                         }`}
                       />
                     )}
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between text-[10px] text-gray-400 font-medium">
+              <div className="flex justify-between text-[10px] text-slate-400 font-medium">
                 <span>Deposit</span>
                 <span>Framing</span>
                 <span>Rough-in</span>
@@ -260,7 +260,7 @@ export function SecurityPillars() {
               </div>
             </div>
 
-            <p className="text-gray-600 text-sm leading-relaxed mb-5">
+            <p className="text-slate-600 text-sm leading-relaxed mb-5">
               Pay only when work is done and inspected. Our milestone system
               with 10% holdback ensures contractors deliver quality at every
               stage.
@@ -367,7 +367,7 @@ export function SecurityPillars() {
                     <p className="font-semibold text-reno-dark mb-0.5">
                       {item.title}
                     </p>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-slate-600 text-sm leading-relaxed">
                       {item.desc}
                     </p>
                   </div>

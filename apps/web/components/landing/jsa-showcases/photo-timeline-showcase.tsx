@@ -22,7 +22,7 @@ const photos = [
     date: 'Nov 15',
     coordinates: '43.6532°N, 79.3832°W',
     stage: 'before' as const,
-    stageColor: 'bg-gray-100 text-gray-700',
+    stageColor: 'bg-slate-100 text-slate-700',
   },
   {
     id: 2,
@@ -79,8 +79,8 @@ export function PhotoTimelineShowcase() {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h3 className="text-2xl font-bold text-gray-900">Progress Photos</h3>
-          <p className="mt-1 text-sm text-gray-600">47 GPS-Verified Photos</p>
+          <h3 className="text-2xl font-bold text-slate-900">Progress Photos</h3>
+          <p className="mt-1 text-sm text-slate-600">47 GPS-Verified Photos</p>
         </div>
 
         {/* Filter pills */}
@@ -93,7 +93,7 @@ export function PhotoTimelineShowcase() {
                 'rounded-full px-4 py-2 text-sm font-medium transition-colors',
                 activeFilter === filter.value
                   ? 'bg-reno-teal text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               )}
             >
               {filter.label}
@@ -107,13 +107,13 @@ export function PhotoTimelineShowcase() {
         {filteredPhotos.map((photo) => (
           <Card
             key={photo.id}
-            className="group overflow-hidden border-2 border-gray-200 transition-all hover:-translate-y-1 hover:shadow-xl"
+            className="group overflow-hidden border-2 border-slate-200 transition-all hover:-translate-y-1 hover:shadow-xl"
           >
             {/* Photo placeholder with overlay */}
-            <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200">
+            <div className="relative aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200">
               {/* Camera icon placeholder */}
               <div className="flex h-full items-center justify-center">
-                <Camera className="h-12 w-12 text-gray-400" />
+                <Camera className="h-12 w-12 text-slate-400" />
               </div>
 
               {/* Stage badge overlay */}
@@ -132,8 +132,8 @@ export function PhotoTimelineShowcase() {
 
             {/* Photo info */}
             <div className="p-4">
-              <h4 className="font-semibold text-gray-900">{photo.title}</h4>
-              <div className="mt-2 space-y-1 text-xs text-gray-600">
+              <h4 className="font-semibold text-slate-900">{photo.title}</h4>
+              <div className="mt-2 space-y-1 text-xs text-slate-600">
                 <div className="flex items-center gap-1.5">
                   <Camera className="h-3 w-3" />
                   <span>{photo.date}</span>
@@ -155,8 +155,8 @@ export function PhotoTimelineShowcase() {
             <Shield className="h-5 w-5" />
           </div>
           <div>
-            <h4 className="font-semibold text-gray-900">GPS-Verified & Timestamped</h4>
-            <p className="mt-1 text-sm text-gray-700">
+            <h4 className="font-semibold text-slate-900">GPS-Verified & Timestamped</h4>
+            <p className="mt-1 text-sm text-slate-700">
               All photos include GPS coordinates, timestamp, and worker ID. Every image is
               verified and cannot be altered or backdated.
             </p>

@@ -82,8 +82,8 @@ function OverviewModule() {
         <div>
           <div className="flex items-center gap-1.5">
             <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-reno-green-400 opacity-60" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-reno-green-400" />
             </span>
             <span className="text-[8px] font-bold text-white/90">GE Booth WTP — Phase 2</span>
           </div>
@@ -92,8 +92,8 @@ function OverviewModule() {
             Lakeview, Mississauga · 14°C Overcast
           </p>
         </div>
-        <div className="rounded border border-emerald-500/20 bg-emerald-500/10 px-1.5 py-0.5">
-          <span className="text-[6px] font-extrabold tracking-wider text-emerald-400">ON TRACK</span>
+        <div className="rounded border border-reno-green-500/20 bg-reno-green-500/10 px-1.5 py-0.5">
+          <span className="text-[6px] font-extrabold tracking-wider text-reno-green-400">ON TRACK</span>
         </div>
       </m.div>
 
@@ -135,9 +135,9 @@ function OverviewModule() {
         {/* KPI grid */}
         <div className="grid flex-1 grid-cols-2 gap-1.5">
           {[
-            { label: 'Budget', value: '$2.4M', sub: 'of $4.2M', color: 'text-blue-400', bar: 'bg-blue-500', w: 'w-[57%]' },
-            { label: 'Schedule', value: 'Day 145', sub: 'of 280', color: 'text-violet-400', bar: 'bg-violet-500', w: 'w-[52%]' },
-            { label: 'Safety', value: '94', sub: '/ 100 score', color: 'text-emerald-400', bar: 'bg-emerald-500', w: 'w-[94%]' },
+            { label: 'Budget', value: '$2.4M', sub: 'of $4.2M', color: 'text-primary-400', bar: 'bg-primary-500', w: 'w-[57%]' },
+            { label: 'Schedule', value: 'Day 145', sub: 'of 280', color: 'text-reno-purple-400', bar: 'bg-reno-purple-500', w: 'w-[52%]' },
+            { label: 'Safety', value: '94', sub: '/ 100 score', color: 'text-reno-green-400', bar: 'bg-reno-green-500', w: 'w-[94%]' },
             { label: 'Quality', value: 'A+', sub: '12 inspections', color: 'text-amber-400', bar: 'bg-amber-500', w: 'w-[96%]' },
           ].map((kpi) => (
             <div key={kpi.label} className="rounded-lg border border-white/[0.06] bg-white/[0.03] px-2 py-1.5">
@@ -160,8 +160,8 @@ function OverviewModule() {
         </p>
         <div className="space-y-[3px]">
           {[
-            { t: '11:02', e: 'Concrete pour started — Bay 4 Foundation', dot: 'bg-blue-400' },
-            { t: '10:45', e: 'Safety inspection passed — Zone C', dot: 'bg-emerald-400' },
+            { t: '11:02', e: 'Concrete pour started — Bay 4 Foundation', dot: 'bg-primary-400' },
+            { t: '10:45', e: 'Safety inspection passed — Zone C', dot: 'bg-reno-green-400' },
             { t: '09:30', e: 'Rebar delivery received — 24 tonnes', dot: 'bg-amber-400' },
           ].map((a) => (
             <div key={a.t} className="flex items-center gap-1.5 rounded border border-white/[0.04] bg-white/[0.02] px-2 py-[5px]">
@@ -181,12 +181,12 @@ function OverviewModule() {
    ═══════════════════════════════════════════════════════════ */
 
 const phases = [
-  { name: 'Site Preparation', pct: 100, fill: 'bg-emerald-500', track: 'bg-emerald-500/15', s: 0, e: 18 },
-  { name: 'Foundation', pct: 82, fill: 'bg-blue-500', track: 'bg-blue-500/15', s: 12, e: 40 },
-  { name: 'Structural Steel', pct: 71, fill: 'bg-violet-500', track: 'bg-violet-500/15', s: 28, e: 58 },
+  { name: 'Site Preparation', pct: 100, fill: 'bg-reno-green-500', track: 'bg-reno-green-500/15', s: 0, e: 18 },
+  { name: 'Foundation', pct: 82, fill: 'bg-primary-500', track: 'bg-primary-500/15', s: 12, e: 40 },
+  { name: 'Structural Steel', pct: 71, fill: 'bg-reno-purple-500', track: 'bg-reno-purple-500/15', s: 28, e: 58 },
   { name: 'Mechanical', pct: 45, fill: 'bg-cyan-500', track: 'bg-cyan-500/15', s: 42, e: 72 },
   { name: 'Electrical', pct: 34, fill: 'bg-amber-500', track: 'bg-amber-500/15', s: 48, e: 78 },
-  { name: 'Finishing', pct: 12, fill: 'bg-rose-500', track: 'bg-rose-500/15', s: 65, e: 100 },
+  { name: 'Finishing', pct: 12, fill: 'bg-reno-red-500', track: 'bg-reno-red-500/15', s: 65, e: 100 },
 ];
 
 function ScheduleModule() {
@@ -194,7 +194,7 @@ function ScheduleModule() {
     <m.div variants={stagger} initial="hidden" animate="show" className="p-3">
       <m.div variants={fadeUp} className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
-          <Calendar className="h-3 w-3 text-violet-400" />
+          <Calendar className="h-3 w-3 text-reno-purple-400" />
           <span className="text-[8px] font-bold text-white/90">Project Timeline</span>
         </div>
         <span className="rounded border border-white/[0.06] bg-white/[0.03] px-1.5 py-0.5 text-[6px] font-bold tabular-nums text-slate-400">
@@ -225,7 +225,7 @@ function ScheduleModule() {
                 <div className="absolute -left-[2px] -top-[2px] h-[5px] w-[5px] rotate-45 rounded-[1px] bg-white/40" />
               </div>
             </div>
-            <span className={`w-[22px] shrink-0 text-right text-[6.5px] font-extrabold tabular-nums ${p.pct === 100 ? 'text-emerald-400' : 'text-slate-300'}`}>
+            <span className={`w-[22px] shrink-0 text-right text-[6.5px] font-extrabold tabular-nums ${p.pct === 100 ? 'text-reno-green-400' : 'text-slate-300'}`}>
               {p.pct}%
             </span>
           </m.div>
@@ -245,9 +245,9 @@ function ScheduleModule() {
               key={ms.name}
               className="flex items-center gap-1.5 rounded border border-white/[0.04] bg-white/[0.02] px-2 py-[5px]"
             >
-              <div className={`h-[6px] w-[6px] rotate-45 rounded-[1px] ${ms.done ? 'bg-emerald-400' : 'border border-slate-600'}`} />
+              <div className={`h-[6px] w-[6px] rotate-45 rounded-[1px] ${ms.done ? 'bg-reno-green-400' : 'border border-slate-600'}`} />
               <span className="flex-1 text-[6.5px] text-slate-300">{ms.name}</span>
-              <span className={`text-[5.5px] font-bold tabular-nums ${ms.done ? 'text-emerald-400' : 'text-slate-500'}`}>
+              <span className={`text-[5.5px] font-bold tabular-nums ${ms.done ? 'text-reno-green-400' : 'text-slate-500'}`}>
                 {ms.done && '✓ '}{ms.date}
               </span>
             </div>
@@ -272,28 +272,28 @@ function ActivityModule() {
         </div>
         <div className="flex items-center gap-1">
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/40" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-reno-green-400/40" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-reno-green-400" />
           </span>
-          <span className="text-[6.5px] font-bold text-emerald-400">6 on site</span>
+          <span className="text-[6.5px] font-bold text-reno-green-400">6 on site</span>
         </div>
       </m.div>
 
       {/* Crew avatar strip */}
       <m.div variants={fadeUp} className="mb-2.5 flex gap-1">
         {[
-          { i: 'AN', g: 'from-indigo-500 to-indigo-600' },
-          { i: 'AH', g: 'from-rose-500 to-rose-600' },
+          { i: 'AN', g: 'from-primary-500 to-primary-600' },
+          { i: 'AH', g: 'from-reno-red-500 to-reno-red-600' },
           { i: 'DP', g: 'from-amber-500 to-amber-600' },
-          { i: 'ED', g: 'from-emerald-500 to-emerald-600' },
-          { i: 'KF', g: 'from-blue-500 to-blue-600' },
-          { i: 'MS', g: 'from-violet-500 to-violet-600' },
+          { i: 'ED', g: 'from-reno-green-500 to-reno-green-600' },
+          { i: 'KF', g: 'from-primary-500 to-primary-600' },
+          { i: 'MS', g: 'from-reno-purple-500 to-reno-purple-600' },
         ].map((w) => (
           <div key={w.i} className="relative">
             <div className={`flex h-[22px] w-[22px] items-center justify-center rounded-full bg-gradient-to-br ${w.g} ring-1 ring-white/[0.08]`}>
               <span className="text-[5px] font-extrabold text-white">{w.i}</span>
             </div>
-            <span className="absolute -bottom-px -right-px h-[4px] w-[4px] rounded-full bg-emerald-400 ring-1 ring-[#0B1120]" />
+            <span className="absolute -bottom-px -right-px h-[4px] w-[4px] rounded-full bg-reno-green-400 ring-1 ring-[#0B1120]" />
           </div>
         ))}
       </m.div>
@@ -312,13 +312,13 @@ function ActivityModule() {
             className="flex gap-2 rounded-lg border border-white/[0.04] bg-white/[0.02] p-1.5"
           >
             <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md ${
-              a.icon === 'users' ? 'bg-indigo-500/15' :
-              a.icon === 'camera' ? 'bg-emerald-500/15' :
+              a.icon === 'users' ? 'bg-primary-500/15' :
+              a.icon === 'camera' ? 'bg-reno-green-500/15' :
               a.icon === 'shield' ? 'bg-amber-500/15' :
               'bg-cyan-500/15'
             }`}>
-              {a.icon === 'users' && <Users className="h-2.5 w-2.5 text-indigo-400" />}
-              {a.icon === 'camera' && <Camera className="h-2.5 w-2.5 text-emerald-400" />}
+              {a.icon === 'users' && <Users className="h-2.5 w-2.5 text-primary-400" />}
+              {a.icon === 'camera' && <Camera className="h-2.5 w-2.5 text-reno-green-400" />}
               {a.icon === 'shield' && <Shield className="h-2.5 w-2.5 text-amber-400" />}
               {a.icon === 'trend' && <TrendingUp className="h-2.5 w-2.5 text-cyan-400" />}
             </div>
@@ -349,7 +349,7 @@ function FinanceModule() {
     <m.div variants={stagger} initial="hidden" animate="show" className="p-3">
       <m.div variants={fadeUp} className="mb-2.5 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
-          <DollarSign className="h-3 w-3 text-emerald-400" />
+          <DollarSign className="h-3 w-3 text-reno-green-400" />
           <span className="text-[8px] font-bold text-white/90">Financial Overview</span>
         </div>
         <span className="text-[6.5px] text-slate-500">February 2026</span>
@@ -358,7 +358,7 @@ function FinanceModule() {
       {/* Contract value hero card */}
       <m.div
         variants={fadeUp}
-        className="mb-2.5 rounded-lg border border-white/[0.06] bg-gradient-to-br from-blue-500/[0.08] via-transparent to-violet-500/[0.06] p-2.5"
+        className="mb-2.5 rounded-lg border border-white/[0.06] bg-gradient-to-br from-primary-500/[0.08] via-transparent to-reno-purple-500/[0.06] p-2.5"
       >
         <div className="flex items-end justify-between">
           <div>
@@ -370,17 +370,17 @@ function FinanceModule() {
           <div className="text-right">
             <p className="text-[5px] font-semibold uppercase tracking-wider text-slate-500">Billed</p>
             <div className="flex items-center gap-0.5">
-              <span className="text-[12px] font-extrabold tabular-nums leading-none text-emerald-400">$2.81M</span>
-              <ArrowUpRight className="h-2.5 w-2.5 text-emerald-400" />
+              <span className="text-[12px] font-extrabold tabular-nums leading-none text-reno-green-400">$2.81M</span>
+              <ArrowUpRight className="h-2.5 w-2.5 text-reno-green-400" />
             </div>
           </div>
         </div>
         <div className="mt-2 h-[4px] overflow-hidden rounded-full bg-white/[0.06]">
-          <div className="h-full w-[67%] rounded-full bg-gradient-to-r from-blue-500 to-emerald-500" />
+          <div className="h-full w-[67%] rounded-full bg-gradient-to-r from-primary-500 to-reno-green-500" />
         </div>
         <div className="mt-0.5 flex justify-between text-[4.5px] tabular-nums text-slate-600">
           <span>$0</span>
-          <span className="font-bold text-blue-400/60">67% billed</span>
+          <span className="font-bold text-primary-400/60">67% billed</span>
           <span>$4.2M</span>
         </div>
       </m.div>
@@ -400,7 +400,7 @@ function FinanceModule() {
               <span className="text-[7px] font-extrabold tabular-nums text-white/80">{ms.amount}</span>
               <span className={`rounded px-1 py-px text-[5px] font-bold ${
                 ms.status === 'paid'
-                  ? 'bg-emerald-500/15 text-emerald-400'
+                  ? 'bg-reno-green-500/15 text-reno-green-400'
                   : ms.status === 'due'
                     ? 'bg-amber-500/15 text-amber-400'
                     : 'bg-white/[0.04] text-slate-500'
@@ -426,9 +426,9 @@ function FinanceModule() {
               key={i}
               className={`flex-1 rounded-t-[2px] transition-colors ${
                 i === cashBars.length - 1
-                  ? 'bg-gradient-to-t from-blue-500 to-blue-400'
+                  ? 'bg-gradient-to-t from-primary-500 to-primary-400'
                   : i === cashBars.length - 2
-                    ? 'bg-blue-500/40'
+                    ? 'bg-primary-500/40'
                     : 'bg-white/[0.06]'
               }`}
               style={{ height: `${h * 0.22}px` }}
@@ -520,7 +520,7 @@ export function HeroDashboard() {
             <span className="h-[6px] w-[6px] rounded-full bg-[#28c840]/70" />
           </div>
           <div className="ml-1 flex flex-1 items-center gap-1 rounded bg-white/[0.05] px-2 py-[3px]">
-            <Lock className="h-[7px] w-[7px] text-emerald-400/70" />
+            <Lock className="h-[7px] w-[7px] text-reno-green-400/70" />
             <span className="text-[7px] text-slate-500">app.renonext.com/command-center</span>
           </div>
         </div>
@@ -528,7 +528,7 @@ export function HeroDashboard() {
         {/* ── App top bar ── */}
         <div className="relative flex items-center justify-between border-b border-white/[0.06] px-3 py-1.5">
           <div className="flex items-center gap-1.5">
-            <div className="flex h-3.5 w-3.5 items-center justify-center rounded bg-gradient-to-br from-blue-500 to-violet-500">
+            <div className="flex h-3.5 w-3.5 items-center justify-center rounded bg-gradient-to-br from-primary-500 to-reno-purple-500">
               <span className="text-[5px] font-black text-white">L</span>
             </div>
             <span className="text-[8px] font-bold text-white/70">RenoNext</span>
@@ -542,11 +542,11 @@ export function HeroDashboard() {
             </div>
             <div className="relative">
               <Bell className="h-2.5 w-2.5 text-slate-500" />
-              <span className="absolute -right-0.5 -top-0.5 flex h-2 w-2 items-center justify-center rounded-full bg-blue-500 text-[4px] font-bold text-white ring-1 ring-[#0B1120]">
+              <span className="absolute -right-0.5 -top-0.5 flex h-2 w-2 items-center justify-center rounded-full bg-primary-500 text-[4px] font-bold text-white ring-1 ring-[#0B1120]">
                 3
               </span>
             </div>
-            <div className="flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-violet-500 ring-1 ring-white/[0.08]">
+            <div className="flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br from-primary-400 to-reno-purple-500 ring-1 ring-white/[0.08]">
               <span className="text-[5px] font-bold text-white">PV</span>
             </div>
           </div>
@@ -575,7 +575,7 @@ export function HeroDashboard() {
               {i === activeIndex && cycleReady && !hovered && (
                 <m.div
                   key={`bar-${resetKey}-${i}`}
-                  className="absolute inset-x-0 bottom-0 h-[1.5px] bg-gradient-to-r from-blue-500 to-emerald-500"
+                  className="absolute inset-x-0 bottom-0 h-[1.5px] bg-gradient-to-r from-primary-500 to-reno-green-500"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: CYCLE_MS / 1000, ease: 'linear' }}
@@ -606,7 +606,7 @@ export function HeroDashboard() {
         <div className="flex items-center justify-between border-t border-white/[0.06] px-3 py-1">
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-1 text-[5.5px] text-slate-600">
-              <span className="h-1 w-1 rounded-full bg-emerald-400" />
+              <span className="h-1 w-1 rounded-full bg-reno-green-400" />
               Connected
             </span>
             <span className="text-[5.5px] tabular-nums text-slate-600">Latency: 24ms</span>

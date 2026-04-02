@@ -147,7 +147,7 @@ export default function ClientJobsPage() {
         </Button>
       )}
       {job.status === 'completed' && (
-        <Button variant="outline" size="sm" className="rounded-lg border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 h-auto">
+        <Button variant="outline" size="sm" className="rounded-lg border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50 h-auto">
           Leave Review
         </Button>
       )}
@@ -160,10 +160,10 @@ export default function ClientJobsPage() {
     if (filteredJobs.length === 0) {
       return (
         <div className="py-16 text-center">
-          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gray-100">
-            <Briefcase className="h-7 w-7 text-gray-300" />
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100">
+            <Briefcase className="h-7 w-7 text-slate-300" />
           </div>
-          <p className="font-medium text-gray-900">No jobs found</p>
+          <p className="font-medium text-slate-900">No jobs found</p>
           <Button asChild variant="link" className="mt-2 text-sm font-semibold text-reno-green-dark hover:text-reno-green-dark h-auto">
             <Link href="/post-job">
               Post your first job
@@ -199,7 +199,7 @@ export default function ClientJobsPage() {
     <div>
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900">My Jobs</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">My Jobs</h1>
         <Button asChild className="inline-flex items-center gap-2 rounded-xl bg-reno-green-dark px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-reno-green-dark hover:shadow-md hover:shadow-reno-green-light h-auto">
           <Link href="/post-job">
             <Plus className="h-4 w-4" />
@@ -210,7 +210,7 @@ export default function ClientJobsPage() {
 
       {/* Tabs */}
       <Tabs defaultValue="active" className="w-full">
-        <TabsList className="mb-4 flex w-full gap-1 rounded-xl bg-gray-100 p-1 h-auto">
+        <TabsList className="mb-4 flex w-full gap-1 rounded-xl bg-slate-100 p-1 h-auto">
           {tabConfig.map((tab) => {
             const count = jobs.filter((j) =>
               tab.statuses.includes(j.status)
@@ -219,10 +219,10 @@ export default function ClientJobsPage() {
               <TabsTrigger
                 key={tab.key}
                 value={tab.key}
-                className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm data-[state=inactive]:text-gray-500 data-[state=inactive]:hover:text-gray-700"
+                className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm data-[state=inactive]:text-slate-500 data-[state=inactive]:hover:text-slate-700"
               >
                 {tab.label}
-                <span className="ml-1.5 text-xs text-gray-400">
+                <span className="ml-1.5 text-xs text-slate-400">
                   ({count})
                 </span>
               </TabsTrigger>
@@ -232,13 +232,13 @@ export default function ClientJobsPage() {
 
         {/* Search */}
         <div className="relative mb-4">
-          <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+          <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <Input
             type="text"
             placeholder="Search jobs..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-xl border-gray-200 py-2.5 pl-10 pr-4 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light h-auto"
+            className="w-full rounded-xl border-slate-200 py-2.5 pl-10 pr-4 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light h-auto"
           />
         </div>
 

@@ -31,7 +31,7 @@ export default function ProBlogDashboard() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900">Blog Posts</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">Blog Posts</h1>
         <Button asChild className="rounded-xl bg-reno-green-dark px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-reno-green-dark hover:shadow-md hover:shadow-reno-green-light h-auto">
           <Link href="/blog/write">
             <PenLine className="h-4 w-4" />
@@ -42,29 +42,29 @@ export default function ProBlogDashboard() {
 
       {/* Stats */}
       <div className="mb-6 grid grid-cols-3 gap-4">
-        <Card className="rounded-2xl border-gray-200 bg-white p-5 text-center">
-          <p className="text-3xl font-bold tracking-tight text-gray-900">{posts.length}</p>
-          <p className="text-xs font-medium text-gray-500">Total Posts</p>
+        <Card className="rounded-2xl border-slate-200 bg-white p-5 text-center">
+          <p className="text-3xl font-bold tracking-tight text-slate-900">{posts.length}</p>
+          <p className="text-xs font-medium text-slate-500">Total Posts</p>
         </Card>
-        <Card className="rounded-2xl border-gray-200 bg-white p-5 text-center">
-          <p className="text-3xl font-bold tracking-tight text-orange-600">{totalUpvotes}</p>
-          <p className="text-xs font-medium text-gray-500">Total Upvotes</p>
+        <Card className="rounded-2xl border-slate-200 bg-white p-5 text-center">
+          <p className="text-3xl font-bold tracking-tight text-reno-amber-600">{totalUpvotes}</p>
+          <p className="text-xs font-medium text-slate-500">Total Upvotes</p>
         </Card>
-        <Card className="rounded-2xl border-gray-200 bg-white p-5 text-center">
+        <Card className="rounded-2xl border-slate-200 bg-white p-5 text-center">
           <p className="text-3xl font-bold tracking-tight text-reno-green-dark">{totalComments}</p>
-          <p className="text-xs font-medium text-gray-500">Total Comments</p>
+          <p className="text-xs font-medium text-slate-500">Total Comments</p>
         </Card>
       </div>
 
       {/* Posts Table */}
-      <Card className="rounded-2xl border-gray-200 bg-white">
+      <Card className="rounded-2xl border-slate-200 bg-white">
         <CardHeader className="pb-0">
-          <CardTitle className="text-lg font-bold text-gray-900">Your Posts</CardTitle>
+          <CardTitle className="text-lg font-bold text-slate-900">Your Posts</CardTitle>
         </CardHeader>
         <CardContent className="p-0">
           {posts.length === 0 ? (
             <div className="px-6 py-12 text-center">
-              <p className="mb-2 text-gray-500">You haven&apos;t written any posts yet.</p>
+              <p className="mb-2 text-slate-500">You haven&apos;t written any posts yet.</p>
               <Button asChild className="rounded-xl bg-reno-green-dark text-white hover:bg-reno-green-dark">
                 <Link href="/blog/write">Write Your First Post</Link>
               </Button>
@@ -92,7 +92,7 @@ export default function ProBlogDashboard() {
                     <TableCell className="pl-6 max-w-[280px]">
                       <Link
                         href={`/blog/${post.id}`}
-                        className="font-semibold text-gray-900 hover:text-reno-green-dark line-clamp-1"
+                        className="font-semibold text-slate-900 hover:text-reno-green-dark line-clamp-1"
                       >
                         {post.title}
                       </Link>
@@ -103,19 +103,19 @@ export default function ProBlogDashboard() {
                       </Badge>
                     </TableCell>
                     <TableCell className="text-center">
-                      <Badge className="rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold text-green-700 border-transparent">
+                      <Badge className="rounded-full bg-reno-green-100 px-2 py-0.5 text-[10px] font-semibold text-reno-green-700 border-transparent">
                         Published
                       </Badge>
                     </TableCell>
                     <TableCell className="text-center">
-                      <span className="text-sm font-semibold text-gray-700">
+                      <span className="text-sm font-semibold text-slate-700">
                         {post.upvotes - post.downvotes}
                       </span>
                     </TableCell>
                     <TableCell className="text-center">
-                      <span className="text-sm text-gray-600">{post.commentCount}</span>
+                      <span className="text-sm text-slate-600">{post.commentCount}</span>
                     </TableCell>
-                    <TableCell className="text-center text-xs text-gray-400">
+                    <TableCell className="text-center text-xs text-slate-400">
                       {new Date(post.createdAt).toLocaleDateString('en-CA', {
                         month: 'short',
                         day: 'numeric',
@@ -127,7 +127,7 @@ export default function ProBlogDashboard() {
                           <Button
                             variant="ghost"
                             size="icon"
-                            className="h-8 w-8 rounded-lg text-gray-400 opacity-0 transition-opacity group-hover:opacity-100 hover:text-gray-600"
+                            className="h-8 w-8 rounded-lg text-slate-400 opacity-0 transition-opacity group-hover:opacity-100 hover:text-slate-600"
                           >
                             <MoreHorizontal className="h-4 w-4" />
                           </Button>

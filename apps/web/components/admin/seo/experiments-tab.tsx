@@ -72,16 +72,16 @@ interface CruxTrendPoint {
 }
 
 const statusConfig = {
-  baseline: { label: 'Baseline', color: 'bg-gray-100 text-gray-700', icon: Clock },
-  monitoring: { label: 'Monitoring', color: 'bg-blue-100 text-blue-700', icon: Activity },
-  complete: { label: 'Complete', color: 'bg-emerald-100 text-emerald-700', icon: FlaskConical },
+  baseline: { label: 'Baseline', color: 'bg-slate-100 text-slate-700', icon: Clock },
+  monitoring: { label: 'Monitoring', color: 'bg-primary-100 text-primary-700', icon: Activity },
+  complete: { label: 'Complete', color: 'bg-reno-green-100 text-reno-green-700', icon: FlaskConical },
 };
 
 const confidenceConfig = {
-  positive: { label: 'Positive', color: 'text-emerald-700', icon: TrendingUp },
+  positive: { label: 'Positive', color: 'text-reno-green-700', icon: TrendingUp },
   negative: { label: 'Negative', color: 'text-red-600', icon: TrendingDown },
-  neutral: { label: 'Neutral', color: 'text-gray-500', icon: Minus },
-  pending: { label: 'Pending', color: 'text-gray-400', icon: Clock },
+  neutral: { label: 'Neutral', color: 'text-slate-500', icon: Minus },
+  pending: { label: 'Pending', color: 'text-slate-400', icon: Clock },
 };
 
 // ---------------------------------------------------------------------------
@@ -152,7 +152,7 @@ export function ExperimentsTab() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <Loader2 className="h-8 w-8 animate-spin text-gray-400" />
+        <Loader2 className="h-8 w-8 animate-spin text-slate-400" />
       </div>
     );
   }
@@ -161,10 +161,10 @@ export function ExperimentsTab() {
     <div className="space-y-6">
       {/* Summary cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <SummaryCard label="Total Experiments" value={experiments.length} gradient="from-gray-400 to-gray-600" color="text-gray-700" />
-        <SummaryCard label="Monitoring" value={monitoring.length} gradient="from-blue-400 to-blue-600" color="text-blue-700" />
-        <SummaryCard label="Complete" value={complete.length} gradient="from-emerald-400 to-emerald-600" color="text-emerald-700" />
-        <SummaryCard label="Positive Results" value={positive.length} gradient="from-violet-400 to-violet-600" color="text-violet-700" />
+        <SummaryCard label="Total Experiments" value={experiments.length} gradient="from-slate-400 to-slate-600" color="text-slate-700" />
+        <SummaryCard label="Monitoring" value={monitoring.length} gradient="from-primary-400 to-primary-600" color="text-primary-700" />
+        <SummaryCard label="Complete" value={complete.length} gradient="from-reno-green-400 to-reno-green-600" color="text-reno-green-700" />
+        <SummaryCard label="Positive Results" value={positive.length} gradient="from-reno-purple-400 to-reno-purple-600" color="text-reno-purple-700" />
       </div>
 
       {/* Actions */}
@@ -177,16 +177,16 @@ export function ExperimentsTab() {
 
       {/* Experiments table */}
       {experiments.length === 0 ? (
-        <Card className="border-gray-200/60 shadow-sm">
-          <CardContent className="py-12 text-center text-gray-500 text-sm">
+        <Card className="border-slate-200/60 shadow-sm">
+          <CardContent className="py-12 text-center text-slate-500 text-sm">
             No experiments yet. Apply a recommendation to start tracking.
           </CardContent>
         </Card>
       ) : (
-        <Card className="border-gray-200/60 shadow-sm overflow-hidden">
+        <Card className="border-slate-200/60 shadow-sm overflow-hidden">
           <Table>
             <TableHeader>
-              <TableRow className="bg-gray-50/60">
+              <TableRow className="bg-slate-50/60">
                 <TableHead>Status</TableHead>
                 <TableHead>URL</TableHead>
                 <TableHead>Change</TableHead>
@@ -211,25 +211,25 @@ export function ExperimentsTab() {
                         )}
                       </Badge>
                     </TableCell>
-                    <TableCell className="font-mono text-xs text-gray-600 max-w-[200px] truncate">
+                    <TableCell className="font-mono text-xs text-slate-600 max-w-[200px] truncate">
                       {exp.url.replace('https://renonext.com', '') || '/'}
                     </TableCell>
-                    <TableCell className="text-sm text-gray-700">
+                    <TableCell className="text-sm text-slate-700">
                       {exp.change_type.replace(/_/g, ' ')}
                     </TableCell>
-                    <TableCell className="text-center hidden md:table-cell text-xs text-gray-500">
+                    <TableCell className="text-center hidden md:table-cell text-xs text-slate-500">
                       {exp.baseline_clicks !== null ? (
                         <span>{exp.baseline_clicks} clicks / {exp.baseline_impressions} imp</span>
                       ) : '—'}
                     </TableCell>
-                    <TableCell className="text-center hidden md:table-cell text-xs text-gray-500">
+                    <TableCell className="text-center hidden md:table-cell text-xs text-slate-500">
                       {exp.post_clicks !== null ? (
                         <span>{exp.post_clicks} clicks / {exp.post_impressions} imp</span>
                       ) : '—'}
                     </TableCell>
                     <TableCell className="text-center hidden lg:table-cell">
                       {exp.delta_clicks !== null ? (
-                        <span className={`text-sm font-medium ${exp.delta_clicks > 0 ? 'text-emerald-600' : exp.delta_clicks < 0 ? 'text-red-600' : 'text-gray-500'}`}>
+                        <span className={`text-sm font-medium ${exp.delta_clicks > 0 ? 'text-reno-green-600' : exp.delta_clicks < 0 ? 'text-red-600' : 'text-slate-500'}`}>
                           {exp.delta_clicks > 0 ? '+' : ''}{exp.delta_clicks}
                         </span>
                       ) : '—'}
@@ -249,17 +249,17 @@ export function ExperimentsTab() {
       )}
 
       {/* CrUX Trends */}
-      <Card className="border-gray-200/60 shadow-sm">
-        <div className="h-1 w-full bg-gradient-to-r from-violet-400 to-violet-600 opacity-60" />
+      <Card className="border-slate-200/60 shadow-sm">
+        <div className="h-1 w-full bg-gradient-to-r from-reno-purple-400 to-reno-purple-600 opacity-60" />
         <CardContent className="p-5">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <Activity className="h-5 w-5 text-violet-600" />
-              <h3 className="font-semibold text-gray-900">Core Web Vitals (CrUX)</h3>
+              <Activity className="h-5 w-5 text-reno-purple-600" />
+              <h3 className="font-semibold text-slate-900">Core Web Vitals (CrUX)</h3>
             </div>
             <div className="flex items-center gap-2">
               <Select value={cruxFormFactor} onValueChange={setCruxFormFactor}>
-                <SelectTrigger className="w-28 h-8 text-xs rounded-lg border-gray-200">
+                <SelectTrigger className="w-28 h-8 text-xs rounded-lg border-slate-200">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -275,14 +275,14 @@ export function ExperimentsTab() {
           </div>
 
           {cruxTrend.length === 0 ? (
-            <p className="text-sm text-gray-500 text-center py-6">
+            <p className="text-sm text-slate-500 text-center py-6">
               Click &quot;Load&quot; to fetch CrUX history for renonext.com.
             </p>
           ) : (
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
-                  <TableRow className="bg-gray-50/60">
+                  <TableRow className="bg-slate-50/60">
                     <TableHead>Week Ending</TableHead>
                     <TableHead className="text-center">LCP (ms)</TableHead>
                     <TableHead className="text-center">CLS</TableHead>
@@ -294,7 +294,7 @@ export function ExperimentsTab() {
                 <TableBody>
                   {cruxTrend.slice(-12).map((point) => (
                     <TableRow key={point.date}>
-                      <TableCell className="text-xs text-gray-600">{point.date}</TableCell>
+                      <TableCell className="text-xs text-slate-600">{point.date}</TableCell>
                       <TableCell className="text-center">
                         <CwvBadge value={point.lcp} thresholds={[2500, 4000]} unit="ms" />
                       </TableCell>
@@ -328,13 +328,13 @@ export function ExperimentsTab() {
 
 function SummaryCard({ label, value, gradient, color }: { label: string; value: number; gradient: string; color: string }) {
   return (
-    <Card className="border-gray-200/60 shadow-sm overflow-hidden group">
+    <Card className="border-slate-200/60 shadow-sm overflow-hidden group">
       <div className={`h-1 w-full bg-gradient-to-r ${gradient} opacity-60 group-hover:opacity-100 transition-opacity`} />
       <CardContent className="p-4 flex items-center gap-3">
         <FlaskConical className={`h-5 w-5 ${color} shrink-0`} />
         <div>
-          <p className="text-2xl font-bold text-gray-900">{value}</p>
-          <p className="text-xs text-gray-500">{label}</p>
+          <p className="text-2xl font-bold text-slate-900">{value}</p>
+          <p className="text-xs text-slate-500">{label}</p>
         </div>
       </CardContent>
     </Card>
@@ -342,9 +342,9 @@ function SummaryCard({ label, value, gradient, color }: { label: string; value: 
 }
 
 function CwvBadge({ value, thresholds, unit, decimals }: { value: number | null; thresholds: [number, number]; unit: string; decimals?: number }) {
-  if (value === null) return <span className="text-xs text-gray-300">—</span>;
+  if (value === null) return <span className="text-xs text-slate-300">—</span>;
   const color = value <= thresholds[0]
-    ? 'text-emerald-700 bg-emerald-50'
+    ? 'text-reno-green-700 bg-reno-green-50'
     : value <= thresholds[1]
       ? 'text-amber-700 bg-amber-50'
       : 'text-red-700 bg-red-50';

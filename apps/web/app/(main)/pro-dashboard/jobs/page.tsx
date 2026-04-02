@@ -138,7 +138,7 @@ export default function ProJobsPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold tracking-tight text-gray-900">Jobs</h1>
+      <h1 className="text-2xl font-bold tracking-tight text-slate-900">Jobs</h1>
 
       {/* Pipeline + Completions Charts */}
       <div className="grid gap-4 lg:grid-cols-2">
@@ -167,7 +167,7 @@ export default function ProJobsPage() {
 
       {/* Tabs */}
       <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as Tab)} className="mb-4">
-        <TabsList className="flex w-full gap-1 rounded-xl bg-gray-100 p-1">
+        <TabsList className="flex w-full gap-1 rounded-xl bg-slate-100 p-1">
           {[
             { key: 'available' as Tab, label: 'Available Nearby', count: availableJobs.length },
             { key: 'active' as Tab, label: 'Active', count: activeJobs.length },
@@ -176,10 +176,10 @@ export default function ProJobsPage() {
             <TabsTrigger
               key={tab.key}
               value={tab.key}
-              className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm data-[state=inactive]:text-gray-500 data-[state=inactive]:hover:text-gray-700"
+              className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm data-[state=inactive]:text-slate-500 data-[state=inactive]:hover:text-slate-700"
             >
               {tab.label}
-              <span className="ml-1.5 text-xs text-gray-400">
+              <span className="ml-1.5 text-xs text-slate-400">
                 ({tab.count})
               </span>
             </TabsTrigger>
@@ -192,16 +192,16 @@ export default function ProJobsPage() {
         {jobs.map((job) => (
           <Card
             key={job.id}
-            className="rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+            className="rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
           >
             <CardContent className="p-5">
               <div className="mb-2 flex items-start justify-between">
                 <div>
-                  <h3 className="font-semibold text-gray-900">{job.title}</h3>
-                  <span className="text-xs text-gray-500">{job.category}</span>
+                  <h3 className="font-semibold text-slate-900">{job.title}</h3>
+                  <span className="text-xs text-slate-500">{job.category}</span>
                 </div>
                 {activeTab === 'available' && (
-                  <span className="text-xs text-gray-400">{job.postedAgo}</span>
+                  <span className="text-xs text-slate-400">{job.postedAgo}</span>
                 )}
                 {activeTab === 'active' && (
                   <Badge
@@ -216,9 +216,9 @@ export default function ProJobsPage() {
                 )}
               </div>
 
-              <p className="mb-3 text-sm leading-relaxed text-gray-600">{job.description}</p>
+              <p className="mb-3 text-sm leading-relaxed text-slate-600">{job.description}</p>
 
-              <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-gray-500">
+              <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="flex items-center gap-1">
                   <MapPin className="h-4 w-4" />
                   {job.city}
@@ -231,20 +231,20 @@ export default function ProJobsPage() {
                   </span>
                 )}
                 {job.clientName && (
-                  <span className="text-gray-600">
+                  <span className="text-slate-600">
                     Client: {job.clientName}
                   </span>
                 )}
               </div>
 
-              <div className="flex gap-2 border-t border-gray-100 pt-3">
+              <div className="flex gap-2 border-t border-slate-100 pt-3">
                 {activeTab === 'available' && (
                   <>
                     <Button className="rounded-xl bg-reno-green-dark px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:bg-reno-green-dark hover:shadow-md hover:shadow-reno-green-light">
                       <Send className="h-4 w-4" />
                       Send Bid
                     </Button>
-                    <Button variant="outline" className="rounded-xl border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50">
+                    <Button variant="outline" className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50">
                       <Eye className="h-4 w-4" />
                       View Details
                     </Button>
@@ -255,13 +255,13 @@ export default function ProJobsPage() {
                     <Button className="rounded-xl bg-reno-green-dark px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:bg-reno-green-dark hover:shadow-md hover:shadow-reno-green-light">
                       Manage Job
                     </Button>
-                    <Button variant="outline" className="rounded-xl border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50">
+                    <Button variant="outline" className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50">
                       Message Client
                     </Button>
                   </>
                 )}
                 {activeTab === 'completed' && (
-                  <Button variant="outline" className="rounded-xl border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50">
+                  <Button variant="outline" className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50">
                     View Summary
                   </Button>
                 )}
@@ -272,10 +272,10 @@ export default function ProJobsPage() {
 
         {jobs.length === 0 && (
           <div className="py-16 text-center">
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gray-100">
-              <Briefcase className="h-7 w-7 text-gray-300" />
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100">
+              <Briefcase className="h-7 w-7 text-slate-300" />
             </div>
-            <p className="font-medium text-gray-900">No jobs in this category</p>
+            <p className="font-medium text-slate-900">No jobs in this category</p>
           </div>
         )}
       </div>

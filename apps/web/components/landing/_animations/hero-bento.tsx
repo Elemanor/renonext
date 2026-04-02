@@ -41,27 +41,27 @@ const tabs: BentoTab[] = [
     icon: Eye,
     label: 'Live Tracking',
     benefit: 'See who\u2019s on site, what\u2019s done, and what\u2019s next',
-    activeColor: 'text-emerald-600',
-    activeBg: 'bg-emerald-50',
-    activeBorder: 'border-emerald-300',
+    activeColor: 'text-reno-green-600',
+    activeBg: 'bg-reno-green-50',
+    activeBorder: 'border-reno-green-300',
   },
   {
     id: 'escrow',
     icon: Lock,
     label: 'Escrow Vault',
     benefit: 'Money locked until milestones are verified and approved',
-    activeColor: 'text-blue-600',
-    activeBg: 'bg-blue-50',
-    activeBorder: 'border-blue-300',
+    activeColor: 'text-primary-600',
+    activeBg: 'bg-primary-50',
+    activeBorder: 'border-primary-300',
   },
   {
     id: 'vault',
     icon: FileSearch,
     label: 'Home Vault',
     benefit: 'Permanent record of every job done on your property',
-    activeColor: 'text-violet-600',
-    activeBg: 'bg-violet-50',
-    activeBorder: 'border-violet-300',
+    activeColor: 'text-reno-purple-600',
+    activeBg: 'bg-reno-purple-50',
+    activeBorder: 'border-reno-purple-300',
   },
   {
     id: 'compliance',
@@ -81,55 +81,55 @@ function TrackerPanel() {
     <div className="space-y-3">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-[10px] font-medium uppercase tracking-wider text-gray-400">
+          <p className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
             LIVE DASHBOARD
           </p>
-          <p className="text-sm font-bold text-gray-900">
+          <p className="text-sm font-bold text-slate-900">
             18 Birch Lane, Markham
           </p>
         </div>
-        <Badge className="rounded-full border-transparent bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
+        <Badge className="rounded-full border-transparent bg-reno-green-100 px-2 py-0.5 text-[10px] font-bold text-reno-green-700">
           <span className="relative mr-1.5 flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="absolute inline-flex h-full w-full rounded-full bg-reno-green-400 opacity-75 motion-safe:animate-ping" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-reno-green-500" />
           </span>
           Live
         </Badge>
       </div>
 
       {/* Active job */}
-      <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3">
+      <div className="rounded-xl border border-reno-green-200 bg-reno-green-50 p-3">
         <div className="mb-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="absolute inline-flex h-full w-full rounded-full bg-reno-green-400 opacity-75 motion-safe:animate-ping" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-reno-green-500" />
             </span>
-            <span className="text-[10px] font-bold text-emerald-700">
+            <span className="text-[10px] font-bold text-reno-green-700">
               ACTIVE
             </span>
           </div>
-          <span className="text-[10px] text-gray-400">Now</span>
+          <span className="text-[10px] text-slate-400">Now</span>
         </div>
-        <p className="text-sm font-semibold text-gray-900">
+        <p className="text-sm font-semibold text-slate-900">
           Bathroom renovation — Tile & fixtures
         </p>
         <div className="mt-2 flex items-center gap-2">
-          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-[8px] font-bold text-white">
+          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-[8px] font-bold text-white">
             SM
           </div>
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-slate-500">
             Sarah M. — Red Seal Plumber
           </span>
         </div>
         <div className="mt-2">
-          <div className="flex items-center justify-between text-[10px] text-gray-500">
+          <div className="flex items-center justify-between text-[10px] text-slate-500">
             <span>Tasks: 3 of 5</span>
             <span>60%</span>
           </div>
-          <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-gray-200">
+          <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-slate-200">
             <div
-              className="h-1.5 rounded-full bg-emerald-500"
+              className="h-1.5 rounded-full bg-reno-green-500"
               style={{ width: '60%' }}
             />
           </div>
@@ -137,11 +137,11 @@ function TrackerPanel() {
       </div>
 
       {/* On-site info */}
-      <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-2.5">
-        <Users className="h-4 w-4 text-blue-500" />
+      <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-2.5">
+        <Users className="h-4 w-4 text-primary-500" />
         <div>
-          <p className="text-xs font-medium text-gray-900">2 pros on site</p>
-          <p className="text-[10px] text-gray-500">
+          <p className="text-xs font-medium text-slate-900">2 pros on site</p>
+          <p className="text-[10px] text-slate-500">
             GPS verified &bull; Clocked in 9:14 AM
           </p>
         </div>
@@ -154,16 +154,16 @@ function EscrowPanel() {
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100">
-          <Lock className="h-5 w-5 text-emerald-600" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-reno-green-100">
+          <Lock className="h-5 w-5 text-reno-green-600" />
         </div>
         <div>
-          <p className="text-[10px] font-medium uppercase tracking-wider text-gray-400">
+          <p className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
             RENONEXT SAFE&trade;
           </p>
-          <p className="text-lg font-bold text-gray-900">$18,750.00</p>
+          <p className="text-lg font-bold text-slate-900">$18,750.00</p>
         </div>
-        <Badge className="ml-auto rounded-full border-transparent bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
+        <Badge className="ml-auto rounded-full border-transparent bg-reno-green-100 px-2 py-0.5 text-[10px] font-bold text-reno-green-700">
           Secured
         </Badge>
       </div>
@@ -179,21 +179,21 @@ function EscrowPanel() {
             key={ms.name}
             className={`flex items-center justify-between rounded-lg px-3 py-2 text-xs ${
               ms.status === 'paid'
-                ? 'border border-emerald-200 bg-emerald-50'
+                ? 'border border-reno-green-200 bg-reno-green-50'
                 : 'border border-amber-200 bg-amber-50'
             }`}
           >
             <div className="flex items-center gap-2">
               {ms.status === 'paid' ? (
-                <CheckCircle className="h-3.5 w-3.5 text-emerald-500" />
+                <CheckCircle className="h-3.5 w-3.5 text-reno-green-500" />
               ) : (
                 <Clock className="h-3.5 w-3.5 text-amber-500" />
               )}
-              <span className="font-medium text-gray-800">{ms.name}</span>
+              <span className="font-medium text-slate-800">{ms.name}</span>
               <span
                 className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
                   ms.status === 'paid'
-                    ? 'bg-emerald-100 text-emerald-700'
+                    ? 'bg-reno-green-100 text-reno-green-700'
                     : 'bg-amber-100 text-amber-700'
                 }`}
               >
@@ -202,7 +202,7 @@ function EscrowPanel() {
             </div>
             <span
               className={`font-semibold ${
-                ms.status === 'paid' ? 'text-emerald-700' : 'text-amber-700'
+                ms.status === 'paid' ? 'text-reno-green-700' : 'text-amber-700'
               }`}
             >
               {ms.amount}
@@ -211,8 +211,8 @@ function EscrowPanel() {
         ))}
       </div>
 
-      <div className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-xs text-gray-500">
-        <Banknote className="h-4 w-4 shrink-0 text-blue-500" />
+      <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white p-2.5 text-xs text-slate-500">
+        <Banknote className="h-4 w-4 shrink-0 text-primary-500" />
         <span>Bonded escrow — funds released on your approval only</span>
       </div>
     </div>
@@ -224,14 +224,14 @@ function VaultPanel() {
     <div className="space-y-3">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-[10px] font-medium uppercase tracking-wider text-gray-400">
+          <p className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
             HOME VAULT
           </p>
-          <p className="text-sm font-bold text-gray-900">
+          <p className="text-sm font-bold text-slate-900">
             91 Lakeshore Rd, Oakville
           </p>
         </div>
-        <Badge className="rounded-full border-transparent bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
+        <Badge className="rounded-full border-transparent bg-reno-green-100 px-2 py-0.5 text-[10px] font-bold text-reno-green-700">
           All Clear
         </Badge>
       </div>
@@ -246,30 +246,30 @@ function VaultPanel() {
         ].map((stat) => (
           <div
             key={stat.label}
-            className="rounded-lg border border-gray-200 bg-white p-2 text-center"
+            className="rounded-lg border border-slate-200 bg-white p-2 text-center"
           >
-            <p className="text-sm font-bold text-gray-900">{stat.value}</p>
-            <p className="text-[9px] text-gray-500">{stat.label}</p>
+            <p className="text-sm font-bold text-slate-900">{stat.value}</p>
+            <p className="text-[9px] text-slate-500">{stat.label}</p>
           </div>
         ))}
       </div>
 
       {/* Recent job — relative timestamp */}
-      <div className="rounded-xl border border-gray-200 bg-white p-3 shadow-sm">
+      <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
         <div className="mb-1 flex items-center justify-between">
-          <Badge className="rounded-full border-transparent bg-emerald-50 px-2 py-0 text-[9px] font-semibold text-emerald-600">
+          <Badge className="rounded-full border-transparent bg-reno-green-50 px-2 py-0 text-[9px] font-semibold text-reno-green-600">
             Completed &amp; Stamped
           </Badge>
-          <span className="text-[10px] text-gray-400">3 days ago</span>
+          <span className="text-[10px] text-slate-400">3 days ago</span>
         </div>
-        <p className="text-sm font-semibold text-gray-900">
+        <p className="text-sm font-semibold text-slate-900">
           HVAC system replacement
         </p>
         <div className="mt-2 flex items-center gap-2">
-          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-orange-600 text-[8px] font-bold text-white">
+          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-reno-amber-600 text-[8px] font-bold text-white">
             JT
           </div>
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-slate-500">
             James T. — TSSA Certified
           </span>
           <div className="ml-auto flex gap-0.5">
@@ -291,14 +291,14 @@ function CompliancePanel() {
     <div className="space-y-3">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-[10px] font-medium uppercase tracking-wider text-gray-400">
+          <p className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
             COMPLIANCE CHECK
           </p>
-          <p className="text-sm font-bold text-gray-900">
+          <p className="text-sm font-bold text-slate-900">
             All Contractors Verified
           </p>
         </div>
-        <Badge className="rounded-full border-transparent bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
+        <Badge className="rounded-full border-transparent bg-reno-green-100 px-2 py-0.5 text-[10px] font-bold text-reno-green-700">
           <CheckCircle className="mr-1 h-3 w-3" />
           Passed
         </Badge>
@@ -314,25 +314,25 @@ function CompliancePanel() {
         ].map((item) => (
           <div
             key={item.label}
-            className="flex items-center justify-between rounded-lg border border-gray-200 bg-white p-2.5"
+            className="flex items-center justify-between rounded-lg border border-slate-200 bg-white p-2.5"
           >
             <div className="flex items-center gap-2">
               <CheckCircle
                 className={`h-3.5 w-3.5 ${
                   item.color === 'emerald'
-                    ? 'text-emerald-500'
-                    : 'text-blue-500'
+                    ? 'text-reno-green-500'
+                    : 'text-primary-500'
                 }`}
               />
-              <span className="text-xs font-medium text-gray-800">
+              <span className="text-xs font-medium text-slate-800">
                 {item.label}
               </span>
             </div>
             <span
               className={`text-[10px] font-semibold ${
                 item.color === 'emerald'
-                  ? 'text-emerald-600'
-                  : 'text-blue-600'
+                  ? 'text-reno-green-600'
+                  : 'text-primary-600'
               }`}
             >
               {item.status}
@@ -346,7 +346,7 @@ function CompliancePanel() {
         {['P.Eng', 'OHSA', 'ESA', 'TSSA', 'Heights'].map((cert) => (
           <span
             key={cert}
-            className="rounded-full border border-gray-200 bg-white px-2.5 py-0.5 text-[10px] font-medium text-gray-600"
+            className="rounded-full border border-slate-200 bg-white px-2.5 py-0.5 text-[10px] font-medium text-slate-600"
           >
             {cert}
           </span>
@@ -434,10 +434,10 @@ export function HeroBento() {
                   className={[
                     'relative rounded-xl border p-3 text-left transition-colors duration-200 lg:p-4',
                     'select-none',
-                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/40 focus-visible:ring-offset-2',
                     isActive
                       ? 'border-transparent'
-                      : 'border-gray-200/60 bg-white/70 hover:bg-white/90',
+                      : 'border-slate-200/60 bg-white/70 hover:bg-white/90',
                   ].join(' ')}
                 >
                   {/* layoutId sliding highlight */}
@@ -453,16 +453,16 @@ export function HeroBento() {
                   <div className="relative z-10">
                     <div className="flex items-center gap-2">
                       <tab.icon
-                        className={`h-4 w-4 shrink-0 ${isActive ? tab.activeColor : 'text-gray-400'}`}
+                        className={`h-4 w-4 shrink-0 ${isActive ? tab.activeColor : 'text-slate-400'}`}
                       />
                       <span
-                        className={`text-sm font-semibold ${isActive ? 'text-gray-900' : 'text-gray-600'}`}
+                        className={`text-sm font-semibold ${isActive ? 'text-slate-900' : 'text-slate-600'}`}
                       >
                         {tab.label}
                       </span>
                     </div>
                     <p
-                      className={`mt-1 text-xs leading-relaxed ${isActive ? 'text-gray-600' : 'text-gray-400'}`}
+                      className={`mt-1 text-xs leading-relaxed ${isActive ? 'text-slate-600' : 'text-slate-400'}`}
                     >
                       {tab.benefit}
                     </p>
@@ -477,12 +477,12 @@ export function HeroBento() {
             role="tabpanel"
             id={`bento-panel-${activeTab}`}
             aria-labelledby={`bento-tab-${activeTab}`}
-            className="relative overflow-hidden rounded-2xl border border-gray-200/60 bg-white/70 p-5 shadow-2xl backdrop-blur lg:p-6"
+            className="relative overflow-hidden rounded-2xl border border-slate-200/60 bg-white/70 p-5 shadow-2xl backdrop-blur lg:p-6"
           >
             {/* Inner ring */}
             <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/50" />
             {/* Top hairline */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200/80 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200/80 to-transparent" />
 
             <AnimatePresence mode="wait">
               {prefersReduced ? (

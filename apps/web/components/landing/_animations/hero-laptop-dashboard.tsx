@@ -30,16 +30,16 @@ const barData = [
 ];
 
 const crew = [
-  { initials: 'AN', name: 'Andre N.', gradient: 'from-blue-500 to-blue-600', status: 'online' as const },
-  { initials: 'AH', name: 'Alex H.', gradient: 'from-rose-500 to-rose-600', status: 'online' as const },
+  { initials: 'AN', name: 'Andre N.', gradient: 'from-primary-500 to-primary-600', status: 'online' as const },
+  { initials: 'AH', name: 'Alex H.', gradient: 'from-reno-red-500 to-reno-red-600', status: 'online' as const },
   { initials: 'DP', name: 'David P.', gradient: 'from-amber-500 to-amber-600', status: 'online' as const },
-  { initials: 'ED', name: 'Eduardo D.', gradient: 'from-emerald-500 to-emerald-600', status: 'online' as const },
+  { initials: 'ED', name: 'Eduardo D.', gradient: 'from-reno-green-500 to-reno-green-600', status: 'online' as const },
 ];
 
 const tasks = [
-  { label: 'Permit Approved', status: 'done' as const, color: 'text-emerald-400', dot: 'bg-emerald-400' },
+  { label: 'Permit Approved', status: 'done' as const, color: 'text-reno-green-400', dot: 'bg-reno-green-400' },
   { label: 'Rough Inspection', status: 'active' as const, color: 'text-amber-400', dot: 'bg-amber-400' },
-  { label: 'Concrete Pour Scheduled', status: 'pending' as const, color: 'text-blue-400', dot: 'bg-blue-400' },
+  { label: 'Concrete Pour Scheduled', status: 'pending' as const, color: 'text-primary-400', dot: 'bg-primary-400' },
 ];
 
 export function HeroLaptopDashboard() {
@@ -58,7 +58,7 @@ export function HeroLaptopDashboard() {
       {/* ── App top bar ── */}
       <div className="relative flex items-center justify-between border-b border-white/[0.06] bg-[#080c14] px-4 py-2">
         <div className="flex items-center gap-2">
-          <div className="flex h-[18px] w-[18px] items-center justify-center rounded-md bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-sm shadow-emerald-500/20">
+          <div className="flex h-[18px] w-[18px] items-center justify-center rounded-md bg-gradient-to-br from-reno-green-500 to-reno-green-600 shadow-sm shadow-emerald-500/20">
             <span className="text-[6px] font-black text-white">RN</span>
           </div>
           <span className="text-[10px] font-bold text-white/90 tracking-wide">RenoNext</span>
@@ -80,8 +80,8 @@ export function HeroLaptopDashboard() {
         {/* ─── Top stats row ─── */}
         <div className="grid grid-cols-3 gap-2">
           {[
-            { label: 'Budget Used', value: '67%', icon: DollarSign, color: 'text-emerald-400', bg: 'bg-emerald-500/10', bar: 'bg-emerald-500', barW: '67%' },
-            { label: 'Schedule', value: 'Day 145', icon: Clock, color: 'text-blue-400', bg: 'bg-blue-500/10', bar: 'bg-blue-500', barW: '52%' },
+            { label: 'Budget Used', value: '67%', icon: DollarSign, color: 'text-reno-green-400', bg: 'bg-reno-green-500/10', bar: 'bg-reno-green-500', barW: '67%' },
+            { label: 'Schedule', value: 'Day 145', icon: Clock, color: 'text-primary-400', bg: 'bg-primary-500/10', bar: 'bg-primary-500', barW: '52%' },
             { label: 'Safety Score', value: '94/100', icon: Shield, color: 'text-amber-400', bg: 'bg-amber-500/10', bar: 'bg-amber-500', barW: '94%' },
           ].map((stat) => (
             <div
@@ -112,7 +112,7 @@ export function HeroLaptopDashboard() {
         {/* ─── Next Milestone Payment — hero card ─── */}
         <div className="rounded-xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] via-white/[0.02] to-transparent p-3.5 relative overflow-hidden">
           {/* Subtle card glow */}
-          <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-emerald-500/[0.06] blur-2xl" />
+          <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-reno-green-500/[0.06] blur-2xl" />
 
           <div className="flex items-start justify-between relative">
             <div>
@@ -123,12 +123,12 @@ export function HeroLaptopDashboard() {
                 $32,500
               </p>
             </div>
-            <div className="flex items-center gap-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2 py-0.5">
+            <div className="flex items-center gap-1 rounded-full border border-reno-green-500/25 bg-reno-green-500/10 px-2 py-0.5">
               <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-reno-green-400 opacity-60" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-reno-green-400" />
               </span>
-              <span className="text-[7px] font-bold uppercase tracking-wider text-emerald-400">
+              <span className="text-[7px] font-bold uppercase tracking-wider text-reno-green-400">
                 Funds Secured in Vault
               </span>
             </div>
@@ -142,10 +142,10 @@ export function HeroLaptopDashboard() {
                   <div
                     className={`w-full rounded-t-[2px] ${
                       i === barData.length - 1
-                        ? 'bg-gradient-to-t from-emerald-600 to-emerald-400 shadow-sm shadow-emerald-500/30'
+                        ? 'bg-gradient-to-t from-reno-green-600 to-reno-green-400 shadow-sm shadow-emerald-500/30'
                         : i >= barData.length - 3
-                          ? 'bg-emerald-500/60'
-                          : 'bg-emerald-500/20'
+                          ? 'bg-reno-green-500/60'
+                          : 'bg-reno-green-500/20'
                     }`}
                     style={{ height: `${bar.h}%` }}
                   />
@@ -158,7 +158,7 @@ export function HeroLaptopDashboard() {
                 <span
                   key={i}
                   className={`flex-1 text-center text-[5px] tabular-nums ${
-                    i === barData.length - 1 ? 'font-bold text-emerald-400' : 'text-slate-600'
+                    i === barData.length - 1 ? 'font-bold text-reno-green-400' : 'text-slate-600'
                   }`}
                 >
                   {bar.label}
@@ -176,7 +176,7 @@ export function HeroLaptopDashboard() {
               <p className="text-[9px] font-medium uppercase tracking-wider text-slate-500">
                 Verified Crew Attendance
               </p>
-              <span className="text-[8px] font-bold tabular-nums text-emerald-400">
+              <span className="text-[8px] font-bold tabular-nums text-reno-green-400">
                 4/6
               </span>
             </div>
@@ -191,7 +191,7 @@ export function HeroLaptopDashboard() {
                     </span>
                   </div>
                   {/* Online indicator */}
-                  <span className="absolute -bottom-px -right-px h-[5px] w-[5px] rounded-full bg-emerald-400 ring-[1.5px] ring-[#0b0f18]" />
+                  <span className="absolute -bottom-px -right-px h-[5px] w-[5px] rounded-full bg-reno-green-400 ring-[1.5px] ring-[#0b0f18]" />
                 </div>
               ))}
               <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full border border-dashed border-slate-600/60 ring-[1.5px] ring-[#0b0f18] bg-[#0b0f18]">
@@ -200,7 +200,7 @@ export function HeroLaptopDashboard() {
             </div>
             {/* GPS verification note */}
             <div className="mt-2.5 flex items-center gap-1">
-              <MapPin className="h-2 w-2 text-emerald-400/60" />
+              <MapPin className="h-2 w-2 text-reno-green-400/60" />
               <span className="text-[7px] text-slate-600">GPS verified on-site</span>
             </div>
           </div>
@@ -243,7 +243,7 @@ export function HeroLaptopDashboard() {
                     {task.label}
                   </span>
                   {task.status === 'done' && (
-                    <span className="ml-auto text-[6px] font-bold text-emerald-500/60">DONE</span>
+                    <span className="ml-auto text-[6px] font-bold text-reno-green-500/60">DONE</span>
                   )}
                 </div>
               ))}
@@ -255,13 +255,13 @@ export function HeroLaptopDashboard() {
         <div className="flex items-center justify-between pt-1 border-t border-white/[0.04]">
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-1 text-[6px] text-slate-600">
-              <span className="h-1 w-1 rounded-full bg-emerald-400" />
+              <span className="h-1 w-1 rounded-full bg-reno-green-400" />
               Live
             </span>
             <span className="text-[6px] tabular-nums text-slate-700">Latency: 24ms</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <TrendingUp className="h-2 w-2 text-emerald-500/40" />
+            <TrendingUp className="h-2 w-2 text-reno-green-500/40" />
             <span className="text-[6px] text-slate-700">v2.4.1</span>
           </div>
         </div>

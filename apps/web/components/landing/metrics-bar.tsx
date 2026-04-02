@@ -23,10 +23,10 @@ export function MetricsBar() {
                   target={m.target}
                   prefix={m.prefix ?? ''}
                   suffix={m.suffix}
-                  className="text-2xl font-extrabold tracking-tight text-gray-900"
+                  className="text-2xl font-extrabold tracking-tight text-slate-900"
                   ariaLabel={`${m.prefix ?? ''}${m.target}${m.suffix} ${m.label}`}
                 />
-                <p className="mt-0.5 text-xs font-medium uppercase tracking-wider text-gray-500">
+                <p className="mt-0.5 text-xs font-medium uppercase tracking-wider text-slate-500">
                   {m.label}
                 </p>
               </div>

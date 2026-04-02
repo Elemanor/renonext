@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'ae-pic-a1.aliexpress-media.com',
+      },
     ],
   },
   async redirects() {

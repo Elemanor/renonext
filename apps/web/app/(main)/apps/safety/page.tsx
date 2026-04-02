@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: 'SafetyHub — Safety Docs Done Before the Trucks Arrive | RenoNext',
   description:
     'JSA Generator, Toolbox Meetings, equipment inspections, crew sign-off, and instant PDF export — the construction safety app that eliminates paper forms.',
+  alternates: {
+    canonical: '/apps/safety',
+  },
 };
 
 export default function SafetyPage() {
@@ -28,13 +31,13 @@ export default function SafetyPage() {
           ================================================================ */}
       <section className="relative bg-white overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-500/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-reno-amber-500/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-600/10 to-orange-600/10 px-4 py-1.5 rounded-full border border-amber-500/20 mb-8">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-600/10 to-reno-amber-600/10 px-4 py-1.5 rounded-full border border-amber-500/20 mb-8">
                 <span
                   className="material-symbols-outlined text-amber-600 text-sm"
                   style={{ fontVariationSettings: "'FILL' 1" }}
@@ -50,13 +53,13 @@ export default function SafetyPage() {
               <h1 className="text-5xl md:text-7xl font-extrabold text-[#102122] leading-[1.05] tracking-tight mb-6">
                 Safety docs done
                 <br />
-                <span className="bg-gradient-to-r from-amber-600 to-orange-700 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-amber-600 to-reno-amber-700 bg-clip-text text-transparent">
                   before the trucks arrive.
                 </span>
               </h1>
 
               {/* Subtitle */}
-              <p className="text-lg md:text-xl text-gray-500 max-w-xl font-light leading-relaxed mb-10">
+              <p className="text-lg md:text-xl text-slate-500 max-w-xl font-light leading-relaxed mb-10">
                 JSA forms, toolbox talks, equipment inspections, crew sign-off,
                 and instant PDF export — everything your safety program needs,
                 built for the field.
@@ -66,10 +69,10 @@ export default function SafetyPage() {
               <div className="flex flex-wrap gap-5">
                 {heroStats.map((stat) => (
                   <div key={stat.label} className="flex flex-col">
-                    <span className="text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-medium">
+                    <span className="text-[10px] uppercase tracking-widest text-slate-400 mb-1 font-medium">
                       {stat.label}
                     </span>
-                    <div className="bg-gray-100 px-5 py-2.5">
+                    <div className="bg-slate-100 px-5 py-2.5">
                       <span className="font-black text-[#102122] text-lg">
                         {stat.value}
                       </span>
@@ -88,10 +91,10 @@ export default function SafetyPage() {
                 <div className="bg-gradient-to-br from-[#1a2d3d] to-[#2c4a5e] aspect-[4/3] p-6 flex flex-col">
                   {/* Search bar */}
                   <div className="bg-white/10 rounded-xl px-4 py-2.5 flex items-center gap-2.5 mb-5 border border-white/5">
-                    <span className="material-symbols-outlined text-gray-400 text-base">
+                    <span className="material-symbols-outlined text-slate-400 text-base">
                       search
                     </span>
-                    <span className="text-xs text-gray-400">Search forms, crew, projects...</span>
+                    <span className="text-xs text-slate-400">Search forms, crew, projects...</span>
                   </div>
 
                   {/* Stats bento grid */}
@@ -103,7 +106,7 @@ export default function SafetyPage() {
                           <p className="text-[9px] text-white/70 uppercase tracking-widest font-bold mb-1">Active Inspections</p>
                           <div className="flex items-end gap-2">
                             <span className="text-3xl font-extrabold text-white font-display">12</span>
-                            <span className="text-xs font-bold text-emerald-300 mb-1">(+2)</span>
+                            <span className="text-xs font-bold text-reno-green-300 mb-1">(+2)</span>
                           </div>
                         </div>
                         <span
@@ -116,18 +119,18 @@ export default function SafetyPage() {
                     </div>
                     {/* Pending */}
                     <div className="bg-white/10 rounded-xl p-3 border border-white/5">
-                      <p className="text-[8px] text-gray-400 uppercase tracking-widest font-bold mb-1">Pending</p>
+                      <p className="text-[8px] text-slate-400 uppercase tracking-widest font-bold mb-1">Pending</p>
                       <span className="text-2xl font-extrabold text-white font-display">04</span>
                     </div>
                     {/* High Risk */}
                     <div className="bg-white/10 rounded-xl p-3 border border-white/5">
-                      <p className="text-[8px] text-gray-400 uppercase tracking-widest font-bold mb-1">High Risk</p>
+                      <p className="text-[8px] text-slate-400 uppercase tracking-widest font-bold mb-1">High Risk</p>
                       <span className="text-2xl font-extrabold text-red-400 font-display">02</span>
                     </div>
                   </div>
 
                   {/* Create New JSA button */}
-                  <div className="bg-gradient-to-r from-amber-600 to-orange-700 text-white py-3 rounded-xl text-center flex items-center justify-center gap-2 mb-5 shadow-lg">
+                  <div className="bg-gradient-to-r from-amber-600 to-reno-amber-700 text-white py-3 rounded-xl text-center flex items-center justify-center gap-2 mb-5 shadow-lg">
                     <span
                       className="material-symbols-outlined text-lg"
                       style={{ fontVariationSettings: "'FILL' 1" }}
@@ -140,41 +143,41 @@ export default function SafetyPage() {
                   {/* Recent JSAs */}
                   <div className="space-y-2 flex-1">
                     <div className="flex items-center justify-between">
-                      <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Recent JSAs</span>
+                      <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Recent JSAs</span>
                       <span className="text-[8px] font-bold text-amber-400">View All</span>
                     </div>
                     {/* JSA #1 */}
                     <div className="bg-white/5 rounded-lg p-2.5 border border-white/5">
                       <div className="flex items-start justify-between mb-1">
-                        <span className="text-[8px] font-bold text-gray-400">#JSA-2024-081</span>
-                        <span className="text-[7px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400">
+                        <span className="text-[8px] font-bold text-slate-400">#JSA-2024-081</span>
+                        <span className="text-[7px] font-bold px-1.5 py-0.5 rounded-full bg-reno-green-500/20 text-reno-green-400">
                           Approved
                         </span>
                       </div>
                       <p className="text-[10px] font-bold text-white mb-1">Excavation and Trenching</p>
-                      <p className="text-[8px] text-gray-500 mb-2">Downtown Commercial Hub</p>
+                      <p className="text-[8px] text-slate-500 mb-2">Downtown Commercial Hub</p>
                       <div className="flex items-center justify-between">
                         <div className="flex -space-x-1.5">
                           <div className="w-5 h-5 rounded-full bg-amber-500 border border-white/20 flex items-center justify-center">
                             <span className="text-[7px] font-bold text-white">JD</span>
                           </div>
-                          <div className="w-5 h-5 rounded-full bg-blue-500 border border-white/20 flex items-center justify-center">
+                          <div className="w-5 h-5 rounded-full bg-primary-500 border border-white/20 flex items-center justify-center">
                             <span className="text-[7px] font-bold text-white">AS</span>
                           </div>
                         </div>
-                        <span className="text-[7px] text-gray-500">Updated 2h ago</span>
+                        <span className="text-[7px] text-slate-500">Updated 2h ago</span>
                       </div>
                     </div>
                     {/* JSA #2 */}
                     <div className="bg-white/5 rounded-lg p-2.5 border border-white/5">
                       <div className="flex items-start justify-between mb-1">
-                        <span className="text-[8px] font-bold text-gray-400">#JSA-2024-085</span>
+                        <span className="text-[8px] font-bold text-slate-400">#JSA-2024-085</span>
                         <span className="text-[7px] font-bold px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400">
                           In Progress
                         </span>
                       </div>
                       <p className="text-[10px] font-bold text-white mb-1">Scaffolding Erection - Block C</p>
-                      <p className="text-[8px] text-gray-500 mb-2">Harbor View Residential</p>
+                      <p className="text-[8px] text-slate-500 mb-2">Harbor View Residential</p>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1">
                           <span
@@ -185,7 +188,7 @@ export default function SafetyPage() {
                           </span>
                           <span className="text-[7px] text-amber-400 font-bold">High Risk Area</span>
                         </div>
-                        <span className="text-[7px] text-gray-500">Started 45m ago</span>
+                        <span className="text-[7px] text-slate-500">Started 45m ago</span>
                       </div>
                     </div>
                   </div>
@@ -199,11 +202,11 @@ export default function SafetyPage() {
                     {/* Mini JSA detail preview */}
                     <div className="px-3 pt-4 pb-2">
                       <div className="flex items-center gap-1.5 mb-1">
-                        <span className="text-[8px] font-bold text-gray-600 bg-gray-200 px-2 py-0.5 rounded-full">
+                        <span className="text-[8px] font-bold text-slate-600 bg-slate-200 px-2 py-0.5 rounded-full">
                           JSA #104
                         </span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                        <span className="text-[7px] font-bold text-emerald-600">Active</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-reno-green-500"></span>
+                        <span className="text-[7px] font-bold text-reno-green-600">Active</span>
                       </div>
                       <h3 className="text-[11px] font-extrabold text-[#102122] mb-2">
                         Excavation &amp; Trenching
@@ -220,7 +223,7 @@ export default function SafetyPage() {
                             Site Perimeter Check
                           </span>
                         </div>
-                        <p className="text-[7px] text-gray-500 mb-1">
+                        <p className="text-[7px] text-slate-500 mb-1">
                           Verify all utility markings and clearance zones
                         </p>
                         <div className="flex flex-wrap gap-1">
@@ -235,7 +238,7 @@ export default function SafetyPage() {
                     </div>
                     {/* CTA */}
                     <div className="px-3 pb-3 mt-auto">
-                      <div className="bg-gradient-to-r from-amber-600 to-orange-700 text-white py-2 rounded-lg text-center">
+                      <div className="bg-gradient-to-r from-amber-600 to-reno-amber-700 text-white py-2 rounded-lg text-center">
                         <span className="text-[8px] font-bold">Open Full JSA</span>
                       </div>
                     </div>
@@ -244,9 +247,9 @@ export default function SafetyPage() {
               </div>
 
               {/* Floating compliance card */}
-              <div className="absolute -bottom-6 -left-6 bg-[#102122]/90 backdrop-blur-md p-5 rounded-xl border border-white/10 text-white shadow-2xl z-20">
+              <div className="absolute -bottom-6 -left-6 bg-reno-dark/90 backdrop-blur-md p-5 rounded-xl border border-white/10 text-white shadow-2xl z-20">
                 <div className="flex items-center gap-3">
-                  <div className="bg-gradient-to-br from-amber-500 to-orange-600 p-2.5 rounded-lg">
+                  <div className="bg-gradient-to-br from-amber-500 to-reno-amber-600 p-2.5 rounded-lg">
                     <span
                       className="material-symbols-outlined text-white"
                       style={{ fontVariationSettings: "'FILL' 1" }}
@@ -256,7 +259,7 @@ export default function SafetyPage() {
                   </div>
                   <div>
                     <div className="text-2xl font-black font-display">100%</div>
-                    <div className="text-[9px] uppercase tracking-widest text-gray-400">MOL Compliant</div>
+                    <div className="text-[9px] uppercase tracking-widest text-slate-400">MOL Compliant</div>
                   </div>
                 </div>
               </div>
@@ -269,7 +272,7 @@ export default function SafetyPage() {
           SECTION 2 — JSA STEP ENTRY FORM
           Dark bg with phone mockup of step entry form + feature copy
           ================================================================ */}
-      <section className="bg-[#102122] py-24 overflow-hidden">
+      <section className="bg-reno-dark py-24 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal>
             <div className="text-center mb-14">
@@ -279,7 +282,7 @@ export default function SafetyPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
                 From Template to Signed PDF
               </h2>
-              <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-400 mt-4 max-w-2xl mx-auto text-lg">
                 Pick a template, confirm the hazards, assign controls, collect
                 crew signatures — done before the first truck arrives.
               </p>
@@ -308,13 +311,13 @@ export default function SafetyPage() {
 
                     {/* Section header */}
                     <div className="px-5 pt-4 pb-2">
-                      <span className="text-[8px] font-bold text-gray-500 uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded-full">
+                      <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest bg-slate-100 px-2 py-0.5 rounded-full">
                         JSA STEP 04
                       </span>
                       <h3 className="text-base font-extrabold text-[#102122] tracking-tight mt-2">
                         Edit Job Step
                       </h3>
-                      <p className="text-[9px] text-gray-500 mt-1">
+                      <p className="text-[9px] text-slate-500 mt-1">
                         Define the task, identify hazards, and assign control measures
                       </p>
                     </div>
@@ -323,10 +326,10 @@ export default function SafetyPage() {
                     <div className="px-5 pt-2 space-y-3 flex-1">
                       {/* Job Step Description */}
                       <div>
-                        <label className="text-[8px] font-bold text-gray-600 uppercase tracking-widest block mb-1">
+                        <label className="text-[8px] font-bold text-slate-600 uppercase tracking-widest block mb-1">
                           Job Step Description
                         </label>
-                        <div className="bg-white rounded-lg px-3 py-2.5 border border-gray-200 min-h-[60px]">
+                        <div className="bg-white rounded-lg px-3 py-2.5 border border-slate-200 min-h-[60px]">
                           <span className="text-[9px] text-[#102122] leading-relaxed">
                             Excavation of trench for electrical conduit installation near Zone B structural footings.
                           </span>
@@ -335,28 +338,28 @@ export default function SafetyPage() {
 
                       {/* Risk Level Selector */}
                       <div>
-                        <label className="text-[8px] font-bold text-gray-600 uppercase tracking-widest block mb-1.5">
+                        <label className="text-[8px] font-bold text-slate-600 uppercase tracking-widest block mb-1.5">
                           Risk Level
                         </label>
                         <div className="grid grid-cols-3 gap-2">
-                          <div className="bg-white rounded-lg p-2.5 border border-gray-200 flex flex-col items-center gap-1.5 cursor-pointer">
-                            <div className="w-4 h-4 rounded-full bg-emerald-500"></div>
-                            <span className="text-[8px] font-bold text-gray-600">Low</span>
+                          <div className="bg-white rounded-lg p-2.5 border border-slate-200 flex flex-col items-center gap-1.5 cursor-pointer">
+                            <div className="w-4 h-4 rounded-full bg-reno-green-500"></div>
+                            <span className="text-[8px] font-bold text-slate-600">Low</span>
                           </div>
                           <div className="bg-white rounded-lg p-2.5 border-2 border-amber-500 flex flex-col items-center gap-1.5 cursor-pointer">
                             <div className="w-4 h-4 rounded-full bg-amber-500"></div>
                             <span className="text-[8px] font-bold text-amber-600">Medium</span>
                           </div>
-                          <div className="bg-white rounded-lg p-2.5 border border-gray-200 flex flex-col items-center gap-1.5 cursor-pointer">
+                          <div className="bg-white rounded-lg p-2.5 border border-slate-200 flex flex-col items-center gap-1.5 cursor-pointer">
                             <div className="w-4 h-4 rounded-full bg-red-500"></div>
-                            <span className="text-[8px] font-bold text-gray-600">High</span>
+                            <span className="text-[8px] font-bold text-slate-600">High</span>
                           </div>
                         </div>
                       </div>
 
                       {/* Potential Hazards */}
                       <div>
-                        <label className="text-[8px] font-bold text-gray-600 uppercase tracking-widest block mb-1 flex items-center gap-1">
+                        <label className="text-[8px] font-bold text-slate-600 uppercase tracking-widest block mb-1 flex items-center gap-1">
                           <span
                             className="material-symbols-outlined text-amber-600 text-xs"
                             style={{ fontVariationSettings: "'FILL' 1" }}
@@ -365,7 +368,7 @@ export default function SafetyPage() {
                           </span>
                           Potential Hazards
                         </label>
-                        <div className="bg-white rounded-lg px-3 py-2.5 border border-gray-200">
+                        <div className="bg-white rounded-lg px-3 py-2.5 border border-slate-200">
                           <span className="text-[9px] text-[#102122] leading-relaxed">
                             Contact with unidentified underground utility lines; soil instability due to recent rainfall.
                           </span>
@@ -374,16 +377,16 @@ export default function SafetyPage() {
 
                       {/* Control Measures */}
                       <div>
-                        <label className="text-[8px] font-bold text-gray-600 uppercase tracking-widest block mb-1 flex items-center gap-1">
+                        <label className="text-[8px] font-bold text-slate-600 uppercase tracking-widest block mb-1 flex items-center gap-1">
                           <span
-                            className="material-symbols-outlined text-emerald-600 text-xs"
+                            className="material-symbols-outlined text-reno-green-600 text-xs"
                             style={{ fontVariationSettings: "'FILL' 1" }}
                           >
                             verified_user
                           </span>
                           Control Measures
                         </label>
-                        <div className="bg-white rounded-lg px-3 py-2.5 border border-gray-200">
+                        <div className="bg-white rounded-lg px-3 py-2.5 border border-slate-200">
                           <span className="text-[9px] text-[#102122] leading-relaxed">
                             Hand-digging within 1m of marked services. Continuous spotter presence.
                           </span>
@@ -392,7 +395,7 @@ export default function SafetyPage() {
 
                       {/* PPE row */}
                       <div>
-                        <label className="text-[8px] font-bold text-gray-600 uppercase tracking-widest block mb-1.5">
+                        <label className="text-[8px] font-bold text-slate-600 uppercase tracking-widest block mb-1.5">
                           Required PPE
                         </label>
                         <div className="flex items-center gap-2">
@@ -405,8 +408,8 @@ export default function SafetyPage() {
                           <div className="w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center border border-amber-500/20">
                             <span className="text-amber-600 text-xs">🧤</span>
                           </div>
-                          <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center border-2 border-dashed border-gray-300 cursor-pointer">
-                            <span className="material-symbols-outlined text-gray-400 text-sm">
+                          <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center border-2 border-dashed border-slate-300 cursor-pointer">
+                            <span className="material-symbols-outlined text-slate-400 text-sm">
                               add
                             </span>
                           </div>
@@ -430,7 +433,7 @@ export default function SafetyPage() {
                     </div>
 
                     {/* Bottom nav */}
-                    <div className="mt-auto flex justify-around items-center px-2 py-2.5 border-t border-gray-100">
+                    <div className="mt-auto flex justify-around items-center px-2 py-2.5 border-t border-slate-100">
                       {[
                         { icon: 'dashboard', label: 'Dashboard', active: false },
                         { icon: 'assignment', label: 'Forms', active: true },
@@ -447,7 +450,7 @@ export default function SafetyPage() {
                         >
                           <span
                             className={`material-symbols-outlined text-sm ${
-                              tab.active ? 'text-amber-600' : 'text-gray-400'
+                              tab.active ? 'text-amber-600' : 'text-slate-400'
                             }`}
                             style={
                               tab.active
@@ -459,7 +462,7 @@ export default function SafetyPage() {
                           </span>
                           <span
                             className={`text-[7px] font-medium ${
-                              tab.active ? 'text-amber-600' : 'text-gray-400'
+                              tab.active ? 'text-amber-600' : 'text-slate-400'
                             }`}
                           >
                             {tab.label}
@@ -477,7 +480,7 @@ export default function SafetyPage() {
                   <h3 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-3">
                     Hazard-first workflow
                   </h3>
-                  <p className="text-gray-400 leading-relaxed max-w-lg">
+                  <p className="text-slate-400 leading-relaxed max-w-lg">
                     Every JSA starts with the job steps. For each step, the app
                     suggests common hazards from its database — your crew confirms
                     or adds site-specific risks. Controls are auto-matched to each
@@ -500,7 +503,7 @@ export default function SafetyPage() {
                         <h4 className="text-white font-bold text-sm mb-0.5">
                           {item.label}
                         </h4>
-                        <p className="text-gray-500 text-sm">{item.desc}</p>
+                        <p className="text-slate-500 text-sm">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -525,7 +528,7 @@ export default function SafetyPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
                 Four Modules, Zero Paper
               </h2>
-              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
                 Every module is designed for field conditions — gloved hands,
                 bright sun, and no Wi-Fi.
               </p>
@@ -535,9 +538,9 @@ export default function SafetyPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {safetyModules.map((mod, i) => (
               <ScrollReveal key={mod.id} delay={i * 80}>
-                <div className="bg-[#f6f8f8] p-8 rounded-xl border border-gray-100 h-full">
+                <div className="bg-[#f6f8f8] p-8 rounded-xl border border-slate-100 h-full">
                   <div className="flex items-start gap-4 mb-5">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-gray-100 flex-shrink-0">
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-slate-100 flex-shrink-0">
                       <span className="material-symbols-outlined text-amber-600 text-xl">
                         {mod.icon}
                       </span>
@@ -551,7 +554,7 @@ export default function SafetyPage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-5">
+                  <p className="text-slate-500 text-sm leading-relaxed mb-5">
                     {mod.description}
                   </p>
                   <ul className="space-y-2">
@@ -566,7 +569,7 @@ export default function SafetyPage() {
                         >
                           check_circle
                         </span>
-                        <span className="text-gray-600">{feat}</span>
+                        <span className="text-slate-600">{feat}</span>
                       </li>
                     ))}
                   </ul>
@@ -591,7 +594,7 @@ export default function SafetyPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
                 JSA Details + PPE &amp; Sign-off
               </h2>
-              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
                 View complete JSA steps with hazard breakdown, then verify PPE
                 and collect every crew member&apos;s signature before work begins.
               </p>
@@ -617,17 +620,17 @@ export default function SafetyPage() {
                           SITESAFE
                         </span>
                       </div>
-                      <span className="material-symbols-outlined text-gray-400 text-lg">
+                      <span className="material-symbols-outlined text-slate-400 text-lg">
                         more_vert
                       </span>
                     </div>
 
                     <div className="px-5 pt-1 pb-2">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[8px] font-bold text-gray-600 bg-gray-200 px-2 py-0.5 rounded-full">
+                        <span className="text-[8px] font-bold text-slate-600 bg-slate-200 px-2 py-0.5 rounded-full">
                           JSA #104
                         </span>
-                        <span className="text-[8px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                        <span className="text-[8px] font-bold text-reno-green-600 bg-reno-green-50 px-2 py-0.5 rounded-full">
                           Status: Active
                         </span>
                       </div>
@@ -640,11 +643,11 @@ export default function SafetyPage() {
                     <div className="mx-4 bg-white rounded-xl p-3 shadow-sm mb-3">
                       <div className="grid grid-cols-2 gap-2">
                         <div>
-                          <p className="text-[7px] text-gray-400 uppercase tracking-widest font-bold mb-0.5">Project</p>
+                          <p className="text-[7px] text-slate-400 uppercase tracking-widest font-bold mb-0.5">Project</p>
                           <p className="text-[9px] font-bold text-[#102122]">Skyline Heights Phase II</p>
                         </div>
                         <div>
-                          <p className="text-[7px] text-gray-400 uppercase tracking-widest font-bold mb-0.5">Supervisor</p>
+                          <p className="text-[7px] text-slate-400 uppercase tracking-widest font-bold mb-0.5">Supervisor</p>
                           <div className="flex items-center gap-1">
                             <p className="text-[9px] font-bold text-[#102122]">Marcus Thorne</p>
                             <span
@@ -659,15 +662,15 @@ export default function SafetyPage() {
                     </div>
 
                     {/* Tab bar */}
-                    <div className="px-5 flex gap-4 border-b border-gray-200 mb-3">
+                    <div className="px-5 flex gap-4 border-b border-slate-200 mb-3">
                       <div className="pb-2 border-b-2 border-amber-500">
                         <span className="text-[9px] font-bold text-amber-600 uppercase tracking-widest">Steps</span>
                       </div>
                       <div className="pb-2">
-                        <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">PPE</span>
+                        <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">PPE</span>
                       </div>
                       <div className="pb-2">
-                        <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Sign-off</span>
+                        <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Sign-off</span>
                       </div>
                     </div>
 
@@ -683,7 +686,7 @@ export default function SafetyPage() {
                             Site Perimeter Check
                           </span>
                         </div>
-                        <p className="text-[8px] text-gray-500 mb-1.5 leading-relaxed">
+                        <p className="text-[8px] text-slate-500 mb-1.5 leading-relaxed">
                           Verify all utility markings, clearance zones, and underground service locations
                         </p>
                         <div className="flex flex-wrap gap-1">
@@ -705,7 +708,7 @@ export default function SafetyPage() {
                             Excavation Commencement
                           </span>
                         </div>
-                        <p className="text-[8px] text-gray-500 mb-1.5 leading-relaxed">
+                        <p className="text-[8px] text-slate-500 mb-1.5 leading-relaxed">
                           Begin trenching operations with spotter present and trench box ready
                         </p>
                         <div className="flex flex-wrap gap-1">
@@ -718,16 +721,16 @@ export default function SafetyPage() {
                         </div>
                       </div>
                       {/* Add Step button */}
-                      <div className="border-2 border-dashed border-gray-300 rounded-xl p-2.5 flex items-center justify-center gap-1.5 cursor-pointer hover:border-amber-500 hover:bg-amber-50/50 transition-colors">
-                        <span className="material-symbols-outlined text-gray-400 text-sm">
+                      <div className="border-2 border-dashed border-slate-300 rounded-xl p-2.5 flex items-center justify-center gap-1.5 cursor-pointer hover:border-amber-500 hover:bg-amber-50/50 transition-colors">
+                        <span className="material-symbols-outlined text-slate-400 text-sm">
                           add
                         </span>
-                        <span className="text-[9px] font-bold text-gray-500">Add Step</span>
+                        <span className="text-[9px] font-bold text-slate-500">Add Step</span>
                       </div>
                     </div>
 
                     {/* Bottom nav */}
-                    <div className="mt-auto flex justify-around items-center px-2 py-2.5 border-t border-gray-100">
+                    <div className="mt-auto flex justify-around items-center px-2 py-2.5 border-t border-slate-100">
                       {[
                         { icon: 'home', label: 'Home', active: true },
                         { icon: 'notifications', label: 'Alerts', active: false },
@@ -743,7 +746,7 @@ export default function SafetyPage() {
                         >
                           <span
                             className={`material-symbols-outlined text-sm ${
-                              tab.active ? 'text-amber-600' : 'text-gray-400'
+                              tab.active ? 'text-amber-600' : 'text-slate-400'
                             }`}
                             style={
                               tab.active
@@ -755,7 +758,7 @@ export default function SafetyPage() {
                           </span>
                           <span
                             className={`text-[7px] font-medium ${
-                              tab.active ? 'text-amber-600' : 'text-gray-400'
+                              tab.active ? 'text-amber-600' : 'text-slate-400'
                             }`}
                           >
                             {tab.label}
@@ -784,24 +787,24 @@ export default function SafetyPage() {
                       <span className="text-sm font-extrabold text-[#102122] tracking-tighter">
                         SITESAFE
                       </span>
-                      <span className="material-symbols-outlined text-gray-400 text-lg">
+                      <span className="material-symbols-outlined text-slate-400 text-lg">
                         more_vert
                       </span>
                     </div>
 
                     <div className="px-5 pt-1 pb-2">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[8px] font-bold text-gray-600 bg-gray-200 px-2 py-0.5 rounded-full">
+                        <span className="text-[8px] font-bold text-slate-600 bg-slate-200 px-2 py-0.5 rounded-full">
                           Site ID: #4492-B
                         </span>
-                        <span className="text-[8px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                        <span className="text-[8px] font-bold text-reno-green-600 bg-reno-green-50 px-2 py-0.5 rounded-full">
                           ACTIVE SITE
                         </span>
                       </div>
                       <h2 className="text-lg font-extrabold text-[#102122] tracking-tight font-display">
                         PPE &amp; Sign-off
                       </h2>
-                      <p className="text-[9px] text-gray-500 mt-0.5">
+                      <p className="text-[9px] text-slate-500 mt-0.5">
                         Required verification before entering Zone 4
                       </p>
                     </div>
@@ -814,29 +817,29 @@ export default function SafetyPage() {
                         </span>
                       </div>
                       <div className="grid grid-cols-3 gap-2">
-                        <div className="bg-white rounded-lg p-3 flex flex-col items-center gap-1.5 border border-gray-200">
+                        <div className="bg-white rounded-lg p-3 flex flex-col items-center gap-1.5 border border-slate-200">
                           <span className="text-xl">🪖</span>
-                          <span className="text-[8px] font-bold text-gray-600">Hard Hat</span>
+                          <span className="text-[8px] font-bold text-slate-600">Hard Hat</span>
                         </div>
                         <div className="bg-amber-50 rounded-lg p-3 flex flex-col items-center gap-1.5 border-2 border-amber-500">
                           <span className="text-xl">🦺</span>
                           <span className="text-[8px] font-bold text-amber-600">Hi-Vis</span>
                         </div>
-                        <div className="bg-white rounded-lg p-3 flex flex-col items-center gap-1.5 border border-gray-200">
+                        <div className="bg-white rounded-lg p-3 flex flex-col items-center gap-1.5 border border-slate-200">
                           <span className="text-xl">🧤</span>
-                          <span className="text-[8px] font-bold text-gray-600">Gloves</span>
+                          <span className="text-[8px] font-bold text-slate-600">Gloves</span>
                         </div>
-                        <div className="bg-white rounded-lg p-3 flex flex-col items-center gap-1.5 border border-gray-200">
+                        <div className="bg-white rounded-lg p-3 flex flex-col items-center gap-1.5 border border-slate-200">
                           <span className="text-xl">🥽</span>
-                          <span className="text-[8px] font-bold text-gray-600">Goggles</span>
+                          <span className="text-[8px] font-bold text-slate-600">Goggles</span>
                         </div>
                         <div className="bg-amber-50 rounded-lg p-3 flex flex-col items-center gap-1.5 border-2 border-amber-500">
                           <span className="text-xl">👢</span>
                           <span className="text-[8px] font-bold text-amber-600">Steel Toe</span>
                         </div>
-                        <div className="bg-white rounded-lg p-3 flex flex-col items-center gap-1.5 border border-gray-200">
+                        <div className="bg-white rounded-lg p-3 flex flex-col items-center gap-1.5 border border-slate-200">
                           <span className="text-xl">🎧</span>
-                          <span className="text-[8px] font-bold text-gray-600">Ears</span>
+                          <span className="text-[8px] font-bold text-slate-600">Ears</span>
                         </div>
                       </div>
                     </div>
@@ -851,35 +854,35 @@ export default function SafetyPage() {
                       <div className="space-y-2">
                         {/* Worker 1 */}
                         <div className="bg-white rounded-xl p-2.5 flex items-center gap-2.5 shadow-sm">
-                          <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center flex-shrink-0">
+                          <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center flex-shrink-0">
                             <span className="text-[10px] font-bold text-white">NN</span>
                           </div>
                           <div className="flex-1">
                             <p className="text-[10px] font-bold text-[#102122]">
                               Namer Names
                             </p>
-                            <p className="text-[8px] text-gray-500">
+                            <p className="text-[8px] text-slate-500">
                               Structural Lead
                             </p>
                           </div>
-                          <div className="bg-gradient-to-r from-amber-600 to-orange-700 text-white px-2.5 py-1 rounded-lg">
+                          <div className="bg-gradient-to-r from-amber-600 to-reno-amber-700 text-white px-2.5 py-1 rounded-lg">
                             <span className="text-[8px] font-bold">Tap to Sign</span>
                           </div>
                         </div>
                         {/* Worker 2 */}
                         <div className="bg-white rounded-xl p-2.5 flex items-center gap-2.5 shadow-sm">
-                          <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                          <div className="w-8 h-8 rounded-lg bg-reno-green-500 flex items-center justify-center flex-shrink-0">
                             <span className="text-[10px] font-bold text-white">MS</span>
                           </div>
                           <div className="flex-1">
                             <p className="text-[10px] font-bold text-[#102122]">
                               Muher Smith
                             </p>
-                            <p className="text-[8px] text-gray-500">
+                            <p className="text-[8px] text-slate-500">
                               Site Inspector
                             </p>
                           </div>
-                          <div className="bg-gradient-to-r from-amber-600 to-orange-700 text-white px-2.5 py-1 rounded-lg">
+                          <div className="bg-gradient-to-r from-amber-600 to-reno-amber-700 text-white px-2.5 py-1 rounded-lg">
                             <span className="text-[8px] font-bold">Tap to Sign</span>
                           </div>
                         </div>
@@ -887,7 +890,7 @@ export default function SafetyPage() {
                     </div>
 
                     {/* Bottom nav */}
-                    <div className="mt-auto flex justify-around items-center px-2 py-2.5 border-t border-gray-100">
+                    <div className="mt-auto flex justify-around items-center px-2 py-2.5 border-t border-slate-100">
                       {[
                         { icon: 'home', label: 'Home', active: false },
                         { icon: 'notifications', label: 'Alerts', active: true },
@@ -903,7 +906,7 @@ export default function SafetyPage() {
                         >
                           <span
                             className={`material-symbols-outlined text-sm ${
-                              tab.active ? 'text-amber-600' : 'text-gray-400'
+                              tab.active ? 'text-amber-600' : 'text-slate-400'
                             }`}
                             style={
                               tab.active
@@ -915,7 +918,7 @@ export default function SafetyPage() {
                           </span>
                           <span
                             className={`text-[7px] font-medium ${
-                              tab.active ? 'text-amber-600' : 'text-gray-400'
+                              tab.active ? 'text-amber-600' : 'text-slate-400'
                             }`}
                           >
                             {tab.label}
@@ -949,7 +952,7 @@ export default function SafetyPage() {
                   <br />
                   One App
                 </h2>
-                <p className="text-gray-500 leading-relaxed max-w-lg">
+                <p className="text-slate-500 leading-relaxed max-w-lg">
                   Every safety document your site needs — from morning toolbox
                   talks to equipment pre-op checklists. Each form type is
                   purpose-built with field-tested layouts and auto-populated
@@ -966,7 +969,7 @@ export default function SafetyPage() {
                       <span className="material-symbols-outlined text-amber-600 text-lg">
                         {item.icon}
                       </span>
-                      <span className="text-sm text-gray-600 font-medium">
+                      <span className="text-sm text-slate-600 font-medium">
                         {item.text}
                       </span>
                     </div>
@@ -981,7 +984,7 @@ export default function SafetyPage() {
                 {formTypes.map((form, i) => (
                   <div
                     key={form.abbr}
-                    className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-float hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-4"
+                    className="bg-white rounded-xl p-4 border border-slate-100 shadow-sm hover:shadow-float hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-4"
                   >
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${form.color} flex items-center justify-center flex-shrink-0`}>
                       <span
@@ -996,15 +999,15 @@ export default function SafetyPage() {
                         <h4 className="font-bold text-[#102122] text-sm">
                           {form.name}
                         </h4>
-                        <span className="text-[8px] font-bold text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">
+                        <span className="text-[8px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">
                           {form.abbr}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-slate-500">
                         {form.description}
                       </p>
                     </div>
-                    <span className="material-symbols-outlined text-gray-300 text-lg flex-shrink-0">
+                    <span className="material-symbols-outlined text-slate-300 text-lg flex-shrink-0">
                       chevron_right
                     </span>
                   </div>
@@ -1019,7 +1022,7 @@ export default function SafetyPage() {
           SECTION 6 — DESKTOP JSA BROWSER FRAME + STATS
           Dark bg, desktop browser frame mockup + stat cards
           ================================================================ */}
-      <section className="bg-[#102122] py-24 overflow-hidden">
+      <section className="bg-reno-dark py-24 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal>
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -1027,14 +1030,14 @@ export default function SafetyPage() {
               <div className="flex-1 w-full max-w-2xl">
                 <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
                   {/* Browser chrome bar */}
-                  <div className="bg-gray-100 px-4 py-2.5 flex items-center gap-3 border-b border-gray-200">
+                  <div className="bg-slate-100 px-4 py-2.5 flex items-center gap-3 border-b border-slate-200">
                     <div className="flex gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
                       <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-reno-green-400"></div>
                     </div>
                     <div className="flex-1 bg-white rounded-md px-3 py-1">
-                      <span className="text-[9px] text-gray-500">app.sitesafe.io/jsa/104</span>
+                      <span className="text-[9px] text-slate-500">app.sitesafe.io/jsa/104</span>
                     </div>
                   </div>
 
@@ -1043,7 +1046,7 @@ export default function SafetyPage() {
                     {/* Dark nav bar */}
                     <div className="bg-[#162839] px-5 py-3 flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                        <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-amber-500 to-reno-amber-600 flex items-center justify-center">
                           <span
                             className="material-symbols-outlined text-white text-sm"
                             style={{ fontVariationSettings: "'FILL' 1" }}
@@ -1065,15 +1068,15 @@ export default function SafetyPage() {
                     </div>
 
                     {/* JSA Header */}
-                    <div className="px-5 py-4 border-b border-gray-200">
+                    <div className="px-5 py-4 border-b border-slate-200">
                       <div className="flex items-start justify-between mb-2">
                         <div>
-                          <p className="text-[8px] text-gray-400 mb-1">Projects &gt; Downtown Commercial Hub &gt; JSA-104-DCH</p>
+                          <p className="text-[8px] text-slate-400 mb-1">Projects &gt; Downtown Commercial Hub &gt; JSA-104-DCH</p>
                           <h2 className="text-base font-extrabold text-[#102122] font-display">
                             Excavation and Trenching for Foundation
                           </h2>
                         </div>
-                        <div className="bg-gradient-to-r from-amber-600 to-orange-700 text-white px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+                        <div className="bg-gradient-to-r from-amber-600 to-reno-amber-700 text-white px-3 py-1.5 rounded-lg flex items-center gap-1.5">
                           <span
                             className="material-symbols-outlined text-xs"
                             style={{ fontVariationSettings: "'FILL' 1" }}
@@ -1085,15 +1088,15 @@ export default function SafetyPage() {
                       </div>
                       <div className="flex items-center gap-4">
                         <div>
-                          <p className="text-[7px] text-gray-400 uppercase tracking-widest">Supervisor</p>
+                          <p className="text-[7px] text-slate-400 uppercase tracking-widest">Supervisor</p>
                           <p className="text-[9px] font-bold text-[#102122]">Mark Reynolds</p>
                         </div>
                         <div>
-                          <p className="text-[7px] text-gray-400 uppercase tracking-widest">Date</p>
+                          <p className="text-[7px] text-slate-400 uppercase tracking-widest">Date</p>
                           <p className="text-[9px] font-bold text-[#102122]">Oct 24, 2023</p>
                         </div>
                         <div className="ml-auto">
-                          <span className="text-[8px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">
+                          <span className="text-[8px] font-bold text-reno-green-600 bg-reno-green-50 px-2 py-1 rounded-full">
                             Approved
                           </span>
                         </div>
@@ -1104,27 +1107,27 @@ export default function SafetyPage() {
                     <div className="px-5 py-4">
                       <table className="w-full text-left">
                         <thead>
-                          <tr className="border-b border-gray-200">
-                            <th className="text-[8px] font-bold text-gray-500 uppercase tracking-widest pb-2">Step</th>
-                            <th className="text-[8px] font-bold text-gray-500 uppercase tracking-widest pb-2">Potential Hazards</th>
-                            <th className="text-[8px] font-bold text-gray-500 uppercase tracking-widest pb-2">Control Measures</th>
-                            <th className="text-[8px] font-bold text-gray-500 uppercase tracking-widest pb-2 text-right">Risk Level</th>
+                          <tr className="border-b border-slate-200">
+                            <th className="text-[8px] font-bold text-slate-500 uppercase tracking-widest pb-2">Step</th>
+                            <th className="text-[8px] font-bold text-slate-500 uppercase tracking-widest pb-2">Potential Hazards</th>
+                            <th className="text-[8px] font-bold text-slate-500 uppercase tracking-widest pb-2">Control Measures</th>
+                            <th className="text-[8px] font-bold text-slate-500 uppercase tracking-widest pb-2 text-right">Risk Level</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr className="border-b border-gray-100">
+                          <tr className="border-b border-slate-100">
                             <td className="py-2 pr-3">
                               <span className="text-[9px] font-bold text-[#102122]">
                                 01 Inspect area for underground utilities
                               </span>
                             </td>
                             <td className="py-2 pr-3">
-                              <span className="text-[8px] text-gray-600">
+                              <span className="text-[8px] text-slate-600">
                                 Electric shock, Gas leak, Service disruption
                               </span>
                             </td>
                             <td className="py-2 pr-3">
-                              <span className="text-[8px] text-gray-600">
+                              <span className="text-[8px] text-slate-600">
                                 Call 811, Verify maps, Hand-dig 2ft
                               </span>
                             </td>
@@ -1141,12 +1144,12 @@ export default function SafetyPage() {
                               </span>
                             </td>
                             <td className="py-2 pr-3">
-                              <span className="text-[8px] text-gray-600">
+                              <span className="text-[8px] text-slate-600">
                                 Cave-in, Rollover, Falling debris
                               </span>
                             </td>
                             <td className="py-2 pr-3">
-                              <span className="text-[8px] text-gray-600">
+                              <span className="text-[8px] text-slate-600">
                                 Shoring, 2ft spoil pile, Spotter
                               </span>
                             </td>
@@ -1161,59 +1164,59 @@ export default function SafetyPage() {
                     </div>
 
                     {/* Bottom grid */}
-                    <div className="px-5 py-4 grid grid-cols-2 gap-4 bg-gray-50">
+                    <div className="px-5 py-4 grid grid-cols-2 gap-4 bg-slate-50">
                       {/* Required PPE */}
                       <div>
-                        <h4 className="text-[9px] font-bold text-gray-600 uppercase tracking-widest mb-2">
+                        <h4 className="text-[9px] font-bold text-slate-600 uppercase tracking-widest mb-2">
                           Required PPE
                         </h4>
                         <div className="grid grid-cols-4 gap-2">
-                          <div className="bg-white rounded-lg p-2 flex flex-col items-center gap-1 border border-gray-200">
+                          <div className="bg-white rounded-lg p-2 flex flex-col items-center gap-1 border border-slate-200">
                             <span className="text-base">🪖</span>
-                            <span className="text-[7px] font-bold text-gray-600">Hard Hat</span>
+                            <span className="text-[7px] font-bold text-slate-600">Hard Hat</span>
                           </div>
-                          <div className="bg-white rounded-lg p-2 flex flex-col items-center gap-1 border border-gray-200">
+                          <div className="bg-white rounded-lg p-2 flex flex-col items-center gap-1 border border-slate-200">
                             <span className="text-base">🦺</span>
-                            <span className="text-[7px] font-bold text-gray-600">Hi-Vis</span>
+                            <span className="text-[7px] font-bold text-slate-600">Hi-Vis</span>
                           </div>
-                          <div className="bg-white rounded-lg p-2 flex flex-col items-center gap-1 border border-gray-200">
+                          <div className="bg-white rounded-lg p-2 flex flex-col items-center gap-1 border border-slate-200">
                             <span className="text-base">🥽</span>
-                            <span className="text-[7px] font-bold text-gray-600">Goggles</span>
+                            <span className="text-[7px] font-bold text-slate-600">Goggles</span>
                           </div>
-                          <div className="bg-white rounded-lg p-2 flex flex-col items-center gap-1 border border-gray-200">
+                          <div className="bg-white rounded-lg p-2 flex flex-col items-center gap-1 border border-slate-200">
                             <span className="text-base">🧤</span>
-                            <span className="text-[7px] font-bold text-gray-600">Gloves</span>
+                            <span className="text-[7px] font-bold text-slate-600">Gloves</span>
                           </div>
                         </div>
                       </div>
                       {/* Worker Sign-off */}
                       <div>
-                        <h4 className="text-[9px] font-bold text-gray-600 uppercase tracking-widest mb-2">
+                        <h4 className="text-[9px] font-bold text-slate-600 uppercase tracking-widest mb-2">
                           Worker Sign-off
                         </h4>
                         <div className="space-y-1.5">
-                          <div className="bg-white rounded-lg px-2 py-1.5 flex items-center gap-2 border border-gray-200">
+                          <div className="bg-white rounded-lg px-2 py-1.5 flex items-center gap-2 border border-slate-200">
                             <span
-                              className="material-symbols-outlined text-emerald-600 text-xs"
+                              className="material-symbols-outlined text-reno-green-600 text-xs"
                               style={{ fontVariationSettings: "'FILL' 1" }}
                             >
                               check_circle
                             </span>
                             <div className="flex-1">
                               <p className="text-[8px] font-bold text-[#102122]">James Lewis</p>
-                              <p className="text-[7px] text-gray-500">Operator</p>
+                              <p className="text-[7px] text-slate-500">Operator</p>
                             </div>
                           </div>
-                          <div className="bg-white rounded-lg px-2 py-1.5 flex items-center gap-2 border border-gray-200">
+                          <div className="bg-white rounded-lg px-2 py-1.5 flex items-center gap-2 border border-slate-200">
                             <span
-                              className="material-symbols-outlined text-emerald-600 text-xs"
+                              className="material-symbols-outlined text-reno-green-600 text-xs"
                               style={{ fontVariationSettings: "'FILL' 1" }}
                             >
                               check_circle
                             </span>
                             <div className="flex-1">
                               <p className="text-[8px] font-bold text-[#102122]">Tom Kincaid</p>
-                              <p className="text-[7px] text-gray-500">Laborer</p>
+                              <p className="text-[7px] text-slate-500">Laborer</p>
                             </div>
                           </div>
                         </div>
@@ -1234,7 +1237,7 @@ export default function SafetyPage() {
                     <br />
                     MOL-Ready
                   </h2>
-                  <p className="text-gray-400 leading-relaxed max-w-lg mt-4">
+                  <p className="text-slate-400 leading-relaxed max-w-lg mt-4">
                     Every form generates a professionally formatted PDF with
                     embedded signatures, GPS coordinates, and project metadata.
                     Email it, print it, or save it — your compliance record is
@@ -1249,7 +1252,7 @@ export default function SafetyPage() {
                       key={stat.label}
                       className="bg-white/5 border border-white/10 rounded-xl p-4"
                     >
-                      <span className="text-[8px] uppercase tracking-widest text-gray-500 font-bold">
+                      <span className="text-[8px] uppercase tracking-widest text-slate-500 font-bold">
                         {stat.label}
                       </span>
                       <div className="flex items-end gap-2 mt-1">
@@ -1257,7 +1260,7 @@ export default function SafetyPage() {
                           {stat.value}
                         </span>
                         {stat.trend === 'up' && (
-                          <span className="text-[9px] font-bold text-emerald-400 flex items-center gap-0.5 mb-1">
+                          <span className="text-[9px] font-bold text-reno-green-400 flex items-center gap-0.5 mb-1">
                             <span className="material-symbols-outlined text-[10px]">
                               trending_up
                             </span>
@@ -1265,7 +1268,7 @@ export default function SafetyPage() {
                           </span>
                         )}
                         {stat.trend === 'neutral' && (
-                          <span className="text-[9px] font-bold text-gray-500 mb-1">
+                          <span className="text-[9px] font-bold text-slate-500 mb-1">
                             {stat.change}
                           </span>
                         )}
@@ -1304,12 +1307,12 @@ export default function SafetyPage() {
             <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mt-4">
               Eliminate Paper
               <br />
-              <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber-500 to-reno-amber-600 bg-clip-text text-transparent">
                 Safety Forms Today
               </span>
             </h2>
 
-            <p className="text-gray-400 mt-6 max-w-xl mx-auto text-lg">
+            <p className="text-slate-400 mt-6 max-w-xl mx-auto text-lg">
               JSA forms, toolbox talks, equipment inspections, crew sign-off,
               and instant PDF export — all in one app, built for the field.
             </p>
@@ -1317,13 +1320,13 @@ export default function SafetyPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
               <Link
                 href="/jsa"
-                className="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-500 hover:to-orange-600 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-900/20"
+                className="bg-gradient-to-r from-amber-600 to-reno-amber-700 hover:from-amber-500 hover:to-reno-amber-600 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-all shadow-lg shadow-amber-900/20"
               >
                 Try JSA Generator Free
               </Link>
               <Link
                 href="/toolbox-talk"
-                className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-all shadow-lg shadow-blue-900/20"
+                className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-all shadow-lg shadow-blue-900/20"
               >
                 Try Toolbox Talk Free
               </Link>

@@ -64,11 +64,11 @@ export function AnimatedCounter({
       <div className={`mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl ${color}`}>
         {icon}
       </div>
-      <p className="font-mono text-3xl font-black tracking-tight text-gray-900 md:text-4xl">
+      <p className="font-mono text-3xl font-black tracking-tight text-slate-900 md:text-4xl">
         {prefix}{count.toLocaleString()}{suffix}
       </p>
-      <p className="mt-1 text-sm font-semibold text-gray-700">{label}</p>
-      {sublabel && <p className="mt-0.5 text-xs text-gray-400">{sublabel}</p>}
+      <p className="mt-1 text-sm font-semibold text-slate-700">{label}</p>
+      {sublabel && <p className="mt-0.5 text-xs text-slate-400">{sublabel}</p>}
     </motion.div>
   );
 }
@@ -92,7 +92,7 @@ export function SocialProofBar({ variant = 'light', stats }: SocialProofBarProps
       className={`rounded-2xl border px-6 py-8 md:px-10 ${
         isDark
           ? 'border-white/10 bg-white/5 backdrop-blur-sm'
-          : 'border-gray-200/60 bg-white/80 shadow-lg backdrop-blur-sm'
+          : 'border-slate-200/60 bg-white/80 shadow-lg backdrop-blur-sm'
       }`}
     >
       <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
@@ -104,17 +104,17 @@ export function SocialProofBar({ variant = 'light', stats }: SocialProofBarProps
             transition={{ duration: 0.4, delay: i * 0.1 }}
             className="text-center"
           >
-            <div className={`mx-auto mb-2 flex h-5 w-5 items-center justify-center ${isDark ? 'text-emerald-400' : 'text-emerald-500'}`}>
+            <div className={`mx-auto mb-2 flex h-5 w-5 items-center justify-center ${isDark ? 'text-reno-green-400' : 'text-reno-green-500'}`}>
               {stat.icon}
             </div>
             <p
               className={`font-mono text-2xl font-black tracking-tight ${
-                isDark ? 'text-white' : 'text-gray-900'
+                isDark ? 'text-white' : 'text-slate-900'
               }`}
             >
               {stat.value}
             </p>
-            <p className={`mt-1 text-xs ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>
+            <p className={`mt-1 text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
               {stat.label}
             </p>
           </motion.div>
@@ -152,8 +152,8 @@ export function VettingPipeline() {
           <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
             Vetting Pipeline — Live
           </p>
-          <span className="flex items-center gap-1.5 text-[10px] text-emerald-400">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+          <span className="flex items-center gap-1.5 text-[10px] text-reno-green-400">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-reno-green-400" />
             Processing
           </span>
         </div>
@@ -179,7 +179,7 @@ export function VettingPipeline() {
                 i === visibleIdx
                   ? app.status === 'rejected'
                     ? 'bg-red-500/10 ring-1 ring-red-500/20'
-                    : 'bg-emerald-500/10 ring-1 ring-emerald-500/20'
+                    : 'bg-reno-green-500/10 ring-1 ring-emerald-500/20'
                   : 'bg-slate-800/30'
               }`}
             >
@@ -196,7 +196,7 @@ export function VettingPipeline() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
                     className={`flex items-center gap-1.5 text-xs font-bold ${
-                      app.status === 'rejected' ? 'text-red-400' : 'text-emerald-400'
+                      app.status === 'rejected' ? 'text-red-400' : 'text-reno-green-400'
                     }`}
                   >
                     {app.status === 'rejected' ? (
@@ -243,18 +243,18 @@ export function PropertyRecordViewer() {
   }, []);
 
   return (
-    <div className="mx-auto w-full max-w-lg overflow-hidden rounded-2xl border border-gray-200/60 bg-white shadow-2xl">
-      <div className="flex items-center justify-between border-b border-gray-100 bg-gray-50 px-5 py-3">
+    <div className="mx-auto w-full max-w-lg overflow-hidden rounded-2xl border border-slate-200/60 bg-white shadow-2xl">
+      <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 px-5 py-3">
         <div className="flex items-center gap-2">
-          <FolderOpen className="h-4 w-4 text-blue-500" />
-          <p className="text-sm font-bold text-gray-900">Property Vault</p>
+          <FolderOpen className="h-4 w-4 text-primary-500" />
+          <p className="text-sm font-bold text-slate-900">Property Vault</p>
         </div>
-        <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-600 ring-1 ring-emerald-200">
+        <span className="rounded-full bg-reno-green-50 px-2.5 py-0.5 text-[10px] font-bold text-reno-green-600 ring-1 ring-emerald-200">
           {documents.length} Records
         </span>
       </div>
 
-      <div className="divide-y divide-gray-50">
+      <div className="divide-y divide-slate-50">
         {documents.map((doc, i) => (
           <motion.div
             key={doc.name}
@@ -267,8 +267,8 @@ export function PropertyRecordViewer() {
               <div
                 className={`flex h-8 w-8 items-center justify-center rounded-lg transition-colors duration-300 ${
                   i === activeDoc
-                    ? 'bg-blue-100 text-blue-600'
-                    : 'bg-gray-50 text-gray-300'
+                    ? 'bg-primary-100 text-primary-600'
+                    : 'bg-slate-50 text-slate-300'
                 }`}
               >
                 <doc.icon className="h-4 w-4" />
@@ -276,19 +276,19 @@ export function PropertyRecordViewer() {
               <div>
                 <p
                   className={`text-sm transition-colors duration-300 ${
-                    i === activeDoc ? 'font-semibold text-gray-900' : 'text-gray-400'
+                    i === activeDoc ? 'font-semibold text-slate-900' : 'text-slate-400'
                   }`}
                 >
                   {doc.name}
                 </p>
-                <p className="text-[10px] text-gray-400">{doc.date}</p>
+                <p className="text-[10px] text-slate-400">{doc.date}</p>
               </div>
             </div>
             {i === activeDoc && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-600"
+                className="flex items-center gap-1 rounded-full bg-reno-green-50 px-2 py-0.5 text-[10px] font-bold text-reno-green-600"
               >
                 <CheckCircle className="h-3 w-3" /> Verified
               </motion.div>
@@ -297,8 +297,8 @@ export function PropertyRecordViewer() {
         ))}
       </div>
 
-      <div className="border-t border-gray-100 bg-gray-50 px-5 py-3">
-        <div className="flex items-center justify-between text-xs text-gray-400">
+      <div className="border-t border-slate-100 bg-slate-50 px-5 py-3">
+        <div className="flex items-center justify-between text-xs text-slate-400">
           <span>Permanent archive — immutable</span>
           <div className="flex items-center gap-1">
             <Lock className="h-3 w-3" />
@@ -313,7 +313,7 @@ export function PropertyRecordViewer() {
 /* ═══════════════════════════════════════════════════════
    5. FLOATING PARTICLES — ambient background element
    ═══════════════════════════════════════════════════════ */
-export function FloatingParticles({ count = 6, color = 'bg-emerald-400' }: { count?: number; color?: string }) {
+export function FloatingParticles({ count = 6, color = 'bg-reno-green-400' }: { count?: number; color?: string }) {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
       {Array.from({ length: count }).map((_, i) => (
@@ -357,21 +357,21 @@ export function TestimonialCard({ quote, name, role, variant = 'light' }: Testim
       className={`rounded-2xl border p-6 ${
         isDark
           ? 'border-white/10 bg-white/5 backdrop-blur-sm'
-          : 'border-gray-200/60 bg-white shadow-sm'
+          : 'border-slate-200/60 bg-white shadow-sm'
       }`}
     >
-      <p className={`text-sm italic leading-relaxed ${isDark ? 'text-slate-300' : 'text-gray-600'}`}>
+      <p className={`text-sm italic leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
         &ldquo;{quote}&rdquo;
       </p>
       <div className="mt-4 flex items-center gap-3">
-        <div className={`h-8 w-8 rounded-full ${isDark ? 'bg-slate-700' : 'bg-gray-100'} flex items-center justify-center`}>
-          <span className={`text-xs font-bold ${isDark ? 'text-white' : 'text-gray-600'}`}>
+        <div className={`h-8 w-8 rounded-full ${isDark ? 'bg-slate-700' : 'bg-slate-100'} flex items-center justify-center`}>
+          <span className={`text-xs font-bold ${isDark ? 'text-white' : 'text-slate-600'}`}>
             {name.split(' ').map(n => n[0]).join('')}
           </span>
         </div>
         <div>
-          <p className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>{name}</p>
-          <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-gray-400'}`}>{role}</p>
+          <p className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>{name}</p>
+          <p className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{role}</p>
         </div>
       </div>
     </div>

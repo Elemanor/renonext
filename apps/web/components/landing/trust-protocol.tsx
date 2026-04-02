@@ -161,7 +161,7 @@ export function TrustProtocol() {
               <br className="hidden md:block" />
               <span className="text-primary">Trust Protocol</span>
             </h2>
-            <p className="max-w-2xl mx-auto text-gray-500 text-base md:text-lg leading-relaxed">
+            <p className="max-w-2xl mx-auto text-slate-500 text-base md:text-lg leading-relaxed">
               A three-way handshake ensuring every dollar is protected, every
               contractor is verified, and every milestone is visually confirmed.
             </p>
@@ -530,7 +530,7 @@ export function TrustProtocol() {
                       fact_check
                     </span>
                   </div>
-                  <span className="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-bold uppercase rounded-full">
+                  <span className="px-3 py-1 bg-reno-green-100 text-reno-green-700 text-[10px] font-bold uppercase rounded-full">
                     Real-Time Vetting
                   </span>
                 </div>
@@ -540,12 +540,12 @@ export function TrustProtocol() {
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between items-center text-sm mb-1.5">
-                      <span className="text-gray-500">
+                      <span className="text-slate-500">
                         Identity Verification
                       </span>
                       <span className="font-bold text-primary">99.8%</span>
                     </div>
-                    <div className="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                    <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
                       <div
                         className={`bg-primary h-full rounded-full transition-all duration-[1500ms] ease-out ${
                           cardVisible[0] ? 'tp-bar-glow' : ''
@@ -556,19 +556,19 @@ export function TrustProtocol() {
                   </div>
                   <div>
                     <div className="flex justify-between items-center text-sm mb-1.5">
-                      <span className="text-gray-500">
+                      <span className="text-slate-500">
                         License Validation
                       </span>
                       <span className="font-bold text-primary">Provincial</span>
                     </div>
-                    <div className="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                    <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
                       <div
                         className="bg-primary/30 h-full rounded-full transition-all duration-[1500ms] delay-300 ease-out"
                         style={{ width: cardVisible[0] ? '100%' : '0%' }}
                       />
                     </div>
                   </div>
-                  <p className="text-xs text-gray-400 italic mt-3">
+                  <p className="text-xs text-slate-400 italic mt-3">
                     &ldquo;Continuous background monitoring ensures zero-gap
                     compliance — WSIB, insurance, OBC license.&rdquo;
                   </p>
@@ -596,7 +596,7 @@ export function TrustProtocol() {
                     <h3 className="text-xl font-bold text-reno-dark">
                       The Vault
                     </h3>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-slate-500">
                       Secure Capital Management
                     </p>
                   </div>
@@ -605,11 +605,11 @@ export function TrustProtocol() {
                   <div className="text-4xl font-extrabold tracking-tight text-reno-dark">
                     ${vaultAmount.toFixed(1)}M
                   </div>
-                  <div className="text-xs font-medium text-gray-500 mt-1 uppercase tracking-wider">
+                  <div className="text-xs font-medium text-slate-500 mt-1 uppercase tracking-wider">
                     Platform Volume Secured
                   </div>
                 </div>
-                <div className="p-3.5 bg-gray-50 rounded-xl border border-gray-200">
+                <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-primary">
                     <span
                       className="material-symbols-outlined text-sm"
@@ -668,7 +668,7 @@ export function TrustProtocol() {
                     <div className="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center flex-shrink-0">
                       <span className="text-xs font-bold text-primary">2</span>
                     </div>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-slate-500">
                       Quality inspection verified. Funds pending release.
                     </p>
                   </div>

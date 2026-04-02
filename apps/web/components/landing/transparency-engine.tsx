@@ -24,7 +24,7 @@ const features = [
 
 export function TransparencyEngine() {
   return (
-    <section className="relative overflow-hidden border-y border-gray-100 bg-slate-50 py-24 md:py-32">
+    <section className="relative overflow-hidden border-y border-slate-100 bg-slate-50 py-24 md:py-32">
       {/* background scaffold */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200/70 to-transparent" />
@@ -38,20 +38,20 @@ export function TransparencyEngine() {
           <div className="mx-auto mb-14 max-w-3xl text-center">
             <Badge
               variant="secondary"
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-sm font-medium text-blue-700"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-1.5 text-sm font-medium text-primary-700"
             >
               <Eye className="h-4 w-4" />
               Total Transparency
             </Badge>
 
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
               Total Visibility.{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-violet-600 text-gradient">
+              <span className="bg-gradient-to-r from-primary-600 to-reno-purple-600 text-gradient">
                 Zero Surprises.
               </span>
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
               Directories show you who to hire. We show you everything — before, during, and after.
             </p>
           </div>
@@ -62,11 +62,11 @@ export function TransparencyEngine() {
             <div className="grid gap-3">
               {features.map((feature, i) => (
                 <ScrollReveal key={feature.text} delay={i * 0.08}>
-                  <div className="flex items-start gap-4 rounded-2xl border border-gray-200/60 bg-white/70 p-4 shadow-sm backdrop-blur">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100">
-                      <feature.icon className="h-5 w-5 text-blue-600" />
+                  <div className="flex items-start gap-4 rounded-2xl border border-slate-200/60 bg-white/70 p-4 shadow-sm backdrop-blur">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-100">
+                      <feature.icon className="h-5 w-5 text-primary-600" />
                     </div>
-                    <span className="pt-1 text-sm leading-relaxed text-gray-700">
+                    <span className="pt-1 text-sm leading-relaxed text-slate-700">
                       {feature.text}
                     </span>
                   </div>
@@ -79,28 +79,28 @@ export function TransparencyEngine() {
               <StripePanel>
 
                 {/* Browser Chrome */}
-                <div className="relative border-b border-gray-200 bg-white px-5 py-3">
+                <div className="relative border-b border-slate-200 bg-white px-5 py-3">
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-red-400" />
                     <span className="h-3 w-3 rounded-full bg-amber-400" />
-                    <span className="h-3 w-3 rounded-full bg-green-400" />
-                    <span className="ml-4 text-xs font-medium text-gray-400">
+                    <span className="h-3 w-3 rounded-full bg-reno-green-400" />
+                    <span className="ml-4 text-xs font-medium text-slate-400">
                       renonext.com/dashboard
                     </span>
                   </div>
                 </div>
 
                 {/* Dashboard Header */}
-                <div className="relative border-b border-gray-100 bg-gradient-to-r from-slate-800 to-slate-900 px-6 py-4">
+                <div className="relative border-b border-slate-100 bg-gradient-to-r from-slate-800 to-slate-900 px-6 py-4">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-xs font-medium text-slate-400">LIVE DASHBOARD</p>
                       <p className="text-sm font-bold text-white">7 Cedar Court, Vaughan</p>
                     </div>
-                    <Badge className="rounded-full border-transparent bg-emerald-500/20 px-2.5 py-0.5 text-[10px] font-bold text-emerald-400">
+                    <Badge className="rounded-full border-transparent bg-reno-green-500/20 px-2.5 py-0.5 text-[10px] font-bold text-reno-green-400">
                       <span className="relative mr-1.5 flex h-2 w-2">
-                        <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
-                        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                        <span className="absolute inline-flex h-full w-full rounded-full bg-reno-green-400 opacity-75 motion-safe:animate-ping" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-reno-green-500" />
                       </span>
                       Live
                     </Badge>
@@ -108,8 +108,8 @@ export function TransparencyEngine() {
                 </div>
 
                 {/* Spend Tracker chart */}
-                <div className="border-b border-gray-100 px-6 py-3">
-                  <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-gray-400">
+                <div className="border-b border-slate-100 px-6 py-3">
+                  <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
                     Spend Tracker
                   </p>
                   <StripeLineMini
@@ -120,21 +120,21 @@ export function TransparencyEngine() {
                 </div>
 
                 {/* Body (softer) */}
-                <div className="bg-gradient-to-b from-gray-50 to-white p-4">
+                <div className="bg-gradient-to-b from-slate-50 to-white p-4">
                   {/* Active Job */}
-                  <div className="mb-3 rounded-xl border border-emerald-200 bg-white p-3 shadow-sm">
+                  <div className="mb-3 rounded-xl border border-reno-green-200 bg-white p-3 shadow-sm">
                     <div className="mb-2 flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <span className="relative flex h-2 w-2">
-                          <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
-                          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                          <span className="absolute inline-flex h-full w-full rounded-full bg-reno-green-400 opacity-75 motion-safe:animate-ping" />
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-reno-green-500" />
                         </span>
-                        <span className="text-xs font-bold text-emerald-700">ACTIVE</span>
+                        <span className="text-xs font-bold text-reno-green-700">ACTIVE</span>
                       </div>
-                      <span className="text-[10px] text-gray-400">Now</span>
+                      <span className="text-[10px] text-slate-400">Now</span>
                     </div>
 
-                    <p className="text-sm font-semibold text-gray-900">
+                    <p className="text-sm font-semibold text-slate-900">
                       Kitchen renovation — Milestone 3
                     </p>
 
@@ -145,33 +145,33 @@ export function TransparencyEngine() {
                         loading="lazy"
                         className="h-5 w-5 rounded-full object-cover"
                       />
-                      <span className="text-xs text-gray-500">Marco R. — Red Seal Carpenter</span>
+                      <span className="text-xs text-slate-500">Marco R. — Red Seal Carpenter</span>
                     </div>
 
                     {/* Task progress */}
                     <div className="mt-2">
-                      <div className="flex items-center justify-between text-[10px] text-gray-500">
+                      <div className="flex items-center justify-between text-[10px] text-slate-500">
                         <span>Tasks: 2 of 4</span>
-                        <CountUp target={50} suffix="%" className="text-[10px] text-gray-500" />
+                        <CountUp target={50} suffix="%" className="text-[10px] text-slate-500" />
                       </div>
                       <div className="mt-1">
-                        <AnimatedProgress value={50} barClass="bg-emerald-500" />
+                        <AnimatedProgress value={50} barClass="bg-reno-green-500" />
                       </div>
                     </div>
                   </div>
 
                   {/* Milestone payments (ledger style) */}
-                  <div className="mb-3 overflow-hidden rounded-xl border border-gray-200 bg-white">
+                  <div className="mb-3 overflow-hidden rounded-xl border border-slate-200 bg-white">
                     <div className="flex items-center justify-between px-3 py-2.5">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                         Milestone Payments
                       </p>
-                      <span className="rounded-full border border-gray-200 bg-gray-50 px-2 py-0.5 text-[10px] font-semibold text-gray-600">
+                      <span className="rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[10px] font-semibold text-slate-600">
                         CAD
                       </span>
                     </div>
 
-                    <div className="divide-y divide-gray-100">
+                    <div className="divide-y divide-slate-100">
                       {[
                         { name: 'Demo', amount: '$2,400', status: 'paid' as const },
                         { name: 'Framing', amount: '$3,800', status: 'paid' as const },
@@ -181,17 +181,17 @@ export function TransparencyEngine() {
                           key={m.name}
                           className={[
                             'flex items-center justify-between px-3 py-2 text-xs',
-                            m.status === 'paid' ? 'bg-emerald-50/40' : 'bg-amber-50/40',
+                            m.status === 'paid' ? 'bg-reno-green-50/40' : 'bg-amber-50/40',
                           ].join(' ')}
                         >
                           <div className="flex items-center gap-2">
                             {m.status === 'paid' ? (
-                              <CheckCircle className="h-3.5 w-3.5 text-emerald-500" />
+                              <CheckCircle className="h-3.5 w-3.5 text-reno-green-500" />
                             ) : (
                               <Clock className="h-3.5 w-3.5 text-amber-500" />
                             )}
 
-                            <span className="font-medium text-gray-800">{m.name}</span>
+                            <span className="font-medium text-slate-800">{m.name}</span>
 
                             {m.status === 'current' && (
                               <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700">
@@ -200,7 +200,7 @@ export function TransparencyEngine() {
                             )}
 
                             {m.status === 'paid' && (
-                              <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
+                              <span className="rounded-full bg-reno-green-100 px-2 py-0.5 text-[10px] font-bold text-reno-green-700">
                                 Paid
                               </span>
                             )}
@@ -209,7 +209,7 @@ export function TransparencyEngine() {
                           <span
                             className={
                               m.status === 'paid'
-                                ? 'font-semibold text-emerald-700'
+                                ? 'font-semibold text-reno-green-700'
                                 : 'font-semibold text-amber-700'
                             }
                           >
@@ -220,22 +220,22 @@ export function TransparencyEngine() {
                     </div>
 
                     {/* footer */}
-                    <div className="flex items-center justify-between bg-gray-50 px-3 py-2.5 text-[11px]">
-                      <span className="font-semibold text-gray-600">Released</span>
-                      <CountUp target={6200} prefix="$" className="font-bold text-gray-900" />
+                    <div className="flex items-center justify-between bg-slate-50 px-3 py-2.5 text-[11px]">
+                      <span className="font-semibold text-slate-600">Released</span>
+                      <CountUp target={6200} prefix="$" className="font-bold text-slate-900" />
                     </div>
                   </div>
 
                   {/* Cert badges */}
-                  <div className="rounded-xl border border-gray-200 bg-white p-3">
-                    <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-gray-400">
+                  <div className="rounded-xl border border-slate-200 bg-white p-3">
+                    <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
                       Verified Certs
                     </p>
                     <div className="flex flex-wrap gap-1.5">
                       {['WSIB', 'WHMIS', 'P.Eng', 'Heights', 'First Aid'].map((cert) => (
                         <Badge
                           key={cert}
-                          className="rounded-full border-transparent bg-blue-50 px-2 py-0.5 text-[9px] font-medium text-blue-700"
+                          className="rounded-full border-transparent bg-primary-50 px-2 py-0.5 text-[9px] font-medium text-primary-700"
                         >
                           <CheckCircle className="mr-0.5 h-2.5 w-2.5" />
                           {cert}

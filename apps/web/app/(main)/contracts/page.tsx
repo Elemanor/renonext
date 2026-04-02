@@ -324,7 +324,7 @@ export default function ContractsPage() {
                           ? 'border-reno-green bg-reno-green text-white'
                           : isCurrent
                           ? 'border-reno-green bg-white text-reno-green'
-                          : 'border-gray-300 bg-white text-gray-400'
+                          : 'border-slate-300 bg-white text-slate-400'
                       }`}
                     >
                       {isComplete ? (
@@ -335,7 +335,7 @@ export default function ContractsPage() {
                     </div>
                     <span
                       className={`mt-2 hidden text-xs font-medium sm:block ${
-                        isCurrent ? 'text-reno-green' : 'text-gray-500'
+                        isCurrent ? 'text-reno-green' : 'text-slate-500'
                       }`}
                     >
                       {stepTitles[i]}
@@ -344,7 +344,7 @@ export default function ContractsPage() {
                   {stepNum < TOTAL_STEPS && (
                     <div
                       className={`mx-2 h-0.5 flex-1 ${
-                        isComplete ? 'bg-reno-green' : 'bg-gray-300'
+                        isComplete ? 'bg-reno-green' : 'bg-slate-300'
                       }`}
                     />
                   )}
@@ -384,7 +384,7 @@ export default function ContractsPage() {
                         className={`group rounded-xl border-2 p-4 text-left transition-all hover:shadow-md ${
                           selectedTemplate?.serviceSlug === template.serviceSlug
                             ? 'border-reno-green bg-reno-green/5'
-                            : 'border-gray-200 hover:border-reno-green/50'
+                            : 'border-slate-200 hover:border-reno-green/50'
                         }`}
                       >
                         <h3 className="font-display mb-2 text-lg font-semibold text-reno-dark">
@@ -394,7 +394,7 @@ export default function ContractsPage() {
                           className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
                             selectedTemplate?.serviceSlug === template.serviceSlug
                               ? 'bg-reno-green text-white'
-                              : 'bg-gray-100 text-gray-600 group-hover:bg-reno-green/10 group-hover:text-reno-green'
+                              : 'bg-slate-100 text-slate-600 group-hover:bg-reno-green/10 group-hover:text-reno-green'
                           }`}
                         >
                           {template.category}
@@ -420,7 +420,7 @@ export default function ContractsPage() {
                         type="text"
                         value={formData.projectAddress}
                         onChange={(e) => updateFormData('projectAddress', e.target.value)}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                        className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                         placeholder="123 Main Street, Toronto, ON M1A 1A1"
                       />
                     </div>
@@ -437,7 +437,7 @@ export default function ContractsPage() {
                             className={`rounded-lg border-2 px-4 py-2.5 text-sm font-medium transition-all ${
                               formData.propertyType === type.value
                                 ? 'border-reno-green bg-reno-green text-white'
-                                : 'border-gray-200 bg-white text-gray-700 hover:border-reno-green/50'
+                                : 'border-slate-200 bg-white text-slate-700 hover:border-reno-green/50'
                             }`}
                           >
                             {type.label}
@@ -459,7 +459,7 @@ export default function ContractsPage() {
                             e.target.value ? parseInt(e.target.value) : undefined
                           )
                         }
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                        className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                         placeholder="2000"
                       />
                     </div>
@@ -472,7 +472,7 @@ export default function ContractsPage() {
                         value={formData.workDescription}
                         onChange={(e) => updateFormData('workDescription', e.target.value)}
                         rows={3}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                        className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                         placeholder="Describe the scope of work to be performed..."
                       />
                     </div>
@@ -505,7 +505,7 @@ export default function ContractsPage() {
                               fullName: e.target.value,
                             })
                           }
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="John Smith"
                         />
                       </div>
@@ -522,7 +522,7 @@ export default function ContractsPage() {
                               address: e.target.value,
                             })
                           }
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="123 Main St, Toronto, ON"
                         />
                       </div>
@@ -539,7 +539,7 @@ export default function ContractsPage() {
                               phone: e.target.value,
                             })
                           }
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="(416) 555-0100"
                         />
                       </div>
@@ -556,7 +556,7 @@ export default function ContractsPage() {
                               email: e.target.value,
                             })
                           }
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -580,7 +580,7 @@ export default function ContractsPage() {
                               businessName: e.target.value,
                             })
                           }
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="ABC Construction Inc."
                         />
                       </div>
@@ -597,7 +597,7 @@ export default function ContractsPage() {
                               address: e.target.value,
                             })
                           }
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="456 Business Blvd, Toronto, ON"
                         />
                       </div>
@@ -614,7 +614,7 @@ export default function ContractsPage() {
                               phone: e.target.value,
                             })
                           }
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="(416) 555-0200"
                         />
                       </div>
@@ -631,7 +631,7 @@ export default function ContractsPage() {
                               email: e.target.value,
                             })
                           }
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="info@abcconstruction.com"
                         />
                       </div>
@@ -648,7 +648,7 @@ export default function ContractsPage() {
                               wsibNumber: e.target.value,
                             })
                           }
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="12345678"
                         />
                       </div>
@@ -665,7 +665,7 @@ export default function ContractsPage() {
                               insurancePolicy: e.target.value,
                             })
                           }
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="POL-2026-123456"
                         />
                       </div>
@@ -686,7 +686,7 @@ export default function ContractsPage() {
                         Total Contract Price *
                       </label>
                       <div className="relative">
-                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-500">
+                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-slate-500">
                           $
                         </span>
                         <input
@@ -698,7 +698,7 @@ export default function ContractsPage() {
                               e.target.value ? parseFloat(e.target.value) : 0
                             )
                           }
-                          className="w-full rounded-lg border border-gray-300 py-3 pl-8 pr-4 text-xl font-semibold focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 py-3 pl-8 pr-4 text-xl font-semibold focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                           placeholder="50000"
                         />
                       </div>
@@ -719,23 +719,23 @@ export default function ContractsPage() {
                           </button>
                         </div>
 
-                        <div className="overflow-hidden rounded-lg border border-gray-200">
+                        <div className="overflow-hidden rounded-lg border border-slate-200">
                           <table className="w-full">
-                            <thead className="bg-gray-50">
+                            <thead className="bg-slate-50">
                               <tr>
-                                <th className="px-4 py-3 text-left text-xs font-medium uppercase text-gray-600">
+                                <th className="px-4 py-3 text-left text-xs font-medium uppercase text-slate-600">
                                   Milestone
                                 </th>
-                                <th className="px-4 py-3 text-left text-xs font-medium uppercase text-gray-600">
+                                <th className="px-4 py-3 text-left text-xs font-medium uppercase text-slate-600">
                                   %
                                 </th>
-                                <th className="px-4 py-3 text-left text-xs font-medium uppercase text-gray-600">
+                                <th className="px-4 py-3 text-left text-xs font-medium uppercase text-slate-600">
                                   Amount
                                 </th>
                                 <th className="w-10 px-4 py-3"></th>
                               </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-200 bg-white">
+                            <tbody className="divide-y divide-slate-200 bg-white">
                               {formData.milestones.map((milestone, index) => (
                                 <tr key={index}>
                                   <td className="px-4 py-3">
@@ -745,17 +745,17 @@ export default function ContractsPage() {
                                       onChange={(e) =>
                                         updateMilestone(index, 'name', e.target.value)
                                       }
-                                      className="w-full rounded border border-gray-300 px-2 py-1 text-sm focus:border-reno-green focus:outline-none"
+                                      className="w-full rounded border border-slate-300 px-2 py-1 text-sm focus:border-reno-green focus:outline-none"
                                     />
                                   </td>
                                   <td className="px-4 py-3">
-                                    <span className="text-sm font-medium text-gray-700">
+                                    <span className="text-sm font-medium text-slate-700">
                                       {milestone.percentage.toFixed(1)}%
                                     </span>
                                   </td>
                                   <td className="px-4 py-3">
                                     <div className="relative">
-                                      <span className="absolute left-2 top-1/2 -translate-y-1/2 text-sm text-gray-500">
+                                      <span className="absolute left-2 top-1/2 -translate-y-1/2 text-sm text-slate-500">
                                         $
                                       </span>
                                       <input
@@ -768,7 +768,7 @@ export default function ContractsPage() {
                                             parseFloat(e.target.value) || 0
                                           )
                                         }
-                                        className="w-full rounded border border-gray-300 py-1 pl-5 pr-2 text-sm focus:border-reno-green focus:outline-none"
+                                        className="w-full rounded border border-slate-300 py-1 pl-5 pr-2 text-sm focus:border-reno-green focus:outline-none"
                                       />
                                     </div>
                                   </td>
@@ -788,28 +788,28 @@ export default function ContractsPage() {
                           </table>
                         </div>
 
-                        <div className="mt-4 space-y-2 rounded-lg bg-gray-50 p-4">
+                        <div className="mt-4 space-y-2 rounded-lg bg-slate-50 p-4">
                           <div className="flex justify-between text-sm">
-                            <span className="text-gray-600">Subtotal</span>
-                            <span className="font-medium text-gray-900">
+                            <span className="text-slate-600">Subtotal</span>
+                            <span className="font-medium text-slate-900">
                               ${formData.totalPrice.toLocaleString('en-CA', { minimumFractionDigits: 2 })}
                             </span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-gray-600">10% Holdback</span>
-                            <span className="font-medium text-gray-900">
+                            <span className="text-slate-600">10% Holdback</span>
+                            <span className="font-medium text-slate-900">
                               ${calculateHoldback(formData.totalPrice).holdbackAmount.toLocaleString('en-CA', { minimumFractionDigits: 2 })}
                             </span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-gray-600">HST (13%)</span>
-                            <span className="font-medium text-gray-900">
+                            <span className="text-slate-600">HST (13%)</span>
+                            <span className="font-medium text-slate-900">
                               ${calculateHST(formData.totalPrice).hst.toLocaleString('en-CA', { minimumFractionDigits: 2 })}
                             </span>
                           </div>
-                          <div className="border-t border-gray-300 pt-2">
+                          <div className="border-t border-slate-300 pt-2">
                             <div className="flex justify-between">
-                              <span className="font-semibold text-gray-900">
+                              <span className="font-semibold text-slate-900">
                                 Grand Total (with HST)
                               </span>
                               <span className="text-lg font-bold text-reno-green">
@@ -840,7 +840,7 @@ export default function ContractsPage() {
                           type="date"
                           value={formData.startDate}
                           onChange={(e) => updateFormData('startDate', e.target.value)}
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                         />
                       </div>
                       <div>
@@ -851,16 +851,16 @@ export default function ContractsPage() {
                           type="date"
                           value={formData.completionDate}
                           onChange={(e) => updateFormData('completionDate', e.target.value)}
-                          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                         />
                       </div>
                     </div>
 
-                    <div className="flex gap-3 rounded-lg border border-blue-200 bg-blue-50 p-4">
-                      <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-600" />
-                      <div className="text-sm text-blue-900">
+                    <div className="flex gap-3 rounded-lg border border-primary-200 bg-primary-50 p-4">
+                      <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600" />
+                      <div className="text-sm text-primary-900">
                         <p className="font-medium">Timeline Disclaimer</p>
-                        <p className="mt-1 text-blue-800">
+                        <p className="mt-1 text-primary-800">
                           Delays caused by weather, permit processing, or unforeseen conditions
                           are typically excluded from timeline guarantees.
                         </p>
@@ -885,7 +885,7 @@ export default function ContractsPage() {
                         value={formData.warrantyTerms}
                         onChange={(e) => updateFormData('warrantyTerms', e.target.value)}
                         rows={4}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 font-mono text-sm focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                        className="w-full rounded-lg border border-slate-300 px-4 py-2.5 font-mono text-sm focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                       />
                     </div>
 
@@ -897,7 +897,7 @@ export default function ContractsPage() {
                         value={formData.changeOrderPolicy}
                         onChange={(e) => updateFormData('changeOrderPolicy', e.target.value)}
                         rows={3}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                        className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                       />
                     </div>
 
@@ -909,7 +909,7 @@ export default function ContractsPage() {
                         value={formData.disputeResolution}
                         onChange={(e) => updateFormData('disputeResolution', e.target.value)}
                         rows={3}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                        className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                       />
                     </div>
 
@@ -921,7 +921,7 @@ export default function ContractsPage() {
                         {permitResponsibilityOptions.map((option) => (
                           <label
                             key={option.value}
-                            className="flex cursor-pointer items-center gap-3 rounded-lg border-2 border-gray-200 p-3 hover:border-reno-green/50"
+                            className="flex cursor-pointer items-center gap-3 rounded-lg border-2 border-slate-200 p-3 hover:border-reno-green/50"
                           >
                             <input
                               type="radio"
@@ -933,7 +933,7 @@ export default function ContractsPage() {
                               }
                               className="h-4 w-4 text-reno-green focus:ring-reno-green"
                             />
-                            <span className="text-sm font-medium text-gray-700">
+                            <span className="text-sm font-medium text-slate-700">
                               {option.label}
                             </span>
                           </label>
@@ -951,7 +951,7 @@ export default function ContractsPage() {
                           updateFormData('materialSubstitution', e.target.value)
                         }
                         rows={3}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
+                        className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-reno-green focus:outline-none focus:ring-2 focus:ring-reno-green/20"
                       />
                     </div>
                   </div>
@@ -966,61 +966,61 @@ export default function ContractsPage() {
                   </h2>
 
                   {/* CPA Compliance Checklist */}
-                  <div className="mb-6 rounded-lg border border-green-200 bg-green-50 p-4">
-                    <h3 className="mb-3 font-semibold text-green-900">
+                  <div className="mb-6 rounded-lg border border-reno-green-200 bg-reno-green-50 p-4">
+                    <h3 className="mb-3 font-semibold text-reno-green-900">
                       Consumer Protection Act Compliance
                     </h3>
                     <div className="grid gap-2 sm:grid-cols-2">
-                      <div className="flex items-center gap-2 text-sm text-green-800">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div className="flex items-center gap-2 text-sm text-reno-green-800">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-reno-green-600" />
                         Written contract provided
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-green-800">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div className="flex items-center gap-2 text-sm text-reno-green-800">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-reno-green-600" />
                         Clear scope of work defined
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-green-800">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div className="flex items-center gap-2 text-sm text-reno-green-800">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-reno-green-600" />
                         Total price disclosed
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-green-800">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div className="flex items-center gap-2 text-sm text-reno-green-800">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-reno-green-600" />
                         Payment schedule specified
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-green-800">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div className="flex items-center gap-2 text-sm text-reno-green-800">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-reno-green-600" />
                         Timeline included
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-green-800">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div className="flex items-center gap-2 text-sm text-reno-green-800">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-reno-green-600" />
                         Warranty terms stated
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-green-800">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div className="flex items-center gap-2 text-sm text-reno-green-800">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-reno-green-600" />
                         Change order process
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-green-800">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div className="flex items-center gap-2 text-sm text-reno-green-800">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-reno-green-600" />
                         Dispute resolution mechanism
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-green-800">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div className="flex items-center gap-2 text-sm text-reno-green-800">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-reno-green-600" />
                         Insurance & WSIB verified
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-green-800">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div className="flex items-center gap-2 text-sm text-reno-green-800">
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-reno-green-600" />
                         10% holdback applied
                       </div>
                     </div>
                   </div>
 
                   {/* Contract Preview */}
-                  <div className="mb-6 max-h-[600px] overflow-y-auto rounded-lg border border-gray-300 bg-white p-6">
-                    <div className="mb-6 border-b border-gray-200 pb-4">
-                      <h1 className="font-display mb-2 text-2xl font-bold text-reno-dark">
+                  <div className="mb-6 max-h-[600px] overflow-y-auto rounded-lg border border-slate-300 bg-white p-6">
+                    <div className="mb-6 border-b border-slate-200 pb-4">
+                      <h2 className="font-display mb-2 text-2xl font-bold text-reno-dark">
                         RENOVATION CONTRACT
-                      </h1>
-                      <p className="text-sm text-gray-600">
+                      </h2>
+                      <p className="text-sm text-slate-600">
                         Reference: {referenceNumber}
                       </p>
                     </div>
@@ -1030,32 +1030,32 @@ export default function ContractsPage() {
                         <h2 className="font-display mb-3 text-lg font-bold text-reno-dark">
                           {section.title}
                         </h2>
-                        <div className="whitespace-pre-wrap text-sm text-gray-700">
+                        <div className="whitespace-pre-wrap text-sm text-slate-700">
                           {section.content}
                         </div>
                       </div>
                     ))}
 
                     {/* Signatures Section */}
-                    <div className="mt-8 border-t border-gray-300 pt-6">
+                    <div className="mt-8 border-t border-slate-300 pt-6">
                       <h2 className="font-display mb-4 text-lg font-bold text-reno-dark">
                         SIGNATURES
                       </h2>
                       <div className="grid gap-8 sm:grid-cols-2">
                         <div>
-                          <p className="mb-1 text-sm font-medium text-gray-700">
+                          <p className="mb-1 text-sm font-medium text-slate-700">
                             Homeowner: {formData.homeowner.fullName}
                           </p>
-                          <div className="mt-8 border-t border-gray-400 pt-1">
-                            <p className="text-xs text-gray-500">Signature & Date</p>
+                          <div className="mt-8 border-t border-slate-400 pt-1">
+                            <p className="text-xs text-slate-500">Signature & Date</p>
                           </div>
                         </div>
                         <div>
-                          <p className="mb-1 text-sm font-medium text-gray-700">
+                          <p className="mb-1 text-sm font-medium text-slate-700">
                             Contractor: {formData.contractor.businessName}
                           </p>
-                          <div className="mt-8 border-t border-gray-400 pt-1">
-                            <p className="text-xs text-gray-500">Signature & Date</p>
+                          <div className="mt-8 border-t border-slate-400 pt-1">
+                            <p className="text-xs text-slate-500">Signature & Date</p>
                           </div>
                         </div>
                       </div>
@@ -1067,7 +1067,7 @@ export default function ContractsPage() {
                     <button
                       onClick={handleDownloadPDF}
                       disabled={isGeneratingPdf}
-                      className="flex items-center gap-2 rounded-lg bg-reno-green px-6 py-3 font-medium text-white shadow-md transition-all hover:bg-reno-green/90 disabled:bg-gray-400"
+                      className="flex items-center gap-2 rounded-lg bg-reno-green px-6 py-3 font-medium text-white shadow-md transition-all hover:bg-reno-green/90 disabled:bg-slate-400"
                     >
                       {isGeneratingPdf ? (
                         <>
@@ -1090,7 +1090,7 @@ export default function ContractsPage() {
                     </button>
                     <button
                       onClick={handleStartOver}
-                      className="ml-auto text-sm font-medium text-gray-600 underline hover:text-reno-green"
+                      className="ml-auto text-sm font-medium text-slate-600 underline hover:text-reno-green"
                     >
                       Start Over
                     </button>
@@ -1102,11 +1102,11 @@ export default function ContractsPage() {
 
           {/* Navigation Buttons */}
           {currentStep < 7 && (
-            <div className="flex items-center justify-between border-t border-gray-200 bg-gray-50 px-6 py-4 sm:px-8">
+            <div className="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-6 py-4 sm:px-8">
               <button
                 onClick={handleBack}
                 disabled={currentStep === 1}
-                className="flex items-center gap-2 rounded-lg px-4 py-2 font-medium text-gray-700 transition-all hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 rounded-lg px-4 py-2 font-medium text-slate-700 transition-all hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <ArrowLeft className="h-5 w-5" />
                 Back
@@ -1114,7 +1114,7 @@ export default function ContractsPage() {
               <button
                 onClick={handleNext}
                 disabled={!isStepValid(currentStep)}
-                className="flex items-center gap-2 rounded-lg bg-reno-green px-6 py-2.5 font-medium text-white shadow-md transition-all hover:bg-reno-green/90 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 rounded-lg bg-reno-green px-6 py-2.5 font-medium text-white shadow-md transition-all hover:bg-reno-green/90 disabled:bg-slate-400 disabled:cursor-not-allowed"
               >
                 Next
                 <ArrowRight className="h-5 w-5" />

@@ -169,7 +169,7 @@ export default async function ProProfilePage({ params }: ProPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-slate-50">
         {/* Cover Image */}
         <div className="relative h-48 overflow-hidden md:h-64">
           {pro.coverUrl ? (
@@ -209,14 +209,14 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                 </AvatarFallback>
               </Avatar>
               {pro.isAvailable && (
-                <div className="absolute -bottom-1 -right-1 h-7 w-7 rounded-full border-[3px] border-white bg-green-500 shadow-sm" />
+                <div className="absolute -bottom-1 -right-1 h-7 w-7 rounded-full border-[3px] border-white bg-reno-green-500 shadow-sm" />
               )}
             </div>
 
             {/* Name & Meta */}
             <div className="flex-1 pb-1">
               <div className="flex items-center gap-2 flex-wrap">
-                <h1 className="text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
+                <h1 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
                   {pro.name}
                 </h1>
                 {pro.isVerified && (
@@ -238,21 +238,21 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                   </Badge>
                 )}
               </div>
-              <p className="mt-1 text-lg text-gray-600">
+              <p className="mt-1 text-lg text-slate-600">
                 {pro.headline}
               </p>
               <div className="mt-2 flex flex-wrap items-center gap-4 text-sm">
                 <div className="flex items-center gap-1">
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
-                  <span className="font-bold text-gray-900">{pro.rating}</span>
-                  <span className="text-gray-400">({pro.reviewCount} reviews)</span>
+                  <span className="font-bold text-slate-900">{pro.rating}</span>
+                  <span className="text-slate-400">({pro.reviewCount} reviews)</span>
                 </div>
-                <span className="flex items-center gap-1.5 text-gray-500">
+                <span className="flex items-center gap-1.5 text-slate-500">
                   <MapPin className="h-4 w-4" />
                   {pro.city}, {pro.province}
                 </span>
                 {pro.responseTimeMinutes > 0 && (
-                <span className="flex items-center gap-1.5 text-gray-500">
+                <span className="flex items-center gap-1.5 text-slate-500">
                   <Zap className="h-4 w-4" />
                   Responds in ~{pro.responseTimeMinutes} min
                 </span>
@@ -264,13 +264,13 @@ export default async function ProProfilePage({ params }: ProPageProps) {
           {/* Trust Badges */}
           <div className="mt-5 flex flex-wrap gap-2">
             {pro.isVerified && (
-              <Badge className="flex items-center gap-1.5 rounded-full bg-green-50 px-3 py-1.5 text-xs font-semibold text-green-700 ring-1 ring-green-200/50 border-transparent hover:bg-green-50">
+              <Badge className="flex items-center gap-1.5 rounded-full bg-reno-green-50 px-3 py-1.5 text-xs font-semibold text-reno-green-700 ring-1 ring-green-200/50 border-transparent hover:bg-reno-green-50">
                 <CheckCircle className="h-3.5 w-3.5" />
                 Verified Pro
               </Badge>
             )}
             {pro.idVerified && (
-              <Badge className="flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700 ring-1 ring-blue-200/50 border-transparent hover:bg-blue-50">
+              <Badge className="flex items-center gap-1.5 rounded-full bg-primary-50 px-3 py-1.5 text-xs font-semibold text-primary-700 ring-1 ring-primary-200/50 border-transparent hover:bg-primary-50">
                 <Shield className="h-3.5 w-3.5" />
                 ID Verified
               </Badge>
@@ -290,13 +290,13 @@ export default async function ProProfilePage({ params }: ProPageProps) {
             
             <div className="relative border-b border-slate-800 bg-slate-950/50 px-5 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <Shield className="h-4 w-4 text-emerald-500" />
+                <Shield className="h-4 w-4 text-reno-green-500" />
                 <span className="text-xs font-bold uppercase tracking-widest text-slate-300">Live Compliance Matrix</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-1 ring-1 ring-emerald-500/20">
-                  <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
-                  <span className="text-[9px] font-bold uppercase tracking-wider text-emerald-500">System Active</span>
+                <div className="flex items-center gap-1.5 rounded-full bg-reno-green-500/10 px-2.5 py-1 ring-1 ring-emerald-500/20">
+                  <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-reno-green-500" />
+                  <span className="text-[9px] font-bold uppercase tracking-wider text-reno-green-500">System Active</span>
                 </div>
               </div>
             </div>
@@ -306,7 +306,7 @@ export default async function ProProfilePage({ params }: ProPageProps) {
               <div className="bg-slate-900 p-4 transition-colors hover:bg-slate-800/80">
                 <Fingerprint className="mb-3 h-5 w-5 text-slate-400" />
                 <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Identity</p>
-                <p className={`mt-1 font-mono text-sm font-semibold ${mockCompliance.identity.verified ? 'text-emerald-400' : 'text-slate-500'}`}>
+                <p className={`mt-1 font-mono text-sm font-semibold ${mockCompliance.identity.verified ? 'text-reno-green-400' : 'text-slate-500'}`}>
                   {mockCompliance.identity.verified ? 'VERIFIED' : 'PENDING'}
                 </p>
                 <p className="mt-1 text-[9px] text-slate-500">Log: {mockCompliance.identity.lastVerified}</p>
@@ -315,7 +315,7 @@ export default async function ProProfilePage({ params }: ProPageProps) {
               <div className="bg-slate-900 p-4 transition-colors hover:bg-slate-800/80">
                 <Shield className="mb-3 h-5 w-5 text-slate-400" />
                 <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">WSIB Clearance</p>
-                <p className={`mt-1 font-mono text-sm font-semibold ${mockCompliance.wsib.status === 'active' ? 'text-emerald-400' : 'text-slate-500'}`}>
+                <p className={`mt-1 font-mono text-sm font-semibold ${mockCompliance.wsib.status === 'active' ? 'text-reno-green-400' : 'text-slate-500'}`}>
                   {mockCompliance.wsib.status === 'active' ? 'ACTIVE' : mockCompliance.wsib.status === 'not_applicable' ? 'PENDING' : mockCompliance.wsib.status.toUpperCase()}
                 </p>
                 <p className="mt-1 font-mono text-[9px] text-slate-400">#{mockCompliance.wsib.number}</p>
@@ -324,14 +324,14 @@ export default async function ProProfilePage({ params }: ProPageProps) {
               <div className="bg-slate-900 p-4 transition-colors hover:bg-slate-800/80">
                 <Umbrella className="mb-3 h-5 w-5 text-slate-400" />
                 <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Liability Coverage</p>
-                <p className="mt-1 font-mono text-sm font-semibold text-blue-400">{mockCompliance.insurance.coverage}</p>
+                <p className="mt-1 font-mono text-sm font-semibold text-primary-400">{mockCompliance.insurance.coverage}</p>
                 <p className="mt-1 text-[9px] text-slate-500">Valid to: {mockCompliance.insurance.expiry}</p>
               </div>
               {/* Trade License */}
               <div className="bg-slate-900 p-4 transition-colors hover:bg-slate-800/80">
                 <FileCheck className="mb-3 h-5 w-5 text-slate-400" />
                 <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Trade License</p>
-                <p className={`mt-1 font-mono text-sm font-semibold ${mockCompliance.license.number !== 'N/A' ? 'text-emerald-400' : 'text-slate-500'}`}>
+                <p className={`mt-1 font-mono text-sm font-semibold ${mockCompliance.license.number !== 'N/A' ? 'text-reno-green-400' : 'text-slate-500'}`}>
                   {mockCompliance.license.number !== 'N/A' ? 'VALID' : 'PENDING'}
                 </p>
                 <p className="mt-1 font-mono text-[9px] text-slate-400">
@@ -361,25 +361,25 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                   { label: 'Avg Response', value: pro.responseTimeMinutes > 0 ? `${pro.responseTimeMinutes} min` : 'N/A', icon: Zap },
                   { label: 'Client Reviews', value: pro.reviewCount.toLocaleString(), icon: Star },
                 ].map((stat) => (
-                  <Card key={stat.label} className="rounded-2xl border-gray-200 bg-white p-4 text-center transition-all duration-200 hover:shadow-md">
+                  <Card key={stat.label} className="rounded-2xl border-slate-200 bg-white p-4 text-center transition-all duration-200 hover:shadow-md">
                     <stat.icon className="mx-auto mb-1.5 h-5 w-5 text-slate-400" />
-                    <p className="text-2xl font-bold tracking-tight text-gray-900">
+                    <p className="text-2xl font-bold tracking-tight text-slate-900">
                       {stat.value}
                     </p>
-                    <p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-gray-500">{stat.label}</p>
+                    <p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">{stat.label}</p>
                   </Card>
                 ))}
               </div>
 
               {/* About */}
-              <Card className="rounded-2xl border-gray-200 bg-white p-6 md:p-8">
-                <h2 className="mb-4 text-lg font-bold text-gray-900">Professional Overview</h2>
-                <p className="whitespace-pre-line leading-relaxed text-gray-600">
+              <Card className="rounded-2xl border-slate-200 bg-white p-6 md:p-8">
+                <h2 className="mb-4 text-lg font-bold text-slate-900">Professional Overview</h2>
+                <p className="whitespace-pre-line leading-relaxed text-slate-600">
                   {pro.bio}
                 </p>
 
-                <div className="mt-6 border-t border-gray-100 pt-6">
-                  <h3 className="mb-3 text-xs font-bold uppercase tracking-widest text-gray-400">
+                <div className="mt-6 border-t border-slate-100 pt-6">
+                  <h3 className="mb-3 text-xs font-bold uppercase tracking-widest text-slate-400">
                     Approved Service Categories
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -396,15 +396,15 @@ export default async function ProProfilePage({ params }: ProPageProps) {
               </Card>
 
               {/* Verified Proof Library */}
-              <Card className="rounded-2xl border-gray-200 bg-white p-6 md:p-8">
+              <Card className="rounded-2xl border-slate-200 bg-white p-6 md:p-8">
                 <div className="mb-6 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50">
-                      <Camera className="h-4 w-4 text-blue-600" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-50">
+                      <Camera className="h-4 w-4 text-primary-600" />
                     </div>
                     <div>
-                      <h2 className="text-lg font-bold text-gray-900">Verified Proof Library</h2>
-                      <p className="text-xs text-gray-500">GPS-stamped milestone documentation</p>
+                      <h2 className="text-lg font-bold text-slate-900">Verified Proof Library</h2>
+                      <p className="text-xs text-slate-500">GPS-stamped milestone documentation</p>
                     </div>
                   </div>
                   {gallery.length > 0 && (
@@ -415,14 +415,14 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                 </div>
                 {gallery.length === 0 ? (
                   <div className="py-8 text-center">
-                    <p className="text-sm text-gray-500">No project photos yet</p>
+                    <p className="text-sm text-slate-500">No project photos yet</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
                     {gallery.map((item: any) => (
                     <div
                       key={item.id}
-                      className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-gray-200"
+                      className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-slate-200"
                     >
                       <img
                         src={item.url}
@@ -434,7 +434,7 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                       {/* Top Badges */}
                       <div className="absolute left-2 top-2 flex flex-col gap-1">
                         {item.escrowVerified && (
-                          <div className="flex items-center gap-1.5 rounded-full bg-emerald-500/90 px-2 py-1 backdrop-blur-sm shadow-sm">
+                          <div className="flex items-center gap-1.5 rounded-full bg-reno-green-500/90 px-2 py-1 backdrop-blur-sm shadow-sm">
                             <CheckCircle className="h-3 w-3 text-white" />
                             <span className="text-[9px] font-bold tracking-wider text-white uppercase">Vault Verified</span>
                           </div>
@@ -448,7 +448,7 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                       {/* Bottom Info */}
                       <div className="absolute bottom-0 left-0 w-full p-3 transform translate-y-1 transition-transform duration-300 group-hover:translate-y-0">
                         <p className="text-xs font-bold text-white truncate">{item.scope}</p>
-                        <p className="font-mono text-[9px] text-emerald-400 mt-0.5">QS Appv: {item.verifiedDate}</p>
+                        <p className="font-mono text-[9px] text-reno-green-400 mt-0.5">QS Appv: {item.verifiedDate}</p>
                       </div>
                     </div>
                   ))}
@@ -457,9 +457,9 @@ export default async function ProProfilePage({ params }: ProPageProps) {
               </Card>
 
               {/* Reviews */}
-              <Card className="rounded-2xl border-gray-200 bg-white p-6 md:p-8">
+              <Card className="rounded-2xl border-slate-200 bg-white p-6 md:p-8">
                 <div className="mb-6 flex items-center justify-between">
-                  <h2 className="text-lg font-bold text-gray-900">
+                  <h2 className="text-lg font-bold text-slate-900">
                     Reviews ({pro.reviewCount})
                   </h2>
                   <div className="flex items-center gap-3">
@@ -474,28 +474,28 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                     </WriteReviewDialog>
                     <div className="flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 ring-1 ring-amber-200/50">
                       <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-                      <span className="text-sm font-bold text-gray-900">{pro.rating}</span>
+                      <span className="text-sm font-bold text-slate-900">{pro.rating}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Star Distribution Chart — computed from real reviews */}
                 {reviews.length > 0 && (
-                <div className="mb-6 rounded-xl bg-gray-50 p-4">
+                <div className="mb-6 rounded-xl bg-slate-50 p-4">
                   {[5, 4, 3, 2, 1].map((stars) => {
                     const count = reviews.filter((r: any) => r.rating === stars).length;
                     const pct = reviews.length > 0 ? Math.round((count / reviews.length) * 100) : 0;
                     return (
                       <div key={stars} className="flex items-center gap-2.5 py-1">
-                        <span className="w-4 text-right text-xs font-semibold text-gray-600">{stars}</span>
+                        <span className="w-4 text-right text-xs font-semibold text-slate-600">{stars}</span>
                         <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-                        <div className="flex-1 h-2 rounded-full bg-gray-200 overflow-hidden">
+                        <div className="flex-1 h-2 rounded-full bg-slate-200 overflow-hidden">
                           <div
                             className="h-full rounded-full bg-amber-400 transition-all duration-500"
                             style={{ width: `${pct}%` }}
                           />
                         </div>
-                        <span className="w-8 text-right text-xs text-gray-400">{pct}%</span>
+                        <span className="w-8 text-right text-xs text-slate-400">{pct}%</span>
                       </div>
                     );
                   })}
@@ -504,25 +504,25 @@ export default async function ProProfilePage({ params }: ProPageProps) {
 
                 {reviews.length === 0 ? (
                   <div className="py-8 text-center">
-                    <p className="text-sm text-gray-500">No reviews yet</p>
+                    <p className="text-sm text-slate-500">No reviews yet</p>
                   </div>
                 ) : (
                   <div className="space-y-6">
                     {reviews.slice(0, 3).map((review: any) => (
-                    <div key={review.id} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                    <div key={review.id} className="border-b border-slate-100 pb-6 last:border-0 last:pb-0">
                       <div className="mb-3 flex items-start justify-between">
                         <div className="flex items-center gap-3">
                           <Avatar className="h-10 w-10">
                             <AvatarImage src={review.reviewerAvatar} alt={review.reviewerName} className="object-cover" />
-                            <AvatarFallback className="bg-gray-100 text-sm font-semibold text-gray-600">
+                            <AvatarFallback className="bg-slate-100 text-sm font-semibold text-slate-600">
                               {review.reviewerName.charAt(0)}
                             </AvatarFallback>
                           </Avatar>
                           <div>
-                            <p className="font-semibold text-gray-900">
+                            <p className="font-semibold text-slate-900">
                               {review.reviewerName}
                             </p>
-                            <p className="text-xs text-gray-400">
+                            <p className="text-xs text-slate-400">
                               {review.jobTitle} &middot;{' '}
                               {new Date(review.date).toLocaleDateString('en-CA', {
                                 month: 'short',
@@ -539,18 +539,18 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                               className={`h-4 w-4 ${
                                 i < review.rating
                                   ? 'fill-amber-400 text-amber-400'
-                                  : 'text-gray-200'
+                                  : 'text-slate-200'
                               }`}
                             />
                           ))}
                         </div>
                       </div>
-                      <p className="text-sm leading-relaxed text-gray-600">
+                      <p className="text-sm leading-relaxed text-slate-600">
                         {review.comment}
                       </p>
                       <Button
                         variant="ghost"
-                        className="mt-2.5 flex items-center gap-1.5 rounded-lg px-2 py-1 text-xs text-gray-400 transition-all duration-200 hover:bg-gray-50 hover:text-gray-600 h-auto"
+                        className="mt-2.5 flex items-center gap-1.5 rounded-lg px-2 py-1 text-xs text-slate-400 transition-all duration-200 hover:bg-slate-50 hover:text-slate-600 h-auto"
                       >
                         <ThumbsUp className="h-3.5 w-3.5" />
                         Helpful
@@ -564,7 +564,7 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                   <Button
                   asChild
                   variant="outline"
-                  className="mt-6 w-full rounded-xl border-gray-200 py-2.5 text-sm font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-50 hover:shadow-sm"
+                  className="mt-6 w-full rounded-xl border-slate-200 py-2.5 text-sm font-semibold text-slate-700 transition-all duration-200 hover:bg-slate-50 hover:shadow-sm"
                 >
                   <Link href={`/pros/${pro.id}/reviews`}>
                     See All {pro.reviewCount} Reviews
@@ -576,19 +576,19 @@ export default async function ProProfilePage({ params }: ProPageProps) {
 
             {/* Right Column - CTA */}
             <div className="space-y-6">
-              <Card className="sticky top-20 rounded-2xl border-gray-200 bg-white p-6 shadow-sm">
+              <Card className="sticky top-20 rounded-2xl border-slate-200 bg-white p-6 shadow-sm">
                 <div className="mb-5 text-center">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-gray-400">Verified Labor Rate</p>
-                  <p className="mt-1 text-3xl font-bold tracking-tight text-gray-900">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Verified Labor Rate</p>
+                  <p className="mt-1 text-3xl font-bold tracking-tight text-slate-900">
                     ${pro.hourlyRateMin} - ${pro.hourlyRateMax}
-                    <span className="text-base font-normal text-gray-400">
+                    <span className="text-base font-normal text-slate-400">
                       /hr
                     </span>
                   </p>
                 </div>
 
                 <div className="space-y-2.5">
-                  <Button asChild className="flex w-full items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg h-auto">
+                  <Button asChild className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-slate-800 hover:shadow-lg h-auto">
                     <Link href={`/post-job?pro=${pro.id}`}>
                       <Lock className="h-4 w-4" />
                       Draft Vault Contract
@@ -596,23 +596,23 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                   </Button>
                   <Button
                     variant="outline"
-                    className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-emerald-600 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-700 transition-all duration-200 hover:bg-emerald-100 h-auto"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-reno-green-600 bg-reno-green-50 px-4 py-3 text-sm font-semibold text-reno-green-700 transition-all duration-200 hover:bg-reno-green-100 h-auto"
                   >
                     <ClipboardList className="h-4 w-4" />
                     Submit Project Specs
                   </Button>
                   <Button
                     variant="outline"
-                    className="flex w-full items-center justify-center gap-2 rounded-xl border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-50 h-auto"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl border-slate-200 px-4 py-3 text-sm font-semibold text-slate-700 transition-all duration-200 hover:bg-slate-50 h-auto"
                   >
-                    <MessageSquare className="h-4 w-4 text-gray-400" />
+                    <MessageSquare className="h-4 w-4 text-slate-400" />
                     Direct Inquiry
                   </Button>
                 </div>
 
-                <div className="mt-6 space-y-3 border-t border-gray-100 pt-5">
-                  <div className="flex items-center gap-3 text-sm text-gray-600">
-                    <Calendar className="h-4 w-4 text-gray-400" />
+                <div className="mt-6 space-y-3 border-t border-slate-100 pt-5">
+                  <div className="flex items-center gap-3 text-sm text-slate-600">
+                    <Calendar className="h-4 w-4 text-slate-400" />
                     <span>
                       Network Member since{' '}
                       {new Date(pro.memberSince).toLocaleDateString('en-CA', {
@@ -622,21 +622,21 @@ export default async function ProProfilePage({ params }: ProPageProps) {
                     </span>
                   </div>
                   {pro.responseTimeMinutes > 0 && (
-                  <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <div className="flex items-center gap-3 text-sm text-slate-600">
                     <Zap className="h-4 w-4 text-amber-400" />
                     <span>Avg response: {pro.responseTimeMinutes} min</span>
                   </div>
                   )}
                   <div className="flex items-center gap-3 text-sm">
-                    <div className="h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-sm shadow-emerald-200" />
-                    <span className="font-semibold text-emerald-700">
+                    <div className="h-2.5 w-2.5 rounded-full bg-reno-green-500 shadow-sm shadow-emerald-200" />
+                    <span className="font-semibold text-reno-green-700">
                       Accepting new contracts
                     </span>
                   </div>
                 </div>
 
                 {/* Guarantee Badges */}
-                <div className="mt-6 space-y-2.5 border-t border-gray-100 pt-5">
+                <div className="mt-6 space-y-2.5 border-t border-slate-100 pt-5">
                   <div className="flex items-center gap-2.5 rounded-lg bg-slate-50 px-3 py-2.5 border border-slate-100">
                     <Lock className="h-4 w-4 text-slate-600" />
                     <span className="text-xs font-semibold text-slate-700">Vault-Protected Capital</span>
@@ -649,14 +649,14 @@ export default async function ProProfilePage({ params }: ProPageProps) {
               </Card>
 
               {/* Browse More Pros */}
-              <Card className="rounded-2xl border-gray-200 bg-white p-6">
-                <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-gray-400">
+              <Card className="rounded-2xl border-slate-200 bg-white p-6">
+                <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-slate-400">
                   Explore More Pros
                 </h3>
-                <p className="mb-4 text-sm text-gray-500">
+                <p className="mb-4 text-sm text-slate-500">
                   Browse our verified contractor network to compare options and find the right fit.
                 </p>
-                <Button variant="outline" asChild className="w-full rounded-xl border-gray-200 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 h-auto">
+                <Button variant="outline" asChild className="w-full rounded-xl border-slate-200 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 h-auto">
                   <Link href="/pros">
                     Browse All Pros
                   </Link>

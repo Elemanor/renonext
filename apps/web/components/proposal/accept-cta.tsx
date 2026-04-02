@@ -108,11 +108,11 @@ export function AcceptCTA({
 
   if (status === 'accepted') {
     return (
-      <Card className="border-emerald-200 bg-emerald-50">
+      <Card className="border-reno-green-200 bg-reno-green-50">
         <CardContent className="p-5 text-center">
-          <CheckCircle className="mx-auto h-10 w-10 text-emerald-500" />
-          <p className="mt-3 text-lg font-bold text-emerald-700">Proposal Accepted</p>
-          <p className="mt-1 text-sm text-emerald-600">Your project is underway.</p>
+          <CheckCircle className="mx-auto h-10 w-10 text-reno-green-500" />
+          <p className="mt-3 text-lg font-bold text-reno-green-700">Proposal Accepted</p>
+          <p className="mt-1 text-sm text-reno-green-600">Your project is underway.</p>
         </CardContent>
       </Card>
     );
@@ -147,7 +147,7 @@ export function AcceptCTA({
       <div className="hidden space-y-4 lg:block">
         <Button
           onClick={() => { setError(null); setAcceptOpen(true); }}
-          className="shine group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 py-6 text-base font-bold text-white shadow-lg shadow-emerald-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-emerald-500/35 hover:brightness-105"
+          className="shine group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-reno-green-500 to-reno-green-600 py-6 text-base font-bold text-white shadow-lg shadow-emerald-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-emerald-500/35 hover:brightness-105"
         >
           <Rocket className="mr-2 h-5 w-5 transition-transform duration-200 group-hover:-translate-y-0.5" />
           Accept Proposal
@@ -190,7 +190,7 @@ export function AcceptCTA({
       <div className="fixed bottom-0 left-0 right-0 z-40 max-h-[120px] border-t border-border bg-background/95 px-4 py-3 backdrop-blur-xl lg:hidden">
         <Button
           onClick={() => { setError(null); setAcceptOpen(true); }}
-          className="w-full rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 py-5 text-base font-bold text-white shadow-lg"
+          className="w-full rounded-xl bg-gradient-to-r from-reno-green-500 to-reno-green-600 py-5 text-base font-bold text-white shadow-lg"
         >
           <Rocket className="mr-2 h-5 w-5" />
           Accept Proposal
@@ -213,12 +213,12 @@ export function AcceptCTA({
             <DialogDescription>{ACCEPT_DIALOG_DESCRIPTION}</DialogDescription>
           </DialogHeader>
 
-          <div className="mt-2 rounded-lg bg-emerald-50 p-4 text-center">
-            <p className="text-sm text-emerald-600">Deposit amount</p>
-            <p className="text-2xl font-bold text-emerald-700">
+          <div className="mt-2 rounded-lg bg-reno-green-50 p-4 text-center">
+            <p className="text-sm text-reno-green-600">Deposit amount</p>
+            <p className="text-2xl font-bold text-reno-green-700">
               {formatCurrency(depositAmount)}
             </p>
-            <p className="mt-1 text-xs text-emerald-600/80">
+            <p className="mt-1 text-xs text-reno-green-600/80">
               10% of {formatCurrency(estimatedCost ?? 0)} estimated total
             </p>
           </div>
@@ -234,7 +234,7 @@ export function AcceptCTA({
             <Button
               onClick={handleAccept}
               disabled={loading}
-              className="w-full rounded-xl bg-emerald-600 text-white hover:bg-emerald-700"
+              className="w-full rounded-xl bg-reno-green-600 text-white hover:bg-reno-green-700"
             >
               {loading ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />

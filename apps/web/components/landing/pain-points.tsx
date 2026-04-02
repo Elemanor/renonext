@@ -85,7 +85,7 @@ export function PainPoints() {
             index={2}
             title="The Vanishing Act"
             subtitle='Something breaks in year 2. Contractor changed their number.'
-            bgColor="bg-gray-100"
+            bgColor="bg-slate-100"
             borderColor="border-l-gray-400"
             illustration={<VanishingActIllustration isVisible={cardVisibility[2]} />}
             hoverEffect="hover:shadow-xl hover:scale-[1.02] hover:grayscale-[0.3]"
@@ -144,7 +144,7 @@ function PainPointCard({
       </h3>
 
       {/* Subtitle */}
-      <p className="text-gray-700 leading-relaxed">
+      <p className="text-slate-700 leading-relaxed">
         {subtitle}
       </p>
     </div>

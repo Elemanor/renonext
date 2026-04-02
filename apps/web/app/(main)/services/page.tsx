@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'All Services | RenoNext',
   description:
     'Browse 25 renovation and construction services in Ontario. Structural, trades, building, and professional services — with real pricing, process guides, and verified contractors.',
+  alternates: {
+    canonical: '/services',
+  },
 };
 
 const serviceGroups = [
@@ -74,7 +77,7 @@ export default function ServicesIndexPage() {
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4">
             All Services
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
             25 renovation and construction guides — real process steps, Ontario
             pricing, building code requirements, and verified contractors.
           </p>
@@ -98,7 +101,7 @@ export default function ServicesIndexPage() {
                     {group.heading}
                   </h2>
                 </div>
-                <p className="text-gray-600 mb-6 ml-9">{group.description}</p>
+                <p className="text-slate-600 mb-6 ml-9">{group.description}</p>
 
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {groupServices.map((service) =>
@@ -106,20 +109,20 @@ export default function ServicesIndexPage() {
                       <Link
                         key={service.slug}
                         href={`/services/${service.slug}`}
-                        className="group block bg-white rounded-xl border border-gray-200 p-5 hover:border-reno-green hover:shadow-md transition-all"
+                        className="group block bg-white rounded-xl border border-slate-200 p-5 hover:border-reno-green hover:shadow-md transition-all"
                       >
                         <div className="flex items-start justify-between gap-2">
                           <h3 className="font-semibold text-reno-dark group-hover:text-reno-green transition-colors">
                             {service.title}
                           </h3>
-                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-reno-green transition-colors flex-shrink-0 mt-1" />
+                          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-reno-green transition-colors flex-shrink-0 mt-1" />
                         </div>
-                        <p className="text-sm text-gray-500 mt-2 line-clamp-2">
+                        <p className="text-sm text-slate-500 mt-2 line-clamp-2">
                           {service.overview.summary}
                         </p>
-                        <div className="flex items-center gap-3 mt-3 text-xs text-gray-400">
+                        <div className="flex items-center gap-3 mt-3 text-xs text-slate-400">
                           <span>{service.overview.timeline}</span>
-                          <span className="w-1 h-1 rounded-full bg-gray-300" />
+                          <span className="w-1 h-1 rounded-full bg-slate-300" />
                           <span>{service.faqs.length} FAQs</span>
                         </div>
                       </Link>
@@ -138,13 +141,13 @@ export default function ServicesIndexPage() {
           <h2 className="font-display text-3xl text-white mb-4">
             Not sure where to start?
           </h2>
-          <p className="text-green-100 mb-8">
+          <p className="text-reno-green-100 mb-8">
             Try our price check tool — answer a few questions and get a ballpark
             estimate for your project in 60 seconds.
           </p>
           <Link
             href="/price-check"
-            className="inline-flex items-center gap-2 bg-white text-reno-green font-semibold px-6 py-3 rounded-lg hover:bg-green-50 transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-reno-green font-semibold px-6 py-3 rounded-lg hover:bg-reno-green-50 transition-colors"
           >
             Price Check
             <ArrowRight className="w-4 h-4" />

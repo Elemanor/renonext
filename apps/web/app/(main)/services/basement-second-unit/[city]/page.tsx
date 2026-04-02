@@ -112,26 +112,26 @@ export default async function SecondarySuiteCityPage({
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(15,186,189,0.06),transparent_50%)]" />
           <div className="container relative mx-auto px-4">
             {/* Breadcrumb */}
-            <nav className="mb-8 flex items-center gap-2 text-sm text-gray-500">
-              <Link href="/" className="transition-colors hover:text-gray-900">
+            <nav className="mb-8 flex items-center gap-2 text-sm text-slate-500">
+              <Link href="/" className="transition-colors hover:text-slate-900">
                 Home
               </Link>
               <ChevronRight className="h-3.5 w-3.5" />
               <Link
                 href="/services"
-                className="transition-colors hover:text-gray-900"
+                className="transition-colors hover:text-slate-900"
               >
                 Services
               </Link>
               <ChevronRight className="h-3.5 w-3.5" />
               <Link
                 href="/services/basement-second-unit"
-                className="transition-colors hover:text-gray-900"
+                className="transition-colors hover:text-slate-900"
               >
                 Basement Second Unit
               </Link>
               <ChevronRight className="h-3.5 w-3.5" />
-              <span className="font-medium text-gray-900">{guide.city}</span>
+              <span className="font-medium text-slate-900">{guide.city}</span>
             </nav>
 
             <div className="mx-auto max-w-4xl">
@@ -144,36 +144,36 @@ export default async function SecondarySuiteCityPage({
               <h1 className="font-display text-4xl font-bold tracking-tight text-reno-dark md:text-5xl lg:text-6xl">
                 {guide.city} Secondary Suite Guide
               </h1>
-              <p className="mt-4 max-w-2xl text-lg text-gray-600 md:text-xl">
+              <p className="mt-4 max-w-2xl text-lg text-slate-600 md:text-xl">
                 {guide.heroTagline}
               </p>
 
               {/* Overview cards */}
               <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                   <DollarSign className="mb-2 h-5 w-5 text-reno-teal" />
-                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                     Permit Fees
                   </p>
-                  <p className="mt-1 text-sm font-bold text-gray-900">
+                  <p className="mt-1 text-sm font-bold text-slate-900">
                     {guide.permitProcess.fees}
                   </p>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                   <Clock className="mb-2 h-5 w-5 text-reno-teal" />
-                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                     Timeline
                   </p>
-                  <p className="mt-1 text-sm font-bold text-gray-900">
+                  <p className="mt-1 text-sm font-bold text-slate-900">
                     {guide.permitProcess.timeline}
                   </p>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                   <MapPin className="mb-2 h-5 w-5 text-reno-teal" />
-                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                     Region
                   </p>
-                  <p className="mt-1 text-sm font-bold text-gray-900">
+                  <p className="mt-1 text-sm font-bold text-slate-900">
                     {guide.region}
                   </p>
                 </div>
@@ -183,13 +183,13 @@ export default async function SecondarySuiteCityPage({
         </section>
 
         {/* ── Section 2: Overview ── */}
-        <section className="border-b border-gray-100 py-16 md:py-20">
+        <section className="border-b border-slate-100 py-16 md:py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl">
               <h2 className="font-display text-3xl font-bold tracking-tight text-reno-dark md:text-4xl">
                 Overview
               </h2>
-              <div className="mt-6 space-y-4 text-base leading-relaxed text-gray-600 md:text-lg">
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-600 md:text-lg">
                 {guide.overview.split('\n\n').map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
@@ -199,7 +199,7 @@ export default async function SecondarySuiteCityPage({
         </section>
 
         {/* ── Section 3: Requirements Table ── */}
-        <section className="border-b border-gray-100 bg-gray-50 py-16 md:py-20">
+        <section className="border-b border-slate-100 bg-slate-50 py-16 md:py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
               <div className="flex items-center gap-3">
@@ -211,17 +211,17 @@ export default async function SecondarySuiteCityPage({
                 </h2>
               </div>
 
-              <div className="mt-8 overflow-hidden rounded-xl border border-gray-200 bg-white">
+              <div className="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-white">
                 <table className="w-full text-left text-sm">
                   <thead>
-                    <tr className="border-b border-gray-200 bg-gray-50">
-                      <th className="px-4 py-3 font-semibold text-gray-700">
+                    <tr className="border-b border-slate-200 bg-slate-50">
+                      <th className="px-4 py-3 font-semibold text-slate-700">
                         Requirement
                       </th>
-                      <th className="px-4 py-3 font-semibold text-gray-700">
+                      <th className="px-4 py-3 font-semibold text-slate-700">
                         Standard
                       </th>
-                      <th className="hidden px-4 py-3 font-semibold text-gray-700 md:table-cell">
+                      <th className="hidden px-4 py-3 font-semibold text-slate-700 md:table-cell">
                         Notes
                       </th>
                     </tr>
@@ -230,18 +230,18 @@ export default async function SecondarySuiteCityPage({
                     {Object.entries(guide.requirements).map(([key, req]) => (
                       <tr
                         key={key}
-                        className="border-b border-gray-100 last:border-0"
+                        className="border-b border-slate-100 last:border-0"
                       >
                         <td className="px-4 py-3">
                           <div className="flex items-center gap-2">
                             <CheckCircle className="h-4 w-4 shrink-0 text-reno-green" />
-                            <span className="font-medium text-gray-900">
+                            <span className="font-medium text-slate-900">
                               {req.label}
                             </span>
                           </div>
                         </td>
-                        <td className="px-4 py-3 text-gray-600">{req.value}</td>
-                        <td className="hidden px-4 py-3 text-xs text-gray-500 md:table-cell">
+                        <td className="px-4 py-3 text-slate-600">{req.value}</td>
+                        <td className="hidden px-4 py-3 text-xs text-slate-500 md:table-cell">
                           {req.notes || '—'}
                         </td>
                       </tr>
@@ -254,7 +254,7 @@ export default async function SecondarySuiteCityPage({
         </section>
 
         {/* ── Section 4: Ontario Building Code Standards ── */}
-        <section className="border-b border-gray-100 py-16 md:py-20">
+        <section className="border-b border-slate-100 py-16 md:py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
               <div className="rounded-xl border-2 border-reno-teal/20 bg-reno-teal/5 p-6 md:p-8">
@@ -264,7 +264,7 @@ export default async function SecondarySuiteCityPage({
                     Ontario Building Code Standards (Apply Everywhere)
                   </h2>
                 </div>
-                <p className="mt-3 text-sm text-gray-600">
+                <p className="mt-3 text-sm text-slate-600">
                   These OBC requirements apply to all secondary suites in
                   Ontario, regardless of municipality.
                 </p>
@@ -273,14 +273,14 @@ export default async function SecondarySuiteCityPage({
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-reno-teal" />
                       <div>
-                        <p className="font-semibold text-gray-900">
+                        <p className="font-semibold text-slate-900">
                           {req.label}:{' '}
-                          <span className="font-normal text-gray-700">
+                          <span className="font-normal text-slate-700">
                             {req.value}
                           </span>
                         </p>
                         {req.notes && (
-                          <p className="mt-1 text-sm text-gray-500">
+                          <p className="mt-1 text-sm text-slate-500">
                             {req.notes}
                           </p>
                         )}
@@ -294,14 +294,14 @@ export default async function SecondarySuiteCityPage({
         </section>
 
         {/* ── Section 5: Permit Process ── */}
-        <section className="border-b border-gray-100 bg-gray-50 py-16 md:py-20">
+        <section className="border-b border-slate-100 bg-slate-50 py-16 md:py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
               <div className="text-center">
                 <h2 className="font-display text-3xl font-bold tracking-tight text-reno-dark md:text-4xl">
                   Permit Process
                 </h2>
-                <p className="mt-3 text-gray-500">
+                <p className="mt-3 text-slate-500">
                   Step-by-step guide to getting your {guide.city} building
                   permit
                 </p>
@@ -309,24 +309,24 @@ export default async function SecondarySuiteCityPage({
 
               {/* Timeline summary */}
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <Card className="rounded-xl border-gray-200 bg-white shadow-sm">
+                <Card className="rounded-xl border-slate-200 bg-white shadow-sm">
                   <CardContent className="p-5">
                     <Clock className="mb-2 h-5 w-5 text-reno-teal" />
-                    <p className="text-sm font-medium text-gray-500">
+                    <p className="text-sm font-medium text-slate-500">
                       Total Timeline
                     </p>
-                    <p className="mt-1 text-xl font-bold text-gray-900">
+                    <p className="mt-1 text-xl font-bold text-slate-900">
                       {guide.permitProcess.timeline}
                     </p>
                   </CardContent>
                 </Card>
-                <Card className="rounded-xl border-gray-200 bg-white shadow-sm">
+                <Card className="rounded-xl border-slate-200 bg-white shadow-sm">
                   <CardContent className="p-5">
                     <DollarSign className="mb-2 h-5 w-5 text-reno-teal" />
-                    <p className="text-sm font-medium text-gray-500">
+                    <p className="text-sm font-medium text-slate-500">
                       Permit Fees
                     </p>
-                    <p className="mt-1 text-xl font-bold text-gray-900">
+                    <p className="mt-1 text-xl font-bold text-slate-900">
                       {guide.permitProcess.fees}
                     </p>
                   </CardContent>
@@ -343,23 +343,23 @@ export default async function SecondarySuiteCityPage({
                         {i + 1}
                       </div>
                       {i < guide.permitProcess.steps.length - 1 && (
-                        <div className="w-px flex-1 bg-gray-300" />
+                        <div className="w-px flex-1 bg-slate-300" />
                       )}
                     </div>
 
                     {/* Content */}
                     <div className="pb-10">
                       <div className="flex items-baseline gap-3">
-                        <h3 className="text-lg font-bold text-gray-900">
+                        <h3 className="text-lg font-bold text-slate-900">
                           {step.title}
                         </h3>
                         {step.duration && (
-                          <span className="text-xs font-medium text-gray-400">
+                          <span className="text-xs font-medium text-slate-400">
                             {step.duration}
                           </span>
                         )}
                       </div>
-                      <p className="mt-1.5 text-gray-600">{step.description}</p>
+                      <p className="mt-1.5 text-slate-600">{step.description}</p>
                     </div>
                   </div>
                 ))}
@@ -370,7 +370,7 @@ export default async function SecondarySuiteCityPage({
 
         {/* ── Section 6: Incentives & Rebates ── */}
         {guide.incentives.length > 0 && (
-          <section className="border-b border-gray-100 py-16 md:py-20">
+          <section className="border-b border-slate-100 py-16 md:py-20">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-4xl">
                 <div className="flex items-center gap-3">
@@ -381,7 +381,7 @@ export default async function SecondarySuiteCityPage({
                     Incentives & Rebates
                   </h2>
                 </div>
-                <p className="mt-4 text-gray-600">
+                <p className="mt-4 text-slate-600">
                   Federal and provincial programs that can help fund your
                   secondary suite project.{' '}
                   <Link
@@ -402,7 +402,7 @@ export default async function SecondarySuiteCityPage({
                       <CardContent className="p-5">
                         <div className="flex items-start justify-between">
                           <div>
-                            <h3 className="font-bold text-gray-900">
+                            <h3 className="font-bold text-slate-900">
                               {incentive.name}
                             </h3>
                             <p className="mt-1 text-2xl font-bold text-reno-green">
@@ -415,7 +415,7 @@ export default async function SecondarySuiteCityPage({
                             </Badge>
                           )}
                         </div>
-                        <p className="mt-3 text-sm text-gray-600">
+                        <p className="mt-3 text-sm text-slate-600">
                           {incentive.details}
                         </p>
                       </CardContent>
@@ -423,8 +423,8 @@ export default async function SecondarySuiteCityPage({
                   ))}
                 </div>
 
-                <div className="mt-6 rounded-xl border border-gray-200 bg-gray-50 p-4">
-                  <p className="flex items-start gap-2 text-sm text-gray-600">
+                <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p className="flex items-start gap-2 text-sm text-slate-600">
                     <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                     <span>
                       <strong>Pro tip:</strong> You can stack federal and
@@ -440,7 +440,7 @@ export default async function SecondarySuiteCityPage({
 
         {/* ── Section 7: Local Tips & Notes ── */}
         {guide.localNotes.length > 0 && (
-          <section className="border-b border-gray-100 bg-gray-50 py-16 md:py-20">
+          <section className="border-b border-slate-100 bg-slate-50 py-16 md:py-20">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-4xl">
                 <div className="flex items-center gap-3">
@@ -453,7 +453,7 @@ export default async function SecondarySuiteCityPage({
                   {guide.localNotes.map((note, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-reno-teal" />
-                      <span className="text-gray-600">{note}</span>
+                      <span className="text-slate-600">{note}</span>
                     </li>
                   ))}
                 </ul>
@@ -464,7 +464,7 @@ export default async function SecondarySuiteCityPage({
 
         {/* ── Section 8: Official Resources ── */}
         {guide.officialLinks.length > 0 && (
-          <section className="border-b border-gray-100 py-16 md:py-20">
+          <section className="border-b border-slate-100 py-16 md:py-20">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-4xl">
                 <h2 className="font-display text-3xl font-bold tracking-tight text-reno-dark md:text-4xl">
@@ -477,12 +477,12 @@ export default async function SecondarySuiteCityPage({
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 transition-all duration-200 hover:border-reno-teal/30 hover:shadow-md"
+                      className="group flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-reno-teal/30 hover:shadow-md"
                     >
-                      <span className="font-medium text-gray-900 group-hover:text-reno-teal">
+                      <span className="font-medium text-slate-900 group-hover:text-reno-teal">
                         {link.label}
                       </span>
-                      <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-reno-teal" />
+                      <ExternalLink className="h-4 w-4 text-slate-400 group-hover:text-reno-teal" />
                     </a>
                   ))}
                 </div>
@@ -493,13 +493,13 @@ export default async function SecondarySuiteCityPage({
 
         {/* ── Section 9: Nearby City Guides (CROSS-LINKING) ── */}
         {guide.nearbyGuides.length > 0 && (
-          <section className="border-b border-gray-100 bg-gray-50 py-16 md:py-20">
+          <section className="border-b border-slate-100 bg-slate-50 py-16 md:py-20">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-4xl">
                 <h2 className="font-display text-3xl font-bold tracking-tight text-reno-dark md:text-4xl">
                   Secondary Suite Guides for Nearby Cities
                 </h2>
-                <p className="mt-3 text-gray-500">
+                <p className="mt-3 text-slate-500">
                   Compare requirements and incentives in other Ontario
                   municipalities.
                 </p>
@@ -512,18 +512,18 @@ export default async function SecondarySuiteCityPage({
                         key={slug}
                         href={`/services/basement-second-unit/${slug}`}
                       >
-                        <Card className="h-full rounded-xl border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
+                        <Card className="h-full rounded-xl border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
                           <CardContent className="p-5">
                             <div className="flex items-center gap-2">
                               <Home className="h-4 w-4 text-reno-teal" />
-                              <h3 className="font-bold text-gray-900">
+                              <h3 className="font-bold text-slate-900">
                                 {nearbyGuide.city}
                               </h3>
                             </div>
-                            <p className="mt-1 text-xs text-gray-500">
+                            <p className="mt-1 text-xs text-slate-500">
                               {nearbyGuide.region}
                             </p>
-                            <div className="mt-3 flex items-center gap-4 text-xs text-gray-600">
+                            <div className="mt-3 flex items-center gap-4 text-xs text-slate-600">
                               <span>
                                 <strong>Fees:</strong>{' '}
                                 {nearbyGuide.permitProcess.fees}
@@ -545,25 +545,25 @@ export default async function SecondarySuiteCityPage({
         )}
 
         {/* ── Section 10: Related Services ── */}
-        <section className="border-b border-gray-100 py-16 md:py-20">
+        <section className="border-b border-slate-100 py-16 md:py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
               <h2 className="font-display text-3xl font-bold tracking-tight text-reno-dark md:text-4xl">
                 Related Services
               </h2>
-              <p className="mt-3 text-gray-500">
+              <p className="mt-3 text-slate-500">
                 Common trades and services for basement apartment projects.
               </p>
               <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/services/basement-second-unit">
-                  <Card className="h-full rounded-xl border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
+                  <Card className="h-full rounded-xl border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
                     <div className="flex items-center gap-3">
                       <Home className="h-5 w-5 text-reno-teal" />
-                      <h3 className="font-bold text-gray-900">
+                      <h3 className="font-bold text-slate-900">
                         Complete Guide
                       </h3>
                     </div>
-                    <p className="mt-2 text-sm text-gray-500">
+                    <p className="mt-2 text-sm text-slate-500">
                       Province-wide secondary suite guide with all requirements.
                     </p>
                     <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-reno-teal">
@@ -573,12 +573,12 @@ export default async function SecondarySuiteCityPage({
                   </Card>
                 </Link>
                 <Link href="/services/underpinning">
-                  <Card className="h-full rounded-xl border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
+                  <Card className="h-full rounded-xl border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
                     <div className="flex items-center gap-3">
                       <Wrench className="h-5 w-5 text-reno-teal" />
-                      <h3 className="font-bold text-gray-900">Underpinning</h3>
+                      <h3 className="font-bold text-slate-900">Underpinning</h3>
                     </div>
-                    <p className="mt-2 text-sm text-gray-500">
+                    <p className="mt-2 text-sm text-slate-500">
                       Excavate to lower floor and meet ceiling height
                       requirements.
                     </p>
@@ -589,14 +589,14 @@ export default async function SecondarySuiteCityPage({
                   </Card>
                 </Link>
                 <Link href="/services/waterproofing">
-                  <Card className="h-full rounded-xl border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
+                  <Card className="h-full rounded-xl border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
                     <div className="flex items-center gap-3">
                       <Wrench className="h-5 w-5 text-reno-teal" />
-                      <h3 className="font-bold text-gray-900">
+                      <h3 className="font-bold text-slate-900">
                         Waterproofing
                       </h3>
                     </div>
-                    <p className="mt-2 text-sm text-gray-500">
+                    <p className="mt-2 text-sm text-slate-500">
                       Fix moisture issues before finishing basement apartment.
                     </p>
                     <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-reno-teal">
@@ -606,12 +606,12 @@ export default async function SecondarySuiteCityPage({
                   </Card>
                 </Link>
                 <Link href="/services/electrical">
-                  <Card className="h-full rounded-xl border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
+                  <Card className="h-full rounded-xl border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
                     <div className="flex items-center gap-3">
                       <Wrench className="h-5 w-5 text-reno-teal" />
-                      <h3 className="font-bold text-gray-900">Electrical</h3>
+                      <h3 className="font-bold text-slate-900">Electrical</h3>
                     </div>
-                    <p className="mt-2 text-sm text-gray-500">
+                    <p className="mt-2 text-sm text-slate-500">
                       Panel upgrades, separate meters, and ESA permits.
                     </p>
                     <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-reno-teal">
@@ -621,12 +621,12 @@ export default async function SecondarySuiteCityPage({
                   </Card>
                 </Link>
                 <Link href="/services/plumbing">
-                  <Card className="h-full rounded-xl border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
+                  <Card className="h-full rounded-xl border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-teal/30">
                     <div className="flex items-center gap-3">
                       <Wrench className="h-5 w-5 text-reno-teal" />
-                      <h3 className="font-bold text-gray-900">Plumbing</h3>
+                      <h3 className="font-bold text-slate-900">Plumbing</h3>
                     </div>
-                    <p className="mt-2 text-sm text-gray-500">
+                    <p className="mt-2 text-sm text-slate-500">
                       Drain capacity, backwater valves, and separate water
                       meters.
                     </p>
@@ -653,10 +653,10 @@ export default async function SecondarySuiteCityPage({
                   <Accordion type="single" collapsible className="w-full">
                     {guide.faqs.map((faq, i) => (
                       <AccordionItem key={i} value={`faq-${i}`}>
-                        <AccordionTrigger className="text-left text-base font-semibold text-gray-900 hover:no-underline">
+                        <AccordionTrigger className="text-left text-base font-semibold text-slate-900 hover:no-underline">
                           {faq.q}
                         </AccordionTrigger>
-                        <AccordionContent className="leading-relaxed text-gray-600">
+                        <AccordionContent className="leading-relaxed text-slate-600">
                           {faq.a}
                         </AccordionContent>
                       </AccordionItem>
@@ -674,7 +674,7 @@ export default async function SecondarySuiteCityPage({
             <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
               Get a Quote for Your {guide.city} Basement Apartment
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-gray-400">
+            <p className="mx-auto mt-4 max-w-xl text-slate-400">
               Connect with verified contractors who specialize in secondary
               suite construction. Escrow-protected payments, GPS-verified work,
               and permanent records.
@@ -692,7 +692,7 @@ export default async function SecondarySuiteCityPage({
               <Button
                 asChild
                 variant="outline"
-                className="rounded-xl border-gray-600 px-8 py-3 text-base font-semibold text-white hover:bg-white/10"
+                className="rounded-xl border-slate-600 px-8 py-3 text-base font-semibold text-white hover:bg-white/10"
               >
                 <Link href="/pros">Browse Pros</Link>
               </Button>

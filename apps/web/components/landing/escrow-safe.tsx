@@ -18,7 +18,7 @@ const steps = [
   {
     num: '01',
     icon: Banknote,
-    gradient: 'from-blue-400 to-blue-600',
+    gradient: 'from-primary-400 to-primary-600',
     title: 'Fund the Project',
     desc: 'Client deposits are held in a milestone-protected account. No contractor touches a dollar until work is approved.',
   },
@@ -32,24 +32,24 @@ const steps = [
   {
     num: '03',
     icon: ClipboardCheck,
-    gradient: 'from-violet-400 to-violet-600',
+    gradient: 'from-reno-purple-400 to-reno-purple-600',
     title: 'Milestone Verified',
     desc: 'GPS photos, delivery receipts, and quantities are cross-checked against the original plan. Math confirms the work — not trust.',
   },
   {
     num: '04',
     icon: CheckCircle,
-    gradient: 'from-emerald-400 to-emerald-600',
+    gradient: 'from-reno-green-400 to-reno-green-600',
     title: 'Verified Release',
     desc: 'You review. You approve. The contractor is paid within 24 hours. No chasing. No awkward calls. No delays.',
   },
 ];
 
 const trustBadges = [
-  { icon: Lock, label: 'Bank-Grade Security', gradient: 'from-blue-400 to-blue-600' },
-  { icon: ShieldCheck, label: 'Milestone-Protected Funds', gradient: 'from-emerald-400 to-emerald-600' },
+  { icon: Lock, label: 'Bank-Grade Security', gradient: 'from-primary-400 to-primary-600' },
+  { icon: ShieldCheck, label: 'Milestone-Protected Funds', gradient: 'from-reno-green-400 to-reno-green-600' },
   { icon: BadgeCheck, label: 'Licensed & Insured Pros', gradient: 'from-amber-400 to-amber-600' },
-  { icon: CheckCircle, label: 'Verified Releases', gradient: 'from-violet-400 to-violet-600' },
+  { icon: CheckCircle, label: 'Verified Releases', gradient: 'from-reno-purple-400 to-reno-purple-600' },
 ];
 
 const trustSignals = [
@@ -65,14 +65,14 @@ function VaultDiagram() {
     <div className="mx-auto flex max-w-md items-center justify-center gap-3 py-2">
       {/* Lock */}
       <div className="flex flex-col items-center gap-1">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/20">
-          <Lock className="h-5 w-5 text-blue-400" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-500/20">
+          <Lock className="h-5 w-5 text-primary-400" />
         </div>
         <span className="text-[9px] font-medium text-slate-500">Deposit</span>
       </div>
 
       {/* Arrow */}
-      <div className="flex h-px w-8 items-center bg-gradient-to-r from-blue-400/40 to-amber-400/40">
+      <div className="flex h-px w-8 items-center bg-gradient-to-r from-primary-400/40 to-amber-400/40">
         <ArrowRight className="ml-auto -mr-1.5 h-3 w-3 text-white/30" />
       </div>
 
@@ -85,27 +85,27 @@ function VaultDiagram() {
       </div>
 
       {/* Arrow */}
-      <div className="flex h-px w-8 items-center bg-gradient-to-r from-amber-400/40 to-violet-400/40">
+      <div className="flex h-px w-8 items-center bg-gradient-to-r from-amber-400/40 to-reno-purple-400/40">
         <ArrowRight className="ml-auto -mr-1.5 h-3 w-3 text-white/30" />
       </div>
 
       {/* Verify */}
       <div className="flex flex-col items-center gap-1">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/20">
-          <ClipboardCheck className="h-5 w-5 text-violet-400" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-reno-purple-500/20">
+          <ClipboardCheck className="h-5 w-5 text-reno-purple-400" />
         </div>
         <span className="text-[9px] font-medium text-slate-500">Verified</span>
       </div>
 
       {/* Arrow */}
-      <div className="flex h-px w-8 items-center bg-gradient-to-r from-violet-400/40 to-emerald-400/40">
+      <div className="flex h-px w-8 items-center bg-gradient-to-r from-reno-purple-400/40 to-reno-green-400/40">
         <ArrowRight className="ml-auto -mr-1.5 h-3 w-3 text-white/30" />
       </div>
 
       {/* Unlock */}
       <div className="flex flex-col items-center gap-1">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/20">
-          <Unlock className="h-5 w-5 text-emerald-400" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-reno-green-500/20">
+          <Unlock className="h-5 w-5 text-reno-green-400" />
         </div>
         <span className="text-[9px] font-medium text-slate-500">Released</span>
       </div>
@@ -131,7 +131,7 @@ export function EscrowSafe() {
           {/* ── Header ── */}
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-reno-green-400">
                 Secured Funds Vault
               </p>
 
@@ -232,7 +232,7 @@ export function EscrowSafe() {
               <div className="flex items-center gap-3">
                 <GradientIcon
                   icon={ShieldCheck}
-                  gradient="from-emerald-400 to-emerald-600"
+                  gradient="from-reno-green-400 to-reno-green-600"
                   size="sm"
                 />
                 <div>
@@ -252,7 +252,7 @@ export function EscrowSafe() {
                     key={signal}
                     className="flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1 text-[11px] font-medium text-slate-400"
                   >
-                    <CheckCircle className="h-3 w-3 text-emerald-500/70" />
+                    <CheckCircle className="h-3 w-3 text-reno-green-500/70" />
                     {signal}
                   </span>
                 ))}

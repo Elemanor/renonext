@@ -23,7 +23,7 @@ export function ActivityFeed({ items }: ActivityFeedProps) {
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2">
-        <Activity className="h-5 w-5 text-gray-700" />
+        <Activity className="h-5 w-5 text-slate-700" />
         <h2 className="text-lg font-semibold">Recent Activity</h2>
       </div>
 
@@ -32,7 +32,7 @@ export function ActivityFeed({ items }: ActivityFeedProps) {
           <div key={item.id}>
             <ActivityFeedItemComponent item={item} />
             {index < displayItems.length - 1 && (
-              <div className="border-t border-gray-200 mt-4" />
+              <div className="border-t border-slate-200 mt-4" />
             )}
           </div>
         ))}
@@ -42,7 +42,7 @@ export function ActivityFeed({ items }: ActivityFeedProps) {
         <div className="pt-2">
           <button
             onClick={() => setShowAll(true)}
-            className="w-full py-2 text-sm font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+            className="w-full py-2 text-sm font-medium text-primary-600 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors"
           >
             Show more
           </button>
@@ -53,7 +53,7 @@ export function ActivityFeed({ items }: ActivityFeedProps) {
         <div className="pt-2">
           <button
             onClick={() => setShowAll(false)}
-            className="w-full py-2 text-sm font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+            className="w-full py-2 text-sm font-medium text-slate-600 hover:text-slate-700 hover:bg-slate-50 rounded-lg transition-colors"
           >
             Show less
           </button>

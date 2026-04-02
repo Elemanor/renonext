@@ -26,14 +26,14 @@ export function BottomTabBar() {
                   <motion.div className="absolute -top-1.5 w-5 h-[2px] bg-amber-400 rounded-full" layoutId="tabIndicator" transition={{ type: 'spring', stiffness: 400, damping: 30 }} />
                 )}
                 <div className="relative">
-                  <tab.icon className={`w-5 h-5 transition-colors ${isActive ? 'text-white' : 'text-gray-600'}`} />
+                  <tab.icon className={`w-5 h-5 transition-colors ${isActive ? 'text-white' : 'text-slate-600'}`} />
                   {tab.badge && (
                     <div className="absolute -top-1 -right-2 w-3.5 h-3.5 bg-red-500 rounded-full flex items-center justify-center">
                       <span className="text-white text-[8px]">{tab.badge}</span>
                     </div>
                   )}
                 </div>
-                <span className={`text-[10px] transition-colors ${isActive ? 'text-white/80' : 'text-gray-600'}`}>{tab.label}</span>
+                <span className={`text-[10px] transition-colors ${isActive ? 'text-white/80' : 'text-slate-600'}`}>{tab.label}</span>
               </button>
             );
           })}

@@ -62,9 +62,9 @@ const problemCards = [
   },
   {
     icon: AlertTriangle,
-    color: 'text-orange-500',
-    bgColor: 'bg-orange-50',
-    borderColor: 'border-orange-100',
+    color: 'text-reno-amber-500',
+    bgColor: 'bg-reno-amber-50',
+    borderColor: 'border-reno-amber-100',
     title: 'The Permit Graveyard',
     steps: [
       'Permit takes 3 months',
@@ -79,50 +79,50 @@ const lifecycleSteps = [
     step: 1,
     title: 'Design Studio',
     icon: PenTool,
-    color: 'from-violet-500 to-violet-600',
-    bgColor: 'bg-violet-50',
-    textColor: 'text-violet-600',
-    borderColor: 'border-violet-200',
+    color: 'from-reno-purple-500 to-reno-purple-600',
+    bgColor: 'bg-reno-purple-50',
+    textColor: 'text-reno-purple-600',
+    borderColor: 'border-reno-purple-200',
     ringColor: 'ring-violet-500',
     description: 'Upload your idea \u2014 photos, sketches, Pinterest boards.',
     detail:
       'Our BCIN-qualified designer creates permit-ready drawings that are engineered for cost efficiency from day one.',
     badge: 'BCIN Certified \u2014 Ontario Building Code Qualified',
-    badgeBg: 'bg-violet-100 text-violet-700',
+    badgeBg: 'bg-reno-purple-100 text-reno-purple-700',
     price: 'From $1,500',
   },
   {
     step: 2,
     title: 'Smart Estimate',
     icon: Calculator,
-    color: 'from-blue-500 to-blue-600',
-    bgColor: 'bg-blue-50',
-    textColor: 'text-blue-600',
-    borderColor: 'border-blue-200',
-    ringColor: 'ring-blue-500',
+    color: 'from-primary-500 to-primary-600',
+    bgColor: 'bg-primary-50',
+    textColor: 'text-primary-600',
+    borderColor: 'border-primary-200',
+    ringColor: 'ring-primary-500',
     description:
       'Because WE drew the plans, we export the exact Bill of Materials.',
     detail:
       'No guessing. No 3 conflicting quotes. One verified price. Your drawings + Our data = 99% accurate estimate.',
     badge: 'QS-Verified \u2014 Professional Quantity Surveyor',
-    badgeBg: 'bg-blue-100 text-blue-700',
+    badgeBg: 'bg-primary-100 text-primary-700',
     price: null,
   },
   {
     step: 3,
     title: 'Permit Express',
     icon: FileCheck,
-    color: 'from-emerald-500 to-emerald-600',
-    bgColor: 'bg-emerald-50',
-    textColor: 'text-emerald-600',
-    borderColor: 'border-emerald-200',
+    color: 'from-reno-green-500 to-reno-green-600',
+    bgColor: 'bg-reno-green-50',
+    textColor: 'text-reno-green-600',
+    borderColor: 'border-reno-green-200',
     ringColor: 'ring-emerald-500',
     description:
       'We submit directly to the City of Toronto / Mississauga.',
     detail:
       'Our drawings are code-compliant from day one \u2014 no rejections. Average permit time: 3 weeks (vs. 3 months DIY).',
     badge: 'First-time pass rate: 98%',
-    badgeBg: 'bg-emerald-100 text-emerald-700',
+    badgeBg: 'bg-reno-green-100 text-reno-green-700',
     price: null,
   },
   {
@@ -146,17 +146,17 @@ const lifecycleSteps = [
     step: 5,
     title: 'Compliance Lock',
     icon: Shield,
-    color: 'from-rose-500 to-rose-600',
-    bgColor: 'bg-rose-50',
-    textColor: 'text-rose-600',
-    borderColor: 'border-rose-200',
+    color: 'from-reno-red-500 to-reno-red-600',
+    bgColor: 'bg-reno-red-50',
+    textColor: 'text-reno-red-600',
+    borderColor: 'border-reno-red-200',
     ringColor: 'ring-rose-500',
     description:
       'Every inspection stage from your drawings becomes a dashboard checklist.',
     detail:
       'Photo evidence required at each milestone. Pre-inspection QA check before the City arrives.',
     badge: '100% inspection pass rate',
-    badgeBg: 'bg-rose-100 text-rose-700',
+    badgeBg: 'bg-reno-red-100 text-reno-red-700',
     price: null,
   },
   {
@@ -192,27 +192,27 @@ const unfairAdvantage = [
     label: 'BCIN',
     role: 'Design',
     description: 'We draw it knowing the cost',
-    color: 'from-violet-500 to-violet-600',
-    bgColor: 'bg-violet-50',
-    textColor: 'text-violet-600',
+    color: 'from-reno-purple-500 to-reno-purple-600',
+    bgColor: 'bg-reno-purple-50',
+    textColor: 'text-reno-purple-600',
   },
   {
     icon: Calculator,
     label: 'QS',
     role: 'Cost',
     description: 'We estimate it knowing the design',
-    color: 'from-blue-500 to-blue-600',
-    bgColor: 'bg-blue-50',
-    textColor: 'text-blue-600',
+    color: 'from-primary-500 to-primary-600',
+    bgColor: 'bg-primary-50',
+    textColor: 'text-primary-600',
   },
   {
     icon: Target,
     label: 'PM',
     role: 'Execution',
     description: 'We manage it knowing the code',
-    color: 'from-emerald-500 to-emerald-600',
-    bgColor: 'bg-emerald-50',
-    textColor: 'text-emerald-600',
+    color: 'from-reno-green-500 to-reno-green-600',
+    bgColor: 'bg-reno-green-50',
+    textColor: 'text-reno-green-600',
   },
 ];
 
@@ -220,7 +220,7 @@ export default function DesignStudioPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* ===== HERO SECTION ===== */}
-      <section className="relative overflow-hidden bg-gray-900">
+      <section className="relative overflow-hidden bg-slate-900">
         {/* Subtle grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -231,14 +231,14 @@ export default function DesignStudioPage() {
           }}
         />
         {/* Gradient orbs */}
-        <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-violet-500/10 blur-3xl" />
-        <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
+        <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-reno-purple-500/10 blur-3xl" />
+        <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-primary-500/10 blur-3xl" />
 
         <div className="container relative mx-auto px-4 py-24 md:py-32 lg:py-40">
           <div className="mx-auto max-w-4xl text-center">
             <Badge
               variant="secondary"
-              className="mb-8 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-500/20 px-5 py-2 text-sm font-medium text-violet-300"
+              className="mb-8 inline-flex items-center gap-2 rounded-full border border-reno-purple-400/30 bg-reno-purple-500/20 px-5 py-2 text-sm font-medium text-reno-purple-300"
             >
               <Sparkles className="h-4 w-4" />
               RenoNext Design Studio
@@ -246,16 +246,16 @@ export default function DesignStudioPage() {
 
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-7xl">
               FROM PERMIT{' '}
-              <span className="bg-gradient-to-r from-violet-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-reno-purple-400 via-primary-400 to-reno-green-400 bg-clip-text text-transparent">
                 TO PAINT
               </span>
             </h1>
 
-            <p className="mx-auto mt-4 max-w-2xl text-xl font-medium text-gray-300 md:text-2xl">
+            <p className="mx-auto mt-4 max-w-2xl text-xl font-medium text-slate-300 md:text-2xl">
               One App. One Ecosystem. Zero Gaps.
             </p>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
               We design it. We permit it. We estimate it. We build it.
               <br className="hidden sm:block" />
               The first platform that owns the entire construction lifecycle
@@ -265,7 +265,7 @@ export default function DesignStudioPage() {
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button
                 asChild
-                className="rounded-full bg-gradient-to-r from-violet-500 to-blue-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-violet-500/25 transition-all duration-200 hover:shadow-xl hover:brightness-110"
+                className="rounded-full bg-gradient-to-r from-reno-purple-500 to-primary-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-violet-500/25 transition-all duration-200 hover:shadow-xl hover:brightness-110"
               >
                 <Link href="/post-job">
                   Start Your Project
@@ -282,19 +282,19 @@ export default function DesignStudioPage() {
             </div>
 
             {/* Trust bar */}
-            <div className="mt-14 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
+            <div className="mt-14 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
               <div className="flex items-center gap-2">
-                <BadgeCheck className="h-4 w-4 text-violet-400" />
+                <BadgeCheck className="h-4 w-4 text-reno-purple-400" />
                 <span>BCIN Certified</span>
               </div>
-              <div className="hidden h-4 w-px bg-gray-700 sm:block" />
+              <div className="hidden h-4 w-px bg-slate-700 sm:block" />
               <div className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-emerald-400" />
+                <Shield className="h-4 w-4 text-reno-green-400" />
                 <span>98% Permit Pass Rate</span>
               </div>
-              <div className="hidden h-4 w-px bg-gray-700 sm:block" />
+              <div className="hidden h-4 w-px bg-slate-700 sm:block" />
               <div className="flex items-center gap-2">
-                <Award className="h-4 w-4 text-blue-400" />
+                <Award className="h-4 w-4 text-primary-400" />
                 <span>P.QS Verified</span>
               </div>
             </div>
@@ -303,16 +303,16 @@ export default function DesignStudioPage() {
       </section>
 
       {/* ===== THE PROBLEM SECTION ===== */}
-      <section className="border-b border-gray-100 bg-gray-50 py-20 md:py-28">
+      <section className="border-b border-slate-100 bg-slate-50 py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-red-500">
               The Problem
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
               Why Renovations Fail Before They Start
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-lg text-gray-500">
+            <p className="mx-auto mt-4 max-w-lg text-lg text-slate-500">
               The traditional process is broken. Architects, estimators, and
               contractors operate in silos &mdash; and homeowners pay the price.
             </p>
@@ -331,7 +331,7 @@ export default function DesignStudioPage() {
                     >
                       <card.icon className={`h-5 w-5 ${card.color}`} />
                     </div>
-                    <CardTitle className="text-base font-bold text-gray-900">
+                    <CardTitle className="text-base font-bold text-slate-900">
                       {card.title}
                     </CardTitle>
                   </div>
@@ -343,7 +343,7 @@ export default function DesignStudioPage() {
                         <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-100">
                           <XCircle className="h-3 w-3 text-red-500" />
                         </div>
-                        <span className="text-sm text-gray-600">{step}</span>
+                        <span className="text-sm text-slate-600">{step}</span>
                       </div>
                     ))}
                   </div>
@@ -360,18 +360,18 @@ export default function DesignStudioPage() {
           <div className="mx-auto max-w-3xl text-center">
             <Badge
               variant="secondary"
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-4 py-1.5 text-sm font-medium text-violet-700"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-reno-purple-200 bg-reno-purple-50 px-4 py-1.5 text-sm font-medium text-reno-purple-700"
             >
               <Zap className="h-4 w-4" />
               The RenoNext Way
             </Badge>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
               Vertical Integration.{' '}
-              <span className="bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-reno-purple-600 to-primary-600 bg-clip-text text-transparent">
                 One Source of Truth.
               </span>
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-gray-500">
+            <p className="mx-auto mt-4 max-w-xl text-lg text-slate-500">
               Six connected stages. One platform. Every step informed by the
               last.
             </p>
@@ -384,7 +384,7 @@ export default function DesignStudioPage() {
                 <div key={item.step} className="relative">
                   {/* Vertical connector line */}
                   {index < lifecycleSteps.length - 1 && (
-                    <div className="absolute left-6 top-[4.5rem] z-0 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-gray-200 to-gray-100 md:left-8 md:block" />
+                    <div className="absolute left-6 top-[4.5rem] z-0 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-slate-200 to-slate-100 md:left-8 md:block" />
                   )}
 
                   <div className="relative z-10 flex gap-4 pb-10 md:gap-6 md:pb-12">
@@ -410,7 +410,7 @@ export default function DesignStudioPage() {
                               className={`h-5 w-5 ${item.textColor}`}
                             />
                           </div>
-                          <CardTitle className="text-lg font-bold text-gray-900 md:text-xl">
+                          <CardTitle className="text-lg font-bold text-slate-900 md:text-xl">
                             {item.title}
                           </CardTitle>
                           {item.price && (
@@ -423,10 +423,10 @@ export default function DesignStudioPage() {
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="mb-2 font-medium text-gray-800">
+                        <p className="mb-2 font-medium text-slate-800">
                           {item.description}
                         </p>
-                        <p className="mb-3 text-sm leading-relaxed text-gray-500">
+                        <p className="mb-3 text-sm leading-relaxed text-slate-500">
                           {item.detail}
                         </p>
                         <Badge
@@ -448,26 +448,26 @@ export default function DesignStudioPage() {
       {/* ===== CERTIFIED ESTIMATE SERVICE CARD ===== */}
       <section
         id="certified-estimate"
-        className="border-y border-gray-100 bg-gray-50 py-20 md:py-28"
+        className="border-y border-slate-100 bg-slate-50 py-20 md:py-28"
       >
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-8 lg:grid-cols-2">
               {/* Certified Estimate Card */}
-              <Card className="relative overflow-hidden rounded-2xl border-2 border-violet-200 bg-white shadow-lg">
+              <Card className="relative overflow-hidden rounded-2xl border-2 border-reno-purple-200 bg-white shadow-lg">
                 {/* Top accent */}
-                <div className="h-1.5 w-full bg-gradient-to-r from-violet-500 to-blue-500" />
+                <div className="h-1.5 w-full bg-gradient-to-r from-reno-purple-500 to-primary-500" />
 
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100">
-                      <Ruler className="h-6 w-6 text-violet-600" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-reno-purple-100">
+                      <Ruler className="h-6 w-6 text-reno-purple-600" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-bold text-gray-900">
+                      <CardTitle className="text-xl font-bold text-slate-900">
                         The RenoNext Certified Estimate
                       </CardTitle>
-                      <p className="text-2xl font-extrabold text-violet-600">
+                      <p className="text-2xl font-extrabold text-reno-purple-600">
                         $250
                       </p>
                     </div>
@@ -475,7 +475,7 @@ export default function DesignStudioPage() {
                 </CardHeader>
 
                 <CardContent>
-                  <p className="mb-6 text-gray-600">
+                  <p className="mb-6 text-slate-600">
                     Don&apos;t get ripped off. Before you hire anyone, get a
                     Third-Party Verified Estimate from a Professional Quantity
                     Surveyor.
@@ -484,18 +484,18 @@ export default function DesignStudioPage() {
                   <div className="mb-6 space-y-3">
                     {certifiedEstimateFeatures.map((feature) => (
                       <div key={feature} className="flex items-center gap-3">
-                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100">
-                          <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
+                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-reno-green-100">
+                          <CheckCircle className="h-3.5 w-3.5 text-reno-green-600" />
                         </div>
-                        <span className="text-sm font-medium text-gray-700">
+                        <span className="text-sm font-medium text-slate-700">
                           {feature}
                         </span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="mb-6 rounded-xl border border-violet-100 bg-violet-50 p-4">
-                    <p className="text-sm font-semibold italic text-violet-700">
+                  <div className="mb-6 rounded-xl border border-reno-purple-100 bg-reno-purple-50 p-4">
+                    <p className="text-sm font-semibold italic text-reno-purple-700">
                       &ldquo;Your Golden Ticket to negotiate with any
                       contractor.&rdquo;
                     </p>
@@ -503,7 +503,7 @@ export default function DesignStudioPage() {
 
                   <Button
                     asChild
-                    className="w-full rounded-full bg-gradient-to-r from-violet-500 to-blue-500 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:brightness-110"
+                    className="w-full rounded-full bg-gradient-to-r from-reno-purple-500 to-primary-500 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:brightness-110"
                   >
                     <Link href="/post-job">
                       Get a Certified Estimate
@@ -514,20 +514,20 @@ export default function DesignStudioPage() {
               </Card>
 
               {/* Fractional Estimator B2B Card */}
-              <Card className="relative overflow-hidden rounded-2xl border-2 border-emerald-200 bg-white shadow-lg">
+              <Card className="relative overflow-hidden rounded-2xl border-2 border-reno-green-200 bg-white shadow-lg">
                 {/* Top accent */}
-                <div className="h-1.5 w-full bg-gradient-to-r from-emerald-500 to-teal-500" />
+                <div className="h-1.5 w-full bg-gradient-to-r from-reno-green-500 to-teal-500" />
 
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100">
-                      <Building2 className="h-6 w-6 text-emerald-600" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-reno-green-100">
+                      <Building2 className="h-6 w-6 text-reno-green-600" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-bold text-gray-900">
+                      <CardTitle className="text-xl font-bold text-slate-900">
                         For Contractors: On-Demand Estimation
                       </CardTitle>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-slate-500">
                         Fractional Estimator
                       </p>
                     </div>
@@ -535,13 +535,13 @@ export default function DesignStudioPage() {
                 </CardHeader>
 
                 <CardContent>
-                  <p className="mb-4 text-gray-600">
+                  <p className="mb-4 text-slate-600">
                     Hate doing paperwork at 10 PM? Stop losing bids because
                     you&apos;re slow.
                   </p>
 
-                  <div className="mb-6 rounded-xl border border-emerald-100 bg-emerald-50 p-4">
-                    <div className="flex items-center gap-2 text-sm text-emerald-700">
+                  <div className="mb-6 rounded-xl border border-reno-green-100 bg-reno-green-50 p-4">
+                    <div className="flex items-center gap-2 text-sm text-reno-green-700">
                       <Upload className="h-4 w-4 shrink-0" />
                       <span className="font-medium">Upload blueprints</span>
                       <ArrowRight className="h-3 w-3 shrink-0" />
@@ -555,27 +555,27 @@ export default function DesignStudioPage() {
                     </div>
                   </div>
 
-                  <p className="mb-6 text-sm text-gray-500">
+                  <p className="mb-6 text-sm text-slate-500">
                     Concrete volumes, linear ft of framing, drywall sheets
                     &mdash; all calculated by a professional QS.
                   </p>
 
                   <div className="mb-6 flex items-center gap-4">
-                    <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-center">
-                      <p className="text-lg font-bold text-gray-900">$200</p>
-                      <p className="text-xs text-gray-500">per project</p>
+                    <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 text-center">
+                      <p className="text-lg font-bold text-slate-900">$200</p>
+                      <p className="text-xs text-slate-500">per project</p>
                     </div>
-                    <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-center">
-                      <p className="text-lg font-bold text-gray-900">
+                    <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 text-center">
+                      <p className="text-lg font-bold text-slate-900">
                         24-48 hrs
                       </p>
-                      <p className="text-xs text-gray-500">turnaround</p>
+                      <p className="text-xs text-slate-500">turnaround</p>
                     </div>
                   </div>
 
                   <Button
                     asChild
-                    className="w-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:brightness-110"
+                    className="w-full rounded-full bg-gradient-to-r from-reno-green-500 to-teal-500 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:brightness-110"
                   >
                     <Link href="/pro-network">
                       Upload Blueprints
@@ -593,17 +593,17 @@ export default function DesignStudioPage() {
       <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl">
-            <Card className="overflow-hidden rounded-2xl border-2 border-gray-200 shadow-lg">
+            <Card className="overflow-hidden rounded-2xl border-2 border-slate-200 shadow-lg">
               {/* Top accent */}
-              <div className="h-1.5 w-full bg-gradient-to-r from-gray-700 to-gray-900" />
+              <div className="h-1.5 w-full bg-gradient-to-r from-slate-700 to-slate-900" />
 
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100">
-                    <Scale className="h-6 w-6 text-gray-700" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100">
+                    <Scale className="h-6 w-6 text-slate-700" />
                   </div>
                   <div>
-                    <CardTitle className="text-xl font-bold text-gray-900">
+                    <CardTitle className="text-xl font-bold text-slate-900">
                       The QS Audit &mdash; Escrow Dispute Resolution
                     </CardTitle>
                   </div>
@@ -624,8 +624,8 @@ export default function DesignStudioPage() {
                       &ldquo;It looks like 20% done.&rdquo;
                     </p>
                   </div>
-                  <div className="rounded-xl border border-blue-100 bg-blue-50 p-4">
-                    <p className="text-sm font-medium text-blue-700">
+                  <div className="rounded-xl border border-primary-100 bg-primary-50 p-4">
+                    <p className="text-sm font-medium text-primary-700">
                       <span className="font-bold">Who decides?</span> RenoNext&apos;s
                       QS reviews the progress photos against the Bill of
                       Quantities.
@@ -633,15 +633,15 @@ export default function DesignStudioPage() {
                   </div>
                 </div>
 
-                <div className="mb-6 rounded-xl border border-gray-200 bg-gray-50 p-5">
-                  <p className="text-sm font-medium text-gray-700">
+                <div className="mb-6 rounded-xl border border-slate-200 bg-slate-50 p-5">
+                  <p className="text-sm font-medium text-slate-700">
                     <span className="font-bold">Example verdict:</span>{' '}
                     &ldquo;Based on photo evidence, only 30% of the rebar is
                     installed. Escrow will release $3,000, not $5,000.&rdquo;
                   </p>
                 </div>
 
-                <p className="text-center text-sm font-semibold text-gray-900">
+                <p className="text-center text-sm font-semibold text-slate-900">
                   This isn&apos;t guessing. This is professional measurement
                   based on industry-standard Method of Measurement.
                 </p>
@@ -652,10 +652,10 @@ export default function DesignStudioPage() {
       </section>
 
       {/* ===== THE UNFAIR ADVANTAGE SECTION ===== */}
-      <section className="relative overflow-hidden bg-gray-900 py-20 md:py-28">
+      <section className="relative overflow-hidden bg-slate-900 py-20 md:py-28">
         {/* Gradient orbs */}
-        <div className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-violet-500/10 blur-3xl" />
-        <div className="absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-emerald-500/10 blur-3xl" />
+        <div className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-reno-purple-500/10 blur-3xl" />
+        <div className="absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-reno-green-500/10 blur-3xl" />
 
         <div className="container relative mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
@@ -668,7 +668,7 @@ export default function DesignStudioPage() {
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
               Design + Cost + Execution.{' '}
-              <span className="bg-gradient-to-r from-violet-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-reno-purple-400 via-primary-400 to-reno-green-400 bg-clip-text text-transparent">
                 Unified.
               </span>
             </h2>
@@ -692,7 +692,7 @@ export default function DesignStudioPage() {
                   <h3 className="mb-1 text-lg font-bold text-white">
                     {item.role}
                   </h3>
-                  <p className="text-sm text-gray-400">{item.description}</p>
+                  <p className="text-sm text-slate-400">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -700,11 +700,11 @@ export default function DesignStudioPage() {
 
           {/* Center connector text */}
           <div className="mx-auto mt-12 max-w-2xl text-center">
-            <p className="text-lg leading-relaxed text-gray-300">
+            <p className="text-lg leading-relaxed text-slate-300">
               By combining{' '}
-              <span className="font-semibold text-violet-400">Design</span> +{' '}
-              <span className="font-semibold text-blue-400">Cost</span> +{' '}
-              <span className="font-semibold text-emerald-400">Execution</span>
+              <span className="font-semibold text-reno-purple-400">Design</span> +{' '}
+              <span className="font-semibold text-primary-400">Cost</span> +{' '}
+              <span className="font-semibold text-reno-green-400">Execution</span>
               , we eliminate the &ldquo;Broken Telephone&rdquo; game.
             </p>
             <p className="mt-2 text-xl font-bold text-white">
@@ -717,7 +717,7 @@ export default function DesignStudioPage() {
       {/* ===== BOTTOM CTA ===== */}
       <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 via-teal-600 to-violet-700 shadow-2xl">
+          <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl bg-gradient-to-br from-reno-green-600 via-teal-600 to-reno-purple-700 shadow-2xl">
             <div className="relative px-8 py-14 md:px-16 md:py-20">
               {/* Decorative elements */}
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/5 blur-2xl" />
@@ -736,7 +736,7 @@ export default function DesignStudioPage() {
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <Button
                     asChild
-                    className="rounded-full bg-white px-8 py-3.5 text-base font-semibold text-gray-900 shadow-lg transition-all duration-200 hover:bg-gray-100 hover:shadow-xl"
+                    className="rounded-full bg-white px-8 py-3.5 text-base font-semibold text-slate-900 shadow-lg transition-all duration-200 hover:bg-slate-100 hover:shadow-xl"
                   >
                     <Link href="/post-job">
                       Start as Homeowner

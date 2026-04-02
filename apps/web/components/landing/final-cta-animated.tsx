@@ -27,7 +27,7 @@ export function FinalCtaAnimated() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#102122] py-24 md:py-32"
+      className="relative overflow-hidden bg-reno-dark py-24 md:py-32"
     >
       {/* Animated Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden">
@@ -79,7 +79,7 @@ export function FinalCtaAnimated() {
 
         {/* Subtext with Fade-in */}
         <p
-          className={`text-lg md:text-xl text-gray-300 mb-10 transition-all duration-1000 ${
+          className={`text-lg md:text-xl text-slate-300 mb-10 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0 delay-700' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -147,7 +147,7 @@ export function FinalCtaAnimated() {
             </div>
           </div>
 
-          <p className="text-sm text-gray-400 font-medium">
+          <p className="text-sm text-slate-400 font-medium">
             Trusted by homeowners and contractors across Ontario
           </p>
         </div>

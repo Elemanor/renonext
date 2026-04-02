@@ -5,9 +5,9 @@ import { Bell } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const notifications = [
-  { id: 1, text: 'Inspector confirmed visit at 1 PM', time: '2m ago', color: 'bg-indigo-400' },
+  { id: 1, text: 'Inspector confirmed visit at 1 PM', time: '2m ago', color: 'bg-primary-400' },
   { id: 2, text: 'Dumpster delivery rescheduled to 11:45 AM', time: '18m ago', color: 'bg-sky-400' },
-  { id: 3, text: 'Noise complaint filed by adjacent lot', time: '32m ago', color: 'bg-orange-400' },
+  { id: 3, text: 'Noise complaint filed by adjacent lot', time: '32m ago', color: 'bg-reno-amber-400' },
 ];
 
 export function DashboardHeader({ compact = false }: { compact?: boolean }) {
@@ -51,7 +51,7 @@ export function DashboardHeader({ compact = false }: { compact?: boolean }) {
                   <div className={`w-2 h-2 rounded-full ${n.color} mt-1.5 flex-shrink-0`} />
                   <div className="flex-1 min-w-0">
                     <p className="text-white/75 text-xs">{n.text}</p>
-                    <p className="text-gray-600 text-[10px] mt-0.5">{n.time}</p>
+                    <p className="text-slate-600 text-[10px] mt-0.5">{n.time}</p>
                   </div>
                 </div>
               ))}

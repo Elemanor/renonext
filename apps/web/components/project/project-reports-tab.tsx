@@ -21,8 +21,8 @@ export function ProjectReportsTab({ reports }: ProjectReportsTabProps) {
   if (reports.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
-        <FileText className="mb-3 h-10 w-10 text-gray-300" />
-        <p className="text-sm font-medium text-gray-500">
+        <FileText className="mb-3 h-10 w-10 text-slate-300" />
+        <p className="text-sm font-medium text-slate-500">
           Project starts soon. First report coming soon.
         </p>
       </div>
@@ -56,7 +56,7 @@ export function ProjectReportsTab({ reports }: ProjectReportsTabProps) {
         ariaLabel="Total worker hours per daily report"
       />
 
-      <p className="text-xs text-gray-500">Latest update: {latestDate}</p>
+      <p className="text-xs text-slate-500">Latest update: {latestDate}</p>
 
       {reports.map((report) => (
         <DailyReportCard

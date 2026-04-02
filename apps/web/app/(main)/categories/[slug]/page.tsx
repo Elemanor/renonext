@@ -394,7 +394,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const cat = categoryData[slug] || { ...defaultCategory, name: slug.charAt(0).toUpperCase() + slug.slice(1).replace('-', ' ') };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-50">
       {/* Hero with Background Image */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -403,7 +403,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             alt=""
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/75 to-gray-900/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/75 to-slate-900/60" />
         </div>
 
         <div className="relative">
@@ -431,7 +431,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               {cat.longDescription}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:shadow-lg h-auto">
+              <Button asChild className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition-all duration-200 hover:bg-slate-100 hover:shadow-lg h-auto">
                 <Link href={`/post-job?category=${slug}`}>
                   Describe Your {cat.name} Problem
                   <ArrowRight className="h-4 w-4" />
@@ -448,7 +448,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </section>
 
       {/* Stats Bar */}
-      <section className="border-b border-gray-200 bg-white">
+      <section className="border-b border-slate-200 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-8 py-5 md:gap-16">
             <div className="flex items-center gap-2.5 text-sm">
@@ -456,8 +456,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 <Users className="h-4 w-4 text-reno-green-dark" />
               </div>
               <div>
-                <p className="font-bold text-gray-900">{cat.stats.prosAvailable}+ Pros</p>
-                <p className="text-xs text-gray-500">Available now</p>
+                <p className="font-bold text-slate-900">{cat.stats.prosAvailable}+ Pros</p>
+                <p className="text-xs text-slate-500">Available now</p>
               </div>
             </div>
             <div className="flex items-center gap-2.5 text-sm">
@@ -465,26 +465,26 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 <Star className="h-4 w-4 text-amber-500" />
               </div>
               <div>
-                <p className="font-bold text-gray-900">{cat.stats.avgRating} Average</p>
-                <p className="text-xs text-gray-500">Customer rating</p>
+                <p className="font-bold text-slate-900">{cat.stats.avgRating} Average</p>
+                <p className="text-xs text-slate-500">Customer rating</p>
               </div>
             </div>
             <div className="flex items-center gap-2.5 text-sm">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-green-50">
-                <Zap className="h-4 w-4 text-green-600" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-reno-green-50">
+                <Zap className="h-4 w-4 text-reno-green-600" />
               </div>
               <div>
-                <p className="font-bold text-gray-900">{cat.stats.avgResponse}</p>
-                <p className="text-xs text-gray-500">Avg response time</p>
+                <p className="font-bold text-slate-900">{cat.stats.avgResponse}</p>
+                <p className="text-xs text-slate-500">Avg response time</p>
               </div>
             </div>
             <div className="flex items-center gap-2.5 text-sm">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50">
-                <Shield className="h-4 w-4 text-blue-600" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-50">
+                <Shield className="h-4 w-4 text-primary-600" />
               </div>
               <div>
-                <p className="font-bold text-gray-900">100% Verified</p>
-                <p className="text-xs text-gray-500">Licensed & insured</p>
+                <p className="font-bold text-slate-900">100% Verified</p>
+                <p className="text-xs text-slate-500">Licensed & insured</p>
               </div>
             </div>
           </div>
@@ -492,22 +492,22 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </section>
 
       {/* Price Range Indicator */}
-      <section className="border-b border-gray-100 bg-gradient-to-r from-green-50 to-emerald-50">
+      <section className="border-b border-slate-100 bg-gradient-to-r from-reno-green-50 to-reno-green-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-3 py-4">
-            <DollarSign className="h-5 w-5 text-green-600" />
-            <span className="text-sm font-medium text-gray-700">
+            <DollarSign className="h-5 w-5 text-reno-green-600" />
+            <span className="text-sm font-medium text-slate-700">
               Typical cost:{' '}
-              <span className="font-bold text-green-700">{cat.priceRange}</span>
+              <span className="font-bold text-reno-green-700">{cat.priceRange}</span>
             </span>
-            <span className="text-xs text-gray-400">|</span>
-            <span className="text-xs text-gray-500">Based on average rates in your area</span>
+            <span className="text-xs text-slate-400">|</span>
+            <span className="text-xs text-slate-500">Based on average rates in your area</span>
           </div>
         </div>
       </section>
 
       {/* How It Works Mini */}
-      <section className="border-b border-gray-100 bg-gray-50 py-10">
+      <section className="border-b border-slate-100 bg-slate-50 py-10">
         <div className="container mx-auto px-4">
           <div className="grid gap-6 md:grid-cols-3">
             {[
@@ -520,8 +520,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   {item.step}
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900">{item.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-gray-500">{item.desc}</p>
+                  <h3 className="font-bold text-slate-900">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-500">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -531,20 +531,20 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       {/* Why Hire a Pro? */}
       {cat.whyHire && cat.whyHire.length > 0 && (
-        <section className="border-b border-gray-100 bg-white py-10">
+        <section className="border-b border-slate-100 bg-white py-10">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl">
               <div className="mb-6 flex items-center gap-2.5">
                 <div className="rounded-xl bg-amber-50 p-2">
                   <Lightbulb className="h-5 w-5 text-amber-600" />
                 </div>
-                <h2 className="text-xl font-bold text-gray-900">Why Hire a {cat.name} Pro?</h2>
+                <h2 className="text-xl font-bold text-slate-900">Why Hire a {cat.name} Pro?</h2>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 {cat.whyHire.map((reason, i) => (
-                  <div key={i} className="flex items-start gap-3 rounded-xl bg-gray-50 p-4">
-                    <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
-                    <span className="text-sm leading-relaxed text-gray-700">{reason}</span>
+                  <div key={i} className="flex items-start gap-3 rounded-xl bg-slate-50 p-4">
+                    <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-reno-green-500" />
+                    <span className="text-sm leading-relaxed text-slate-700">{reason}</span>
                   </div>
                 ))}
               </div>
@@ -560,7 +560,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             {/* Pros */}
             <div>
               <div className="mb-5 flex items-center justify-between">
-                <h2 className="text-xl font-bold text-gray-900">
+                <h2 className="text-xl font-bold text-slate-900">
                   Top {cat.name} Pros
                 </h2>
                 <Link
@@ -580,8 +580,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
             {/* FAQs */}
             {cat.faqs.length > 0 && (
-              <Card className="rounded-2xl border-gray-200 bg-white p-6 md:p-8">
-                <h2 className="mb-6 flex items-center gap-2.5 text-xl font-bold text-gray-900">
+              <Card className="rounded-2xl border-slate-200 bg-white p-6 md:p-8">
+                <h2 className="mb-6 flex items-center gap-2.5 text-xl font-bold text-slate-900">
                   <div className="rounded-xl bg-reno-green-light p-2">
                     <HelpCircle className="h-5 w-5 text-reno-green-dark" />
                   </div>
@@ -589,11 +589,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 </h2>
                 <Accordion type="single" collapsible className="w-full">
                   {cat.faqs.map((faq, i) => (
-                    <AccordionItem key={i} value={`faq-${i}`} className="border-gray-100">
-                      <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline py-5">
+                    <AccordionItem key={i} value={`faq-${i}`} className="border-slate-100">
+                      <AccordionTrigger className="text-left font-semibold text-slate-900 hover:no-underline py-5">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-sm leading-relaxed text-gray-600 pb-5">
+                      <AccordionContent className="text-sm leading-relaxed text-slate-600 pb-5">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
@@ -603,13 +603,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             )}
 
             {/* Trust Banner */}
-            <div className="flex items-center gap-4 rounded-2xl bg-gradient-to-r from-reno-green-light to-blue-50 p-6 ring-1 ring-reno-green-light">
+            <div className="flex items-center gap-4 rounded-2xl bg-gradient-to-r from-reno-green-light to-primary-50 p-6 ring-1 ring-reno-green-light">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-reno-green-dark shadow-sm shadow-reno-green-light">
                 <Shield className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-bold text-gray-900">Your Satisfaction, Guaranteed</h3>
-                <p className="mt-0.5 text-sm text-gray-600">
+                <h3 className="font-bold text-slate-900">Your Satisfaction, Guaranteed</h3>
+                <p className="mt-0.5 text-sm text-slate-600">
                   Every pro is verified, insured, and rated by real customers. If you&apos;re not happy, we&apos;ll make it right.
                 </p>
               </div>
@@ -619,28 +619,28 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Recent Jobs */}
-            <Card className="rounded-2xl border-gray-200 bg-white p-6">
-              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-400">
+            <Card className="rounded-2xl border-slate-200 bg-white p-6">
+              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-slate-400">
                 <TrendingUp className="h-4 w-4" />
                 Recent {cat.name} Jobs
               </h3>
               <div className="space-y-4">
                 {mockRecentJobs.map((job) => (
-                  <div key={job.id} className="border-b border-gray-100 pb-4 last:border-0 last:pb-0">
-                    <p className="font-semibold text-gray-900">{job.title}</p>
-                    <div className="mt-1.5 flex items-center gap-3 text-xs text-gray-500">
+                  <div key={job.id} className="border-b border-slate-100 pb-4 last:border-0 last:pb-0">
+                    <p className="font-semibold text-slate-900">{job.title}</p>
+                    <div className="mt-1.5 flex items-center gap-3 text-xs text-slate-500">
                       <span className="flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
                         {job.city}
                       </span>
-                      <span className="font-medium text-gray-700">{job.budget}</span>
+                      <span className="font-medium text-slate-700">{job.budget}</span>
                     </div>
                     <div className="mt-1.5 flex items-center justify-between text-xs">
-                      <span className="text-gray-400 flex items-center gap-1">
+                      <span className="text-slate-400 flex items-center gap-1">
                         <Clock className="h-3 w-3" />
                         {job.postedAgo}
                       </span>
-                      <Badge className="rounded-full bg-green-50 px-2 py-0.5 text-xs font-medium text-green-700 border-transparent hover:bg-green-50">
+                      <Badge className="rounded-full bg-reno-green-50 px-2 py-0.5 text-xs font-medium text-reno-green-700 border-transparent hover:bg-reno-green-50">
                         {job.bids} bids
                       </Badge>
                     </div>
@@ -650,8 +650,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             </Card>
 
             {/* Related Categories */}
-            <Card className="rounded-2xl border-gray-200 bg-white p-6">
-              <h3 className="mb-4 text-sm font-bold uppercase tracking-widest text-gray-400">
+            <Card className="rounded-2xl border-slate-200 bg-white p-6">
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-widest text-slate-400">
                 Browse Categories
               </h3>
               <div className="space-y-1">
@@ -662,7 +662,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     className={`flex items-center justify-between rounded-lg px-3 py-2.5 text-sm transition-all duration-200 ${
                       rc.slug === slug
                         ? 'bg-reno-green-light font-semibold text-reno-green-dark'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                     }`}
                   >
                     {rc.name}
@@ -673,7 +673,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             </Card>
 
             {/* CTA */}
-            <Card className="overflow-hidden rounded-2xl border-0 bg-gradient-to-br from-reno-green-dark to-violet-600 p-6 text-center text-white shadow-lg shadow-reno-green-light/50">
+            <Card className="overflow-hidden rounded-2xl border-0 bg-gradient-to-br from-reno-green-dark to-reno-purple-600 p-6 text-center text-white shadow-lg shadow-reno-green-light/50">
               <div className="mb-3 inline-flex rounded-xl bg-white/15 p-3 backdrop-blur-sm">
                 <CheckCircle className="h-6 w-6" />
               </div>

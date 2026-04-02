@@ -45,15 +45,15 @@ export default function ProposalsPage() {
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">
             My Proposals
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-slate-500">
             Track sent proposals and create new ones
           </p>
         </div>
         <Link href="/pro-network/proposals/new">
-          <Button className="h-auto rounded-xl bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-violet-700 hover:shadow-md">
+          <Button className="h-auto rounded-xl bg-reno-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-reno-purple-700 hover:shadow-md">
             <Plus className="mr-1.5 h-4 w-4" />
             Create New Proposal
           </Button>
@@ -62,28 +62,28 @@ export default function ProposalsPage() {
 
       {/* Summary cards */}
       <div className="mb-6 grid gap-4 sm:grid-cols-4">
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardContent className="p-4">
-            <p className="text-xs font-medium uppercase tracking-wider text-gray-500">Total</p>
-            <p className="mt-1 text-2xl font-bold text-gray-900">{total}</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-slate-500">Total</p>
+            <p className="mt-1 text-2xl font-bold text-slate-900">{total}</p>
           </CardContent>
         </Card>
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardContent className="p-4">
-            <p className="text-xs font-medium uppercase tracking-wider text-gray-500">Active</p>
-            <p className="mt-1 text-2xl font-bold text-gray-900">{active}</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-slate-500">Active</p>
+            <p className="mt-1 text-2xl font-bold text-slate-900">{active}</p>
           </CardContent>
         </Card>
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardContent className="p-4">
-            <p className="text-xs font-medium uppercase tracking-wider text-gray-500">Accepted</p>
-            <p className="mt-1 text-2xl font-bold text-emerald-600">{accepted}</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-slate-500">Accepted</p>
+            <p className="mt-1 text-2xl font-bold text-reno-green-600">{accepted}</p>
           </CardContent>
         </Card>
-        <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardContent className="p-4">
-            <p className="text-xs font-medium uppercase tracking-wider text-gray-500">Total Value</p>
-            <p className="mt-1 text-2xl font-bold text-gray-900">{formatCurrency(totalValue)}</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-slate-500">Total Value</p>
+            <p className="mt-1 text-2xl font-bold text-slate-900">{formatCurrency(totalValue)}</p>
           </CardContent>
         </Card>
       </div>
@@ -95,8 +95,8 @@ export default function ProposalsPage() {
             key={opt.key}
             className={`cursor-pointer rounded-full px-3 py-1 text-xs font-medium transition-all ${
               activeStatus === opt.key
-                ? 'border-transparent bg-violet-100 text-violet-700'
-                : 'border border-gray-200 bg-white text-gray-600 hover:bg-gray-50'
+                ? 'border-transparent bg-reno-purple-100 text-reno-purple-700'
+                : 'border border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
             }`}
             onClick={() => setActiveStatus(opt.key)}
           >
@@ -112,13 +112,13 @@ export default function ProposalsPage() {
           return (
             <Card
               key={proposal.id}
-              className="rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+              className="rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
             >
               <CardContent className="p-5">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="text-sm font-bold text-gray-900">{proposal.title}</h3>
+                      <h3 className="text-sm font-bold text-slate-900">{proposal.title}</h3>
                       {style && (
                         <Badge className={`shrink-0 rounded-full border-transparent px-2.5 py-0.5 text-[10px] font-semibold ${style.bg} ${style.text}`}>
                           <span className={`mr-1 inline-block h-1.5 w-1.5 rounded-full ${style.dot}`} />
@@ -128,7 +128,7 @@ export default function ProposalsPage() {
                     </div>
 
                     {/* Meta dates */}
-                    <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-gray-500">
+                    <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-slate-500">
                       <span className="flex items-center gap-1">
                         <Calendar className="h-3 w-3" />
                         Created {formatDate(proposal.created_at)}
@@ -146,7 +146,7 @@ export default function ProposalsPage() {
                         </span>
                       )}
                       {proposal.expires_at && (
-                        <span className="text-gray-400">
+                        <span className="text-slate-400">
                           Expires {formatDate(proposal.expires_at)}
                         </span>
                       )}
@@ -155,11 +155,11 @@ export default function ProposalsPage() {
 
                   {/* Cost + duration */}
                   <div className="text-right">
-                    <p className="text-lg font-bold text-gray-900">
+                    <p className="text-lg font-bold text-slate-900">
                       {proposal.estimated_cost ? formatCurrency(proposal.estimated_cost) : '—'}
                     </p>
                     {proposal.estimated_duration_days && (
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-slate-500">
                         {proposal.estimated_duration_days} days
                       </p>
                     )}
@@ -172,7 +172,7 @@ export default function ProposalsPage() {
                     <Link href={`/proposal/${proposal.public_token}`}>
                       <Button
                         variant="outline"
-                        className="h-auto rounded-lg border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700"
+                        className="h-auto rounded-lg border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700"
                       >
                         <Eye className="mr-1 h-3 w-3" />
                         View
@@ -183,7 +183,7 @@ export default function ProposalsPage() {
                     <Link href={`/pro-network/proposals/new?blueprintId=${proposal.sequence_id}`}>
                       <Button
                         variant="outline"
-                        className="h-auto rounded-lg border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700"
+                        className="h-auto rounded-lg border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700"
                       >
                         Continue Editing
                       </Button>
@@ -192,7 +192,7 @@ export default function ProposalsPage() {
                   {proposal.public_token && proposal.status !== 'draft' && (
                     <Button
                       variant="outline"
-                      className="h-auto rounded-lg border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700"
+                      className="h-auto rounded-lg border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700"
                       onClick={() => {
                         navigator.clipboard.writeText(
                           `${window.location.origin}/proposal/${proposal.public_token}`
@@ -211,8 +211,8 @@ export default function ProposalsPage() {
         })}
 
         {filtered.length === 0 && (
-          <div className="rounded-2xl border border-dashed border-gray-300 py-12 text-center">
-            <p className="text-sm text-gray-500">No proposals match this filter</p>
+          <div className="rounded-2xl border border-dashed border-slate-300 py-12 text-center">
+            <p className="text-sm text-slate-500">No proposals match this filter</p>
           </div>
         )}
       </div>

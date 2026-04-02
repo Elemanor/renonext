@@ -78,26 +78,26 @@ export default function AdminUsersPage() {
   const totalPending = mockUsers.filter((u) => u.status === 'pending').length;
 
   const statusColors: Record<string, string> = {
-    active: 'bg-green-100 text-green-700',
+    active: 'bg-reno-green-100 text-reno-green-700',
     suspended: 'bg-red-100 text-red-700',
     pending: 'bg-amber-100 text-amber-700',
   };
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold tracking-tight text-gray-900">
+      <h1 className="mb-6 text-2xl font-bold tracking-tight text-slate-900">
         User Management
       </h1>
 
       {/* Summary Stats Bar */}
       <div className="mb-4 flex flex-wrap items-center gap-2">
-        <span className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+        <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
           {totalUsers} Total Users
         </span>
         <span className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">
           {totalPros} Pros
         </span>
-        <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+        <span className="inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700">
           {totalClients} Clients
         </span>
         <span className="inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
@@ -108,17 +108,17 @@ export default function AdminUsersPage() {
       {/* Filters */}
       <div className="mb-4 flex flex-col gap-3 sm:flex-row">
         <div className="relative flex-1">
-          <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+          <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <Input
             type="text"
             placeholder="Search by name or email..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-xl border border-gray-200 py-2.5 pl-10 pr-4 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+            className="w-full rounded-xl border border-slate-200 py-2.5 pl-10 pr-4 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
           />
         </div>
         <Select value={roleFilter} onValueChange={setRoleFilter}>
-          <SelectTrigger className="w-[160px] rounded-xl border border-gray-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light">
+          <SelectTrigger className="w-[160px] rounded-xl border border-slate-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light">
             <SelectValue placeholder="All Roles" />
           </SelectTrigger>
           <SelectContent>
@@ -131,24 +131,24 @@ export default function AdminUsersPage() {
       </div>
 
       {/* Users Table */}
-      <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
         <Table>
           <TableHeader>
-            <TableRow className="border-b border-gray-100 bg-gray-50/50">
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">User</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Role</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Status</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Verified</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Joined</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Jobs</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Actions</TableHead>
+            <TableRow className="border-b border-slate-100 bg-slate-50/50">
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">User</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Role</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Status</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Verified</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Joined</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Jobs</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {filteredUsers.map((user) => (
               <TableRow
                 key={user.id}
-                className="border-b border-gray-100 transition-all duration-200 last:border-0 hover:bg-gray-50/50"
+                className="border-b border-slate-100 transition-all duration-200 last:border-0 hover:bg-slate-50/50"
               >
                 <TableCell className="px-4 py-3.5">
                   <div className="flex items-center gap-3">
@@ -159,10 +159,10 @@ export default function AdminUsersPage() {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <p className="text-sm font-medium text-gray-900">
+                      <p className="text-sm font-medium text-slate-900">
                         {user.name}
                       </p>
-                      <p className="text-xs text-gray-500">{user.email}</p>
+                      <p className="text-xs text-slate-500">{user.email}</p>
                     </div>
                   </div>
                 </TableCell>
@@ -173,7 +173,7 @@ export default function AdminUsersPage() {
                         ? 'bg-purple-100 text-purple-700'
                         : user.role === 'admin'
                         ? 'bg-red-100 text-red-700'
-                        : 'bg-blue-100 text-blue-700'
+                        : 'bg-primary-100 text-primary-700'
                     }`}
                   >
                     {user.role}
@@ -190,19 +190,19 @@ export default function AdminUsersPage() {
                 </TableCell>
                 <TableCell className="px-4 py-3.5">
                   {user.isVerified ? (
-                    <CheckCircle className="h-5 w-5 text-green-500" />
+                    <CheckCircle className="h-5 w-5 text-reno-green-500" />
                   ) : (
-                    <XCircle className="h-5 w-5 text-gray-300" />
+                    <XCircle className="h-5 w-5 text-slate-300" />
                   )}
                 </TableCell>
-                <TableCell className="px-4 py-3.5 text-sm text-gray-500">
+                <TableCell className="px-4 py-3.5 text-sm text-slate-500">
                   {new Date(user.joinedAt).toLocaleDateString('en-CA', {
                     month: 'short',
                     day: 'numeric',
                     year: 'numeric',
                   })}
                 </TableCell>
-                <TableCell className="px-4 py-3.5 text-sm font-medium text-gray-900">
+                <TableCell className="px-4 py-3.5 text-sm font-medium text-slate-900">
                   {user.jobCount}
                 </TableCell>
                 <TableCell className="px-4 py-3.5">
@@ -211,17 +211,17 @@ export default function AdminUsersPage() {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="rounded-xl p-1.5 text-gray-400 transition-all duration-200 hover:bg-gray-100 hover:text-gray-600"
+                        className="rounded-xl p-1.5 text-slate-400 transition-all duration-200 hover:bg-slate-100 hover:text-slate-600"
                       >
                         <MoreVertical className="h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="w-48 rounded-xl border border-gray-200 p-1.5 shadow-lg">
-                      <DropdownMenuItem className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 transition-all duration-200">
+                    <DropdownMenuContent align="end" className="w-48 rounded-xl border border-slate-200 p-1.5 shadow-lg">
+                      <DropdownMenuItem className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 transition-all duration-200">
                         <Eye className="h-4 w-4" />
                         View Profile
                       </DropdownMenuItem>
-                      <DropdownMenuItem className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 transition-all duration-200">
+                      <DropdownMenuItem className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 transition-all duration-200">
                         <Shield className="h-4 w-4" />
                         {user.isVerified ? 'Revoke Verification' : 'Verify'}
                       </DropdownMenuItem>
@@ -238,7 +238,7 @@ export default function AdminUsersPage() {
         </Table>
       </div>
 
-      <p className="mt-4 text-sm text-gray-500">
+      <p className="mt-4 text-sm text-slate-500">
         Showing {filteredUsers.length} of {mockUsers.length} users
       </p>
     </div>

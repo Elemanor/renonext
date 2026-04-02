@@ -179,7 +179,7 @@ export function StatsCounter() {
               </div>
 
               {/* Label */}
-              <p className="text-sm md:text-base text-gray-400 font-medium">
+              <p className="text-sm md:text-base text-slate-400 font-medium">
                 {stat.label}
               </p>
             </div>

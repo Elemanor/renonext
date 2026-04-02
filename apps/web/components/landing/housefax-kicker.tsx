@@ -155,14 +155,14 @@ export function HouseFaxKicker() {
             <div className={isVisible ? 'hfk-floating-card' : ''}>
               {/* Property Header */}
               <div
-                className={`border-b border-gray-200 pb-6 mb-8 transition-all duration-700 ${
+                className={`border-b border-slate-200 pb-6 mb-8 transition-all duration-700 ${
                   headerVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
                 }`}
               >
                 <h3 className="text-2xl md:text-3xl font-display text-reno-dark mb-2">
                   42 Maple Drive
                 </h3>
-                <p className="text-gray-600">Toronto, ON M4E 3A1</p>
+                <p className="text-slate-600">Toronto, ON M4E 3A1</p>
               </div>
 
               {/* Stats Grid */}
@@ -218,7 +218,7 @@ export function HouseFaxKicker() {
                       <div className="text-3xl font-bold text-reno-dark tabular-nums">
                         {stat.value}
                       </div>
-                      <div className="text-sm text-gray-600">{stat.label}</div>
+                      <div className="text-sm text-slate-600">{stat.label}</div>
                     </div>
                   </div>
                 ))}
@@ -278,11 +278,11 @@ export function HouseFaxKicker() {
                         >
                           <div
                             className={`w-6 h-6 rounded-full border-4 border-white transition-all duration-300 ${
-                              dotVisible ? 'bg-reno-teal scale-100' : 'bg-gray-300 scale-75'
+                              dotVisible ? 'bg-reno-teal scale-100' : 'bg-slate-300 scale-75'
                             }`}
                           />
                           <span
-                            className={`text-xs mt-2 text-gray-600 transition-opacity duration-300 ${
+                            className={`text-xs mt-2 text-slate-600 transition-opacity duration-300 ${
                               dotVisible ? 'opacity-100' : 'opacity-0'
                             }`}
                           >
@@ -299,7 +299,7 @@ export function HouseFaxKicker() {
         </div>
 
         {/* Supporting Text */}
-        <p className="text-center text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto min-h-[3rem]">
+        <p className="text-center text-lg md:text-xl text-slate-700 mb-8 max-w-3xl mx-auto min-h-[3rem]">
           {supportingTextWords.map((word, index) => (
             <span
               key={index}

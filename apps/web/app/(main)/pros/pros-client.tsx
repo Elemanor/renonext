@@ -87,7 +87,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
               Work with the{' '}
               <span className="text-primary">Top 5%</span> of Verified Pros.
             </h1>
-            <p className="text-xl text-gray-500 leading-relaxed mb-10 max-w-lg">
+            <p className="text-xl text-slate-500 leading-relaxed mb-10 max-w-lg">
               Our Discovery Engine matches you with elite professionals vetted
               through a multi-point architectural and financial integrity audit.
             </p>
@@ -95,7 +95,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
             {/* Hero Search */}
             <div className="flex p-2 bg-white rounded-2xl shadow-float max-w-xl border border-primary/10">
               <div className="flex-1 flex items-center px-4 gap-3">
-                <span className="material-symbols-outlined text-gray-400">
+                <span className="material-symbols-outlined text-slate-400">
                   search
                 </span>
                 <input
@@ -103,7 +103,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search Trade, Project, or Location..."
-                  className="w-full border-none focus:ring-0 bg-transparent text-reno-dark placeholder:text-gray-400 font-medium outline-none"
+                  className="w-full border-none focus:ring-0 bg-transparent text-reno-dark placeholder:text-slate-400 font-medium outline-none"
                 />
               </div>
               <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all shrink-0">
@@ -127,12 +127,12 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-reno-dark">$448M</div>
-                  <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+                  <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
                     Secured in Escrow
                   </div>
                 </div>
               </div>
-              <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                 <div className="h-full bg-primary w-3/4 rounded-full" />
               </div>
             </div>
@@ -164,7 +164,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
                     {initials}
                   </div>
                 ))}
-                <div className="w-10 h-10 rounded-full border-4 border-white bg-gray-100 flex items-center justify-center text-[10px] font-bold text-gray-500">
+                <div className="w-10 h-10 rounded-full border-4 border-white bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-500">
                   +{Math.max(0, contractors.length - 4)}
                 </div>
               </div>
@@ -198,7 +198,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
         <div className="bg-white/60 backdrop-blur-xl p-6 rounded-2xl flex flex-wrap gap-6 md:gap-8 items-center border border-white shadow-float">
           {/* Trade Filter */}
           <div className="flex flex-col gap-1 flex-1 min-w-[180px]">
-            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 ml-1">
               Trade Specialization
             </label>
             <select
@@ -212,11 +212,11 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
             </select>
           </div>
 
-          <div className="h-10 w-px bg-gray-200 hidden md:block" />
+          <div className="h-10 w-px bg-slate-200 hidden md:block" />
 
           {/* Verification Toggle */}
           <div className="flex flex-col gap-1 flex-1 min-w-[180px]">
-            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 ml-1">
               Verification Tier
             </label>
             <div className="flex items-center gap-2 mt-1">
@@ -225,7 +225,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
                 className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-widest transition-colors ${
                   showOnlyVerified
                     ? 'bg-amber-50 text-amber-700'
-                    : 'text-gray-400 hover:text-gray-600'
+                    : 'text-slate-400 hover:text-slate-600'
                 }`}
               >
                 <span
@@ -236,13 +236,13 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
                 </span>
                 Gold Tier
               </button>
-              <span className="text-gray-300 text-xs">/</span>
+              <span className="text-slate-300 text-xs">/</span>
               <button
                 onClick={() => setShowOnlyVerified(false)}
                 className={`text-xs font-semibold transition-colors ${
                   !showOnlyVerified
                     ? 'text-primary'
-                    : 'text-gray-400 hover:text-gray-600'
+                    : 'text-slate-400 hover:text-slate-600'
                 }`}
               >
                 All Pros
@@ -250,11 +250,11 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
             </div>
           </div>
 
-          <div className="h-10 w-px bg-gray-200 hidden md:block" />
+          <div className="h-10 w-px bg-slate-200 hidden md:block" />
 
           {/* Results Count */}
           <div className="flex flex-col gap-1 min-w-[120px]">
-            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 ml-1">
               Results
             </label>
             <p className="font-semibold text-reno-dark">
@@ -276,7 +276,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
             <h3 className="font-display text-2xl font-bold text-reno-dark mb-2">
               No pros found
             </h3>
-            <p className="text-gray-500 max-w-md mx-auto">
+            <p className="text-slate-500 max-w-md mx-auto">
               Try adjusting your filters or search query to find verified
               contractors in your area.
             </p>
@@ -341,7 +341,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
                       Secured Milestone Engine
                     </span>
                   </h2>
-                  <p className="text-gray-400 leading-relaxed mb-8">
+                  <p className="text-slate-400 leading-relaxed mb-8">
                     We don&apos;t just list pros; we back them. RenoNext holds
                     project funds in a neutral escrow vault, releasing payments
                     only when you approve the digital milestone sign-off.
@@ -407,7 +407,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
                             className={`text-xs font-bold px-2 py-1 rounded ${
                               m.active
                                 ? 'text-primary bg-primary/10'
-                                : 'text-gray-500 bg-white/5'
+                                : 'text-slate-500 bg-white/5'
                             }`}
                           >
                             {m.status}
@@ -437,7 +437,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
             <h2 className="font-display text-2xl font-bold text-reno-dark mb-3">
               Found someone you like?
             </h2>
-            <p className="text-sm text-gray-500 leading-relaxed mb-6">
+            <p className="text-sm text-slate-500 leading-relaxed mb-6">
               Start a project with escrow protection. Your money is held safely
               until each milestone is verified.
             </p>
@@ -465,7 +465,7 @@ export function ProsBrowserClient({ contractors }: ProsBrowserClientProps) {
             <h2 className="font-display text-2xl font-bold text-reno-dark mb-3">
               Want to be listed here?
             </h2>
-            <p className="text-sm text-gray-500 leading-relaxed mb-6">
+            <p className="text-sm text-slate-500 leading-relaxed mb-6">
               Join the network. Get verified, build your reputation with real
               project data, and attract quality clients.
             </p>
@@ -506,10 +506,10 @@ function ContractorCard({ contractor }: { contractor: Contractor }) {
         ) : (
           <div className="w-full h-full flex items-center justify-center">
             <div className="text-center">
-              <span className="material-symbols-outlined text-gray-300 text-5xl block mb-2">
+              <span className="material-symbols-outlined text-slate-300 text-5xl block mb-2">
                 construction
               </span>
-              <span className="text-xs text-gray-400 font-medium">
+              <span className="text-xs text-slate-400 font-medium">
                 Portfolio Coming Soon
               </span>
             </div>
@@ -529,7 +529,7 @@ function ContractorCard({ contractor }: { contractor: Contractor }) {
               Gold Verified
             </span>
           ) : (
-            <span className="flex items-center gap-1 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-black text-gray-500 shadow-sm uppercase tracking-widest border border-gray-100">
+            <span className="flex items-center gap-1 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-black text-slate-500 shadow-sm uppercase tracking-widest border border-slate-100">
               <span
                 className="material-symbols-outlined text-[14px]"
                 style={{ fontVariationSettings: "'FILL' 1" }}
@@ -559,7 +559,7 @@ function ContractorCard({ contractor }: { contractor: Contractor }) {
             <h3 className="text-xl font-bold text-reno-dark group-hover:text-primary transition-colors">
               {contractor.company}
             </h3>
-            <p className="text-sm text-gray-500 font-medium">
+            <p className="text-sm text-slate-500 font-medium">
               {contractor.trade}
             </p>
           </div>
@@ -574,7 +574,7 @@ function ContractorCard({ contractor }: { contractor: Contractor }) {
                   star
                 </span>
               </div>
-              <div className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">
+              <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
                 {contractor.reviewCount} Reviews
               </div>
             </div>
@@ -582,20 +582,20 @@ function ContractorCard({ contractor }: { contractor: Contractor }) {
         </div>
 
         {/* Stats Row */}
-        <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-50">
+        <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-50">
           <div>
-            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
+            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
               Location
             </div>
             <div className="text-sm font-bold text-reno-dark tracking-tight flex items-center gap-1">
-              <span className="material-symbols-outlined text-sm text-gray-400">
+              <span className="material-symbols-outlined text-sm text-slate-400">
                 location_on
               </span>
               {contractor.location}
             </div>
           </div>
           <div>
-            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
+            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
               Credentials
             </div>
             <div className="flex items-center gap-1.5">
@@ -617,7 +617,7 @@ function ContractorCard({ contractor }: { contractor: Contractor }) {
         {contractor.verified &&
           contractor.proofCompleteness === 0 &&
           contractor.inspectionPassRate === 0 && (
-            <div className="mt-4 pt-4 border-t border-gray-50">
+            <div className="mt-4 pt-4 border-t border-slate-50">
               <div className="flex items-center gap-2 text-xs text-primary font-semibold">
                 <span
                   className="material-symbols-outlined text-sm"

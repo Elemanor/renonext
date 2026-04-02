@@ -3,9 +3,9 @@ import { CheckCircle, Clock, AlertTriangle, ShieldOff } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const gateConfig: Record<GateStatus, { Icon: typeof CheckCircle; color: string; label: string }> = {
-  satisfied: { Icon: CheckCircle, color: 'text-emerald-600 bg-emerald-50 border-emerald-200', label: 'Satisfied' },
+  satisfied: { Icon: CheckCircle, color: 'text-reno-green-600 bg-reno-green-50 border-reno-green-200', label: 'Satisfied' },
   pending: { Icon: Clock, color: 'text-amber-600 bg-amber-50 border-amber-200', label: 'Pending' },
-  waived: { Icon: AlertTriangle, color: 'text-gray-500 bg-gray-50 border-gray-200', label: 'Waived' },
+  waived: { Icon: AlertTriangle, color: 'text-slate-500 bg-slate-50 border-slate-200', label: 'Waived' },
   bypassed: { Icon: ShieldOff, color: 'text-red-600 bg-red-50 border-red-200', label: 'Bypassed' },
 };
 

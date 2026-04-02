@@ -42,17 +42,17 @@ export function DeliveryAlert() {
             </div>
             <div>
               <p className="text-white/90 text-sm tracking-tight">Delivery Alert</p>
-              <p className="text-gray-500 text-xs mt-0.5">1.4 yd Dumpster Bin arriving</p>
+              <p className="text-slate-500 text-xs mt-0.5">1.4 yd Dumpster Bin arriving</p>
             </div>
           </div>
           <div className="w-7 h-7 rounded-lg bg-white/[0.04] flex items-center justify-center flex-shrink-0">
-            <Clock className="w-3.5 h-3.5 text-gray-500" />
+            <Clock className="w-3.5 h-3.5 text-slate-500" />
           </div>
         </div>
         <div className="mt-3 pt-2 border-t border-white/[0.04]">
           <div className="flex items-center justify-between mb-1.5">
             <div className="flex items-center gap-1.5">
-              <span className="text-[10px] text-gray-500">ETA</span>
+              <span className="text-[10px] text-slate-500">ETA</span>
               <span className="text-[10px] text-sky-400">11:30 AM</span>
             </div>
             <span className="text-[10px] text-white/50">{hours > 0 ? `${hours}h ` : ''}{mins}m remaining</span>

@@ -290,7 +290,7 @@ export function PlatformPage() {
                               ? 'bg-reno-purple'
                               : module.accentColor === 'amber-500'
                               ? 'bg-amber-500'
-                              : 'bg-blue-500'
+                              : 'bg-primary-500'
                           }`}
                         />
                         <span className="font-body text-white/70">

@@ -95,24 +95,24 @@ const mockReports: Report[] = [
 ];
 
 const statusColors: Record<string, string> = {
-  open: 'bg-blue-100 text-blue-700',
+  open: 'bg-primary-100 text-primary-700',
   investigating: 'bg-amber-100 text-amber-700',
-  resolved: 'bg-green-100 text-green-700',
-  dismissed: 'bg-gray-100 text-gray-500',
+  resolved: 'bg-reno-green-100 text-reno-green-700',
+  dismissed: 'bg-slate-100 text-slate-500',
 };
 
 const priorityColors: Record<string, string> = {
-  low: 'text-gray-500',
+  low: 'text-slate-500',
   medium: 'text-amber-500',
-  high: 'text-orange-500',
+  high: 'text-reno-amber-500',
   critical: 'text-red-600',
 };
 
 const typeIcons: Record<string, string> = {
   dispute: 'bg-purple-100',
-  complaint: 'bg-blue-100',
+  complaint: 'bg-primary-100',
   fraud: 'bg-red-100',
-  safety: 'bg-orange-100',
+  safety: 'bg-reno-amber-100',
 };
 
 export default function AdminReportsPage() {
@@ -127,22 +127,22 @@ export default function AdminReportsPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold tracking-tight text-gray-900">
+      <h1 className="mb-6 text-2xl font-bold tracking-tight text-slate-900">
         Reports & Disputes
       </h1>
 
       {/* Stats */}
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         {[
-          { label: 'Open', count: mockReports.filter((r) => r.status === 'open').length, color: 'text-blue-600', bg: 'bg-blue-50' },
+          { label: 'Open', count: mockReports.filter((r) => r.status === 'open').length, color: 'text-primary-600', bg: 'bg-primary-50' },
           { label: 'Investigating', count: mockReports.filter((r) => r.status === 'investigating').length, color: 'text-amber-600', bg: 'bg-amber-50' },
-          { label: 'Resolved', count: mockReports.filter((r) => r.status === 'resolved').length, color: 'text-green-600', bg: 'bg-green-50' },
-          { label: 'Total', count: mockReports.length, color: 'text-gray-900', bg: 'bg-gray-50' },
+          { label: 'Resolved', count: mockReports.filter((r) => r.status === 'resolved').length, color: 'text-reno-green-600', bg: 'bg-reno-green-50' },
+          { label: 'Total', count: mockReports.length, color: 'text-slate-900', bg: 'bg-slate-50' },
         ].map((stat) => (
-          <Card key={stat.label} className={`rounded-2xl border border-gray-200 ${stat.bg} shadow-none text-center`}>
+          <Card key={stat.label} className={`rounded-2xl border border-slate-200 ${stat.bg} shadow-none text-center`}>
             <CardContent className="p-4">
               <p className={`text-2xl font-bold tracking-tight ${stat.color}`}>{stat.count}</p>
-              <p className="text-xs font-medium text-gray-500">{stat.label}</p>
+              <p className="text-xs font-medium text-slate-500">{stat.label}</p>
             </CardContent>
           </Card>
         ))}
@@ -151,7 +151,7 @@ export default function AdminReportsPage() {
       {/* Filter */}
       <div className="mb-4">
         <Select value={statusFilter} onValueChange={setStatusFilter}>
-          <SelectTrigger className="w-[180px] rounded-xl border border-gray-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light">
+          <SelectTrigger className="w-[180px] rounded-xl border border-slate-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light">
             <SelectValue placeholder="All Reports" />
           </SelectTrigger>
           <SelectContent>
@@ -175,7 +175,7 @@ export default function AdminReportsPage() {
             >
               <Card
                 className={`rounded-2xl border bg-white shadow-sm transition-all duration-200 hover:shadow-md ${
-                  selectedReport === report.id ? 'border-reno-green ring-2 ring-reno-green-light' : 'border-gray-200'
+                  selectedReport === report.id ? 'border-reno-green ring-2 ring-reno-green-light' : 'border-slate-200'
                 }`}
               >
                 <CardContent className="p-4">
@@ -185,10 +185,10 @@ export default function AdminReportsPage() {
                         <AlertTriangle className={`h-4 w-4 ${priorityColors[report.priority]}`} />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-gray-900">
+                        <p className="text-sm font-semibold text-slate-900">
                           {report.title}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-slate-500">
                           {report.id} &middot; {report.type}
                         </p>
                       </div>
@@ -201,10 +201,10 @@ export default function AdminReportsPage() {
                       {report.status}
                     </Badge>
                   </div>
-                  <p className="mb-2 line-clamp-2 text-xs leading-relaxed text-gray-600">
+                  <p className="mb-2 line-clamp-2 text-xs leading-relaxed text-slate-600">
                     {report.description}
                   </p>
-                  <div className="flex items-center gap-3 text-xs text-gray-400">
+                  <div className="flex items-center gap-3 text-xs text-slate-400">
                     <span>
                       By: {report.reportedBy}
                     </span>
@@ -226,43 +226,43 @@ export default function AdminReportsPage() {
 
         {/* Detail Panel */}
         {selected && (
-          <Card className="w-full rounded-2xl border border-gray-200 bg-white shadow-sm lg:w-96">
+          <Card className="w-full rounded-2xl border border-slate-200 bg-white shadow-sm lg:w-96">
             <CardHeader>
-              <CardTitle className="text-lg font-bold text-gray-900">
+              <CardTitle className="text-lg font-bold text-slate-900">
                 {selected.title}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
                     Description
                   </p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-gray-700">
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-700">
                     {selected.description}
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
                       Reported By
                     </p>
-                    <p className="mt-1.5 text-sm font-medium text-gray-700">
+                    <p className="mt-1.5 text-sm font-medium text-slate-700">
                       {selected.reportedBy}
                     </p>
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
                       Reported User
                     </p>
-                    <p className="mt-1.5 text-sm font-medium text-gray-700">
+                    <p className="mt-1.5 text-sm font-medium text-slate-700">
                       {selected.reportedUser}
                     </p>
                   </div>
                 </div>
                 {selected.jobId && (
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
                       Related Job
                     </p>
                     <p className="mt-1.5 text-sm font-mono font-medium text-reno-green-dark">
@@ -271,8 +271,8 @@ export default function AdminReportsPage() {
                   </div>
                 )}
 
-                <div className="border-t border-gray-100 pt-4">
-                  <p className="mb-3 text-sm font-bold text-gray-900">
+                <div className="border-t border-slate-100 pt-4">
+                  <p className="mb-3 text-sm font-bold text-slate-900">
                     Actions
                   </p>
                   <div className="space-y-2">
@@ -280,11 +280,11 @@ export default function AdminReportsPage() {
                       <MessageSquare className="h-4 w-4" />
                       Contact Parties
                     </Button>
-                    <Button variant="outline" className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50">
+                    <Button variant="outline" className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50">
                       <CheckCircle className="h-4 w-4" />
                       Mark as Resolved
                     </Button>
-                    <Button variant="outline" className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50">
+                    <Button variant="outline" className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50">
                       <Eye className="h-4 w-4" />
                       View Full Details
                     </Button>

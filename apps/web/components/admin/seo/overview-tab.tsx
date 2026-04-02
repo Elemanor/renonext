@@ -54,7 +54,7 @@ export function OverviewTab() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <Loader2 className="h-8 w-8 animate-spin text-gray-400" />
+        <Loader2 className="h-8 w-8 animate-spin text-slate-400" />
       </div>
     );
   }
@@ -64,8 +64,8 @@ export function OverviewTab() {
       label: 'Total Pages',
       value: summary?.totalPages ?? '—',
       icon: FileText,
-      color: 'text-gray-700',
-      gradient: 'from-gray-400 to-gray-600',
+      color: 'text-slate-700',
+      gradient: 'from-slate-400 to-slate-600',
     },
     {
       label: 'Critical Issues',
@@ -85,8 +85,8 @@ export function OverviewTab() {
       label: 'Info',
       value: summary?.info ?? 0,
       icon: Info,
-      color: 'text-blue-700',
-      gradient: 'from-blue-400 to-blue-600',
+      color: 'text-primary-700',
+      gradient: 'from-primary-400 to-primary-600',
     },
   ];
 
@@ -94,13 +94,13 @@ export function OverviewTab() {
     <div className="space-y-6">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {cards.map((card) => (
-          <Card key={card.label} className="border-gray-200/60 shadow-sm overflow-hidden group">
+          <Card key={card.label} className="border-slate-200/60 shadow-sm overflow-hidden group">
             <div className={`h-1 w-full bg-gradient-to-r ${card.gradient} opacity-60 group-hover:opacity-100 transition-opacity`} />
             <CardContent className="p-4 flex items-center gap-3">
               <card.icon className={`h-5 w-5 ${card.color} shrink-0`} />
               <div>
-                <p className="text-2xl font-bold text-gray-900">{card.value}</p>
-                <p className="text-xs text-gray-500">{card.label}</p>
+                <p className="text-2xl font-bold text-slate-900">{card.value}</p>
+                <p className="text-xs text-slate-500">{card.label}</p>
               </div>
             </CardContent>
           </Card>
@@ -108,17 +108,17 @@ export function OverviewTab() {
       </div>
 
       {scores.length > 0 && (
-        <Card className="border-gray-200/60 shadow-sm">
-          <div className="h-1 w-full bg-gradient-to-r from-emerald-400 to-emerald-600 opacity-60" />
+        <Card className="border-slate-200/60 shadow-sm">
+          <div className="h-1 w-full bg-gradient-to-r from-reno-green-400 to-reno-green-600 opacity-60" />
           <CardContent className="p-5">
             <div className="flex items-center gap-2 mb-4">
-              <Activity className="h-5 w-5 text-emerald-600" />
-              <h3 className="font-semibold text-gray-900">Recent PageSpeed Scores</h3>
+              <Activity className="h-5 w-5 text-reno-green-600" />
+              <h3 className="font-semibold text-slate-900">Recent PageSpeed Scores</h3>
             </div>
             <div className="space-y-3">
               {scores.slice(0, 5).map((score) => (
                 <div key={score.id} className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600 truncate max-w-[300px]">{score.url.replace('https://renonext.com', '')}</span>
+                  <span className="text-slate-600 truncate max-w-[300px]">{score.url.replace('https://renonext.com', '')}</span>
                   <div className="flex gap-4">
                     <ScoreBadge label="Perf" value={score.performance_score} />
                     <ScoreBadge label="SEO" value={score.seo_score} />
@@ -135,7 +135,7 @@ export function OverviewTab() {
 }
 
 function ScoreBadge({ label, value }: { label: string; value: number }) {
-  const color = value >= 90 ? 'text-emerald-700 bg-emerald-50' : value >= 50 ? 'text-amber-700 bg-amber-50' : 'text-red-700 bg-red-50';
+  const color = value >= 90 ? 'text-reno-green-700 bg-reno-green-50' : value >= 50 ? 'text-amber-700 bg-amber-50' : 'text-red-700 bg-red-50';
   return (
     <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium ${color}`}>
       {label}: {value}

@@ -91,7 +91,7 @@ export default function AdminCategoriesPage() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">
           Category Management
         </h1>
         <Button
@@ -105,14 +105,14 @@ export default function AdminCategoriesPage() {
 
       {/* Add Form */}
       {showAddForm && (
-        <Card className="mb-6 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="mb-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardContent className="p-6">
-            <h3 className="mb-4 font-bold text-gray-900">
+            <h3 className="mb-4 font-bold text-slate-900">
               Add New Category
             </h3>
             <div className="grid gap-4 sm:grid-cols-3">
               <div>
-                <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                   Name
                 </Label>
                 <Input
@@ -122,11 +122,11 @@ export default function AdminCategoriesPage() {
                     setNewCategory({ ...newCategory, name: e.target.value })
                   }
                   placeholder="Category name"
-                  className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                  className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                 />
               </div>
               <div>
-                <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                   Description
                 </Label>
                 <Input
@@ -136,11 +136,11 @@ export default function AdminCategoriesPage() {
                     setNewCategory({ ...newCategory, description: e.target.value })
                   }
                   placeholder="Short description"
-                  className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                  className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                 />
               </div>
               <div>
-                <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                   Icon Name
                 </Label>
                 <Input
@@ -150,7 +150,7 @@ export default function AdminCategoriesPage() {
                     setNewCategory({ ...newCategory, icon: e.target.value })
                   }
                   placeholder="lucide icon name"
-                  className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                  className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                 />
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function AdminCategoriesPage() {
               <Button
                 variant="outline"
                 onClick={() => setShowAddForm(false)}
-                className="rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50"
+                className="rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50"
               >
                 <X className="h-4 w-4" />
                 Cancel
@@ -176,47 +176,47 @@ export default function AdminCategoriesPage() {
       )}
 
       {/* Categories List */}
-      <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
         <Table>
           <TableHeader>
-            <TableRow className="border-b border-gray-100 bg-gray-50/50">
-              <TableHead className="w-10 px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400"></TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Category</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Slug</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Pros</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Jobs</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Status</TableHead>
-              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-gray-400">Actions</TableHead>
+            <TableRow className="border-b border-slate-100 bg-slate-50/50">
+              <TableHead className="w-10 px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400"></TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Category</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Slug</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Pros</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Jobs</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Status</TableHead>
+              <TableHead className="px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-400">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {categories.map((cat) => (
               <TableRow
                 key={cat.id}
-                className={`border-b border-gray-100 transition-all duration-200 last:border-0 hover:bg-gray-50/50 ${
+                className={`border-b border-slate-100 transition-all duration-200 last:border-0 hover:bg-slate-50/50 ${
                   !cat.isActive ? 'opacity-60' : ''
                 }`}
               >
                 <TableCell className="px-4 py-3.5">
-                  <GripVertical className="h-4 w-4 cursor-move text-gray-300 transition-colors duration-200 hover:text-gray-500" />
+                  <GripVertical className="h-4 w-4 cursor-move text-slate-300 transition-colors duration-200 hover:text-slate-500" />
                 </TableCell>
                 <TableCell className="px-4 py-3.5">
                   <div>
-                    <p className="text-sm font-semibold text-gray-900">
+                    <p className="text-sm font-semibold text-slate-900">
                       {cat.name}
                     </p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-slate-500">
                       {cat.description}
                     </p>
                   </div>
                 </TableCell>
-                <TableCell className="px-4 py-3.5 font-mono text-sm text-gray-500">
+                <TableCell className="px-4 py-3.5 font-mono text-sm text-slate-500">
                   {cat.slug}
                 </TableCell>
-                <TableCell className="px-4 py-3.5 text-sm font-medium text-gray-900">
+                <TableCell className="px-4 py-3.5 text-sm font-medium text-slate-900">
                   {cat.proCount}
                 </TableCell>
-                <TableCell className="px-4 py-3.5 text-sm font-medium text-gray-900">
+                <TableCell className="px-4 py-3.5 text-sm font-medium text-slate-900">
                   {cat.jobCount.toLocaleString()}
                 </TableCell>
                 <TableCell className="px-4 py-3.5">
@@ -227,10 +227,10 @@ export default function AdminCategoriesPage() {
                     {cat.isActive ? (
                       <ToggleRight className="h-6 w-6 text-reno-green-dark" />
                     ) : (
-                      <ToggleLeft className="h-6 w-6 text-gray-300" />
+                      <ToggleLeft className="h-6 w-6 text-slate-300" />
                     )}
                     <Badge
-                      className={`text-xs font-medium border-transparent ${cat.isActive ? 'bg-transparent text-reno-green-dark hover:bg-transparent' : 'bg-transparent text-gray-400 hover:bg-transparent'}`}
+                      className={`text-xs font-medium border-transparent ${cat.isActive ? 'bg-transparent text-reno-green-dark hover:bg-transparent' : 'bg-transparent text-slate-400 hover:bg-transparent'}`}
                     >
                       {cat.isActive ? 'Active' : 'Inactive'}
                     </Badge>
@@ -238,10 +238,10 @@ export default function AdminCategoriesPage() {
                 </TableCell>
                 <TableCell className="px-4 py-3.5">
                   <div className="flex gap-1">
-                    <Button variant="ghost" size="icon" className="rounded-xl p-1.5 text-gray-400 transition-all duration-200 hover:bg-gray-100 hover:text-gray-600">
+                    <Button variant="ghost" size="icon" className="rounded-xl p-1.5 text-slate-400 transition-all duration-200 hover:bg-slate-100 hover:text-slate-600">
                       <Edit2 className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="icon" className="rounded-xl p-1.5 text-gray-400 transition-all duration-200 hover:bg-red-50 hover:text-red-600">
+                    <Button variant="ghost" size="icon" className="rounded-xl p-1.5 text-slate-400 transition-all duration-200 hover:bg-red-50 hover:text-red-600">
                       <Trash2 className="h-4 w-4" />
                     </Button>
                   </div>
@@ -252,7 +252,7 @@ export default function AdminCategoriesPage() {
         </Table>
       </div>
 
-      <p className="mt-4 text-sm text-gray-500">
+      <p className="mt-4 text-sm text-slate-500">
         {categories.length} categories total &middot;{' '}
         {categories.filter((c) => c.isActive).length} active
       </p>

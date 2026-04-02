@@ -12,7 +12,7 @@ import { ProjectAlertsTab } from '@/components/project/project-alerts-tab';
 import type { ProjectCommandCenterData } from '@/lib/supabase/queries/project-command-center';
 
 const healthColors = {
-  on_track: 'bg-emerald-100 text-emerald-700 border-emerald-200',
+  on_track: 'bg-reno-green-100 text-reno-green-700 border-reno-green-200',
   at_risk: 'bg-amber-100 text-amber-700 border-amber-200',
   behind: 'bg-red-100 text-red-700 border-red-200',
   critical: 'bg-red-200 text-red-800 border-red-300',
@@ -42,7 +42,7 @@ export function ProjectDetailContent({ data }: ProjectDetailContentProps) {
       <div>
         <Link
           href="/dashboard/projects"
-          className="mb-3 inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-gray-700"
+          className="mb-3 inline-flex items-center gap-1 text-sm text-slate-500 transition-colors hover:text-slate-700"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Projects
@@ -51,7 +51,7 @@ export function ProjectDetailContent({ data }: ProjectDetailContentProps) {
         <div className="flex items-start gap-3">
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-xl font-bold text-gray-900">{project.title}</h1>
+              <h1 className="text-xl font-bold text-slate-900">{project.title}</h1>
               <Badge
                 className={`shrink-0 rounded-full border text-[10px] font-bold ${healthColors[project.health]}`}
               >
@@ -59,7 +59,7 @@ export function ProjectDetailContent({ data }: ProjectDetailContentProps) {
               </Badge>
             </div>
             {project.address && (
-              <p className="mt-1 flex items-center gap-1 text-sm text-gray-500">
+              <p className="mt-1 flex items-center gap-1 text-sm text-slate-500">
                 <MapPin className="h-3.5 w-3.5" />
                 {project.address}
               </p>

@@ -30,7 +30,7 @@ export function ChatMessage({ role, content, sources, variant = 'light' }: ChatM
       <div
         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
           isUser
-            ? 'bg-emerald-500/20 text-emerald-500'
+            ? 'bg-reno-green-500/20 text-reno-green-500'
             : isDark
               ? 'bg-white/10 text-white'
               : 'bg-reno-green/10 text-reno-green'
@@ -44,10 +44,10 @@ export function ChatMessage({ role, content, sources, variant = 'light' }: ChatM
         <div
           className={`rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
             isUser
-              ? 'bg-emerald-600 text-white rounded-tr-md'
+              ? 'bg-reno-green-600 text-white rounded-tr-md'
               : isDark
-                ? 'bg-white/[0.06] text-gray-200 rounded-tl-md'
-                : 'bg-gray-100 text-gray-800 rounded-tl-md'
+                ? 'bg-white/[0.06] text-slate-200 rounded-tl-md'
+                : 'bg-slate-100 text-slate-800 rounded-tl-md'
           }`}
         >
           {isUser ? (

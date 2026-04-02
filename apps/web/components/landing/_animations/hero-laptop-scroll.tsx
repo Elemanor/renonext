@@ -146,7 +146,7 @@ export function HeroLaptopScroll({ scrollYProgress }: HeroLaptopScrollProps) {
       <div ref={laptopRef} className="relative" style={{ width: laptopWidth }}>
         {/* Ambient glow */}
         <m.div
-          className="absolute -inset-12 z-0 rounded-[4rem] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/[0.10] via-purple-500/[0.06] to-transparent blur-3xl"
+          className="absolute -inset-12 z-0 rounded-[4rem] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-500/[0.10] via-purple-500/[0.06] to-transparent blur-3xl"
           style={{ opacity: glowOp }}
         />
 

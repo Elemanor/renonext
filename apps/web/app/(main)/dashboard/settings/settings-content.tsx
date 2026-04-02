@@ -39,7 +39,7 @@ export default function SettingsContent() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold tracking-tight text-gray-900">Settings</h1>
+      <h1 className="mb-6 text-2xl font-bold tracking-tight text-slate-900">Settings</h1>
 
       <div className="flex flex-col gap-6 lg:flex-row">
         {/* Section Nav */}
@@ -49,12 +49,12 @@ export default function SettingsContent() {
           orientation="vertical"
           className="flex flex-col gap-6 lg:flex-row lg:w-full"
         >
-          <TabsList className="flex gap-1 rounded-xl bg-gray-100 p-1 lg:w-52 lg:flex-col lg:bg-transparent lg:p-0 lg:h-auto lg:justify-start">
+          <TabsList className="flex gap-1 rounded-xl bg-slate-100 p-1 lg:w-52 lg:flex-col lg:bg-transparent lg:p-0 lg:h-auto lg:justify-start">
             {sections.map((section) => (
               <TabsTrigger
                 key={section.id}
                 value={section.id}
-                className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200 data-[state=active]:bg-reno-green-light data-[state=active]:text-reno-green-dark data-[state=active]:shadow-sm data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-50 data-[state=inactive]:hover:text-gray-900 justify-start"
+                className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200 data-[state=active]:bg-reno-green-light data-[state=active]:text-reno-green-dark data-[state=active]:shadow-sm data-[state=inactive]:text-slate-600 data-[state=inactive]:hover:bg-slate-50 data-[state=inactive]:hover:text-slate-900 justify-start"
               >
                 <section.icon className="h-4 w-4" />
                 <span className="hidden lg:inline">{section.label}</span>
@@ -66,9 +66,9 @@ export default function SettingsContent() {
           <div className="min-w-0 flex-1">
             {/* Profile Section */}
             <TabsContent value="profile">
-              <Card className="rounded-2xl border border-gray-200 shadow-sm">
+              <Card className="rounded-2xl border border-slate-200 shadow-sm">
                 <CardHeader>
-                  <CardTitle className="text-lg font-bold text-gray-900">
+                  <CardTitle className="text-lg font-bold text-slate-900">
                     Edit Profile
                   </CardTitle>
                 </CardHeader>
@@ -86,8 +86,8 @@ export default function SettingsContent() {
                       </button>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">Profile Photo</p>
-                      <p className="text-sm text-gray-500">
+                      <p className="font-semibold text-slate-900">Profile Photo</p>
+                      <p className="text-sm text-slate-500">
                         JPG, PNG or WebP. Max 10MB.
                       </p>
                     </div>
@@ -96,7 +96,7 @@ export default function SettingsContent() {
                   <div className="space-y-4">
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                        <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                           Full Name
                         </Label>
                         <Input
@@ -105,11 +105,11 @@ export default function SettingsContent() {
                           onChange={(e) =>
                             setProfile({ ...profile, fullName: e.target.value })
                           }
-                          className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                          className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                         />
                       </div>
                       <div>
-                        <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                        <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                           Email
                         </Label>
                         <Input
@@ -118,12 +118,12 @@ export default function SettingsContent() {
                           onChange={(e) =>
                             setProfile({ ...profile, email: e.target.value })
                           }
-                          className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                          className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                         />
                       </div>
                     </div>
                     <div>
-                      <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                      <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                         Phone
                       </Label>
                       <Input
@@ -132,11 +132,11 @@ export default function SettingsContent() {
                         onChange={(e) =>
                           setProfile({ ...profile, phone: e.target.value })
                         }
-                        className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light sm:w-1/2"
+                        className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light sm:w-1/2"
                       />
                     </div>
                     <div>
-                      <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                      <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                         Address
                       </Label>
                       <Input
@@ -145,12 +145,12 @@ export default function SettingsContent() {
                         onChange={(e) =>
                           setProfile({ ...profile, address: e.target.value })
                         }
-                        className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                        className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                       />
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                        <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                           City
                         </Label>
                         <Input
@@ -159,11 +159,11 @@ export default function SettingsContent() {
                           onChange={(e) =>
                             setProfile({ ...profile, city: e.target.value })
                           }
-                          className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                          className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                         />
                       </div>
                       <div>
-                        <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                        <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                           Postal Code
                         </Label>
                         <Input
@@ -172,7 +172,7 @@ export default function SettingsContent() {
                           onChange={(e) =>
                             setProfile({ ...profile, postalCode: e.target.value })
                           }
-                          className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                          className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                         />
                       </div>
                     </div>
@@ -188,9 +188,9 @@ export default function SettingsContent() {
 
             {/* Notifications Section */}
             <TabsContent value="notifications">
-              <Card className="rounded-2xl border border-gray-200 shadow-sm">
+              <Card className="rounded-2xl border border-slate-200 shadow-sm">
                 <CardHeader>
-                  <CardTitle className="text-lg font-bold text-gray-900">
+                  <CardTitle className="text-lg font-bold text-slate-900">
                     Notification Preferences
                   </CardTitle>
                 </CardHeader>
@@ -215,23 +215,23 @@ export default function SettingsContent() {
                       },
                     ].map((group) => (
                       <div key={group.title}>
-                        <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-gray-400">
+                        <h3 className="mb-3 text-sm font-bold uppercase tracking-widest text-slate-400">
                           {group.title}
                         </h3>
                         <div className="space-y-2">
                           {group.items.map((item) => (
                             <label
                               key={item.key}
-                              className="flex cursor-pointer items-center justify-between rounded-xl border border-gray-200 p-4 transition-all duration-200 hover:bg-gray-50"
+                              className="flex cursor-pointer items-center justify-between rounded-xl border border-slate-200 p-4 transition-all duration-200 hover:bg-slate-50"
                             >
-                              <span className="text-sm text-gray-700">
+                              <span className="text-sm text-slate-700">
                                 {item.label}
                               </span>
                               <div
                                 className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
                                   notifications[item.key]
                                     ? 'bg-reno-green-dark'
-                                    : 'bg-gray-300'
+                                    : 'bg-slate-300'
                                 }`}
                                 onClick={() =>
                                   setNotifications({
@@ -260,32 +260,32 @@ export default function SettingsContent() {
 
             {/* Payment Section */}
             <TabsContent value="payment">
-              <Card className="rounded-2xl border border-gray-200 shadow-sm">
+              <Card className="rounded-2xl border border-slate-200 shadow-sm">
                 <CardHeader>
-                  <CardTitle className="text-lg font-bold text-gray-900">
+                  <CardTitle className="text-lg font-bold text-slate-900">
                     Payment Methods
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="mb-4 rounded-xl border border-gray-200 p-4">
+                  <div className="mb-4 rounded-xl border border-slate-200 p-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-16 items-center justify-center rounded-lg bg-blue-600 text-xs font-bold text-white">
+                        <div className="flex h-10 w-16 items-center justify-center rounded-lg bg-primary-600 text-xs font-bold text-white">
                           VISA
                         </div>
                         <div>
-                          <p className="text-sm font-semibold text-gray-900">
+                          <p className="text-sm font-semibold text-slate-900">
                             Visa ending in 4242
                           </p>
-                          <p className="text-xs text-gray-500">Expires 12/2025</p>
+                          <p className="text-xs text-slate-500">Expires 12/2025</p>
                         </div>
                       </div>
-                      <Badge className="rounded-full bg-green-100 text-xs font-semibold text-green-700 border-transparent hover:bg-green-100">
+                      <Badge className="rounded-full bg-reno-green-100 text-xs font-semibold text-reno-green-700 border-transparent hover:bg-reno-green-100">
                         Default
                       </Badge>
                     </div>
                   </div>
-                  <Button variant="outline" className="rounded-xl border border-dashed border-gray-300 px-4 py-3 text-sm font-medium text-gray-600 transition-all duration-200 hover:border-reno-green hover:bg-reno-green-light/30 hover:text-reno-green-dark">
+                  <Button variant="outline" className="rounded-xl border border-dashed border-slate-300 px-4 py-3 text-sm font-medium text-slate-600 transition-all duration-200 hover:border-reno-green hover:bg-reno-green-light/30 hover:text-reno-green-dark">
                     + Add Payment Method
                   </Button>
                 </CardContent>
@@ -294,23 +294,23 @@ export default function SettingsContent() {
 
             {/* Account Section */}
             <TabsContent value="account">
-              <Card className="rounded-2xl border border-gray-200 shadow-sm">
+              <Card className="rounded-2xl border border-slate-200 shadow-sm">
                 <CardHeader>
-                  <CardTitle className="text-lg font-bold text-gray-900">
+                  <CardTitle className="text-lg font-bold text-slate-900">
                     Account Settings
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-6">
-                    <Card className="rounded-xl border border-gray-200 shadow-none">
+                    <Card className="rounded-xl border border-slate-200 shadow-none">
                       <CardContent className="p-5">
-                        <CardTitle className="mb-1 text-base font-semibold text-gray-900">
+                        <CardTitle className="mb-1 text-base font-semibold text-slate-900">
                           Change Password
                         </CardTitle>
-                        <CardDescription className="mb-4 text-sm text-gray-500">
+                        <CardDescription className="mb-4 text-sm text-slate-500">
                           Update your password regularly for security
                         </CardDescription>
-                        <Button variant="outline" className="rounded-xl border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50">
+                        <Button variant="outline" className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50">
                           Update Password
                         </Button>
                       </CardContent>

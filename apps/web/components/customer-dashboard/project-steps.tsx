@@ -20,12 +20,12 @@ export function ProjectSteps() {
       {/* Header */}
       <div className="flex items-center justify-between mb-3 lg:mb-2 flex-shrink-0">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-blue-500/20 flex items-center justify-center">
-            <Layers className="w-3.5 h-3.5 text-blue-400" />
+          <div className="w-7 h-7 rounded-lg bg-primary-500/20 flex items-center justify-center">
+            <Layers className="w-3.5 h-3.5 text-primary-400" />
           </div>
           <h2 className="text-white/90 text-sm tracking-tight">Project Phases</h2>
         </div>
-        <span className="text-indigo-400 text-[10px] bg-indigo-400/10 px-2 py-0.5 rounded-md">
+        <span className="text-primary-400 text-[10px] bg-primary-400/10 px-2 py-0.5 rounded-md">
           {completedCount}/{projectPhases.length}
         </span>
       </div>
@@ -43,23 +43,23 @@ export function ProjectSteps() {
           >
             {/* Status icon */}
             {phase.status === 'completed' ? (
-              <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-reno-green-400 flex-shrink-0" />
             ) : phase.status === 'active' ? (
               <div className="w-4 h-4 rounded-full border-2 border-amber-400 flex items-center justify-center flex-shrink-0">
                 <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
               </div>
             ) : (
-              <Circle className="w-4 h-4 text-gray-700 flex-shrink-0" />
+              <Circle className="w-4 h-4 text-slate-700 flex-shrink-0" />
             )}
 
             {/* Name */}
             <span
               className={`flex-1 text-xs ${
                 phase.status === 'completed'
-                  ? 'text-gray-500 line-through'
+                  ? 'text-slate-500 line-through'
                   : phase.status === 'active'
                     ? 'text-white/90'
-                    : 'text-gray-600'
+                    : 'text-slate-600'
               }`}
             >
               {phase.name}
@@ -74,10 +74,10 @@ export function ProjectSteps() {
             <span
               className={`text-[9px] px-1.5 py-0.5 rounded flex-shrink-0 ${
                 phase.status === 'completed'
-                  ? 'bg-green-500/10 text-green-400'
+                  ? 'bg-reno-green-500/10 text-reno-green-400'
                   : phase.status === 'active'
                     ? 'bg-amber-500/15 text-amber-400'
-                    : 'bg-white/[0.04] text-gray-600'
+                    : 'bg-white/[0.04] text-slate-600'
               }`}
             >
               {i + 1}
@@ -89,12 +89,12 @@ export function ProjectSteps() {
       {/* Progress bar */}
       <div className="mt-2 pt-2 border-t border-white/[0.06] flex-shrink-0">
         <div className="flex items-center justify-between mb-1">
-          <span className="text-[10px] text-gray-500">Overall Progress</span>
+          <span className="text-[10px] text-slate-500">Overall Progress</span>
           <span className="text-[10px] text-white/60">{pct}%</span>
         </div>
         <div className="h-1 rounded-full bg-white/[0.06] overflow-hidden">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-500"
+            className="h-full rounded-full bg-gradient-to-r from-primary-600 to-cyan-500"
             style={{ width: `${pct}%` }}
           />
         </div>

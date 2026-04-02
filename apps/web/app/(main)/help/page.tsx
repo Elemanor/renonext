@@ -15,6 +15,9 @@ import {
 export const metadata: Metadata = {
   title: 'Help Centre | RenoNext',
   description: 'Find answers to common questions about RenoNext. Get help with payments, project management, and more.',
+  alternates: {
+    canonical: '/help',
+  },
 };
 
 const categories = [
@@ -22,19 +25,19 @@ const categories = [
     icon: Rocket,
     title: 'Getting Started',
     count: '8 articles',
-    color: 'text-blue-600 bg-blue-50',
+    color: 'text-primary-600 bg-primary-50',
   },
   {
     icon: CreditCard,
     title: 'Payments & Escrow',
     count: '12 articles',
-    color: 'text-emerald-600 bg-emerald-50',
+    color: 'text-reno-green-600 bg-reno-green-50',
   },
   {
     icon: Briefcase,
     title: 'For Pros',
     count: '10 articles',
-    color: 'text-violet-600 bg-violet-50',
+    color: 'text-reno-purple-600 bg-reno-purple-50',
   },
   {
     icon: Settings,
@@ -105,7 +108,7 @@ export default function HelpPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-reno-green-dark via-reno-green to-blue-500 py-20 md:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-br from-reno-green-dark via-reno-green to-primary-500 py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-6 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
@@ -189,7 +192,7 @@ export default function HelpPage() {
       {/* Contact Support */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <Card className="mx-auto max-w-3xl border-2 border-reno-green-light bg-gradient-to-br from-reno-green-light to-blue-50">
+          <Card className="mx-auto max-w-3xl border-2 border-reno-green-light bg-gradient-to-br from-reno-green-light to-primary-50">
             <CardContent className="p-8 text-center md:p-12">
               <div className="mb-6 flex justify-center">
                 <div className="rounded-full bg-reno-green-light p-4">

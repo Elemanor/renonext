@@ -33,6 +33,7 @@ import { PriceRangeBar } from '@/components/costs/price-range-bar';
 import { NearbyCityCards } from '@/components/costs/nearby-city-cards';
 import { BreadcrumbJsonLd } from '@/components/costs/breadcrumb-jsonld';
 import { FaqJsonLd } from '@/components/costs/faq-jsonld';
+import { DeckViewerWrapper } from '@/components/3d/deck-viewer-wrapper';
 
 // ---------------------------------------------------------------------------
 // Static params — 375 city pages
@@ -168,16 +169,16 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
 
       <div className="mx-auto max-w-4xl px-5 py-12 lg:px-8">
         {/* Breadcrumbs */}
-        <nav className="mb-8 flex items-center gap-1.5 text-xs text-gray-400">
+        <nav className="mb-8 flex items-center gap-1.5 text-xs text-slate-400">
           {breadcrumbs.map((bc, i) => (
             <span key={bc.href} className="flex items-center gap-1.5">
               {i > 0 && <ChevronRight className="h-3 w-3" />}
               {i < breadcrumbs.length - 1 ? (
-                <Link href={bc.href} className="hover:text-gray-600">
+                <Link href={bc.href} className="hover:text-slate-600">
                   {bc.name}
                 </Link>
               ) : (
-                <span className="text-gray-600">{bc.name}</span>
+                <span className="text-slate-600">{bc.name}</span>
               )}
             </span>
           ))}
@@ -190,14 +191,14 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
               <MapPin className="h-3 w-3" />
               {cty.name}, Ontario
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
               {cty.region}
             </span>
           </div>
-          <h1 className="font-display text-3xl leading-tight text-gray-900 sm:text-4xl">
+          <h1 className="font-display text-3xl leading-tight text-slate-900 sm:text-4xl">
             {svc.title} Cost in {cty.name}
           </h1>
-          <p className="mt-3 text-lg text-gray-600">
+          <p className="mt-3 text-lg text-slate-600">
             {cty.name} {svc.title.toLowerCase()} prices are{' '}
             {cty.overall > 1
               ? `${Math.round((cty.overall - 1) * 100)}% above`
@@ -208,7 +209,7 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
             {primaryRange && (
               <>
                 Expect to pay{' '}
-                <strong className="text-gray-900">
+                <strong className="text-slate-900">
                   {formatPriceRange(primaryRange.adjMin, primaryRange.adjMax)}
                 </strong>{' '}
                 {primaryRange.unit}.
@@ -218,36 +219,49 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
 
           {/* Quick stats */}
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <div className="rounded-lg border border-gray-200 bg-white p-3 text-center">
+            <div className="rounded-lg border border-slate-200 bg-white p-3 text-center">
               <DollarSign className="mx-auto h-5 w-5 text-reno-green" />
-              <p className="mt-1 text-lg font-bold text-gray-900">
+              <p className="mt-1 text-lg font-bold text-slate-900">
                 {primaryRange ? formatPrice(primaryRange.adjMin) : '—'}
               </p>
-              <p className="text-[10px] text-gray-500">Starting from</p>
+              <p className="text-[10px] text-slate-500">Starting from</p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-3 text-center">
+            <div className="rounded-lg border border-slate-200 bg-white p-3 text-center">
               <Clock className="mx-auto h-5 w-5 text-reno-teal" />
-              <p className="mt-1 text-sm font-bold text-gray-900">{svc.typicalTimeline}</p>
-              <p className="text-[10px] text-gray-500">Typical timeline</p>
+              <p className="mt-1 text-sm font-bold text-slate-900">{svc.typicalTimeline}</p>
+              <p className="text-[10px] text-slate-500">Typical timeline</p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-3 text-center">
+            <div className="rounded-lg border border-slate-200 bg-white p-3 text-center">
               <AlertTriangle className="mx-auto h-5 w-5 text-amber-500" />
-              <p className="mt-1 text-lg font-bold text-gray-900">{svc.contingencyPct}%</p>
-              <p className="text-[10px] text-gray-500">Contingency</p>
+              <p className="mt-1 text-lg font-bold text-slate-900">{svc.contingencyPct}%</p>
+              <p className="text-[10px] text-slate-500">Contingency</p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-3 text-center">
+            <div className="rounded-lg border border-slate-200 bg-white p-3 text-center">
               <Landmark className="mx-auto h-5 w-5 text-reno-purple" />
-              <p className="mt-1 text-lg font-bold text-gray-900">
+              <p className="mt-1 text-lg font-bold text-slate-900">
                 {applicableRebates.length > 0 ? formatPrice(totalMaxRebate) : '—'}
               </p>
-              <p className="text-[10px] text-gray-500">Max rebates</p>
+              <p className="text-[10px] text-slate-500">Max rebates</p>
             </div>
           </div>
         </section>
 
+        {/* ── 3D Deck Viewer (decks only) ────────────── */}
+        {service === 'decks' && (
+          <section className="mb-12">
+            <h2 className="mb-2 font-display text-2xl text-slate-900">
+              Interactive 3D Deck Model
+            </h2>
+            <p className="mb-4 text-sm text-slate-500">
+              Explore a typical 8&prime;&nbsp;&times;&nbsp;10&prime; deck build step by step — footings through railing.
+            </p>
+            <DeckViewerWrapper skpDownloadUrl="/models/deck-8x10.skp" />
+          </section>
+        )}
+
         {/* ── Cost Breakdown ──────────────────────────── */}
         <section className="mb-12">
-          <h2 className="mb-4 font-display text-2xl text-gray-900">
+          <h2 className="mb-4 font-display text-2xl text-slate-900">
             {svc.title} Cost Breakdown — {cty.name}
           </h2>
           <CostBreakdownTable
@@ -265,7 +279,7 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
 
         {/* ── Price Range Bars ────────────────────────── */}
         <section className="mb-12">
-          <h2 className="mb-4 font-display text-2xl text-gray-900">
+          <h2 className="mb-4 font-display text-2xl text-slate-900">
             Visual Price Ranges
           </h2>
           <div className="space-y-4">
@@ -283,18 +297,18 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
 
         {/* ── Labour vs Material Split ────────────────── */}
         <section className="mb-12">
-          <h2 className="mb-4 font-display text-2xl text-gray-900">
+          <h2 className="mb-4 font-display text-2xl text-slate-900">
             Labour vs Materials in {cty.name}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <div className="rounded-xl border border-slate-200 bg-white p-5">
               <div className="flex items-center gap-2 mb-3">
                 <HardHat className="h-5 w-5 text-reno-teal" />
-                <h3 className="font-semibold text-gray-900">Labour</h3>
+                <h3 className="font-semibold text-slate-900">Labour</h3>
               </div>
-              <p className="text-3xl font-bold text-gray-900">{Math.round(cty.labour * 100)}%</p>
-              <p className="text-sm text-gray-500">of Toronto baseline</p>
-              <p className="mt-2 text-xs text-gray-400">
+              <p className="text-3xl font-bold text-slate-900">{Math.round(cty.labour * 100)}%</p>
+              <p className="text-sm text-slate-500">of Toronto baseline</p>
+              <p className="mt-2 text-xs text-slate-400">
                 {cty.labour < 1
                   ? `Labour costs in ${cty.name} are ${Math.round((1 - cty.labour) * 100)}% below Toronto rates due to lower overhead and competitive contractor markets.`
                   : cty.labour > 1
@@ -302,14 +316,14 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
                   : `Labour costs in ${cty.name} match the Toronto baseline.`}
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <div className="rounded-xl border border-slate-200 bg-white p-5">
               <div className="flex items-center gap-2 mb-3">
                 <FileText className="h-5 w-5 text-reno-green" />
-                <h3 className="font-semibold text-gray-900">Materials</h3>
+                <h3 className="font-semibold text-slate-900">Materials</h3>
               </div>
-              <p className="text-3xl font-bold text-gray-900">{Math.round(cty.material * 100)}%</p>
-              <p className="text-sm text-gray-500">of Toronto baseline</p>
-              <p className="mt-2 text-xs text-gray-400">
+              <p className="text-3xl font-bold text-slate-900">{Math.round(cty.material * 100)}%</p>
+              <p className="text-sm text-slate-500">of Toronto baseline</p>
+              <p className="mt-2 text-xs text-slate-400">
                 Material costs are relatively stable across the GTA. {cty.name} sees{' '}
                 {cty.material < 1
                   ? `${Math.round((1 - cty.material) * 100)}% savings on materials`
@@ -323,10 +337,10 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
         {/* ── Professional Fees (if engineering required) ── */}
         {svc.requiresEngineering && permits && permits.items.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-4 font-display text-2xl text-gray-900">
+            <h2 className="mb-4 font-display text-2xl text-slate-900">
               Professional Fees
             </h2>
-            <p className="mb-4 text-sm text-gray-600">
+            <p className="mb-4 text-sm text-slate-600">
               {svc.title} in {cty.name} may require engineering or professional design services.
               These costs are in addition to the construction estimate.
             </p>
@@ -341,16 +355,16 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
                 .map((item) => (
                   <div
                     key={item.name}
-                    className="flex items-start justify-between rounded-lg border border-gray-200 bg-white p-4"
+                    className="flex items-start justify-between rounded-lg border border-slate-200 bg-white p-4"
                   >
                     <div>
-                      <p className="font-medium text-gray-900">{item.name}</p>
-                      <p className="text-xs text-gray-500">{item.authority}</p>
+                      <p className="font-medium text-slate-900">{item.name}</p>
+                      <p className="text-xs text-slate-500">{item.authority}</p>
                       {item.notes && (
-                        <p className="mt-1 text-xs text-gray-400">{item.notes}</p>
+                        <p className="mt-1 text-xs text-slate-400">{item.notes}</p>
                       )}
                     </div>
-                    <p className="shrink-0 text-sm font-semibold text-gray-800">
+                    <p className="shrink-0 text-sm font-semibold text-slate-800">
                       {item.typical_cost}
                     </p>
                   </div>
@@ -362,23 +376,23 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
         {/* ── Permit Costs ────────────────────────────── */}
         {permits && permits.items.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-4 font-display text-2xl text-gray-900">
+            <h2 className="mb-4 font-display text-2xl text-slate-900">
               Permit Costs in {cty.name}
             </h2>
             {cty.permitFeeNote && (
-              <p className="mb-4 text-sm text-gray-600">{cty.permitFeeNote}</p>
+              <p className="mb-4 text-sm text-slate-600">{cty.permitFeeNote}</p>
             )}
             <div className="space-y-3">
               {permits.items.map((item) => (
                 <div
                   key={item.name}
-                  className="flex items-start justify-between rounded-lg border border-gray-200 bg-white p-4"
+                  className="flex items-start justify-between rounded-lg border border-slate-200 bg-white p-4"
                 >
                   <div>
-                    <p className="font-medium text-gray-900">{item.name}</p>
-                    <p className="text-xs text-gray-500">{item.authority}</p>
+                    <p className="font-medium text-slate-900">{item.name}</p>
+                    <p className="text-xs text-slate-500">{item.authority}</p>
                   </div>
-                  <p className="shrink-0 text-sm font-semibold text-gray-800">
+                  <p className="shrink-0 text-sm font-semibold text-slate-800">
                     {item.typical_cost}
                   </p>
                 </div>
@@ -397,28 +411,28 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
         {/* ── Available Rebates ───────────────────────── */}
         {applicableRebates.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-4 font-display text-2xl text-gray-900">
+            <h2 className="mb-4 font-display text-2xl text-slate-900">
               Available Rebates in {cty.name}
             </h2>
             <div className="space-y-3">
               {applicableRebates.map((rebate) => (
                 <div
                   key={rebate.id}
-                  className="rounded-lg border border-gray-200 bg-white p-4"
+                  className="rounded-lg border border-slate-200 bg-white p-4"
                 >
                   <div className="flex items-start justify-between">
                     <div>
-                      <p className="font-medium text-gray-900">{rebate.name}</p>
-                      <p className="text-xs text-gray-500">{rebate.adminBody}</p>
+                      <p className="font-medium text-slate-900">{rebate.name}</p>
+                      <p className="text-xs text-slate-500">{rebate.adminBody}</p>
                     </div>
-                    <span className="shrink-0 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-bold text-emerald-600">
+                    <span className="shrink-0 rounded-full bg-reno-green-50 px-2.5 py-0.5 text-xs font-bold text-reno-green-600">
                       {rebate.amount}
                     </span>
                   </div>
-                  <p className="mt-2 text-xs text-gray-600">{rebate.description}</p>
+                  <p className="mt-2 text-xs text-slate-600">{rebate.description}</p>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {rebate.stackable && (
-                      <span className="rounded bg-blue-50 px-1.5 py-0.5 text-[10px] font-medium text-blue-600">
+                      <span className="rounded bg-primary-50 px-1.5 py-0.5 text-[10px] font-medium text-primary-600">
                         Stackable
                       </span>
                     )}
@@ -427,7 +441,7 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
                         {rebate.deadline}
                       </span>
                     )}
-                    <span className="rounded bg-gray-100 px-1.5 py-0.5 text-[10px] font-medium text-gray-500">
+                    <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-500">
                       {rebate.status}
                     </span>
                   </div>
@@ -435,17 +449,17 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
               ))}
             </div>
             {primaryRange && totalMaxRebate > 0 && (
-              <div className="mt-4 rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4">
-                <p className="text-sm font-semibold text-emerald-800">
+              <div className="mt-4 rounded-xl border-2 border-reno-green-200 bg-reno-green-50/50 p-4">
+                <p className="text-sm font-semibold text-reno-green-800">
                   Net Cost After Maximum Rebates
                 </p>
-                <p className="mt-1 text-2xl font-bold text-emerald-700">
+                <p className="mt-1 text-2xl font-bold text-reno-green-700">
                   {formatPriceRange(
                     Math.max(0, primaryRange.adjMin - totalMaxRebate),
                     Math.max(0, primaryRange.adjMax - totalMaxRebate),
                   )}
                 </p>
-                <p className="mt-1 text-xs text-emerald-600">
+                <p className="mt-1 text-xs text-reno-green-600">
                   Based on {formatPrice(totalMaxRebate)} in maximum stackable rebates.
                   Actual amounts depend on eligibility and application.
                 </p>
@@ -464,26 +478,26 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
         {/* ── Phase-by-Phase Cost Timeline ────────────── */}
         {processSteps && processSteps.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-4 font-display text-2xl text-gray-900">
+            <h2 className="mb-4 font-display text-2xl text-slate-900">
               Phase-by-Phase Timeline
             </h2>
             <div className="space-y-3">
               {processSteps.map((step, i) => (
                 <div
                   key={step.title}
-                  className="flex gap-4 rounded-lg border border-gray-200 bg-white p-4"
+                  className="flex gap-4 rounded-lg border border-slate-200 bg-white p-4"
                 >
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-reno-green/10 text-sm font-bold text-reno-green">
                     {i + 1}
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center justify-between">
-                      <p className="font-medium text-gray-900">{step.title}</p>
+                      <p className="font-medium text-slate-900">{step.title}</p>
                       {step.duration && (
-                        <span className="shrink-0 text-xs text-gray-500">{step.duration}</span>
+                        <span className="shrink-0 text-xs text-slate-500">{step.duration}</span>
                       )}
                     </div>
-                    <p className="mt-1 text-xs text-gray-500 line-clamp-2">{step.description}</p>
+                    <p className="mt-1 text-xs text-slate-500 line-clamp-2">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -493,19 +507,19 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
 
         {/* ── Included / Not Included ─────────────────── */}
         <section className="mb-12">
-          <h2 className="mb-4 font-display text-2xl text-gray-900">
+          <h2 className="mb-4 font-display text-2xl text-slate-900">
             What&apos;s Included vs Not Included
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50/30 p-5">
-              <h3 className="mb-3 flex items-center gap-2 font-semibold text-emerald-800">
+            <div className="rounded-xl border border-reno-green-200 bg-reno-green-50/30 p-5">
+              <h3 className="mb-3 flex items-center gap-2 font-semibold text-reno-green-800">
                 <CheckCircle className="h-4 w-4" />
                 Typically Included
               </h3>
               <ul className="space-y-2">
                 {svc.includedInPrice.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-                    <CheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-500" />
+                  <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+                    <CheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-reno-green-500" />
                     {item}
                   </li>
                 ))}
@@ -518,7 +532,7 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
               </h3>
               <ul className="space-y-2">
                 {svc.notIncludedInPrice.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+                  <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
                     <XCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-red-400" />
                     {item}
                   </li>
@@ -531,7 +545,7 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
         {/* ── Nearby City Comparison ──────────────────── */}
         {nearbyCities.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-4 font-display text-2xl text-gray-900">
+            <h2 className="mb-4 font-display text-2xl text-slate-900">
               {svc.title} Costs in Nearby Cities
             </h2>
             <NearbyCityCards currentCitySlug={cty.slug} service={svc} />
@@ -540,17 +554,17 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
 
         {/* ── Money-Saving Tips ───────────────────────── */}
         <section className="mb-12">
-          <h2 className="mb-4 font-display text-2xl text-gray-900">
+          <h2 className="mb-4 font-display text-2xl text-slate-900">
             Money-Saving Tips
           </h2>
           <div className="space-y-3">
             {svc.costTips.map((tip) => (
               <div
                 key={tip}
-                className="flex items-start gap-3 rounded-lg border border-gray-200 bg-white p-4"
+                className="flex items-start gap-3 rounded-lg border border-slate-200 bg-white p-4"
               >
                 <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
-                <p className="text-sm text-gray-700">{tip}</p>
+                <p className="text-sm text-slate-700">{tip}</p>
               </div>
             ))}
           </div>
@@ -558,16 +572,54 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
 
         {/* ── FAQs ────────────────────────────────────── */}
         <section className="mb-12">
-          <h2 className="mb-4 font-display text-2xl text-gray-900">
+          <h2 className="mb-4 font-display text-2xl text-slate-900">
             {svc.title} Cost FAQs — {cty.name}
           </h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <div key={faq.q} className="rounded-lg border border-gray-200 bg-white p-5">
-                <h3 className="font-semibold text-gray-900">{faq.q}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+              <div key={faq.q} className="rounded-lg border border-slate-200 bg-white p-5">
+                <h3 className="font-semibold text-slate-900">{faq.q}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{faq.a}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── Shop Cross-Link ────────────────────────── */}
+        <section className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+          <div className="flex items-start gap-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0fbabd]/10">
+              <span className="material-symbols-outlined text-[#0fbabd]">shopping_cart</span>
+            </div>
+            <div>
+              <h2 className="font-display text-lg font-bold text-slate-900">
+                Shop Supplies for This Project
+              </h2>
+              <p className="mt-1 text-sm text-slate-600">
+                Browse tools, materials, and safety gear for your {svc.title.toLowerCase()} project in {cty.name}.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Link
+                  href="/shop"
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-[#0fbabd]/10 px-3 py-1.5 text-xs font-medium text-[#0fbabd] transition-colors hover:bg-[#0fbabd]/20"
+                >
+                  Browse All
+                  <ChevronRight className="h-3 w-3" />
+                </Link>
+                <Link
+                  href="/shop/safety-equipment"
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 transition-colors hover:bg-slate-200"
+                >
+                  Safety Gear
+                </Link>
+                <Link
+                  href="/shop/hand-tools"
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 transition-colors hover:bg-slate-200"
+                >
+                  Hand Tools
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -576,7 +628,7 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
           <h2 className="font-display text-2xl text-white sm:text-3xl">
             Get a {svc.title} Quote in {cty.name}
           </h2>
-          <p className="mx-auto mt-3 max-w-lg text-sm text-gray-400">
+          <p className="mx-auto mt-3 max-w-lg text-sm text-slate-400">
             RenoNext-verified contractors in {cty.name} are ready to quote your project.
             Real pricing, escrow-protected payments, proof-of-work documentation.
           </p>
@@ -590,7 +642,7 @@ export default async function CostCityPage({ params }: CostCityPageProps) {
             </Link>
             <Link
               href="/pros"
-              className="flex items-center gap-2 rounded-lg border border-gray-700 px-6 py-3 text-sm font-semibold text-gray-300 transition-colors hover:border-gray-500 hover:text-white"
+              className="flex items-center gap-2 rounded-lg border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-300 transition-colors hover:border-slate-500 hover:text-white"
             >
               Browse Local Pros
             </Link>

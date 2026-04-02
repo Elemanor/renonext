@@ -19,8 +19,8 @@ export function ProjectProgressTab({ stages, tasks, gates }: ProjectProgressTabP
   if (stages.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
-        <Layers className="mb-3 h-10 w-10 text-gray-300" />
-        <p className="text-sm font-medium text-gray-500">
+        <Layers className="mb-3 h-10 w-10 text-slate-300" />
+        <p className="text-sm font-medium text-slate-500">
           Project stages will appear once work begins.
         </p>
       </div>

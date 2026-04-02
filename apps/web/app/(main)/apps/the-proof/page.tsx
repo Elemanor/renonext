@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: 'The Proof — Immutable Verification Ledger | RenoNext',
   description:
     'GPS-stamped, time-locked, cryptographically secured verification for every delivery, inspection, and milestone on your construction site.',
+  alternates: {
+    canonical: '/apps/the-proof',
+  },
 };
 
 export default function TheProofPage() {
@@ -59,7 +62,7 @@ export default function TheProofPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-500 max-w-xl font-light leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-500 max-w-xl font-light leading-relaxed">
               Our immutable ledger provides crystal-clear verification for
               on-site visual evidence. GPS-stamped, time-locked, and
               cryptographically secured.
@@ -68,10 +71,10 @@ export default function TheProofPage() {
             {/* Status pills */}
             <div className="flex flex-wrap gap-4 pt-2">
               <div className="flex flex-col">
-                <span className="text-[10px] uppercase tracking-widest text-gray-400 mb-1.5 font-medium">
+                <span className="text-[10px] uppercase tracking-widest text-slate-400 mb-1.5 font-medium">
                   Status
                 </span>
-                <div className="bg-gray-100 px-5 py-3 flex items-center gap-3">
+                <div className="bg-slate-100 px-5 py-3 flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(15,186,189,0.5)]" />
                   <span className="font-bold text-[#102122] text-sm tracking-wide">
                     IMMUTABLE_RECORD
@@ -79,10 +82,10 @@ export default function TheProofPage() {
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-[10px] uppercase tracking-widest text-gray-400 mb-1.5 font-medium">
+                <span className="text-[10px] uppercase tracking-widest text-slate-400 mb-1.5 font-medium">
                   Authenticity Score
                 </span>
-                <div className="bg-gray-100 px-5 py-3 flex items-center gap-3">
+                <div className="bg-slate-100 px-5 py-3 flex items-center gap-3">
                   <span className="font-black text-[#102122] text-xl">
                     99.9%
                   </span>
@@ -95,36 +98,36 @@ export default function TheProofPage() {
           <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[500px] h-[580px]">
               {/* Receipt card (underneath, rotated) */}
-              <div className="absolute -left-4 lg:-left-12 top-20 w-60 bg-white p-6 shadow-xl -rotate-[4deg] z-10 border border-gray-100 rounded-sm">
+              <div className="absolute -left-4 lg:-left-12 top-20 w-60 bg-white p-6 shadow-xl -rotate-[4deg] z-10 border border-slate-100 rounded-sm">
                 <div className="flex justify-between items-start mb-5">
-                  <span className="material-symbols-outlined text-gray-300 text-2xl">
+                  <span className="material-symbols-outlined text-slate-300 text-2xl">
                     qr_code_2
                   </span>
-                  <span className="text-[10px] text-gray-400 font-medium">
+                  <span className="text-[10px] text-slate-400 font-medium">
                     ID: 9823-XA-4532
                   </span>
                 </div>
-                <div className="space-y-2.5 border-b border-dashed border-gray-200 pb-4 mb-4">
+                <div className="space-y-2.5 border-b border-dashed border-slate-200 pb-4 mb-4">
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-400 font-medium">LOCATION</span>
+                    <span className="text-slate-400 font-medium">LOCATION</span>
                     <span className="text-[#102122] font-bold text-[11px]">
                       40.7128&deg; N, 74.0060&deg; W
                     </span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-400 font-medium">DATE</span>
+                    <span className="text-slate-400 font-medium">DATE</span>
                     <span className="text-[#102122] font-bold text-[11px]">
                       OCT 24, 2024
                     </span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-400 font-medium">TYPE</span>
+                    <span className="text-slate-400 font-medium">TYPE</span>
                     <span className="text-[#102122] font-bold text-[11px]">
                       CONCRETE_LOG
                     </span>
                   </div>
                 </div>
-                <div className="text-[9px] text-gray-400 uppercase tracking-widest leading-relaxed">
+                <div className="text-[9px] text-slate-400 uppercase tracking-widest leading-relaxed">
                   Verification hash: 0x821f...921a
                   <br />
                   Authorized by: ProofNode-04
@@ -223,9 +226,9 @@ export default function TheProofPage() {
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 md:min-h-[560px]">
               {/* Large featured bento (2x2) — Zero-Knowledge Protocol */}
-              <div className="md:col-span-2 md:row-span-2 bg-white p-10 flex flex-col justify-between shadow-sm border border-gray-100 rounded-xl relative overflow-hidden group">
+              <div className="md:col-span-2 md:row-span-2 bg-white p-10 flex flex-col justify-between shadow-sm border border-slate-100 rounded-xl relative overflow-hidden group">
                 <div className="absolute top-4 right-4">
-                  <span className="material-symbols-outlined text-gray-100 text-8xl">
+                  <span className="material-symbols-outlined text-slate-100 text-8xl">
                     terminal
                   </span>
                 </div>
@@ -238,7 +241,7 @@ export default function TheProofPage() {
                     <br />
                     Identity Protocol
                   </h2>
-                  <p className="text-gray-500 max-w-sm leading-relaxed">
+                  <p className="text-slate-500 max-w-sm leading-relaxed">
                     We don&apos;t store your data. We verify its existence and
                     state at a specific point in time without compromising
                     privacy.
@@ -255,7 +258,7 @@ export default function TheProofPage() {
               </div>
 
               {/* Stats bar (2x1) — dark */}
-              <div className="md:col-span-2 bg-[#102122] p-10 flex items-center justify-between rounded-xl">
+              <div className="md:col-span-2 bg-reno-dark p-10 flex items-center justify-between rounded-xl">
                 <div className="space-y-2">
                   <h3 className="text-white text-3xl font-black">2.4ms</h3>
                   <p className="text-white/50 text-xs uppercase tracking-widest font-medium">
@@ -272,13 +275,13 @@ export default function TheProofPage() {
               </div>
 
               {/* Encrypted card (1x1) */}
-              <div className="bg-white p-8 rounded-xl flex flex-col justify-between shadow-sm border border-gray-100 min-h-[200px]">
+              <div className="bg-white p-8 rounded-xl flex flex-col justify-between shadow-sm border border-slate-100 min-h-[200px]">
                 <span className="material-symbols-outlined text-[#102122] text-2xl">
                   shield
                 </span>
                 <div className="space-y-1.5 mt-auto">
                   <h4 className="font-bold text-[#102122]">Encrypted</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed">
+                  <p className="text-xs text-slate-500 leading-relaxed">
                     AES-256 standard encryption for all metadata.
                   </p>
                 </div>
@@ -315,7 +318,7 @@ export default function TheProofPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
                 From Capture to Certainty
               </h2>
-              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
                 Four steps. Under three seconds. Every piece of evidence sealed
                 into an immutable record.
               </p>
@@ -327,25 +330,25 @@ export default function TheProofPage() {
               <ScrollReveal key={step.step} delay={i * 100}>
                 <div className="relative">
                   {/* Step number */}
-                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-[#102122] text-white rounded-full flex items-center justify-center text-xs font-black z-10">
+                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-reno-dark text-white rounded-full flex items-center justify-center text-xs font-black z-10">
                     {step.step}
                   </div>
 
-                  <div className="bg-[#f6f8f8] p-8 rounded-xl border border-gray-100 h-full hover:shadow-float transition-shadow">
+                  <div className="bg-[#f6f8f8] p-8 rounded-xl border border-slate-100 h-full hover:shadow-float transition-shadow">
                     <span className="material-symbols-outlined text-primary text-3xl">
                       {step.icon}
                     </span>
                     <h3 className="font-extrabold text-[#102122] text-xl mt-4 mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
+                    <p className="text-slate-500 text-sm leading-relaxed">
                       {step.description}
                     </p>
                   </div>
 
                   {/* Connector line */}
                   {i < verificationFlow.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-4 w-8 border-t-2 border-dashed border-gray-200" />
+                    <div className="hidden lg:block absolute top-1/2 -right-4 w-8 border-t-2 border-dashed border-slate-200" />
                   )}
                 </div>
               </ScrollReveal>
@@ -358,7 +361,7 @@ export default function TheProofPage() {
           SECTION 3.5 — INSIDE THE ENGINE
           Forensic Proof Engine dashboard visual (desktop + mobile)
           ================================================================ */}
-      <section className="bg-[#102122] py-24 overflow-hidden">
+      <section className="bg-reno-dark py-24 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal>
             <div className="text-center mb-14">
@@ -368,7 +371,7 @@ export default function TheProofPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
                 Live Data. No Guesswork.
               </h2>
-              <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-400 mt-4 max-w-2xl mx-auto text-lg">
                 The Forensic Proof Engine gives site managers a real-time
                 dashboard of GPS attendance, quantity verification, OCR receipts,
                 and timestamped photo evidence.
@@ -388,7 +391,7 @@ export default function TheProofPage() {
                     <div className="w-3 h-3 rounded-full bg-[#28c840]" />
                   </div>
                   <div className="flex-1 flex justify-center">
-                    <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-gray-500 font-medium">
+                    <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-slate-500 font-medium">
                       proof.renonext.com/dashboard
                     </div>
                   </div>
@@ -402,20 +405,20 @@ export default function TheProofPage() {
                       <h3 className="text-base font-bold text-[#102122] tracking-tight">
                         The Forensic Proof Engine
                       </h3>
-                      <p className="text-[11px] text-gray-500">
+                      <p className="text-[11px] text-slate-500">
                         Live, verifiable data from the job site. No guesswork.
                       </p>
                     </div>
                     <div className="hidden md:flex items-center gap-3">
                       <div className="bg-[#f2f4f2] rounded-full px-4 py-1.5 flex items-center gap-2">
-                        <span className="material-symbols-outlined text-gray-400 text-sm">
+                        <span className="material-symbols-outlined text-slate-400 text-sm">
                           search
                         </span>
-                        <span className="text-[11px] text-gray-400">
+                        <span className="text-[11px] text-slate-400">
                           Search evidence logs...
                         </span>
                       </div>
-                      <span className="material-symbols-outlined text-gray-400 text-xl">
+                      <span className="material-symbols-outlined text-slate-400 text-xl">
                         notifications
                       </span>
                       <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
@@ -435,7 +438,7 @@ export default function TheProofPage() {
                           <h4 className="text-sm font-bold text-[#102122]">
                             GPS Site Attendance
                           </h4>
-                          <p className="text-[10px] text-gray-500">
+                          <p className="text-[10px] text-slate-500">
                             Verified geofence entry/exit logs
                           </p>
                         </div>
@@ -453,7 +456,7 @@ export default function TheProofPage() {
                       </div>
                       <div className="flex min-h-[200px]">
                         {/* Map placeholder */}
-                        <div className="w-3/5 relative bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 overflow-hidden">
+                        <div className="w-3/5 relative bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 overflow-hidden">
                           <div
                             className="absolute inset-0 opacity-10"
                             style={{
@@ -497,16 +500,16 @@ export default function TheProofPage() {
                                   className={`w-1.5 h-1.5 rounded-full mt-1.5 ${
                                     entry.active
                                       ? 'bg-primary'
-                                      : 'bg-gray-300'
+                                      : 'bg-slate-300'
                                   }`}
                                 />
-                                <div className="w-px flex-1 bg-gray-200 my-0.5" />
+                                <div className="w-px flex-1 bg-slate-200 my-0.5" />
                               </div>
                               <div>
                                 <div className="text-[10px] font-bold text-[#102122]">
                                   {entry.name}
                                 </div>
-                                <div className="text-[9px] text-gray-500">
+                                <div className="text-[9px] text-slate-500">
                                   {entry.time}
                                 </div>
                               </div>
@@ -525,7 +528,7 @@ export default function TheProofPage() {
                         <h4 className="text-sm font-bold text-[#102122] mb-0.5">
                           Quantity Match
                         </h4>
-                        <p className="text-[10px] text-gray-500">
+                        <p className="text-[10px] text-slate-500">
                           Design vs. Field Installation
                         </p>
                       </div>
@@ -559,7 +562,7 @@ export default function TheProofPage() {
                             <span className="text-xl font-black text-primary tracking-tighter">
                               100%
                             </span>
-                            <span className="text-[7px] font-bold text-gray-500 uppercase tracking-widest">
+                            <span className="text-[7px] font-bold text-slate-500 uppercase tracking-widest">
                               Match
                             </span>
                           </div>
@@ -567,7 +570,7 @@ export default function TheProofPage() {
                       </div>
                       <div className="grid grid-cols-2 gap-2">
                         <div className="bg-white/50 p-2.5 rounded-lg">
-                          <div className="text-[8px] text-gray-500 font-bold uppercase">
+                          <div className="text-[8px] text-slate-500 font-bold uppercase">
                             Target
                           </div>
                           <div className="text-sm font-bold text-primary">
@@ -575,7 +578,7 @@ export default function TheProofPage() {
                           </div>
                         </div>
                         <div className="bg-white/50 p-2.5 rounded-lg">
-                          <div className="text-[8px] text-gray-500 font-bold uppercase">
+                          <div className="text-[8px] text-slate-500 font-bold uppercase">
                             Verified
                           </div>
                           <div className="text-sm font-bold text-primary">
@@ -596,30 +599,30 @@ export default function TheProofPage() {
 
                     {/* ── Material Receipt OCR (4 col) ── */}
                     <div className="col-span-12 lg:col-span-4 bg-white rounded-xl shadow-sm overflow-hidden">
-                      <div className="p-4 border-b border-gray-100">
+                      <div className="p-4 border-b border-slate-100">
                         <h4 className="text-sm font-bold text-[#102122]">
                           Material Receipt OCR
                         </h4>
-                        <p className="text-[10px] text-gray-500">
+                        <p className="text-[10px] text-slate-500">
                           Automated validation from scan
                         </p>
                       </div>
                       <div className="p-4">
                         {/* Receipt skeleton with OCR highlight */}
-                        <div className="relative bg-gray-50 rounded-lg p-3.5 border border-gray-100 min-h-[100px]">
+                        <div className="relative bg-slate-50 rounded-lg p-3.5 border border-slate-100 min-h-[100px]">
                           <div className="space-y-2 opacity-40">
-                            <div className="h-3 w-2/3 bg-gray-200 rounded" />
-                            <div className="h-2 w-1/2 bg-gray-100 rounded" />
-                            <div className="h-px w-full bg-gray-100" />
+                            <div className="h-3 w-2/3 bg-slate-200 rounded" />
+                            <div className="h-2 w-1/2 bg-slate-100 rounded" />
+                            <div className="h-px w-full bg-slate-100" />
                             <div className="flex justify-between">
-                              <div className="h-2.5 w-1/3 bg-gray-200 rounded" />
+                              <div className="h-2.5 w-1/3 bg-slate-200 rounded" />
                               <div className="h-2.5 w-5 bg-primary/30 rounded" />
                             </div>
                             <div className="flex justify-between">
-                              <div className="h-2.5 w-1/2 bg-gray-200 rounded" />
+                              <div className="h-2.5 w-1/2 bg-slate-200 rounded" />
                               <div className="h-2.5 w-7 bg-primary/30 rounded" />
                             </div>
-                            <div className="h-px w-full bg-gray-100" />
+                            <div className="h-px w-full bg-slate-100" />
                           </div>
                           {/* OCR validated line */}
                           <div className="absolute top-1/2 -translate-y-1/2 left-2.5 right-2.5 h-5 bg-primary/10 border-y border-primary/30 flex items-center px-2">
@@ -630,13 +633,13 @@ export default function TheProofPage() {
                         </div>
                         <div className="mt-3 space-y-1">
                           <div className="flex justify-between text-[10px]">
-                            <span className="text-gray-500">Vendor</span>
+                            <span className="text-slate-500">Vendor</span>
                             <span className="font-bold text-[#102122]">
                               Build-Right Supply Co.
                             </span>
                           </div>
                           <div className="flex justify-between text-[10px]">
-                            <span className="text-gray-500">
+                            <span className="text-slate-500">
                               Match Confidence
                             </span>
                             <span className="font-bold text-primary">
@@ -654,18 +657,18 @@ export default function TheProofPage() {
                           <h4 className="text-sm font-bold text-[#102122]">
                             Timestamped Photo Logs
                           </h4>
-                          <p className="text-[10px] text-gray-500">
+                          <p className="text-[10px] text-slate-500">
                             Forensic visual evidence archive
                           </p>
                         </div>
                         <div className="flex gap-1.5">
-                          <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                            <span className="material-symbols-outlined text-gray-400 text-xs">
+                          <div className="w-6 h-6 bg-slate-100 rounded-full flex items-center justify-center">
+                            <span className="material-symbols-outlined text-slate-400 text-xs">
                               chevron_left
                             </span>
                           </div>
-                          <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                            <span className="material-symbols-outlined text-gray-400 text-xs">
+                          <div className="w-6 h-6 bg-slate-100 rounded-full flex items-center justify-center">
+                            <span className="material-symbols-outlined text-slate-400 text-xs">
                               chevron_right
                             </span>
                           </div>
@@ -693,7 +696,7 @@ export default function TheProofPage() {
                             key={photo.label}
                             className="w-1/3 relative rounded-lg overflow-hidden"
                           >
-                            <div className="h-28 bg-gradient-to-br from-gray-300 via-gray-200 to-gray-300 flex items-center justify-center">
+                            <div className="h-28 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-300 flex items-center justify-center">
                               <span className="material-symbols-outlined text-white/40 text-3xl">
                                 {photo.icon}
                               </span>
@@ -713,20 +716,20 @@ export default function TheProofPage() {
                   </div>
 
                   {/* Status footer */}
-                  <div className="mt-4 flex justify-between items-center py-2 border-t border-gray-200">
+                  <div className="mt-4 flex justify-between items-center py-2 border-t border-slate-200">
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-1.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                        <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest">
+                        <div className="w-1.5 h-1.5 rounded-full bg-reno-green-400" />
+                        <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">
                           Engine Status: Optimal
                         </span>
                       </div>
-                      <div className="hidden md:block h-3 w-px bg-gray-200" />
-                      <span className="hidden md:block text-[9px] text-gray-400">
+                      <div className="hidden md:block h-3 w-px bg-slate-200" />
+                      <span className="hidden md:block text-[9px] text-slate-400">
                         Last Audit: 2 minutes ago
                       </span>
                     </div>
-                    <div className="bg-gray-100 px-3 py-1 rounded text-[9px] font-bold text-gray-500">
+                    <div className="bg-slate-100 px-3 py-1 rounded text-[9px] font-bold text-slate-500">
                       Generate Report
                     </div>
                   </div>
@@ -743,7 +746,7 @@ export default function TheProofPage() {
                       <span className="text-[11px] font-bold text-[#102122] tracking-tight">
                         Proof Engine
                       </span>
-                      <span className="material-symbols-outlined text-gray-400 text-sm">
+                      <span className="material-symbols-outlined text-slate-400 text-sm">
                         notifications
                       </span>
                     </div>
@@ -759,14 +762,14 @@ export default function TheProofPage() {
                       <h3 className="text-base font-black text-[#102122] tracking-tighter leading-tight">
                         Project Alpha
                       </h3>
-                      <p className="text-[8px] text-gray-500">
+                      <p className="text-[8px] text-slate-500">
                         Site 402-B &bull; 12 Oct 2024
                       </p>
                     </div>
 
                     {/* Quantity Match card */}
                     <div className="mx-3.5 mt-1.5 bg-[#e6e9e7] rounded-lg p-3">
-                      <p className="text-[7px] font-bold text-gray-500 uppercase tracking-widest mb-1.5">
+                      <p className="text-[7px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">
                         Quantity Match
                       </p>
                       <div className="flex items-center justify-between">
@@ -801,7 +804,7 @@ export default function TheProofPage() {
                           <div className="text-base font-black text-primary tracking-tighter">
                             4,280
                           </div>
-                          <p className="text-[7px] text-gray-500">
+                          <p className="text-[7px] text-slate-500">
                             Units Verified
                           </p>
                         </div>
@@ -819,14 +822,14 @@ export default function TheProofPage() {
                         <h4 className="text-[10px] font-bold text-[#102122]">
                           Geofence: Active
                         </h4>
-                        <p className="text-[8px] text-gray-500">
+                        <p className="text-[8px] text-slate-500">
                           42 Personnel on site
                         </p>
                       </div>
                     </div>
 
                     {/* Map area */}
-                    <div className="mx-3.5 mt-2 flex-1 rounded-lg overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 relative">
+                    <div className="mx-3.5 mt-2 flex-1 rounded-lg overflow-hidden bg-gradient-to-br from-slate-200 to-slate-300 relative">
                       <div className="absolute bottom-1.5 left-2 flex items-center gap-1">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary ring-2 ring-primary/20" />
                         <span className="text-[7px] font-bold text-[#102122]">
@@ -836,13 +839,13 @@ export default function TheProofPage() {
                     </div>
 
                     {/* Bottom nav tabs */}
-                    <div className="flex justify-around items-center px-1 py-2.5 mt-auto border-t border-gray-100">
+                    <div className="flex justify-around items-center px-1 py-2.5 mt-auto border-t border-slate-100">
                       {['dashboard', 'location_on', 'receipt_long', 'photo_camera', 'fact_check'].map(
                         (icon, idx) => (
                           <span
                             key={icon}
                             className={`material-symbols-outlined text-sm ${
-                              idx === 0 ? 'text-primary' : 'text-gray-400'
+                              idx === 0 ? 'text-primary' : 'text-slate-400'
                             }`}
                             style={
                               idx === 0
@@ -877,7 +880,7 @@ export default function TheProofPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
                 Verified Proof, Secured Payment
               </h2>
-              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
                 Every milestone release is backed by GPS presence, material OCR,
                 visual evidence, and a forensic transaction log. No proof, no payment.
               </p>
@@ -885,7 +888,7 @@ export default function TheProofPage() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
               {/* Browser chrome */}
               <div className="bg-[#e6e9e7] px-4 py-3 flex items-center gap-3">
                 <div className="flex gap-1.5">
@@ -894,7 +897,7 @@ export default function TheProofPage() {
                   <div className="w-3 h-3 rounded-full bg-[#28c840]" />
                 </div>
                 <div className="flex-1 flex justify-center">
-                  <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-gray-500 font-medium">
+                  <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-slate-500 font-medium">
                     proof.renonext.com/verify/MS-402-B-08
                   </div>
                 </div>
@@ -903,12 +906,12 @@ export default function TheProofPage() {
               {/* App body */}
               <div className="bg-[#f4f5f4] flex min-h-[640px]">
                 {/* Sidebar */}
-                <div className="hidden lg:flex w-52 bg-[#f2f4f2] border-r border-gray-200/50 flex-col p-4">
+                <div className="hidden lg:flex w-52 bg-[#f2f4f2] border-r border-slate-200/50 flex-col p-4">
                   <div className="mb-6">
                     <div className="text-sm font-black text-primary tracking-tighter uppercase italic">
                       Project Alpha
                     </div>
-                    <div className="text-[8px] text-gray-500 uppercase tracking-widest font-bold">
+                    <div className="text-[8px] text-slate-500 uppercase tracking-widest font-bold">
                       Site 402-B
                     </div>
                   </div>
@@ -926,7 +929,7 @@ export default function TheProofPage() {
                         className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[11px] font-medium ${
                           item.active
                             ? 'bg-white text-primary shadow-sm font-bold'
-                            : 'text-gray-500 hover:bg-white/50'
+                            : 'text-slate-500 hover:bg-white/50'
                         }`}
                       >
                         <span
@@ -951,25 +954,25 @@ export default function TheProofPage() {
                 {/* Main content */}
                 <div className="flex-1 flex flex-col">
                   {/* Top header bar */}
-                  <div className="sticky top-0 bg-[#f4f5f4]/95 backdrop-blur-sm flex justify-between items-center px-5 py-3 border-b border-gray-200/30">
+                  <div className="sticky top-0 bg-[#f4f5f4]/95 backdrop-blur-sm flex justify-between items-center px-5 py-3 border-b border-slate-200/30">
                     <div>
                       <h3 className="text-sm font-extrabold text-[#102122] tracking-tight">
                         The Forensic Proof Engine
                       </h3>
-                      <p className="text-[10px] text-gray-500">
+                      <p className="text-[10px] text-slate-500">
                         Live, verifiable data from the job site.
                       </p>
                     </div>
                     <div className="hidden md:flex items-center gap-3">
-                      <div className="bg-[#f2f4f2] rounded-lg px-3 py-1.5 flex items-center gap-1.5 border border-gray-200/30">
-                        <span className="material-symbols-outlined text-gray-400 text-sm">
+                      <div className="bg-[#f2f4f2] rounded-lg px-3 py-1.5 flex items-center gap-1.5 border border-slate-200/30">
+                        <span className="material-symbols-outlined text-slate-400 text-sm">
                           search
                         </span>
-                        <span className="text-[10px] text-gray-400">
+                        <span className="text-[10px] text-slate-400">
                           Search proof logs...
                         </span>
                       </div>
-                      <span className="material-symbols-outlined text-gray-400 text-lg relative">
+                      <span className="material-symbols-outlined text-slate-400 text-lg relative">
                         notifications
                         <span className="absolute top-0 right-0 w-1.5 h-1.5 bg-red-500 rounded-full" />
                       </span>
@@ -982,7 +985,7 @@ export default function TheProofPage() {
                   {/* Page body */}
                   <div className="p-5 space-y-5 flex-1">
                     {/* Page header row */}
-                    <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end pb-5 border-b border-gray-200/30 gap-4">
+                    <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end pb-5 border-b border-slate-200/30 gap-4">
                       <div>
                         <div className="flex items-center gap-1.5 text-primary font-black text-[8px] uppercase tracking-widest mb-1">
                           <span
@@ -996,7 +999,7 @@ export default function TheProofPage() {
                         <h2 className="text-2xl lg:text-3xl font-black text-[#102122] tracking-tighter leading-none">
                           Review &amp; Release Funds
                         </h2>
-                        <p className="text-[11px] text-gray-500 mt-1">
+                        <p className="text-[11px] text-slate-500 mt-1">
                           Milestone ID:{' '}
                           <span className="text-primary font-black">
                             MS-402-B-08
@@ -1029,31 +1032,31 @@ export default function TheProofPage() {
                       {/* ── Left: Evidence & Log (7 col) ── */}
                       <div className="col-span-12 lg:col-span-7 space-y-5">
                         {/* Evidence Viewer */}
-                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-                          <div className="p-4 flex justify-between items-center border-b border-gray-100">
+                        <div className="bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden">
+                          <div className="p-4 flex justify-between items-center border-b border-slate-100">
                             <div>
                               <h4 className="text-[11px] font-black text-[#102122] uppercase tracking-widest">
                                 Primary Visual Evidence
                               </h4>
-                              <p className="text-[9px] text-gray-500">
+                              <p className="text-[9px] text-slate-500">
                                 Verified field proof archive
                               </p>
                             </div>
-                            <div className="flex bg-[#f2f4f2] p-0.5 rounded-md border border-gray-200/30">
+                            <div className="flex bg-[#f2f4f2] p-0.5 rounded-md border border-slate-200/30">
                               <span className="px-3 py-1 text-[8px] font-black uppercase rounded bg-primary text-white">
                                 Photos (4)
                               </span>
-                              <span className="px-3 py-1 text-[8px] font-black uppercase text-gray-400">
+                              <span className="px-3 py-1 text-[8px] font-black uppercase text-slate-400">
                                 Receipts
                               </span>
-                              <span className="px-3 py-1 text-[8px] font-black uppercase text-gray-400">
+                              <span className="px-3 py-1 text-[8px] font-black uppercase text-slate-400">
                                 GPS
                               </span>
                             </div>
                           </div>
                           <div className="p-4">
                             {/* Photo area */}
-                            <div className="relative rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-gray-300 via-gray-200 to-gray-300 aspect-video">
+                            <div className="relative rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-300 aspect-video">
                               <div
                                 className="absolute inset-0 opacity-20"
                                 style={{
@@ -1062,7 +1065,7 @@ export default function TheProofPage() {
                                 }}
                               />
                               <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="material-symbols-outlined text-gray-300/60 text-7xl">
+                                <span className="material-symbols-outlined text-slate-300/60 text-7xl">
                                   foundation
                                 </span>
                               </div>
@@ -1102,14 +1105,14 @@ export default function TheProofPage() {
 
                             {/* Metrics row */}
                             <div className="grid grid-cols-2 gap-3">
-                              <div className="bg-[#f2f4f2]/50 rounded-lg p-3 border border-gray-100">
+                              <div className="bg-[#f2f4f2]/50 rounded-lg p-3 border border-slate-100">
                                 <div className="flex items-center gap-2 mb-1.5">
                                   <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center">
                                     <span className="material-symbols-outlined text-primary text-sm">
                                       location_on
                                     </span>
                                   </div>
-                                  <p className="text-[8px] font-black text-gray-500 uppercase tracking-widest">
+                                  <p className="text-[8px] font-black text-slate-500 uppercase tracking-widest">
                                     Geo-Coordinates
                                   </p>
                                 </div>
@@ -1120,21 +1123,21 @@ export default function TheProofPage() {
                                   Active Precision: &plusmn; 2.4m
                                 </p>
                               </div>
-                              <div className="bg-[#f2f4f2]/50 rounded-lg p-3 border border-gray-100">
+                              <div className="bg-[#f2f4f2]/50 rounded-lg p-3 border border-slate-100">
                                 <div className="flex items-center gap-2 mb-1.5">
                                   <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center">
                                     <span className="material-symbols-outlined text-primary text-sm">
                                       inventory_2
                                     </span>
                                   </div>
-                                  <p className="text-[8px] font-black text-gray-500 uppercase tracking-widest">
+                                  <p className="text-[8px] font-black text-slate-500 uppercase tracking-widest">
                                     Material Audit
                                   </p>
                                 </div>
                                 <p className="text-xs font-black text-[#102122] tracking-tight">
                                   12.5m&sup3; Grade A Concrete
                                 </p>
-                                <p className="text-[7px] text-gray-500 font-bold uppercase mt-0.5">
+                                <p className="text-[7px] text-slate-500 font-bold uppercase mt-0.5">
                                   Batch: #4421-B AUTHENTICATED
                                 </p>
                               </div>
@@ -1143,8 +1146,8 @@ export default function TheProofPage() {
                         </div>
 
                         {/* Forensic Transaction Log */}
-                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4">
-                          <div className="flex items-center justify-between mb-5 pb-3 border-b border-gray-100">
+                        <div className="bg-white rounded-lg shadow-sm border border-slate-100 p-4">
+                          <div className="flex items-center justify-between mb-5 pb-3 border-b border-slate-100">
                             <h4 className="text-[11px] font-black text-[#102122] uppercase tracking-widest flex items-center gap-2">
                               <span className="material-symbols-outlined text-primary text-sm">
                                 history
@@ -1155,7 +1158,7 @@ export default function TheProofPage() {
                               View Full Audit Trail
                             </span>
                           </div>
-                          <div className="space-y-4 relative before:absolute before:left-[5px] before:top-1 before:bottom-1 before:w-[1.5px] before:bg-gray-100">
+                          <div className="space-y-4 relative before:absolute before:left-[5px] before:top-1 before:bottom-1 before:w-[1.5px] before:bg-slate-100">
                             <div className="relative pl-7">
                               <div className="absolute left-0 top-1 w-[11px] h-[11px] rounded-full bg-primary ring-[3px] ring-primary/10" />
                               <div className="flex justify-between items-start gap-4">
@@ -1163,29 +1166,29 @@ export default function TheProofPage() {
                                   <p className="text-[10px] font-black text-[#102122] uppercase">
                                     Material Entry Verified
                                   </p>
-                                  <p className="text-[9px] text-gray-500 mt-0.5 italic leading-relaxed">
+                                  <p className="text-[9px] text-slate-500 mt-0.5 italic leading-relaxed">
                                     &ldquo;Batch #4421-B Concrete Slump Test uploaded by Foreman
                                     J. Miller. Metadata matched shipping manifest.&rdquo;
                                   </p>
                                 </div>
-                                <span className="text-[8px] font-black text-gray-400 bg-[#f2f4f2] px-1.5 py-0.5 rounded shrink-0">
+                                <span className="text-[8px] font-black text-slate-400 bg-[#f2f4f2] px-1.5 py-0.5 rounded shrink-0">
                                   14:45
                                 </span>
                               </div>
                             </div>
                             <div className="relative pl-7 opacity-60">
-                              <div className="absolute left-[2px] top-1 w-[7px] h-[7px] rounded-full bg-gray-300" />
+                              <div className="absolute left-[2px] top-1 w-[7px] h-[7px] rounded-full bg-slate-300" />
                               <div className="flex justify-between items-start gap-4">
                                 <div>
-                                  <p className="text-[10px] font-bold text-gray-500 uppercase">
+                                  <p className="text-[10px] font-bold text-slate-500 uppercase">
                                     GPS Presence Confirmed
                                   </p>
-                                  <p className="text-[9px] text-gray-500 mt-0.5 italic leading-relaxed">
+                                  <p className="text-[9px] text-slate-500 mt-0.5 italic leading-relaxed">
                                     Device verified within site geofence for 4.5 continuous
                                     hours. No geofence breaks detected.
                                   </p>
                                 </div>
-                                <span className="text-[8px] font-black text-gray-400 bg-[#f2f4f2] px-1.5 py-0.5 rounded shrink-0">
+                                <span className="text-[8px] font-black text-slate-400 bg-[#f2f4f2] px-1.5 py-0.5 rounded shrink-0">
                                   13:12
                                 </span>
                               </div>
@@ -1246,8 +1249,8 @@ export default function TheProofPage() {
                         </div>
 
                         {/* Verification Checklist */}
-                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4">
-                          <h4 className="text-[11px] font-black text-[#102122] uppercase tracking-widest mb-4 pb-3 border-b border-gray-100">
+                        <div className="bg-white rounded-lg shadow-sm border border-slate-100 p-4">
+                          <h4 className="text-[11px] font-black text-[#102122] uppercase tracking-widest mb-4 pb-3 border-b border-slate-100">
                             Verification Checklist
                           </h4>
                           <div className="space-y-2">
@@ -1278,14 +1281,14 @@ export default function TheProofPage() {
                                 className={`flex items-start gap-3 p-3 rounded-lg border ${
                                   item.done
                                     ? 'bg-primary/5 border-primary/10'
-                                    : 'bg-[#f2f4f2] border-gray-200/50 opacity-50'
+                                    : 'bg-[#f2f4f2] border-slate-200/50 opacity-50'
                                 }`}
                               >
                                 <div
                                   className={`w-5 h-5 rounded-md flex items-center justify-center shrink-0 ${
                                     item.done
                                       ? 'bg-primary text-white'
-                                      : 'bg-gray-300 text-white'
+                                      : 'bg-slate-300 text-white'
                                   }`}
                                 >
                                   <span className="material-symbols-outlined text-xs">
@@ -1296,7 +1299,7 @@ export default function TheProofPage() {
                                   <p className="text-[10px] font-black text-[#102122] uppercase tracking-tight">
                                     {item.label}
                                   </p>
-                                  <p className={`text-[8px] font-bold mt-0.5 ${item.done ? 'text-primary' : 'text-gray-500'}`}>
+                                  <p className={`text-[8px] font-bold mt-0.5 ${item.done ? 'text-primary' : 'text-slate-500'}`}>
                                     {item.detail}
                                   </p>
                                 </div>
@@ -1307,7 +1310,7 @@ export default function TheProofPage() {
 
                         {/* Slide to Release */}
                         <div className="space-y-2.5">
-                          <div className="relative h-14 bg-[#f2f4f2] rounded-xl p-1.5 flex items-center border border-gray-200/30 overflow-hidden">
+                          <div className="relative h-14 bg-[#f2f4f2] rounded-xl p-1.5 flex items-center border border-slate-200/30 overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                               <p className="text-[8px] font-black uppercase tracking-[0.3em] text-primary/30">
                                 Slide to Secure Release
@@ -1331,7 +1334,7 @@ export default function TheProofPage() {
                               </span>
                             </div>
                           </div>
-                          <div className="py-2.5 rounded-lg border border-dashed border-gray-200 text-[8px] font-black uppercase tracking-widest text-gray-400 flex items-center justify-center gap-2">
+                          <div className="py-2.5 rounded-lg border border-dashed border-slate-200 text-[8px] font-black uppercase tracking-widest text-slate-400 flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">
                               flag_circle
                             </span>
@@ -1343,16 +1346,16 @@ export default function TheProofPage() {
                   </div>
 
                   {/* Footer */}
-                  <div className="mt-auto border-t border-gray-200/30 px-5 py-2.5 flex justify-between items-center bg-white/50 backdrop-blur-sm">
+                  <div className="mt-auto border-t border-slate-200/30 px-5 py-2.5 flex justify-between items-center bg-white/50 backdrop-blur-sm">
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-1.5">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span className="text-[8px] font-extrabold text-gray-500 uppercase tracking-widest">
+                        <span className="text-[8px] font-extrabold text-slate-500 uppercase tracking-widest">
                           Engine Status: Optimal
                         </span>
                       </div>
-                      <div className="hidden md:block h-3 w-px bg-gray-200" />
-                      <span className="hidden md:block text-[8px] text-gray-400">
+                      <div className="hidden md:block h-3 w-px bg-slate-200" />
+                      <span className="hidden md:block text-[8px] text-slate-400">
                         Last Audit Check: 2 minutes ago
                       </span>
                     </div>
@@ -1361,11 +1364,11 @@ export default function TheProofPage() {
                         <div className="w-5 h-5 rounded-md border-2 border-white bg-primary/20 flex items-center justify-center text-[7px] font-black text-primary">
                           AR
                         </div>
-                        <div className="w-5 h-5 rounded-md border-2 border-white bg-gray-100 flex items-center justify-center text-[7px] font-black text-gray-500">
+                        <div className="w-5 h-5 rounded-md border-2 border-white bg-slate-100 flex items-center justify-center text-[7px] font-black text-slate-500">
                           +2
                         </div>
                       </div>
-                      <div className="bg-gray-100 px-2.5 py-1 rounded text-[8px] font-bold text-gray-500 border border-gray-200/30">
+                      <div className="bg-slate-100 px-2.5 py-1 rounded text-[8px] font-bold text-slate-500 border border-slate-200/30">
                         Export Forensic Report
                       </div>
                     </div>
@@ -1401,7 +1404,7 @@ export default function TheProofPage() {
                     <p className="text-xl font-black text-[#102122]">
                       {stat.value}
                     </p>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-widest font-medium">
+                    <p className="text-[10px] text-slate-400 uppercase tracking-widest font-medium">
                       {stat.label}
                     </p>
                   </div>
@@ -1415,14 +1418,14 @@ export default function TheProofPage() {
               const style = statusStyles[ticket.status];
               return (
                 <ScrollReveal key={ticket.ticketId} delay={i * 80}>
-                  <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-float transition-shadow">
+                  <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-float transition-shadow">
                     {/* Header */}
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
                         <span className="font-black text-xl text-[#102122]">
                           {ticket.ticketId}
                         </span>
-                        <span className="bg-gray-100 text-[9px] px-2 py-0.5 font-bold text-gray-500 uppercase tracking-wider rounded">
+                        <span className="bg-slate-100 text-[9px] px-2 py-0.5 font-bold text-slate-500 uppercase tracking-wider rounded">
                           {ticket.type}
                         </span>
                       </div>
@@ -1451,7 +1454,7 @@ export default function TheProofPage() {
                     {/* Details grid */}
                     <div className="grid grid-cols-2 gap-3 text-xs">
                       <div>
-                        <span className="text-gray-400 font-medium uppercase text-[10px] tracking-wider">
+                        <span className="text-slate-400 font-medium uppercase text-[10px] tracking-wider">
                           Location
                         </span>
                         <p className="text-[#102122] font-medium mt-0.5">
@@ -1459,7 +1462,7 @@ export default function TheProofPage() {
                         </p>
                       </div>
                       <div>
-                        <span className="text-gray-400 font-medium uppercase text-[10px] tracking-wider">
+                        <span className="text-slate-400 font-medium uppercase text-[10px] tracking-wider">
                           Coordinates
                         </span>
                         <p className="text-[#102122] font-medium mt-0.5">
@@ -1467,7 +1470,7 @@ export default function TheProofPage() {
                         </p>
                       </div>
                       <div>
-                        <span className="text-gray-400 font-medium uppercase text-[10px] tracking-wider">
+                        <span className="text-slate-400 font-medium uppercase text-[10px] tracking-wider">
                           Timestamp
                         </span>
                         <p className="text-[#102122] font-medium mt-0.5">
@@ -1475,7 +1478,7 @@ export default function TheProofPage() {
                         </p>
                       </div>
                       <div>
-                        <span className="text-gray-400 font-medium uppercase text-[10px] tracking-wider">
+                        <span className="text-slate-400 font-medium uppercase text-[10px] tracking-wider">
                           Hash
                         </span>
                         <p className="text-[#102122] font-mono font-medium mt-0.5">
@@ -1485,8 +1488,8 @@ export default function TheProofPage() {
                     </div>
 
                     {/* Footer */}
-                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-dashed border-gray-100">
-                      <span className="text-[10px] text-gray-400 uppercase tracking-widest">
+                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-dashed border-slate-100">
+                      <span className="text-[10px] text-slate-400 uppercase tracking-widest">
                         {ticket.node}
                       </span>
                       <span className="text-[10px] font-bold text-primary">
@@ -1515,7 +1518,7 @@ export default function TheProofPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
                 Built for Construction Truth
               </h2>
-              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
                 Four modules that work together to create an unbreakable chain
                 of verification from the moment evidence is captured.
               </p>
@@ -1525,9 +1528,9 @@ export default function TheProofPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {proofModules.map((mod, i) => (
               <ScrollReveal key={mod.id} delay={i * 80}>
-                <div className="bg-[#f6f8f8] p-8 rounded-xl border border-gray-100 h-full">
+                <div className="bg-[#f6f8f8] p-8 rounded-xl border border-slate-100 h-full">
                   <div className="flex items-start gap-4 mb-5">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-gray-100 flex-shrink-0">
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-slate-100 flex-shrink-0">
                       <span className="material-symbols-outlined text-primary text-xl">
                         {mod.icon}
                       </span>
@@ -1541,7 +1544,7 @@ export default function TheProofPage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-5">
+                  <p className="text-slate-500 text-sm leading-relaxed mb-5">
                     {mod.description}
                   </p>
                   <ul className="space-y-2">
@@ -1553,7 +1556,7 @@ export default function TheProofPage() {
                         >
                           check_circle
                         </span>
-                        <span className="text-gray-600">{feat}</span>
+                        <span className="text-slate-600">{feat}</span>
                       </li>
                     ))}
                   </ul>
@@ -1578,7 +1581,7 @@ export default function TheProofPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
                 Connected to Your Workflow
               </h2>
-              <p className="text-gray-500 mt-4 max-w-xl mx-auto text-lg">
+              <p className="text-slate-500 mt-4 max-w-xl mx-auto text-lg">
                 The Proof plugs directly into your existing RenoNext apps
                 &mdash; no extra setup required.
               </p>
@@ -1590,9 +1593,9 @@ export default function TheProofPage() {
               <ScrollReveal key={item.app} delay={i * 100}>
                 <Link
                   href={item.href}
-                  className="bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-float transition-all block h-full group"
+                  className="bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-float transition-all block h-full group"
                 >
-                  <div className="w-12 h-12 bg-[#102122] rounded-xl flex items-center justify-center mb-5">
+                  <div className="w-12 h-12 bg-reno-dark rounded-xl flex items-center justify-center mb-5">
                     <span className="material-symbols-outlined text-primary text-xl">
                       {item.icon}
                     </span>
@@ -1600,7 +1603,7 @@ export default function TheProofPage() {
                   <h3 className="font-extrabold text-[#102122] text-lg mb-2 group-hover:text-primary transition-colors">
                     {item.app}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="text-slate-500 text-sm leading-relaxed">
                     {item.description}
                   </p>
                   <div className="flex items-center gap-1 mt-4 text-sm font-bold text-primary">
@@ -1620,7 +1623,7 @@ export default function TheProofPage() {
           SECTION 7 — CTA
           Dark editorial CTA with trust badges
           ================================================================ */}
-      <section className="bg-[#102122] py-24">
+      <section className="bg-reno-dark py-24">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <ScrollReveal>
             <span
@@ -1636,7 +1639,7 @@ export default function TheProofPage() {
               on Site
             </h2>
 
-            <p className="text-gray-400 mt-6 max-w-xl mx-auto text-lg">
+            <p className="text-slate-400 mt-6 max-w-xl mx-auto text-lg">
               GPS-stamped. Time-locked. Cryptographically secured. The only
               verification layer built for construction.
             </p>

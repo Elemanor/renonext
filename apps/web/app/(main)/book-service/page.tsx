@@ -24,8 +24,8 @@ const services = [
     title: 'Plumbing',
     description: 'Repairs, installations & emergencies',
     icon: Wrench,
-    iconBg: 'bg-blue-100',
-    iconColor: 'text-blue-600',
+    iconBg: 'bg-primary-100',
+    iconColor: 'text-primary-600',
   },
   {
     slug: 'electrical',
@@ -40,24 +40,24 @@ const services = [
     title: 'Painting',
     description: 'Interior & exterior painting',
     icon: Paintbrush,
-    iconBg: 'bg-rose-100',
-    iconColor: 'text-rose-600',
+    iconBg: 'bg-reno-red-100',
+    iconColor: 'text-reno-red-600',
   },
   {
     slug: 'landscaping',
     title: 'Landscaping',
     description: 'Lawns, gardens & outdoor',
     icon: Trees,
-    iconBg: 'bg-green-100',
-    iconColor: 'text-green-600',
+    iconBg: 'bg-reno-green-100',
+    iconColor: 'text-reno-green-600',
   },
   {
     slug: 'carpentry',
     title: 'Carpentry',
     description: 'Custom builds & woodwork',
     icon: Hammer,
-    iconBg: 'bg-orange-100',
-    iconColor: 'text-orange-600',
+    iconBg: 'bg-reno-amber-100',
+    iconColor: 'text-reno-amber-600',
   },
   {
     slug: 'cleaning',
@@ -72,8 +72,8 @@ const services = [
     title: 'Moving',
     description: 'Local & long-distance moves',
     icon: Truck,
-    iconBg: 'bg-violet-100',
-    iconColor: 'text-violet-600',
+    iconBg: 'bg-reno-purple-100',
+    iconColor: 'text-reno-purple-600',
   },
   {
     slug: 'general-repair',
@@ -87,7 +87,7 @@ const services = [
 
 export default function BookServicePage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <section className="bg-white border-b">
         <div className="container mx-auto px-4 py-12">
@@ -130,7 +130,7 @@ export default function BookServicePage() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-primary-600 transition-colors">
                         {service.title}
                       </h3>
 
@@ -140,7 +140,7 @@ export default function BookServicePage() {
                       </p>
 
                       {/* Arrow Indicator */}
-                      <div className="flex items-center text-blue-600 text-sm font-medium">
+                      <div className="flex items-center text-primary-600 text-sm font-medium">
                         <span className="mr-1">View details</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>

@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: 'EquipmentFix | Mechanical Work Center | RenoNext',
   description:
     'Equipment goes down. Your crew shouldn\'t. Real-time dispatch, fleet tracking, and parts management for construction teams.',
+  alternates: {
+    canonical: '/apps/equipment-fix',
+  },
   openGraph: {
     title: 'EquipmentFix — Equipment Maintenance & Dispatch',
     description:
@@ -77,11 +80,11 @@ export default function EquipmentFixPage() {
               <span className="text-[#FFB300]">Fix</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-4 max-w-xl">
+            <p className="text-xl md:text-2xl text-slate-400 leading-relaxed mb-4 max-w-xl">
               Equipment goes down. Your crew shouldn&apos;t.
             </p>
 
-            <p className="text-base text-gray-500 leading-relaxed mb-8 max-w-xl">
+            <p className="text-base text-slate-500 leading-relaxed mb-8 max-w-xl">
               When a scissor lift dies at 7 AM, every hour matters. EquipmentFix
               lets field crews report issues with photos, dispatchers assign
               mechanics in seconds, and supervisors track resolution in real time.
@@ -135,11 +138,11 @@ export default function EquipmentFixPage() {
                       </div>
                       <div>
                         <p className="text-white text-[10px] font-bold">SiteFix</p>
-                        <p className="text-[7px] text-gray-500">Mechanical Work Center</p>
+                        <p className="text-[7px] text-slate-500">Mechanical Work Center</p>
                       </div>
                       <div className="ml-auto flex items-center gap-1.5">
                         <div className="text-right">
-                          <p className="text-[7px] text-gray-500">On Shift</p>
+                          <p className="text-[7px] text-slate-500">On Shift</p>
                           <p className="text-[8px] text-white font-semibold">Mark F.</p>
                         </div>
                         <div className="w-6 h-6 rounded-full bg-[#FFB300]/20 border border-[#FFB300]/30 flex items-center justify-center">
@@ -150,13 +153,13 @@ export default function EquipmentFixPage() {
 
                     {/* Tabs */}
                     <div className="flex bg-[#121212] p-0.5 rounded-lg gap-0.5 mb-3">
-                      <div className="flex-1 py-1 text-center text-[7px] font-semibold text-gray-500">
+                      <div className="flex-1 py-1 text-center text-[7px] font-semibold text-slate-500">
                         My Work
                       </div>
                       <div className="flex-1 py-1 text-center text-[7px] font-bold text-[#FFB300] bg-[#FFB300]/10 rounded-md border border-[#FFB300]/30">
                         Dispatch
                       </div>
-                      <div className="flex-1 py-1 text-center text-[7px] font-semibold text-gray-500">
+                      <div className="flex-1 py-1 text-center text-[7px] font-semibold text-slate-500">
                         Fleet
                       </div>
                     </div>
@@ -189,7 +192,7 @@ export default function EquipmentFixPage() {
                           <p className="text-[9px] text-white font-medium">
                             {wo.equipment}
                           </p>
-                          <p className="text-[7px] text-gray-500">
+                          <p className="text-[7px] text-slate-500">
                             {wo.issue}
                           </p>
                         </div>
@@ -216,7 +219,7 @@ export default function EquipmentFixPage() {
                         <div key={tab.label} className="text-center">
                           <span
                             className={`material-symbols-outlined text-xs ${
-                              tab.active ? 'text-[#FFB300]' : 'text-gray-600'
+                              tab.active ? 'text-[#FFB300]' : 'text-slate-600'
                             }`}
                             style={
                               tab.active
@@ -228,7 +231,7 @@ export default function EquipmentFixPage() {
                           </span>
                           <p
                             className={`text-[6px] font-bold ${
-                              tab.active ? 'text-[#FFB300]' : 'text-gray-600'
+                              tab.active ? 'text-[#FFB300]' : 'text-slate-600'
                             }`}
                           >
                             {tab.label}
@@ -252,7 +255,7 @@ export default function EquipmentFixPage() {
                 </span>
                 <div>
                   <p className="text-[9px] text-white font-bold">12 min avg</p>
-                  <p className="text-[7px] text-gray-500">Response time</p>
+                  <p className="text-[7px] text-slate-500">Response time</p>
                 </div>
               </div>
             </div>
@@ -267,7 +270,7 @@ export default function EquipmentFixPage() {
                 </span>
                 <div>
                   <p className="text-[9px] text-white font-bold">Offline-First</p>
-                  <p className="text-[7px] text-gray-500">Sync when online</p>
+                  <p className="text-[7px] text-slate-500">Sync when online</p>
                 </div>
               </div>
             </div>
@@ -300,7 +303,7 @@ export default function EquipmentFixPage() {
                   Not Minutes
                 </h2>
 
-                <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-lg">
+                <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-lg">
                   Incoming work orders land in a real-time queue with severity
                   classification. One tap assigns a mechanic with an instant push
                   notification. Auto-escalation handles the rest.
@@ -317,7 +320,7 @@ export default function EquipmentFixPage() {
                           check
                         </span>
                       </div>
-                      <span className="text-gray-600 leading-relaxed pt-1">
+                      <span className="text-slate-600 leading-relaxed pt-1">
                         {f}
                       </span>
                     </li>
@@ -329,7 +332,7 @@ export default function EquipmentFixPage() {
               <div className="bg-[#0a0a0a] rounded-2xl border border-white/[0.06] p-5 md:p-6 shadow-float">
                 <div className="flex items-center justify-between mb-5">
                   <div>
-                    <p className="text-[10px] text-gray-500 uppercase tracking-wider font-bold">
+                    <p className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">
                       Dispatch Queue
                     </p>
                     <p className="text-white text-lg font-bold">
@@ -369,8 +372,8 @@ export default function EquipmentFixPage() {
                           <p className="text-sm text-white font-medium">
                             {wo.equipment}
                           </p>
-                          <p className="text-xs text-gray-500">{wo.issue}</p>
-                          <p className="text-[10px] text-gray-600 mt-1">
+                          <p className="text-xs text-slate-500">{wo.issue}</p>
+                          <p className="text-[10px] text-slate-600 mt-1">
                             Dispatched @ {wo.dispatchedAt}
                           </p>
                         </div>
@@ -407,7 +410,7 @@ export default function EquipmentFixPage() {
                 Every Machine,{' '}
                 <span className="text-[#FFB300]">Every Site</span>
               </h2>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
                 Bird&apos;s-eye view of your entire fleet. See what&apos;s running,
                 what&apos;s down, and where your maintenance bottlenecks are.
               </p>
@@ -420,14 +423,14 @@ export default function EquipmentFixPage() {
               {fleetStats.map((s) => (
                 <div
                   key={s.label}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-gray-100 shadow-sm"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-slate-100 shadow-sm"
                 >
                   <span
                     className="w-2.5 h-2.5 rounded-full"
                     style={{ backgroundColor: s.color }}
                   />
                   <span className="text-sm font-bold text-reno-dark">{s.value}</span>
-                  <span className="text-xs text-gray-400">{s.label}</span>
+                  <span className="text-xs text-slate-400">{s.label}</span>
                 </div>
               ))}
             </div>
@@ -440,13 +443,13 @@ export default function EquipmentFixPage() {
                 <div className="bg-white rounded-2xl p-5 shadow-float border border-primary/5 hover:-translate-y-1 hover:shadow-float-hover transition-all duration-300">
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">
+                      <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
                         {item.id}
                       </p>
                       <h3 className="text-sm font-bold text-reno-dark mt-0.5">
                         {item.name}
                       </h3>
-                      <p className="text-xs text-gray-400">{item.type}</p>
+                      <p className="text-xs text-slate-400">{item.type}</p>
                     </div>
                     <span
                       className="text-[10px] font-bold px-2 py-0.5 rounded-full capitalize"
@@ -462,7 +465,7 @@ export default function EquipmentFixPage() {
                   {/* Health bar */}
                   <div className="mb-3">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[10px] text-gray-400">Health</span>
+                      <span className="text-[10px] text-slate-400">Health</span>
                       <span
                         className="text-xs font-bold"
                         style={{ color: healthColor(item.healthScore) }}
@@ -470,7 +473,7 @@ export default function EquipmentFixPage() {
                         {item.healthScore}%
                       </span>
                     </div>
-                    <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
                       <div
                         className="h-full rounded-full transition-all"
                         style={{
@@ -481,7 +484,7 @@ export default function EquipmentFixPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between text-[10px] text-gray-400">
+                  <div className="flex items-center justify-between text-[10px] text-slate-400">
                     <span>{item.site}</span>
                     <span>Service: {item.lastService}</span>
                   </div>
@@ -512,7 +515,7 @@ export default function EquipmentFixPage() {
                 Snap, Tag,{' '}
                 <span className="text-[#FFB300]">Submit</span>
               </h2>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
                 Field crews report equipment issues with GPS-tagged photos and
                 severity levels. No forms, no radio calls, no missed reports.
               </p>
@@ -566,7 +569,7 @@ export default function EquipmentFixPage() {
                   ].map((step) => (
                     <div
                       key={step.step}
-                      className="flex items-center gap-4 p-3.5 bg-[#f6f8f8] rounded-xl border border-gray-100"
+                      className="flex items-center gap-4 p-3.5 bg-[#f6f8f8] rounded-xl border border-slate-100"
                     >
                       <div className="w-8 h-8 rounded-lg bg-[#FFB300] text-black flex items-center justify-center flex-shrink-0">
                         <span className="text-xs font-extrabold">{step.step}</span>
@@ -575,9 +578,9 @@ export default function EquipmentFixPage() {
                         <p className="text-sm font-bold text-reno-dark">
                           {step.title}
                         </p>
-                        <p className="text-[10px] text-gray-400">{step.desc}</p>
+                        <p className="text-[10px] text-slate-400">{step.desc}</p>
                       </div>
-                      <span className="material-symbols-outlined text-gray-300 text-lg">
+                      <span className="material-symbols-outlined text-slate-300 text-lg">
                         {step.icon}
                       </span>
                     </div>
@@ -605,7 +608,7 @@ export default function EquipmentFixPage() {
 
                 <div className="relative">
                   {/* Timeline line */}
-                  <div className="absolute left-[15px] top-4 bottom-4 w-0.5 bg-gray-100" />
+                  <div className="absolute left-[15px] top-4 bottom-4 w-0.5 bg-slate-100" />
 
                   <div className="space-y-5">
                     {[
@@ -665,11 +668,11 @@ export default function EquipmentFixPage() {
                             <p className="text-sm font-bold text-reno-dark">
                               {step.status}
                             </p>
-                            <span className="text-[10px] text-gray-400">
+                            <span className="text-[10px] text-slate-400">
                               {step.time}
                             </span>
                           </div>
-                          <p className="text-xs text-gray-500 mt-0.5">
+                          <p className="text-xs text-slate-500 mt-0.5">
                             {step.desc}
                           </p>
                         </div>
@@ -703,7 +706,7 @@ export default function EquipmentFixPage() {
                   </div>
                   <div>
                     <p className="text-white text-sm font-bold">Parts On Hold</p>
-                    <p className="text-[9px] text-gray-500">
+                    <p className="text-[9px] text-slate-500">
                       {partsOnHold.length} critical parts linked to work orders
                     </p>
                   </div>
@@ -716,7 +719,7 @@ export default function EquipmentFixPage() {
                       className="bg-[#1c1c1c]/60 rounded-xl p-3.5 border border-white/[0.04] flex items-center gap-3"
                     >
                       <div className="w-10 h-10 bg-[#2a2a2a] rounded-lg flex items-center justify-center flex-shrink-0 border border-white/[0.04]">
-                        <span className="material-symbols-outlined text-gray-500 text-lg">
+                        <span className="material-symbols-outlined text-slate-500 text-lg">
                           settings
                         </span>
                       </div>
@@ -724,7 +727,7 @@ export default function EquipmentFixPage() {
                         <p className="text-xs text-white font-bold">
                           {part.partId} {part.name}
                         </p>
-                        <p className="text-[10px] text-gray-500">
+                        <p className="text-[10px] text-slate-500">
                           Linked: {part.linkedWO} &middot; ETA: {part.eta}
                         </p>
                       </div>
@@ -743,7 +746,7 @@ export default function EquipmentFixPage() {
 
                 {/* Mechanic roster */}
                 <div className="border-t border-white/[0.04] pt-4">
-                  <p className="text-[9px] text-gray-500 uppercase tracking-wider font-bold mb-3">
+                  <p className="text-[9px] text-slate-500 uppercase tracking-wider font-bold mb-3">
                     Mechanic Roster
                   </p>
                   <div className="space-y-2.5">
@@ -765,7 +768,7 @@ export default function EquipmentFixPage() {
                           <p className="text-xs text-white font-medium">
                             {mech.name}
                           </p>
-                          <p className="text-[9px] text-gray-500">
+                          <p className="text-[9px] text-slate-500">
                             {mech.specialty}
                           </p>
                         </div>
@@ -776,7 +779,7 @@ export default function EquipmentFixPage() {
                           >
                             {mech.status.replace('-', ' ')}
                           </span>
-                          <p className="text-[8px] text-gray-600">
+                          <p className="text-[8px] text-slate-600">
                             {mech.activeJobs} active
                           </p>
                         </div>
@@ -803,7 +806,7 @@ export default function EquipmentFixPage() {
                   <span className="text-[#FFB300]">Track Everything</span>
                 </h2>
 
-                <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-lg">
+                <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-lg">
                   Parts on backorder linked to open work orders. Mechanic
                   availability at a glance. Never lose a repair to missing parts
                   or scheduling conflicts.
@@ -820,7 +823,7 @@ export default function EquipmentFixPage() {
                           check
                         </span>
                       </div>
-                      <span className="text-gray-600 leading-relaxed pt-1">
+                      <span className="text-slate-600 leading-relaxed pt-1">
                         {f}
                       </span>
                     </li>
@@ -854,7 +857,7 @@ export default function EquipmentFixPage() {
                 Data-Driven{' '}
                 <span className="text-[#FFB300]">Maintenance</span>
               </h2>
-              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-400 max-w-2xl mx-auto">
                 Downtime reports, repeat failure analysis, and cost tracking
                 across your entire operation.
               </p>
@@ -870,7 +873,7 @@ export default function EquipmentFixPage() {
                   className="bg-[#1c1c1c]/60 rounded-xl p-5 border border-white/[0.04] text-center"
                 >
                   <p className="text-2xl font-extrabold text-white">{m.value}</p>
-                  <p className="text-[10px] text-gray-500 mt-1">{m.label}</p>
+                  <p className="text-[10px] text-slate-500 mt-1">{m.label}</p>
                 </div>
               ))}
             </div>
@@ -890,7 +893,7 @@ export default function EquipmentFixPage() {
                 </div>
                 <div>
                   <p className="text-white text-sm font-bold">Recent Downtime Events</p>
-                  <p className="text-[9px] text-gray-500">This week</p>
+                  <p className="text-[9px] text-slate-500">This week</p>
                 </div>
               </div>
 
@@ -904,7 +907,7 @@ export default function EquipmentFixPage() {
                       <p className="text-sm text-white font-medium">
                         {event.equipment}
                       </p>
-                      <p className="text-[10px] text-gray-500">
+                      <p className="text-[10px] text-slate-500">
                         {event.site} &middot; {event.cause}
                       </p>
                     </div>
@@ -913,13 +916,13 @@ export default function EquipmentFixPage() {
                         <p className="text-sm font-bold text-[#ef4444]">
                           {event.hoursDown}h
                         </p>
-                        <p className="text-[9px] text-gray-600">Down</p>
+                        <p className="text-[9px] text-slate-600">Down</p>
                       </div>
                       <div className="text-center">
                         <p className="text-sm font-bold text-[#FFB300]">
                           {formatCurrency(event.cost)}
                         </p>
-                        <p className="text-[9px] text-gray-600">Cost</p>
+                        <p className="text-[9px] text-slate-600">Cost</p>
                       </div>
                     </div>
                   </div>
@@ -928,7 +931,7 @@ export default function EquipmentFixPage() {
 
               {/* Total */}
               <div className="mt-4 pt-4 border-t border-white/[0.04] flex items-center justify-between">
-                <span className="text-xs text-gray-500 font-bold uppercase tracking-wider">
+                <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">
                   Total Impact
                 </span>
                 <div className="flex items-center gap-6">
@@ -960,7 +963,7 @@ export default function EquipmentFixPage() {
               <span className="text-[#FFB300]">Downtime</span>
             </h2>
 
-            <p className="text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto">
               EquipmentFix gives your construction team real-time dispatch, fleet
               tracking, parts management, and analytics — all from a single
               offline-ready app.
@@ -1002,7 +1005,7 @@ export default function EquipmentFixPage() {
                   >
                     {badge.icon}
                   </span>
-                  <span className="text-sm font-bold text-gray-300">
+                  <span className="text-sm font-bold text-slate-300">
                     {badge.label}
                   </span>
                 </div>

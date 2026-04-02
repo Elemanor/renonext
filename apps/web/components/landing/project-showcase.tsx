@@ -64,7 +64,7 @@ export function ProjectShowcase() {
             From <span className="text-primary italic">Flooded</span> to
             Fortress.
           </h2>
-          <p className="text-lg text-gray-500 leading-relaxed">
+          <p className="text-lg text-slate-500 leading-relaxed">
             See how RenoNext&apos;s trust architecture enabled an ambitious
             basement waterproofing through vetted professionals and secure
             milestone payments.
@@ -85,7 +85,7 @@ export function ProjectShowcase() {
             <div className="bg-white p-6 md:p-7 rounded-2xl shadow-float border border-primary/5 hover:-translate-y-1 transition-transform duration-300">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden border border-gray-200">
+                  <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center overflow-hidden border border-slate-200">
                     <Image
                       src="/images/pros/dryspace/hero.webp"
                       alt="DrySpace Waterproofing"
@@ -98,7 +98,7 @@ export function ProjectShowcase() {
                     <h3 className="text-lg font-bold tracking-tight text-reno-dark">
                       DrySpace Waterproofing
                     </h3>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-slate-500">
                       Sub-Grade Waterproofing Specialist
                     </p>
                   </div>
@@ -115,7 +115,7 @@ export function ProjectShowcase() {
                       </span>
                     ))}
                   </div>
-                  <span className="text-[10px] font-bold text-gray-500 mt-0.5">
+                  <span className="text-[10px] font-bold text-slate-500 mt-0.5">
                     5.0 Customer Rating
                   </span>
                 </div>
@@ -149,7 +149,7 @@ export function ProjectShowcase() {
                     <h4 className="font-bold text-sm text-reno-dark">
                       Verified Gold Pro
                     </h4>
-                    <p className="text-[10px] text-gray-500">
+                    <p className="text-[10px] text-slate-500">
                       Top 5% vetted performance tier
                     </p>
                   </div>
@@ -169,11 +169,11 @@ export function ProjectShowcase() {
                 <span className="material-symbols-outlined text-primary/40 mb-2 block">
                   speed
                 </span>
-                <p className="text-[10px] uppercase font-bold tracking-widest text-gray-500 mb-1">
+                <p className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1">
                   Completion
                 </p>
                 <p className="text-3xl font-extrabold text-primary tracking-tight">
-                  18 <span className="text-base font-bold text-gray-400">Days</span>
+                  18 <span className="text-base font-bold text-slate-400">Days</span>
                 </p>
               </div>
               <div
@@ -186,11 +186,11 @@ export function ProjectShowcase() {
                 <span className="material-symbols-outlined text-primary/40 mb-2 block">
                   security
                 </span>
-                <p className="text-[10px] uppercase font-bold tracking-widest text-gray-500 mb-1">
+                <p className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1">
                   Budget Safety
                 </p>
                 <p className="text-3xl font-extrabold text-primary tracking-tight">
-                  100<span className="text-base font-bold text-gray-400">%</span>
+                  100<span className="text-base font-bold text-slate-400">%</span>
                 </p>
               </div>
             </div>
@@ -209,7 +209,7 @@ export function ProjectShowcase() {
                   <span className="h-1 w-5 bg-primary rounded-full" />
                   The Challenge
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                <p className="text-slate-400 text-sm leading-relaxed mb-5">
                   Severe structural water ingress had rendered this 1,200 sq.ft.
                   basement unusable for over a decade. DrySpace utilized
                   RenoNext&apos;s tiered milestone system to prove structural
@@ -319,7 +319,7 @@ export function ProjectShowcase() {
                         <p className="text-xs font-bold text-reno-dark">
                           {spec.title}
                         </p>
-                        <p className="text-[10px] text-gray-500 leading-relaxed">
+                        <p className="text-[10px] text-slate-500 leading-relaxed">
                           {spec.desc}
                         </p>
                       </div>

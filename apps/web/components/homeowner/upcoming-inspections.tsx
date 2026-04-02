@@ -27,10 +27,10 @@ export function UpcomingInspections({ inspections }: UpcomingInspectionsProps) {
       {/* Section header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <ClipboardCheck className="h-5 w-5 text-gray-700" />
-          <h2 className="text-xl font-semibold text-gray-900">Inspections</h2>
+          <ClipboardCheck className="h-5 w-5 text-slate-700" />
+          <h2 className="text-xl font-semibold text-slate-900">Inspections</h2>
         </div>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-slate-500">
           {completedCount} of {totalCount} inspections complete
         </p>
       </div>
@@ -51,7 +51,7 @@ export function UpcomingInspections({ inspections }: UpcomingInspectionsProps) {
         {pastInspections.length > 0 && (
           <>
             <div className="pt-2">
-              <h3 className="text-sm font-medium text-gray-700">
+              <h3 className="text-sm font-medium text-slate-700">
                 Past Inspections
               </h3>
             </div>
@@ -63,8 +63,8 @@ export function UpcomingInspections({ inspections }: UpcomingInspectionsProps) {
 
         {/* Empty state */}
         {inspections.length === 0 && (
-          <div className="text-center py-8 text-gray-500">
-            <ClipboardCheck className="h-12 w-12 mx-auto mb-2 text-gray-300" />
+          <div className="text-center py-8 text-slate-500">
+            <ClipboardCheck className="h-12 w-12 mx-auto mb-2 text-slate-300" />
             <p className="text-sm">No inspections scheduled yet</p>
           </div>
         )}

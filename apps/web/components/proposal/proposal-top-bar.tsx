@@ -17,7 +17,7 @@ export function ProposalTopBar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'border-b border-gray-200/60 bg-white/80 shadow-sm backdrop-blur-2xl'
+          ? 'border-b border-slate-200/60 bg-white/80 shadow-sm backdrop-blur-2xl'
           : 'bg-white'
       }`}
     >
@@ -26,7 +26,7 @@ export function ProposalTopBar() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-reno-green to-reno-green-dark shadow-sm shadow-reno-green/20 transition-shadow duration-300 group-hover:shadow-md group-hover:shadow-reno-green/30">
             <Briefcase className="h-4 w-4 text-white" />
           </div>
-          <span className="text-lg font-bold tracking-tight text-gray-900">
+          <span className="text-lg font-bold tracking-tight text-slate-900">
             Reno<span className="bg-gradient-to-r from-reno-green-dark to-reno-green bg-clip-text text-transparent">Next</span>
           </span>
         </Link>

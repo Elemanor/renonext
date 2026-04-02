@@ -93,7 +93,7 @@ export default function WHMISQuizPage() {
     return (
       <main className="min-h-screen bg-[#f6f8f8] flex items-center justify-center px-6">
         <div className="max-w-lg w-full text-center">
-          <div className="bg-white rounded-2xl border border-gray-200 p-8 md:p-12 shadow-sm">
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 md:p-12 shadow-sm">
             <span
               className="material-symbols-outlined text-[#0fbabd] text-5xl mb-6 inline-block"
               style={{ fontVariationSettings: "'FILL' 1" }}
@@ -103,7 +103,7 @@ export default function WHMISQuizPage() {
             <h1 className="text-3xl font-extrabold text-[#102122] mb-3 tracking-tight">
               WHMIS Final Quiz
             </h1>
-            <p className="text-gray-500 mb-8 text-lg">
+            <p className="text-slate-500 mb-8 text-lg">
               {totalQuestions} multiple-choice questions covering all 7 modules.
               You need <strong>80% or higher</strong> to earn your certificate.
             </p>
@@ -111,15 +111,15 @@ export default function WHMISQuizPage() {
             <div className="grid grid-cols-3 gap-4 mb-8">
               <div className="bg-[#f6f8f8] rounded-xl p-4">
                 <div className="text-2xl font-extrabold text-[#102122]">{totalQuestions}</div>
-                <div className="text-xs text-gray-500">Questions</div>
+                <div className="text-xs text-slate-500">Questions</div>
               </div>
               <div className="bg-[#f6f8f8] rounded-xl p-4">
                 <div className="text-2xl font-extrabold text-[#102122]">80%</div>
-                <div className="text-xs text-gray-500">Pass Mark</div>
+                <div className="text-xs text-slate-500">Pass Mark</div>
               </div>
               <div className="bg-[#f6f8f8] rounded-xl p-4">
                 <div className="text-2xl font-extrabold text-[#102122]">~15</div>
-                <div className="text-xs text-gray-500">Minutes</div>
+                <div className="text-xs text-slate-500">Minutes</div>
               </div>
             </div>
 
@@ -150,7 +150,7 @@ export default function WHMISQuizPage() {
 
             <Link
               href="/whmis"
-              className="block mt-4 text-sm text-gray-400 hover:text-gray-600 transition-colors"
+              className="block mt-4 text-sm text-slate-400 hover:text-slate-600 transition-colors"
             >
               Back to Course Overview
             </Link>
@@ -169,17 +169,17 @@ export default function WHMISQuizPage() {
     return (
       <main className="min-h-screen bg-[#f6f8f8] flex items-center justify-center px-6 py-12">
         <div className="max-w-2xl w-full">
-          <div className="bg-white rounded-2xl border border-gray-200 p-8 md:p-12 shadow-sm text-center">
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 md:p-12 shadow-sm text-center">
             {/* Score circle */}
             <div
               className={`w-32 h-32 rounded-full mx-auto mb-6 flex flex-col items-center justify-center border-4 ${
                 passed
-                  ? 'border-emerald-500 bg-emerald-50'
+                  ? 'border-reno-green-500 bg-reno-green-50'
                   : 'border-red-400 bg-red-50'
               }`}
             >
               <span className="text-3xl font-extrabold text-[#102122]">{scorePercent}%</span>
-              <span className="text-xs text-gray-500">
+              <span className="text-xs text-slate-500">
                 {score}/{totalQuestions}
               </span>
             </div>
@@ -187,7 +187,7 @@ export default function WHMISQuizPage() {
             {passed ? (
               <>
                 <span
-                  className="material-symbols-outlined text-emerald-500 text-4xl mb-2 inline-block"
+                  className="material-symbols-outlined text-reno-green-500 text-4xl mb-2 inline-block"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   celebration
@@ -195,7 +195,7 @@ export default function WHMISQuizPage() {
                 <h1 className="text-3xl font-extrabold text-[#102122] mb-2">
                   Congratulations!
                 </h1>
-                <p className="text-gray-500 mb-8 text-lg">
+                <p className="text-slate-500 mb-8 text-lg">
                   You passed the WHMIS 2015 quiz. You can now download your certificate.
                 </p>
                 <button
@@ -222,7 +222,7 @@ export default function WHMISQuizPage() {
                 <h1 className="text-3xl font-extrabold text-[#102122] mb-2">
                   Not Quite
                 </h1>
-                <p className="text-gray-500 mb-8 text-lg">
+                <p className="text-slate-500 mb-8 text-lg">
                   You scored {scorePercent}% — you need 80% to pass. Review the modules
                   below and try again.
                 </p>
@@ -243,7 +243,7 @@ export default function WHMISQuizPage() {
                       setAnswers([]);
                       setQuizComplete(false);
                     }}
-                    className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-6 py-3 rounded-xl font-bold hover:bg-gray-200 transition-colors"
+                    className="inline-flex items-center gap-2 bg-slate-100 text-slate-700 px-6 py-3 rounded-xl font-bold hover:bg-slate-200 transition-colors"
                   >
                     <span className="material-symbols-outlined text-base">refresh</span>
                     Retry Quiz
@@ -253,7 +253,7 @@ export default function WHMISQuizPage() {
             )}
 
             {/* Module breakdown */}
-            <div className="mt-10 pt-8 border-t border-gray-100">
+            <div className="mt-10 pt-8 border-t border-slate-100">
               <h3 className="text-sm font-bold text-[#102122] uppercase tracking-widest mb-4">
                 Score by Module
               </h3>
@@ -265,18 +265,18 @@ export default function WHMISQuizPage() {
                     <div key={mb.moduleId} className="flex items-center gap-3">
                       <div className="flex-1 text-left">
                         <div className="text-sm font-medium text-[#102122]">{mb.title}</div>
-                        <div className="text-xs text-gray-400">
+                        <div className="text-xs text-slate-400">
                           {mb.correct}/{mb.total} correct
                         </div>
                       </div>
-                      <div className="w-32 h-2 bg-gray-100 rounded-full overflow-hidden">
+                      <div className="w-32 h-2 bg-slate-100 rounded-full overflow-hidden">
                         <div
-                          className={`h-full rounded-full ${isGood ? 'bg-emerald-500' : 'bg-red-400'}`}
+                          className={`h-full rounded-full ${isGood ? 'bg-reno-green-500' : 'bg-red-400'}`}
                           style={{ width: `${pct}%` }}
                         />
                       </div>
                       <span
-                        className={`text-sm font-bold ${isGood ? 'text-emerald-600' : 'text-red-500'}`}
+                        className={`text-sm font-bold ${isGood ? 'text-reno-green-600' : 'text-red-500'}`}
                       >
                         {pct}%
                       </span>
@@ -297,17 +297,17 @@ export default function WHMISQuizPage() {
   return (
     <main className="min-h-screen bg-[#f6f8f8]">
       {/* Top bar */}
-      <div className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+      <div className="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm">
         <div className="mx-auto max-w-3xl px-6 py-3">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-gray-500">
+            <span className="text-sm text-slate-500">
               Question {currentIndex + 1} of {totalQuestions}
             </span>
             <span className="text-sm font-bold text-[#102122]">
               {answers.filter((a) => a.correct).length} correct so far
             </span>
           </div>
-          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+          <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
             <div
               className="h-full bg-gradient-to-r from-[#0fbabd] to-[#0d9699] rounded-full transition-all duration-500"
               style={{ width: `${progressPercent}%` }}
@@ -319,7 +319,7 @@ export default function WHMISQuizPage() {
       {/* Question card */}
       <div className="mx-auto max-w-3xl px-6 py-12">
         {currentQuestion && (
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-10 shadow-sm">
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-10 shadow-sm">
             {/* Module tag */}
             <div className="mb-4">
               <span className="text-[10px] font-bold text-[#0fbabd] uppercase tracking-widest bg-[#0fbabd]/10 px-3 py-1 rounded-full">
@@ -335,15 +335,15 @@ export default function WHMISQuizPage() {
             {/* Options */}
             <div className="space-y-3">
               {currentQuestion.options.map((option, idx) => {
-                let optionStyle = 'bg-[#f6f8f8] border-gray-200 hover:border-[#0fbabd]/40 hover:bg-[#0fbabd]/5 cursor-pointer';
+                let optionStyle = 'bg-[#f6f8f8] border-slate-200 hover:border-[#0fbabd]/40 hover:bg-[#0fbabd]/5 cursor-pointer';
 
                 if (showExplanation) {
                   if (idx === currentQuestion.correctAnswer) {
-                    optionStyle = 'bg-emerald-50 border-emerald-400 ring-2 ring-emerald-200';
+                    optionStyle = 'bg-reno-green-50 border-reno-green-400 ring-2 ring-emerald-200';
                   } else if (idx === selectedAnswer && idx !== currentQuestion.correctAnswer) {
                     optionStyle = 'bg-red-50 border-red-400 ring-2 ring-red-200';
                   } else {
-                    optionStyle = 'bg-gray-50 border-gray-200 opacity-60';
+                    optionStyle = 'bg-slate-50 border-slate-200 opacity-60';
                   }
                 } else if (selectedAnswer === idx) {
                   optionStyle = 'bg-[#0fbabd]/10 border-[#0fbabd]';
@@ -359,10 +359,10 @@ export default function WHMISQuizPage() {
                     <span
                       className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold ${
                         showExplanation && idx === currentQuestion.correctAnswer
-                          ? 'bg-emerald-500 text-white'
+                          ? 'bg-reno-green-500 text-white'
                           : showExplanation && idx === selectedAnswer
                             ? 'bg-red-400 text-white'
-                            : 'bg-white border border-gray-300 text-gray-500'
+                            : 'bg-white border border-slate-300 text-slate-500'
                       }`}
                     >
                       {showExplanation && idx === currentQuestion.correctAnswer ? (
@@ -387,7 +387,7 @@ export default function WHMISQuizPage() {
                 <div
                   className={`p-5 rounded-xl border ${
                     selectedAnswer === currentQuestion.correctAnswer
-                      ? 'bg-emerald-50 border-emerald-200'
+                      ? 'bg-reno-green-50 border-reno-green-200'
                       : 'bg-amber-50 border-amber-200'
                   }`}
                 >
@@ -395,7 +395,7 @@ export default function WHMISQuizPage() {
                     <span
                       className={`material-symbols-outlined text-lg flex-shrink-0 ${
                         selectedAnswer === currentQuestion.correctAnswer
-                          ? 'text-emerald-600'
+                          ? 'text-reno-green-600'
                           : 'text-amber-600'
                       }`}
                       style={{ fontVariationSettings: "'FILL' 1" }}
@@ -406,13 +406,13 @@ export default function WHMISQuizPage() {
                       <p
                         className={`text-sm font-bold mb-1 ${
                           selectedAnswer === currentQuestion.correctAnswer
-                            ? 'text-emerald-800'
+                            ? 'text-reno-green-800'
                             : 'text-amber-800'
                         }`}
                       >
                         {selectedAnswer === currentQuestion.correctAnswer ? 'Correct!' : 'Not quite.'}
                       </p>
-                      <p className="text-sm text-gray-700">{currentQuestion.explanation}</p>
+                      <p className="text-sm text-slate-700">{currentQuestion.explanation}</p>
                     </div>
                   </div>
                 </div>

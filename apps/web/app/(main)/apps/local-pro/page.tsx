@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: 'LocalPro — Project Control Platform | RenoNext',
   description:
     'GPS-verified attendance, photo compliance logs, escrow-protected vault, and team management — all in one precision project dashboard.',
+  alternates: {
+    canonical: '/apps/local-pro',
+  },
 };
 
 export default function LocalProPage() {
@@ -48,7 +51,7 @@ export default function LocalProPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-500 max-w-xl font-light leading-relaxed mb-10">
+            <p className="text-lg md:text-xl text-slate-500 max-w-xl font-light leading-relaxed mb-10">
               GPS-verified attendance, photo compliance logs, escrow-protected
               vault, and team management — everything a site manager needs in
               one dashboard.
@@ -58,10 +61,10 @@ export default function LocalProPage() {
             <div className="flex flex-wrap gap-5">
               {projectStats.map((stat) => (
                 <div key={stat.label} className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-medium">
+                  <span className="text-[10px] uppercase tracking-widest text-slate-400 mb-1 font-medium">
                     {stat.label}
                   </span>
-                  <div className="bg-gray-100 px-5 py-2.5">
+                  <div className="bg-slate-100 px-5 py-2.5">
                     <span className="font-black text-[#102122] text-lg">
                       {stat.value}
                     </span>
@@ -77,7 +80,7 @@ export default function LocalProPage() {
           SECTION 2 — FULL DASHBOARD PREVIEW
           Browser frame with complete LocalPro dashboard recreation
           ================================================================ */}
-      <section className="bg-[#102122] py-24 overflow-hidden">
+      <section className="bg-reno-dark py-24 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal>
             <div className="text-center mb-14">
@@ -87,7 +90,7 @@ export default function LocalProPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4 tracking-tight">
                 Everything at a Glance
               </h2>
-              <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-400 mt-4 max-w-2xl mx-auto text-lg">
                 One dashboard for GPS attendance, photo compliance, financial
                 vault, and team management — designed for construction
                 professionals.
@@ -105,7 +108,7 @@ export default function LocalProPage() {
                   <div className="w-3 h-3 rounded-full bg-[#28c840]" />
                 </div>
                 <div className="flex-1 flex justify-center">
-                  <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-gray-500 font-medium">
+                  <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-slate-500 font-medium">
                     app.renonext.com/local-pro/dashboard
                   </div>
                 </div>
@@ -114,7 +117,7 @@ export default function LocalProPage() {
               {/* Dashboard body */}
               <div className="bg-[#f8f9fa]">
                 {/* Top nav */}
-                <div className="px-5 py-3 flex justify-between items-center border-b border-gray-100">
+                <div className="px-5 py-3 flex justify-between items-center border-b border-slate-100">
                   <div className="flex items-center gap-6">
                     <span className="text-base font-bold text-[#102122] tracking-tight">
                       LocalPro
@@ -123,21 +126,21 @@ export default function LocalProPage() {
                       <span className="text-xs font-semibold text-primary border-b-2 border-primary pb-0.5">
                         Projects
                       </span>
-                      <span className="text-xs text-gray-500">Schedule</span>
-                      <span className="text-xs text-gray-500">Vault</span>
-                      <span className="text-xs text-gray-500">Teams</span>
+                      <span className="text-xs text-slate-500">Schedule</span>
+                      <span className="text-xs text-slate-500">Vault</span>
+                      <span className="text-xs text-slate-500">Teams</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="bg-gray-100 rounded-full px-3 py-1 flex items-center gap-1.5 hidden md:flex">
-                      <span className="material-symbols-outlined text-gray-400 text-xs">
+                    <div className="bg-slate-100 rounded-full px-3 py-1 flex items-center gap-1.5 hidden md:flex">
+                      <span className="material-symbols-outlined text-slate-400 text-xs">
                         search
                       </span>
-                      <span className="text-[10px] text-gray-400">
+                      <span className="text-[10px] text-slate-400">
                         Search projects...
                       </span>
                     </div>
-                    <span className="material-symbols-outlined text-gray-400 text-lg">
+                    <span className="material-symbols-outlined text-slate-400 text-lg">
                       notifications
                     </span>
                     <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
@@ -155,7 +158,7 @@ export default function LocalProPage() {
                       <h3 className="text-xs font-black text-[#102122]">
                         Project Control
                       </h3>
-                      <p className="text-[7px] uppercase tracking-widest text-gray-500 font-semibold">
+                      <p className="text-[7px] uppercase tracking-widest text-slate-500 font-semibold">
                         Precision Management
                       </p>
                     </div>
@@ -172,7 +175,7 @@ export default function LocalProPage() {
                           className={`flex items-center gap-2 px-3 py-2 rounded-md text-[10px] ${
                             item.active
                               ? 'bg-white text-primary font-bold shadow-sm'
-                              : 'text-gray-500'
+                              : 'text-slate-500'
                           }`}
                         >
                           <span className="material-symbols-outlined text-sm">
@@ -190,14 +193,14 @@ export default function LocalProPage() {
                         New Project
                       </div>
                     </div>
-                    <div className="mt-auto pt-4 border-t border-gray-200 space-y-0.5">
-                      <div className="flex items-center gap-2 px-3 py-1.5 text-[10px] text-gray-500">
+                    <div className="mt-auto pt-4 border-t border-slate-200 space-y-0.5">
+                      <div className="flex items-center gap-2 px-3 py-1.5 text-[10px] text-slate-500">
                         <span className="material-symbols-outlined text-xs">
                           help_center
                         </span>
                         Support
                       </div>
-                      <div className="flex items-center gap-2 px-3 py-1.5 text-[10px] text-gray-500">
+                      <div className="flex items-center gap-2 px-3 py-1.5 text-[10px] text-slate-500">
                         <span className="material-symbols-outlined text-xs">
                           logout
                         </span>
@@ -214,7 +217,7 @@ export default function LocalProPage() {
                         {/* Project header */}
                         <div className="flex justify-between items-end mb-1">
                           <div>
-                            <span className="text-[9px] font-semibold text-gray-500 uppercase tracking-wider">
+                            <span className="text-[9px] font-semibold text-slate-500 uppercase tracking-wider">
                               Project Site #882
                             </span>
                             <h2 className="text-xl font-extrabold text-[#102122] tracking-tight">
@@ -239,18 +242,18 @@ export default function LocalProPage() {
                                 <h3 className="text-xs font-bold text-[#102122]">
                                   GPS Verified Check-in
                                 </h3>
-                                <span className="text-[8px] text-gray-500 uppercase tracking-widest">
+                                <span className="text-[8px] text-slate-500 uppercase tracking-widest">
                                   Precision Tracking
                                 </span>
                               </div>
                             </div>
-                            <span className="text-[9px] text-gray-400 italic">
+                            <span className="text-[9px] text-slate-400 italic">
                               Today at 07:42 AM
                             </span>
                           </div>
                           <div className="flex gap-4">
                             {/* Map */}
-                            <div className="flex-1 h-32 rounded-lg overflow-hidden relative bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200">
+                            <div className="flex-1 h-32 rounded-lg overflow-hidden relative bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200">
                               <div
                                 className="absolute inset-0 opacity-10"
                                 style={{
@@ -270,7 +273,7 @@ export default function LocalProPage() {
                             {/* Info */}
                             <div className="w-40 space-y-3">
                               <div>
-                                <span className="text-[8px] uppercase tracking-widest text-gray-500 font-bold">
+                                <span className="text-[8px] uppercase tracking-widest text-slate-500 font-bold">
                                   Site Manager
                                 </span>
                                 <p className="text-[11px] font-semibold text-[#102122]">
@@ -278,7 +281,7 @@ export default function LocalProPage() {
                                 </p>
                               </div>
                               <div>
-                                <span className="text-[8px] uppercase tracking-widest text-gray-500 font-bold">
+                                <span className="text-[8px] uppercase tracking-widest text-slate-500 font-bold">
                                   Crew Status
                                 </span>
                                 <div className="flex items-center gap-1 text-primary text-[11px] font-bold">
@@ -286,7 +289,7 @@ export default function LocalProPage() {
                                   Active (14 On-site)
                                 </div>
                               </div>
-                              <div className="border border-gray-200 text-primary text-[9px] font-bold py-1.5 rounded-md text-center">
+                              <div className="border border-slate-200 text-primary text-[9px] font-bold py-1.5 rounded-md text-center">
                                 View Full Log
                               </div>
                             </div>
@@ -306,7 +309,7 @@ export default function LocalProPage() {
                                 <h3 className="text-xs font-bold text-[#102122]">
                                   Rebar Inspection Log
                                 </h3>
-                                <span className="text-[8px] text-gray-500 uppercase tracking-widest">
+                                <span className="text-[8px] text-slate-500 uppercase tracking-widest">
                                   Compliance Proofs
                                 </span>
                               </div>
@@ -319,7 +322,7 @@ export default function LocalProPage() {
                             {photoEntries.map((photo) => (
                               <div
                                 key={photo.label}
-                                className="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-gray-300 via-gray-200 to-gray-300 relative"
+                                className="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-slate-300 via-slate-200 to-slate-300 relative"
                               >
                                 <div className="absolute inset-0 flex items-center justify-center">
                                   <span className="material-symbols-outlined text-white/40 text-2xl">
@@ -333,7 +336,7 @@ export default function LocalProPage() {
                                 </div>
                               </div>
                             ))}
-                            <div className="aspect-square rounded-lg bg-gray-100 flex flex-col items-center justify-center text-gray-400">
+                            <div className="aspect-square rounded-lg bg-slate-100 flex flex-col items-center justify-center text-slate-400">
                               <span className="material-symbols-outlined text-xl">
                                 add_a_photo
                               </span>
@@ -348,10 +351,10 @@ export default function LocalProPage() {
                       {/* Right: Sidebar widgets */}
                       <div className="flex-1 space-y-4">
                         {/* Vault Status */}
-                        <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                        <div className="bg-white rounded-xl p-4 shadow-sm border border-slate-100">
                           <div className="flex items-center gap-2 mb-4">
                             <span
-                              className="material-symbols-outlined text-gray-500 text-lg"
+                              className="material-symbols-outlined text-slate-500 text-lg"
                               style={{
                                 fontVariationSettings: "'FILL' 1",
                               }}
@@ -364,19 +367,19 @@ export default function LocalProPage() {
                           </div>
                           <div className="mb-3">
                             <div className="flex justify-between items-end mb-1.5">
-                              <span className="text-[8px] uppercase tracking-widest text-gray-500 font-bold">
+                              <span className="text-[8px] uppercase tracking-widest text-slate-500 font-bold">
                                 Total Disbursed
                               </span>
                               <span className="text-base font-extrabold text-[#102122]">
                                 $1,245,000
                               </span>
                             </div>
-                            <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden flex gap-[1px]">
+                            <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden flex gap-[1px]">
                               <div className="h-full bg-primary w-[65%]" />
                               <div className="h-full bg-primary/30 w-[15%]" />
                             </div>
                             <div className="flex justify-between mt-1">
-                              <span className="text-[8px] text-gray-500">
+                              <span className="text-[8px] text-slate-500">
                                 Phase 1 Complete
                               </span>
                               <span className="text-[8px] font-bold text-primary">
@@ -384,7 +387,7 @@ export default function LocalProPage() {
                               </span>
                             </div>
                           </div>
-                          <div className="p-2 bg-gray-50 rounded-md flex items-center gap-2">
+                          <div className="p-2 bg-slate-50 rounded-md flex items-center gap-2">
                             <span className="material-symbols-outlined text-primary text-sm">
                               verified_user
                             </span>
@@ -392,7 +395,7 @@ export default function LocalProPage() {
                               <span className="font-bold text-[#102122] block">
                                 Escrow Secured
                               </span>
-                              <span className="text-gray-500">
+                              <span className="text-slate-500">
                                 Milestone 3 funds held in Vault
                               </span>
                             </div>
@@ -405,14 +408,14 @@ export default function LocalProPage() {
                             <span className="px-1.5 py-0.5 bg-primary/10 text-primary rounded text-[7px] font-black uppercase tracking-widest">
                               Urgent
                             </span>
-                            <span className="text-[8px] uppercase tracking-widest text-gray-500 font-bold">
+                            <span className="text-[8px] uppercase tracking-widest text-slate-500 font-bold">
                               Milestone 2
                             </span>
                           </div>
                           <h3 className="text-xs font-bold text-[#102122] mb-0.5">
                             Foundation Concrete Pour
                           </h3>
-                          <p className="text-[9px] text-gray-500 mb-3">
+                          <p className="text-[9px] text-slate-500 mb-3">
                             Inspection signed off. Awaiting fund release.
                           </p>
                           <div className="bg-primary text-white text-[9px] font-bold py-2 rounded-md text-center flex items-center justify-center gap-1">
@@ -424,8 +427,8 @@ export default function LocalProPage() {
                         </div>
 
                         {/* Site Team */}
-                        <div className="bg-gray-50 rounded-xl p-4">
-                          <h3 className="text-[8px] font-bold uppercase tracking-widest text-gray-500 mb-3">
+                        <div className="bg-slate-50 rounded-xl p-4">
+                          <h3 className="text-[8px] font-bold uppercase tracking-widest text-slate-500 mb-3">
                             Site Team
                           </h3>
                           <div className="space-y-2.5">
@@ -443,11 +446,11 @@ export default function LocalProPage() {
                                   <p className="text-[10px] font-bold text-[#102122]">
                                     {member.name}
                                   </p>
-                                  <p className="text-[8px] text-gray-500">
+                                  <p className="text-[8px] text-slate-500">
                                     {member.role}
                                   </p>
                                 </div>
-                                <span className="material-symbols-outlined text-gray-400 text-xs">
+                                <span className="material-symbols-outlined text-slate-400 text-xs">
                                   chat_bubble
                                 </span>
                               </div>
@@ -478,7 +481,7 @@ export default function LocalProPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
                 Built for Site Managers
               </h2>
-              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
                 Four modules that give you full control over your project site
                 &mdash; from who&apos;s on the ground to where every dollar
                 goes.
@@ -489,9 +492,9 @@ export default function LocalProPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {localProModules.map((mod, i) => (
               <ScrollReveal key={mod.id} delay={i * 80}>
-                <div className="bg-[#f6f8f8] p-8 rounded-xl border border-gray-100 h-full">
+                <div className="bg-[#f6f8f8] p-8 rounded-xl border border-slate-100 h-full">
                   <div className="flex items-start gap-4 mb-5">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-gray-100 flex-shrink-0">
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-slate-100 flex-shrink-0">
                       <span className="material-symbols-outlined text-primary text-xl">
                         {mod.icon}
                       </span>
@@ -505,7 +508,7 @@ export default function LocalProPage() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-5">
+                  <p className="text-slate-500 text-sm leading-relaxed mb-5">
                     {mod.description}
                   </p>
                   <ul className="space-y-2">
@@ -520,7 +523,7 @@ export default function LocalProPage() {
                         >
                           check_circle
                         </span>
-                        <span className="text-gray-600">{feat}</span>
+                        <span className="text-slate-600">{feat}</span>
                       </li>
                     ))}
                   </ul>
@@ -540,7 +543,7 @@ export default function LocalProPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* GPS Check-in Detail */}
             <ScrollReveal>
-              <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm h-full">
+              <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
                     <span className="material-symbols-outlined text-primary">
@@ -551,14 +554,14 @@ export default function LocalProPage() {
                     <h3 className="font-extrabold text-[#102122] text-lg">
                       GPS Verified Check-in
                     </h3>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-slate-500">
                       Geofenced attendance for your entire crew
                     </p>
                   </div>
                 </div>
 
                 {/* Map mockup */}
-                <div className="h-40 rounded-xl overflow-hidden relative bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 mb-5">
+                <div className="h-40 rounded-xl overflow-hidden relative bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 mb-5">
                   <div
                     className="absolute inset-0 opacity-10"
                     style={{
@@ -586,7 +589,7 @@ export default function LocalProPage() {
                     <div key={entry.name} className="flex items-center gap-3">
                       <div
                         className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                          entry.active ? 'bg-primary' : 'bg-gray-300'
+                          entry.active ? 'bg-primary' : 'bg-slate-300'
                         }`}
                       />
                       <div className="flex-1">
@@ -594,7 +597,7 @@ export default function LocalProPage() {
                           {entry.name}
                         </span>
                       </div>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-xs text-slate-500">
                         {entry.time}
                       </span>
                     </div>
@@ -607,7 +610,7 @@ export default function LocalProPage() {
             <ScrollReveal delay={100}>
               <div className="space-y-6 h-full flex flex-col">
                 {/* Vault card */}
-                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
                       <span
@@ -621,26 +624,26 @@ export default function LocalProPage() {
                       <h3 className="font-extrabold text-[#102122] text-lg">
                         Project Vault
                       </h3>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-slate-500">
                         Escrow-protected financial dashboard
                       </p>
                     </div>
                   </div>
 
                   <div className="flex justify-between items-end mb-3">
-                    <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">
+                    <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">
                       Total Disbursed
                     </span>
                     <span className="text-2xl font-extrabold text-[#102122]">
                       $1,245,000
                     </span>
                   </div>
-                  <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden flex gap-[2px] mb-2">
+                  <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden flex gap-[2px] mb-2">
                     <div className="h-full bg-primary w-[65%] rounded-full" />
                     <div className="h-full bg-primary/30 w-[15%] rounded-full" />
                   </div>
                   <div className="flex justify-between mb-4">
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-slate-500">
                       Phase 1 Complete
                     </span>
                     <span className="text-xs font-bold text-primary">
@@ -656,7 +659,7 @@ export default function LocalProPage() {
                       <span className="font-bold text-[#102122] block">
                         Escrow Secured
                       </span>
-                      <span className="text-gray-500 text-xs">
+                      <span className="text-slate-500 text-xs">
                         Milestone 3 funds held in LocalPro Vault
                       </span>
                     </div>
@@ -669,14 +672,14 @@ export default function LocalProPage() {
                     <span className="px-2 py-0.5 bg-primary/10 text-primary rounded text-[9px] font-black uppercase tracking-widest">
                       Urgent
                     </span>
-                    <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+                    <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">
                       Milestone 2
                     </span>
                   </div>
                   <h3 className="text-xl font-bold text-[#102122] mb-1">
                     Foundation Concrete Pour
                   </h3>
-                  <p className="text-sm text-gray-500 mb-6">
+                  <p className="text-sm text-slate-500 mb-6">
                     Structural inspection signed off. Contractor awaiting fund
                     release.
                   </p>
@@ -707,7 +710,7 @@ export default function LocalProPage() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#102122] mt-4 tracking-tight">
                 Handle the Unexpected
               </h2>
-              <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
                 When unforeseen conditions arise on site, LocalPro documents
                 everything &mdash; GPS evidence, cost impact, and escrow funding
                 &mdash; so both parties can resolve addendums with full transparency.
@@ -716,7 +719,7 @@ export default function LocalProPage() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
               {/* Browser chrome */}
               <div className="bg-[#e7e8e9] px-4 py-3 flex items-center gap-3">
                 <div className="flex gap-1.5">
@@ -725,7 +728,7 @@ export default function LocalProPage() {
                   <div className="w-3 h-3 rounded-full bg-[#28c840]" />
                 </div>
                 <div className="flex-1 flex justify-center">
-                  <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-gray-500 font-medium">
+                  <div className="bg-white/70 rounded-full px-6 py-1 text-[11px] text-slate-500 font-medium">
                     app.renonext.com/local-pro/vault/addendum/LP-77241
                   </div>
                 </div>
@@ -734,12 +737,12 @@ export default function LocalProPage() {
               {/* App body */}
               <div className="bg-[#f8f9fa] flex min-h-[580px]">
                 {/* Sidebar */}
-                <div className="hidden lg:flex flex-col w-48 bg-[#f3f4f5] p-3 border-r border-gray-200/30">
+                <div className="hidden lg:flex flex-col w-48 bg-[#f3f4f5] p-3 border-r border-slate-200/30">
                   <div className="px-3 py-4 mb-3">
                     <h3 className="text-xs font-black text-[#102122]">
                       Project Control
                     </h3>
-                    <p className="text-[7px] uppercase tracking-widest text-gray-500 font-semibold">
+                    <p className="text-[7px] uppercase tracking-widest text-slate-500 font-semibold">
                       Precision Management
                     </p>
                   </div>
@@ -756,7 +759,7 @@ export default function LocalProPage() {
                         className={`flex items-center gap-2 px-3 py-2 rounded-md text-[10px] ${
                           item.active
                             ? 'bg-white text-primary font-bold shadow-sm'
-                            : 'text-gray-500'
+                            : 'text-slate-500'
                         }`}
                       >
                         <span className="material-symbols-outlined text-sm">
@@ -766,14 +769,14 @@ export default function LocalProPage() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-auto pt-4 border-t border-gray-200 space-y-0.5">
-                    <div className="flex items-center gap-2 px-3 py-1.5 text-[10px] text-gray-500">
+                  <div className="mt-auto pt-4 border-t border-slate-200 space-y-0.5">
+                    <div className="flex items-center gap-2 px-3 py-1.5 text-[10px] text-slate-500">
                       <span className="material-symbols-outlined text-xs">
                         help_center
                       </span>
                       Support
                     </div>
-                    <div className="flex items-center gap-2 px-3 py-1.5 text-[10px] text-gray-500">
+                    <div className="flex items-center gap-2 px-3 py-1.5 text-[10px] text-slate-500">
                       <span className="material-symbols-outlined text-xs">
                         logout
                       </span>
@@ -785,25 +788,25 @@ export default function LocalProPage() {
                 {/* Main content */}
                 <div className="flex-1 flex flex-col">
                   {/* Top nav bar */}
-                  <div className="px-5 py-3 flex justify-between items-center border-b border-gray-100">
+                  <div className="px-5 py-3 flex justify-between items-center border-b border-slate-100">
                     <div className="flex items-center gap-6">
                       <span className="text-base font-bold text-[#102122] tracking-tight">
                         LocalPro
                       </span>
                       <div className="hidden md:flex gap-4">
-                        <span className="text-xs text-gray-500">Projects</span>
-                        <span className="text-xs text-gray-500">Schedule</span>
+                        <span className="text-xs text-slate-500">Projects</span>
+                        <span className="text-xs text-slate-500">Schedule</span>
                         <span className="text-xs font-semibold text-primary border-b-2 border-primary pb-0.5">
                           Vault
                         </span>
-                        <span className="text-xs text-gray-500">Teams</span>
+                        <span className="text-xs text-slate-500">Teams</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-gray-400 text-lg">
+                      <span className="material-symbols-outlined text-slate-400 text-lg">
                         notifications
                       </span>
-                      <span className="material-symbols-outlined text-gray-400 text-lg">
+                      <span className="material-symbols-outlined text-slate-400 text-lg">
                         settings
                       </span>
                       <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center">
@@ -840,7 +843,7 @@ export default function LocalProPage() {
                     <div className="grid grid-cols-12 gap-5">
                       {/* ── Left: Visual Evidence (7 col) ── */}
                       <div className="col-span-12 lg:col-span-7">
-                        <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                        <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100">
                           {/* Photo with metadata overlays */}
                           <div className="aspect-video w-full relative bg-gradient-to-br from-amber-200 via-amber-100 to-amber-200 overflow-hidden">
                             {/* Construction scene pattern */}
@@ -902,14 +905,14 @@ export default function LocalProPage() {
                       {/* ── Right: Financial & Actions (5 col) ── */}
                       <div className="col-span-12 lg:col-span-5 space-y-4">
                         {/* Financial Breakdown */}
-                        <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
-                          <h4 className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-4">
+                        <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+                          <h4 className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-4">
                             Financial Impact
                           </h4>
                           <div className="space-y-3">
                             <div className="flex justify-between items-center">
                               <div className="flex items-center gap-2">
-                                <span className="material-symbols-outlined text-gray-400 text-sm">
+                                <span className="material-symbols-outlined text-slate-400 text-sm">
                                   construction
                                 </span>
                                 <span className="text-[11px] text-[#102122]">
@@ -922,7 +925,7 @@ export default function LocalProPage() {
                             </div>
                             <div className="flex justify-between items-center">
                               <div className="flex items-center gap-2">
-                                <span className="material-symbols-outlined text-gray-400 text-sm">
+                                <span className="material-symbols-outlined text-slate-400 text-sm">
                                   delete_sweep
                                 </span>
                                 <span className="text-[11px] text-[#102122]">
@@ -933,7 +936,7 @@ export default function LocalProPage() {
                                 $400.00
                               </span>
                             </div>
-                            <div className="pt-3 border-t border-gray-100 flex justify-between items-end">
+                            <div className="pt-3 border-t border-slate-100 flex justify-between items-end">
                               <span className="text-[10px] uppercase tracking-widest text-primary font-bold">
                                 Total Change Order
                               </span>
@@ -944,7 +947,7 @@ export default function LocalProPage() {
                           </div>
                           {/* Comparison */}
                           <div className="mt-5 p-3 bg-[#f3f4f5] rounded-lg space-y-1.5">
-                            <div className="flex justify-between text-[9px] uppercase tracking-widest text-gray-500">
+                            <div className="flex justify-between text-[9px] uppercase tracking-widest text-slate-500">
                               <span>Original Contract</span>
                               <span>$65,000.00</span>
                             </div>
@@ -972,7 +975,7 @@ export default function LocalProPage() {
                             </span>
                             Reject &amp; Request Mediation
                           </div>
-                          <p className="text-center text-[8px] text-gray-400 leading-tight px-2">
+                          <p className="text-center text-[8px] text-slate-400 leading-tight px-2">
                             Approving instantly updates the contract and allows work to
                             resume. Funds held in secure escrow until milestone
                             verification.
@@ -982,19 +985,19 @@ export default function LocalProPage() {
                     </div>
 
                     {/* Footer meta */}
-                    <div className="pt-4 flex flex-col md:flex-row justify-between items-center border-t border-gray-200/30 gap-3">
+                    <div className="pt-4 flex flex-col md:flex-row justify-between items-center border-t border-slate-200/30 gap-3">
                       <div className="flex items-center gap-5">
                         <div>
-                          <span className="text-[8px] uppercase tracking-widest text-gray-500 font-bold block">
+                          <span className="text-[8px] uppercase tracking-widest text-slate-500 font-bold block">
                             Review Deadline
                           </span>
                           <span className="text-[11px] font-bold text-[#102122]">
                             22 Oct 2023, 5:00 PM
                           </span>
                         </div>
-                        <div className="w-px h-6 bg-gray-200" />
+                        <div className="w-px h-6 bg-slate-200" />
                         <div>
-                          <span className="text-[8px] uppercase tracking-widest text-gray-500 font-bold block">
+                          <span className="text-[8px] uppercase tracking-widest text-slate-500 font-bold block">
                             Verified Inspector
                           </span>
                           <span className="text-[11px] font-bold text-[#102122] flex items-center gap-1">
@@ -1009,13 +1012,13 @@ export default function LocalProPage() {
                         </div>
                       </div>
                       <div className="flex gap-3">
-                        <span className="text-[8px] uppercase tracking-widest text-gray-400 flex items-center gap-1">
+                        <span className="text-[8px] uppercase tracking-widest text-slate-400 flex items-center gap-1">
                           <span className="material-symbols-outlined text-xs">
                             print
                           </span>
                           Print Proof
                         </span>
-                        <span className="text-[8px] uppercase tracking-widest text-gray-400 flex items-center gap-1">
+                        <span className="text-[8px] uppercase tracking-widest text-slate-400 flex items-center gap-1">
                           <span className="material-symbols-outlined text-xs">
                             download
                           </span>
@@ -1035,7 +1038,7 @@ export default function LocalProPage() {
           SECTION 5 — CTA
           Dark CTA with trust badges
           ================================================================ */}
-      <section className="bg-[#102122] py-24">
+      <section className="bg-reno-dark py-24">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <ScrollReveal>
             <span
@@ -1051,7 +1054,7 @@ export default function LocalProPage() {
               Every Project
             </h2>
 
-            <p className="text-gray-400 mt-6 max-w-xl mx-auto text-lg">
+            <p className="text-slate-400 mt-6 max-w-xl mx-auto text-lg">
               GPS attendance. Photo compliance. Escrow vault. Team management.
               One dashboard for your entire operation.
             </p>

@@ -111,14 +111,14 @@ function ProCard({
       </h4>
 
       {/* Specialty */}
-      <p className="text-sm text-gray-500 mb-4">{contractor.specialty}</p>
+      <p className="text-sm text-slate-500 mb-4">{contractor.specialty}</p>
 
       {/* Location */}
       <div className="flex items-center gap-1.5 mb-5">
-        <span className="material-symbols-outlined text-gray-400 text-base">
+        <span className="material-symbols-outlined text-slate-400 text-base">
           location_on
         </span>
-        <span className="text-sm text-gray-500">{contractor.location}</span>
+        <span className="text-sm text-slate-500">{contractor.location}</span>
       </div>
 
       {/* Trust badges row */}
@@ -126,7 +126,7 @@ function ProCard({
         {['WSIB', 'Insured', 'Licensed'].map((badge) => (
           <div
             key={badge}
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#f6f8f8] text-xs font-semibold text-gray-500"
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#f6f8f8] text-xs font-semibold text-slate-500"
           >
             <span
               className="material-symbols-outlined text-primary text-xs"

@@ -77,6 +77,7 @@ const config: Config = {
         },
         // Teal Horizon design tokens
         reno: {
+          primary: '#0fbabd',
           green: {
             DEFAULT: '#0fbabd',
             50: '#E0F7F7',

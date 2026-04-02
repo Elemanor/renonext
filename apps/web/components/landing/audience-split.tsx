@@ -155,7 +155,7 @@ export function AudienceSplit() {
                         </span>
                       </div>
                     </div>
-                    <span className="text-gray-600 leading-relaxed pt-1">
+                    <span className="text-slate-600 leading-relaxed pt-1">
                       {benefit.text}
                     </span>
                   </li>
@@ -242,7 +242,7 @@ export function AudienceSplit() {
                         </span>
                       </div>
                     </div>
-                    <span className="text-gray-600 leading-relaxed pt-1">
+                    <span className="text-slate-600 leading-relaxed pt-1">
                       {benefit.text}
                     </span>
                   </li>

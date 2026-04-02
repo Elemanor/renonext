@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     'Obsidian Sentinel | Construction Intelligence Platform | RenoNext',
   description:
     'Command every detail of your construction project. 11 integrated modules for site briefing, budgets, safety, documents, and more — all in one dark-mode platform.',
+  alternates: {
+    canonical: '/apps/sentinel',
+  },
   openGraph: {
     title: 'Obsidian Sentinel — Construction Intelligence Platform',
     description:
@@ -102,7 +105,7 @@ export default function SentinelPage() {
               <span className="text-primary">Sentinel</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-8 max-w-xl">
+            <p className="text-xl md:text-2xl text-slate-400 leading-relaxed mb-8 max-w-xl">
               Command every detail of your construction project from a single
               dark-mode dashboard. 11 integrated modules. Zero blind spots.
             </p>
@@ -147,7 +150,7 @@ export default function SentinelPage() {
                     {/* Header */}
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-[9px] text-gray-500 uppercase tracking-wider font-bold">
+                        <p className="text-[9px] text-slate-500 uppercase tracking-wider font-bold">
                           Site Briefing
                         </p>
                         <p className="text-white text-sm font-bold mt-0.5">
@@ -161,7 +164,7 @@ export default function SentinelPage() {
 
                     {/* Personnel avatars */}
                     <div className="bg-[#141419] rounded-xl p-3 border border-white/[0.06]">
-                      <p className="text-[8px] text-gray-500 uppercase tracking-wider font-bold mb-2">
+                      <p className="text-[8px] text-slate-500 uppercase tracking-wider font-bold mb-2">
                         On Site — {personnelOnSite.length}
                       </p>
                       <div className="flex gap-2">
@@ -176,7 +179,7 @@ export default function SentinelPage() {
                             >
                               {p.initials}
                             </div>
-                            <p className="text-[7px] text-gray-500 mt-0.5 truncate w-8">
+                            <p className="text-[7px] text-slate-500 mt-0.5 truncate w-8">
                               {p.name.split(' ')[0]}
                             </p>
                           </div>
@@ -186,7 +189,7 @@ export default function SentinelPage() {
 
                     {/* Mini noise heatmap */}
                     <div className="bg-[#141419] rounded-xl p-3 border border-white/[0.06]">
-                      <p className="text-[8px] text-gray-500 uppercase tracking-wider font-bold mb-2">
+                      <p className="text-[8px] text-slate-500 uppercase tracking-wider font-bold mb-2">
                         Noise Compliance
                       </p>
                       <div className="space-y-1">
@@ -195,7 +198,7 @@ export default function SentinelPage() {
                             key={row.day}
                             className="flex items-center gap-1"
                           >
-                            <span className="text-[7px] text-gray-500 w-5 text-right">
+                            <span className="text-[7px] text-slate-500 w-5 text-right">
                               {row.day}
                             </span>
                             {row.hours.map((level, hi) => (
@@ -212,7 +215,7 @@ export default function SentinelPage() {
                     {/* Escrow mini card */}
                     <div className="bg-[#141419] rounded-xl p-3 border border-white/[0.06]">
                       <div className="flex items-center justify-between mb-1.5">
-                        <p className="text-[8px] text-gray-500 uppercase tracking-wider font-bold">
+                        <p className="text-[8px] text-slate-500 uppercase tracking-wider font-bold">
                           Escrow
                         </p>
                         <p className="text-[10px] text-primary font-bold">
@@ -225,7 +228,7 @@ export default function SentinelPage() {
                           style={{ width: '65%' }}
                         />
                       </div>
-                      <p className="text-[7px] text-gray-500 mt-1">
+                      <p className="text-[7px] text-slate-500 mt-1">
                         65% of milestone released
                       </p>
                     </div>
@@ -245,7 +248,7 @@ export default function SentinelPage() {
                 </span>
                 <div>
                   <p className="text-[9px] text-white font-bold">Enterprise Grade</p>
-                  <p className="text-[7px] text-gray-500">AES-256 encrypted</p>
+                  <p className="text-[7px] text-slate-500">AES-256 encrypted</p>
                 </div>
               </div>
             </div>
@@ -260,7 +263,7 @@ export default function SentinelPage() {
                 </span>
                 <div>
                   <p className="text-[9px] text-white font-bold">Offline-Ready</p>
-                  <p className="text-[7px] text-gray-500">Full sync when online</p>
+                  <p className="text-[7px] text-slate-500">Full sync when online</p>
                 </div>
               </div>
             </div>
@@ -292,7 +295,7 @@ export default function SentinelPage() {
                   <span className="text-primary">Site Briefing</span>
                 </h2>
 
-                <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-lg">
+                <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-lg">
                   Start every morning with a complete operational snapshot.
                   Personnel, escrow, noise compliance, and active alerts — one
                   screen, zero guesswork.
@@ -309,7 +312,7 @@ export default function SentinelPage() {
                           check
                         </span>
                       </div>
-                      <span className="text-gray-600 leading-relaxed pt-1">
+                      <span className="text-slate-600 leading-relaxed pt-1">
                         {f}
                       </span>
                     </li>
@@ -322,7 +325,7 @@ export default function SentinelPage() {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-5">
                   <div>
-                    <p className="text-[10px] text-gray-500 uppercase tracking-wider font-bold">
+                    <p className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">
                       Site Briefing
                     </p>
                     <p className="text-white text-lg font-bold">
@@ -341,7 +344,7 @@ export default function SentinelPage() {
 
                 {/* Personnel grid */}
                 <div className="bg-[#141419] rounded-xl p-4 border border-white/[0.06] mb-4">
-                  <p className="text-[9px] text-gray-500 uppercase tracking-wider font-bold mb-3">
+                  <p className="text-[9px] text-slate-500 uppercase tracking-wider font-bold mb-3">
                     Personnel on Site — {personnelOnSite.length}
                   </p>
                   <div className="grid grid-cols-4 gap-3">
@@ -359,7 +362,7 @@ export default function SentinelPage() {
                         <p className="text-[10px] text-white font-medium mt-1.5">
                           {p.name.split(' ')[0]}
                         </p>
-                        <p className="text-[8px] text-gray-500">{p.role.split(' ')[0]}</p>
+                        <p className="text-[8px] text-slate-500">{p.role.split(' ')[0]}</p>
                       </div>
                     ))}
                   </div>
@@ -367,7 +370,7 @@ export default function SentinelPage() {
 
                 {/* Noise Heatmap */}
                 <div className="bg-[#141419] rounded-xl p-4 border border-white/[0.06] mb-4">
-                  <p className="text-[9px] text-gray-500 uppercase tracking-wider font-bold mb-3">
+                  <p className="text-[9px] text-slate-500 uppercase tracking-wider font-bold mb-3">
                     Noise Compliance Heatmap
                   </p>
                   {/* Column headers */}
@@ -375,7 +378,7 @@ export default function SentinelPage() {
                     {noiseHours.map((h) => (
                       <span
                         key={h}
-                        className="text-[7px] text-gray-600 w-6 text-center"
+                        className="text-[7px] text-slate-600 w-6 text-center"
                       >
                         {h}
                       </span>
@@ -384,7 +387,7 @@ export default function SentinelPage() {
                   <div className="space-y-1.5">
                     {noiseHeatmap.map((row) => (
                       <div key={row.day} className="flex items-center gap-1.5">
-                        <span className="text-[9px] text-gray-500 w-7 text-right font-medium">
+                        <span className="text-[9px] text-slate-500 w-7 text-right font-medium">
                           {row.day}
                         </span>
                         {row.hours.map((level, hi) => (
@@ -423,11 +426,11 @@ export default function SentinelPage() {
                         <p className="text-xs text-white font-medium">
                           {alert.title}
                         </p>
-                        <p className="text-[10px] text-gray-500 mt-0.5">
+                        <p className="text-[10px] text-slate-500 mt-0.5">
                           {alert.description}
                         </p>
                       </div>
-                      <span className="text-[9px] text-gray-600 flex-shrink-0">
+                      <span className="text-[9px] text-slate-600 flex-shrink-0">
                         {alert.time}
                       </span>
                     </div>
@@ -437,7 +440,7 @@ export default function SentinelPage() {
                 {/* Escrow bar */}
                 <div className="bg-[#141419] rounded-xl p-4 border border-white/[0.06]">
                   <div className="flex items-center justify-between mb-2">
-                    <p className="text-[9px] text-gray-500 uppercase tracking-wider font-bold">
+                    <p className="text-[9px] text-slate-500 uppercase tracking-wider font-bold">
                       Escrow Balance
                     </p>
                     <p className="text-sm text-primary font-bold">
@@ -451,10 +454,10 @@ export default function SentinelPage() {
                     />
                   </div>
                   <div className="flex justify-between mt-1.5">
-                    <span className="text-[8px] text-gray-600">
+                    <span className="text-[8px] text-slate-600">
                       Released: {formatCurrency(27625)}
                     </span>
-                    <span className="text-[8px] text-gray-600">
+                    <span className="text-[8px] text-slate-600">
                       65% complete
                     </span>
                   </div>
@@ -485,7 +488,7 @@ export default function SentinelPage() {
                 Phase-Level{' '}
                 <span className="text-primary">Visibility</span>
               </h2>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
                 From excavation to finishing — track every phase, task, and
                 issue with granular precision.
               </p>
@@ -509,7 +512,7 @@ export default function SentinelPage() {
                     <h3 className="font-bold text-reno-dark text-lg">
                       Project Timeline
                     </h3>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-slate-500">
                       3 phases &middot; 54 total tasks
                     </p>
                   </div>
@@ -538,7 +541,7 @@ export default function SentinelPage() {
                           </span>
                         </div>
                         <div className="flex items-center gap-3">
-                          <span className="text-[10px] text-gray-400">
+                          <span className="text-[10px] text-slate-400">
                             {phase.completedTasks}/{phase.tasks} tasks
                           </span>
                           <span
@@ -549,7 +552,7 @@ export default function SentinelPage() {
                           </span>
                         </div>
                       </div>
-                      <div className="h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                      <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full transition-all duration-700"
                           style={{
@@ -563,17 +566,17 @@ export default function SentinelPage() {
                 </div>
 
                 {/* Health indicators */}
-                <div className="mt-6 pt-5 border-t border-gray-100 grid grid-cols-3 gap-4">
+                <div className="mt-6 pt-5 border-t border-slate-100 grid grid-cols-3 gap-4">
                   <div className="text-center">
-                    <p className="text-xs text-gray-400">Schedule</p>
+                    <p className="text-xs text-slate-400">Schedule</p>
                     <p className="text-sm font-bold text-[#22c55e]">On Track</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-xs text-gray-400">Budget</p>
+                    <p className="text-xs text-slate-400">Budget</p>
                     <p className="text-sm font-bold text-[#22c55e]">Under</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-xs text-gray-400">Risk</p>
+                    <p className="text-xs text-slate-400">Risk</p>
                     <p className="text-sm font-bold text-[#E8AA42]">Medium</p>
                   </div>
                 </div>
@@ -596,7 +599,7 @@ export default function SentinelPage() {
                     <h3 className="font-bold text-reno-dark text-lg">
                       Phase: Foundation
                     </h3>
-                    <p className="text-xs text-gray-500">Active tasks</p>
+                    <p className="text-xs text-slate-500">Active tasks</p>
                   </div>
                 </div>
 
@@ -604,7 +607,7 @@ export default function SentinelPage() {
                   {phaseTasks.map((task, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-3 p-3 bg-[#f6f8f8] rounded-xl border border-gray-100"
+                      className="flex items-start gap-3 p-3 bg-[#f6f8f8] rounded-xl border border-slate-100"
                     >
                       <div
                         className={priorityDotSize}
@@ -618,7 +621,7 @@ export default function SentinelPage() {
                         <p className="text-xs font-medium text-reno-dark">
                           {task.title}
                         </p>
-                        <p className="text-[10px] text-gray-400 mt-0.5">
+                        <p className="text-[10px] text-slate-400 mt-0.5">
                           {task.assignee} &middot; Due {task.dueDate}
                         </p>
                       </div>
@@ -627,8 +630,8 @@ export default function SentinelPage() {
                 </div>
 
                 {/* Phase Telemetry */}
-                <div className="bg-[#f6f8f8] rounded-xl p-4 border border-gray-100">
-                  <p className="text-[9px] text-gray-400 uppercase tracking-wider font-bold mb-3">
+                <div className="bg-[#f6f8f8] rounded-xl p-4 border border-slate-100">
+                  <p className="text-[9px] text-slate-400 uppercase tracking-wider font-bold mb-3">
                     Phase Telemetry
                   </p>
                   <div className="grid grid-cols-2 gap-3">
@@ -637,7 +640,7 @@ export default function SentinelPage() {
                         <p className="text-lg font-extrabold text-reno-dark">
                           {t.value}
                         </p>
-                        <p className="text-[10px] text-gray-400">{t.label}</p>
+                        <p className="text-[10px] text-slate-400">{t.label}</p>
                       </div>
                     ))}
                   </div>
@@ -668,7 +671,7 @@ export default function SentinelPage() {
                     {issueStats.map((s) => (
                       <div
                         key={s.label}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#f6f8f8] border border-gray-100"
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#f6f8f8] border border-slate-100"
                       >
                         <span
                           className="w-2 h-2 rounded-full"
@@ -677,7 +680,7 @@ export default function SentinelPage() {
                         <span className="text-xs font-bold text-reno-dark">
                           {s.value}
                         </span>
-                        <span className="text-[10px] text-gray-400">
+                        <span className="text-[10px] text-slate-400">
                           {s.label}
                         </span>
                       </div>
@@ -693,7 +696,7 @@ export default function SentinelPage() {
                       className={`px-3 py-1 rounded-full text-xs font-medium border ${
                         i === 0
                           ? 'bg-primary text-white border-primary'
-                          : 'bg-white text-gray-500 border-gray-200'
+                          : 'bg-white text-slate-500 border-slate-200'
                       }`}
                     >
                       {f}
@@ -706,7 +709,7 @@ export default function SentinelPage() {
                   {issueItems.map((issue) => (
                     <div
                       key={issue.id}
-                      className="flex items-start gap-3 p-4 bg-[#f6f8f8] rounded-xl border border-gray-100"
+                      className="flex items-start gap-3 p-4 bg-[#f6f8f8] rounded-xl border border-slate-100"
                     >
                       <div
                         className={priorityDotSize}
@@ -718,17 +721,17 @@ export default function SentinelPage() {
                       />
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-0.5">
-                          <span className="text-[10px] font-bold text-gray-400">
+                          <span className="text-[10px] font-bold text-slate-400">
                             {issue.id}
                           </span>
-                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-gray-200 text-gray-500 font-medium">
+                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-200 text-slate-500 font-medium">
                             {issue.workstream}
                           </span>
                         </div>
                         <p className="text-sm font-medium text-reno-dark">
                           {issue.title}
                         </p>
-                        <p className="text-[10px] text-gray-400 mt-1">
+                        <p className="text-[10px] text-slate-400 mt-1">
                           {issue.assignee} &middot; Open {issue.daysOpen}d
                         </p>
                       </div>
@@ -770,7 +773,7 @@ export default function SentinelPage() {
                 Every Dollar{' '}
                 <span className="text-primary">Accounted For</span>
               </h2>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
                 Milestone-based escrow, real-time budget tracking, and
                 structured change order management.
               </p>
@@ -795,15 +798,15 @@ export default function SentinelPage() {
                     <h3 className="font-bold text-reno-dark text-lg">
                       Budget & Escrow
                     </h3>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-slate-500">
                       Total: {formatCurrency(totalBudget)}
                     </p>
                   </div>
                 </div>
 
                 {/* Balance display */}
-                <div className="bg-[#f6f8f8] rounded-xl p-5 border border-gray-100 mb-6">
-                  <p className="text-[10px] text-gray-400 uppercase tracking-wider font-bold mb-1">
+                <div className="bg-[#f6f8f8] rounded-xl p-5 border border-slate-100 mb-6">
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider font-bold mb-1">
                     Escrow Balance
                   </p>
                   <p className="text-3xl font-extrabold text-reno-dark">
@@ -827,7 +830,7 @@ export default function SentinelPage() {
                   ))}
                   {/* Remaining */}
                   <div
-                    className="h-full rounded-r-full bg-gray-200"
+                    className="h-full rounded-r-full bg-slate-200"
                     style={{
                       width: `${100 - escrowMilestones.reduce((a, m) => a + m.percentage, 0)}%`,
                     }}
@@ -839,7 +842,7 @@ export default function SentinelPage() {
                   {escrowMilestones.map((m) => (
                     <div
                       key={m.name}
-                      className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0"
+                      className="flex items-center justify-between py-2 border-b border-slate-50 last:border-0"
                     >
                       <div className="flex items-center gap-2">
                         <span
@@ -888,7 +891,7 @@ export default function SentinelPage() {
                     <h3 className="font-bold text-reno-dark text-lg">
                       Payment History
                     </h3>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-slate-500">
                       {recentPayments.length} transactions
                     </p>
                   </div>
@@ -898,7 +901,7 @@ export default function SentinelPage() {
                   {recentPayments.map((payment, i) => (
                     <div
                       key={i}
-                      className="p-4 bg-[#f6f8f8] rounded-xl border border-gray-100"
+                      className="p-4 bg-[#f6f8f8] rounded-xl border border-slate-100"
                     >
                       <div className="flex items-start justify-between mb-2">
                         <p className="text-sm font-medium text-reno-dark">
@@ -909,13 +912,13 @@ export default function SentinelPage() {
                         </p>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className="text-[10px] text-gray-400">
+                        <span className="text-[10px] text-slate-400">
                           {payment.date}
                         </span>
-                        <span className="text-[10px] text-gray-400">
+                        <span className="text-[10px] text-slate-400">
                           &middot;
                         </span>
-                        <span className="text-[10px] text-gray-400">
+                        <span className="text-[10px] text-slate-400">
                           {payment.method}
                         </span>
                         <span className="ml-auto text-[10px] text-[#22c55e] font-bold bg-[#22c55e]/10 px-2 py-0.5 rounded-full">
@@ -946,14 +949,14 @@ export default function SentinelPage() {
                     <h3 className="font-bold text-reno-dark text-lg">
                       Change Orders
                     </h3>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-slate-500">
                       Scope change management
                     </p>
                   </div>
                 </div>
 
                 <div className="md:ml-auto flex items-center gap-2">
-                  <span className="text-xs text-gray-400">
+                  <span className="text-xs text-slate-400">
                     Cumulative Impact:
                   </span>
                   <span className="text-lg font-extrabold text-[#E8AA42]">
@@ -966,10 +969,10 @@ export default function SentinelPage() {
                 {changeOrders.map((co) => (
                   <div
                     key={co.id}
-                    className="p-4 bg-[#f6f8f8] rounded-xl border border-gray-100"
+                    className="p-4 bg-[#f6f8f8] rounded-xl border border-slate-100"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] font-bold text-gray-400">
+                      <span className="text-[10px] font-bold text-slate-400">
                         {co.id}
                       </span>
                       <span
@@ -988,7 +991,7 @@ export default function SentinelPage() {
                     <p className="text-lg font-extrabold text-reno-dark">
                       +{formatCurrency(co.amount)}
                     </p>
-                    <p className="text-[10px] text-gray-400 mt-1.5">
+                    <p className="text-[10px] text-slate-400 mt-1.5">
                       {co.submittedBy} &middot; {co.date}
                     </p>
                   </div>
@@ -996,8 +999,8 @@ export default function SentinelPage() {
               </div>
 
               {/* Review queue bars */}
-              <div className="bg-[#f6f8f8] rounded-xl p-4 border border-gray-100">
-                <p className="text-[9px] text-gray-400 uppercase tracking-wider font-bold mb-3">
+              <div className="bg-[#f6f8f8] rounded-xl p-4 border border-slate-100">
+                <p className="text-[9px] text-slate-400 uppercase tracking-wider font-bold mb-3">
                   Review Pipeline
                 </p>
                 <div className="flex gap-1 h-2.5 rounded-full overflow-hidden">
@@ -1024,13 +1027,13 @@ export default function SentinelPage() {
                   />
                 </div>
                 <div className="flex justify-between mt-2">
-                  <span className="text-[9px] text-gray-400">
+                  <span className="text-[9px] text-slate-400">
                     Draft (1)
                   </span>
-                  <span className="text-[9px] text-gray-400">
+                  <span className="text-[9px] text-slate-400">
                     Under Review (1)
                   </span>
-                  <span className="text-[9px] text-gray-400">
+                  <span className="text-[9px] text-slate-400">
                     Approved (1)
                   </span>
                 </div>
@@ -1062,7 +1065,7 @@ export default function SentinelPage() {
                     <p className="text-white text-sm font-bold">
                       Personnel Registry
                     </p>
-                    <p className="text-[9px] text-gray-500">
+                    <p className="text-[9px] text-slate-500">
                       {personnelOnSite.length} team members
                     </p>
                   </div>
@@ -1088,7 +1091,7 @@ export default function SentinelPage() {
                           <p className="text-sm text-white font-medium">
                             {person.name}
                           </p>
-                          <p className="text-[10px] text-gray-500">
+                          <p className="text-[10px] text-slate-500">
                             {person.role} &middot; {person.trade}
                           </p>
                         </div>
@@ -1108,7 +1111,7 @@ export default function SentinelPage() {
                         {person.certifications.map((cert) => (
                           <span
                             key={cert}
-                            className="text-[8px] font-bold px-2 py-0.5 rounded bg-white/5 text-gray-400 border border-white/[0.06]"
+                            className="text-[8px] font-bold px-2 py-0.5 rounded bg-white/5 text-slate-400 border border-white/[0.06]"
                           >
                             {cert}
                           </span>
@@ -1116,17 +1119,17 @@ export default function SentinelPage() {
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="text-[9px] text-gray-500">
+                        <span className="text-[9px] text-slate-500">
                           {person.hoursThisWeek}h this week
                         </span>
                         <div className="flex items-center gap-1">
                           <span
-                            className="material-symbols-outlined text-[10px] text-gray-500"
+                            className="material-symbols-outlined text-[10px] text-slate-500"
                             style={{ fontVariationSettings: "'FILL' 1" }}
                           >
                             schedule
                           </span>
-                          <span className="text-[9px] text-gray-500">
+                          <span className="text-[9px] text-slate-500">
                             Since 7:00 AM
                           </span>
                         </div>
@@ -1153,7 +1156,7 @@ export default function SentinelPage() {
                   <span className="text-primary">Fully Documented</span>
                 </h2>
 
-                <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-lg">
+                <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-lg">
                   Every worker, every certification, every hour — tracked and
                   verified in real time. No more paper sign-in sheets.
                 </p>
@@ -1169,7 +1172,7 @@ export default function SentinelPage() {
                           check
                         </span>
                       </div>
-                      <span className="text-gray-600 leading-relaxed pt-1">
+                      <span className="text-slate-600 leading-relaxed pt-1">
                         {f}
                       </span>
                     </li>
@@ -1201,7 +1204,7 @@ export default function SentinelPage() {
                 RFIs & Files,{' '}
                 <span className="text-primary">Organized</span>
               </h2>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
                 Formal request-for-information workflow plus version-controlled
                 document management in one place.
               </p>
@@ -1231,12 +1234,12 @@ export default function SentinelPage() {
                   {rfiStats.map((s) => (
                     <div
                       key={s.label}
-                      className="flex-1 bg-[#f6f8f8] rounded-xl p-3 border border-gray-100 text-center"
+                      className="flex-1 bg-[#f6f8f8] rounded-xl p-3 border border-slate-100 text-center"
                     >
                       <p className="text-xl font-extrabold text-reno-dark">
                         {s.value}
                       </p>
-                      <p className="text-[10px] text-gray-400">{s.label}</p>
+                      <p className="text-[10px] text-slate-400">{s.label}</p>
                     </div>
                   ))}
                 </div>
@@ -1246,7 +1249,7 @@ export default function SentinelPage() {
                   {rfiItems.map((rfi) => (
                     <div
                       key={rfi.id}
-                      className="p-3.5 bg-[#f6f8f8] rounded-xl border border-gray-100"
+                      className="p-3.5 bg-[#f6f8f8] rounded-xl border border-slate-100"
                     >
                       <div className="flex items-center gap-2 mb-1">
                         <div
@@ -1256,7 +1259,7 @@ export default function SentinelPage() {
                               priorityColors[rfi.priority],
                           }}
                         />
-                        <span className="text-[10px] font-bold text-gray-400">
+                        <span className="text-[10px] font-bold text-slate-400">
                           {rfi.id}
                         </span>
                         <span
@@ -1272,7 +1275,7 @@ export default function SentinelPage() {
                       <p className="text-sm font-medium text-reno-dark">
                         {rfi.subject}
                       </p>
-                      <p className="text-[10px] text-gray-400 mt-1">
+                      <p className="text-[10px] text-slate-400 mt-1">
                         {rfi.assignee} &middot; Open {rfi.daysOpen}d
                       </p>
                     </div>
@@ -1299,16 +1302,16 @@ export default function SentinelPage() {
                 </div>
 
                 {/* Storage bar */}
-                <div className="bg-[#f6f8f8] rounded-xl p-4 border border-gray-100 mb-6">
+                <div className="bg-[#f6f8f8] rounded-xl p-4 border border-slate-100 mb-6">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-gray-500 font-medium">
+                    <span className="text-xs text-slate-500 font-medium">
                       Storage Used
                     </span>
                     <span className="text-xs font-bold text-reno-dark">
                       {storageUsed} / {storageTotal} GB
                     </span>
                   </div>
-                  <div className="h-2.5 bg-gray-200 rounded-full overflow-hidden">
+                  <div className="h-2.5 bg-slate-200 rounded-full overflow-hidden">
                     <div
                       className="h-full rounded-full bg-gradient-to-r from-primary to-[#E8AA42]"
                       style={{
@@ -1323,7 +1326,7 @@ export default function SentinelPage() {
                   {documentFolders.map((folder) => (
                     <div
                       key={folder.name}
-                      className="flex items-center gap-3 p-3 bg-[#f6f8f8] rounded-xl border border-gray-100"
+                      className="flex items-center gap-3 p-3 bg-[#f6f8f8] rounded-xl border border-slate-100"
                     >
                       <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <span className="material-symbols-outlined text-primary text-sm">
@@ -1334,11 +1337,11 @@ export default function SentinelPage() {
                         <p className="text-sm font-medium text-reno-dark">
                           {folder.name}
                         </p>
-                        <p className="text-[10px] text-gray-400">
+                        <p className="text-[10px] text-slate-400">
                           {folder.count} files &middot; {folder.size}
                         </p>
                       </div>
-                      <span className="material-symbols-outlined text-gray-300 text-sm">
+                      <span className="material-symbols-outlined text-slate-300 text-sm">
                         chevron_right
                       </span>
                     </div>
@@ -1346,23 +1349,23 @@ export default function SentinelPage() {
                 </div>
 
                 {/* Recent files */}
-                <p className="text-[9px] text-gray-400 uppercase tracking-wider font-bold mb-2.5">
+                <p className="text-[9px] text-slate-400 uppercase tracking-wider font-bold mb-2.5">
                   Recently Updated
                 </p>
                 <div className="space-y-2">
                   {recentDocuments.map((doc) => (
                     <div
                       key={doc.name}
-                      className="flex items-center gap-3 p-3 bg-[#f6f8f8] rounded-xl border border-gray-100"
+                      className="flex items-center gap-3 p-3 bg-[#f6f8f8] rounded-xl border border-slate-100"
                     >
-                      <span className="material-symbols-outlined text-gray-400 text-lg">
+                      <span className="material-symbols-outlined text-slate-400 text-lg">
                         {doc.icon}
                       </span>
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-medium text-reno-dark truncate">
                           {doc.name}
                         </p>
-                        <p className="text-[10px] text-gray-400">
+                        <p className="text-[10px] text-slate-400">
                           {doc.type} &middot; {doc.size}
                         </p>
                       </div>
@@ -1404,7 +1407,7 @@ export default function SentinelPage() {
                   <span className="text-primary">The Only Goal</span>
                 </h2>
 
-                <p className="text-lg text-gray-400 leading-relaxed mb-8 max-w-lg">
+                <p className="text-lg text-slate-400 leading-relaxed mb-8 max-w-lg">
                   Daily checklists, incident reporting, compliance scoring, and
                   streak tracking — everything you need to keep your site safe.
                 </p>
@@ -1415,7 +1418,7 @@ export default function SentinelPage() {
                     <p className="text-4xl font-extrabold text-white">
                       {safetyStreak}
                     </p>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-slate-400">
                       Days Without Incident
                     </p>
                   </div>
@@ -1424,7 +1427,7 @@ export default function SentinelPage() {
                     <p className="text-4xl font-extrabold text-primary">
                       {complianceScore}/100
                     </p>
-                    <p className="text-sm text-gray-400">Compliance Score</p>
+                    <p className="text-sm text-slate-400">Compliance Score</p>
                   </div>
                 </div>
 
@@ -1439,7 +1442,7 @@ export default function SentinelPage() {
                           check
                         </span>
                       </div>
-                      <span className="text-gray-300 leading-relaxed pt-1">
+                      <span className="text-slate-300 leading-relaxed pt-1">
                         {f}
                       </span>
                     </li>
@@ -1462,7 +1465,7 @@ export default function SentinelPage() {
                     <p className="text-white text-sm font-bold">
                       Safety Protocols
                     </p>
-                    <p className="text-[9px] text-gray-500">
+                    <p className="text-[9px] text-slate-500">
                       Today&apos;s checklist
                     </p>
                   </div>
@@ -1499,7 +1502,7 @@ export default function SentinelPage() {
                         <p className="text-xs text-white font-medium">
                           {item.title}
                         </p>
-                        <p className="text-[9px] text-gray-500">
+                        <p className="text-[9px] text-slate-500">
                           {item.inspector} &middot; {item.date}
                         </p>
                       </div>
@@ -1523,7 +1526,7 @@ export default function SentinelPage() {
                   <p className="text-xs text-white font-medium mb-1">
                     {safetyIncident.title}
                   </p>
-                  <p className="text-[10px] text-gray-500">
+                  <p className="text-[10px] text-slate-500">
                     {safetyIncident.date} &middot; {safetyIncident.status}
                   </p>
                 </div>
@@ -1541,10 +1544,10 @@ export default function SentinelPage() {
                       >
                         {item.icon}
                       </span>
-                      <p className="text-[10px] text-gray-400 flex-1">
+                      <p className="text-[10px] text-slate-400 flex-1">
                         {item.text}
                       </p>
-                      <span className="text-[9px] text-gray-600 flex-shrink-0">
+                      <span className="text-[9px] text-slate-600 flex-shrink-0">
                         {item.time}
                       </span>
                     </div>
@@ -1569,7 +1572,7 @@ export default function SentinelPage() {
               <span className="text-primary">Detail</span>
             </h2>
 
-            <p className="text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto">
               Obsidian Sentinel gives your construction team 11 integrated
               modules to manage sites, budgets, safety, and documentation from a
               single platform.
@@ -1614,7 +1617,7 @@ export default function SentinelPage() {
                   >
                     {badge.icon}
                   </span>
-                  <span className="text-sm font-bold text-gray-300">
+                  <span className="text-sm font-bold text-slate-300">
                     {badge.label}
                   </span>
                 </div>

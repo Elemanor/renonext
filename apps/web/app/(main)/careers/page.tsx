@@ -15,6 +15,9 @@ import {
 export const metadata: Metadata = {
   title: "Careers | RenoNext",
   description: "Join a team that's reimagining how construction works in Canada — from permits to payments.",
+  alternates: {
+    canonical: '/careers',
+  },
 };
 
 const CULTURE_VALUES = [
@@ -22,19 +25,19 @@ const CULTURE_VALUES = [
     icon: Zap,
     title: "Move Fast, Build Right",
     description: "We ship weekly and iterate based on real contractor feedback.",
-    color: "text-blue-600 bg-blue-50",
+    color: "text-primary-600 bg-primary-50",
   },
   {
     icon: Shield,
     title: "Trust is Everything",
     description: "We handle people's money and livelihoods. We take that seriously.",
-    color: "text-emerald-600 bg-emerald-50",
+    color: "text-reno-green-600 bg-reno-green-50",
   },
   {
     icon: Hammer,
     title: "Builder Mentality",
     description: "Everyone here builds. No spectators.",
-    color: "text-violet-600 bg-violet-50",
+    color: "text-reno-purple-600 bg-reno-purple-50",
   },
   {
     icon: Layers,
@@ -177,7 +180,7 @@ export default function CareersPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {BENEFITS.map((benefit) => (
                 <div key={benefit} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <CheckCircle className="h-5 w-5 text-reno-green-600 shrink-0 mt-0.5" />
                   <p className="text-slate-700">{benefit}</p>
                 </div>
               ))}

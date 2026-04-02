@@ -87,13 +87,13 @@ export function PaymentSchedule({
 
       {/* Warranty */}
       {warrantyTerms && (
-        <Card className="border-emerald-200 bg-emerald-50">
+        <Card className="border-reno-green-200 bg-reno-green-50">
           <CardContent className="p-3">
             <div className="flex items-center gap-2">
-              <Shield className="h-4 w-4 text-emerald-500" />
-              <p className="text-xs font-bold text-emerald-700">Warranty Protection</p>
+              <Shield className="h-4 w-4 text-reno-green-500" />
+              <p className="text-xs font-bold text-reno-green-700">Warranty Protection</p>
             </div>
-            <p className="mt-1.5 text-xs leading-relaxed text-emerald-600">{warrantyTerms}</p>
+            <p className="mt-1.5 text-xs leading-relaxed text-reno-green-600">{warrantyTerms}</p>
           </CardContent>
         </Card>
       )}
@@ -109,7 +109,7 @@ export function PaymentSchedule({
           {/* Stacked bar */}
           <div className="mb-3 flex h-3 overflow-hidden rounded-full bg-muted">
             {paymentMilestones.map((ms, i) => {
-              const colors = ['bg-primary', 'bg-primary/80', 'bg-emerald-500', 'bg-emerald-400'];
+              const colors = ['bg-primary', 'bg-primary/80', 'bg-reno-green-500', 'bg-reno-green-400'];
               return (
                 <div
                   key={ms.label}
@@ -136,7 +136,7 @@ export function PaymentSchedule({
                 <TableRow key={ms.label} className={ROW_HOVER}>
                   <TableCell>
                     <div className={`flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-bold text-white ${
-                      i === 0 ? 'bg-primary' : i === paymentMilestones.length - 1 ? 'bg-emerald-400' : 'bg-primary/80'
+                      i === 0 ? 'bg-primary' : i === paymentMilestones.length - 1 ? 'bg-reno-green-400' : 'bg-primary/80'
                     }`}>
                       {i + 1}
                     </div>

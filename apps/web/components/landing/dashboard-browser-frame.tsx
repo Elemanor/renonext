@@ -124,7 +124,7 @@ export function DashboardBrowserFrame({ children, variant = 'green' }: Dashboard
               <svg className={`h-3 w-3 ${v.lockColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              <span className="text-[11px] text-gray-500">renonext.com/dashboard</span>
+              <span className="text-[11px] text-slate-500">renonext.com/dashboard</span>
             </div>
           </div>
         </div>
@@ -139,7 +139,7 @@ export function DashboardBrowserFrame({ children, variant = 'green' }: Dashboard
                 className={`flex h-8 w-8 items-center justify-center rounded-lg ${
                   item.active
                     ? 'bg-white/[0.08] text-white/80'
-                    : 'text-gray-700 hover:text-gray-500'
+                    : 'text-slate-700 hover:text-slate-500'
                 }`}
               >
                 <item.icon className="h-[14px] w-[14px]" />
@@ -163,8 +163,8 @@ export function DashboardBrowserFrame({ children, variant = 'green' }: Dashboard
             <div className="flex items-center justify-between border-b border-white/[0.04] px-4 py-2.5">
               <p className="font-display text-sm tracking-tight text-white/90">Your Dashboard</p>
               <div className="flex items-center gap-2">
-                <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span className="text-[10px] text-gray-500">47 Willowdale Ave</span>
+                <div className="h-1.5 w-1.5 rounded-full bg-reno-green-400" />
+                <span className="text-[10px] text-slate-500">47 Willowdale Ave</span>
               </div>
             </div>
 

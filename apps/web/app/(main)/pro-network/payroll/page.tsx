@@ -249,13 +249,13 @@ function formatCurrency(amount: number): string {
 
 const payPeriodStatusConfig = {
   in_progress: { label: 'In Progress', bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200' },
-  ready_to_export: { label: 'Ready to Export', bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200' },
-  exported: { label: 'Exported', bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200' },
+  ready_to_export: { label: 'Ready to Export', bg: 'bg-reno-green-50', text: 'text-reno-green-700', border: 'border-reno-green-200' },
+  exported: { label: 'Exported', bg: 'bg-primary-50', text: 'text-primary-700', border: 'border-primary-200' },
 };
 
 const workerStatusConfig: Record<string, { label: string; dotColor: string; pulse?: boolean }> = {
-  on_site: { label: 'On Site', dotColor: 'bg-emerald-500' },
-  off_site: { label: 'Off Site', dotColor: 'bg-gray-400' },
+  on_site: { label: 'On Site', dotColor: 'bg-reno-green-500' },
+  off_site: { label: 'Off Site', dotColor: 'bg-slate-400' },
   flagged: { label: 'Flagged', dotColor: 'bg-amber-500', pulse: true },
 };
 
@@ -268,16 +268,16 @@ function WorkerCard({ worker }: { worker: Worker }) {
   return (
     <Card
       className={`rounded-2xl border bg-white shadow-sm transition-all duration-200 hover:shadow-md ${
-        worker.flagged ? 'border-amber-300' : 'border-gray-200'
+        worker.flagged ? 'border-amber-300' : 'border-slate-200'
       }`}
     >
       <CardContent className="p-0">
         {/* Worker Header */}
-        <div className="border-b border-gray-100 p-5">
+        <div className="border-b border-slate-100 p-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               {/* Avatar placeholder */}
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-sm font-bold text-gray-600">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-600">
                 {worker.name
                   .split(' ')
                   .map((n) => n[0])
@@ -285,7 +285,7 @@ function WorkerCard({ worker }: { worker: Worker }) {
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="text-base font-bold text-gray-900">{worker.name}</h3>
+                  <h3 className="text-base font-bold text-slate-900">{worker.name}</h3>
                   <span className="relative flex h-2.5 w-2.5">
                     {statusCfg.pulse && (
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
@@ -294,14 +294,14 @@ function WorkerCard({ worker }: { worker: Worker }) {
                   </span>
                 </div>
                 <div className="mt-0.5 flex items-center gap-2">
-                  <Badge className="rounded-full border border-gray-200 bg-gray-50 px-2 py-0 text-[10px] font-medium text-gray-600">
+                  <Badge className="rounded-full border border-slate-200 bg-slate-50 px-2 py-0 text-[10px] font-medium text-slate-600">
                     {worker.trade}
                   </Badge>
-                  <span className="text-xs text-gray-400">
+                  <span className="text-xs text-slate-400">
                     ${worker.rate}/hr
                   </span>
                   {worker.otRate > 0 && (
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs text-slate-400">
                       OT: ${worker.otRate}/hr
                     </span>
                   )}
@@ -309,18 +309,18 @@ function WorkerCard({ worker }: { worker: Worker }) {
               </div>
             </div>
             <div className="text-right">
-              <p className="text-lg font-bold text-gray-900">{formatCurrency(worker.grossPay)}</p>
-              <p className="text-[10px] font-medium text-gray-400">gross pay</p>
+              <p className="text-lg font-bold text-slate-900">{formatCurrency(worker.grossPay)}</p>
+              <p className="text-[10px] font-medium text-slate-400">gross pay</p>
             </div>
           </div>
         </div>
 
         {/* Weekly Hours Grid */}
-        <div className="border-b border-gray-100 p-5">
+        <div className="border-b border-slate-100 p-5">
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
-                <tr className="text-gray-400">
+                <tr className="text-slate-400">
                   <th className="pb-2 pr-3 text-left font-medium" />
                   {worker.weeklyHours.map((d) => (
                     <th key={d.day} className="pb-2 text-center font-medium" style={{ minWidth: 52 }}>
@@ -332,49 +332,49 @@ function WorkerCard({ worker }: { worker: Worker }) {
               <tbody>
                 {/* Regular hours */}
                 <tr>
-                  <td className="py-1 pr-3 font-medium text-gray-500">Reg</td>
+                  <td className="py-1 pr-3 font-medium text-slate-500">Reg</td>
                   {worker.weeklyHours.map((d) => (
-                    <td key={d.day} className="py-1 text-center font-semibold text-gray-900">
+                    <td key={d.day} className="py-1 text-center font-semibold text-slate-900">
                       {d.regular > 0 ? d.regular : '\u2014'}
                     </td>
                   ))}
                 </tr>
                 {/* OT hours */}
                 <tr>
-                  <td className="py-1 pr-3 font-medium text-gray-500">OT</td>
+                  <td className="py-1 pr-3 font-medium text-slate-500">OT</td>
                   {worker.weeklyHours.map((d) => (
-                    <td key={d.day} className={`py-1 text-center font-semibold ${d.ot > 0 ? 'text-red-600' : 'text-gray-300'}`}>
+                    <td key={d.day} className={`py-1 text-center font-semibold ${d.ot > 0 ? 'text-red-600' : 'text-slate-300'}`}>
                       {d.ot > 0 ? d.ot : '\u2014'}
                     </td>
                   ))}
                 </tr>
                 {/* Project */}
                 <tr>
-                  <td className="py-1 pr-3 font-medium text-gray-500">Project</td>
+                  <td className="py-1 pr-3 font-medium text-slate-500">Project</td>
                   {worker.weeklyHours.map((d) => (
-                    <td key={d.day} className="py-1 text-center text-gray-600">
+                    <td key={d.day} className="py-1 text-center text-slate-600">
                       {d.project === '\u2014' ? '\u2014' : shortProject(d.project)}
                     </td>
                   ))}
                 </tr>
                 {/* Cost Code */}
                 <tr>
-                  <td className="py-1 pr-3 font-medium text-gray-500">Code</td>
+                  <td className="py-1 pr-3 font-medium text-slate-500">Code</td>
                   {worker.weeklyHours.map((d) => (
-                    <td key={d.day} className="py-1 text-center text-gray-600" title={d.costCode}>
+                    <td key={d.day} className="py-1 text-center text-slate-600" title={d.costCode}>
                       {shortCode(d.costCode)}
                     </td>
                   ))}
                 </tr>
                 {/* GPS */}
                 <tr>
-                  <td className="py-1 pr-3 font-medium text-gray-500">GPS</td>
+                  <td className="py-1 pr-3 font-medium text-slate-500">GPS</td>
                   {worker.weeklyHours.map((d) => (
                     <td key={d.day} className="py-1 text-center">
                       {d.regular === 0 && d.ot === 0 ? (
-                        <span className="text-gray-300">\u2014</span>
+                        <span className="text-slate-300">\u2014</span>
                       ) : d.gpsVerified ? (
-                        <CheckCircle className="mx-auto h-3.5 w-3.5 text-emerald-500" />
+                        <CheckCircle className="mx-auto h-3.5 w-3.5 text-reno-green-500" />
                       ) : (
                         <AlertTriangle className="mx-auto h-3.5 w-3.5 text-red-500" />
                       )}
@@ -387,38 +387,38 @@ function WorkerCard({ worker }: { worker: Worker }) {
         </div>
 
         {/* Summary Row */}
-        <div className="border-b border-gray-100 px-5 py-3">
+        <div className="border-b border-slate-100 px-5 py-3">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-1 text-sm">
             <div className="flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5 text-gray-400" />
-              <span className="text-gray-500">Regular:</span>
-              <span className="font-bold text-gray-900">{worker.totalRegular} hrs</span>
+              <Clock className="h-3.5 w-3.5 text-slate-400" />
+              <span className="text-slate-500">Regular:</span>
+              <span className="font-bold text-slate-900">{worker.totalRegular} hrs</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Timer className="h-3.5 w-3.5 text-gray-400" />
-              <span className="text-gray-500">OT:</span>
-              <span className={`font-bold ${worker.totalOT > 0 ? 'text-red-600' : 'text-gray-900'}`}>
+              <Timer className="h-3.5 w-3.5 text-slate-400" />
+              <span className="text-slate-500">OT:</span>
+              <span className={`font-bold ${worker.totalOT > 0 ? 'text-red-600' : 'text-slate-900'}`}>
                 {worker.totalOT} hrs
               </span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Zap className="h-3.5 w-3.5 text-gray-400" />
-              <span className="text-gray-500">Total:</span>
-              <span className="font-bold text-gray-900">{worker.totalHours} hrs</span>
+              <Zap className="h-3.5 w-3.5 text-slate-400" />
+              <span className="text-slate-500">Total:</span>
+              <span className="font-bold text-slate-900">{worker.totalHours} hrs</span>
             </div>
             <div className="ml-auto flex items-center gap-1.5">
-              <DollarSign className="h-3.5 w-3.5 text-gray-400" />
-              <span className="text-gray-500">Gross:</span>
-              <span className="font-bold text-gray-900">{formatCurrency(worker.grossPay)}</span>
+              <DollarSign className="h-3.5 w-3.5 text-slate-400" />
+              <span className="text-slate-500">Gross:</span>
+              <span className="font-bold text-slate-900">{formatCurrency(worker.grossPay)}</span>
             </div>
           </div>
         </div>
 
         {/* Cost Code Breakdown (collapsible) */}
-        <div className="border-b border-gray-100">
+        <div className="border-b border-slate-100">
           <button
             onClick={() => setExpanded(!expanded)}
-            className="flex w-full items-center justify-between px-5 py-3 text-xs font-bold uppercase tracking-wider text-gray-400 transition-colors hover:bg-gray-50"
+            className="flex w-full items-center justify-between px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-400 transition-colors hover:bg-slate-50"
           >
             <span>Cost Code Breakdown</span>
             {expanded ? (
@@ -431,7 +431,7 @@ function WorkerCard({ worker }: { worker: Worker }) {
             <div className="px-5 pb-4">
               <table className="w-full text-xs">
                 <thead>
-                  <tr className="border-b border-gray-100 text-gray-400">
+                  <tr className="border-b border-slate-100 text-slate-400">
                     <th className="pb-2 text-left font-medium">Cost Code</th>
                     <th className="pb-2 text-right font-medium">Hours</th>
                     <th className="pb-2 text-right font-medium">Cost</th>
@@ -439,10 +439,10 @@ function WorkerCard({ worker }: { worker: Worker }) {
                 </thead>
                 <tbody>
                   {worker.costCodeBreakdown.map((cc) => (
-                    <tr key={cc.code} className="border-b border-gray-50">
-                      <td className="py-2 font-medium text-gray-700">{cc.code}</td>
-                      <td className="py-2 text-right text-gray-600">{cc.hours}</td>
-                      <td className="py-2 text-right font-semibold text-gray-900">
+                    <tr key={cc.code} className="border-b border-slate-50">
+                      <td className="py-2 font-medium text-slate-700">{cc.code}</td>
+                      <td className="py-2 text-right text-slate-600">{cc.hours}</td>
+                      <td className="py-2 text-right font-semibold text-slate-900">
                         {formatCurrency(cc.cost)}
                       </td>
                     </tr>
@@ -450,9 +450,9 @@ function WorkerCard({ worker }: { worker: Worker }) {
                 </tbody>
                 <tfoot>
                   <tr className="font-semibold">
-                    <td className="pt-2 text-gray-900">Total</td>
-                    <td className="pt-2 text-right text-gray-900">{worker.totalHours}</td>
-                    <td className="pt-2 text-right text-gray-900">{formatCurrency(worker.grossPay)}</td>
+                    <td className="pt-2 text-slate-900">Total</td>
+                    <td className="pt-2 text-right text-slate-900">{worker.totalHours}</td>
+                    <td className="pt-2 text-right text-slate-900">{formatCurrency(worker.grossPay)}</td>
                   </tr>
                 </tfoot>
               </table>
@@ -485,20 +485,20 @@ export default function GCPayrollPage() {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">Payroll</h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">Payroll</h1>
+          <p className="mt-1 text-sm text-slate-500">
             Verified hours, overtime flags, cost codes &mdash; ready to export
           </p>
         </div>
         <div className="flex gap-2">
           <Button
             variant="outline"
-            className="h-auto rounded-xl border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700"
+            className="h-auto rounded-xl border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700"
           >
             <Calendar className="mr-1.5 h-4 w-4" />
             Past Pay Periods
           </Button>
-          <Button className="h-auto rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700">
+          <Button className="h-auto rounded-xl bg-reno-green-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-reno-green-700">
             <Download className="mr-1.5 h-4 w-4" />
             Export to QuickBooks / ADP
           </Button>
@@ -506,16 +506,16 @@ export default function GCPayrollPage() {
       </div>
 
       {/* Pay Period Banner */}
-      <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardContent className="p-5">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-blue-50 p-2.5">
-                <Calendar className="h-5 w-5 text-blue-600" />
+              <div className="rounded-xl bg-primary-50 p-2.5">
+                <Calendar className="h-5 w-5 text-primary-600" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-500">Current Pay Period</p>
-                <p className="text-lg font-bold text-gray-900">
+                <p className="text-sm font-medium text-slate-500">Current Pay Period</p>
+                <p className="text-lg font-bold text-slate-900">
                   {payPeriod.start} &ndash; {payPeriod.end}
                 </p>
               </div>
@@ -528,35 +528,35 @@ export default function GCPayrollPage() {
           </div>
 
           <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <div className="rounded-xl bg-gray-50 p-3 text-center">
-              <div className="flex items-center justify-center gap-1.5 text-gray-500">
+            <div className="rounded-xl bg-slate-50 p-3 text-center">
+              <div className="flex items-center justify-center gap-1.5 text-slate-500">
                 <Users className="h-3.5 w-3.5" />
                 <span className="text-xs font-medium">Workers</span>
               </div>
-              <p className="mt-1 text-xl font-bold text-gray-900">{payPeriod.workersCount}</p>
+              <p className="mt-1 text-xl font-bold text-slate-900">{payPeriod.workersCount}</p>
             </div>
-            <div className="rounded-xl bg-gray-50 p-3 text-center">
-              <div className="flex items-center justify-center gap-1.5 text-gray-500">
+            <div className="rounded-xl bg-slate-50 p-3 text-center">
+              <div className="flex items-center justify-center gap-1.5 text-slate-500">
                 <Clock className="h-3.5 w-3.5" />
                 <span className="text-xs font-medium">Total Hours</span>
               </div>
-              <p className="mt-1 text-xl font-bold text-gray-900">{payPeriod.totalHours}</p>
+              <p className="mt-1 text-xl font-bold text-slate-900">{payPeriod.totalHours}</p>
             </div>
-            <div className="rounded-xl bg-gray-50 p-3 text-center">
-              <div className="flex items-center justify-center gap-1.5 text-gray-500">
+            <div className="rounded-xl bg-slate-50 p-3 text-center">
+              <div className="flex items-center justify-center gap-1.5 text-slate-500">
                 <Timer className="h-3.5 w-3.5" />
                 <span className="text-xs font-medium">OT Hours</span>
               </div>
-              <p className={`mt-1 text-xl font-bold ${payPeriod.totalOT > 0 ? 'text-red-600' : 'text-gray-900'}`}>
+              <p className={`mt-1 text-xl font-bold ${payPeriod.totalOT > 0 ? 'text-red-600' : 'text-slate-900'}`}>
                 {payPeriod.totalOT}
               </p>
             </div>
-            <div className="rounded-xl bg-gray-50 p-3 text-center">
-              <div className="flex items-center justify-center gap-1.5 text-gray-500">
+            <div className="rounded-xl bg-slate-50 p-3 text-center">
+              <div className="flex items-center justify-center gap-1.5 text-slate-500">
                 <DollarSign className="h-3.5 w-3.5" />
                 <span className="text-xs font-medium">Gross</span>
               </div>
-              <p className="mt-1 text-xl font-bold text-gray-900">
+              <p className="mt-1 text-xl font-bold text-slate-900">
                 {formatCurrency(payPeriod.totalGross)}
               </p>
             </div>
@@ -567,7 +567,7 @@ export default function GCPayrollPage() {
       {/* Overtime Alerts */}
       {flaggedWorkers.length > 0 && (
         <div className="space-y-3">
-          <h2 className="text-lg font-bold text-gray-900">Overtime Alerts</h2>
+          <h2 className="text-lg font-bold text-slate-900">Overtime Alerts</h2>
           {flaggedWorkers.map((worker) => (
             <Card
               key={worker.id}
@@ -585,7 +585,7 @@ export default function GCPayrollPage() {
                     {worker.flagReason && (
                       <p className="mt-0.5 text-xs text-red-600">{worker.flagReason}</p>
                     )}
-                    <p className="mt-0.5 text-xs text-gray-500">Review before export.</p>
+                    <p className="mt-0.5 text-xs text-slate-500">Review before export.</p>
                   </div>
                 </div>
                 <Button
@@ -603,17 +603,17 @@ export default function GCPayrollPage() {
 
       {/* Worker Cards */}
       <div className="space-y-4">
-        <h2 className="text-lg font-bold text-gray-900">Worker Timesheets</h2>
+        <h2 className="text-lg font-bold text-slate-900">Worker Timesheets</h2>
         {workers.map((worker) => (
           <WorkerCard key={worker.id} worker={worker} />
         ))}
       </div>
 
       {/* Export Section */}
-      <Card className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardHeader className="pb-2">
-          <CardTitle className="flex items-center gap-2 text-lg font-bold text-gray-900">
-            <FileSpreadsheet className="h-5 w-5 text-emerald-600" />
+          <CardTitle className="flex items-center gap-2 text-lg font-bold text-slate-900">
+            <FileSpreadsheet className="h-5 w-5 text-reno-green-600" />
             Ready to Export
           </CardTitle>
         </CardHeader>
@@ -625,12 +625,12 @@ export default function GCPayrollPage() {
               { label: 'Include cost code breakdown', checked: true },
               { label: 'Include overtime calculation', checked: true },
             ].map((opt) => (
-              <label key={opt.label} className="flex items-center gap-2.5 text-sm text-gray-700">
+              <label key={opt.label} className="flex items-center gap-2.5 text-sm text-slate-700">
                 <div
                   className={`flex h-4.5 w-4.5 items-center justify-center rounded border ${
                     opt.checked
-                      ? 'border-emerald-500 bg-emerald-500'
-                      : 'border-gray-300 bg-white'
+                      ? 'border-reno-green-500 bg-reno-green-500'
+                      : 'border-slate-300 bg-white'
                   }`}
                   style={{ width: 18, height: 18 }}
                 >
@@ -643,33 +643,33 @@ export default function GCPayrollPage() {
 
           {/* Export Buttons */}
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button className="h-auto flex-1 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700">
+            <Button className="h-auto flex-1 rounded-xl bg-reno-green-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-reno-green-700">
               <Download className="mr-2 h-4 w-4" />
               Export CSV for QuickBooks
             </Button>
-            <Button className="h-auto flex-1 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">
+            <Button className="h-auto flex-1 rounded-xl bg-primary-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-700">
               <Download className="mr-2 h-4 w-4" />
               Export CSV for ADP
             </Button>
           </div>
 
           {/* Disclaimer */}
-          <p className="text-center text-xs text-gray-400">
+          <p className="text-center text-xs text-slate-400">
             We calculate gross pay. Your accountant handles CPP, EI, and taxes. Clean data, zero headaches.
           </p>
         </CardContent>
       </Card>
 
       {/* What We Track vs What We Don't */}
-      <Card className="rounded-2xl border border-gray-200 bg-gray-50/50 shadow-none">
+      <Card className="rounded-2xl border border-slate-200 bg-slate-50/50 shadow-none">
         <CardContent className="p-6">
-          <h3 className="mb-4 text-base font-bold text-gray-900">
+          <h3 className="mb-4 text-base font-bold text-slate-900">
             What We Track vs What We Don&apos;t
           </h3>
           <div className="grid gap-6 sm:grid-cols-2">
             {/* We Track */}
             <div>
-              <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
+              <p className="mb-3 text-xs font-bold uppercase tracking-wider text-reno-green-600">
                 We Track
               </p>
               <div className="space-y-2.5">
@@ -681,10 +681,10 @@ export default function GCPayrollPage() {
                   { icon: DollarSign, text: 'Gross Pay Calculation' },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-2.5">
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100">
-                      <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
+                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-reno-green-100">
+                      <CheckCircle className="h-3.5 w-3.5 text-reno-green-600" />
                     </div>
-                    <span className="text-sm text-gray-700">{item.text}</span>
+                    <span className="text-sm text-slate-700">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -692,7 +692,7 @@ export default function GCPayrollPage() {
 
             {/* We Don't */}
             <div>
-              <p className="mb-3 text-xs font-bold uppercase tracking-wider text-gray-400">
+              <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">
                 We Don&apos;t
               </p>
               <div className="space-y-2.5">
@@ -703,13 +703,13 @@ export default function GCPayrollPage() {
                   'Benefits/pension',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2.5">
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200">
-                      <span className="text-xs font-bold text-gray-400">&times;</span>
+                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-200">
+                      <span className="text-xs font-bold text-slate-400">&times;</span>
                     </div>
-                    <span className="text-sm text-gray-500">{item}</span>
+                    <span className="text-sm text-slate-500">{item}</span>
                   </div>
                 ))}
-                <p className="mt-2 rounded-lg bg-gray-100 px-3 py-2 text-xs text-gray-500">
+                <p className="mt-2 rounded-lg bg-slate-100 px-3 py-2 text-xs text-slate-500">
                   Leave that to QuickBooks, ADP, or your accountant.
                 </p>
               </div>

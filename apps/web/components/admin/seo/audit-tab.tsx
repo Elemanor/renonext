@@ -45,7 +45,7 @@ interface AuditResult {
 const severityConfig = {
   critical: { icon: AlertTriangle, color: 'bg-red-100 text-red-700 border-red-200' },
   warning: { icon: AlertCircle, color: 'bg-amber-100 text-amber-700 border-amber-200' },
-  info: { icon: Info, color: 'bg-blue-100 text-blue-700 border-blue-200' },
+  info: { icon: Info, color: 'bg-primary-100 text-primary-700 border-primary-200' },
 };
 
 const PAGE_SIZE = 50;
@@ -80,13 +80,13 @@ export function AuditTab({ onFixWithAI }: AuditTabProps) {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <Loader2 className="h-8 w-8 animate-spin text-gray-400" />
+        <Loader2 className="h-8 w-8 animate-spin text-slate-400" />
       </div>
     );
   }
 
   if (!result) {
-    return <p className="text-gray-500 text-center py-10">Failed to load audit results.</p>;
+    return <p className="text-slate-500 text-center py-10">Failed to load audit results.</p>;
   }
 
   const filtered = severityFilter === 'all'
@@ -101,7 +101,7 @@ export function AuditTab({ onFixWithAI }: AuditTabProps) {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Select value={severityFilter} onValueChange={setSeverityFilter}>
-            <SelectTrigger className="w-40 h-9 rounded-lg border-gray-200">
+            <SelectTrigger className="w-40 h-9 rounded-lg border-slate-200">
               <SelectValue placeholder="All severities" />
             </SelectTrigger>
             <SelectContent>
@@ -112,15 +112,15 @@ export function AuditTab({ onFixWithAI }: AuditTabProps) {
             </SelectContent>
           </Select>
         </div>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-slate-500">
           {result.summary.totalPages} pages audited
         </p>
       </div>
 
-      <Card className="border-gray-200/60 shadow-sm overflow-hidden">
+      <Card className="border-slate-200/60 shadow-sm overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow className="bg-gray-50/60">
+            <TableRow className="bg-slate-50/60">
               <TableHead className="w-[80px]">Severity</TableHead>
               <TableHead>URL</TableHead>
               <TableHead>Issue</TableHead>
@@ -131,7 +131,7 @@ export function AuditTab({ onFixWithAI }: AuditTabProps) {
           <TableBody>
             {filtered.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={5} className="text-center py-10 text-gray-500">
+                <TableCell colSpan={5} className="text-center py-10 text-slate-500">
                   No issues found for this filter.
                 </TableCell>
               </TableRow>
@@ -147,13 +147,13 @@ export function AuditTab({ onFixWithAI }: AuditTabProps) {
                         {issue.severity}
                       </Badge>
                     </TableCell>
-                    <TableCell className="font-mono text-xs text-gray-600 max-w-[250px] truncate">
+                    <TableCell className="font-mono text-xs text-slate-600 max-w-[250px] truncate">
                       {issue.url.replace('https://renonext.com', '')}
                     </TableCell>
-                    <TableCell className="text-sm text-gray-700">
+                    <TableCell className="text-sm text-slate-700">
                       {issue.issueType.replace(/_/g, ' ')}
                     </TableCell>
-                    <TableCell className="hidden lg:table-cell text-xs text-gray-500 max-w-[300px] truncate">
+                    <TableCell className="hidden lg:table-cell text-xs text-slate-500 max-w-[300px] truncate">
                       {issue.fixAction}
                     </TableCell>
                     <TableCell className="text-right">
@@ -187,7 +187,7 @@ export function AuditTab({ onFixWithAI }: AuditTabProps) {
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-slate-500">
             Page {currentPage} of {totalPages}
           </span>
           <Button

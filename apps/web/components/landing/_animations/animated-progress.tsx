@@ -16,8 +16,8 @@ interface AnimatedProgressProps {
 
 export function AnimatedProgress({
   value,
-  barClass = 'bg-emerald-500',
-  trackClass = 'bg-gray-200',
+  barClass = 'bg-reno-green-500',
+  trackClass = 'bg-slate-200',
   heightClass = 'h-1.5',
   delay = 0,
   ariaLabel = 'Progress',

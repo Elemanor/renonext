@@ -87,7 +87,7 @@
     @apply bg-white/80 backdrop-blur-xl;
   }
   .glass-dark {
-    @apply bg-gray-900/80 backdrop-blur-xl;
+    @apply bg-slate-900/80 backdrop-blur-xl;
   }
 
   /* Subtle grid background pattern */
@@ -272,13 +272,13 @@
 
 /* Tier badge colors */
 .tier-top-rated {
-  @apply bg-gradient-to-r from-amber-500 to-yellow-400 text-white;
+  @apply bg-gradient-to-r from-reno-amber-500 to-reno-amber-400 text-white;
 }
 .tier-rising-talent {
-  @apply bg-gradient-to-r from-blue-500 to-blue-400 text-white;
+  @apply bg-gradient-to-r from-primary-500 to-primary-400 text-white;
 }
 .tier-new {
-  @apply bg-gradient-to-r from-emerald-500 to-green-400 text-white;
+  @apply bg-gradient-to-r from-reno-green-500 to-reno-green-400 text-white;
 }
 
 /* Card shadows */
@@ -299,9 +299,9 @@
   }
 }
 .online-dot {
-  @apply h-3.5 w-3.5 rounded-full bg-green-500 border-2 border-white;
+  @apply h-3.5 w-3.5 rounded-full bg-reno-green-500 border-2 border-white;
   animation: online-pulse 2s ease-in-out infinite;
 }
 .offline-dot {
-  @apply h-3.5 w-3.5 rounded-full bg-gray-300 border-2 border-white;
+  @apply h-3.5 w-3.5 rounded-full bg-slate-400 border-2 border-white;
 }

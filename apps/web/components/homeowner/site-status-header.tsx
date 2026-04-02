@@ -13,9 +13,9 @@ interface SiteStatusHeaderProps {
 }
 
 const healthConfig = {
-  on_track: { label: "On Track", color: "bg-emerald-100 text-emerald-800" },
+  on_track: { label: "On Track", color: "bg-reno-green-100 text-reno-green-800" },
   at_risk: { label: "Needs Attention", color: "bg-amber-100 text-amber-800" },
-  behind: { label: "Running Behind", color: "bg-orange-100 text-orange-800" },
+  behind: { label: "Running Behind", color: "bg-reno-amber-100 text-reno-amber-800" },
   critical: { label: "Delayed", color: "bg-red-100 text-red-800" },
 };
 
@@ -35,7 +35,7 @@ export function SiteStatusHeader({ project, weather, crewCount }: SiteStatusHead
       {/* Project title and address */}
       <div className="mb-4">
         <h1 className="text-xl font-bold">{project.title}</h1>
-        <div className="flex items-center gap-1 text-sm text-gray-600 mt-1">
+        <div className="flex items-center gap-1 text-sm text-slate-600 mt-1">
           <MapPin className="h-4 w-4" />
           <span>{project.address}</span>
         </div>
@@ -48,7 +48,7 @@ export function SiteStatusHeader({ project, weather, crewCount }: SiteStatusHead
 
         {/* Health badge */}
         <div className="flex flex-col gap-2">
-          <span className="text-sm font-medium text-gray-700">Project Health</span>
+          <span className="text-sm font-medium text-slate-700">Project Health</span>
           <Badge className={healthInfo.color} variant="secondary">
             {healthInfo.label}
           </Badge>
@@ -56,17 +56,17 @@ export function SiteStatusHeader({ project, weather, crewCount }: SiteStatusHead
 
         {/* Weather */}
         <div className="flex items-center gap-2">
-          <WeatherIcon className="h-8 w-8 text-gray-600" />
+          <WeatherIcon className="h-8 w-8 text-slate-600" />
           <div className="flex flex-col">
             <span className="text-lg font-semibold">{weather.temp}°C</span>
-            <span className="text-sm text-gray-600">{weather.condition}</span>
+            <span className="text-sm text-slate-600">{weather.condition}</span>
           </div>
         </div>
       </div>
 
       {/* Crew count */}
-      <div className="flex items-center gap-2 text-sm text-gray-700">
-        <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+      <div className="flex items-center gap-2 text-sm text-slate-700">
+        <div className="h-2 w-2 rounded-full bg-reno-green-500 animate-pulse" />
         <span>{crewCount} crew at your home</span>
       </div>
     </Card>

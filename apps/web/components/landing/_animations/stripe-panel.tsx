@@ -14,7 +14,7 @@ export function StripePanel({ children, className, variant = 'light' }: StripePa
       className={cn(
         'group relative isolate overflow-hidden rounded-2xl shadow-2xl backdrop-blur transition-all duration-200',
         'hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,0.12)] motion-reduce:hover:translate-y-0',
-        isLight ? 'border border-gray-200/60 bg-white/70' : 'border border-white/10 bg-white/5',
+        isLight ? 'border border-slate-200/60 bg-white/70' : 'border border-white/10 bg-white/5',
         className
       )}
     >
@@ -33,7 +33,7 @@ export function StripePanel({ children, className, variant = 'light' }: StripePa
         className={cn(
           'pointer-events-none absolute inset-x-0 top-0 h-px',
           isLight
-            ? 'bg-gradient-to-r from-transparent via-gray-200/80 to-transparent'
+            ? 'bg-gradient-to-r from-transparent via-slate-200/80 to-transparent'
             : 'bg-gradient-to-r from-transparent via-white/20 to-transparent'
         )}
       />
@@ -53,7 +53,7 @@ export function StripePanel({ children, className, variant = 'light' }: StripePa
         className={cn(
           'pointer-events-none absolute -right-24 -top-24 h-48 w-48 rounded-full blur-3xl transition duration-300',
           'opacity-70 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1',
-          isLight ? 'bg-violet-400/10' : 'bg-violet-400/5'
+          isLight ? 'bg-reno-purple-400/10' : 'bg-reno-purple-400/5'
         )}
       />
 

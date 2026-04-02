@@ -20,13 +20,13 @@ export function FinalCta() {
   return (
     <>
       {/* ===== Part A — Pro CTA ===== */}
-      <section className="relative overflow-hidden bg-gray-50 py-24 md:py-32">
+      <section className="relative overflow-hidden bg-slate-50 py-24 md:py-32">
         {/* background scaffold */}
         <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200/70 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/70 via-gray-50 to-gray-50" />
-          <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-emerald-500/5 blur-3xl" />
-          <div className="absolute -right-24 bottom-24 h-72 w-72 rounded-full bg-blue-500/5 blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/70 via-slate-50 to-slate-50" />
+          <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-reno-green-500/5 blur-3xl" />
+          <div className="absolute -right-24 bottom-24 h-72 w-72 rounded-full bg-primary-500/5 blur-3xl" />
           <div className="absolute inset-0 bg-grid opacity-[0.10] [mask-image:radial-gradient(ellipse_at_center,black_55%,transparent_100%)]" />
         </div>
 
@@ -50,7 +50,7 @@ export function FinalCta() {
 
                 <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
                   Your Business.{' '}
-                  <span className="bg-gradient-to-r from-emerald-400 to-blue-400 text-gradient">
+                  <span className="bg-gradient-to-r from-reno-green-400 to-primary-400 text-gradient">
                     Your Wallet. Your Rules.
                   </span>
                 </h2>
@@ -62,7 +62,7 @@ export function FinalCta() {
 
                 <div className="mt-8 space-y-5">
                   <div className="flex items-start gap-3">
-                    <GradientIcon icon={Banknote} gradient="from-emerald-400 to-emerald-600" size="sm" />
+                    <GradientIcon icon={Banknote} gradient="from-reno-green-400 to-reno-green-600" size="sm" />
                     <div>
                       <span className="font-semibold text-white">Instant Cash-Out</span>
                       <p className="text-sm text-slate-400">
@@ -72,7 +72,7 @@ export function FinalCta() {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <GradientIcon icon={Receipt} gradient="from-blue-400 to-blue-600" size="sm" />
+                    <GradientIcon icon={Receipt} gradient="from-primary-400 to-primary-600" size="sm" />
                     <div>
                       <span className="font-semibold text-white">Snap &amp; Submit Expenses</span>
                       <p className="text-sm text-slate-400">
@@ -82,7 +82,7 @@ export function FinalCta() {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <GradientIcon icon={BarChart3} gradient="from-violet-400 to-violet-600" size="sm" />
+                    <GradientIcon icon={BarChart3} gradient="from-reno-purple-400 to-reno-purple-600" size="sm" />
                     <div>
                       <span className="font-semibold text-white">Automated Bookkeeping</span>
                       <p className="text-sm text-slate-400">
@@ -95,7 +95,7 @@ export function FinalCta() {
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                   <Button
                     asChild
-                    className="rounded-full bg-white px-8 py-3.5 text-base font-semibold text-slate-900 shadow-lg transition-all duration-200 hover:bg-gray-100 hover:shadow-xl"
+                    className="rounded-full bg-white px-8 py-3.5 text-base font-semibold text-slate-900 shadow-lg transition-all duration-200 hover:bg-slate-100 hover:shadow-xl"
                   >
                     <Link href="/signup">
                       Join as a Pro
@@ -108,7 +108,7 @@ export function FinalCta() {
                     variant="outline"
                     className="rounded-full border-2 border-white/20 bg-transparent px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:border-white/30 hover:bg-white/10"
                   >
-                    <Link href="/how-it-works-pros">Learn More</Link>
+                    <Link href="/how-it-works#pros">Learn More</Link>
                   </Button>
                 </div>
               </div>
@@ -142,8 +142,8 @@ export function FinalCta() {
         <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200/70 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-50/60 via-white to-white" />
-          <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-blue-500/5 blur-3xl" />
-          <div className="absolute -right-24 bottom-24 h-72 w-72 rounded-full bg-violet-500/5 blur-3xl" />
+          <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-primary-500/5 blur-3xl" />
+          <div className="absolute -right-24 bottom-24 h-72 w-72 rounded-full bg-reno-purple-500/5 blur-3xl" />
           {/* Blueprint overlay */}
           <div className="absolute inset-0 bg-blueprint opacity-[0.04]" />
           {/* Subtle bg photo at very low opacity */}
@@ -162,18 +162,18 @@ export function FinalCta() {
             <div className="mx-auto mb-8">
               <GradientIcon
                 icon={Sparkles}
-                gradient="from-blue-500 to-violet-600"
+                gradient="from-primary-500 to-reno-purple-600"
                 size="lg"
                 glow
                 className="mx-auto"
               />
             </div>
 
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
               Snap a Photo. Get a Price. Pro Dispatched.
             </h2>
 
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-500">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-500">
               Verified, insured pros are minutes away. Materials delivered to site.
               Real-time tracking from start to finish.
             </p>
@@ -181,7 +181,7 @@ export function FinalCta() {
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button
                 asChild
-                className="shine rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-10 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-200 hover:shadow-xl hover:shadow-blue-600/30 hover:brightness-110"
+                className="shine rounded-full bg-gradient-to-r from-primary-600 to-reno-purple-600 px-10 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-200 hover:shadow-xl hover:shadow-blue-600/30 hover:brightness-110"
               >
                 <Link href="/post-job">
                   Get Instant Estimate
@@ -192,20 +192,20 @@ export function FinalCta() {
               <Button
                 asChild
                 variant="outline"
-                className="rounded-full border-gray-200 bg-white px-10 py-4 text-base font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:border-gray-300 hover:shadow-md"
+                className="rounded-full border-slate-200 bg-white px-10 py-4 text-base font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-300 hover:shadow-md"
               >
                 <Link href="#how-it-works">See How It Works</Link>
               </Button>
             </div>
 
             {/* Mini trust signals */}
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-gray-400">
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
               <div className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-emerald-500" />
+                <Shield className="h-4 w-4 text-reno-green-500" />
                 <span>Verified Pros</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-blue-500" />
+                <Clock className="h-4 w-4 text-primary-500" />
                 <span>Quick Response</span>
               </div>
               <div className="flex items-center gap-2">
@@ -213,7 +213,7 @@ export function FinalCta() {
                 <span>Quality Guarantee</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-violet-500" />
+                <CheckCircle className="h-4 w-4 text-reno-purple-500" />
                 <span>Secure Payments</span>
               </div>
             </div>

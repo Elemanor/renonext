@@ -212,14 +212,14 @@ export default function ChangeOrdersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-slate-50 pb-20">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Change Orders</h1>
-              <p className="mt-2 text-lg text-gray-600">
+              <h1 className="text-3xl font-bold text-slate-900">Change Orders</h1>
+              <p className="mt-2 text-lg text-slate-600">
                 Track and manage change orders across all projects
               </p>
             </div>
@@ -227,14 +227,14 @@ export default function ChangeOrdersPage() {
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
-            <Card className="p-6 rounded-2xl border-gray-200">
+            <Card className="p-6 rounded-2xl border-slate-200">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">Total COs</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-2">{stats.total}</p>
+                  <p className="text-sm font-medium text-slate-600">Total COs</p>
+                  <p className="text-3xl font-bold text-slate-900 mt-2">{stats.total}</p>
                 </div>
-                <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <FileText className="w-6 h-6 text-gray-600" />
+                <div className="h-12 w-12 bg-slate-100 rounded-xl flex items-center justify-center">
+                  <FileText className="w-6 h-6 text-slate-600" />
                 </div>
               </div>
             </Card>
@@ -242,9 +242,9 @@ export default function ChangeOrdersPage() {
             <Card className="p-6 rounded-2xl border-reno-green/20 bg-reno-green/5">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">Approved</p>
+                  <p className="text-sm font-medium text-slate-600">Approved</p>
                   <p className="text-3xl font-bold text-reno-green mt-2">{stats.approved}</p>
-                  <p className="text-sm text-gray-600 mt-1">${stats.approvedValue.toLocaleString()}</p>
+                  <p className="text-sm text-slate-600 mt-1">${stats.approvedValue.toLocaleString()}</p>
                 </div>
                 <div className="h-12 w-12 bg-reno-green/10 rounded-xl flex items-center justify-center">
                   <CheckCircle className="w-6 h-6 text-reno-green" />
@@ -255,9 +255,9 @@ export default function ChangeOrdersPage() {
             <Card className="p-6 rounded-2xl border-amber-500/20 bg-amber-50">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">Pending Review</p>
+                  <p className="text-sm font-medium text-slate-600">Pending Review</p>
                   <p className="text-3xl font-bold text-amber-600 mt-2">{stats.pending}</p>
-                  <p className="text-sm text-gray-600 mt-1">${stats.pendingValue.toLocaleString()}</p>
+                  <p className="text-sm text-slate-600 mt-1">${stats.pendingValue.toLocaleString()}</p>
                 </div>
                 <div className="h-12 w-12 bg-amber-100 rounded-xl flex items-center justify-center">
                   <Clock className="w-6 h-6 text-amber-600" />
@@ -268,9 +268,9 @@ export default function ChangeOrdersPage() {
             <Card className="p-6 rounded-2xl border-red-500/20 bg-red-50">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600">Rejected</p>
+                  <p className="text-sm font-medium text-slate-600">Rejected</p>
                   <p className="text-3xl font-bold text-red-600 mt-2">{stats.rejected}</p>
-                  <p className="text-sm text-gray-600 mt-1">${stats.rejectedValue.toLocaleString()}</p>
+                  <p className="text-sm text-slate-600 mt-1">${stats.rejectedValue.toLocaleString()}</p>
                 </div>
                 <div className="h-12 w-12 bg-red-100 rounded-xl flex items-center justify-center">
                   <XCircle className="w-6 h-6 text-red-600" />
@@ -283,39 +283,39 @@ export default function ChangeOrdersPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Create Change Order Form */}
-        <Card className="rounded-2xl border-gray-200 mb-8 overflow-hidden">
+        <Card className="rounded-2xl border-slate-200 mb-8 overflow-hidden">
           <button
             onClick={() => setFormExpanded(!formExpanded)}
-            className="w-full p-6 flex items-center justify-between hover:bg-gray-50 transition-colors"
+            className="w-full p-6 flex items-center justify-between hover:bg-slate-50 transition-colors"
           >
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 bg-reno-green rounded-xl flex items-center justify-center">
                 <Plus className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <h2 className="text-lg font-semibold text-gray-900">Create Change Order</h2>
-                <p className="text-sm text-gray-600">Submit a new change order for client review</p>
+                <h2 className="text-lg font-semibold text-slate-900">Create Change Order</h2>
+                <p className="text-sm text-slate-600">Submit a new change order for client review</p>
               </div>
             </div>
             {formExpanded ? (
-              <ChevronUp className="w-5 h-5 text-gray-400" />
+              <ChevronUp className="w-5 h-5 text-slate-400" />
             ) : (
-              <ChevronDown className="w-5 h-5 text-gray-400" />
+              <ChevronDown className="w-5 h-5 text-slate-400" />
             )}
           </button>
 
           {formExpanded && (
-            <form onSubmit={handleSubmit} className="px-6 pb-6 border-t border-gray-200">
+            <form onSubmit={handleSubmit} className="px-6 pb-6 border-t border-slate-200">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 {/* Project */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
                     Project
                   </label>
                   <select
                     value={formData.project}
                     onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent"
                     required
                   >
                     <option value="">Select project...</option>
@@ -327,7 +327,7 @@ export default function ChangeOrdersPage() {
 
                 {/* CO Title */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
                     Change Order Title
                   </label>
                   <input
@@ -335,14 +335,14 @@ export default function ChangeOrdersPage() {
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                     placeholder="e.g., Add GFCI outlets near water"
-                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent"
                     required
                   />
                 </div>
 
                 {/* Description */}
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
                     Description
                   </label>
                   <textarea
@@ -350,19 +350,19 @@ export default function ChangeOrdersPage() {
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                     placeholder="Provide detailed explanation of the change and why it's necessary..."
                     rows={4}
-                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent resize-none"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent resize-none"
                     required
                   />
                 </div>
 
                 {/* Cost Impact */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
                     Cost Impact
                   </label>
                   <div className="flex gap-2">
                     <div className="flex-1 relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">$</span>
                       <input
                         type="number"
                         value={formData.costImpact}
@@ -370,11 +370,11 @@ export default function ChangeOrdersPage() {
                         placeholder="0"
                         min="0"
                         step="0.01"
-                        className="w-full pl-8 pr-4 py-2.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent"
+                        className="w-full pl-8 pr-4 py-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent"
                         required
                       />
                     </div>
-                    <div className="flex bg-gray-100 rounded-xl p-1">
+                    <div className="flex bg-slate-100 rounded-xl p-1">
                       <button
                         type="button"
                         onClick={() => setFormData({ ...formData, costDirection: 'positive' })}
@@ -382,7 +382,7 @@ export default function ChangeOrdersPage() {
                           "px-3 py-1.5 rounded-lg text-sm font-medium transition-colors",
                           formData.costDirection === 'positive'
                             ? "bg-white text-reno-green shadow-sm"
-                            : "text-gray-600 hover:text-gray-900"
+                            : "text-slate-600 hover:text-slate-900"
                         )}
                       >
                         <TrendingUp className="w-4 h-4" />
@@ -394,7 +394,7 @@ export default function ChangeOrdersPage() {
                           "px-3 py-1.5 rounded-lg text-sm font-medium transition-colors",
                           formData.costDirection === 'negative'
                             ? "bg-white text-red-600 shadow-sm"
-                            : "text-gray-600 hover:text-gray-900"
+                            : "text-slate-600 hover:text-slate-900"
                         )}
                       >
                         <TrendingDown className="w-4 h-4" />
@@ -405,13 +405,13 @@ export default function ChangeOrdersPage() {
 
                 {/* Schedule Impact */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
                     Schedule Impact
                   </label>
                   <select
                     value={formData.scheduleImpact}
                     onChange={(e) => setFormData({ ...formData, scheduleImpact: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent"
                   >
                     {SCHEDULE_IMPACTS.map(impact => (
                       <option key={impact} value={impact}>{impact}</option>
@@ -421,13 +421,13 @@ export default function ChangeOrdersPage() {
 
                 {/* Reason */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
                     Reason
                   </label>
                   <select
                     value={formData.reason}
                     onChange={(e) => setFormData({ ...formData, reason: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent"
+                    className="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-reno-green focus:border-transparent"
                   >
                     {REASONS.map(reason => (
                       <option key={reason} value={reason}>{reason}</option>
@@ -437,13 +437,13 @@ export default function ChangeOrdersPage() {
 
                 {/* Attach Photos */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
                     Attach Photos
                   </label>
-                  <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-reno-green transition-colors cursor-pointer">
-                    <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                    <p className="text-sm text-gray-600">Click to upload or drag and drop</p>
-                    <p className="text-xs text-gray-500 mt-1">PNG, JPG up to 10MB</p>
+                  <div className="border-2 border-dashed border-slate-300 rounded-xl p-6 text-center hover:border-reno-green transition-colors cursor-pointer">
+                    <Upload className="w-8 h-8 text-slate-400 mx-auto mb-2" />
+                    <p className="text-sm text-slate-600">Click to upload or drag and drop</p>
+                    <p className="text-xs text-slate-500 mt-1">PNG, JPG up to 10MB</p>
                   </div>
                 </div>
               </div>
@@ -464,7 +464,7 @@ export default function ChangeOrdersPage() {
         {/* Change Orders Tracker */}
         <div>
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">Change Orders Tracker</h2>
+            <h2 className="text-2xl font-bold text-slate-900">Change Orders Tracker</h2>
 
             {/* Filter Chips */}
             <div className="flex gap-2">
@@ -473,8 +473,8 @@ export default function ChangeOrdersPage() {
                 className={cn(
                   "px-4 py-2 rounded-xl text-sm font-medium transition-colors",
                   filter === 'all'
-                    ? "bg-gray-900 text-white"
-                    : "bg-white text-gray-600 border border-gray-300 hover:bg-gray-50"
+                    ? "bg-slate-900 text-white"
+                    : "bg-white text-slate-600 border border-slate-300 hover:bg-slate-50"
                 )}
               >
                 All
@@ -485,7 +485,7 @@ export default function ChangeOrdersPage() {
                   "px-4 py-2 rounded-xl text-sm font-medium transition-colors",
                   filter === 'pending'
                     ? "bg-amber-500 text-white"
-                    : "bg-white text-gray-600 border border-gray-300 hover:bg-gray-50"
+                    : "bg-white text-slate-600 border border-slate-300 hover:bg-slate-50"
                 )}
               >
                 Pending
@@ -496,7 +496,7 @@ export default function ChangeOrdersPage() {
                   "px-4 py-2 rounded-xl text-sm font-medium transition-colors",
                   filter === 'approved'
                     ? "bg-reno-green text-white"
-                    : "bg-white text-gray-600 border border-gray-300 hover:bg-gray-50"
+                    : "bg-white text-slate-600 border border-slate-300 hover:bg-slate-50"
                 )}
               >
                 Approved
@@ -507,7 +507,7 @@ export default function ChangeOrdersPage() {
                   "px-4 py-2 rounded-xl text-sm font-medium transition-colors",
                   filter === 'rejected'
                     ? "bg-red-500 text-white"
-                    : "bg-white text-gray-600 border border-gray-300 hover:bg-gray-50"
+                    : "bg-white text-slate-600 border border-slate-300 hover:bg-slate-50"
                 )}
               >
                 Rejected
@@ -518,24 +518,24 @@ export default function ChangeOrdersPage() {
           {/* Change Orders List */}
           <div className="space-y-4">
             {filteredOrders.map((co) => (
-              <Card key={co.id} className="rounded-2xl border-gray-200 overflow-hidden">
+              <Card key={co.id} className="rounded-2xl border-slate-200 overflow-hidden">
                 <div className="p-6">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-start gap-4">
-                        <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <FileText className="w-6 h-6 text-gray-600" />
+                        <div className="h-12 w-12 bg-slate-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <FileText className="w-6 h-6 text-slate-600" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-start justify-between gap-4">
                             <div>
                               <div className="flex items-center gap-3 mb-2">
-                                <h3 className="text-lg font-semibold text-gray-900">
+                                <h3 className="text-lg font-semibold text-slate-900">
                                   {co.number}: {co.title}
                                 </h3>
                                 {getStatusBadge(co.status)}
                               </div>
-                              <div className="flex items-center gap-4 text-sm text-gray-600">
+                              <div className="flex items-center gap-4 text-sm text-slate-600">
                                 <span className="flex items-center gap-1">
                                   <FileText className="w-4 h-4" />
                                   {co.project}
@@ -552,7 +552,7 @@ export default function ChangeOrdersPage() {
                             </div>
                             <button
                               onClick={() => setExpandedCO(expandedCO === co.id ? null : co.id)}
-                              className="text-gray-400 hover:text-gray-600 transition-colors"
+                              className="text-slate-400 hover:text-slate-600 transition-colors"
                             >
                               {expandedCO === co.id ? (
                                 <ChevronUp className="w-5 h-5" />
@@ -567,20 +567,20 @@ export default function ChangeOrdersPage() {
                   </div>
 
                   {expandedCO === co.id && (
-                    <div className="mt-4 pt-4 border-t border-gray-200">
+                    <div className="mt-4 pt-4 border-t border-slate-200">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
-                          <p className="text-sm font-medium text-gray-500 mb-1">Schedule Impact</p>
-                          <p className="text-sm text-gray-900">{co.scheduleImpact}</p>
+                          <p className="text-sm font-medium text-slate-500 mb-1">Schedule Impact</p>
+                          <p className="text-sm text-slate-900">{co.scheduleImpact}</p>
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-gray-500 mb-1">Reason</p>
-                          <p className="text-sm text-gray-900">{co.reason}</p>
+                          <p className="text-sm font-medium text-slate-500 mb-1">Reason</p>
+                          <p className="text-sm text-slate-900">{co.reason}</p>
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-gray-500 mb-2">Description</p>
-                        <p className="text-sm text-gray-700 leading-relaxed">{co.description}</p>
+                        <p className="text-sm font-medium text-slate-500 mb-2">Description</p>
+                        <p className="text-sm text-slate-700 leading-relaxed">{co.description}</p>
                       </div>
                     </div>
                   )}

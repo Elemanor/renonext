@@ -11,7 +11,7 @@ const workAreas = [
       {
         start: 0,
         duration: 18,
-        color: 'bg-green-500',
+        color: 'bg-reno-green-500',
         label: 'Complete',
       },
       {
@@ -30,13 +30,13 @@ const workAreas = [
       {
         start: 7,
         duration: 4,
-        color: 'bg-green-500',
+        color: 'bg-reno-green-500',
         label: 'Started',
       },
       {
         start: 11,
         duration: 14,
-        color: 'bg-gray-300',
+        color: 'bg-slate-300',
         label: 'Scheduled',
       },
     ],
@@ -48,7 +48,7 @@ const workAreas = [
       {
         start: 0,
         duration: 11,
-        color: 'bg-green-500',
+        color: 'bg-reno-green-500',
         label: 'Complete',
       },
     ],
@@ -60,7 +60,7 @@ const workAreas = [
       {
         start: 14,
         duration: 18,
-        color: 'bg-blue-500',
+        color: 'bg-primary-500',
         label: 'In Progress',
       },
     ],
@@ -72,7 +72,7 @@ const workAreas = [
       {
         start: 28,
         duration: 11,
-        color: 'bg-gray-300',
+        color: 'bg-slate-300',
         label: 'Scheduled',
       },
     ],
@@ -86,11 +86,11 @@ const todayPosition = 24; // Feb 27 is 24 days from Feb 3
 export function GanttShowcase() {
   return (
     <Card className="w-full border-2 shadow-lg">
-      <CardHeader className="border-b bg-gradient-to-r from-blue-50 to-white">
-        <CardTitle className="text-lg font-bold text-gray-900">
+      <CardHeader className="border-b bg-gradient-to-r from-primary-50 to-white">
+        <CardTitle className="text-lg font-bold text-slate-900">
           Project Timeline
         </CardTitle>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-slate-500">
           GEBOOTH WasteWater Treatment Plant
         </p>
       </CardHeader>
@@ -103,7 +103,7 @@ export function GanttShowcase() {
             {weekLabels.map((label, index) => (
               <div
                 key={index}
-                className="flex-1 text-center text-xs font-medium text-gray-600"
+                className="flex-1 text-center text-xs font-medium text-slate-600"
               >
                 {label}
               </div>
@@ -117,7 +117,7 @@ export function GanttShowcase() {
             <div key={areaIndex} className="flex items-center gap-2">
               {/* Area Name */}
               <div className="w-32 flex-shrink-0 sm:w-40">
-                <div className="text-xs font-semibold text-gray-900">
+                <div className="text-xs font-semibold text-slate-900">
                   {area.name}
                 </div>
               </div>
@@ -125,11 +125,11 @@ export function GanttShowcase() {
               {/* Timeline Bar Container */}
               <div className="relative flex-1">
                 {/* Background grid */}
-                <div className="flex h-10 rounded border border-gray-200 bg-gray-50">
+                <div className="flex h-10 rounded border border-slate-200 bg-slate-50">
                   {weekLabels.map((_, index) => (
                     <div
                       key={index}
-                      className="flex-1 border-r border-gray-200 last:border-r-0"
+                      className="flex-1 border-r border-slate-200 last:border-r-0"
                     />
                   ))}
                 </div>
@@ -170,7 +170,7 @@ export function GanttShowcase() {
               {/* Status indicator */}
               <div className="hidden sm:block w-16 flex-shrink-0 text-right">
                 {area.status === 'ahead' && (
-                  <span className="text-xs font-medium text-green-600">
+                  <span className="text-xs font-medium text-reno-green-600">
                     Ahead
                   </span>
                 )}
@@ -180,7 +180,7 @@ export function GanttShowcase() {
                   </span>
                 )}
                 {area.status === 'on-schedule' && (
-                  <span className="text-xs font-medium text-gray-600">
+                  <span className="text-xs font-medium text-slate-600">
                     On Track
                   </span>
                 )}
@@ -190,28 +190,28 @@ export function GanttShowcase() {
         </div>
 
         {/* Bottom Stats */}
-        <div className="mt-6 rounded-lg border bg-gray-50 p-3">
+        <div className="mt-6 rounded-lg border bg-slate-50 p-3">
           <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
             <div className="flex flex-wrap gap-4">
               <div>
-                <span className="font-semibold text-green-700">
+                <span className="font-semibold text-reno-green-700">
                   On Schedule:
                 </span>{' '}
-                <span className="text-gray-700">3/5 areas</span>
+                <span className="text-slate-700">3/5 areas</span>
               </div>
               <div>
                 <span className="font-semibold text-red-700">Behind:</span>{' '}
-                <span className="text-gray-700">1 area</span>
+                <span className="text-slate-700">1 area</span>
               </div>
               <div>
-                <span className="font-semibold text-blue-700">Ahead:</span>{' '}
-                <span className="text-gray-700">1 area</span>
+                <span className="font-semibold text-primary-700">Ahead:</span>{' '}
+                <span className="text-slate-700">1 area</span>
               </div>
             </div>
             <div className="flex items-center gap-1 text-red-700">
               <AlertCircle className="h-3.5 w-3.5" />
               <span className="font-semibold">Critical Path:</span>
-              <span className="text-gray-700">GEB Foundation B2 → Slab A</span>
+              <span className="text-slate-700">GEB Foundation B2 → Slab A</span>
             </div>
           </div>
         </div>
@@ -219,24 +219,24 @@ export function GanttShowcase() {
         {/* Legend */}
         <div className="mt-4 flex flex-wrap items-center gap-4 text-xs">
           <div className="flex items-center gap-1.5">
-            <div className="h-3 w-3 rounded bg-green-500" />
-            <span className="text-gray-600">Complete</span>
+            <div className="h-3 w-3 rounded bg-reno-green-500" />
+            <span className="text-slate-600">Complete</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <div className="h-3 w-3 rounded bg-blue-500" />
-            <span className="text-gray-600">In Progress</span>
+            <div className="h-3 w-3 rounded bg-primary-500" />
+            <span className="text-slate-600">In Progress</span>
           </div>
           <div className="flex items-center gap-1.5">
             <div className="h-3 w-3 rounded bg-amber-500" />
-            <span className="text-gray-600">Current Phase</span>
+            <span className="text-slate-600">Current Phase</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <div className="h-3 w-3 rounded bg-gray-300" />
-            <span className="text-gray-600">Scheduled</span>
+            <div className="h-3 w-3 rounded bg-slate-300" />
+            <span className="text-slate-600">Scheduled</span>
           </div>
           <div className="flex items-center gap-1.5">
             <div className="h-0.5 w-3 bg-red-500" />
-            <span className="text-gray-600">Today</span>
+            <span className="text-slate-600">Today</span>
           </div>
         </div>
       </CardContent>

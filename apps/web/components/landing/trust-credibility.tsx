@@ -110,7 +110,7 @@ export function TrustCredibility() {
                       <p className="font-bold text-reno-dark text-sm">
                         RenoNext Verified Network
                       </p>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-slate-500">
                         Only 23% of applicants are accepted
                       </p>
                     </div>
@@ -146,7 +146,7 @@ export function TrustCredibility() {
               You&apos;re in Good Hands.
             </h2>
 
-            <p className="text-lg text-gray-500 mb-10 leading-relaxed">
+            <p className="text-lg text-slate-500 mb-10 leading-relaxed">
               Five commitments that define our network.
             </p>
 
@@ -175,7 +175,7 @@ export function TrustCredibility() {
                       </span>
                     </div>
                   </div>
-                  <span className="text-gray-600 text-base leading-relaxed pt-1">
+                  <span className="text-slate-600 text-base leading-relaxed pt-1">
                     {point.text}
                   </span>
                 </li>

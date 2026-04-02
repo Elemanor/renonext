@@ -14,6 +14,9 @@ const footerLinks = {
     { label: 'Rebates & Savings', href: '/savings' },
     { label: 'Get a Price Check', href: '/price-check' },
     { label: 'Browse Pros', href: '/pros' },
+    { label: 'Shop Supplies', href: '/shop' },
+    { label: 'WBS Generator', href: '/wbs-generator' },
+    { label: 'Renovation Calculator', href: '/renovation-calculator' },
     { label: 'Start a Project', href: '/start-project' },
   ],
   'For Contractors': [
@@ -37,6 +40,9 @@ const footerLinks = {
     { label: 'Plumbing', href: '/services/plumbing' },
     { label: 'Basement Apartments', href: '/services/basement-second-unit' },
     { label: 'Home Additions', href: '/services/additions' },
+    { label: 'Best Waterproofing Pros', href: '/best-waterproofing/toronto' },
+    { label: 'Best Underpinning Pros', href: '/best-underpinning/toronto' },
+    { label: 'Basement Leak Repair', href: '/basement-leak-repair/toronto' },
     { label: 'All Services →', href: '/services' },
   ],
   Company: [
@@ -81,7 +87,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-[#102122]">
+    <footer className="relative overflow-hidden bg-reno-dark">
       <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-7">
           {/* Brand */}
@@ -89,7 +95,7 @@ export function Footer() {
             <Link href="/" className="mb-6 inline-block">
               <span className="font-body text-2xl text-white">RenoNext</span>
             </Link>
-            <p className="mb-8 max-w-xs text-sm leading-relaxed text-gray-400">
+            <p className="mb-8 max-w-xs text-sm leading-relaxed text-slate-400">
               Bank-held escrow. GPS-verified proof. Fair market pricing.
               From permit to final inspection &mdash; protected by a system, not a handshake.
             </p>
@@ -98,7 +104,7 @@ export function Footer() {
             <div className="mb-8">
               <p className="mb-3 text-sm font-medium text-white">Stay in the loop</p>
               {isSubscribed ? (
-                <div className="flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-400">
+                <div className="flex items-center gap-2 rounded-lg border border-reno-green-500/30 bg-reno-green-500/10 px-4 py-3 text-sm text-reno-green-400">
                   <Check className="h-4 w-4" />
                   <span>Subscribed! Check your inbox.</span>
                 </div>
@@ -106,20 +112,20 @@ export function Footer() {
                 <form onSubmit={handleNewsletterSubmit} className="space-y-2">
                   <div className="flex gap-2">
                     <div className="relative flex-1">
-                      <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                      <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
                       <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Your email"
                         disabled={isSubmitting}
-                        className="w-full rounded-lg border border-gray-800 bg-gray-900 py-2.5 pl-10 pr-4 text-sm text-gray-200 placeholder-gray-600 outline-none transition-all focus:border-[#0fbabd] focus:ring-1 focus:ring-[#0fbabd]/30 disabled:opacity-50"
+                        className="w-full rounded-lg border border-slate-800 bg-slate-900 py-2.5 pl-10 pr-4 text-sm text-slate-200 placeholder-slate-600 outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary/30 disabled:opacity-50"
                       />
                     </div>
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="flex items-center justify-center rounded-lg bg-[#0fbabd] px-4 text-white transition-colors hover:bg-[#0fbabd]-dark disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex items-center justify-center rounded-lg bg-primary px-4 text-white transition-colors hover:bg-reno-green-dark disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
                         <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
@@ -139,7 +145,7 @@ export function Footer() {
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-gray-500">
+              <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-slate-500">
                 {title}
               </h3>
               <ul className="space-y-3">
@@ -147,7 +153,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-400 transition-colors duration-200 hover:text-white"
+                      className="text-sm text-slate-400 transition-colors duration-200 hover:text-white"
                     >
                       {link.label}
                     </Link>
@@ -159,34 +165,34 @@ export function Footer() {
         </div>
 
         {/* Trust Badges */}
-        <div className="mt-16 border-t border-gray-800/60 pt-8">
+        <div className="mt-16 border-t border-slate-800/60 pt-8">
           <div className="mb-6 flex flex-wrap items-center justify-center gap-6">
-            <div className="flex items-center gap-1.5 text-xs text-gray-500">
-              <CreditCard className="h-3.5 w-3.5 text-[#0fbabd]" />
+            <div className="flex items-center gap-1.5 text-xs text-slate-500">
+              <CreditCard className="h-3.5 w-3.5 text-primary" />
               <span>Secure Payments</span>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-gray-500">
-              <Lock className="h-3.5 w-3.5 text-[#0D9FA1]" />
+            <div className="flex items-center gap-1.5 text-xs text-slate-500">
+              <Lock className="h-3.5 w-3.5 text-primary" />
               <span>Bank-Held Escrow</span>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-gray-500">
-              <Shield className="h-3.5 w-3.5 text-[#0fbabd]" />
+            <div className="flex items-center gap-1.5 text-xs text-slate-500">
+              <Shield className="h-3.5 w-3.5 text-primary" />
               <span>Licensed & Insured</span>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-gray-500">
-              <CheckCircle className="h-3.5 w-3.5 text-emerald-400" />
+            <div className="flex items-center gap-1.5 text-xs text-slate-500">
+              <CheckCircle className="h-3.5 w-3.5 text-reno-green-400" />
               <span>GPS Verified</span>
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-between gap-4 border-t border-gray-800/60 pt-6 md:flex-row">
-            <p className="text-sm text-gray-600">
+          <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-800/60 pt-6 md:flex-row">
+            <p className="text-sm text-slate-600">
               &copy; {new Date().getFullYear()} RenoNext Inc. Toronto, Canada.
             </p>
             <div className="flex gap-6">
-              <Link href="/terms" className="text-sm text-gray-600 transition-colors hover:text-gray-300">Terms</Link>
-              <Link href="/privacy" className="text-sm text-gray-600 transition-colors hover:text-gray-300">Privacy</Link>
-              <Link href="/contact" className="text-sm text-gray-600 transition-colors hover:text-gray-300">Contact</Link>
+              <Link href="/terms" className="text-sm text-slate-600 transition-colors hover:text-slate-300">Terms</Link>
+              <Link href="/privacy" className="text-sm text-slate-600 transition-colors hover:text-slate-300">Privacy</Link>
+              <Link href="/contact" className="text-sm text-slate-600 transition-colors hover:text-slate-300">Contact</Link>
             </div>
           </div>
         </div>

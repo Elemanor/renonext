@@ -212,10 +212,10 @@ export default function SavingsCalculatorPage() {
       <section className="relative overflow-hidden bg-gradient-to-b from-reno-cream to-white py-16 md:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(15,186,189,0.06),transparent_50%)]" />
         <div className="container relative mx-auto px-4">
-          <nav className="mb-8 flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="transition-colors hover:text-gray-900">Home</Link>
+          <nav className="mb-8 flex items-center gap-2 text-sm text-slate-500">
+            <Link href="/" className="transition-colors hover:text-slate-900">Home</Link>
             <ChevronRight className="h-3.5 w-3.5" />
-            <span className="font-medium text-gray-900">Savings Calculator</span>
+            <span className="font-medium text-slate-900">Savings Calculator</span>
           </nav>
 
           <div className="mx-auto max-w-3xl text-center">
@@ -226,7 +226,7 @@ export default function SavingsCalculatorPage() {
             <h1 className="font-display text-4xl font-bold tracking-tight text-reno-dark md:text-5xl lg:text-6xl">
               How Much Can You Save?
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 md:text-xl">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600 md:text-xl">
               GTA homeowners leave tens of thousands on the table. Federal, provincial, regional,
               municipal, and utility rebates stack up — but nobody tells you that. Until now.
             </p>
@@ -235,7 +235,7 @@ export default function SavingsCalculatorPage() {
       </section>
 
       {/* Wizard */}
-      <section className="border-b border-gray-100 py-16 md:py-20">
+      <section className="border-b border-slate-100 py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
             {/* Progress bar */}
@@ -251,7 +251,7 @@ export default function SavingsCalculatorPage() {
                       className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition-colors ${
                         step >= s.n
                           ? 'bg-reno-green text-white'
-                          : 'bg-gray-200 text-gray-500'
+                          : 'bg-slate-200 text-slate-500'
                       }`}
                     >
                       {step > s.n ? (
@@ -262,7 +262,7 @@ export default function SavingsCalculatorPage() {
                     </div>
                     <span
                       className={`hidden text-sm font-medium sm:inline ${
-                        step >= s.n ? 'text-gray-900' : 'text-gray-400'
+                        step >= s.n ? 'text-slate-900' : 'text-slate-400'
                       }`}
                     >
                       {s.label}
@@ -270,7 +270,7 @@ export default function SavingsCalculatorPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-3 h-2 rounded-full bg-gray-200">
+              <div className="mt-3 h-2 rounded-full bg-slate-200">
                 <motion.div
                   className="h-full rounded-full bg-reno-green"
                   initial={{ width: '0%' }}
@@ -293,14 +293,14 @@ export default function SavingsCalculatorPage() {
                   <h2 className="font-display text-2xl font-bold text-reno-dark md:text-3xl">
                     Where is your property?
                   </h2>
-                  <p className="mt-2 text-gray-500">
+                  <p className="mt-2 text-slate-500">
                     Select your city to see available programs in your area.
                   </p>
 
                   <div className="mt-8 space-y-6">
                     {regionGroups.map((group) => (
                       <div key={group.label}>
-                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.15em] text-gray-400">
+                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.15em] text-slate-400">
                           {group.label}
                         </p>
                         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
@@ -314,16 +314,16 @@ export default function SavingsCalculatorPage() {
                                 className={`relative rounded-xl border-2 p-4 text-left transition-all duration-200 ${
                                   isSelected
                                     ? 'border-reno-green bg-reno-green/5 shadow-sm'
-                                    : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm'
+                                    : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
                                 }`}
                               >
                                 <div className="flex items-center gap-2">
                                   <MapPin
-                                    className={`h-4 w-4 ${isSelected ? 'text-reno-green' : 'text-gray-400'}`}
+                                    className={`h-4 w-4 ${isSelected ? 'text-reno-green' : 'text-slate-400'}`}
                                   />
-                                  <span className="font-semibold text-gray-900">{city.name}</span>
+                                  <span className="font-semibold text-slate-900">{city.name}</span>
                                 </div>
-                                <p className="mt-1 text-xs text-gray-500">
+                                <p className="mt-1 text-xs text-slate-500">
                                   {count} programs available
                                 </p>
                                 {isSelected && (
@@ -364,7 +364,7 @@ export default function SavingsCalculatorPage() {
                   <h2 className="font-display text-2xl font-bold text-reno-dark md:text-3xl">
                     What are you planning?
                   </h2>
-                  <p className="mt-2 text-gray-500">
+                  <p className="mt-2 text-slate-500">
                     Select all that apply — many programs cover multiple project types.
                   </p>
 
@@ -379,20 +379,20 @@ export default function SavingsCalculatorPage() {
                           className={`relative rounded-xl border-2 p-5 text-left transition-all duration-200 ${
                             isSelected
                               ? 'border-reno-green bg-reno-green/5 shadow-sm'
-                              : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm'
+                              : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
                           }`}
                         >
                           <div className="flex items-start gap-3">
                             <div
                               className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors ${
-                                isSelected ? 'bg-reno-green text-white' : 'bg-gray-100 text-gray-500'
+                                isSelected ? 'bg-reno-green text-white' : 'bg-slate-100 text-slate-500'
                               }`}
                             >
                               <Icon className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-gray-900">{opt.label}</p>
-                              <p className="mt-0.5 text-sm text-gray-500">{opt.desc}</p>
+                              <p className="font-semibold text-slate-900">{opt.label}</p>
+                              <p className="mt-0.5 text-sm text-slate-500">{opt.desc}</p>
                               <p className="mt-2 text-xs font-semibold text-reno-green">{opt.range}</p>
                             </div>
                           </div>
@@ -410,7 +410,7 @@ export default function SavingsCalculatorPage() {
                     <Button
                       variant="outline"
                       onClick={() => setStep(1)}
-                      className="rounded-xl border-gray-200 px-6 py-3 text-sm font-medium text-gray-700"
+                      className="rounded-xl border-slate-200 px-6 py-3 text-sm font-medium text-slate-700"
                     >
                       <ArrowLeft className="mr-2 h-4 w-4" />
                       Back
@@ -439,7 +439,7 @@ export default function SavingsCalculatorPage() {
                   <h2 className="font-display text-2xl font-bold text-reno-dark md:text-3xl">
                     Your estimated budget
                   </h2>
-                  <p className="mt-2 text-gray-500">
+                  <p className="mt-2 text-slate-500">
                     Drag the slider or type an amount. Don&apos;t worry — you can adjust later.
                   </p>
 
@@ -460,15 +460,15 @@ export default function SavingsCalculatorPage() {
                         onChange={(e) => setBudget(Number(e.target.value))}
                         className="w-full accent-reno-green"
                       />
-                      <div className="mt-2 flex justify-between text-xs text-gray-400">
+                      <div className="mt-2 flex justify-between text-xs text-slate-400">
                         <span>$20,000</span>
                         <span>$300,000</span>
                       </div>
                     </div>
 
                     {/* Hint */}
-                    <div className="mt-6 rounded-xl bg-gray-50 p-4">
-                      <p className="text-sm text-gray-600">
+                    <div className="mt-6 rounded-xl bg-slate-50 p-4">
+                      <p className="text-sm text-slate-600">
                         <strong>Typical ranges:</strong>{' '}
                         {selectedTypes.includes('adu') && 'Basement apartment: $60K-$140K. '}
                         {selectedTypes.includes('energy') && 'Energy retrofit: $15K-$50K. '}
@@ -482,7 +482,7 @@ export default function SavingsCalculatorPage() {
                     <Button
                       variant="outline"
                       onClick={() => setStep(2)}
-                      className="rounded-xl border-gray-200 px-6 py-3 text-sm font-medium text-gray-700"
+                      className="rounded-xl border-slate-200 px-6 py-3 text-sm font-medium text-slate-700"
                     >
                       <ArrowLeft className="mr-2 h-4 w-4" />
                       Back
@@ -511,7 +511,7 @@ export default function SavingsCalculatorPage() {
                     <Card className="rounded-xl border-reno-green/30 bg-reno-green/5 shadow-sm">
                       <CardContent className="p-5">
                         <Gift className="mb-2 h-5 w-5 text-reno-green" />
-                        <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                           Total Rebates
                         </p>
                         <p className="mt-1 text-2xl font-bold text-reno-green">
@@ -519,44 +519,44 @@ export default function SavingsCalculatorPage() {
                         </p>
                       </CardContent>
                     </Card>
-                    <Card className="rounded-xl border-gray-200 bg-white shadow-sm">
+                    <Card className="rounded-xl border-slate-200 bg-white shadow-sm">
                       <CardContent className="p-5">
                         <DollarSign className="mb-2 h-5 w-5 text-reno-teal" />
-                        <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                           Net Project Cost
                         </p>
-                        <p className="mt-1 text-2xl font-bold text-gray-900">
+                        <p className="mt-1 text-2xl font-bold text-slate-900">
                           <AnimatedCounter value={netCost} />
                         </p>
-                        <p className="mt-0.5 text-xs text-gray-400">
+                        <p className="mt-0.5 text-xs text-slate-400">
                           from ${budget.toLocaleString()} budget
                         </p>
                       </CardContent>
                     </Card>
                     {hasEnergy && (
-                      <Card className="rounded-xl border-gray-200 bg-white shadow-sm">
+                      <Card className="rounded-xl border-slate-200 bg-white shadow-sm">
                         <CardContent className="p-5">
                           <Zap className="mb-2 h-5 w-5 text-amber-500" />
-                          <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                             Energy Savings
                           </p>
-                          <p className="mt-1 text-2xl font-bold text-gray-900">
+                          <p className="mt-1 text-2xl font-bold text-slate-900">
                             <AnimatedCounter value={annualEnergySavings} />
-                            <span className="text-base font-normal text-gray-500">/yr</span>
+                            <span className="text-base font-normal text-slate-500">/yr</span>
                           </p>
                         </CardContent>
                       </Card>
                     )}
                     {hasAdu && (
-                      <Card className="rounded-xl border-gray-200 bg-white shadow-sm">
+                      <Card className="rounded-xl border-slate-200 bg-white shadow-sm">
                         <CardContent className="p-5">
                           <Home className="mb-2 h-5 w-5 text-reno-purple" />
-                          <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                             Rental Income
                           </p>
-                          <p className="mt-1 text-2xl font-bold text-gray-900">
+                          <p className="mt-1 text-2xl font-bold text-slate-900">
                             <AnimatedCounter value={monthlyRental} />
-                            <span className="text-base font-normal text-gray-500">/mo</span>
+                            <span className="text-base font-normal text-slate-500">/mo</span>
                           </p>
                         </CardContent>
                       </Card>
@@ -568,7 +568,7 @@ export default function SavingsCalculatorPage() {
                     <h2 className="font-display text-2xl font-bold text-reno-dark md:text-3xl">
                       Your Savings Stack — {cityName}
                     </h2>
-                    <p className="mt-2 text-gray-500">
+                    <p className="mt-2 text-slate-500">
                       {matchingPrograms.length} programs you may qualify for, totalling up to{' '}
                       <span className="font-bold text-reno-green">
                         ${totalSavings.toLocaleString()}
@@ -589,7 +589,7 @@ export default function SavingsCalculatorPage() {
                             >
                               {getLevelLabel(level)}
                             </Badge>
-                            <span className="text-sm text-gray-400">
+                            <span className="text-sm text-slate-400">
                               {levelPrograms.length} program{levelPrograms.length > 1 ? 's' : ''}
                             </span>
                           </div>
@@ -602,16 +602,16 @@ export default function SavingsCalculatorPage() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1, duration: 0.3 }}
                               >
-                                <Card className="rounded-xl border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md">
+                                <Card className="rounded-xl border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md">
                                   <CardContent className="p-5">
                                     <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                                       <div className="min-w-0 flex-1">
                                         <div className="flex items-center gap-2">
-                                          <h3 className="font-bold text-gray-900">
+                                          <h3 className="font-bold text-slate-900">
                                             {program.name}
                                           </h3>
                                           {program.status === 'upcoming' && (
-                                            <Badge className="rounded-full bg-blue-100 text-blue-700 border-transparent text-[10px] px-2 py-0.5">
+                                            <Badge className="rounded-full bg-primary-100 text-primary-700 border-transparent text-[10px] px-2 py-0.5">
                                               Coming Soon
                                             </Badge>
                                           )}
@@ -621,10 +621,10 @@ export default function SavingsCalculatorPage() {
                                             </Badge>
                                           )}
                                         </div>
-                                        <p className="mt-1 text-sm text-gray-500">
+                                        <p className="mt-1 text-sm text-slate-500">
                                           {program.adminBody}
                                         </p>
-                                        <p className="mt-2 text-sm text-gray-600 line-clamp-2">
+                                        <p className="mt-2 text-sm text-slate-600 line-clamp-2">
                                           {program.description}
                                         </p>
                                       </div>
@@ -661,7 +661,7 @@ export default function SavingsCalculatorPage() {
                         setShowResults(false);
                         setStep(1);
                       }}
-                      className="rounded-xl border-gray-200 px-6 py-3 text-sm font-medium text-gray-700"
+                      className="rounded-xl border-slate-200 px-6 py-3 text-sm font-medium text-slate-700"
                     >
                       <ArrowLeft className="mr-2 h-4 w-4" />
                       Start Over
@@ -681,14 +681,14 @@ export default function SavingsCalculatorPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="border-b border-gray-100 bg-gray-50 py-16 md:py-20">
+      <section className="border-b border-slate-100 bg-slate-50 py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
             <div className="text-center">
               <h2 className="font-display text-3xl font-bold tracking-tight text-reno-dark md:text-4xl">
                 Why Renovate with Incentives?
               </h2>
-              <p className="mx-auto mt-3 max-w-2xl text-gray-500">
+              <p className="mx-auto mt-3 max-w-2xl text-slate-500">
                 Most homeowners don&apos;t realize how much money is available. When you stack programs properly, the math changes completely.
               </p>
             </div>
@@ -720,8 +720,8 @@ export default function SavingsCalculatorPage() {
                   icon: Heart,
                   title: 'Better Health',
                   desc: 'Modern insulation, ventilation, and waterproofing eliminate mold, improve air quality, and create a healthier living environment.',
-                  color: 'text-rose-600',
-                  bg: 'bg-rose-100',
+                  color: 'text-reno-red-600',
+                  bg: 'bg-reno-red-100',
                 },
                 {
                   icon: Zap,
@@ -734,17 +734,17 @@ export default function SavingsCalculatorPage() {
                   icon: FileText,
                   title: 'HouseFax Record',
                   desc: 'Every improvement is documented in your permanent HouseFax record. Verified upgrades transfer to future buyers — increasing resale confidence.',
-                  color: 'text-blue-600',
-                  bg: 'bg-blue-100',
+                  color: 'text-primary-600',
+                  bg: 'bg-primary-100',
                 },
               ].map((item) => (
-                <Card key={item.title} className="rounded-xl border-gray-200 bg-white shadow-sm">
+                <Card key={item.title} className="rounded-xl border-slate-200 bg-white shadow-sm">
                   <CardContent className="p-6">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${item.bg}`}>
                       <item.icon className={`h-5 w-5 ${item.color}`} />
                     </div>
-                    <h3 className="mt-4 text-lg font-bold text-gray-900">{item.title}</h3>
-                    <p className="mt-2 text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                    <h3 className="mt-4 text-lg font-bold text-slate-900">{item.title}</h3>
+                    <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -754,13 +754,13 @@ export default function SavingsCalculatorPage() {
       </section>
 
       {/* City Directory */}
-      <section className="border-b border-gray-100 py-16 md:py-20">
+      <section className="border-b border-slate-100 py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
             <h2 className="font-display text-3xl font-bold tracking-tight text-reno-dark md:text-4xl">
               Browse by City
             </h2>
-            <p className="mt-3 text-gray-500">
+            <p className="mt-3 text-slate-500">
               Detailed rebate directories for every major GTA city.
             </p>
 
@@ -769,19 +769,19 @@ export default function SavingsCalculatorPage() {
                 const programCount = getProgramsByCity(city.slug).length;
                 return (
                   <Link key={city.slug} href={`/savings/${city.slug}`}>
-                    <Card className="h-full rounded-xl border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-green/30">
+                    <Card className="h-full rounded-xl border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md hover:border-reno-green/30">
                       <CardContent className="p-5">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <MapPin className="h-4 w-4 text-reno-green" />
-                            <h3 className="font-bold text-gray-900">{city.city}</h3>
+                            <h3 className="font-bold text-slate-900">{city.city}</h3>
                           </div>
                           <Badge className="rounded-full bg-reno-green/10 text-reno-green border-transparent text-xs px-2 py-0.5">
                             {programCount} programs
                           </Badge>
                         </div>
-                        <p className="mt-1 text-xs text-gray-500">{city.region} Region</p>
-                        <p className="mt-2 text-sm text-gray-600 line-clamp-2">{city.highlights[0]}</p>
+                        <p className="mt-1 text-xs text-slate-500">{city.region} Region</p>
+                        <p className="mt-2 text-sm text-slate-600 line-clamp-2">{city.highlights[0]}</p>
                         <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-reno-green">
                           View all rebates
                           <ArrowRight className="h-3 w-3" />
@@ -802,7 +802,7 @@ export default function SavingsCalculatorPage() {
           <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
             Ready to put these savings to work?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-gray-400">
+          <p className="mx-auto mt-4 max-w-xl text-slate-400">
             Start your project with RenoNext. Escrow-protected payments, verified pros, and every
             improvement documented in your HouseFax record.
           </p>
@@ -819,7 +819,7 @@ export default function SavingsCalculatorPage() {
             <Button
               asChild
               variant="outline"
-              className="rounded-xl border-gray-600 px-8 py-3 text-base font-semibold text-white hover:bg-white/10"
+              className="rounded-xl border-slate-600 px-8 py-3 text-base font-semibold text-white hover:bg-white/10"
             >
               <Link href="/price-check">Get a Price Check</Link>
             </Button>

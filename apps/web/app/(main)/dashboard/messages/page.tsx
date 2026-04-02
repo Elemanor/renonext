@@ -111,19 +111,19 @@ export default function MessagesPage() {
   };
 
   return (
-    <Card className="flex h-[calc(100vh-12rem)] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+    <Card className="flex h-[calc(100vh-12rem)] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
       {/* Conversation List */}
-      <div className="w-80 shrink-0 border-r border-gray-200">
-        <div className="border-b border-gray-100 p-4">
-          <h2 className="mb-3 text-lg font-bold text-gray-900">Messages</h2>
+      <div className="w-80 shrink-0 border-r border-slate-200">
+        <div className="border-b border-slate-100 p-4">
+          <h2 className="mb-3 text-lg font-bold text-slate-900">Messages</h2>
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <Input
               type="text"
               placeholder="Search conversations..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-gray-200 bg-gray-50 py-2.5 pl-10 pr-4 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:bg-white"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-4 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:bg-white"
             />
           </div>
         </div>
@@ -133,10 +133,10 @@ export default function MessagesPage() {
             <button
               key={conv.id}
               onClick={() => setSelectedConversation(conv.id)}
-              className={`flex w-full items-start gap-3 border-b border-gray-100 px-4 py-3.5 text-left transition-all duration-200 ${
+              className={`flex w-full items-start gap-3 border-b border-slate-100 px-4 py-3.5 text-left transition-all duration-200 ${
                 selectedConversation === conv.id
                   ? 'bg-reno-green-light/70'
-                  : 'hover:bg-gray-50'
+                  : 'hover:bg-slate-50'
               }`}
             >
               <div className="relative shrink-0">
@@ -155,17 +155,17 @@ export default function MessagesPage() {
                   </AvatarFallback>
                 </Avatar>
                 {conv.isOnline && (
-                  <div className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-white bg-green-500" />
+                  <div className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-white bg-reno-green-500" />
                 )}
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-gray-900">
+                  <span className="text-sm font-semibold text-slate-900">
                     {conv.name}
                   </span>
-                  <span className="text-[10px] text-gray-400">{conv.time}</span>
+                  <span className="text-[10px] text-slate-400">{conv.time}</span>
                 </div>
-                <p className="mt-0.5 truncate text-xs text-gray-500">
+                <p className="mt-0.5 truncate text-xs text-slate-500">
                   {conv.lastMessage}
                 </p>
               </div>
@@ -184,7 +184,7 @@ export default function MessagesPage() {
         {currentConversation ? (
           <>
             {/* Chat Header */}
-            <div className="flex items-center justify-between border-b border-gray-100 px-6 py-3.5">
+            <div className="flex items-center justify-between border-b border-slate-100 px-6 py-3.5">
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <Avatar className="h-9 w-9">
@@ -194,40 +194,40 @@ export default function MessagesPage() {
                     </AvatarFallback>
                   </Avatar>
                   {currentConversation.isOnline && (
-                    <div className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-green-500" />
+                    <div className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-reno-green-500" />
                   )}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-900">
+                  <p className="text-sm font-semibold text-slate-900">
                     {currentConversation.name}
                   </p>
                   <div className="flex items-center gap-1.5">
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-slate-500">
                       {currentConversation.isOnline ? (
-                        <span className="text-green-600">Online</span>
+                        <span className="text-reno-green-600">Online</span>
                       ) : (
                         'Offline'
                       )}
                     </p>
                     {currentConversation.isOnline && (
-                      <span className="flex items-center gap-0.5 text-[10px] text-gray-400">
-                        <span className="inline-block h-1 w-1 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: '0ms' }} />
-                        <span className="inline-block h-1 w-1 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: '150ms' }} />
-                        <span className="inline-block h-1 w-1 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: '300ms' }} />
-                        <span className="ml-1 text-gray-400">typing</span>
+                      <span className="flex items-center gap-0.5 text-[10px] text-slate-400">
+                        <span className="inline-block h-1 w-1 animate-bounce rounded-full bg-slate-400" style={{ animationDelay: '0ms' }} />
+                        <span className="inline-block h-1 w-1 animate-bounce rounded-full bg-slate-400" style={{ animationDelay: '150ms' }} />
+                        <span className="inline-block h-1 w-1 animate-bounce rounded-full bg-slate-400" style={{ animationDelay: '300ms' }} />
+                        <span className="ml-1 text-slate-400">typing</span>
                       </span>
                     )}
                   </div>
                 </div>
               </div>
               <div className="flex items-center gap-1">
-                <Button variant="ghost" size="icon" className="rounded-xl text-gray-400 transition-all duration-200 hover:bg-gray-100 hover:text-gray-600">
+                <Button variant="ghost" size="icon" className="rounded-xl text-slate-400 transition-all duration-200 hover:bg-slate-100 hover:text-slate-600">
                   <Phone className="h-4 w-4" />
                 </Button>
-                <Button variant="ghost" size="icon" className="rounded-xl text-gray-400 transition-all duration-200 hover:bg-gray-100 hover:text-gray-600">
+                <Button variant="ghost" size="icon" className="rounded-xl text-slate-400 transition-all duration-200 hover:bg-slate-100 hover:text-slate-600">
                   <Video className="h-4 w-4" />
                 </Button>
-                <Button variant="ghost" size="icon" className="rounded-xl text-gray-400 transition-all duration-200 hover:bg-gray-100 hover:text-gray-600">
+                <Button variant="ghost" size="icon" className="rounded-xl text-slate-400 transition-all duration-200 hover:bg-slate-100 hover:text-slate-600">
                   <MoreVertical className="h-4 w-4" />
                 </Button>
               </div>
@@ -245,13 +245,13 @@ export default function MessagesPage() {
                       className={`max-w-[70%] rounded-2xl px-4 py-3 ${
                         msg.isMe
                           ? 'bg-reno-green-dark text-white'
-                          : 'bg-gray-100 text-gray-900'
+                          : 'bg-slate-100 text-slate-900'
                       }`}
                     >
                       <p className="text-sm leading-relaxed">{msg.content}</p>
                       <p
                         className={`mt-1.5 text-right text-[10px] ${
-                          msg.isMe ? 'text-reno-green-light' : 'text-gray-400'
+                          msg.isMe ? 'text-reno-green-light' : 'text-slate-400'
                         }`}
                       >
                         {msg.timestamp}
@@ -267,10 +267,10 @@ export default function MessagesPage() {
             {/* Message Input */}
             <div className="p-4">
               <div className="flex items-center gap-2">
-                <Button variant="ghost" size="icon" className="rounded-xl text-gray-400 transition-all duration-200 hover:bg-gray-100 hover:text-gray-600">
+                <Button variant="ghost" size="icon" className="rounded-xl text-slate-400 transition-all duration-200 hover:bg-slate-100 hover:text-slate-600">
                   <Paperclip className="h-5 w-5" />
                 </Button>
-                <Button variant="ghost" size="icon" className="rounded-xl text-gray-400 transition-all duration-200 hover:bg-gray-100 hover:text-gray-600">
+                <Button variant="ghost" size="icon" className="rounded-xl text-slate-400 transition-all duration-200 hover:bg-slate-100 hover:text-slate-600">
                   <Smile className="h-5 w-5" />
                 </Button>
                 <Input
@@ -279,7 +279,7 @@ export default function MessagesPage() {
                   onChange={(e) => setMessageInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                   placeholder="Type a message..."
-                  className="flex-1 rounded-full border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:bg-white focus:ring-2 focus:ring-reno-green-light"
+                  className="flex-1 rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:border-reno-green focus:bg-white focus:ring-2 focus:ring-reno-green-light"
                 />
                 <Button
                   size="icon"
@@ -293,7 +293,7 @@ export default function MessagesPage() {
             </div>
           </>
         ) : (
-          <div className="flex flex-1 flex-col items-center justify-center gap-3 text-gray-400">
+          <div className="flex flex-1 flex-col items-center justify-center gap-3 text-slate-400">
             <MessageSquare className="h-10 w-10" />
             <p className="text-sm">Select a conversation to start messaging</p>
           </div>

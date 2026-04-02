@@ -105,13 +105,13 @@ export default function AdminManagedDashboardPage() {
             <div className="text-sm font-medium text-slate-600">
               Pending Review
             </div>
-            <div className="mt-2 text-3xl font-bold text-blue-600">
+            <div className="mt-2 text-3xl font-bold text-primary-600">
               {stats.pendingReview}
             </div>
           </Card>
           <Card className="p-6">
             <div className="text-sm font-medium text-slate-600">Active</div>
-            <div className="mt-2 text-3xl font-bold text-green-600">
+            <div className="mt-2 text-3xl font-bold text-reno-green-600">
               {stats.active}
             </div>
           </Card>

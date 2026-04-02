@@ -22,13 +22,13 @@ export default function AdminSEOPage() {
         <div className="flex items-start gap-4">
           <GradientIcon
             icon={Search}
-            gradient="from-violet-500 to-violet-700"
+            gradient="from-reno-purple-500 to-reno-purple-700"
             size="md"
             glow
           />
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">SEO Autopilot</h1>
-            <p className="text-gray-500 mt-1">
+            <h1 className="text-2xl font-bold text-slate-900">SEO Autopilot</h1>
+            <p className="text-slate-500 mt-1">
               Audit pages, generate AI content, track performance, and manage experiments.
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function AdminSEOPage() {
 
       <ScrollReveal delay={0.1}>
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full justify-start bg-gray-100/80 rounded-xl p-1 h-auto flex-wrap">
+          <TabsList className="w-full justify-start bg-slate-100/80 rounded-xl p-1 h-auto flex-wrap">
             <TabsTrigger value="overview" className="rounded-lg text-sm px-4 py-2">Overview</TabsTrigger>
             <TabsTrigger value="audit" className="rounded-lg text-sm px-4 py-2">Audit</TabsTrigger>
             <TabsTrigger value="generate" className="rounded-lg text-sm px-4 py-2">Generate</TabsTrigger>

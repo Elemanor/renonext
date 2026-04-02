@@ -129,15 +129,15 @@ export function ChatPanel({ variant = 'light', fullPage = false }: ChatPanelProp
         {isEmpty ? (
           <div className="flex h-full flex-col items-center justify-center gap-6 py-8">
             <div className={`flex h-14 w-14 items-center justify-center rounded-2xl ${
-              isDark ? 'bg-emerald-500/10' : 'bg-emerald-50'
+              isDark ? 'bg-reno-green-500/10' : 'bg-reno-green-50'
             }`}>
-              <Bot className={`h-7 w-7 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`} />
+              <Bot className={`h-7 w-7 ${isDark ? 'text-reno-green-400' : 'text-reno-green-600'}`} />
             </div>
             <div className="text-center">
-              <h3 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>
                 Virtual GC
               </h3>
-              <p className={`mt-1 text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
+              <p className={`mt-1 text-sm ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                 Your AI construction advisor. Ask about costs, permits, contracts, or anything renovation.
               </p>
             </div>
@@ -150,11 +150,11 @@ export function ChatPanel({ variant = 'light', fullPage = false }: ChatPanelProp
                   onClick={() => handleQuickAction(action.prompt)}
                   className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-left text-xs font-medium transition-colors ${
                     isDark
-                      ? 'border-white/10 text-gray-300 hover:bg-white/[0.06]'
-                      : 'border-gray-200 text-gray-600 hover:bg-gray-50'
+                      ? 'border-white/10 text-slate-300 hover:bg-white/[0.06]'
+                      : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                   }`}
                 >
-                  <action.icon className={`h-4 w-4 shrink-0 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`} />
+                  <action.icon className={`h-4 w-4 shrink-0 ${isDark ? 'text-reno-green-400' : 'text-reno-green-600'}`} />
                   {action.label}
                 </button>
               ))}
@@ -164,7 +164,7 @@ export function ChatPanel({ variant = 'light', fullPage = false }: ChatPanelProp
               <button
                 onClick={() => setShowUpload(!showUpload)}
                 className={`flex items-center gap-1.5 text-xs ${
-                  isDark ? 'text-gray-500 hover:text-gray-300' : 'text-gray-400 hover:text-gray-600'
+                  isDark ? 'text-slate-500 hover:text-slate-300' : 'text-slate-400 hover:text-slate-600'
                 }`}
               >
                 <Sparkles className="h-3.5 w-3.5" />
@@ -202,12 +202,12 @@ export function ChatPanel({ variant = 'light', fullPage = false }: ChatPanelProp
                   <Bot className={`h-4 w-4 ${isDark ? 'text-white' : 'text-reno-green'}`} />
                 </div>
                 <div className={`rounded-2xl rounded-tl-md px-4 py-3 ${
-                  isDark ? 'bg-white/[0.06]' : 'bg-gray-100'
+                  isDark ? 'bg-white/[0.06]' : 'bg-slate-100'
                 }`}>
                   <div className="flex gap-1">
-                    <span className={`h-2 w-2 animate-bounce rounded-full ${isDark ? 'bg-gray-500' : 'bg-gray-400'}`} style={{ animationDelay: '0ms' }} />
-                    <span className={`h-2 w-2 animate-bounce rounded-full ${isDark ? 'bg-gray-500' : 'bg-gray-400'}`} style={{ animationDelay: '150ms' }} />
-                    <span className={`h-2 w-2 animate-bounce rounded-full ${isDark ? 'bg-gray-500' : 'bg-gray-400'}`} style={{ animationDelay: '300ms' }} />
+                    <span className={`h-2 w-2 animate-bounce rounded-full ${isDark ? 'bg-slate-500' : 'bg-slate-400'}`} style={{ animationDelay: '0ms' }} />
+                    <span className={`h-2 w-2 animate-bounce rounded-full ${isDark ? 'bg-slate-500' : 'bg-slate-400'}`} style={{ animationDelay: '150ms' }} />
+                    <span className={`h-2 w-2 animate-bounce rounded-full ${isDark ? 'bg-slate-500' : 'bg-slate-400'}`} style={{ animationDelay: '300ms' }} />
                   </div>
                 </div>
               </div>
@@ -218,7 +218,7 @@ export function ChatPanel({ variant = 'light', fullPage = false }: ChatPanelProp
 
       {/* Input area */}
       <div className={`shrink-0 border-t px-4 py-3 ${
-        isDark ? 'border-white/[0.06]' : 'border-gray-100'
+        isDark ? 'border-white/[0.06]' : 'border-slate-100'
       }`}>
         <div className="mx-auto max-w-2xl">
           <ChatInput
@@ -231,7 +231,7 @@ export function ChatPanel({ variant = 'light', fullPage = false }: ChatPanelProp
             variant={variant}
           />
         </div>
-        <p className={`mt-2 text-center text-[10px] ${isDark ? 'text-gray-600' : 'text-gray-400'}`}>
+        <p className={`mt-2 text-center text-[10px] ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>
           Virtual GC can make mistakes. Verify important information with a licensed professional.
         </p>
       </div>

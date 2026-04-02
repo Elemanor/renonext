@@ -52,7 +52,7 @@ export function DocumentUpload({ documents, onUpload, onDelete, variant = 'light
       case 'processing':
         return <Loader2 className="h-4 w-4 animate-spin text-amber-400" />;
       case 'ready':
-        return <CheckCircle2 className="h-4 w-4 text-emerald-400" />;
+        return <CheckCircle2 className="h-4 w-4 text-reno-green-400" />;
       case 'failed':
         return <XCircle className="h-4 w-4 text-red-400" />;
       default:
@@ -70,21 +70,21 @@ export function DocumentUpload({ documents, onUpload, onDelete, variant = 'light
         onClick={() => fileInputRef.current?.click()}
         className={`flex cursor-pointer flex-col items-center gap-2 rounded-xl border-2 border-dashed p-6 transition-colors ${
           isDragging
-            ? 'border-emerald-500 bg-emerald-500/10'
+            ? 'border-reno-green-500 bg-reno-green-500/10'
             : isDark
               ? 'border-white/10 hover:border-white/20 hover:bg-white/[0.03]'
-              : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+              : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'
         }`}
       >
         {uploading ? (
-          <Loader2 className="h-8 w-8 animate-spin text-emerald-500" />
+          <Loader2 className="h-8 w-8 animate-spin text-reno-green-500" />
         ) : (
-          <Upload className={`h-8 w-8 ${isDark ? 'text-gray-500' : 'text-gray-400'}`} />
+          <Upload className={`h-8 w-8 ${isDark ? 'text-slate-500' : 'text-slate-400'}`} />
         )}
-        <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
+        <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
           {uploading ? 'Processing...' : 'Drop a PDF here or click to upload'}
         </p>
-        <p className={`text-xs ${isDark ? 'text-gray-600' : 'text-gray-400'}`}>
+        <p className={`text-xs ${isDark ? 'text-slate-600' : 'text-slate-400'}`}>
           Max 10MB per file
         </p>
         <input
@@ -107,16 +107,16 @@ export function DocumentUpload({ documents, onUpload, onDelete, variant = 'light
             <div
               key={doc.id}
               className={`flex items-center gap-3 rounded-lg px-3 py-2 ${
-                isDark ? 'bg-white/[0.04]' : 'bg-gray-50'
+                isDark ? 'bg-white/[0.04]' : 'bg-slate-50'
               }`}
             >
-              <FileText className={`h-4 w-4 shrink-0 ${isDark ? 'text-gray-500' : 'text-gray-400'}`} />
+              <FileText className={`h-4 w-4 shrink-0 ${isDark ? 'text-slate-500' : 'text-slate-400'}`} />
               <div className="min-w-0 flex-1">
-                <p className={`truncate text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p className={`truncate text-sm ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
                   {doc.filename}
                 </p>
                 {doc.status === 'ready' && doc.chunk_count && (
-                  <p className="text-xs text-gray-500">{doc.chunk_count} chunks indexed</p>
+                  <p className="text-xs text-slate-500">{doc.chunk_count} chunks indexed</p>
                 )}
                 {doc.status === 'failed' && doc.error_message && (
                   <p className="text-xs text-red-400">{doc.error_message}</p>
@@ -125,7 +125,7 @@ export function DocumentUpload({ documents, onUpload, onDelete, variant = 'light
               {statusIcon(doc.status)}
               <button
                 onClick={(e) => { e.stopPropagation(); onDelete(doc.id); }}
-                className="shrink-0 rounded p-1 text-gray-500 transition-colors hover:bg-red-500/10 hover:text-red-400"
+                className="shrink-0 rounded p-1 text-slate-500 transition-colors hover:bg-red-500/10 hover:text-red-400"
               >
                 <Trash2 className="h-3.5 w-3.5" />
               </button>

@@ -13,13 +13,13 @@ const steps = [
     icon: CalendarCheck,
     title: 'Permits & Scheduling',
     description: 'Your contractor handles all permits and schedules the crew and inspections.',
-    color: 'bg-violet-500',
+    color: 'bg-reno-purple-500',
   },
   {
     icon: HardHat,
     title: 'Work Begins',
     description: 'Get daily updates with photos. Payments release only as milestones are completed.',
-    color: 'bg-emerald-500',
+    color: 'bg-reno-green-500',
   },
 ];
 

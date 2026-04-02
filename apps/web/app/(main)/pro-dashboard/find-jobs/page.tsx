@@ -96,7 +96,7 @@ const mockNearbyJobs: DisplayJob[] = [
 const intensityColors = {
   high: 'bg-red-100 text-red-700 border-red-200',
   medium: 'bg-amber-100 text-amber-700 border-amber-200',
-  low: 'bg-green-100 text-green-700 border-green-200',
+  low: 'bg-reno-green-100 text-reno-green-700 border-reno-green-200',
 };
 
 function timeAgo(dateStr: string): string {
@@ -176,12 +176,12 @@ export default function FindJobsPage() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900">
           Find Jobs
         </h1>
         <Button
           variant="outline"
-          className="rounded-xl border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 h-auto"
+          className="rounded-xl border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 h-auto"
         >
           <Filter className="mr-1.5 h-4 w-4" />
           Filters
@@ -189,8 +189,8 @@ export default function FindJobsPage() {
       </div>
 
       {/* Map Placeholder / Heatmap */}
-      <Card className="mb-6 overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-        <div className="relative h-48 bg-gradient-to-br from-blue-50 via-blue-100 to-sky-50">
+      <Card className="mb-6 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+        <div className="relative h-48 bg-gradient-to-br from-primary-50 via-primary-100 to-sky-50">
           {/* Mock map with heatmap zones */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="grid grid-cols-3 gap-3 p-4">
@@ -206,15 +206,15 @@ export default function FindJobsPage() {
             </div>
           </div>
           <div className="absolute bottom-3 left-3">
-            <Badge className="rounded-full border-transparent bg-white/90 px-3 py-1 text-xs font-semibold text-gray-700 shadow-sm backdrop-blur-sm">
+            <Badge className="rounded-full border-transparent bg-white/90 px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm backdrop-blur-sm">
               <MapPin className="mr-1 h-3 w-3 text-reno-green-dark" />
               Showing jobs within 15 km
             </Badge>
           </div>
         </div>
 
-        <div className="flex items-center justify-between border-t border-gray-100 bg-gray-50 px-4 py-2.5">
-          <span className="text-xs font-medium text-gray-500">
+        <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50 px-4 py-2.5">
+          <span className="text-xs font-medium text-slate-500">
             {jobs.length} jobs available near you
           </span>
           <div className="flex items-center gap-3 text-[10px]">
@@ -227,7 +227,7 @@ export default function FindJobsPage() {
               Medium
             </span>
             <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-green-400" />
+              <span className="h-2 w-2 rounded-full bg-reno-green-400" />
               Low
             </span>
           </div>
@@ -239,13 +239,13 @@ export default function FindJobsPage() {
         {jobs.map((job) => (
           <Card
             key={job.id}
-            className="rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+            className="rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
           >
             <CardContent className="p-5">
               <div className="mb-2 flex items-start justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-gray-900">{job.title}</h3>
+                    <h3 className="font-semibold text-slate-900">{job.title}</h3>
                     {job.isUrgent && (
                       <Badge
                         variant="destructive"
@@ -256,36 +256,36 @@ export default function FindJobsPage() {
                       </Badge>
                     )}
                   </div>
-                  <span className="text-xs text-gray-500">{job.category}</span>
+                  <span className="text-xs text-slate-500">{job.category}</span>
                 </div>
-                <span className="text-xs text-gray-400">{job.postedAgo}</span>
+                <span className="text-xs text-slate-400">{job.postedAgo}</span>
               </div>
 
-              <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-gray-500">
+              <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="flex items-center gap-1">
                   <MapPin className="h-4 w-4" />
                   {job.city}
                   {job.distance !== '--' && (
-                    <Badge className="ml-1 rounded-full border-transparent bg-blue-50 px-1.5 py-0 text-[10px] font-semibold text-blue-700">
+                    <Badge className="ml-1 rounded-full border-transparent bg-primary-50 px-1.5 py-0 text-[10px] font-semibold text-primary-700">
                       {job.distance}
                     </Badge>
                   )}
                 </span>
                 {job.budgetMin && job.budgetMax && (
-                  <span className="flex items-center gap-1 font-semibold text-gray-900">
-                    <DollarSign className="h-4 w-4 text-gray-400" />$
+                  <span className="flex items-center gap-1 font-semibold text-slate-900">
+                    <DollarSign className="h-4 w-4 text-slate-400" />$
                     {job.budgetMin} - ${job.budgetMax}
                   </span>
                 )}
                 {!job.budgetMin && !job.budgetMax && (
                   <span className="flex items-center gap-1">
-                    <DollarSign className="h-4 w-4 text-gray-400" />
+                    <DollarSign className="h-4 w-4 text-slate-400" />
                     Open budget
                   </span>
                 )}
               </div>
 
-              <div className="flex gap-2 border-t border-gray-100 pt-3">
+              <div className="flex gap-2 border-t border-slate-100 pt-3">
                 <Button
                   onClick={() => handleBid(job.id)}
                   disabled={bidding === job.id}
@@ -297,7 +297,7 @@ export default function FindJobsPage() {
                 <Button
                   asChild
                   variant="outline"
-                  className="rounded-xl border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 h-auto"
+                  className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50 h-auto"
                 >
                   <Link href={`/pro-dashboard/find-jobs/${job.id}`}>
                     <Eye className="mr-1 h-4 w-4" />

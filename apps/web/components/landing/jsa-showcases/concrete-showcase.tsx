@@ -26,7 +26,7 @@ export function ConcreteShowcase() {
       status: 'transit',
       statusLabel: '🚛 In Transit',
       details: 'ETA: 12 minutes',
-      color: 'bg-blue-50 text-blue-700 border-blue-200',
+      color: 'bg-primary-50 text-primary-700 border-primary-200',
     },
     {
       time: '2:00 PM',
@@ -37,36 +37,36 @@ export function ConcreteShowcase() {
       status: 'scheduled',
       statusLabel: '⏳ Scheduled',
       details: 'Supplier confirmed',
-      color: 'bg-gray-100 text-gray-700 border-gray-300',
+      color: 'bg-slate-100 text-slate-700 border-slate-300',
     },
   ];
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
       {/* Header */}
       <div className="bg-reno-dark text-white px-6 py-4">
         <div className="flex items-center gap-2 mb-1">
           <Truck className="w-5 h-5" />
           <h3 className="font-semibold text-lg">Concrete Schedule</h3>
         </div>
-        <p className="text-sm text-gray-400">Thursday, February 27, 2026</p>
+        <p className="text-sm text-slate-400">Thursday, February 27, 2026</p>
       </div>
 
-      <div className="p-6 space-y-6 bg-gray-50">
+      <div className="p-6 space-y-6 bg-slate-50">
         {/* Summary */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <div className="bg-primary-50 border border-primary-200 rounded-lg p-4">
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold text-blue-900">3</div>
-              <div className="text-xs text-blue-700 font-medium">Deliveries</div>
+              <div className="text-2xl font-bold text-primary-900">3</div>
+              <div className="text-xs text-primary-700 font-medium">Deliveries</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-blue-900">85m³</div>
-              <div className="text-xs text-blue-700 font-medium">Total Volume</div>
+              <div className="text-2xl font-bold text-primary-900">85m³</div>
+              <div className="text-xs text-primary-700 font-medium">Total Volume</div>
             </div>
             <div>
-              <div className="text-xs text-blue-900 font-semibold mt-1">Dufferin Concrete</div>
-              <div className="text-xs text-blue-700">Supplier</div>
+              <div className="text-xs text-primary-900 font-semibold mt-1">Dufferin Concrete</div>
+              <div className="text-xs text-primary-700">Supplier</div>
             </div>
           </div>
         </div>
@@ -74,11 +74,11 @@ export function ConcreteShowcase() {
         {/* Timeline */}
         <div className="space-y-4 relative">
           {/* Vertical line */}
-          <div className="absolute left-5 top-6 bottom-6 w-0.5 bg-gray-300" />
+          <div className="absolute left-5 top-6 bottom-6 w-0.5 bg-slate-300" />
 
           {deliveries.map((delivery, idx) => (
             <div key={idx} className="relative">
-              <Card className="p-4 bg-white border-gray-200 ml-12">
+              <Card className="p-4 bg-white border-slate-200 ml-12">
                 {/* Time marker */}
                 <div className="absolute left-0 -ml-12 top-4 w-10 h-10 rounded-full bg-reno-dark flex items-center justify-center text-white font-semibold text-xs z-10">
                   {delivery.time.split(' ')[0]}
@@ -87,8 +87,8 @@ export function ConcreteShowcase() {
                 <div className="space-y-3">
                   <div className="flex items-start justify-between">
                     <div>
-                      <div className="font-semibold text-gray-900 text-sm">{delivery.truck}</div>
-                      <div className="text-xs text-gray-600 mt-0.5">
+                      <div className="font-semibold text-slate-900 text-sm">{delivery.truck}</div>
+                      <div className="text-xs text-slate-600 mt-0.5">
                         {delivery.volume} • {delivery.strength}
                       </div>
                     </div>
@@ -97,11 +97,11 @@ export function ConcreteShowcase() {
                     </Badge>
                   </div>
 
-                  <div className="bg-gray-50 rounded-lg p-2.5 border border-gray-200">
-                    <div className="text-xs font-medium text-gray-700 mb-1">
+                  <div className="bg-slate-50 rounded-lg p-2.5 border border-slate-200">
+                    <div className="text-xs font-medium text-slate-700 mb-1">
                       Area: {delivery.area}
                     </div>
-                    <div className="text-xs text-gray-600">{delivery.details}</div>
+                    <div className="text-xs text-slate-600">{delivery.details}</div>
                   </div>
                 </div>
               </Card>

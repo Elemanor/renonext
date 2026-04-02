@@ -42,9 +42,9 @@ interface Recommendation {
 }
 
 const statusColors: Record<string, string> = {
-  draft: 'bg-gray-100 text-gray-700 border-gray-200',
-  approved: 'bg-emerald-100 text-emerald-700 border-emerald-200',
-  applied: 'bg-blue-100 text-blue-700 border-blue-200',
+  draft: 'bg-slate-100 text-slate-700 border-slate-200',
+  approved: 'bg-reno-green-100 text-reno-green-700 border-reno-green-200',
+  applied: 'bg-primary-100 text-primary-700 border-primary-200',
   dismissed: 'bg-red-100 text-red-700 border-red-200',
 };
 
@@ -96,7 +96,7 @@ export function RecommendationsTab() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <Loader2 className="h-8 w-8 animate-spin text-gray-400" />
+        <Loader2 className="h-8 w-8 animate-spin text-slate-400" />
       </div>
     );
   }
@@ -105,7 +105,7 @@ export function RecommendationsTab() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <Select value={statusFilter} onValueChange={setStatusFilter}>
-          <SelectTrigger className="w-40 h-9 rounded-lg border-gray-200">
+          <SelectTrigger className="w-40 h-9 rounded-lg border-slate-200">
             <SelectValue placeholder="All statuses" />
           </SelectTrigger>
           <SelectContent>
@@ -116,13 +116,13 @@ export function RecommendationsTab() {
             <SelectItem value="dismissed">Dismissed</SelectItem>
           </SelectContent>
         </Select>
-        <span className="text-sm text-gray-500">{recs.length} recommendations</span>
+        <span className="text-sm text-slate-500">{recs.length} recommendations</span>
       </div>
 
-      <Card className="border-gray-200/60 shadow-sm overflow-hidden">
+      <Card className="border-slate-200/60 shadow-sm overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow className="bg-gray-50/60">
+            <TableRow className="bg-slate-50/60">
               <TableHead>Status</TableHead>
               <TableHead>Type</TableHead>
               <TableHead>URL</TableHead>
@@ -134,7 +134,7 @@ export function RecommendationsTab() {
           <TableBody>
             {recs.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center py-10 text-gray-500">
+                <TableCell colSpan={6} className="text-center py-10 text-slate-500">
                   No recommendations yet. Use the Generate tab to create content.
                 </TableCell>
               </TableRow>
@@ -146,16 +146,16 @@ export function RecommendationsTab() {
                       {rec.status}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-sm text-gray-700">
+                  <TableCell className="text-sm text-slate-700">
                     {rec.recommendation_type.replace(/_/g, ' ')}
                   </TableCell>
-                  <TableCell className="font-mono text-xs text-gray-600 max-w-[200px] truncate">
+                  <TableCell className="font-mono text-xs text-slate-600 max-w-[200px] truncate">
                     {rec.url.replace('https://renonext.com', '') || '/'}
                   </TableCell>
-                  <TableCell className="hidden md:table-cell text-xs text-gray-500">
+                  <TableCell className="hidden md:table-cell text-xs text-slate-500">
                     {new Date(rec.created_at).toLocaleDateString('en-CA', { month: 'short', day: 'numeric' })}
                   </TableCell>
-                  <TableCell className="hidden lg:table-cell text-xs text-gray-500">
+                  <TableCell className="hidden lg:table-cell text-xs text-slate-500">
                     {rec.tokens_used?.toLocaleString() || '—'}
                   </TableCell>
                   <TableCell className="text-right">
@@ -173,7 +173,7 @@ export function RecommendationsTab() {
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="h-7 text-xs rounded-lg text-emerald-600 hover:text-emerald-700"
+                            className="h-7 text-xs rounded-lg text-reno-green-600 hover:text-reno-green-700"
                             disabled={acting === rec.id}
                             onClick={() => handleAction(rec.id, 'approved')}
                           >
@@ -196,7 +196,7 @@ export function RecommendationsTab() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="h-7 text-xs rounded-lg text-blue-600 hover:text-blue-700"
+                          className="h-7 text-xs rounded-lg text-primary-600 hover:text-primary-700"
                           disabled={acting === rec.id}
                           onClick={() => handleAction(rec.id, 'applied')}
                         >
@@ -221,19 +221,19 @@ export function RecommendationsTab() {
           {previewRec && (
             <div className="space-y-4">
               <div>
-                <h4 className="text-xs font-medium text-gray-500 uppercase mb-1">Input</h4>
-                <pre className="bg-gray-50 rounded-lg p-3 text-xs text-gray-600 overflow-x-auto whitespace-pre-wrap">
+                <h4 className="text-xs font-medium text-slate-500 uppercase mb-1">Input</h4>
+                <pre className="bg-slate-50 rounded-lg p-3 text-xs text-slate-600 overflow-x-auto whitespace-pre-wrap">
                   {JSON.stringify(previewRec.input_snapshot, null, 2)}
                 </pre>
               </div>
               <div>
-                <h4 className="text-xs font-medium text-gray-500 uppercase mb-1">AI Output</h4>
-                <pre className="bg-emerald-50 rounded-lg p-3 text-xs text-emerald-800 overflow-x-auto whitespace-pre-wrap">
+                <h4 className="text-xs font-medium text-slate-500 uppercase mb-1">AI Output</h4>
+                <pre className="bg-reno-green-50 rounded-lg p-3 text-xs text-reno-green-800 overflow-x-auto whitespace-pre-wrap">
                   {JSON.stringify(previewRec.output_json, null, 2)}
                 </pre>
               </div>
               {previewRec.applied_at && (
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-slate-500">
                   Applied at: {new Date(previewRec.applied_at).toLocaleString()}
                 </p>
               )}

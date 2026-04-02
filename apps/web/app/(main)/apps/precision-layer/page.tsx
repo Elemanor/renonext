@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: 'Precision Layer — Blueprint Drawing Reader & Markup Platform | RenoNext',
   description:
     'View, annotate, and manage construction blueprints with pixel-perfect rendering, real-time markup tools, layer toggles, and team collaboration — all in one platform.',
+  alternates: {
+    canonical: '/apps/precision-layer',
+  },
 };
 
 export default function PrecisionLayerPage() {
@@ -22,7 +25,7 @@ export default function PrecisionLayerPage() {
       {/* ═══════════════════════════════════════════════════════════════
           Section 1 — Hero (dark)
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#102122] pt-28 pb-20 md:pt-36 md:pb-28 px-6 overflow-hidden">
+      <section className="relative bg-reno-dark pt-28 pb-20 md:pt-36 md:pb-28 px-6 overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E8AA42]/10 rounded-full blur-[160px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/3 pointer-events-none" />
 
@@ -47,7 +50,7 @@ export default function PrecisionLayerPage() {
                 <span className="text-[#E8AA42]">Layer</span>
               </h1>
 
-              <p className="text-xl text-gray-400 leading-relaxed max-w-lg">
+              <p className="text-xl text-slate-400 leading-relaxed max-w-lg">
                 View, annotate, and manage construction blueprints with pixel-perfect
                 rendering, real-time markup tools, and team collaboration — all in one platform.
               </p>
@@ -77,10 +80,10 @@ export default function PrecisionLayerPage() {
                   <div className="flex items-center gap-3">
                     <div className="flex gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-reno-amber-500/70" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-reno-green-500/70" />
                     </div>
-                    <span className="text-[10px] text-gray-500 font-mono">precision.renonext.com/drawings/A-101</span>
+                    <span className="text-[10px] text-slate-500 font-mono">precision.renonext.com/drawings/A-101</span>
                   </div>
                 </div>
 
@@ -115,7 +118,7 @@ export default function PrecisionLayerPage() {
                       <span className="text-xs font-semibold text-white/80 min-w-[36px] text-center">85%</span>
                       <span className="material-symbols-outlined text-white/60 text-sm">add</span>
                     </div>
-                    <div className="flex items-center gap-3 text-[10px] text-gray-500">
+                    <div className="flex items-center gap-3 text-[10px] text-slate-500">
                       <span>Sheet</span>
                       <span className="font-bold text-white/80">01 / 24</span>
                     </div>
@@ -129,7 +132,7 @@ export default function PrecisionLayerPage() {
                         className={`w-8 h-8 flex items-center justify-center rounded-lg ${
                           tool.active
                             ? 'bg-[#E8AA42] text-[#102122]'
-                            : 'text-gray-500'
+                            : 'text-slate-500'
                         }`}
                       >
                         <span className="material-symbols-outlined text-sm">{tool.icon}</span>
@@ -150,7 +153,7 @@ export default function PrecisionLayerPage() {
                   className="text-center p-4 bg-white/5 rounded-2xl border border-white/[0.06]"
                 >
                   <div className="text-2xl md:text-3xl font-extrabold text-[#E8AA42]">{stat.value}</div>
-                  <div className="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-xs text-slate-500 font-medium mt-1 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -175,7 +178,7 @@ export default function PrecisionLayerPage() {
                   Every Line,{' '}
                   <span className="text-[#E8AA42]">Every Detail</span>
                 </h2>
-                <p className="text-lg text-gray-500 leading-relaxed">
+                <p className="text-lg text-slate-500 leading-relaxed">
                   Full-screen drawing viewer with sub-pixel rendering at up to 400% zoom. Navigate
                   sheets, toggle layers, and pin RFI callouts — all without ever leaving the viewport.
                 </p>
@@ -185,22 +188,22 @@ export default function PrecisionLayerPage() {
                       <div className="w-6 h-6 rounded-full bg-[#E8AA42]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="material-symbols-outlined text-[#E8AA42] text-xs">check</span>
                       </div>
-                      <span className="text-sm text-gray-600 leading-relaxed">{feat}</span>
+                      <span className="text-sm text-slate-600 leading-relaxed">{feat}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Right: Browser frame — Drawing Viewer */}
-              <div className="bg-[#0a0a0f] rounded-2xl border border-gray-200/10 shadow-2xl overflow-hidden">
+              <div className="bg-[#0a0a0f] rounded-2xl border border-slate-200/10 shadow-2xl overflow-hidden">
                 {/* Title bar */}
                 <div className="flex items-center gap-3 px-4 py-3 border-b border-white/[0.06] bg-[#0a0a0f]">
                   <div className="flex gap-1.5">
                     <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-reno-amber-500/70" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-reno-green-500/70" />
                   </div>
-                  <div className="flex-1 bg-[#141419] rounded-lg px-3 py-1.5 text-[10px] text-gray-500 font-mono">
+                  <div className="flex-1 bg-[#141419] rounded-lg px-3 py-1.5 text-[10px] text-slate-500 font-mono">
                     precision.renonext.com/drawings/A-101
                   </div>
                 </div>
@@ -213,7 +216,7 @@ export default function PrecisionLayerPage() {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-white">A-101 Floor Plan</p>
-                      <p className="text-[9px] text-gray-500 uppercase tracking-wider">Version 4.2 &bull; Issued 12 Oct 2023</p>
+                      <p className="text-[9px] text-slate-500 uppercase tracking-wider">Version 4.2 &bull; Issued 12 Oct 2023</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
@@ -261,7 +264,7 @@ export default function PrecisionLayerPage() {
                         className={`w-9 h-9 flex items-center justify-center rounded-xl transition-colors ${
                           tool.active
                             ? 'bg-gradient-to-br from-[#E8AA42] to-[#d5932b] text-[#102122] shadow-lg'
-                            : 'text-gray-500 hover:bg-[#292c2f]'
+                            : 'text-slate-500 hover:bg-[#292c2f]'
                         }`}
                       >
                         <span
@@ -293,7 +296,7 @@ export default function PrecisionLayerPage() {
                     </div>
                     <div className="h-4 w-px bg-white/10" />
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[10px] text-gray-500">Sheet</span>
+                      <span className="text-[10px] text-slate-500">Sheet</span>
                       <span className="text-xs font-bold text-white/80">01 / 24</span>
                     </div>
                   </div>
@@ -301,7 +304,7 @@ export default function PrecisionLayerPage() {
                   {/* Layer panel */}
                   <div className="absolute right-4 bottom-4 w-36 bg-[#232629]/80 backdrop-blur-xl rounded-xl border-t border-l border-white/[0.06] overflow-hidden">
                     <div className="px-3 py-2 border-b border-white/[0.06]">
-                      <span className="text-[8px] font-extrabold uppercase tracking-widest text-gray-500">Layers</span>
+                      <span className="text-[8px] font-extrabold uppercase tracking-widest text-slate-500">Layers</span>
                     </div>
                     <div className="p-1.5 space-y-0.5">
                       {drawingLayers.map((layer) => (
@@ -311,14 +314,14 @@ export default function PrecisionLayerPage() {
                             layer.active ? 'bg-[#232629]' : ''
                           }`}
                         >
-                          <span className={`text-[10px] ${layer.active ? 'text-white' : 'text-gray-500'}`}>
+                          <span className={`text-[10px] ${layer.active ? 'text-white' : 'text-slate-500'}`}>
                             {layer.name}
                           </span>
                           <span
                             className={`material-symbols-outlined text-xs ${
                               layer.visible
-                                ? layer.active ? 'text-[#E8AA42]' : 'text-gray-500'
-                                : 'text-gray-700'
+                                ? layer.active ? 'text-[#E8AA42]' : 'text-slate-500'
+                                : 'text-slate-700'
                             }`}
                             style={layer.visible && layer.active ? { fontVariationSettings: "'FILL' 1" } : undefined}
                           >
@@ -349,7 +352,7 @@ export default function PrecisionLayerPage() {
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[#102122] mb-3">
                 Five Precision Modules
               </h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              <p className="text-slate-500 text-lg max-w-2xl mx-auto">
                 Every tool a project engineer needs to review, annotate, and manage
                 construction drawings — from first sketch to final sign-off.
               </p>
@@ -373,12 +376,12 @@ export default function PrecisionLayerPage() {
                   </div>
                   <h3 className="font-display text-lg font-bold text-[#102122] mb-1">{mod.name}</h3>
                   <p className="text-xs text-[#E8AA42] font-semibold mb-3">{mod.tagline}</p>
-                  <p className="text-sm text-gray-500 leading-relaxed mb-5">{mod.description}</p>
+                  <p className="text-sm text-slate-500 leading-relaxed mb-5">{mod.description}</p>
                   <div className="space-y-2">
                     {mod.features.slice(0, 3).map((feat) => (
                       <div key={feat} className="flex items-start gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#E8AA42] flex-shrink-0 mt-1.5" />
-                        <span className="text-xs text-gray-500">{feat}</span>
+                        <span className="text-xs text-slate-500">{feat}</span>
                       </div>
                     ))}
                   </div>
@@ -397,15 +400,15 @@ export default function PrecisionLayerPage() {
           <ScrollReveal>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Left: Browser frame — Dashboard */}
-              <div className="bg-[#0a0a0f] rounded-2xl border border-gray-200/10 shadow-2xl overflow-hidden">
+              <div className="bg-[#0a0a0f] rounded-2xl border border-slate-200/10 shadow-2xl overflow-hidden">
                 {/* Title bar */}
                 <div className="flex items-center gap-3 px-4 py-3 border-b border-white/[0.06] bg-[#0a0a0f]">
                   <div className="flex gap-1.5">
                     <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-reno-amber-500/70" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-reno-green-500/70" />
                   </div>
-                  <div className="flex-1 bg-[#141419] rounded-lg px-3 py-1.5 text-[10px] text-gray-500 font-mono">
+                  <div className="flex-1 bg-[#141419] rounded-lg px-3 py-1.5 text-[10px] text-slate-500 font-mono">
                     precision.renonext.com/dashboard
                   </div>
                 </div>
@@ -417,7 +420,7 @@ export default function PrecisionLayerPage() {
                     <span className="text-sm font-bold text-[#E8AA42]">Precision Layer</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-gray-500 text-sm">notifications</span>
+                    <span className="material-symbols-outlined text-slate-500 text-sm">notifications</span>
                     <div className="w-6 h-6 rounded-full bg-[#d5932b] flex items-center justify-center text-[9px] font-bold text-[#102122]">S</div>
                   </div>
                 </div>
@@ -427,7 +430,7 @@ export default function PrecisionLayerPage() {
                   {/* Welcome */}
                   <div>
                     <h3 className="text-lg font-bold text-white">Welcome Back, Sarah!</h3>
-                    <p className="text-[10px] text-gray-500 mt-0.5">4 blueprints awaiting review &bull; 2 active threads</p>
+                    <p className="text-[10px] text-slate-500 mt-0.5">4 blueprints awaiting review &bull; 2 active threads</p>
                   </div>
 
                   {/* Recent Drawings */}
@@ -447,10 +450,10 @@ export default function PrecisionLayerPage() {
                             {drawing.code}
                           </span>
                           <h4 className="text-sm font-bold text-white">{drawing.title}</h4>
-                          <p className="text-[9px] text-gray-500">
+                          <p className="text-[9px] text-slate-500">
                             {drawing.updatedAgo ? `Updated ${drawing.updatedAgo} by ${drawing.updatedBy}` : drawing.updatedBy}
                           </p>
-                          <div className="flex items-center gap-3 text-gray-500">
+                          <div className="flex items-center gap-3 text-slate-500">
                             <span className="flex items-center gap-1 text-[9px]">
                               <span className="material-symbols-outlined text-[10px]">layers</span>
                               {drawing.sheets} Sheets
@@ -495,7 +498,7 @@ export default function PrecisionLayerPage() {
                         </div>
                         <div className="text-center flex-shrink-0">
                           <p className="text-sm font-bold text-white">{proj.sheets}</p>
-                          <p className="text-[8px] text-gray-500 uppercase tracking-wider">Sheets</p>
+                          <p className="text-[8px] text-slate-500 uppercase tracking-wider">Sheets</p>
                         </div>
                       </div>
                     ))}
@@ -513,7 +516,7 @@ export default function PrecisionLayerPage() {
                   Your Drawings,{' '}
                   <span className="text-[#E8AA42]">At a Glance</span>
                 </h2>
-                <p className="text-lg text-gray-500 leading-relaxed">
+                <p className="text-lg text-slate-500 leading-relaxed">
                   A personalized dashboard that surfaces recent drawings, active project progress,
                   team threads, and pending reviews — before you even open a blueprint.
                 </p>
@@ -523,7 +526,7 @@ export default function PrecisionLayerPage() {
                       <div className="w-6 h-6 rounded-full bg-[#E8AA42]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="material-symbols-outlined text-[#E8AA42] text-xs">check</span>
                       </div>
-                      <span className="text-sm text-gray-600 leading-relaxed">{feat}</span>
+                      <span className="text-sm text-slate-600 leading-relaxed">{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -547,7 +550,7 @@ export default function PrecisionLayerPage() {
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[#102122] mb-3">
                 Every Project, Every Revision
               </h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              <p className="text-slate-500 text-lg max-w-2xl mx-auto">
                 A bento-grid project dashboard with completion tracking, phase labels, and status badges.
                 From pre-planning through final sign-off.
               </p>
@@ -556,15 +559,15 @@ export default function PrecisionLayerPage() {
 
           <ScrollReveal>
             {/* Browser frame — Project Grid */}
-            <div className="bg-[#0a0a0f] rounded-2xl border border-gray-200/10 shadow-2xl overflow-hidden">
+            <div className="bg-[#0a0a0f] rounded-2xl border border-slate-200/10 shadow-2xl overflow-hidden">
               {/* Title bar */}
               <div className="flex items-center gap-3 px-4 py-3 border-b border-white/[0.06] bg-[#0a0a0f]">
                 <div className="flex gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-reno-amber-500/70" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-reno-green-500/70" />
                 </div>
-                <div className="flex-1 bg-[#141419] rounded-lg px-3 py-1.5 text-[10px] text-gray-500 font-mono">
+                <div className="flex-1 bg-[#141419] rounded-lg px-3 py-1.5 text-[10px] text-slate-500 font-mono">
                   precision.renonext.com/projects
                 </div>
               </div>
@@ -573,7 +576,7 @@ export default function PrecisionLayerPage() {
               <div className="flex items-center justify-between px-6 py-4 bg-[#0c0e10]/80 border-b border-white/[0.04]">
                 <div>
                   <h3 className="text-xl font-bold text-white">My Projects</h3>
-                  <p className="text-[10px] text-gray-500 mt-0.5">Manage and review your active architectural blueprints.</p>
+                  <p className="text-[10px] text-slate-500 mt-0.5">Manage and review your active architectural blueprints.</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="flex items-center gap-1.5 bg-[#232629] px-4 py-2 rounded-full border border-white/[0.06]">
@@ -607,11 +610,11 @@ export default function PrecisionLayerPage() {
                   <div className="p-5 space-y-4">
                     <div>
                       <h4 className="text-base font-bold text-white">Skyline Residence</h4>
-                      <p className="text-[9px] text-gray-500 uppercase tracking-wider mt-0.5">Phase 1: Foundation</p>
+                      <p className="text-[9px] text-slate-500 uppercase tracking-wider mt-0.5">Phase 1: Foundation</p>
                     </div>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-[10px]">
-                        <span className="text-gray-500 uppercase tracking-wider font-semibold">Completion</span>
+                        <span className="text-slate-500 uppercase tracking-wider font-semibold">Completion</span>
                         <span className="text-[#E8AA42] font-bold">75%</span>
                       </div>
                       <div className="h-1 w-full bg-[#111416] rounded-full overflow-hidden">
@@ -619,11 +622,11 @@ export default function PrecisionLayerPage() {
                       </div>
                     </div>
                     <div className="flex items-center justify-between pt-3 border-t border-white/[0.06]">
-                      <div className="flex items-center gap-1.5 text-gray-500">
+                      <div className="flex items-center gap-1.5 text-slate-500">
                         <span className="material-symbols-outlined text-xs">layers</span>
                         <span className="text-[10px]">124 Sheets</span>
                       </div>
-                      <span className="material-symbols-outlined text-gray-600 text-sm">more_vert</span>
+                      <span className="material-symbols-outlined text-slate-600 text-sm">more_vert</span>
                     </div>
                   </div>
                 </div>
@@ -646,11 +649,11 @@ export default function PrecisionLayerPage() {
                   <div className="p-5 space-y-4">
                     <div>
                       <h4 className="text-base font-bold text-white">The Nexus Hub</h4>
-                      <p className="text-[9px] text-gray-500 uppercase tracking-wider mt-0.5">Phase 3: Structural Steel</p>
+                      <p className="text-[9px] text-slate-500 uppercase tracking-wider mt-0.5">Phase 3: Structural Steel</p>
                     </div>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-[10px]">
-                        <span className="text-gray-500 uppercase tracking-wider font-semibold">Completion</span>
+                        <span className="text-slate-500 uppercase tracking-wider font-semibold">Completion</span>
                         <span className="text-[#E8AA42] font-bold">42%</span>
                       </div>
                       <div className="h-1 w-full bg-[#111416] rounded-full overflow-hidden">
@@ -658,11 +661,11 @@ export default function PrecisionLayerPage() {
                       </div>
                     </div>
                     <div className="flex items-center justify-between pt-3 border-t border-white/[0.06]">
-                      <div className="flex items-center gap-1.5 text-gray-500">
+                      <div className="flex items-center gap-1.5 text-slate-500">
                         <span className="material-symbols-outlined text-xs">layers</span>
                         <span className="text-[10px]">318 Sheets</span>
                       </div>
-                      <span className="material-symbols-outlined text-gray-600 text-sm">more_vert</span>
+                      <span className="material-symbols-outlined text-slate-600 text-sm">more_vert</span>
                     </div>
                   </div>
                 </div>
@@ -670,17 +673,17 @@ export default function PrecisionLayerPage() {
                 {/* Card 3 — Draft/Import */}
                 <div className="bg-[#171a1c] rounded-2xl overflow-hidden border border-dashed border-white/[0.08]">
                   <div className="h-32 bg-[#111416] flex flex-col items-center justify-center">
-                    <span className="material-symbols-outlined text-3xl text-gray-700 mb-1">upload_file</span>
-                    <span className="text-[9px] text-gray-600 uppercase tracking-wider">Import New Revision</span>
+                    <span className="material-symbols-outlined text-3xl text-slate-700 mb-1">upload_file</span>
+                    <span className="text-[9px] text-slate-600 uppercase tracking-wider">Import New Revision</span>
                   </div>
                   <div className="p-5 space-y-4">
                     <div>
                       <h4 className="text-base font-bold text-white">Harbor Point II</h4>
-                      <p className="text-[9px] text-gray-500 uppercase tracking-wider mt-0.5">Phase: Pre-Planning</p>
+                      <p className="text-[9px] text-slate-500 uppercase tracking-wider mt-0.5">Phase: Pre-Planning</p>
                     </div>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-[10px]">
-                        <span className="text-gray-500 uppercase tracking-wider font-semibold">Completion</span>
+                        <span className="text-slate-500 uppercase tracking-wider font-semibold">Completion</span>
                         <span className="text-[#E8AA42] font-bold">12%</span>
                       </div>
                       <div className="h-1 w-full bg-[#111416] rounded-full overflow-hidden">
@@ -688,11 +691,11 @@ export default function PrecisionLayerPage() {
                       </div>
                     </div>
                     <div className="flex items-center justify-between pt-3 border-t border-white/[0.06]">
-                      <div className="flex items-center gap-1.5 text-gray-500">
+                      <div className="flex items-center gap-1.5 text-slate-500">
                         <span className="material-symbols-outlined text-xs">layers</span>
                         <span className="text-[10px]">45 Sheets</span>
                       </div>
-                      <span className="material-symbols-outlined text-gray-600 text-sm">more_vert</span>
+                      <span className="material-symbols-outlined text-slate-600 text-sm">more_vert</span>
                     </div>
                   </div>
                 </div>
@@ -715,16 +718,16 @@ export default function PrecisionLayerPage() {
                         <h4 className="text-lg font-bold text-white">Vertical Gardens</h4>
                         <span className="bg-[#E8AA42] text-[#102122] text-[8px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full">Archive</span>
                       </div>
-                      <p className="text-[9px] text-gray-500 uppercase tracking-wider">Phase: Completed Maintenance</p>
-                      <p className="text-xs text-gray-500 mt-3 leading-relaxed">Fully integrated mixed-use development with sustainable irrigation systems. Final inspection signed off Q3 2023.</p>
+                      <p className="text-[9px] text-slate-500 uppercase tracking-wider">Phase: Completed Maintenance</p>
+                      <p className="text-xs text-slate-500 mt-3 leading-relaxed">Fully integrated mixed-use development with sustainable irrigation systems. Final inspection signed off Q3 2023.</p>
                     </div>
                     <div className="grid grid-cols-2 gap-6 mt-4 pt-4 border-t border-white/[0.06]">
                       <div>
-                        <span className="text-[8px] text-gray-600 uppercase tracking-widest">Status</span>
+                        <span className="text-[8px] text-slate-600 uppercase tracking-widest">Status</span>
                         <p className="text-sm font-bold text-white">100% Complete</p>
                       </div>
                       <div>
-                        <span className="text-[8px] text-gray-600 uppercase tracking-widest">Architecture</span>
+                        <span className="text-[8px] text-slate-600 uppercase tracking-widest">Architecture</span>
                         <p className="text-sm font-bold text-white">942 Sheets</p>
                       </div>
                     </div>
@@ -749,11 +752,11 @@ export default function PrecisionLayerPage() {
                   <div className="p-5 space-y-4">
                     <div>
                       <h4 className="text-base font-bold text-white">Zenith Gallery</h4>
-                      <p className="text-[9px] text-gray-500 uppercase tracking-wider mt-0.5">Phase 2: Interior MEP</p>
+                      <p className="text-[9px] text-slate-500 uppercase tracking-wider mt-0.5">Phase 2: Interior MEP</p>
                     </div>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-[10px]">
-                        <span className="text-gray-500 uppercase tracking-wider font-semibold">Completion</span>
+                        <span className="text-slate-500 uppercase tracking-wider font-semibold">Completion</span>
                         <span className="text-[#E8AA42] font-bold">89%</span>
                       </div>
                       <div className="h-1 w-full bg-[#111416] rounded-full overflow-hidden">
@@ -761,11 +764,11 @@ export default function PrecisionLayerPage() {
                       </div>
                     </div>
                     <div className="flex items-center justify-between pt-3 border-t border-white/[0.06]">
-                      <div className="flex items-center gap-1.5 text-gray-500">
+                      <div className="flex items-center gap-1.5 text-slate-500">
                         <span className="material-symbols-outlined text-xs">layers</span>
                         <span className="text-[10px]">82 Sheets</span>
                       </div>
-                      <span className="material-symbols-outlined text-gray-600 text-sm">more_vert</span>
+                      <span className="material-symbols-outlined text-slate-600 text-sm">more_vert</span>
                     </div>
                   </div>
                 </div>
@@ -778,7 +781,7 @@ export default function PrecisionLayerPage() {
       {/* ═══════════════════════════════════════════════════════════════
           Section 6 — CTA (dark)
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative py-20 md:py-28 bg-[#102122] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-reno-dark overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#E8AA42]/10 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
@@ -787,7 +790,7 @@ export default function PrecisionLayerPage() {
               Read Every Line.{' '}
               <span className="text-[#E8AA42]">Mark Every Detail.</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
               Precision Layer is the blueprint platform built for construction teams
               who demand pixel-perfect accuracy and real-time collaboration.
             </p>
@@ -808,7 +811,7 @@ export default function PrecisionLayerPage() {
             </div>
 
             {/* Trust badges */}
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-gray-600">
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-slate-600">
               {[
                 { icon: 'architecture', label: '5 Modules' },
                 { icon: 'lock', label: 'Enterprise Security' },

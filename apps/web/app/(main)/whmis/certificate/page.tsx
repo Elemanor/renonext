@@ -86,10 +86,10 @@ function CertificateContent() {
     return (
       <main className="min-h-screen bg-[#f6f8f8] flex items-center justify-center">
         <div className="text-center">
-          <span className="material-symbols-outlined text-gray-300 text-5xl animate-spin mb-4 inline-block">
+          <span className="material-symbols-outlined text-slate-300 text-5xl animate-spin mb-4 inline-block">
             progress_activity
           </span>
-          <p className="text-gray-500">Loading...</p>
+          <p className="text-slate-500">Loading...</p>
         </div>
       </main>
     );
@@ -100,11 +100,11 @@ function CertificateContent() {
   return (
     <main className="min-h-screen bg-[#f6f8f8]">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white border-b border-slate-200">
         <div className="mx-auto max-w-5xl px-6 py-6">
           <Link
             href="/whmis"
-            className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#0fbabd] transition-colors mb-4"
+            className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-[#0fbabd] transition-colors mb-4"
           >
             <span className="material-symbols-outlined text-base">arrow_back</span>
             Course Overview
@@ -120,7 +120,7 @@ function CertificateContent() {
               <h1 className="text-2xl md:text-3xl font-extrabold text-[#102122] tracking-tight">
                 Your WHMIS Certificate
               </h1>
-              <p className="text-gray-500">
+              <p className="text-slate-500">
                 Score: {quizResult.score}/{quizResult.total} ({scorePercent}%) — Passed
               </p>
             </div>
@@ -132,7 +132,7 @@ function CertificateContent() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Form */}
           <div>
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8">
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8">
               <h2 className="text-xl font-bold text-[#102122] mb-6">Certificate Details</h2>
 
               <div className="space-y-5">
@@ -145,20 +145,20 @@ function CertificateContent() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="Enter your full name"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 text-[#102122] focus:outline-none focus:ring-2 focus:ring-[#0fbabd]/50 focus:border-[#0fbabd]"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-300 text-[#102122] focus:outline-none focus:ring-2 focus:ring-[#0fbabd]/50 focus:border-[#0fbabd]"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-bold text-[#102122] mb-2">
-                    Company Name <span className="text-gray-400 font-normal">(optional)</span>
+                    Company Name <span className="text-slate-400 font-normal">(optional)</span>
                   </label>
                   <input
                     type="text"
                     value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
                     placeholder="Enter your company name"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 text-[#102122] focus:outline-none focus:ring-2 focus:ring-[#0fbabd]/50 focus:border-[#0fbabd]"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-300 text-[#102122] focus:outline-none focus:ring-2 focus:ring-[#0fbabd]/50 focus:border-[#0fbabd]"
                   />
                 </div>
 
@@ -166,7 +166,7 @@ function CertificateContent() {
                   <label className="block text-sm font-bold text-[#102122] mb-2">
                     Completion Date
                   </label>
-                  <div className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-700">
+                  <div className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-700">
                     {today}
                   </div>
                 </div>
@@ -175,7 +175,7 @@ function CertificateContent() {
                   <label className="block text-sm font-bold text-[#102122] mb-2">
                     Certificate Number
                   </label>
-                  <div className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-700 font-mono text-sm">
+                  <div className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 font-mono text-sm">
                     {certificateNumber}
                   </div>
                 </div>
@@ -212,14 +212,14 @@ function CertificateContent() {
 
                     <button
                       onClick={handlePrint}
-                      className="w-full inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-700 px-6 py-4 rounded-xl font-bold hover:bg-gray-200 transition-colors"
+                      className="w-full inline-flex items-center justify-center gap-2 bg-slate-100 text-slate-700 px-6 py-4 rounded-xl font-bold hover:bg-slate-200 transition-colors"
                     >
                       <span className="material-symbols-outlined text-base">print</span>
                       Print Certificate
                     </button>
                   </>
                 ) : (
-                  <div className="text-center py-4 text-gray-400 text-sm">
+                  <div className="text-center py-4 text-slate-400 text-sm">
                     Enter your name to generate the certificate
                   </div>
                 )}
@@ -229,13 +229,13 @@ function CertificateContent() {
 
           {/* Preview */}
           <div>
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 print:p-0 print:border-0 print:rounded-none">
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 print:p-0 print:border-0 print:rounded-none">
               <h2 className="text-xl font-bold text-[#102122] mb-6 print:hidden">
                 Certificate Preview
               </h2>
 
               {/* Certificate preview card */}
-              <div className="border-2 border-gray-200 rounded-xl overflow-hidden aspect-[1.414/1] flex flex-col print:border-0 print:rounded-none">
+              <div className="border-2 border-slate-200 rounded-xl overflow-hidden aspect-[1.414/1] flex flex-col print:border-0 print:rounded-none">
                 {/* Teal bar */}
                 <div className="h-3 bg-gradient-to-r from-[#0fbabd] to-[#0d9699]" />
 
@@ -245,48 +245,48 @@ function CertificateContent() {
                     <span className="text-sm md:text-base font-bold text-[#0fbabd] tracking-wider">
                       RENONEXT
                     </span>
-                    <span className="text-[8px] md:text-[10px] text-gray-400">
+                    <span className="text-[8px] md:text-[10px] text-slate-400">
                       #{certificateNumber}
                     </span>
                   </div>
-                  <div className="h-px bg-gray-200 mb-4" />
+                  <div className="h-px bg-slate-200 mb-4" />
 
                   {/* Title */}
                   <div className="text-center mb-4">
-                    <div className="text-[8px] md:text-[10px] text-gray-400 uppercase tracking-[3px] mb-2">
+                    <div className="text-[8px] md:text-[10px] text-slate-400 uppercase tracking-[3px] mb-2">
                       Certificate of Completion
                     </div>
                     <h3 className="text-lg md:text-2xl font-extrabold text-[#102122]">
                       WHMIS 2015 Training
                     </h3>
-                    <p className="text-[10px] md:text-xs text-gray-500 mt-1">
+                    <p className="text-[10px] md:text-xs text-slate-500 mt-1">
                       Workplace Hazardous Materials Information System
                     </p>
                   </div>
 
                   {/* Name */}
                   <div className="text-center py-4 border-t border-b border-[#0fbabd] my-2">
-                    <div className="text-[8px] md:text-[10px] text-gray-400 uppercase tracking-[3px] mb-2">
+                    <div className="text-[8px] md:text-[10px] text-slate-400 uppercase tracking-[3px] mb-2">
                       Presented To
                     </div>
                     <div className="text-xl md:text-2xl font-extrabold text-[#102122]">
                       {fullName || 'Your Name'}
                     </div>
                     {companyName && (
-                      <div className="text-xs md:text-sm text-gray-500 mt-1">{companyName}</div>
+                      <div className="text-xs md:text-sm text-slate-500 mt-1">{companyName}</div>
                     )}
                   </div>
 
                   {/* Details */}
                   <div className="flex justify-center gap-6 mt-4 text-center">
                     <div>
-                      <div className="text-[7px] md:text-[8px] text-gray-400 uppercase tracking-widest">
+                      <div className="text-[7px] md:text-[8px] text-slate-400 uppercase tracking-widest">
                         Date
                       </div>
                       <div className="text-[10px] md:text-xs font-bold text-[#102122]">{today}</div>
                     </div>
                     <div>
-                      <div className="text-[7px] md:text-[8px] text-gray-400 uppercase tracking-widest">
+                      <div className="text-[7px] md:text-[8px] text-slate-400 uppercase tracking-widest">
                         Score
                       </div>
                       <div className="text-[10px] md:text-xs font-bold text-[#102122]">
@@ -294,7 +294,7 @@ function CertificateContent() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-[7px] md:text-[8px] text-gray-400 uppercase tracking-widest">
+                      <div className="text-[7px] md:text-[8px] text-slate-400 uppercase tracking-widest">
                         Modules
                       </div>
                       <div className="text-[10px] md:text-xs font-bold text-[#102122]">7/7</div>
@@ -302,8 +302,8 @@ function CertificateContent() {
                   </div>
 
                   {/* Footer */}
-                  <div className="mt-auto pt-3 border-t border-gray-200">
-                    <p className="text-[7px] md:text-[8px] text-gray-400 text-center leading-relaxed">
+                  <div className="mt-auto pt-3 border-t border-slate-200">
+                    <p className="text-[7px] md:text-[8px] text-slate-400 text-center leading-relaxed">
                       This certificate confirms completion of generic WHMIS 2015 education.
                       Workplace-specific training must be provided by the employer.
                     </p>
@@ -323,7 +323,7 @@ export default function WHMISCertificatePage() {
     <Suspense
       fallback={
         <main className="min-h-screen bg-[#f6f8f8] flex items-center justify-center">
-          <span className="material-symbols-outlined text-gray-300 text-5xl animate-spin">
+          <span className="material-symbols-outlined text-slate-300 text-5xl animate-spin">
             progress_activity
           </span>
         </main>

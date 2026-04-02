@@ -12,7 +12,7 @@ const phases = [
 ];
 
 const barStyle = {
-  done: 'bg-gradient-to-r from-emerald-600 to-emerald-500',
+  done: 'bg-gradient-to-r from-reno-green-600 to-reno-green-500',
   active: 'bg-gradient-to-r from-amber-600 to-amber-500',
   upcoming: 'border border-white/[0.08] bg-white/[0.03]',
 } as const;
@@ -29,13 +29,13 @@ export function GanttChart() {
           <h2 className="text-white/90 text-sm tracking-tight">Project Timeline</h2>
         </div>
         <div className="flex items-center gap-1">
-          <Clock className="w-3 h-3 text-gray-500" />
-          <span className="text-gray-500 text-[10px]">Feb – Mar 2026</span>
+          <Clock className="w-3 h-3 text-slate-500" />
+          <span className="text-slate-500 text-[10px]">Feb – Mar 2026</span>
         </div>
       </div>
 
       {/* Date axis */}
-      <div className="flex justify-between text-[9px] text-gray-600 mb-1.5 pl-16 pr-1 flex-shrink-0">
+      <div className="flex justify-between text-[9px] text-slate-600 mb-1.5 pl-16 pr-1 flex-shrink-0">
         <span>Feb 1</span>
         <span>Feb 15</span>
         <span className="text-amber-400/70">Today</span>
@@ -57,7 +57,7 @@ export function GanttChart() {
 
         {phases.map((p) => (
           <div key={p.name} className="flex items-center gap-2 h-[18px]">
-            <span className="w-14 flex-shrink-0 text-[10px] text-gray-400 truncate">
+            <span className="w-14 flex-shrink-0 text-[10px] text-slate-400 truncate">
               {p.name}
             </span>
             <div className="flex-1 relative h-full rounded bg-white/[0.015]">
@@ -79,16 +79,16 @@ export function GanttChart() {
       {/* Legend */}
       <div className="flex items-center gap-3 mt-2 pt-2 border-t border-white/[0.06] flex-shrink-0">
         <div className="flex items-center gap-1">
-          <div className="w-2 h-2 rounded-sm bg-emerald-500" />
-          <span className="text-[9px] text-gray-500">Complete</span>
+          <div className="w-2 h-2 rounded-sm bg-reno-green-500" />
+          <span className="text-[9px] text-slate-500">Complete</span>
         </div>
         <div className="flex items-center gap-1">
           <div className="w-2 h-2 rounded-sm bg-amber-500" />
-          <span className="text-[9px] text-gray-500">Active</span>
+          <span className="text-[9px] text-slate-500">Active</span>
         </div>
         <div className="flex items-center gap-1">
           <div className="w-2 h-2 rounded-sm border border-white/[0.12] bg-white/[0.03]" />
-          <span className="text-[9px] text-gray-500">Upcoming</span>
+          <span className="text-[9px] text-slate-500">Upcoming</span>
         </div>
       </div>
     </div>

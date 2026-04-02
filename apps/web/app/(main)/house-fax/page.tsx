@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: 'HouseFax™ — Carfax for Your Home',
   description:
     'Every material. Every trade. Every inspection. Permanently documented. Digitally transferable.',
+  alternates: {
+    canonical: '/house-fax',
+  },
 };
 
 const features = [
@@ -106,14 +109,14 @@ export default function HouseFaxPage() {
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-reno-dark mb-6">
                 Carfax for your home.
               </h1>
-              <p className="text-xl text-gray-700 mb-4">
+              <p className="text-xl text-slate-700 mb-4">
                 Every material. Every trade. Every inspection.{' '}
                 <span className="font-semibold text-reno-teal">
                   Permanently documented.
                 </span>{' '}
                 Digitally transferable.
               </p>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-slate-600 mb-8">
                 When 42 Maple Drive sells in 2031, the buyer sees the verified
                 renovation history. No guessing. No hidden work. Complete
                 transparency.
@@ -136,31 +139,31 @@ export default function HouseFaxPage() {
                       <h3 className="font-display text-2xl text-reno-dark">
                         42 Maple Drive
                       </h3>
-                      <p className="text-gray-600">Toronto, ON · M4K 1N2</p>
+                      <p className="text-slate-600">Toronto, ON · M4K 1N2</p>
                     </div>
                     <div className="rounded-full bg-reno-teal/10 p-3">
                       <FileText className="h-6 w-6 text-reno-teal" />
                     </div>
                   </div>
 
-                  <div className="space-y-3 border-t border-gray-200 pt-6">
+                  <div className="space-y-3 border-t border-slate-200 pt-6">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">
+                      <span className="text-sm text-slate-600">
                         Renovation Status
                       </span>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-reno-green-50 px-3 py-1 text-xs font-semibold text-reno-green-700">
                         <CheckCircle2 className="h-3 w-3" />
                         Verified
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Completed</span>
+                      <span className="text-sm text-slate-600">Completed</span>
                       <span className="text-sm font-semibold text-reno-dark">
                         February 2026
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">
+                      <span className="text-sm text-slate-600">
                         Project Value
                       </span>
                       <span className="text-sm font-semibold text-reno-dark">
@@ -168,7 +171,7 @@ export default function HouseFaxPage() {
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Contractor</span>
+                      <span className="text-sm text-slate-600">Contractor</span>
                       <span className="text-sm font-semibold text-reno-teal">
                         DrySpace Waterproofing
                       </span>
@@ -180,7 +183,7 @@ export default function HouseFaxPage() {
                       <Share2 className="h-4 w-4" />
                       Digitally Transferable
                     </div>
-                    <p className="mt-1 text-xs text-gray-600">
+                    <p className="mt-1 text-xs text-slate-600">
                       Complete renovation record transfers to future owners
                     </p>
                   </div>
@@ -198,7 +201,7 @@ export default function HouseFaxPage() {
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-reno-dark mb-4">
               What's inside a HouseFax™
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Every renovation project on RenoNext automatically generates a
               complete, verified record of all work performed.
             </p>
@@ -210,7 +213,7 @@ export default function HouseFaxPage() {
               return (
                 <div
                   key={index}
-                  className="group rounded-xl border border-gray-200 bg-white p-6 transition hover:border-reno-teal hover:shadow-lg"
+                  className="group rounded-xl border border-slate-200 bg-white p-6 transition hover:border-reno-teal hover:shadow-lg"
                 >
                   <div className="mb-4 inline-flex rounded-lg bg-reno-teal-light p-3 text-reno-teal transition group-hover:bg-reno-teal group-hover:text-white">
                     <Icon className="h-6 w-6" />
@@ -218,7 +221,7 @@ export default function HouseFaxPage() {
                   <h3 className="font-semibold text-lg text-reno-dark mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-gray-600">{feature.description}</p>
+                  <p className="text-sm text-slate-600">{feature.description}</p>
                 </div>
               );
             })}
@@ -233,7 +236,7 @@ export default function HouseFaxPage() {
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-reno-dark mb-4">
               Warranty tracking that actually works
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Get notified before warranties expire. Know exactly what's covered
               and who to call when you need service.
             </p>
@@ -257,38 +260,38 @@ export default function HouseFaxPage() {
 
           {/* Warranty Table */}
           <div className="mx-auto max-w-6xl">
-            <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg">
+            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b border-gray-200 bg-gray-50">
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                    <tr className="border-b border-slate-200 bg-slate-50">
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
                         Product
                       </th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
                         Warranty Term
                       </th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
                         Install Date
                       </th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
                         Installer
                       </th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
                         Status
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-200">
+                  <tbody className="divide-y divide-slate-200">
                     {warrantyExamples.map((warranty, index) => (
-                      <tr key={index} className="hover:bg-gray-50">
+                      <tr key={index} className="hover:bg-slate-50">
                         <td className="px-6 py-4 text-sm font-medium text-reno-dark">
                           {warranty.product}
                         </td>
-                        <td className="px-6 py-4 text-sm text-gray-600">
+                        <td className="px-6 py-4 text-sm text-slate-600">
                           {warranty.term}
                         </td>
-                        <td className="px-6 py-4 text-sm text-gray-600">
+                        <td className="px-6 py-4 text-sm text-slate-600">
                           {warranty.installed}
                         </td>
                         <td className="px-6 py-4 text-sm text-reno-teal">
@@ -296,7 +299,7 @@ export default function HouseFaxPage() {
                         </td>
                         <td className="px-6 py-4">
                           {warranty.status === 'active' ? (
-                            <span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-reno-green-50 px-3 py-1 text-xs font-semibold text-reno-green-700">
                               <CheckCircle2 className="h-3 w-3" />
                               Active until {warranty.expiryDate}
                             </span>
@@ -324,7 +327,7 @@ export default function HouseFaxPage() {
               See a Sample HouseFax™
               <ArrowRight className="h-5 w-5" />
             </Link>
-            <p className="mt-4 text-sm text-gray-600">
+            <p className="mt-4 text-sm text-slate-600">
               View a complete renovation record for a real project
             </p>
           </div>

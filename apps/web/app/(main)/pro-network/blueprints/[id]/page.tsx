@@ -34,8 +34,8 @@ export default function BlueprintDetailPage() {
   if (!seq) {
     return (
       <div className="py-20 text-center">
-        <h2 className="text-lg font-bold text-gray-900">Blueprint not found</h2>
-        <Link href="/pro-network/blueprints" className="mt-2 text-sm text-violet-600 hover:text-violet-700">
+        <h2 className="text-lg font-bold text-slate-900">Blueprint not found</h2>
+        <Link href="/pro-network/blueprints" className="mt-2 text-sm text-reno-purple-600 hover:text-reno-purple-700">
           ← Back to Library
         </Link>
       </div>
@@ -60,7 +60,7 @@ export default function BlueprintDetailPage() {
   });
 
   const tierColor = sci.tier === 'HIGH'
-    ? 'bg-emerald-50 text-emerald-700'
+    ? 'bg-reno-green-50 text-reno-green-700'
     : sci.tier === 'MEDIUM'
       ? 'bg-amber-50 text-amber-700'
       : 'bg-red-50 text-red-700';
@@ -72,10 +72,10 @@ export default function BlueprintDetailPage() {
       : 'Custom';
 
   const sourceBadge = seq.source === 'platform_template'
-    ? 'bg-blue-50 text-blue-700'
+    ? 'bg-primary-50 text-primary-700'
     : seq.source === 'contractor_template'
-      ? 'bg-violet-50 text-violet-700'
-      : 'bg-gray-100 text-gray-600';
+      ? 'bg-reno-purple-50 text-reno-purple-700'
+      : 'bg-slate-100 text-slate-600';
 
   const isPlatform = seq.source === 'platform_template';
 
@@ -84,7 +84,7 @@ export default function BlueprintDetailPage() {
       {/* Back link */}
       <Link
         href="/pro-network/blueprints"
-        className="mb-4 inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
+        className="mb-4 inline-flex items-center gap-1 text-sm text-slate-500 hover:text-slate-700"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
         Back to Library
@@ -104,20 +104,20 @@ export default function BlueprintDetailPage() {
                 {sourceLabel}
               </Badge>
               {seq.is_verified && (
-                <Badge className="rounded-full border-transparent bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
+                <Badge className="rounded-full border-transparent bg-reno-green-50 px-2 py-0.5 text-[10px] font-semibold text-reno-green-700">
                   <CheckCircle className="mr-0.5 h-2.5 w-2.5" />
                   Verified
                 </Badge>
               )}
             </div>
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900">{seq.name}</h1>
+            <h1 className="text-2xl font-bold tracking-tight text-slate-900">{seq.name}</h1>
           </div>
 
           {/* SCI card */}
-          <Card className="shrink-0 rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <Card className="shrink-0 rounded-2xl border border-slate-200 bg-white shadow-sm">
             <CardContent className="p-4 text-center">
-              <p className="text-xs font-medium uppercase tracking-wider text-gray-500">SCI Score</p>
-              <p className="mt-1 text-3xl font-extrabold tabular-nums text-gray-900">
+              <p className="text-xs font-medium uppercase tracking-wider text-slate-500">SCI Score</p>
+              <p className="mt-1 text-3xl font-extrabold tabular-nums text-slate-900">
                 {Math.round(sci.score * 100)}%
               </p>
               <Badge className={`mt-1 rounded-full border-transparent px-2.5 py-0.5 text-[10px] font-bold ${tierColor}`}>
@@ -128,7 +128,7 @@ export default function BlueprintDetailPage() {
         </div>
 
         {/* Stats row */}
-        <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-gray-500">
+        <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-500">
           <span className="flex items-center gap-1">
             <Layers className="h-4 w-4" />
             {steps.length} steps
@@ -150,7 +150,7 @@ export default function BlueprintDetailPage() {
         {/* CTA */}
         <div className="mt-4">
           <Link href={`/pro-network/proposals/new?blueprintId=${seq.id}`}>
-            <Button className="h-auto rounded-xl bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-violet-700 hover:shadow-md">
+            <Button className="h-auto rounded-xl bg-reno-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-reno-purple-700 hover:shadow-md">
               Create Proposal from This Blueprint
             </Button>
           </Link>
@@ -158,27 +158,27 @@ export default function BlueprintDetailPage() {
       </div>
 
       {/* Description card */}
-      <Card className="mb-6 rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="mb-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardHeader className="pb-2">
-          <CardTitle className="text-lg font-semibold text-gray-900">Description</CardTitle>
+          <CardTitle className="text-lg font-semibold text-slate-900">Description</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           {seq.description && (
-            <p className="text-sm leading-6 text-gray-600">{seq.description}</p>
+            <p className="text-sm leading-6 text-slate-600">{seq.description}</p>
           )}
           {seq.plain_language_summary && (
             <div className={`rounded-xl ${SOFT_SURFACE} p-3`}>
-              <p className="text-xs font-medium text-gray-500">In plain language</p>
-              <p className="mt-1 text-sm text-gray-700">{seq.plain_language_summary}</p>
+              <p className="text-xs font-medium text-slate-500">In plain language</p>
+              <p className="mt-1 text-sm text-slate-700">{seq.plain_language_summary}</p>
             </div>
           )}
         </CardContent>
       </Card>
 
       {/* Step accordion */}
-      <Card className="mb-6 rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <Card className="mb-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
         <CardHeader className="pb-2">
-          <CardTitle className="text-lg font-semibold text-gray-900">
+          <CardTitle className="text-lg font-semibold text-slate-900">
             Steps ({steps.length})
           </CardTitle>
         </CardHeader>
@@ -189,25 +189,25 @@ export default function BlueprintDetailPage() {
                 <AccordionTrigger className="hover:no-underline">
                   <div className="flex flex-1 items-center gap-3 text-left">
                     {/* Step number circle */}
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-reno-purple-100 text-xs font-bold text-reno-purple-700">
                       {step.step_number}
                     </span>
-                    <span className="min-w-0 flex-1 text-sm font-semibold text-gray-900">
+                    <span className="min-w-0 flex-1 text-sm font-semibold text-slate-900">
                       {step.title}
                     </span>
                     <div className="flex shrink-0 items-center gap-1.5">
                       {step.expected_duration_days && (
-                        <Badge className="rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] font-medium text-gray-600">
+                        <Badge className="rounded-full border border-slate-200 bg-white px-2 py-0.5 text-[10px] font-medium text-slate-600">
                           {step.expected_duration_days}d
                         </Badge>
                       )}
                       {step.requires_inspection && (
-                        <Badge className="rounded-full border-transparent bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-700">
+                        <Badge className="rounded-full border-transparent bg-primary-50 px-2 py-0.5 text-[10px] font-semibold text-primary-700">
                           Inspection
                         </Badge>
                       )}
                       {step.is_milestone && (
-                        <Badge className="rounded-full border-transparent bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
+                        <Badge className="rounded-full border-transparent bg-reno-green-50 px-2 py-0.5 text-[10px] font-semibold text-reno-green-700">
                           Milestone
                         </Badge>
                       )}
@@ -223,14 +223,14 @@ export default function BlueprintDetailPage() {
                   <div className="space-y-4 pl-10">
                     {/* Summary */}
                     {step.plain_language_summary && (
-                      <p className="text-sm text-gray-600">{step.plain_language_summary}</p>
+                      <p className="text-sm text-slate-600">{step.plain_language_summary}</p>
                     )}
 
                     {/* What to expect */}
                     {step.what_to_expect && (
                       <div className={`rounded-xl ${SOFT_SURFACE} p-3`}>
-                        <p className="text-xs font-medium text-gray-500">What to expect</p>
-                        <p className="mt-1 text-sm text-gray-700">{step.what_to_expect}</p>
+                        <p className="text-xs font-medium text-slate-500">What to expect</p>
+                        <p className="mt-1 text-sm text-slate-700">{step.what_to_expect}</p>
                       </div>
                     )}
 
@@ -238,26 +238,26 @@ export default function BlueprintDetailPage() {
                     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                       {step.expected_duration_days && (
                         <div>
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Duration</p>
-                          <p className="text-sm font-semibold text-gray-900">{step.expected_duration_days} days</p>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Duration</p>
+                          <p className="text-sm font-semibold text-slate-900">{step.expected_duration_days} days</p>
                         </div>
                       )}
                       {step.min_crew_size && (
                         <div>
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Crew</p>
-                          <p className="text-sm font-semibold text-gray-900">{step.min_crew_size}+ workers</p>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Crew</p>
+                          <p className="text-sm font-semibold text-slate-900">{step.min_crew_size}+ workers</p>
                         </div>
                       )}
                       {step.depends_on_steps.length > 0 && (
                         <div>
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Depends on</p>
-                          <p className="text-sm font-semibold text-gray-900">Step {step.depends_on_steps.join(', ')}</p>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Depends on</p>
+                          <p className="text-sm font-semibold text-slate-900">Step {step.depends_on_steps.join(', ')}</p>
                         </div>
                       )}
                       {step.typical_cost_percent !== null && step.typical_cost_percent > 0 && (
                         <div>
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Cost weight</p>
-                          <p className="text-sm font-semibold text-gray-900">{step.typical_cost_percent}%</p>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Cost weight</p>
+                          <p className="text-sm font-semibold text-slate-900">{step.typical_cost_percent}%</p>
                         </div>
                       )}
                     </div>
@@ -265,23 +265,23 @@ export default function BlueprintDetailPage() {
                     {/* Gates / requirements badges */}
                     <div className="flex flex-wrap gap-1.5">
                       {step.requires_permit && (
-                        <Badge className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-0.5 text-[10px] font-medium text-gray-600">
+                        <Badge className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[10px] font-medium text-slate-600">
                           <Shield className="mr-0.5 h-2.5 w-2.5" />
                           Permit Required
                         </Badge>
                       )}
                       {step.requires_jsa && (
-                        <Badge className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-0.5 text-[10px] font-medium text-gray-600">
+                        <Badge className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[10px] font-medium text-slate-600">
                           JSA Required
                         </Badge>
                       )}
                       {step.requires_submittal && (
-                        <Badge className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-0.5 text-[10px] font-medium text-gray-600">
+                        <Badge className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[10px] font-medium text-slate-600">
                           Submittal Required
                         </Badge>
                       )}
                       {step.requires_client_approval && (
-                        <Badge className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-0.5 text-[10px] font-medium text-gray-600">
+                        <Badge className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[10px] font-medium text-slate-600">
                           Client Approval
                         </Badge>
                       )}
@@ -289,11 +289,11 @@ export default function BlueprintDetailPage() {
 
                     {/* Code reference */}
                     {step.code_reference && (
-                      <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <div className="flex items-center gap-2 text-xs text-slate-500">
                         <Shield className="h-3.5 w-3.5" />
                         <span>{step.code_reference}</span>
                         {step.authority_body && (
-                          <span className="text-gray-400">— {step.authority_body}</span>
+                          <span className="text-slate-400">— {step.authority_body}</span>
                         )}
                       </div>
                     )}
@@ -312,8 +312,8 @@ export default function BlueprintDetailPage() {
                     {/* Quality criteria */}
                     {step.quality_criteria && (
                       <div>
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Quality criteria</p>
-                        <p className="mt-1 text-sm text-gray-600">{step.quality_criteria}</p>
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Quality criteria</p>
+                        <p className="mt-1 text-sm text-slate-600">{step.quality_criteria}</p>
                       </div>
                     )}
 
@@ -337,27 +337,27 @@ export default function BlueprintDetailPage() {
 
       {/* Compliance card */}
       {seq.ruleset && (
-        <Card className="mb-6 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <Card className="mb-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
           <CardHeader className="pb-2">
-            <CardTitle className="text-lg font-semibold text-gray-900">Compliance Ruleset</CardTitle>
+            <CardTitle className="text-lg font-semibold text-slate-900">Compliance Ruleset</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex items-center gap-2">
-              <Shield className="h-4 w-4 text-blue-600" />
-              <span className="text-sm font-semibold text-gray-900">{seq.ruleset.name}</span>
+              <Shield className="h-4 w-4 text-primary-600" />
+              <span className="text-sm font-semibold text-slate-900">{seq.ruleset.name}</span>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Region</p>
-                <p className="text-sm font-semibold text-gray-900">{seq.ruleset.region}</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Region</p>
+                <p className="text-sm font-semibold text-slate-900">{seq.ruleset.region}</p>
               </div>
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Version</p>
-                <p className="text-sm font-semibold text-gray-900">v{seq.ruleset.version}</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Version</p>
+                <p className="text-sm font-semibold text-slate-900">v{seq.ruleset.version}</p>
               </div>
             </div>
             {seq.ruleset.notes && (
-              <p className="text-sm text-gray-500">{seq.ruleset.notes}</p>
+              <p className="text-sm text-slate-500">{seq.ruleset.notes}</p>
             )}
           </CardContent>
         </Card>
@@ -368,13 +368,13 @@ export default function BlueprintDetailPage() {
         <Button
           variant="outline"
           disabled={isPlatform}
-          className="h-auto rounded-xl border-gray-200 px-5 py-2.5 text-sm font-medium text-gray-700 disabled:opacity-50"
+          className="h-auto rounded-xl border-slate-200 px-5 py-2.5 text-sm font-medium text-slate-700 disabled:opacity-50"
         >
           Edit Blueprint
         </Button>
         <Button
           variant="outline"
-          className="h-auto rounded-xl border-gray-200 px-5 py-2.5 text-sm font-medium text-gray-700"
+          className="h-auto rounded-xl border-slate-200 px-5 py-2.5 text-sm font-medium text-slate-700"
           onClick={() => window.alert('Duplicate as Custom — coming soon')}
         >
           <Copy className="mr-1.5 h-4 w-4" />

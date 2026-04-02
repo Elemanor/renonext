@@ -40,17 +40,17 @@ export default function AdminSettingsPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold tracking-tight text-gray-900">
+      <h1 className="mb-6 text-2xl font-bold tracking-tight text-slate-900">
         Platform Settings
       </h1>
 
       <Tabs defaultValue="general" className="flex flex-col gap-6 lg:flex-row lg:w-full">
-        <TabsList className="flex gap-1 rounded-xl bg-gray-100 p-1 lg:w-52 lg:flex-col lg:bg-transparent lg:p-0 lg:h-auto lg:justify-start">
+        <TabsList className="flex gap-1 rounded-xl bg-slate-100 p-1 lg:w-52 lg:flex-col lg:bg-transparent lg:p-0 lg:h-auto lg:justify-start">
           {sections.map((section) => (
             <TabsTrigger
               key={section.id}
               value={section.id}
-              className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200 data-[state=active]:bg-reno-green-light data-[state=active]:text-reno-green-dark data-[state=active]:shadow-sm data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-50 data-[state=inactive]:hover:text-gray-900 justify-start"
+              className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200 data-[state=active]:bg-reno-green-light data-[state=active]:text-reno-green-dark data-[state=active]:shadow-sm data-[state=inactive]:text-slate-600 data-[state=inactive]:hover:bg-slate-50 data-[state=inactive]:hover:text-slate-900 justify-start"
             >
               <section.icon className="h-4 w-4" />
               <span className="hidden lg:inline">{section.label}</span>
@@ -61,42 +61,42 @@ export default function AdminSettingsPage() {
         <div className="min-w-0 flex-1">
           {/* General */}
           <TabsContent value="general">
-            <Card className="rounded-2xl border border-gray-200 shadow-sm">
+            <Card className="rounded-2xl border border-slate-200 shadow-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-bold text-gray-900">
+                <CardTitle className="text-lg font-bold text-slate-900">
                   General Settings
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                  <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                     Platform Name
                   </Label>
                   <Input
                     value={general.platformName}
                     onChange={(e) => setGeneral({ ...general, platformName: e.target.value })}
-                    className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light sm:w-1/2"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light sm:w-1/2"
                   />
                 </div>
                 <div>
-                  <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                  <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                     Support Email
                   </Label>
                   <Input
                     type="email"
                     value={general.supportEmail}
                     onChange={(e) => setGeneral({ ...general, supportEmail: e.target.value })}
-                    className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light sm:w-1/2"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light sm:w-1/2"
                   />
                 </div>
                 <div>
-                  <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                  <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                     Tagline
                   </Label>
                   <Input
                     value={general.tagline}
                     onChange={(e) => setGeneral({ ...general, tagline: e.target.value })}
-                    className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                   />
                 </div>
                 <Button className="mt-2 rounded-xl bg-reno-green-dark px-6 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-reno-green-dark hover:shadow-md hover:shadow-reno-green-light">
@@ -109,15 +109,15 @@ export default function AdminSettingsPage() {
 
           {/* Fees */}
           <TabsContent value="fees">
-            <Card className="rounded-2xl border border-gray-200 shadow-sm">
+            <Card className="rounded-2xl border border-slate-200 shadow-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-bold text-gray-900">
+                <CardTitle className="text-lg font-bold text-slate-900">
                   Fee Configuration
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                  <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                     Commission Rate (%)
                   </Label>
                   <Input
@@ -126,14 +126,14 @@ export default function AdminSettingsPage() {
                     max="100"
                     value={fees.commissionPercent}
                     onChange={(e) => setFees({ ...fees, commissionPercent: e.target.value })}
-                    className="w-40 rounded-xl border border-gray-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                    className="w-40 rounded-xl border border-slate-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                   />
-                  <p className="mt-1.5 text-xs text-gray-400">
+                  <p className="mt-1.5 text-xs text-slate-400">
                     Percentage charged on each completed transaction
                   </p>
                 </div>
                 <div>
-                  <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                  <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                     Escrow Hold (days)
                   </Label>
                   <Input
@@ -141,9 +141,9 @@ export default function AdminSettingsPage() {
                     min="0"
                     value={fees.escrowHoldDays}
                     onChange={(e) => setFees({ ...fees, escrowHoldDays: e.target.value })}
-                    className="w-40 rounded-xl border border-gray-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                    className="w-40 rounded-xl border border-slate-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                   />
-                  <p className="mt-1.5 text-xs text-gray-400">
+                  <p className="mt-1.5 text-xs text-slate-400">
                     Days funds are held in escrow after job completion
                   </p>
                 </div>
@@ -157,9 +157,9 @@ export default function AdminSettingsPage() {
 
           {/* Notifications */}
           <TabsContent value="notifications">
-            <Card className="rounded-2xl border border-gray-200 shadow-sm">
+            <Card className="rounded-2xl border border-slate-200 shadow-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-bold text-gray-900">
+                <CardTitle className="text-lg font-bold text-slate-900">
                   Admin Notifications
                 </CardTitle>
               </CardHeader>
@@ -172,12 +172,12 @@ export default function AdminSettingsPage() {
                   ] as const).map((item) => (
                     <label
                       key={item.key}
-                      className="flex cursor-pointer items-center justify-between rounded-xl border border-gray-200 p-4 transition-all duration-200 hover:bg-gray-50"
+                      className="flex cursor-pointer items-center justify-between rounded-xl border border-slate-200 p-4 transition-all duration-200 hover:bg-slate-50"
                     >
-                      <span className="text-sm text-gray-700">{item.label}</span>
+                      <span className="text-sm text-slate-700">{item.label}</span>
                       <div
                         className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
-                          notifications[item.key] ? 'bg-reno-green-dark' : 'bg-gray-300'
+                          notifications[item.key] ? 'bg-reno-green-dark' : 'bg-slate-300'
                         }`}
                         onClick={() =>
                           setNotifications({
@@ -201,25 +201,25 @@ export default function AdminSettingsPage() {
 
           {/* Security */}
           <TabsContent value="security">
-            <Card className="rounded-2xl border border-gray-200 shadow-sm">
+            <Card className="rounded-2xl border border-slate-200 shadow-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-bold text-gray-900">
+                <CardTitle className="text-lg font-bold text-slate-900">
                   Security Settings
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <label className="flex cursor-pointer items-center justify-between rounded-xl border border-gray-200 p-4 transition-all duration-200 hover:bg-gray-50">
+                <label className="flex cursor-pointer items-center justify-between rounded-xl border border-slate-200 p-4 transition-all duration-200 hover:bg-slate-50">
                   <div>
-                    <span className="block text-sm font-semibold text-gray-900">
+                    <span className="block text-sm font-semibold text-slate-900">
                       Enforce 2FA for all admins
                     </span>
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-slate-500">
                       Require two-factor authentication for admin accounts
                     </span>
                   </div>
                   <div
                     className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
-                      security.enforce2FA ? 'bg-reno-green-dark' : 'bg-gray-300'
+                      security.enforce2FA ? 'bg-reno-green-dark' : 'bg-slate-300'
                     }`}
                     onClick={() => setSecurity({ ...security, enforce2FA: !security.enforce2FA })}
                   >
@@ -231,7 +231,7 @@ export default function AdminSettingsPage() {
                   </div>
                 </label>
                 <div>
-                  <Label className="mb-1.5 block text-sm font-semibold text-gray-900">
+                  <Label className="mb-1.5 block text-sm font-semibold text-slate-900">
                     Session Timeout (minutes)
                   </Label>
                   <Input
@@ -241,9 +241,9 @@ export default function AdminSettingsPage() {
                     onChange={(e) =>
                       setSecurity({ ...security, sessionTimeoutMinutes: e.target.value })
                     }
-                    className="w-40 rounded-xl border border-gray-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
+                    className="w-40 rounded-xl border border-slate-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-reno-green focus:ring-2 focus:ring-reno-green-light"
                   />
-                  <p className="mt-1.5 text-xs text-gray-400">
+                  <p className="mt-1.5 text-xs text-slate-400">
                     Inactive sessions will expire after this period
                   </p>
                 </div>

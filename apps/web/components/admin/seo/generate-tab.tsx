@@ -105,29 +105,29 @@ export function GenerateTab() {
         {generationTools.map((t) => (
           <Card
             key={t.value}
-            className={`cursor-pointer transition-all border-gray-200/60 shadow-sm hover:shadow-md ${
-              tool === t.value ? 'ring-2 ring-emerald-500 border-emerald-200' : ''
+            className={`cursor-pointer transition-all border-slate-200/60 shadow-sm hover:shadow-md ${
+              tool === t.value ? 'ring-2 ring-emerald-500 border-reno-green-200' : ''
             }`}
             onClick={() => { setTool(t.value); setResult(null); }}
           >
             <CardContent className="p-4">
               <div className="flex items-center gap-2 mb-1">
-                <Wand2 className={`h-4 w-4 ${tool === t.value ? 'text-emerald-600' : 'text-gray-400'}`} />
-                <span className="font-medium text-sm text-gray-900">{t.label}</span>
+                <Wand2 className={`h-4 w-4 ${tool === t.value ? 'text-reno-green-600' : 'text-slate-400'}`} />
+                <span className="font-medium text-sm text-slate-900">{t.label}</span>
               </div>
-              <p className="text-xs text-gray-500">{t.description}</p>
+              <p className="text-xs text-slate-500">{t.description}</p>
             </CardContent>
           </Card>
         ))}
       </div>
 
-      <Card className="border-gray-200/60 shadow-sm">
+      <Card className="border-slate-200/60 shadow-sm">
         <CardContent className="p-5 space-y-4">
-          <h3 className="font-semibold text-gray-900">{selectedTool?.label}</h3>
+          <h3 className="font-semibold text-slate-900">{selectedTool?.label}</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label className="text-xs font-medium text-gray-500 mb-1 block">Page URL</label>
+              <label className="text-xs font-medium text-slate-500 mb-1 block">Page URL</label>
               <Input
                 placeholder="https://renonext.com/services/underpinning"
                 value={url}
@@ -135,7 +135,7 @@ export function GenerateTab() {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-gray-500 mb-1 block">Service / Topic</label>
+              <label className="text-xs font-medium text-slate-500 mb-1 block">Service / Topic</label>
               <Input
                 placeholder="Underpinning"
                 value={serviceName}
@@ -146,9 +146,9 @@ export function GenerateTab() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label className="text-xs font-medium text-gray-500 mb-1 block">Page Type</label>
+              <label className="text-xs font-medium text-slate-500 mb-1 block">Page Type</label>
               <Select value={pageType} onValueChange={setPageType}>
-                <SelectTrigger className="h-9 rounded-lg border-gray-200">
+                <SelectTrigger className="h-9 rounded-lg border-slate-200">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -161,7 +161,7 @@ export function GenerateTab() {
               </Select>
             </div>
             <div>
-              <label className="text-xs font-medium text-gray-500 mb-1 block">
+              <label className="text-xs font-medium text-slate-500 mb-1 block">
                 Current Value (title, intro, etc.)
               </label>
               <Input
@@ -174,7 +174,7 @@ export function GenerateTab() {
 
           {(tool === 'blog_draft' || tool === 'intro') && (
             <div>
-              <label className="text-xs font-medium text-gray-500 mb-1 block">
+              <label className="text-xs font-medium text-slate-500 mb-1 block">
                 {tool === 'blog_draft' ? 'Additional context' : 'Current intro text'}
               </label>
               <Textarea
@@ -201,7 +201,7 @@ export function GenerateTab() {
               )}
             </Button>
             {saved && (
-              <span className="text-xs text-emerald-600 flex items-center gap-1">
+              <span className="text-xs text-reno-green-600 flex items-center gap-1">
                 <Save className="h-3 w-3" /> Saved as draft
               </span>
             )}
@@ -214,17 +214,17 @@ export function GenerateTab() {
       </Card>
 
       {result && (
-        <Card className="border-gray-200/60 shadow-sm">
-          <div className="h-1 w-full bg-gradient-to-r from-emerald-400 to-emerald-600 opacity-60" />
+        <Card className="border-slate-200/60 shadow-sm">
+          <div className="h-1 w-full bg-gradient-to-r from-reno-green-400 to-reno-green-600 opacity-60" />
           <CardContent className="p-5">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold text-gray-900">AI Output</h3>
+              <h3 className="font-semibold text-slate-900">AI Output</h3>
               <Button variant="outline" size="sm" onClick={handleCopy} className="h-7 text-xs rounded-lg">
                 {copied ? <Check className="h-3 w-3 mr-1" /> : <Copy className="h-3 w-3 mr-1" />}
                 {copied ? 'Copied' : 'Copy'}
               </Button>
             </div>
-            <pre className="bg-gray-50 rounded-lg p-4 text-sm text-gray-700 overflow-x-auto whitespace-pre-wrap max-h-[500px] overflow-y-auto">
+            <pre className="bg-slate-50 rounded-lg p-4 text-sm text-slate-700 overflow-x-auto whitespace-pre-wrap max-h-[500px] overflow-y-auto">
               {JSON.stringify(result, null, 2)}
             </pre>
           </CardContent>

@@ -127,10 +127,10 @@ export function LookaheadShowcase() {
   return (
     <Card className="w-full border-2 shadow-lg">
       <CardHeader className="border-b bg-gradient-to-r from-purple-50 to-white">
-        <CardTitle className="text-lg font-bold text-gray-900">
+        <CardTitle className="text-lg font-bold text-slate-900">
           3-Week Lookahead
         </CardTitle>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-slate-500">
           Rolling schedule visibility
         </p>
       </CardHeader>
@@ -143,8 +143,8 @@ export function LookaheadShowcase() {
               className={cn(
                 'rounded-lg border-2 bg-white transition-all',
                 week.status === 'current'
-                  ? 'border-blue-500 shadow-md'
-                  : 'border-gray-200'
+                  ? 'border-primary-500 shadow-md'
+                  : 'border-slate-200'
               )}
             >
               {/* Week Header */}
@@ -152,19 +152,19 @@ export function LookaheadShowcase() {
                 className={cn(
                   'border-b p-3',
                   week.status === 'current'
-                    ? 'bg-blue-50'
-                    : 'bg-gray-50'
+                    ? 'bg-primary-50'
+                    : 'bg-slate-50'
                 )}
               >
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm font-bold text-gray-900">
+                    <div className="text-sm font-bold text-slate-900">
                       {week.title}
                     </div>
-                    <div className="text-xs text-gray-600">{week.dates}</div>
+                    <div className="text-xs text-slate-600">{week.dates}</div>
                   </div>
                   {week.status === 'current' && (
-                    <Badge className="bg-blue-500 hover:bg-blue-600">
+                    <Badge className="bg-primary-500 hover:bg-primary-600">
                       Current
                     </Badge>
                   )}
@@ -179,10 +179,10 @@ export function LookaheadShowcase() {
                     className={cn(
                       'rounded-md border p-2 transition-all hover:shadow-sm',
                       day.status === 'complete' &&
-                        'border-green-200 bg-green-50',
+                        'border-reno-green-200 bg-reno-green-50',
                       day.status === 'in-progress' &&
-                        'border-blue-200 bg-blue-50',
-                      day.status === 'scheduled' && 'border-gray-200 bg-white',
+                        'border-primary-200 bg-primary-50',
+                      day.status === 'scheduled' && 'border-slate-200 bg-white',
                       day.priority === 'critical' &&
                         'border-red-300 bg-red-50'
                     )}
@@ -190,7 +190,7 @@ export function LookaheadShowcase() {
                     {/* Day and Status */}
                     <div className="mb-1.5 flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
-                        <span className="text-xs font-semibold text-gray-700">
+                        <span className="text-xs font-semibold text-slate-700">
                           {day.day}
                         </span>
                         {'weather' in day && day.weather === 'sunny' && (
@@ -201,10 +201,10 @@ export function LookaheadShowcase() {
                       </div>
                       <div>
                         {day.status === 'complete' && (
-                          <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                          <CheckCircle2 className="h-3.5 w-3.5 text-reno-green-600" />
                         )}
                         {day.status === 'in-progress' && (
-                          <Loader2 className="h-3.5 w-3.5 animate-spin text-blue-600" />
+                          <Loader2 className="h-3.5 w-3.5 animate-spin text-primary-600" />
                         )}
                         {day.status === 'scheduled' &&
                           day.priority === 'critical' && (
@@ -212,7 +212,7 @@ export function LookaheadShowcase() {
                           )}
                         {day.status === 'scheduled' &&
                           day.priority === 'normal' && (
-                            <Clock className="h-3.5 w-3.5 text-gray-400" />
+                            <Clock className="h-3.5 w-3.5 text-slate-400" />
                           )}
                       </div>
                     </div>
@@ -221,14 +221,14 @@ export function LookaheadShowcase() {
                     <div
                       className={cn(
                         'text-xs leading-tight',
-                        day.status === 'complete' && 'text-green-900',
-                        day.status === 'in-progress' && 'text-blue-900',
+                        day.status === 'complete' && 'text-reno-green-900',
+                        day.status === 'in-progress' && 'text-primary-900',
                         day.status === 'scheduled' &&
                           day.priority === 'critical' &&
                           'font-semibold text-red-900',
                         day.status === 'scheduled' &&
                           day.priority === 'normal' &&
-                          'text-gray-700'
+                          'text-slate-700'
                       )}
                     >
                       {day.task}
@@ -241,26 +241,26 @@ export function LookaheadShowcase() {
         </div>
 
         {/* Color Legend */}
-        <div className="mt-6 rounded-lg border bg-gray-50 p-3">
-          <div className="mb-2 text-xs font-semibold text-gray-700">
+        <div className="mt-6 rounded-lg border bg-slate-50 p-3">
+          <div className="mb-2 text-xs font-semibold text-slate-700">
             Color Coding:
           </div>
           <div className="grid grid-cols-2 gap-2 text-xs sm:flex sm:flex-wrap sm:gap-4">
             <div className="flex items-center gap-1.5">
-              <div className="h-3 w-3 rounded border border-green-200 bg-green-50" />
-              <span className="text-gray-600">Complete</span>
+              <div className="h-3 w-3 rounded border border-reno-green-200 bg-reno-green-50" />
+              <span className="text-slate-600">Complete</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <div className="h-3 w-3 rounded border border-blue-200 bg-blue-50" />
-              <span className="text-gray-600">In Progress</span>
+              <div className="h-3 w-3 rounded border border-primary-200 bg-primary-50" />
+              <span className="text-slate-600">In Progress</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <div className="h-3 w-3 rounded border border-gray-200 bg-white" />
-              <span className="text-gray-600">Scheduled</span>
+              <div className="h-3 w-3 rounded border border-slate-200 bg-white" />
+              <span className="text-slate-600">Scheduled</span>
             </div>
             <div className="flex items-center gap-1.5">
               <div className="h-3 w-3 rounded border border-red-300 bg-red-50" />
-              <span className="text-gray-600">Critical</span>
+              <span className="text-slate-600">Critical</span>
             </div>
           </div>
         </div>

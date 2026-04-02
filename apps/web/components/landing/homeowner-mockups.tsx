@@ -17,12 +17,12 @@ export function PremiumVaultWidget() {
 
   return (
     <div className="relative mx-auto w-full max-w-[400px] overflow-hidden rounded-3xl border border-slate-200/60 bg-white/80 p-8 shadow-2xl backdrop-blur-xl">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-50/50 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-reno-green-50/50 via-transparent to-transparent pointer-events-none" />
       
       <div className="relative z-10 mb-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 shadow-lg">
-            <Lock className="h-5 w-5 text-emerald-400" />
+            <Lock className="h-5 w-5 text-reno-green-400" />
           </div>
           <div>
             <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Vault Balance</p>
@@ -37,7 +37,7 @@ export function PremiumVaultWidget() {
       {/* Progress Track */}
       <div className="relative mb-6 h-3 w-full rounded-full bg-slate-100 shadow-inner">
         <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-blue-500 shadow-[0_0_10px_rgba(52,211,153,0.5)]"
+          className="h-full rounded-full bg-gradient-to-r from-reno-green-400 to-primary-500 shadow-[0_0_10px_rgba(52,211,153,0.5)]"
           initial={{ width: '0%' }}
           animate={{ 
             width: step === 0 ? '25%' : step === 1 ? '50%' : step === 2 ? '75%' : '100%' 
@@ -59,7 +59,7 @@ export function PremiumVaultWidget() {
           )}
           {step === 1 && (
             <motion.div key="2" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="flex flex-col items-center text-center">
-              <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700 ring-1 ring-blue-200">
+              <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-3 py-1 text-xs font-bold text-primary-700 ring-1 ring-primary-200">
                 <Camera className="h-3.5 w-3.5 animate-pulse" /> Capturing Proof
               </span>
               <p className="text-xs text-slate-500">Contractor submitting GPS-stamped milestone photos.</p>
@@ -75,7 +75,7 @@ export function PremiumVaultWidget() {
           )}
           {step === 3 && (
             <motion.div key="4" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="flex flex-col items-center text-center">
-              <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 ring-1 ring-emerald-200 shadow-[0_0_15px_rgba(52,211,153,0.3)]">
+              <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-reno-green-50 px-3 py-1 text-xs font-bold text-reno-green-700 ring-1 ring-emerald-200 shadow-[0_0_15px_rgba(52,211,153,0.3)]">
                 <CheckCircle className="h-3.5 w-3.5" /> Capital Released
               </span>
               <p className="text-xs text-slate-500">You approved. Contractor paid instantly.</p>
@@ -90,9 +90,9 @@ export function PremiumVaultWidget() {
 /* ── 2. The Daily Site Briefing Feed ── */
 export function LiveBriefingFeed() {
   const events = [
-    { id: 1, icon: Users, color: 'text-blue-500', bg: 'bg-blue-50', time: '07:15 AM', title: 'Crew Verified', desc: '3 workers passed biometric ID check.' },
-    { id: 2, icon: MapPin, color: 'text-emerald-500', bg: 'bg-emerald-50', time: '07:30 AM', title: 'GPS Arrival', desc: 'Site mobilization confirmed.' },
-    { id: 3, icon: Package, color: 'text-violet-500', bg: 'bg-violet-50', time: '09:45 AM', title: 'Material Drop', desc: '2 pallets of rebar delivered & scanned.' },
+    { id: 1, icon: Users, color: 'text-primary-500', bg: 'bg-primary-50', time: '07:15 AM', title: 'Crew Verified', desc: '3 workers passed biometric ID check.' },
+    { id: 2, icon: MapPin, color: 'text-reno-green-500', bg: 'bg-reno-green-50', time: '07:30 AM', title: 'GPS Arrival', desc: 'Site mobilization confirmed.' },
+    { id: 3, icon: Package, color: 'text-reno-purple-500', bg: 'bg-reno-purple-50', time: '09:45 AM', title: 'Material Drop', desc: '2 pallets of rebar delivered & scanned.' },
     { id: 4, icon: Bell, color: 'text-amber-500', bg: 'bg-amber-50', time: '11:00 AM', title: 'Noise Alert', desc: 'Jackhammering scheduled for 1:00 PM.' },
   ];
 
@@ -152,7 +152,7 @@ export function ChangeOrderTerminal() {
         <div className="flex gap-1.5">
           <div className="h-3 w-3 rounded-full bg-red-500/20 ring-1 ring-red-500/50" />
           <div className="h-3 w-3 rounded-full bg-amber-500/20 ring-1 ring-amber-500/50" />
-          <div className="h-3 w-3 rounded-full bg-emerald-500/20 ring-1 ring-emerald-500/50" />
+          <div className="h-3 w-3 rounded-full bg-reno-green-500/20 ring-1 ring-emerald-500/50" />
         </div>
         <p className="ml-2 text-[10px] text-slate-400">addendum_protocol.exe</p>
       </div>
@@ -185,16 +185,16 @@ export function ChangeOrderTerminal() {
           <AnimatePresence mode="wait">
             {analyzing ? (
               <motion.div key="analyzing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-3">
-                <Zap className="h-5 w-5 animate-pulse text-blue-500" />
-                <span className="text-blue-400">AI Rate Check: Benchmarking against local GTA data...</span>
+                <Zap className="h-5 w-5 animate-pulse text-primary-500" />
+                <span className="text-primary-400">AI Rate Check: Benchmarking against local GTA data...</span>
               </motion.div>
             ) : (
               <motion.div key="result" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="space-y-2">
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-emerald-500" />
-                  <span className="text-emerald-400">Rates aligned with local baseline.</span>
+                  <CheckCircle className="h-5 w-5 text-reno-green-500" />
+                  <span className="text-reno-green-400">Rates aligned with local baseline.</span>
                 </div>
-                <button className="mt-2 w-full rounded bg-emerald-500 py-2 font-bold text-slate-900 transition-colors hover:bg-emerald-400">
+                <button className="mt-2 w-full rounded bg-reno-green-500 py-2 font-bold text-slate-900 transition-colors hover:bg-reno-green-400">
                   DIGITALLY SIGN & AUTHORIZE
                 </button>
               </motion.div>
@@ -211,8 +211,8 @@ export function HomeownerHeroVisualization() {
   return (
     <div className="relative mx-auto h-[500px] w-full max-w-[600px] perspective-[2000px]">
       {/* Background glow layers */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full bg-blue-500/20 blur-[100px]" />
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[200px] w-[200px] rounded-full bg-emerald-500/20 blur-[80px]" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full bg-primary-500/20 blur-[100px]" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[200px] w-[200px] rounded-full bg-reno-green-500/20 blur-[80px]" />
 
       <motion.div 
         className="relative h-full w-full transform-style-3d"
@@ -224,23 +224,23 @@ export function HomeownerHeroVisualization() {
           
           {/* Inner Glowing Ring */}
           <motion.div 
-            className="absolute inset-4 rounded-full border-[2px] border-dashed border-emerald-500/30"
+            className="absolute inset-4 rounded-full border-[2px] border-dashed border-reno-green-500/30"
             animate={{ rotate: 360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           />
           
           {/* Central Data Node */}
           <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-slate-800 to-slate-950 border border-slate-700 shadow-2xl z-20">
-             <div className="absolute inset-0 rounded-full bg-emerald-500/5" />
+             <div className="absolute inset-0 rounded-full bg-reno-green-500/5" />
              <div className="text-center">
-               <Lock className="mx-auto mb-2 h-8 w-8 text-emerald-400" />
+               <Lock className="mx-auto mb-2 h-8 w-8 text-reno-green-400" />
                <p className="font-mono text-[10px] font-bold tracking-widest text-slate-300">SECURE</p>
-               <p className="font-mono text-xs font-black tracking-tight text-emerald-400 mt-1">$45,000</p>
+               <p className="font-mono text-xs font-black tracking-tight text-reno-green-400 mt-1">$45,000</p>
              </div>
              
              {/* Central Pulse */}
              <motion.div 
-               className="absolute inset-0 rounded-full border border-emerald-400/50"
+               className="absolute inset-0 rounded-full border border-reno-green-400/50"
                animate={{ scale: [1, 1.5], opacity: [0.8, 0] }}
                transition={{ duration: 2, repeat: Infinity }}
              />
@@ -257,10 +257,10 @@ export function HomeownerHeroVisualization() {
         >
           <div className="absolute -top-[160px] left-1/2 -translate-x-1/2 -rotate-90">
              <div className="flex flex-col items-center gap-2">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-500/30 bg-slate-900/80 backdrop-blur shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                  <Camera className="h-5 w-5 text-blue-400" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary-500/30 bg-slate-900/80 backdrop-blur shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                  <Camera className="h-5 w-5 text-primary-400" />
                 </div>
-                <span className="rounded bg-blue-500/20 px-2 py-0.5 font-mono text-[8px] text-blue-300">GPS PROOF</span>
+                <span className="rounded bg-primary-500/20 px-2 py-0.5 font-mono text-[8px] text-primary-300">GPS PROOF</span>
              </div>
           </div>
         </motion.div>
@@ -291,10 +291,10 @@ export function HomeownerHeroVisualization() {
         >
           <div className="absolute top-1/2 -right-[160px] -translate-y-1/2">
              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-violet-500/30 bg-slate-900/80 backdrop-blur shadow-[0_0_15px_rgba(139,92,246,0.3)]">
-                  <Users className="h-5 w-5 text-violet-400" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-reno-purple-500/30 bg-slate-900/80 backdrop-blur shadow-[0_0_15px_rgba(139,92,246,0.3)]">
+                  <Users className="h-5 w-5 text-reno-purple-400" />
                 </div>
-                <span className="rounded bg-violet-500/20 px-2 py-0.5 font-mono text-[8px] text-violet-300 whitespace-nowrap">ID VERIFIED</span>
+                <span className="rounded bg-reno-purple-500/20 px-2 py-0.5 font-mono text-[8px] text-reno-purple-300 whitespace-nowrap">ID VERIFIED</span>
              </div>
           </div>
         </motion.div>
@@ -336,7 +336,7 @@ export function HomeownerHeroVisualization() {
 
         {/* Background Status Log */}
         <div className="absolute bottom-4 left-4 rounded-lg bg-slate-950/80 p-3 backdrop-blur border border-slate-800 font-mono text-[8px] text-slate-500 hidden sm:block">
-          <p className="text-emerald-400 mb-1">Live Execution Log</p>
+          <p className="text-reno-green-400 mb-1">Live Execution Log</p>
           <p>&gt; Initializing Vault Protocol...</p>
           <p>&gt; Capital Secured [TX: #4892]</p>
           <p className="animate-pulse text-white">&gt; Awaiting Verification Metadata...</p>
@@ -386,7 +386,7 @@ function ProgressRing({ current, total, size = 56 }: { current: number; total: n
   return (
     <div className="relative flex shrink-0 items-center justify-center">
       {/* Outer glow */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-500/20 to-emerald-500/20 blur-md" />
+      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-500/20 to-reno-green-500/20 blur-md" />
       <svg width={size} height={size} className="-rotate-90">
         <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth={sw} />
         <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="url(#pg)" strokeWidth={sw} strokeLinecap="round" strokeDasharray={c} strokeDashoffset={offset} />
@@ -394,7 +394,7 @@ function ProgressRing({ current, total, size = 56 }: { current: number; total: n
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="text-[11px] font-bold text-white">{current}</span>
-        <span className="text-[7px] text-gray-500 -mt-0.5">of {total}</span>
+        <span className="text-[7px] text-slate-500 -mt-0.5">of {total}</span>
       </div>
     </div>
   );
@@ -458,7 +458,7 @@ export function SiteBriefingPhone() {
 
           {/* Pulsing ambient glow behind phone */}
           <motion.div
-            className="absolute -inset-8 z-0 rounded-[4rem] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-500/[0.12] via-blue-500/[0.08] to-transparent blur-3xl"
+            className="absolute -inset-8 z-0 rounded-[4rem] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-reno-green-500/[0.12] via-primary-500/[0.08] to-transparent blur-3xl"
             style={{ opacity: glowOp }}
           />
 
@@ -541,7 +541,7 @@ export function SiteBriefingPhone() {
                         {...(skip ? {} : { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, viewport: vp })}
                         transition={{ duration: 0.6, delay: 0.2, ease: cardEase }}
                       >
-                        <p className="text-[10px] tracking-wide text-gray-500">Tuesday, Feb 25</p>
+                        <p className="text-[10px] tracking-wide text-slate-500">Tuesday, Feb 25</p>
                         <div className="mt-0.5 flex items-center justify-between">
                           <p className="text-[15px] font-semibold tracking-tight text-white/90">Good morning, Sarah</p>
                           <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.05]">
@@ -558,7 +558,7 @@ export function SiteBriefingPhone() {
                           {...(skip ? {} : { initial: { opacity: 0, y: 50 }, whileInView: { opacity: 1, y: 0 }, viewport: vp })}
                           transition={{ duration: 0.6, delay: 0.4, ease: cardEase }}
                         >
-                          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-amber-500/[0.03] via-transparent to-emerald-500/[0.03] pointer-events-none" />
+                          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-amber-500/[0.03] via-transparent to-reno-green-500/[0.03] pointer-events-none" />
                           <div className="relative mb-3.5 flex items-center justify-between">
                             <div className="flex items-center gap-2.5">
                               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500/30 to-amber-600/20 shadow-inner">
@@ -566,18 +566,18 @@ export function SiteBriefingPhone() {
                               </div>
                               <p className="text-[13px] font-semibold tracking-tight text-white/95">Today&apos;s Site Briefing</p>
                             </div>
-                            <div className="flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2 py-0.5 ring-1 ring-emerald-500/20">
-                              <div className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                              <span className="text-[8px] font-semibold text-emerald-400">Live</span>
+                            <div className="flex items-center gap-1.5 rounded-full bg-reno-green-500/10 px-2 py-0.5 ring-1 ring-emerald-500/20">
+                              <div className="h-1.5 w-1.5 rounded-full bg-reno-green-400 animate-pulse" />
+                              <span className="text-[8px] font-semibold text-reno-green-400">Live</span>
                             </div>
                           </div>
                           <div className="relative flex items-center justify-between">
                             <div className="flex-1">
                               <div className="flex items-center gap-1.5">
-                                <MapPin className="h-[11px] w-[11px] shrink-0 text-gray-400" />
+                                <MapPin className="h-[11px] w-[11px] shrink-0 text-slate-400" />
                                 <span className="text-[12px] font-medium text-white/85">42 Maple Drive</span>
                               </div>
-                              <p className="mt-2 text-[9px] leading-relaxed text-gray-500">Great progress! Day 14 of 42 · Foundation Stage</p>
+                              <p className="mt-2 text-[9px] leading-relaxed text-slate-500">Great progress! Day 14 of 42 · Foundation Stage</p>
                             </div>
                             <ProgressRing current={14} total={42} size={56} />
                           </div>
@@ -589,31 +589,31 @@ export function SiteBriefingPhone() {
                           {...(skip ? {} : { initial: { opacity: 0, y: 50 }, whileInView: { opacity: 1, y: 0 }, viewport: vp })}
                           transition={{ duration: 0.6, delay: 0.7, ease: cardEase }}
                         >
-                          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/[0.08] via-sky-500/[0.05] to-blue-500/[0.08]" />
+                          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/[0.08] via-sky-500/[0.05] to-primary-500/[0.08]" />
                           <div className="absolute inset-0 bg-[#141419]" style={{ opacity: 0.85 }} />
                           <div className="relative flex items-center gap-3">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-amber-400/30 to-orange-500/20 shadow-inner">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-amber-400/30 to-reno-amber-500/20 shadow-inner">
                               <Sun className="h-[15px] w-[15px] text-amber-400" />
                             </div>
                             <div>
                               <div className="flex items-baseline gap-2">
                                 <span className="text-[15px] font-semibold tracking-tight text-white">18°C</span>
-                                <span className="text-[9px] text-gray-400">Partly Cloudy</span>
+                                <span className="text-[9px] text-slate-400">Partly Cloudy</span>
                               </div>
-                              <p className="text-[8px] text-gray-600 mt-0.5">Sunset 7:42 PM</p>
+                              <p className="text-[8px] text-slate-600 mt-0.5">Sunset 7:42 PM</p>
                             </div>
                           </div>
                           <div className="relative flex items-center gap-3.5">
                             {[
                               { icon: Wind, val: '12 km/h', color: 'text-sky-400' },
-                              { icon: Droplets, val: '45%', color: 'text-blue-400' },
-                              { icon: Thermometer, val: 'UV 3', color: 'text-orange-400' },
+                              { icon: Droplets, val: '45%', color: 'text-primary-400' },
+                              { icon: Thermometer, val: 'UV 3', color: 'text-reno-amber-400' },
                             ].map((m, i) => (
                               <React.Fragment key={m.val}>
                                 {i > 0 && <div className="h-5 w-px bg-white/[0.08]" />}
                                 <div className="flex flex-col items-center gap-1">
                                   <m.icon className={`h-3 w-3 ${m.color}`} />
-                                  <span className="text-[8px] font-medium text-gray-400">{m.val}</span>
+                                  <span className="text-[8px] font-medium text-slate-400">{m.val}</span>
                                 </div>
                               </React.Fragment>
                             ))}
@@ -626,10 +626,10 @@ export function SiteBriefingPhone() {
                           {...(skip ? {} : { initial: { opacity: 0, y: 50 }, whileInView: { opacity: 1, y: 0 }, viewport: vp })}
                           transition={{ duration: 0.6, delay: 1.0, ease: cardEase }}
                         >
-                          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/[0.03] via-transparent to-emerald-500/[0.03] pointer-events-none" />
+                          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary-500/[0.03] via-transparent to-reno-green-500/[0.03] pointer-events-none" />
                           <div className="relative mb-3.5 flex items-center gap-2.5">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500/30 to-blue-600/20 shadow-inner">
-                              <Users className="h-[15px] w-[15px] text-blue-400" />
+                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500/30 to-primary-600/20 shadow-inner">
+                              <Users className="h-[15px] w-[15px] text-primary-400" />
                             </div>
                             <p className="text-[13px] font-semibold tracking-tight text-white/95">Who&apos;s on site today?</p>
                           </div>
@@ -637,19 +637,19 @@ export function SiteBriefingPhone() {
                             {teamData.map((m) => (
                               <div key={m.id} className="flex flex-col items-center">
                                 <div className="relative">
-                                  <div className={`rounded-full p-[2.5px] ${m.onSite ? 'bg-gradient-to-br from-emerald-400 to-green-500 shadow-lg shadow-emerald-500/25' : 'bg-gradient-to-br from-gray-700 to-gray-600'}`}>
+                                  <div className={`rounded-full p-[2.5px] ${m.onSite ? 'bg-gradient-to-br from-reno-green-400 to-reno-green-500 shadow-lg shadow-emerald-500/25' : 'bg-gradient-to-br from-slate-700 to-slate-600'}`}>
                                     <div className="h-12 w-12 overflow-hidden rounded-full bg-[#0a0a0f]">
                                       <Avatar skin={m.skin} hair={m.hair} id={m.id} />
                                     </div>
                                   </div>
                                   {m.onSite && (
                                     <div className="absolute -bottom-0.5 right-0 flex h-[15px] w-[15px] items-center justify-center rounded-full bg-[#141419]">
-                                      <CheckCircle className="h-[12px] w-[12px] text-emerald-400" />
+                                      <CheckCircle className="h-[12px] w-[12px] text-reno-green-400" />
                                     </div>
                                   )}
                                 </div>
                                 <p className="mt-2 text-[9px] font-medium text-white/85">{m.name}</p>
-                                <p className="text-[8px] text-gray-500 mt-0.5">{m.role}</p>
+                                <p className="text-[8px] text-slate-500 mt-0.5">{m.role}</p>
                               </div>
                             ))}
                           </div>
@@ -669,29 +669,29 @@ export function SiteBriefingPhone() {
                               </div>
                               <p className="text-[13px] font-semibold tracking-tight text-white/95">Noise &amp; Activity Forecast</p>
                             </div>
-                            <span className="flex items-center gap-0.5 text-[8px] font-medium text-gray-500">Details <ChevronRight className="h-[10px] w-[10px]" /></span>
+                            <span className="flex items-center gap-0.5 text-[8px] font-medium text-slate-500">Details <ChevronRight className="h-[10px] w-[10px]" /></span>
                           </div>
-                          <div className="relative mb-2 flex justify-between px-1 text-[8px] text-gray-500">
+                          <div className="relative mb-2 flex justify-between px-1 text-[8px] text-slate-500">
                             {['9:30 AM', '11 AM', '1 PM', '3 PM', '5 PM'].map((t, i) => (
                               <span key={t} className={i === 0 ? 'text-white/80 font-semibold' : 'font-medium'}>{t}</span>
                             ))}
                           </div>
                           <div className="relative flex h-3 gap-[1.5px] overflow-hidden rounded-full shadow-inner shadow-black/30">
-                            <div className="flex-1 rounded-l-full bg-gradient-to-r from-red-500 to-orange-500 shadow-lg shadow-red-500/20" />
-                            <div className="flex-1 bg-gradient-to-r from-orange-500 to-yellow-400 shadow-lg shadow-orange-500/20" />
-                            <div className="flex-1 bg-gradient-to-r from-yellow-400 to-green-400 shadow-lg shadow-yellow-400/20" />
-                            <div className="flex-1 rounded-r-full bg-gradient-to-r from-green-400 to-emerald-500 shadow-lg shadow-green-400/20" />
+                            <div className="flex-1 rounded-l-full bg-gradient-to-r from-red-500 to-reno-amber-500 shadow-lg shadow-red-500/20" />
+                            <div className="flex-1 bg-gradient-to-r from-reno-amber-500 to-reno-amber-400 shadow-lg shadow-orange-500/20" />
+                            <div className="flex-1 bg-gradient-to-r from-reno-amber-400 to-reno-green-400 shadow-lg shadow-yellow-400/20" />
+                            <div className="flex-1 rounded-r-full bg-gradient-to-r from-reno-green-400 to-reno-green-500 shadow-lg shadow-green-400/20" />
                           </div>
                           <div className="relative mt-3 flex items-center gap-4">
                             {[
                               { c: 'bg-red-500', l: 'High' },
-                              { c: 'bg-orange-500', l: 'Med' },
-                              { c: 'bg-yellow-400', l: 'Low' },
-                              { c: 'bg-green-400', l: 'Quiet' },
+                              { c: 'bg-reno-amber-500', l: 'Med' },
+                              { c: 'bg-reno-amber-400', l: 'Low' },
+                              { c: 'bg-reno-green-400', l: 'Quiet' },
                             ].map((x) => (
                               <div key={x.l} className="flex items-center gap-1.5">
                                 <div className={`h-[6px] w-[6px] rounded-full ${x.c} shadow-sm`} />
-                                <span className="text-[8px] font-medium text-gray-400">{x.l}</span>
+                                <span className="text-[8px] font-medium text-slate-400">{x.l}</span>
                               </div>
                             ))}
                           </div>
@@ -699,11 +699,11 @@ export function SiteBriefingPhone() {
 
                         {/* ── WarningAlert ── */}
                         <motion.div
-                          className="overflow-hidden rounded-xl border border-orange-500/30 shadow-lg shadow-orange-500/10"
+                          className="overflow-hidden rounded-xl border border-reno-amber-500/30 shadow-lg shadow-orange-500/10"
                           {...(skip ? {} : { initial: { opacity: 0, y: 50 }, whileInView: { opacity: 1, y: 0 }, viewport: vp })}
                           transition={{ duration: 0.6, delay: 1.6, ease: cardEase }}
                         >
-                          <div className="relative flex items-center gap-3 bg-gradient-to-r from-amber-600/95 to-orange-600/90 p-4">
+                          <div className="relative flex items-center gap-3 bg-gradient-to-r from-amber-600/95 to-reno-amber-600/90 p-4">
                             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/25 shadow-inner">
                               <motion.div
                                 animate={skip ? {} : { scale: [1, 1.1, 1] }}
@@ -714,7 +714,7 @@ export function SiteBriefingPhone() {
                             </div>
                             <div className="min-w-0 flex-1">
                               <p className="text-[12px] font-semibold tracking-tight text-white">Expect Higher Noise Today</p>
-                              <p className="mt-1 text-[9px] text-orange-50/80">Sandblasting nearby (~1 block)</p>
+                              <p className="mt-1 text-[9px] text-reno-amber-50/80">Sandblasting nearby (~1 block)</p>
                             </div>
                             <ChevronDown className="h-4 w-4 shrink-0 text-white/60" />
                           </div>
@@ -731,8 +731,8 @@ export function SiteBriefingPhone() {
                           {tabItems.map((tab) => (
                             <div key={tab.label} className="flex flex-col items-center gap-[3px]">
                               {tab.active && <div className="h-[2px] w-5 rounded-full bg-amber-400" />}
-                              <tab.icon className={`h-[16px] w-[16px] ${tab.active ? 'text-white/90' : 'text-gray-600'}`} />
-                              <span className={`text-[9px] ${tab.active ? 'font-medium text-white/80' : 'text-gray-600'}`}>{tab.label}</span>
+                              <tab.icon className={`h-[16px] w-[16px] ${tab.active ? 'text-white/90' : 'text-slate-600'}`} />
+                              <span className={`text-[9px] ${tab.active ? 'font-medium text-white/80' : 'text-slate-600'}`}>{tab.label}</span>
                             </div>
                           ))}
                         </div>

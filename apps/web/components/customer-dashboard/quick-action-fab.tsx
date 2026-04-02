@@ -5,10 +5,10 @@ import { Plus, X, AlertTriangle, Truck, Camera, MessageSquare } from 'lucide-rea
 import { motion, AnimatePresence } from 'framer-motion';
 
 const actions = [
-  { icon: AlertTriangle, label: 'Report Issue', color: 'bg-orange-500' },
+  { icon: AlertTriangle, label: 'Report Issue', color: 'bg-reno-amber-500' },
   { icon: Truck, label: 'Request Delivery', color: 'bg-sky-500' },
   { icon: Camera, label: 'Site Photo', color: 'bg-purple-500' },
-  { icon: MessageSquare, label: 'Message Team', color: 'bg-green-500' },
+  { icon: MessageSquare, label: 'Message Team', color: 'bg-reno-green-500' },
 ];
 
 export function QuickActionFAB() {
@@ -34,7 +34,7 @@ export function QuickActionFAB() {
         )}
       </AnimatePresence>
       <motion.button
-        className="relative z-10 w-[52px] h-[52px] rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-[0_8px_24px_rgba(251,146,60,0.4)]"
+        className="relative z-10 w-[52px] h-[52px] rounded-full bg-gradient-to-br from-amber-500 to-reno-amber-600 flex items-center justify-center shadow-[0_8px_24px_rgba(251,146,60,0.4)]"
         onClick={() => setOpen(!open)}
         whileTap={{ scale: 0.92 }}
         animate={{ rotate: open ? 135 : 0 }}

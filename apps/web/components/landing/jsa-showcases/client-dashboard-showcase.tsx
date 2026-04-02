@@ -54,7 +54,7 @@ const weekSchedule = [
     task: 'Plumbing rough-in',
     icon: Wrench,
     status: 'scheduled' as const,
-    color: 'text-gray-400',
+    color: 'text-slate-400',
   },
   {
     day: 'Thu',
@@ -62,7 +62,7 @@ const weekSchedule = [
     task: 'Insulation',
     icon: HardHat,
     status: 'scheduled' as const,
-    color: 'text-gray-400',
+    color: 'text-slate-400',
   },
   {
     day: 'Fri',
@@ -70,7 +70,7 @@ const weekSchedule = [
     task: 'Inspection',
     icon: ClipboardCheck,
     status: 'scheduled' as const,
-    color: 'text-gray-400',
+    color: 'text-slate-400',
   },
 ];
 
@@ -114,25 +114,25 @@ export function ClientDashboardShowcase() {
   const [activeTab, setActiveTab] = useState<TabValue>('schedule');
 
   return (
-    <Card className="w-full overflow-hidden border-2 border-gray-200 shadow-xl">
+    <Card className="w-full overflow-hidden border-2 border-slate-200 shadow-xl">
       {/* Header */}
-      <CardHeader className="border-b border-gray-200 bg-gradient-to-r from-white to-gray-50 pb-4">
+      <CardHeader className="border-b border-slate-200 bg-gradient-to-r from-white to-slate-50 pb-4">
         <div className="space-y-3">
           <div>
-            <CardTitle className="text-xl font-bold text-gray-900">
+            <CardTitle className="text-xl font-bold text-slate-900">
               Basement Renovation — 321 Yonge St, Toronto
             </CardTitle>
             <div className="mt-2 flex items-center gap-3">
               <Badge className="bg-reno-green text-white hover:bg-reno-green">
                 In Progress
               </Badge>
-              <span className="text-sm text-gray-600">65% Complete</span>
+              <span className="text-sm text-slate-600">65% Complete</span>
             </div>
           </div>
 
           {/* Progress bar */}
           <div className="space-y-1.5">
-            <div className="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+            <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200">
               <div
                 className="h-full rounded-full bg-gradient-to-r from-reno-green to-reno-teal transition-all"
                 style={{ width: '65%' }}
@@ -143,7 +143,7 @@ export function ClientDashboardShowcase() {
       </CardHeader>
 
       {/* Tabs */}
-      <div className="border-b border-gray-200 bg-white">
+      <div className="border-b border-slate-200 bg-white">
         <div className="flex">
           {tabs.map((tab) => (
             <button
@@ -153,7 +153,7 @@ export function ClientDashboardShowcase() {
                 'flex flex-1 items-center justify-center gap-2 border-b-2 px-4 py-3 text-sm font-medium transition-colors',
                 activeTab === tab.value
                   ? 'border-reno-green text-reno-green'
-                  : 'border-transparent text-gray-600 hover:text-gray-900'
+                  : 'border-transparent text-slate-600 hover:text-slate-900'
               )}
             >
               <tab.icon className="h-4 w-4" />
@@ -173,14 +173,14 @@ export function ClientDashboardShowcase() {
                 <Calendar className="h-4 w-4" />
                 Today's Work
               </div>
-              <p className="mt-2 text-sm text-gray-700">
+              <p className="mt-2 text-sm text-slate-700">
                 Framing inspection at 10 AM, Electrical rough-in continues
               </p>
             </div>
 
             {/* This week timeline */}
             <div>
-              <h3 className="mb-3 text-sm font-semibold text-gray-900">This Week</h3>
+              <h3 className="mb-3 text-sm font-semibold text-slate-900">This Week</h3>
               <div className="space-y-2">
                 {weekSchedule.map((item) => (
                   <div
@@ -191,18 +191,18 @@ export function ClientDashboardShowcase() {
                         ? 'border-reno-green/30 bg-reno-green-light'
                         : item.status === 'in-progress'
                           ? 'border-reno-teal/30 bg-reno-teal-light'
-                          : 'border-gray-200 bg-white'
+                          : 'border-slate-200 bg-white'
                     )}
                   >
                     <item.icon className={cn('h-5 w-5', item.color)} />
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-sm font-semibold text-gray-900">
+                        <span className="text-sm font-semibold text-slate-900">
                           {item.day}
                         </span>
-                        <span className="text-xs text-gray-500">{item.date}</span>
+                        <span className="text-xs text-slate-500">{item.date}</span>
                       </div>
-                      <p className="text-sm text-gray-700">{item.task}</p>
+                      <p className="text-sm text-slate-700">{item.task}</p>
                     </div>
                     {item.status === 'complete' && (
                       <CheckCircle2 className="h-4 w-4 text-reno-green" />
@@ -218,7 +218,7 @@ export function ClientDashboardShowcase() {
                 <ClipboardCheck className="h-4 w-4" />
                 Next Milestone
               </div>
-              <p className="mt-2 text-sm font-medium text-gray-900">
+              <p className="mt-2 text-sm font-medium text-slate-900">
                 Rough-in Inspection — Feb 28
               </p>
             </div>
@@ -228,9 +228,9 @@ export function ClientDashboardShowcase() {
         {activeTab === 'reports' && (
           <div className="space-y-4">
             {/* Latest report */}
-            <div className="rounded-lg border-2 border-gray-200 bg-white p-4">
+            <div className="rounded-lg border-2 border-slate-200 bg-white p-4">
               <div className="mb-3 flex items-center justify-between">
-                <h3 className="text-sm font-bold text-gray-900">Daily Report — Feb 27</h3>
+                <h3 className="text-sm font-bold text-slate-900">Daily Report — Feb 27</h3>
                 <Badge variant="secondary" className="bg-reno-green-light text-reno-green">
                   Latest
                 </Badge>
@@ -239,25 +239,25 @@ export function ClientDashboardShowcase() {
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-reno-green" />
                   <div>
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-sm font-medium text-slate-900">
                       Crew on site: 4 workers
                     </p>
-                    <p className="text-xs text-gray-500">8:02 AM - 3:45 PM</p>
+                    <p className="text-xs text-slate-500">8:02 AM - 3:45 PM</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-reno-green" />
-                  <p className="text-sm text-gray-700">
+                  <p className="text-sm text-slate-700">
                     Tasks completed: Framing inspection passed
                   </p>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-reno-green" />
-                  <p className="text-sm text-gray-700">Photos uploaded: 12 new</p>
+                  <p className="text-sm text-slate-700">Photos uploaded: 12 new</p>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-reno-green" />
-                  <p className="text-sm text-gray-700">
+                  <p className="text-sm text-slate-700">
                     Materials delivered: Romex 14/2 wire, PEX pipe
                   </p>
                 </div>
@@ -265,14 +265,14 @@ export function ClientDashboardShowcase() {
             </div>
 
             {/* Previous report (collapsed) */}
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+            <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-semibold text-gray-700">Daily Report — Feb 26</h3>
+                <h3 className="text-sm font-semibold text-slate-700">Daily Report — Feb 26</h3>
                 <Button variant="ghost" size="sm" className="h-8 text-xs">
                   View
                 </Button>
               </div>
-              <p className="mt-1 text-xs text-gray-500">
+              <p className="mt-1 text-xs text-slate-500">
                 Electrical rough-in started, 3 workers on site
               </p>
             </div>
@@ -292,7 +292,7 @@ export function ClientDashboardShowcase() {
                       ? 'border-reno-green/30 bg-reno-green-light'
                       : milestone.status === 'in-progress'
                         ? 'border-reno-teal/30 bg-reno-teal-light'
-                        : 'border-gray-200 bg-gray-50'
+                        : 'border-slate-200 bg-slate-50'
                   )}
                 >
                   <div className="flex items-start justify-between gap-4">
@@ -305,18 +305,18 @@ export function ClientDashboardShowcase() {
                           <Circle className="h-5 w-5 animate-pulse text-reno-teal" />
                         )}
                         {milestone.status === 'locked' && (
-                          <Lock className="h-5 w-5 text-gray-400" />
+                          <Lock className="h-5 w-5 text-slate-400" />
                         )}
-                        <h3 className="text-sm font-semibold text-gray-900">
+                        <h3 className="text-sm font-semibold text-slate-900">
                           {idx + 1}. {milestone.name}
                         </h3>
                       </div>
                       <div className="mt-2 flex items-center gap-3">
-                        <div className="text-xs font-medium text-gray-600">
+                        <div className="text-xs font-medium text-slate-600">
                           {milestone.progress}%
                         </div>
                         <div className="flex-1">
-                          <div className="h-1.5 overflow-hidden rounded-full bg-gray-200">
+                          <div className="h-1.5 overflow-hidden rounded-full bg-slate-200">
                             <div
                               className={cn(
                                 'h-full rounded-full transition-all',
@@ -324,7 +324,7 @@ export function ClientDashboardShowcase() {
                                   ? 'bg-reno-green'
                                   : milestone.status === 'in-progress'
                                     ? 'bg-reno-teal'
-                                    : 'bg-gray-300'
+                                    : 'bg-slate-300'
                               )}
                               style={{ width: `${milestone.progress}%` }}
                             />
@@ -333,10 +333,10 @@ export function ClientDashboardShowcase() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-sm font-bold text-gray-900">
+                      <div className="text-sm font-bold text-slate-900">
                         ${milestone.amount.toLocaleString()}
                       </div>
-                      <div className="text-xs text-gray-500">
+                      <div className="text-xs text-slate-500">
                         {milestone.status === 'complete'
                           ? 'Released'
                           : milestone.status === 'in-progress'
@@ -350,20 +350,20 @@ export function ClientDashboardShowcase() {
             </div>
 
             {/* Budget summary */}
-            <div className="rounded-lg border-2 border-gray-300 bg-white p-4">
-              <h3 className="mb-3 text-sm font-bold text-gray-900">Budget Summary</h3>
+            <div className="rounded-lg border-2 border-slate-300 bg-white p-4">
+              <h3 className="mb-3 text-sm font-bold text-slate-900">Budget Summary</h3>
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <div className="text-lg font-bold text-gray-900">$42,000</div>
-                  <div className="text-xs text-gray-500">Total</div>
+                  <div className="text-lg font-bold text-slate-900">$42,000</div>
+                  <div className="text-xs text-slate-500">Total</div>
                 </div>
                 <div>
                   <div className="text-lg font-bold text-reno-green">$11,700</div>
-                  <div className="text-xs text-gray-500">Released</div>
+                  <div className="text-xs text-slate-500">Released</div>
                 </div>
                 <div>
                   <div className="text-lg font-bold text-reno-teal">$12,400</div>
-                  <div className="text-xs text-gray-500">In Progress</div>
+                  <div className="text-xs text-slate-500">In Progress</div>
                 </div>
               </div>
             </div>
@@ -379,8 +379,8 @@ export function ClientDashboardShowcase() {
               >
                 <alert.icon className={cn('mt-0.5 h-5 w-5 shrink-0', alert.color)} />
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-gray-900">{alert.message}</p>
-                  <p className="mt-1 text-xs text-gray-500">{alert.time}</p>
+                  <p className="text-sm font-medium text-slate-900">{alert.message}</p>
+                  <p className="mt-1 text-xs text-slate-500">{alert.time}</p>
                 </div>
               </div>
             ))}

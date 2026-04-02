@@ -3,10 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import {
-  ChevronDown,
-  ArrowRight,
-} from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -18,14 +15,35 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/lib/auth/auth-context';
 
+// Products mega menu data
+const platformItems = [
+  { icon: 'security', label: 'Obsidian Sentinel', desc: 'Construction intelligence platform — 11 modules.', href: '/apps/sentinel' },
+  { icon: 'verified_user', label: 'The Proof', desc: 'Immutable verification ledger — GPS-stamped records.', href: '/apps/the-proof' },
+  { icon: 'engineering', label: 'FieldForce', desc: 'Worker check-in, attendance, project briefs.', href: '/apps/field-force' },
+  { icon: 'architecture', label: 'Precision Layer', desc: 'Blueprint viewer, markup tools, layer control.', href: '/apps/precision-layer' },
+  { icon: 'location_on', label: 'LocalPro', desc: 'GPS check-in, photo logs, escrow vault.', href: '/apps/local-pro' },
+  { icon: 'health_and_safety', label: 'Safety Hub', desc: 'JSA generator, WHMIS training, toolbox talks.', href: '/apps/safety-hub' },
+];
+
+const freeToolsItems = [
+  { icon: 'attach_money', label: 'Cost Guides', desc: '25 trades, 15 cities, real pricing.', href: '/costs' },
+  { icon: 'analytics', label: '2026 Cost Report', desc: 'Free data report — 375+ price points.', href: '/renovation-cost-report' },
+  { icon: 'description', label: 'Contract Generator', desc: 'Free Ontario-compliant contracts.', href: '/contracts' },
+  { icon: 'redeem', label: 'Savings Calculator', desc: 'See all rebates for your city.', href: '/savings' },
+  { icon: 'shopping_cart', label: 'Shop', desc: 'Construction supplies & tools.', href: '/shop' },
+  { icon: 'account_tree', label: 'WBS Generator', desc: 'Work breakdown for any reno.', href: '/wbs-generator' },
+];
+
+// How It Works data
 const hiwItems = [
   { icon: 'lock', label: 'The Vault', desc: 'Bank-held escrow. Money moves only when work is verified.', href: '/how-it-works#vault', badge: 'Core' },
   { icon: 'photo_camera', label: 'Proof Packages', desc: 'GPS photos, inspections, sign-offs — compiled automatically.', href: '/how-it-works#proof' },
   { icon: 'how_to_reg', label: 'Verified Pros', desc: 'Portfolios built from real work, not marketing.', href: '/how-it-works#pros' },
   { icon: 'balance', label: 'QS Disputes', desc: 'Professional measurement settles disagreements.', href: '/how-it-works#disputes' },
-  { icon: 'home', label: 'HouseFax\u2122', desc: 'Permanent digital property record. Transfers on sale.', href: '/how-it-works#house-fax', badge: 'Unique' },
+  { icon: 'home', label: 'HouseFax™', desc: 'Permanent digital property record. Transfers on sale.', href: '/how-it-works#house-fax', badge: 'Unique' },
 ];
 
+// Services data
 const serviceGroups = [
   {
     heading: 'Structural',
@@ -74,20 +92,14 @@ const serviceGroups = [
   },
 ];
 
-const resourceItems = [
-  { icon: 'security', label: 'Obsidian Sentinel', desc: 'Construction intelligence platform — 11 modules.', href: '/apps/sentinel' },
-  { icon: 'verified_user', label: 'The Proof', desc: 'Immutable verification ledger — GPS-stamped records.', href: '/apps/the-proof' },
-  { icon: 'location_on', label: 'LocalPro', desc: 'GPS check-in, photo logs, escrow vault for crews.', href: '/apps/local-pro' },
-  { icon: 'engineering', label: 'FieldForce', desc: 'Worker check-in, attendance, project briefs.', href: '/apps/field-force' },
-  { icon: 'architecture', label: 'Precision Layer', desc: 'Blueprint viewer, markup tools, layer control.', href: '/apps/precision-layer' },
-  { icon: 'smartphone', label: 'Apps', desc: '5 field + office apps for your crew.', href: '/apps' },
-  { icon: 'attach_money', label: 'Cost Guides', desc: '25 trades, 15 cities, real pricing.', href: '/costs' },
-  { icon: 'description', label: 'Contract Generator', desc: 'Free Ontario-compliant contracts.', href: '/contracts' },
-  { icon: 'redeem', label: 'Savings Calculator', desc: 'See all rebates for your city.', href: '/savings' },
-  { icon: 'menu_book', label: 'Blog', desc: 'Guides, market data, case studies.', href: '/blog' },
-  { icon: 'help', label: 'Help Centre', desc: 'FAQ by role. How-to guides.', href: '/help' },
-  { icon: 'info', label: 'About Us', desc: 'The team, BCIN + P.QS credentials.', href: '/about' },
-  { icon: 'mail', label: 'Contact', desc: 'Inquiries, partnerships, press.', href: '/contact' },
+// Resources simple dropdown data
+const resourcesItems = [
+  { icon: 'person', label: 'For Homeowners', href: '/homeowners' },
+  { icon: 'construction', label: 'For Contractors', href: '/contractors' },
+  { icon: 'menu_book', label: 'Blog', href: '/blog' },
+  { icon: 'help', label: 'Help Centre', href: '/help' },
+  { icon: 'info', label: 'About Us', href: '/about' },
+  { icon: 'mail', label: 'Contact', href: '/contact' },
 ];
 
 export function Navbar() {
@@ -96,15 +108,15 @@ export function Navbar() {
   const { user, profile, signOut, loading: authLoading } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
   const [hiwOpen, setHiwOpen] = useState(false);
-  const [resOpen, setResOpen] = useState(false);
-  const [svcOpen, setSvcOpen] = useState(false);
-  const [mobileHiwOpen, setMobileHiwOpen] = useState(false);
-  const [mobileSvcOpen, setMobileSvcOpen] = useState(false);
-  const [mobileResOpen, setMobileResOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+
+  const productsRef = useRef<HTMLDivElement>(null);
   const hiwRef = useRef<HTMLDivElement>(null);
-  const svcRef = useRef<HTMLDivElement>(null);
-  const resRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const resourcesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -114,25 +126,26 @@ export function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
+    setProductsOpen(false);
     setHiwOpen(false);
-    setSvcOpen(false);
-    setResOpen(false);
-    setMobileHiwOpen(false);
-    setMobileSvcOpen(false);
-    setMobileResOpen(false);
+    setServicesOpen(false);
+    setResourcesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
+      if (productsRef.current && !productsRef.current.contains(e.target as Node)) setProductsOpen(false);
       if (hiwRef.current && !hiwRef.current.contains(e.target as Node)) setHiwOpen(false);
-      if (svcRef.current && !svcRef.current.contains(e.target as Node)) setSvcOpen(false);
-      if (resRef.current && !resRef.current.contains(e.target as Node)) setResOpen(false);
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) setServicesOpen(false);
+      if (resourcesRef.current && !resourcesRef.current.contains(e.target as Node)) setResourcesOpen(false);
     }
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
+        setProductsOpen(false);
         setHiwOpen(false);
-        setSvcOpen(false);
-        setResOpen(false);
+        setServicesOpen(false);
+        setResourcesOpen(false);
+        setMobileOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -163,17 +176,24 @@ export function Navbar() {
 
   const displayName = profile?.full_name || user?.email || 'User';
 
+  const closeAllDesktopMenus = () => {
+    setProductsOpen(false);
+    setHiwOpen(false);
+    setServicesOpen(false);
+    setResourcesOpen(false);
+  };
+
   return (
     <>
       <header className="sticky top-0 z-50 w-full">
         <div
-          className={`w-full transition-all duration-300 ease-out border-b ${
+          className={`w-full transition-all duration-300 ease-out ${
             scrolled
-              ? 'border-slate-200 bg-white/90 shadow-sm backdrop-blur-2xl'
-              : 'border-slate-200/60 bg-white/80 backdrop-blur-md'
+              ? 'bg-white/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,28,55,0.06)]'
+              : 'bg-white/80 backdrop-blur-xl'
           }`}
         >
-          <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-3 lg:px-8">
+          <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-3.5 lg:px-8">
             {/* Logo */}
             <Link href="/" className="flex shrink-0 items-center gap-2">
               <div className="size-6 text-[#0fbabd]">
@@ -187,101 +207,195 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden items-center gap-0.5 lg:flex">
-              {/* How It Works (dropdown) */}
-              <div ref={hiwRef} className="relative">
+            <nav className="hidden items-center gap-1 lg:flex">
+              {/* Products */}
+              <div ref={productsRef} className="relative">
                 <button
-                  onClick={() => { setHiwOpen(!hiwOpen); setSvcOpen(false); setResOpen(false); }}
-                  aria-expanded={hiwOpen}
+                  onClick={() => {
+                    setProductsOpen(!productsOpen);
+                    setHiwOpen(false);
+                    setServicesOpen(false);
+                    setResourcesOpen(false);
+                  }}
+                  aria-expanded={productsOpen}
                   aria-haspopup="true"
-                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-600 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900"
+                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:text-slate-900"
                 >
-                  How It Works
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${hiwOpen ? 'rotate-180' : ''}`} />
+                  Products
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
                 </button>
-                {hiwOpen && (
-                  <div role="menu" className="absolute left-0 top-full z-50 mt-2 w-[540px] rounded-xl border border-slate-200 bg-white p-3 shadow-xl">
-                    <div className="grid grid-cols-2 gap-1">
-                      {hiwItems.map((item) => (
-                        <Link
-                          key={item.label}
-                          href={item.href}
-                          onClick={() => setHiwOpen(false)}
-                          role="menuitem"
-                          className="group flex gap-3 rounded-lg p-3 transition-all duration-150 hover:bg-[#0fbabd]/5"
-                        >
-                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#0fbabd]/10 text-[#0fbabd] group-hover:bg-[#0fbabd] group-hover:text-white transition-colors">
-                            <span className="material-symbols-outlined text-[18px]">{item.icon}</span>
+                {productsOpen && (
+                  <div
+                    role="menu"
+                    className="absolute left-0 top-full z-50 mt-2 w-[720px] rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.02)] border border-slate-100 bg-white overflow-hidden opacity-0 translate-y-2 animate-in fade-in slide-in-from-top-2 duration-200"
+                    style={{ opacity: 1, transform: 'translateY(0)' }}
+                  >
+                    <div className="p-6">
+                      <div className="grid grid-cols-2 gap-8">
+                        {/* Platform column */}
+                        <div>
+                          <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">Platform</p>
+                          <div className="flex flex-col gap-1">
+                            {platformItems.map((item) => (
+                              <Link
+                                key={item.label}
+                                href={item.href}
+                                onClick={() => setProductsOpen(false)}
+                                role="menuitem"
+                                className="group flex gap-3 rounded-lg p-3 transition-colors hover:bg-slate-50"
+                              >
+                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0fbabd]/10 text-[#0fbabd] transition-colors group-hover:bg-[#0fbabd] group-hover:text-white">
+                                  <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                                    {item.icon}
+                                  </span>
+                                </div>
+                                <div className="min-w-0">
+                                  <div className="text-sm font-bold text-slate-900">{item.label}</div>
+                                  <p className="mt-0.5 text-xs text-slate-500 leading-snug">{item.desc}</p>
+                                </div>
+                              </Link>
+                            ))}
                           </div>
-                          <div className="min-w-0">
-                            <div className="flex items-center gap-2">
-                              <span className="text-sm font-semibold text-slate-900">{item.label}</span>
-                              {item.badge && (
-                                <span className={`rounded-full px-1.5 py-0.5 text-[9px] font-bold leading-none ${
-                                  item.badge === 'Core' ? 'bg-[#0fbabd] text-white' : 'bg-[#0D9FA1] text-white'
-                                }`}>
-                                  {item.badge}
-                                </span>
-                              )}
-                            </div>
-                            <p className="mt-0.5 text-xs text-slate-500 leading-snug">{item.desc}</p>
+                        </div>
+
+                        {/* Free Tools column */}
+                        <div>
+                          <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">Free Tools</p>
+                          <div className="flex flex-col gap-1">
+                            {freeToolsItems.map((item) => (
+                              <Link
+                                key={item.label}
+                                href={item.href}
+                                onClick={() => setProductsOpen(false)}
+                                role="menuitem"
+                                className="group flex gap-3 rounded-lg p-3 transition-colors hover:bg-slate-50"
+                              >
+                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0fbabd]/10 text-[#0fbabd] transition-colors group-hover:bg-[#0fbabd] group-hover:text-white">
+                                  <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                                    {item.icon}
+                                  </span>
+                                </div>
+                                <div className="min-w-0">
+                                  <div className="text-sm font-bold text-slate-900">{item.label}</div>
+                                  <p className="mt-0.5 text-xs text-slate-500 leading-snug">{item.desc}</p>
+                                </div>
+                              </Link>
+                            ))}
                           </div>
-                        </Link>
-                      ))}
+                        </div>
+                      </div>
                     </div>
-                    <div className="mt-2 border-t border-slate-100 pt-2 px-3">
-                      <p className="text-[11px] text-slate-400">These are anchor sections on one &quot;How It Works&quot; page &mdash; one scroll, one flow.</p>
+                    {/* Bottom bar */}
+                    <div className="flex items-center justify-between bg-slate-50 px-6 py-4">
+                      <span className="text-xs font-semibold text-slate-600">New: Safety Hub</span>
+                      <Link
+                        href="/apps"
+                        onClick={() => setProductsOpen(false)}
+                        className="flex items-center gap-1 text-xs font-semibold text-[#0fbabd] hover:text-[#0d9fa1] transition-colors"
+                      >
+                        View all products
+                        <ArrowRight className="h-3 w-3" />
+                      </Link>
                     </div>
                   </div>
                 )}
               </div>
 
-              <Link
-                href="/homeowners"
-                className="rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-600 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900"
-              >
-                For Homeowners
-              </Link>
-
-              <Link
-                href="/contractors"
-                className="rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-600 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900"
-              >
-                For Contractors
-              </Link>
-
-              <Link
-                href="/pros"
-                className="rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-600 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900"
-              >
-                Browse Pros
-              </Link>
-
-              {/* Services (mega dropdown) */}
-              <div ref={svcRef} className="relative">
+              {/* How It Works */}
+              <div ref={hiwRef} className="relative">
                 <button
-                  onClick={() => { setSvcOpen(!svcOpen); setHiwOpen(false); setResOpen(false); }}
-                  aria-expanded={svcOpen}
+                  onClick={() => {
+                    setHiwOpen(!hiwOpen);
+                    setProductsOpen(false);
+                    setServicesOpen(false);
+                    setResourcesOpen(false);
+                  }}
+                  aria-expanded={hiwOpen}
                   aria-haspopup="true"
-                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-600 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900"
+                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:text-slate-900"
+                >
+                  How It Works
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${hiwOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {hiwOpen && (
+                  <div
+                    role="menu"
+                    className="absolute left-0 top-full z-50 mt-2 w-[580px] rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.02)] border border-slate-100 bg-white overflow-hidden opacity-0 translate-y-2 animate-in fade-in slide-in-from-top-2 duration-200"
+                    style={{ opacity: 1, transform: 'translateY(0)' }}
+                  >
+                    <div className="p-4">
+                      <div className="grid grid-cols-2 gap-2">
+                        {hiwItems.map((item) => (
+                          <Link
+                            key={item.label}
+                            href={item.href}
+                            onClick={() => setHiwOpen(false)}
+                            role="menuitem"
+                            className="group flex gap-3 rounded-lg p-3 transition-colors hover:bg-slate-50"
+                          >
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0fbabd]/10 text-[#0fbabd] transition-colors group-hover:bg-[#0fbabd] group-hover:text-white">
+                              <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                                {item.icon}
+                              </span>
+                            </div>
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm font-bold text-slate-900">{item.label}</span>
+                                {item.badge && (
+                                  <span className={`rounded-full px-1.5 py-0.5 text-[9px] font-bold leading-none ${
+                                    item.badge === 'Core' ? 'bg-[#0fbabd] text-white' : 'bg-[#E8AA42] text-white'
+                                  }`}>
+                                    {item.badge}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="mt-0.5 text-xs text-slate-500 leading-snug">{item.desc}</p>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="bg-slate-50 px-4 py-3">
+                      <p className="text-[11px] text-slate-500">These are anchor sections on one &quot;How It Works&quot; page — one scroll, one flow.</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Services */}
+              <div ref={servicesRef} className="relative">
+                <button
+                  onClick={() => {
+                    setServicesOpen(!servicesOpen);
+                    setProductsOpen(false);
+                    setHiwOpen(false);
+                    setResourcesOpen(false);
+                  }}
+                  aria-expanded={servicesOpen}
+                  aria-haspopup="true"
+                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:text-slate-900"
                 >
                   Services
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${svcOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
                 </button>
-                {svcOpen && (
-                  <div role="menu" className="absolute left-1/2 top-full z-50 mt-2 w-[540px] -translate-x-1/2 rounded-xl border border-slate-200 bg-white p-4 shadow-xl">
-                    <div className="grid grid-cols-3 gap-4">
+                {servicesOpen && (
+                  <div
+                    role="menu"
+                    className="absolute left-1/2 top-full z-50 mt-2 w-[640px] -translate-x-1/2 rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.02)] border border-slate-100 bg-white p-6 opacity-0 translate-y-2 animate-in fade-in slide-in-from-top-2 duration-200"
+                    style={{ opacity: 1, transform: 'translateX(-50%) translateY(0)' }}
+                  >
+                    <div className="grid grid-cols-4 gap-6">
                       {serviceGroups.map((group) => (
                         <div key={group.heading}>
-                          <p className="mb-2 px-2 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">{group.heading}</p>
+                          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">{group.heading}</p>
                           <div className="flex flex-col gap-0.5">
                             {group.items.map((item) => (
                               <Link
                                 key={item.href}
                                 href={item.href}
-                                onClick={() => setSvcOpen(false)}
+                                onClick={() => setServicesOpen(false)}
                                 role="menuitem"
-                                className="rounded-lg px-2 py-1.5 text-sm text-slate-700 transition-all duration-150 hover:bg-[#0fbabd]/5 hover:text-[#0fbabd]"
+                                className="rounded-lg px-2 py-1.5 text-sm text-slate-700 transition-colors hover:bg-slate-50 hover:text-[#0fbabd]"
                               >
                                 {item.label}
                               </Link>
@@ -294,44 +408,56 @@ export function Navbar() {
                 )}
               </div>
 
-              {/* Resources (dropdown) */}
-              <div ref={resRef} className="relative">
+              {/* Resources */}
+              <div ref={resourcesRef} className="relative">
                 <button
-                  onClick={() => { setResOpen(!resOpen); setHiwOpen(false); setSvcOpen(false); }}
-                  aria-expanded={resOpen}
+                  onClick={() => {
+                    setResourcesOpen(!resourcesOpen);
+                    setProductsOpen(false);
+                    setHiwOpen(false);
+                    setServicesOpen(false);
+                  }}
+                  aria-expanded={resourcesOpen}
                   aria-haspopup="true"
-                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-600 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900"
+                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:text-slate-900"
                 >
                   Resources
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${resOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} />
                 </button>
-                {resOpen && (
-                  <div role="menu" className="absolute right-0 top-full z-50 mt-2 w-72 rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
-                    {resourceItems.map((item) => (
+                {resourcesOpen && (
+                  <div
+                    role="menu"
+                    className="absolute right-0 top-full z-50 mt-2 w-64 rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.02)] border border-slate-100 bg-white p-2 opacity-0 translate-y-2 animate-in fade-in slide-in-from-top-2 duration-200"
+                    style={{ opacity: 1, transform: 'translateY(0)' }}
+                  >
+                    {resourcesItems.map((item) => (
                       <Link
                         key={item.label}
                         href={item.href}
-                        onClick={() => setResOpen(false)}
+                        onClick={() => setResourcesOpen(false)}
                         role="menuitem"
-                        className="flex items-center gap-3 rounded-lg p-3 transition-all duration-150 hover:bg-slate-50"
+                        className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-slate-50"
                       >
                         <span className="material-symbols-outlined text-slate-400 text-[18px]">{item.icon}</span>
-                        <div>
-                          <span className="text-sm font-semibold text-slate-900">{item.label}</span>
-                          <p className="text-xs text-slate-500">{item.desc}</p>
-                        </div>
+                        <span className="text-sm font-medium text-slate-900">{item.label}</span>
                       </Link>
                     ))}
                   </div>
                 )}
               </div>
 
-              {/* Price Check - teal accent text */}
+              <Link
+                href="/pros"
+                className="rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:text-slate-900"
+              >
+                Browse Pros
+              </Link>
+
               <Link
                 href="/price-check"
-                className="rounded-lg px-3.5 py-2 text-[13px] font-bold text-[#0fbabd] transition-all duration-200 hover:bg-[#0fbabd]/5"
+                className="rounded-lg px-3.5 py-2 text-[13px] font-semibold text-[#0fbabd] transition-colors hover:text-[#0d9fa1]"
               >
-                Get a Price Check
+                Price Check
               </Link>
             </nav>
 
@@ -380,16 +506,15 @@ export function Navbar() {
                 <>
                   <Link
                     href="/login"
-                    className="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition-all duration-200 hover:text-slate-900"
+                    className="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
                   >
                     Log In
                   </Link>
                   <Link
                     href="/start-project"
-                    className="flex items-center gap-2 rounded-lg bg-[#0fbabd] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#0fbabd]/90 hover:-translate-y-0.5"
+                    className="rounded-full bg-[#0fbabd] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:bg-[#0d9fa1] hover:shadow-lg"
                   >
                     Start Project
-                    <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </>
               )}
@@ -405,155 +530,199 @@ export function Navbar() {
               </span>
             </button>
           </div>
-
-          {/* Mobile Nav */}
-          {mobileOpen && (
-            <div className="border-t border-slate-200/60 bg-white px-5 pb-6 pt-4 lg:hidden">
-              <div className="flex flex-col gap-1">
-                {/* How It Works - Accordion */}
-                <div>
-                  <button
-                    onClick={() => setMobileHiwOpen(!mobileHiwOpen)}
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
-                  >
-                    How It Works
-                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileHiwOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      mobileHiwOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                  >
-                    <div className="flex flex-col gap-0.5 pl-3 pt-1">
-                      {hiwItems.map((item) => (
-                        <Link
-                          key={item.label}
-                          href={item.href}
-                          onClick={() => setMobileOpen(false)}
-                          className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50"
-                        >
-                          <span className="material-symbols-outlined text-slate-400 text-[18px]">{item.icon}</span>
-                          <span>{item.label}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <Link href="/homeowners" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50">
-                  For Homeowners
-                </Link>
-                <Link href="/contractors" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50">
-                  For Contractors
-                </Link>
-                <Link href="/pros" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50">
-                  Browse Pros
-                </Link>
-
-                {/* Services - Accordion */}
-                <div>
-                  <button
-                    onClick={() => setMobileSvcOpen(!mobileSvcOpen)}
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
-                  >
-                    Services
-                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileSvcOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      mobileSvcOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                  >
-                    <div className="flex flex-col gap-0.5 pl-3 pt-1">
-                      {serviceGroups.map((group) => (
-                        <div key={group.heading}>
-                          <p className="px-3 pt-2 pb-1 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">{group.heading}</p>
-                          {group.items.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              onClick={() => setMobileOpen(false)}
-                              className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-50"
-                            >
-                              <span className="material-symbols-outlined text-slate-400 text-[16px]">build</span>
-                              <span>{item.label}</span>
-                            </Link>
-                          ))}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Resources - Accordion */}
-                <div>
-                  <button
-                    onClick={() => setMobileResOpen(!mobileResOpen)}
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
-                  >
-                    Resources
-                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileResOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      mobileResOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                  >
-                    <div className="flex flex-col gap-0.5 pl-3 pt-1">
-                      {resourceItems.map((item) => (
-                        <Link
-                          key={item.label}
-                          href={item.href}
-                          onClick={() => setMobileOpen(false)}
-                          className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50"
-                        >
-                          <span className="material-symbols-outlined text-slate-400 text-[16px]">{item.icon}</span>
-                          <span>{item.label}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <Link href="/price-check" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-bold text-[#0fbabd] hover:bg-[#0fbabd]/5">
-                  Get a Price Check
-                </Link>
-                <div className="mt-4 flex flex-col gap-2">
-                  <Link
-                    href="/start-project"
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-center gap-2 rounded-lg bg-[#0fbabd] px-5 py-3 text-sm font-semibold text-white"
-                  >
-                    Start Project
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  {!authLoading && !user && (
-                    <Link
-                      href="/login"
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center justify-center rounded-lg border border-slate-200 px-5 py-3 text-sm font-medium text-slate-700"
-                    >
-                      Log In
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </header>
+
+      {/* Mobile Full-Screen Overlay */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-40 bg-white lg:hidden overflow-y-auto">
+          {/* Header with close button */}
+          <div className="sticky top-0 z-50 flex items-center justify-between border-b border-slate-200 bg-white px-5 py-3.5">
+            <Link href="/" onClick={() => setMobileOpen(false)} className="flex shrink-0 items-center gap-2">
+              <div className="size-6 text-[#0fbabd]">
+                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor" />
+                </svg>
+              </div>
+              <span className="text-xl font-bold leading-tight tracking-tight text-slate-900">
+                RenoNext
+              </span>
+            </Link>
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center justify-center rounded-lg p-2 text-slate-700"
+            >
+              <span className="material-symbols-outlined text-2xl">close</span>
+            </button>
+          </div>
+
+          {/* Content */}
+          <div className="px-5 py-6 pb-24">
+            {/* Products Section */}
+            <div className="mb-8">
+              <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">Products</h3>
+              <div className="space-y-1">
+                <p className="px-3 py-2 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">Platform</p>
+                {platformItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-slate-50"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0fbabd]/10 text-[#0fbabd]">
+                      <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                        {item.icon}
+                      </span>
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-semibold text-slate-900">{item.label}</div>
+                      <p className="text-xs text-slate-500">{item.desc}</p>
+                    </div>
+                  </Link>
+                ))}
+                <p className="px-3 py-2 mt-4 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">Free Tools</p>
+                {freeToolsItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-slate-50"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0fbabd]/10 text-[#0fbabd]">
+                      <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                        {item.icon}
+                      </span>
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-semibold text-slate-900">{item.label}</div>
+                      <p className="text-xs text-slate-500">{item.desc}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* How It Works Section */}
+            <div className="mb-8">
+              <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">How It Works</h3>
+              <div className="space-y-1">
+                {hiwItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-slate-50"
+                  >
+                    <span className="material-symbols-outlined text-slate-400 text-[20px]">{item.icon}</span>
+                    <span className="text-sm font-medium text-slate-900">{item.label}</span>
+                    {item.badge && (
+                      <span className={`ml-auto rounded-full px-2 py-0.5 text-[9px] font-bold ${
+                        item.badge === 'Core' ? 'bg-[#0fbabd] text-white' : 'bg-[#E8AA42] text-white'
+                      }`}>
+                        {item.badge}
+                      </span>
+                    )}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Services Section */}
+            <div className="mb-8">
+              <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">Services</h3>
+              <div className="space-y-4">
+                {serviceGroups.map((group) => (
+                  <div key={group.heading}>
+                    <p className="mb-1 px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">{group.heading}</p>
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="block rounded-lg px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-slate-50"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Resources Section */}
+            <div className="mb-8">
+              <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">Resources</h3>
+              <div className="space-y-1">
+                {resourcesItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-slate-50"
+                  >
+                    <span className="material-symbols-outlined text-slate-400 text-[20px]">{item.icon}</span>
+                    <span className="text-sm font-medium text-slate-900">{item.label}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Browse Pros */}
+            <Link
+              href="/pros"
+              onClick={() => setMobileOpen(false)}
+              className="mb-2 block rounded-lg px-3 py-3 text-sm font-medium text-slate-900 transition-colors hover:bg-slate-50"
+            >
+              Browse Pros
+            </Link>
+
+            {/* Price Check */}
+            <Link
+              href="/price-check"
+              onClick={() => setMobileOpen(false)}
+              className="mb-8 block rounded-lg px-3 py-3 text-sm font-bold text-[#0fbabd] transition-colors hover:bg-[#0fbabd]/5"
+            >
+              Price Check
+            </Link>
+
+            {/* CTA Card */}
+            <div className="rounded-2xl bg-slate-50 p-6">
+              <h3 className="mb-2 text-lg font-bold text-slate-900">Ready to start?</h3>
+              <p className="mb-4 text-sm text-slate-600">Get matched with verified contractors in your area.</p>
+              <Link
+                href="/start-project"
+                onClick={() => setMobileOpen(false)}
+                className="mb-3 flex items-center justify-center gap-2 rounded-full bg-[#0fbabd] px-6 py-3 text-sm font-semibold text-white shadow-md"
+              >
+                Start Project
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              {!authLoading && !user && (
+                <Link
+                  href="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-center text-sm font-medium text-slate-600"
+                >
+                  Log In
+                </Link>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Mobile sticky bottom bar */}
       <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center gap-2 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur-xl lg:hidden">
         <Link
           href="/price-check"
-          className="flex flex-1 items-center justify-center rounded-lg border border-[#0fbabd] px-4 py-2.5 text-sm font-semibold text-[#0fbabd]"
+          className="flex flex-1 items-center justify-center rounded-full border-2 border-[#0fbabd] px-4 py-2.5 text-sm font-semibold text-[#0fbabd]"
         >
           Price Check
         </Link>
         <Link
           href="/start-project"
-          className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#0fbabd] px-4 py-2.5 text-sm font-semibold text-white"
+          className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[#0fbabd] px-4 py-2.5 text-sm font-semibold text-white shadow-md"
         >
           Start Project
           <ArrowRight className="h-3.5 w-3.5" />

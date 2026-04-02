@@ -220,9 +220,9 @@ const SIMULATED_COST = {
   ],
   marketComparison: [
     { label: 'Lowball Bid', value: 45000, percent: 37, color: 'bg-red-400' },
-    { label: 'Your Estimate', value: 80000, percent: 67, color: 'bg-violet-500' },
-    { label: 'GTA Average', value: 85000, percent: 71, color: 'bg-blue-400' },
-    { label: 'Premium', value: 120000, percent: 100, color: 'bg-gray-300' },
+    { label: 'Your Estimate', value: 80000, percent: 67, color: 'bg-reno-purple-500' },
+    { label: 'GTA Average', value: 85000, percent: 71, color: 'bg-primary-400' },
+    { label: 'Premium', value: 120000, percent: 100, color: 'bg-slate-300' },
   ],
   roi: {
     homeValueIncrease: '$40,000 — $70,000',
@@ -308,7 +308,7 @@ const LOADING_TEXTS_COST = [
 function ShimmerLine({ className = '' }: { className?: string }) {
   return (
     <div
-      className={`animate-pulse rounded-lg bg-gray-200 ${className}`}
+      className={`animate-pulse rounded-lg bg-slate-200 ${className}`}
     />
   );
 }
@@ -322,7 +322,7 @@ function CyclingText({ texts }: { texts: string[] }) {
     return () => clearInterval(interval);
   }, [texts.length]);
   return (
-    <p className="text-sm font-medium text-violet-600 transition-opacity duration-300">
+    <p className="text-sm font-medium text-reno-purple-600 transition-opacity duration-300">
       {texts[index]}
     </p>
   );
@@ -470,32 +470,32 @@ export default function StartProjectPage() {
   if (isSubmitted) {
     return (
       <div className="mx-auto flex min-h-[80vh] max-w-2xl flex-col items-center justify-center px-4 py-20 text-center">
-        <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-200">
+        <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-reno-green-400 to-reno-green-600 shadow-lg shadow-emerald-200">
           <PartyPopper className="h-10 w-10 text-white" />
         </div>
-        <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">
+        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
           Your Project Is Live!
         </h1>
-        <p className="mt-3 text-lg text-gray-600">
+        <p className="mt-3 text-lg text-slate-600">
           We&apos;re matching you with 5+ qualified, verified contractors now.
           Expect your first bids within 48 hours.
         </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+        <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
           <span className="flex items-center gap-2">
-            <Shield className="h-4 w-4 text-emerald-500" />
+            <Shield className="h-4 w-4 text-reno-green-500" />
             Escrow Protected
           </span>
           <span className="flex items-center gap-2">
-            <Users className="h-4 w-4 text-blue-500" />
+            <Users className="h-4 w-4 text-primary-500" />
             5+ Qualified Contractors
           </span>
           <span className="flex items-center gap-2">
-            <Clock className="h-4 w-4 text-violet-500" />
+            <Clock className="h-4 w-4 text-reno-purple-500" />
             Bids in 48 hrs
           </span>
         </div>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <Button asChild className="rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-blue-600/20 hover:brightness-110">
+          <Button asChild className="rounded-xl bg-gradient-to-r from-primary-600 to-reno-purple-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-blue-600/20 hover:brightness-110">
             <Link href="/dashboard">Go to Dashboard</Link>
           </Button>
           <Button asChild variant="outline" className="rounded-xl px-8 py-3 text-base font-semibold">
@@ -524,7 +524,7 @@ export default function StartProjectPage() {
                       ? 'bg-reno-green-dark text-white shadow-md shadow-reno-green-light'
                       : index === currentStep
                         ? 'bg-reno-green-dark text-white ring-4 ring-reno-green-light shadow-md shadow-reno-green-light'
-                        : 'bg-gray-100 text-gray-400'
+                        : 'bg-slate-100 text-slate-400'
                   }`}
                 >
                   {index < currentStep ? (
@@ -535,7 +535,7 @@ export default function StartProjectPage() {
                 </div>
                 <span
                   className={`mt-2 hidden text-xs font-medium sm:block ${
-                    index <= currentStep ? 'text-reno-green-dark' : 'text-gray-400'
+                    index <= currentStep ? 'text-reno-green-dark' : 'text-slate-400'
                   }`}
                 >
                   {label}
@@ -545,7 +545,7 @@ export default function StartProjectPage() {
               {index < STEPS.length - 1 && (
                 <div
                   className={`mx-2 h-0.5 flex-1 transition-all duration-500 ${
-                    index < currentStep ? 'bg-reno-green-dark' : 'bg-gray-200'
+                    index < currentStep ? 'bg-reno-green-dark' : 'bg-slate-200'
                   }`}
                 />
               )}
@@ -560,10 +560,10 @@ export default function StartProjectPage() {
       {currentStep === 0 && (
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
               Initialize Scope Definition
             </h2>
-            <p className="mt-2 text-gray-500">
+            <p className="mt-2 text-slate-500">
               Input your project requirements. The system will translate your parameters 
               into a standardized construction protocol.
             </p>
@@ -571,7 +571,7 @@ export default function StartProjectPage() {
 
           {/* Textarea */}
           <div>
-            <Label htmlFor="description" className="text-sm font-semibold text-gray-700">
+            <Label htmlFor="description" className="text-sm font-semibold text-slate-700">
               Project Parameters
             </Label>
             <Textarea
@@ -580,9 +580,9 @@ export default function StartProjectPage() {
               placeholder="e.g. Lower basement floor by 2 feet to create a legal rental unit. Currently 6-foot ceilings, old furnace, moisture issues on back wall. 1950s semi-detached in Toronto."
               value={formData.description}
               onChange={(e) => updateForm('description', e.target.value)}
-              className="mt-2 resize-none rounded-xl border-gray-200 text-base leading-relaxed focus:border-reno-green focus:ring-reno-green"
+              className="mt-2 resize-none rounded-xl border-slate-200 text-base leading-relaxed focus:border-reno-green focus:ring-reno-green"
             />
-            <p className="mt-2 flex items-center gap-1.5 text-xs text-gray-400">
+            <p className="mt-2 flex items-center gap-1.5 text-xs text-slate-400">
               <Sparkles className="h-3 w-3" />
               Detailed parameters yield a higher fidelity algorithmic assessment.
             </p>
@@ -590,7 +590,7 @@ export default function StartProjectPage() {
 
           {/* Property Type */}
           <div>
-            <Label className="text-sm font-semibold text-gray-700">
+            <Label className="text-sm font-semibold text-slate-700">
               Property Type
             </Label>
             <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -602,7 +602,7 @@ export default function StartProjectPage() {
                   className={`flex flex-col items-center gap-2 rounded-xl border-2 p-4 transition-all duration-200 ${
                     formData.propertyType === id
                       ? 'border-reno-green bg-reno-green-light text-reno-green-dark shadow-md shadow-reno-green-light'
-                      : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50'
+                      : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50'
                   }`}
                 >
                   <Icon className="h-6 w-6" />
@@ -615,7 +615,7 @@ export default function StartProjectPage() {
           {/* City + Postal */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <Label htmlFor="city" className="text-sm font-semibold text-gray-700">
+              <Label htmlFor="city" className="text-sm font-semibold text-slate-700">
                 City
               </Label>
               <Input
@@ -627,7 +627,7 @@ export default function StartProjectPage() {
               />
             </div>
             <div>
-              <Label htmlFor="postalCode" className="text-sm font-semibold text-gray-700">
+              <Label htmlFor="postalCode" className="text-sm font-semibold text-slate-700">
                 Postal Code (optional)
               </Label>
               <Input
@@ -648,10 +648,10 @@ export default function StartProjectPage() {
       {currentStep === 1 && (
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
               Algorithmic Assessment
             </h2>
-            <p className="mt-2 text-gray-500">
+            <p className="mt-2 text-slate-500">
               The system has processed your parameters and structured the required 
               trade, permit, and inspection dependencies.
             </p>
@@ -660,8 +660,8 @@ export default function StartProjectPage() {
           {scopeLoading && (
             <div className="flex flex-col items-center gap-6 py-16">
               <div className="relative">
-                <Sparkles className="h-12 w-12 animate-pulse text-violet-500" />
-                <div className="absolute inset-0 animate-ping rounded-full bg-violet-200 opacity-20" />
+                <Sparkles className="h-12 w-12 animate-pulse text-reno-purple-500" />
+                <div className="absolute inset-0 animate-ping rounded-full bg-reno-purple-200 opacity-20" />
               </div>
               <CyclingText texts={LOADING_TEXTS_SCOPE} />
               <div className="w-full max-w-md space-y-3">
@@ -677,7 +677,7 @@ export default function StartProjectPage() {
           {scopeRevealed && (
             <div className="space-y-8 animate-in fade-in duration-500">
               {/* Summary Card */}
-              <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-violet-600 to-blue-600 p-6 text-white shadow-xl shadow-violet-200">
+              <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-reno-purple-600 to-primary-600 p-6 text-white shadow-xl shadow-violet-200">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <h3 className="text-lg font-bold">Project Summary</h3>
@@ -693,7 +693,7 @@ export default function StartProjectPage() {
 
               {/* Trades */}
               <div>
-                <h3 className="mb-4 text-lg font-bold text-gray-900">
+                <h3 className="mb-4 text-lg font-bold text-slate-900">
                   Required Trades
                 </h3>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -702,19 +702,19 @@ export default function StartProjectPage() {
                     return (
                       <div
                         key={trade.name}
-                        className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+                        className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                       >
                         <div
                           className={`flex h-10 w-10 items-center justify-center rounded-lg ${
                             trade.required
                               ? 'bg-reno-green-light text-reno-green-dark'
-                              : 'bg-gray-50 text-gray-400'
+                              : 'bg-slate-50 text-slate-400'
                           }`}
                         >
                           <Icon className="h-5 w-5" />
                         </div>
                         <div className="flex-1">
-                          <p className="text-sm font-semibold text-gray-900">
+                          <p className="text-sm font-semibold text-slate-900">
                             {trade.name}
                           </p>
                         </div>
@@ -723,7 +723,7 @@ export default function StartProjectPage() {
                           className={
                             trade.required
                               ? 'bg-reno-green-light text-reno-green-dark'
-                              : 'bg-gray-100 text-gray-500'
+                              : 'bg-slate-100 text-slate-500'
                           }
                         >
                           {trade.required ? 'Required' : 'Optional'}
@@ -736,27 +736,27 @@ export default function StartProjectPage() {
 
               {/* Permits */}
               <div>
-                <h3 className="mb-4 text-lg font-bold text-gray-900">
+                <h3 className="mb-4 text-lg font-bold text-slate-900">
                   Permits Required
                 </h3>
                 <div className="space-y-3">
                   {SIMULATED_SCOPE.permits.map((permit) => (
                     <div
                       key={permit.name}
-                      className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+                      className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                     >
                       <div className="flex items-center gap-3">
-                        <FileText className="h-5 w-5 text-blue-500" />
+                        <FileText className="h-5 w-5 text-primary-500" />
                         <div>
-                          <p className="text-sm font-semibold text-gray-900">
+                          <p className="text-sm font-semibold text-slate-900">
                             {permit.name}
                           </p>
-                          <p className="text-xs text-gray-500">
+                          <p className="text-xs text-slate-500">
                             {permit.authority}
                           </p>
                         </div>
                       </div>
-                      <Badge variant="secondary" className="bg-blue-50 text-blue-600">
+                      <Badge variant="secondary" className="bg-primary-50 text-primary-600">
                         ~{permit.estimatedWeeks} weeks
                       </Badge>
                     </div>
@@ -766,25 +766,25 @@ export default function StartProjectPage() {
 
               {/* Inspections */}
               <div>
-                <h3 className="mb-4 text-lg font-bold text-gray-900">
+                <h3 className="mb-4 text-lg font-bold text-slate-900">
                   Inspections ({SIMULATED_SCOPE.inspections.length})
                 </h3>
-                <div className="rounded-xl border border-gray-200 bg-white shadow-sm">
+                <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
                   {SIMULATED_SCOPE.inspections.map((insp, i) => (
                     <div
                       key={insp.stage}
                       className={`flex items-center gap-3 px-4 py-3 ${
                         i < SIMULATED_SCOPE.inspections.length - 1
-                          ? 'border-b border-gray-100'
+                          ? 'border-b border-slate-100'
                           : ''
                       }`}
                     >
-                      <ClipboardCheck className="h-4 w-4 shrink-0 text-emerald-500" />
+                      <ClipboardCheck className="h-4 w-4 shrink-0 text-reno-green-500" />
                       <div className="flex-1">
-                        <span className="text-sm font-medium text-gray-900">
+                        <span className="text-sm font-medium text-slate-900">
                           {insp.stage}
                         </span>
-                        <span className="ml-2 text-sm text-gray-500">
+                        <span className="ml-2 text-sm text-slate-500">
                           — {insp.description}
                         </span>
                       </div>
@@ -795,7 +795,7 @@ export default function StartProjectPage() {
 
               {/* Risk Flags */}
               <div>
-                <h3 className="mb-4 text-lg font-bold text-gray-900">
+                <h3 className="mb-4 text-lg font-bold text-slate-900">
                   Risk Assessment
                 </h3>
                 <div className="space-y-3">
@@ -803,17 +803,17 @@ export default function StartProjectPage() {
                     const colors = {
                       high: 'border-red-200 bg-red-50',
                       medium: 'border-amber-200 bg-amber-50',
-                      low: 'border-blue-200 bg-blue-50',
+                      low: 'border-primary-200 bg-primary-50',
                     };
                     const iconColors = {
                       high: 'text-red-500',
                       medium: 'text-amber-500',
-                      low: 'text-blue-500',
+                      low: 'text-primary-500',
                     };
                     const badgeColors = {
                       high: 'bg-red-100 text-red-700',
                       medium: 'bg-amber-100 text-amber-700',
-                      low: 'bg-blue-100 text-blue-700',
+                      low: 'bg-primary-100 text-primary-700',
                     };
                     return (
                       <div
@@ -826,7 +826,7 @@ export default function StartProjectPage() {
                           />
                           <div className="flex-1">
                             <div className="flex items-center gap-2">
-                              <p className="text-sm font-semibold text-gray-900">
+                              <p className="text-sm font-semibold text-slate-900">
                                 {risk.title}
                               </p>
                               <Badge className={badgeColors[risk.level]}>
@@ -834,7 +834,7 @@ export default function StartProjectPage() {
                                   risk.level.slice(1)}
                               </Badge>
                             </div>
-                            <p className="mt-1 text-sm text-gray-600">
+                            <p className="mt-1 text-sm text-slate-600">
                               {risk.description}
                             </p>
                           </div>
@@ -846,12 +846,12 @@ export default function StartProjectPage() {
               </div>
 
               {/* Complexity Score */}
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-slate-900">
                     Complexity Score
                   </h3>
-                  <span className="text-2xl font-extrabold text-violet-600">
+                  <span className="text-2xl font-extrabold text-reno-purple-600">
                     {SIMULATED_SCOPE.complexityScore}/10
                   </span>
                 </div>
@@ -859,7 +859,7 @@ export default function StartProjectPage() {
                   value={SIMULATED_SCOPE.complexityScore * 10}
                   className="mt-3 h-3"
                 />
-                <p className="mt-2 text-sm text-gray-500">
+                <p className="mt-2 text-sm text-slate-500">
                   This is a high-complexity project requiring licensed
                   professionals and multiple inspections.
                 </p>
@@ -875,10 +875,10 @@ export default function StartProjectPage() {
       {currentStep === 2 && (
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
               Milestone Architecture
             </h2>
-            <p className="mt-2 text-gray-500">
+            <p className="mt-2 text-slate-500">
               The project has been structured into discrete verification stages. 
               Capital is disbursed solely upon objective proof of completion.
             </p>
@@ -887,8 +887,8 @@ export default function StartProjectPage() {
           {milestonesLoading && (
             <div className="flex flex-col items-center gap-6 py-16">
               <div className="relative">
-                <Sparkles className="h-12 w-12 animate-pulse text-violet-500" />
-                <div className="absolute inset-0 animate-ping rounded-full bg-violet-200 opacity-20" />
+                <Sparkles className="h-12 w-12 animate-pulse text-reno-purple-500" />
+                <div className="absolute inset-0 animate-ping rounded-full bg-reno-purple-200 opacity-20" />
               </div>
               <CyclingText texts={LOADING_TEXTS_MILESTONES} />
               <div className="w-full max-w-md space-y-4">
@@ -902,7 +902,7 @@ export default function StartProjectPage() {
           {milestonesRevealed && (
             <div className="relative space-y-0 animate-in fade-in duration-500">
               {/* Vertical timeline line */}
-              <div className="absolute left-[18px] top-2 hidden h-[calc(100%-2rem)] w-0.5 bg-gray-200 sm:block" />
+              <div className="absolute left-[18px] top-2 hidden h-[calc(100%-2rem)] w-0.5 bg-slate-200 sm:block" />
 
               <Accordion type="multiple" className="space-y-4">
                 {SIMULATED_MILESTONES.map((milestone, i) => (
@@ -920,35 +920,35 @@ export default function StartProjectPage() {
                       </div>
 
                       {/* Card */}
-                      <div className="flex-1 rounded-xl border border-gray-200 bg-white shadow-sm">
+                      <div className="flex-1 rounded-xl border border-slate-200 bg-white shadow-sm">
                         <AccordionTrigger className="px-4 py-4 hover:no-underline [&>svg]:h-5 [&>svg]:w-5">
                           <div className="flex flex-1 flex-col items-start gap-1 text-left sm:flex-row sm:items-center sm:gap-4">
-                            <span className="text-sm font-bold text-gray-900 sm:hidden">
+                            <span className="text-sm font-bold text-slate-900 sm:hidden">
                               Stage {milestone.stage}:{' '}
                             </span>
-                            <span className="text-sm font-bold text-gray-900">
+                            <span className="text-sm font-bold text-slate-900">
                               {milestone.title}
                             </span>
                             <div className="flex items-center gap-2">
-                              <Badge variant="secondary" className="bg-gray-100 text-gray-600">
+                              <Badge variant="secondary" className="bg-slate-100 text-slate-600">
                                 {milestone.days} days
                               </Badge>
-                              <Badge className="bg-emerald-100 text-emerald-700">
+                              <Badge className="bg-reno-green-100 text-reno-green-700">
                                 {milestone.paymentPercent}% payment
                               </Badge>
                             </div>
                           </div>
                         </AccordionTrigger>
                         <AccordionContent className="px-4">
-                          <p className="text-sm leading-relaxed text-gray-600">
+                          <p className="text-sm leading-relaxed text-slate-600">
                             {milestone.plainDescription}
                           </p>
-                          <div className="mt-4 rounded-lg border border-blue-100 bg-blue-50 p-3">
-                            <p className="flex items-center gap-2 text-xs font-semibold text-blue-700">
+                          <div className="mt-4 rounded-lg border border-primary-100 bg-primary-50 p-3">
+                            <p className="flex items-center gap-2 text-xs font-semibold text-primary-700">
                               <Eye className="h-3.5 w-3.5" />
                               What to Expect
                             </p>
-                            <p className="mt-1 text-sm text-blue-600">
+                            <p className="mt-1 text-sm text-primary-600">
                               {milestone.whatToExpect}
                             </p>
                           </div>
@@ -994,10 +994,10 @@ export default function StartProjectPage() {
       {currentStep === 3 && (
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
               Capital Requirements
             </h2>
-            <p className="mt-2 text-gray-500">
+            <p className="mt-2 text-slate-500">
               Algorithmic baseline pricing formulated using active market data 
               from verified professionals within your postal code.
             </p>
@@ -1006,12 +1006,12 @@ export default function StartProjectPage() {
           {costLoading && (
             <div className="flex flex-col items-center gap-6 py-16">
               <div className="relative">
-                <Sparkles className="h-12 w-12 animate-pulse text-violet-500" />
-                <div className="absolute inset-0 animate-ping rounded-full bg-violet-200 opacity-20" />
+                <Sparkles className="h-12 w-12 animate-pulse text-reno-purple-500" />
+                <div className="absolute inset-0 animate-ping rounded-full bg-reno-purple-200 opacity-20" />
               </div>
               <CyclingText texts={LOADING_TEXTS_COST} />
               <div className="text-center">
-                <p className="text-4xl font-extrabold text-gray-900 tabular-nums">
+                <p className="text-4xl font-extrabold text-slate-900 tabular-nums">
                   {formatCurrency(animatedCost)}
                 </p>
               </div>
@@ -1021,7 +1021,7 @@ export default function StartProjectPage() {
           {costRevealed && (
             <div className="space-y-8 animate-in fade-in duration-500">
               {/* Hero Price Card */}
-              <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-violet-600 to-blue-600 p-8 text-center text-white shadow-xl shadow-violet-200">
+              <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-reno-purple-600 to-primary-600 p-8 text-center text-white shadow-xl shadow-violet-200">
                 <p className="text-sm font-semibold uppercase tracking-wider text-white/70">
                   Estimated Project Cost
                 </p>
@@ -1036,7 +1036,7 @@ export default function StartProjectPage() {
 
               {/* Breakdown */}
               <div>
-                <h3 className="mb-4 text-lg font-bold text-gray-900">
+                <h3 className="mb-4 text-lg font-bold text-slate-900">
                   Cost Breakdown
                 </h3>
                 <div className="space-y-3">
@@ -1045,17 +1045,17 @@ export default function StartProjectPage() {
                     return (
                       <div
                         key={item.category}
-                        className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+                        className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-50 text-gray-500">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-50 text-slate-500">
                             <Icon className="h-5 w-5" />
                           </div>
-                          <span className="text-sm font-semibold text-gray-900">
+                          <span className="text-sm font-semibold text-slate-900">
                             {item.category}
                           </span>
                         </div>
-                        <span className="text-sm font-bold text-gray-700">
+                        <span className="text-sm font-bold text-slate-700">
                           {formatCurrency(item.low)} — {formatCurrency(item.high)}
                         </span>
                       </div>
@@ -1066,18 +1066,18 @@ export default function StartProjectPage() {
 
               {/* Market Comparison */}
               <div>
-                <h3 className="mb-4 text-lg font-bold text-gray-900">
+                <h3 className="mb-4 text-lg font-bold text-slate-900">
                   Market Comparison
                 </h3>
-                <div className="space-y-3 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                   {SIMULATED_COST.marketComparison.map((item) => (
                     <div key={item.label}>
                       <div className="flex items-center justify-between text-sm">
                         <span
                           className={`font-medium ${
                             item.label === 'Your Estimate'
-                              ? 'font-bold text-violet-700'
-                              : 'text-gray-600'
+                              ? 'font-bold text-reno-purple-700'
+                              : 'text-slate-600'
                           }`}
                         >
                           {item.label}
@@ -1085,14 +1085,14 @@ export default function StartProjectPage() {
                         <span
                           className={`font-bold ${
                             item.label === 'Your Estimate'
-                              ? 'text-violet-700'
-                              : 'text-gray-700'
+                              ? 'text-reno-purple-700'
+                              : 'text-slate-700'
                           }`}
                         >
                           {formatCurrency(item.value)}
                         </span>
                       </div>
-                      <div className="mt-1 h-3 w-full overflow-hidden rounded-full bg-gray-100">
+                      <div className="mt-1 h-3 w-full overflow-hidden rounded-full bg-slate-100">
                         <div
                           className={`h-full rounded-full transition-all duration-700 ${item.color}`}
                           style={{ width: `${item.percent}%` }}
@@ -1104,38 +1104,38 @@ export default function StartProjectPage() {
               </div>
 
               {/* ROI Card */}
-              <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-6">
-                <h3 className="flex items-center gap-2 text-lg font-bold text-emerald-900">
+              <div className="rounded-2xl border-2 border-reno-green-200 bg-reno-green-50 p-6">
+                <h3 className="flex items-center gap-2 text-lg font-bold text-reno-green-900">
                   <TrendingUp className="h-5 w-5" />
                   Return on Investment
                 </h3>
                 <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
                   <div className="rounded-xl bg-white p-4 text-center shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                       Home Value Increase
                     </p>
-                    <p className="mt-1 text-lg font-extrabold text-emerald-700">
+                    <p className="mt-1 text-lg font-extrabold text-reno-green-700">
                       {SIMULATED_COST.roi.homeValueIncrease}
                     </p>
                   </div>
                   <div className="rounded-xl bg-white p-4 text-center shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                       New Living Space
                     </p>
-                    <p className="mt-1 text-lg font-extrabold text-emerald-700">
+                    <p className="mt-1 text-lg font-extrabold text-reno-green-700">
                       {SIMULATED_COST.roi.squareFootage}
                     </p>
                   </div>
                   <div className="rounded-xl bg-white p-4 text-center shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                       ROI
                     </p>
-                    <p className="mt-1 text-lg font-extrabold text-emerald-700">
+                    <p className="mt-1 text-lg font-extrabold text-reno-green-700">
                       {SIMULATED_COST.roi.roiPercent}
                     </p>
                   </div>
                 </div>
-                <p className="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                <p className="mt-4 flex items-center gap-2 text-xs text-slate-500">
                   <Info className="h-3.5 w-3.5" />
                   Estimates based on real project data from licensed contractors
                 </p>
@@ -1151,10 +1151,10 @@ export default function StartProjectPage() {
       {currentStep === 4 && (
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
               Vault Security Parameters
             </h2>
-            <p className="mt-2 text-gray-500">
+            <p className="mt-2 text-slate-500">
               Configure the capital protection safeguards for your project. 
               Core milestone vault protection is non-negotiable and permanently enabled.
             </p>
@@ -1173,21 +1173,21 @@ export default function StartProjectPage() {
                   className={`flex items-center gap-4 rounded-xl border-2 p-4 transition-all duration-200 ${
                     isOn
                       ? 'border-reno-green-light bg-reno-green-light/50'
-                      : 'border-gray-200 bg-white'
+                      : 'border-slate-200 bg-white'
                   }`}
                 >
                   <div
                     className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${
                       isOn
                         ? 'bg-reno-green-light text-reno-green-dark'
-                        : 'bg-gray-100 text-gray-400'
+                        : 'bg-slate-100 text-slate-400'
                     }`}
                   >
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <p className="text-sm font-bold text-gray-900">
+                      <p className="text-sm font-bold text-slate-900">
                         {protection.title}
                       </p>
                       {protection.alwaysOn && (
@@ -1196,7 +1196,7 @@ export default function StartProjectPage() {
                         </Badge>
                       )}
                     </div>
-                    <p className="mt-0.5 text-sm text-gray-500">
+                    <p className="mt-0.5 text-sm text-slate-500">
                       {protection.description}
                     </p>
                   </div>
@@ -1216,7 +1216,7 @@ export default function StartProjectPage() {
                       protection.alwaysOn
                         ? 'cursor-not-allowed opacity-70'
                         : ''
-                    } ${isOn ? 'bg-reno-green-dark' : 'bg-gray-200'}`}
+                    } ${isOn ? 'bg-reno-green-dark' : 'bg-slate-200'}`}
                   >
                     <span
                       className={`inline-block h-4 w-4 rounded-full bg-white shadow-sm transition-transform duration-200 ${
@@ -1253,10 +1253,10 @@ export default function StartProjectPage() {
       {currentStep === 5 && (
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
               Review & Launch
             </h2>
-            <p className="mt-2 text-gray-500">
+            <p className="mt-2 text-slate-500">
               Everything looks great. Review the summary below and launch your
               project to start receiving bids from qualified contractors.
             </p>
@@ -1264,15 +1264,15 @@ export default function StartProjectPage() {
 
           <Accordion type="multiple" defaultValue={['description', 'scope', 'milestones', 'cost', 'protections']} className="space-y-3">
             {/* Project Description */}
-            <AccordionItem value="description" className="rounded-xl border border-gray-200 bg-white shadow-sm">
+            <AccordionItem value="description" className="rounded-xl border border-slate-200 bg-white shadow-sm">
               <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                <span className="text-sm font-bold text-gray-900">
+                <span className="text-sm font-bold text-slate-900">
                   Project Description
                 </span>
               </AccordionTrigger>
               <AccordionContent className="px-4">
-                <p className="text-sm text-gray-600">{formData.description}</p>
-                <div className="mt-2 flex flex-wrap gap-2 text-xs text-gray-500">
+                <p className="text-sm text-slate-600">{formData.description}</p>
+                <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-500">
                   <Badge variant="secondary">
                     {PROPERTY_TYPES.find((p) => p.id === formData.propertyType)
                       ?.label ?? formData.propertyType}
@@ -1286,9 +1286,9 @@ export default function StartProjectPage() {
             </AccordionItem>
 
             {/* Scope */}
-            <AccordionItem value="scope" className="rounded-xl border border-gray-200 bg-white shadow-sm">
+            <AccordionItem value="scope" className="rounded-xl border border-slate-200 bg-white shadow-sm">
               <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                <span className="text-sm font-bold text-gray-900">
+                <span className="text-sm font-bold text-slate-900">
                   Scope — {SIMULATED_SCOPE.trades.filter((t) => t.required).length} trades, {SIMULATED_SCOPE.permits.length} permits, {SIMULATED_SCOPE.inspections.length} inspections
                 </span>
               </AccordionTrigger>
@@ -1304,12 +1304,12 @@ export default function StartProjectPage() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {SIMULATED_SCOPE.permits.map((p) => (
-                    <Badge key={p.name} variant="secondary" className="bg-blue-50 text-blue-600">
+                    <Badge key={p.name} variant="secondary" className="bg-primary-50 text-primary-600">
                       {p.name}
                     </Badge>
                   ))}
                 </div>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-slate-500">
                   {SIMULATED_SCOPE.risks.length} risks identified — complexity{' '}
                   {SIMULATED_SCOPE.complexityScore}/10
                 </p>
@@ -1317,9 +1317,9 @@ export default function StartProjectPage() {
             </AccordionItem>
 
             {/* Milestones */}
-            <AccordionItem value="milestones" className="rounded-xl border border-gray-200 bg-white shadow-sm">
+            <AccordionItem value="milestones" className="rounded-xl border border-slate-200 bg-white shadow-sm">
               <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                <span className="text-sm font-bold text-gray-900">
+                <span className="text-sm font-bold text-slate-900">
                   Milestones — 6 stages,{' '}
                   {SIMULATED_MILESTONES.reduce((s, m) => s + m.days, 0)} days
                 </span>
@@ -1330,12 +1330,12 @@ export default function StartProjectPage() {
                     key={m.stage}
                     className="flex items-center justify-between text-sm"
                   >
-                    <span className="text-gray-700">
+                    <span className="text-slate-700">
                       {m.stage}. {m.title}
                     </span>
                     <div className="flex items-center gap-2">
-                      <span className="text-gray-500">{m.days}d</span>
-                      <Badge className="bg-emerald-100 text-emerald-700">
+                      <span className="text-slate-500">{m.days}d</span>
+                      <Badge className="bg-reno-green-100 text-reno-green-700">
                         {m.paymentPercent}%
                       </Badge>
                     </div>
@@ -1345,9 +1345,9 @@ export default function StartProjectPage() {
             </AccordionItem>
 
             {/* Cost */}
-            <AccordionItem value="cost" className="rounded-xl border border-gray-200 bg-white shadow-sm">
+            <AccordionItem value="cost" className="rounded-xl border border-slate-200 bg-white shadow-sm">
               <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                <span className="text-sm font-bold text-gray-900">
+                <span className="text-sm font-bold text-slate-900">
                   Cost Range — {formatCurrency(SIMULATED_COST.low)} to{' '}
                   {formatCurrency(SIMULATED_COST.high)}
                 </span>
@@ -1358,8 +1358,8 @@ export default function StartProjectPage() {
                     key={item.category}
                     className="flex items-center justify-between text-sm"
                   >
-                    <span className="text-gray-700">{item.category}</span>
-                    <span className="font-medium text-gray-600">
+                    <span className="text-slate-700">{item.category}</span>
+                    <span className="font-medium text-slate-600">
                       {formatCurrency(item.low)} — {formatCurrency(item.high)}
                     </span>
                   </div>
@@ -1368,9 +1368,9 @@ export default function StartProjectPage() {
             </AccordionItem>
 
             {/* Protections */}
-            <AccordionItem value="protections" className="rounded-xl border border-gray-200 bg-white shadow-sm">
+            <AccordionItem value="protections" className="rounded-xl border border-slate-200 bg-white shadow-sm">
               <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                <span className="text-sm font-bold text-gray-900">
+                <span className="text-sm font-bold text-slate-900">
                   Protections — {activeProtections}/6 active
                 </span>
               </AccordionTrigger>
@@ -1383,7 +1383,7 @@ export default function StartProjectPage() {
                     <Badge
                       key={p.id}
                       variant="secondary"
-                      className="bg-emerald-50 text-emerald-700"
+                      className="bg-reno-green-50 text-reno-green-700"
                     >
                       <Check className="mr-1 h-3 w-3" />
                       {p.title}
@@ -1395,12 +1395,12 @@ export default function StartProjectPage() {
           </Accordion>
 
           {/* What Happens Next */}
-          <div className="rounded-xl border border-blue-200 bg-blue-50 p-6">
-            <h3 className="flex items-center gap-2 text-sm font-bold text-blue-900">
+          <div className="rounded-xl border border-primary-200 bg-primary-50 p-6">
+            <h3 className="flex items-center gap-2 text-sm font-bold text-primary-900">
               <Info className="h-4 w-4" />
               What Happens Next?
             </h3>
-            <ul className="mt-3 space-y-2 text-sm text-blue-700">
+            <ul className="mt-3 space-y-2 text-sm text-primary-700">
               <li className="flex items-start gap-2">
                 <ArrowRight className="mt-0.5 h-4 w-4 shrink-0" />
                 Your project is posted to our verified contractor network
@@ -1425,7 +1425,7 @@ export default function StartProjectPage() {
             <Button
               onClick={handleSubmit}
               disabled={submitting}
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-12 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-200 hover:shadow-xl hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-reno-purple-600 px-12 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-200 hover:shadow-xl hover:brightness-110"
             >
               {submitting ? (
                 <>
@@ -1439,17 +1439,17 @@ export default function StartProjectPage() {
                 </>
               )}
             </Button>
-            <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+            <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
               <span className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-emerald-500" />
+                <Shield className="h-4 w-4 text-reno-green-500" />
                 Escrow Protected
               </span>
               <span className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-blue-500" />
+                <Users className="h-4 w-4 text-primary-500" />
                 5+ Qualified Contractors
               </span>
               <span className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-violet-500" />
+                <Clock className="h-4 w-4 text-reno-purple-500" />
                 Bids in 48 hrs
               </span>
             </div>
@@ -1461,7 +1461,7 @@ export default function StartProjectPage() {
       {/* NAVIGATION BAR                                                    */}
       {/* ================================================================= */}
       {currentStep < 5 && (
-        <div className="mt-10 flex items-center justify-between border-t border-gray-100 pt-6">
+        <div className="mt-10 flex items-center justify-between border-t border-slate-100 pt-6">
           <Button
             variant="outline"
             onClick={handleBack}

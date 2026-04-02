@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'RenoNext in Your Pocket — Mobile Apps for Homeowners & Contractors',
   description:
     'Manage your entire renovation from anywhere. Dedicated mobile experiences for homeowners and professional contractors, unified by trust and escrow protection.',
+  alternates: {
+    canonical: '/apps',
+  },
 };
 
 export default function AppsPage() {
@@ -38,7 +41,7 @@ export default function AppsPage() {
               RenoNext in Your{' '}
               <span className="text-primary">Pocket</span>
             </h1>
-            <p className="text-xl text-gray-500 leading-relaxed max-w-lg">
+            <p className="text-xl text-slate-500 leading-relaxed max-w-lg">
               Manage your entire renovation from anywhere. Dedicated
               experiences for homeowners and professional contractors, unified
               by trust.
@@ -88,14 +91,14 @@ export default function AppsPage() {
                     <span className="text-[10px] font-bold text-primary uppercase tracking-wider">
                       Homeowner
                     </span>
-                    <span className="material-symbols-outlined text-gray-400 text-sm">
+                    <span className="material-symbols-outlined text-slate-400 text-sm">
                       notifications
                     </span>
                   </div>
 
                   {/* Escrow balance card */}
                   <div className="p-3 bg-[#f6f8f8] rounded-xl border border-primary/5">
-                    <div className="text-[10px] text-gray-500">
+                    <div className="text-[10px] text-slate-500">
                       Escrow Balance
                     </div>
                     <div className="text-lg font-bold text-primary">
@@ -111,9 +114,9 @@ export default function AppsPage() {
                     <div className="flex gap-2">
                       <div className="h-1.5 bg-primary rounded-full flex-1" />
                       <div className="h-1.5 bg-primary rounded-full flex-1" />
-                      <div className="h-1.5 bg-gray-200 rounded-full flex-1" />
+                      <div className="h-1.5 bg-slate-200 rounded-full flex-1" />
                     </div>
-                    <div className="flex justify-between text-[8px] text-gray-400">
+                    <div className="flex justify-between text-[8px] text-slate-400">
                       <span>Demo</span>
                       <span>Rough-in</span>
                       <span>Final</span>
@@ -154,14 +157,14 @@ export default function AppsPage() {
                     <span className="text-[10px] font-bold text-[#E8AA42] uppercase tracking-wider">
                       Contractor
                     </span>
-                    <span className="material-symbols-outlined text-gray-400 text-sm">
+                    <span className="material-symbols-outlined text-slate-400 text-sm">
                       person
                     </span>
                   </div>
 
                   {/* Active bids card */}
                   <div className="p-3 bg-[#f6f8f8] rounded-xl border border-primary/5">
-                    <div className="text-[10px] text-gray-500">Active Bids</div>
+                    <div className="text-[10px] text-slate-500">Active Bids</div>
                     <div className="text-lg font-bold text-reno-dark">
                       12 Projects
                     </div>
@@ -176,7 +179,7 @@ export default function AppsPage() {
                       <div className="text-[8px] font-bold text-reno-dark">
                         Site Visit: 10:00 AM
                       </div>
-                      <div className="text-[7px] text-gray-500">
+                      <div className="text-[7px] text-slate-500">
                         42 Oak Street — Kitchen Reno
                       </div>
                     </div>
@@ -184,7 +187,7 @@ export default function AppsPage() {
                       <div className="text-[8px] font-bold text-reno-dark">
                         Milestone Review: 2:00 PM
                       </div>
-                      <div className="text-[7px] text-gray-500">
+                      <div className="text-[7px] text-slate-500">
                         18 Elm Ave — Foundation
                       </div>
                     </div>
@@ -199,7 +202,7 @@ export default function AppsPage() {
       {/* ═══════════════════════════════════════════════════════════════
           Obsidian Sentinel Featured Banner
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="py-12 px-6 bg-white border-b border-gray-100">
+      <section className="py-12 px-6 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto">
           <Link href="/apps/sentinel" className="group block">
             <div className="relative overflow-hidden bg-reno-dark rounded-2xl p-8 md:p-10 shadow-float hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300">
@@ -222,7 +225,7 @@ export default function AppsPage() {
                       Featured
                     </span>
                   </div>
-                  <p className="text-gray-400 leading-relaxed max-w-xl">
+                  <p className="text-slate-400 leading-relaxed max-w-xl">
                     Construction Intelligence Platform — 11 integrated modules for site briefing, budgets, safety, documents, and more.
                   </p>
                 </div>
@@ -241,7 +244,7 @@ export default function AppsPage() {
       <section className="py-6 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <Link href="/apps/the-proof" className="group block">
-            <div className="relative overflow-hidden bg-white rounded-2xl p-8 md:p-10 border border-gray-200 shadow-float hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300">
+            <div className="relative overflow-hidden bg-white rounded-2xl p-8 md:p-10 border border-slate-200 shadow-float hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300">
               <div
                 className="absolute inset-0 pointer-events-none opacity-[0.06]"
                 style={{
@@ -267,7 +270,7 @@ export default function AppsPage() {
                       Verification
                     </span>
                   </div>
-                  <p className="text-gray-500 leading-relaxed max-w-xl">
+                  <p className="text-slate-500 leading-relaxed max-w-xl">
                     Immutable Verification Ledger — GPS-stamped, time-locked, cryptographically secured proof for every delivery and inspection.
                   </p>
                 </div>
@@ -306,7 +309,7 @@ export default function AppsPage() {
                       Field Ops
                     </span>
                   </div>
-                  <p className="text-gray-500 leading-relaxed max-w-xl">
+                  <p className="text-slate-500 leading-relaxed max-w-xl">
                     Project Control Platform — GPS check-in, photo compliance logs, escrow vault, and team management in one dashboard.
                   </p>
                 </div>
@@ -345,7 +348,7 @@ export default function AppsPage() {
                       Mobile
                     </span>
                   </div>
-                  <p className="text-gray-400 leading-relaxed max-w-xl">
+                  <p className="text-slate-400 leading-relaxed max-w-xl">
                     Field Worker Mobile App — GPS check-in, project briefs, attendance history, and shift management for every crew member.
                   </p>
                 </div>
@@ -361,7 +364,7 @@ export default function AppsPage() {
       {/* ═══════════════════════════════════════════════════════════════
           Precision Layer Featured Banner
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="py-6 px-6 bg-white border-b border-gray-100">
+      <section className="py-6 px-6 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto">
           <Link href="/apps/precision-layer" className="group block">
             <div className="relative overflow-hidden bg-white rounded-2xl p-8 md:p-10 border border-[#E8AA42]/15 shadow-float hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300">
@@ -390,7 +393,7 @@ export default function AppsPage() {
                       Drawings
                     </span>
                   </div>
-                  <p className="text-gray-500 leading-relaxed max-w-xl">
+                  <p className="text-slate-500 leading-relaxed max-w-xl">
                     Blueprint Drawing Reader — pixel-perfect rendering, real-time markup tools, layer toggles, and project management for construction teams.
                   </p>
                 </div>
@@ -430,7 +433,7 @@ export default function AppsPage() {
                 <h3 className="font-display text-2xl md:text-3xl font-bold text-reno-dark mb-4">
                   Smart Escrow Protection
                 </h3>
-                <p className="text-gray-500 text-lg leading-relaxed">
+                <p className="text-slate-500 text-lg leading-relaxed">
                   Your funds are protected. Payments are only released when you
                   sign off on completed milestones, ensuring peace of mind
                   throughout the build.
@@ -508,7 +511,7 @@ export default function AppsPage() {
                 </div>
                 <div>
                   <h4 className="font-bold text-reno-dark">{item.title}</h4>
-                  <p className="text-sm text-gray-500">{item.desc}</p>
+                  <p className="text-sm text-slate-500">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -531,7 +534,7 @@ export default function AppsPage() {
               <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-reno-dark mb-4">
                 Contractor Suite
               </h2>
-              <p className="text-gray-500 text-lg max-w-xl leading-relaxed">
+              <p className="text-slate-500 text-lg max-w-xl leading-relaxed">
                 Scale your business with automated workflows that handle the
                 heavy lifting of project management.
               </p>
@@ -540,7 +543,7 @@ export default function AppsPage() {
               <span className="px-5 py-2 bg-white rounded-lg shadow-sm font-bold text-sm text-reno-dark">
                 Dashboard
               </span>
-              <span className="px-5 py-2 text-gray-500 font-medium text-sm">
+              <span className="px-5 py-2 text-slate-500 font-medium text-sm">
                 Bidding
               </span>
             </div>
@@ -554,7 +557,7 @@ export default function AppsPage() {
                 <div className="space-y-5">
                   <div className="flex justify-between items-center text-white">
                     <h4 className="font-bold">Active Projects</h4>
-                    <span className="material-symbols-outlined text-gray-500">
+                    <span className="material-symbols-outlined text-slate-500">
                       add
                     </span>
                   </div>
@@ -640,7 +643,7 @@ export default function AppsPage() {
                     <h3 className="text-xl md:text-2xl font-bold text-reno-dark mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-500 leading-relaxed">
+                    <p className="text-slate-500 leading-relaxed">
                       {feature.desc}
                     </p>
                   </div>
@@ -670,7 +673,7 @@ export default function AppsPage() {
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-reno-dark mb-3">
                 Purpose-Built Tools
               </h2>
-              <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              <p className="text-slate-500 text-lg max-w-2xl mx-auto">
                 Five apps for field crews, project managers, and office teams.
                 Offline-first, GPS-verified, built for construction.
               </p>
@@ -692,15 +695,15 @@ export default function AppsPage() {
                     <h3 className="font-display text-xl font-bold text-reno-dark group-hover:text-primary transition-colors mb-1.5">
                       {app.name}
                     </h3>
-                    <p className="text-sm text-gray-500 mb-4">
+                    <p className="text-sm text-slate-500 mb-4">
                       {app.tagline}
                     </p>
 
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#f6f8f8] text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-4">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#f6f8f8] text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-4">
                       {app.audienceLabel}
                     </span>
 
-                    <p className="text-sm text-gray-600 leading-relaxed mb-5">
+                    <p className="text-sm text-slate-600 leading-relaxed mb-5">
                       {app.description}
                     </p>
 
@@ -709,7 +712,7 @@ export default function AppsPage() {
                       {app.features.slice(0, 3).map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5" />
-                          <span className="text-xs text-gray-500">
+                          <span className="text-xs text-slate-500">
                             {feature.title}
                           </span>
                         </div>
@@ -739,7 +742,7 @@ export default function AppsPage() {
             <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-reno-dark mb-3">
               Why RenoNext Apps
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto">
               Purpose-built software for construction teams who work in the
               field, not just at a desk.
             </p>
@@ -783,7 +786,7 @@ export default function AppsPage() {
                 <h3 className="font-display text-lg font-bold text-reno-dark mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed">
+                <p className="text-sm text-slate-500 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -803,7 +806,7 @@ export default function AppsPage() {
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
             Ready to transform your workflow?
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
             Join over 10,000 homeowners and contractors building the future of
             home renovation on RenoNext.
           </p>
@@ -826,7 +829,7 @@ export default function AppsPage() {
           </div>
 
           {/* Trust row */}
-          <div className="mt-12 flex items-center justify-center gap-6 text-gray-600">
+          <div className="mt-12 flex items-center justify-center gap-6 text-slate-600">
             {[
               { icon: 'verified_user', label: 'Escrow Protected' },
               { icon: 'wifi_off', label: 'Offline-First' },

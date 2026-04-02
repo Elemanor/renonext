@@ -28,6 +28,9 @@ export const metadata = {
   title: 'How It Works | RenoNext',
   description:
     'Bank-held escrow, proof-based payouts, verified contractors, and professional dispute resolution. How RenoNext protects homeowners and pays contractors fairly.',
+  alternates: {
+    canonical: '/how-it-works',
+  },
 };
 
 export default function HowItWorksPage() {
@@ -44,7 +47,7 @@ export default function HowItWorksPage() {
             <h1 className="font-display text-4xl font-bold tracking-tight text-reno-dark sm:text-5xl md:text-6xl">
               The Vault
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-slate-600">
               Every project starts with full payment held in a bank-controlled
               escrow account. Not a promise. Not a deposit. The entire project
               amount.
@@ -59,19 +62,19 @@ export default function HowItWorksPage() {
             <div className="mt-2 text-lg font-semibold text-reno-green-dark">
               Bank-held, Milestone-protected
             </div>
-            <div className="mt-4 text-sm text-gray-700">
+            <div className="mt-4 text-sm text-slate-700">
               Kitchen + Bath Renovation • 12 Milestones • 8 Weeks
             </div>
           </div>
 
           {/* Vault States */}
           <div className="mx-auto mt-16 grid max-w-5xl gap-6 md:grid-cols-3">
-            <div className="rounded-xl border-2 border-green-500 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border-2 border-reno-green-500 bg-white p-6 shadow-sm">
               <div className="mb-3 flex items-center gap-2">
-                <CheckCircle2 className="h-6 w-6 text-green-500" />
-                <span className="font-semibold text-green-700">Safe</span>
+                <CheckCircle2 className="h-6 w-6 text-reno-green-500" />
+                <span className="font-semibold text-reno-green-700">Safe</span>
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-slate-600">
                 Proof submitted and verified. Payment released automatically.
               </div>
             </div>
@@ -81,7 +84,7 @@ export default function HowItWorksPage() {
                 <AlertTriangle className="h-6 w-6 text-reno-amber" />
                 <span className="font-semibold text-reno-amber">Reviewing</span>
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-slate-600">
                 Professional review in progress. Typical resolution: 24-48
                 hours.
               </div>
@@ -94,7 +97,7 @@ export default function HowItWorksPage() {
                   Action Required
                 </span>
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-slate-600">
                 Dispute hold active. Funds frozen until QS measurement
                 complete.
               </div>
@@ -107,12 +110,12 @@ export default function HowItWorksPage() {
               <h3 className="font-display text-2xl font-bold text-reno-dark">
                 For Homeowners
               </h3>
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-slate-700">
                 Your money is protected. Every dollar. If work stops, if quality
                 fails, if disputes arise — the vault holds the line. You only
                 pay for verified, completed work.
               </p>
-              <ul className="mt-6 space-y-3 text-sm text-gray-600">
+              <ul className="mt-6 space-y-3 text-sm text-slate-600">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-reno-teal" />
                   <span>Zero risk of contractor abandonment</span>
@@ -132,12 +135,12 @@ export default function HowItWorksPage() {
               <h3 className="font-display text-2xl font-bold text-reno-dark">
                 For Contractors
               </h3>
-              <p className="mt-4 text-gray-700">
+              <p className="mt-4 text-slate-700">
                 The money is already there. No payment delays, no chasing
                 invoices, no cash flow gaps. Complete the work, submit proof,
                 get paid. Same day.
               </p>
-              <ul className="mt-6 space-y-3 text-sm text-gray-600">
+              <ul className="mt-6 space-y-3 text-sm text-slate-600">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-reno-purple" />
                   <span>Guaranteed funds from day one</span>
@@ -155,17 +158,17 @@ export default function HowItWorksPage() {
           </div>
 
           {/* Dispute Hold Mechanics */}
-          <div className="mx-auto mt-16 max-w-3xl rounded-xl border border-gray-200 bg-white p-8">
+          <div className="mx-auto mt-16 max-w-3xl rounded-xl border border-slate-200 bg-white p-8">
             <h3 className="font-display text-xl font-bold text-reno-dark">
               Dispute Hold Mechanics
             </h3>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-slate-600">
               If homeowner and contractor disagree on payment, funds freeze
               automatically. A professional Quantity Surveyor measures the
               actual work completed. Their measurement determines the payout.
               Both parties agreed to this process before work began.
             </p>
-            <div className="mt-6 rounded-lg bg-reno-amber-light p-4 text-sm text-gray-700">
+            <div className="mt-6 rounded-lg bg-reno-amber-light p-4 text-sm text-slate-700">
               <strong>Example:</strong> Contractor says framing is 100% done,
               requests $24,000. Owner says it&apos;s only 60% complete. QS
               measures 75% completion. Contractor receives $18,000. Work
@@ -186,7 +189,7 @@ export default function HowItWorksPage() {
             <h2 className="font-display text-4xl font-bold tracking-tight text-reno-dark sm:text-5xl">
               Proof Packages
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-slate-600">
               Payments release when proof is complete. Not promises. Not
               estimates. Verified evidence of completed work.
             </p>
@@ -203,11 +206,11 @@ export default function HowItWorksPage() {
                   <MapPin className="h-6 w-6 text-reno-green" />
                 </div>
                 <div className="font-semibold text-reno-dark">GPS Photos</div>
-                <div className="mt-2 text-sm text-gray-600">
+                <div className="mt-2 text-sm text-slate-600">
                   Location-stamped progress documentation
                 </div>
                 <div className="mt-3">
-                  <CheckCircle2 className="mx-auto h-5 w-5 text-green-500" />
+                  <CheckCircle2 className="mx-auto h-5 w-5 text-reno-green-500" />
                 </div>
               </div>
 
@@ -218,11 +221,11 @@ export default function HowItWorksPage() {
                 <div className="font-semibold text-reno-dark">
                   Inspection Report
                 </div>
-                <div className="mt-2 text-sm text-gray-600">
+                <div className="mt-2 text-sm text-slate-600">
                   Third-party quality verification
                 </div>
                 <div className="mt-3">
-                  <CheckCircle2 className="mx-auto h-5 w-5 text-green-500" />
+                  <CheckCircle2 className="mx-auto h-5 w-5 text-reno-green-500" />
                 </div>
               </div>
 
@@ -233,11 +236,11 @@ export default function HowItWorksPage() {
                 <div className="font-semibold text-reno-dark">
                   Contractor Sign-Off
                 </div>
-                <div className="mt-2 text-sm text-gray-600">
+                <div className="mt-2 text-sm text-slate-600">
                   GC confirms milestone completion
                 </div>
                 <div className="mt-3">
-                  <CheckCircle2 className="mx-auto h-5 w-5 text-green-500" />
+                  <CheckCircle2 className="mx-auto h-5 w-5 text-reno-green-500" />
                 </div>
               </div>
 
@@ -248,11 +251,11 @@ export default function HowItWorksPage() {
                 <div className="font-semibold text-reno-dark">
                   QS Verification
                 </div>
-                <div className="mt-2 text-sm text-gray-600">
+                <div className="mt-2 text-sm text-slate-600">
                   Professional measurement confirmation
                 </div>
                 <div className="mt-3">
-                  <CheckCircle2 className="mx-auto h-5 w-5 text-green-500" />
+                  <CheckCircle2 className="mx-auto h-5 w-5 text-reno-green-500" />
                 </div>
               </div>
             </div>
@@ -263,69 +266,69 @@ export default function HowItWorksPage() {
             <h3 className="mb-4 text-center font-display text-2xl font-bold text-reno-dark">
               Field Operations: Proof as a Byproduct
             </h3>
-            <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
+            <p className="mx-auto mb-12 max-w-2xl text-center text-slate-600">
               The contractor doesn&apos;t do extra work. Every field activity
               creates proof automatically.
             </p>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="group rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-reno-green hover:shadow-md">
+              <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-reno-green hover:shadow-md">
                 <Users className="mb-3 h-8 w-8 text-reno-green" />
                 <h4 className="mb-2 font-semibold text-reno-dark">
                   Attendance Tracking
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   Crew clock-in with GPS. Proves labor hours and site presence.
                 </p>
               </div>
 
-              <div className="group rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-reno-teal hover:shadow-md">
+              <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-reno-teal hover:shadow-md">
                 <ClipboardCheck className="mb-3 h-8 w-8 text-reno-teal" />
                 <h4 className="mb-2 font-semibold text-reno-dark">
                   Job Safety Analysis
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   Daily safety briefings. Proves compliance and site conditions.
                 </p>
               </div>
 
-              <div className="group rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-reno-purple hover:shadow-md">
+              <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-reno-purple hover:shadow-md">
                 <Hammer className="mb-3 h-8 w-8 text-reno-purple" />
                 <h4 className="mb-2 font-semibold text-reno-dark">
                   Concrete Tracking
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   Pour logs, strength tests, curing schedules. Proves material
                   quality.
                 </p>
               </div>
 
-              <div className="group rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-reno-green hover:shadow-md">
+              <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-reno-green hover:shadow-md">
                 <Camera className="mb-3 h-8 w-8 text-reno-green" />
                 <h4 className="mb-2 font-semibold text-reno-dark">
                   Progress Photos
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   GPS-stamped images at every milestone. Proves work completion.
                 </p>
               </div>
 
-              <div className="group rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-reno-teal hover:shadow-md">
+              <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-reno-teal hover:shadow-md">
                 <ImageIcon className="mb-3 h-8 w-8 text-reno-teal" />
                 <h4 className="mb-2 font-semibold text-reno-dark">
                   Drawing Markup
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   As-built annotations. Proves deviations and change orders.
                 </p>
               </div>
 
-              <div className="group rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-reno-purple hover:shadow-md">
+              <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-reno-purple hover:shadow-md">
                 <AlertTriangle className="mb-3 h-8 w-8 text-reno-purple" />
                 <h4 className="mb-2 font-semibold text-reno-dark">
                   Deficiency Tracking
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   Snag lists with photo evidence. Proves issue resolution.
                 </p>
               </div>
@@ -334,11 +337,11 @@ export default function HowItWorksPage() {
 
           {/* Quote */}
           <div className="mx-auto mt-16 max-w-3xl rounded-xl border-l-4 border-reno-green bg-white p-8 shadow-sm">
-            <p className="font-display text-xl italic text-gray-700">
+            <p className="font-display text-xl italic text-slate-700">
               &quot;The contractor doesn&apos;t do extra work. Proof is a
               byproduct.&quot;
             </p>
-            <p className="mt-2 text-sm text-gray-500">
+            <p className="mt-2 text-sm text-slate-500">
               Every normal field operation creates documentation that becomes
               payment proof.
             </p>
@@ -376,7 +379,7 @@ export default function HowItWorksPage() {
             <h2 className="font-display text-4xl font-bold tracking-tight text-reno-dark sm:text-5xl">
               Verified Pros
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-slate-600">
               Portfolios built from system data, not marketing claims.
               Real work, real costs, real outcomes.
             </p>
@@ -391,7 +394,7 @@ export default function HowItWorksPage() {
               <h3 className="font-display text-xl font-bold text-reno-dark">
                 Verified Work
               </h3>
-              <p className="mt-3 text-gray-600">
+              <p className="mt-3 text-slate-600">
                 Every completed project with GPS photos, inspection reports, and
                 owner ratings. Not testimonials — system records.
               </p>
@@ -404,7 +407,7 @@ export default function HowItWorksPage() {
               <h3 className="font-display text-xl font-bold text-reno-dark">
                 Real Cost Data
               </h3>
-              <p className="mt-3 text-gray-600">
+              <p className="mt-3 text-slate-600">
                 Actual bids, actual budgets, actual change orders. See what
                 similar projects really cost, not marketing estimates.
               </p>
@@ -417,7 +420,7 @@ export default function HowItWorksPage() {
               <h3 className="font-display text-xl font-bold text-reno-dark">
                 Outcome Tracking
               </h3>
-              <p className="mt-3 text-gray-600">
+              <p className="mt-3 text-slate-600">
                 On-time completion rate, budget variance, dispute history, QS
                 findings. The data that matters.
               </p>
@@ -426,7 +429,7 @@ export default function HowItWorksPage() {
 
           {/* Preview Contractor Cards */}
           <div className="mx-auto mt-20 grid max-w-5xl gap-6 md:grid-cols-3">
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-reno-green-light text-lg font-bold text-reno-green">
                   DS
@@ -435,7 +438,7 @@ export default function HowItWorksPage() {
                   <div className="font-semibold text-reno-dark">
                     DrySpace Waterproofing
                   </div>
-                  <div className="text-xs text-gray-500">
+                  <div className="text-xs text-slate-500">
                     Waterproofing & Foundation • 20+ years
                   </div>
                 </div>
@@ -445,30 +448,30 @@ export default function HowItWorksPage() {
                   <div className="font-display text-2xl font-bold text-reno-green">
                     20+
                   </div>
-                  <div className="text-xs text-gray-600">Years</div>
+                  <div className="text-xs text-slate-600">Years</div>
                 </div>
                 <div>
                   <div className="font-display text-2xl font-bold text-reno-green">
                     WSIB
                   </div>
-                  <div className="text-xs text-gray-600">Covered</div>
+                  <div className="text-xs text-slate-600">Covered</div>
                 </div>
                 <div>
                   <div className="font-display text-2xl font-bold text-reno-green">
                     $5M
                   </div>
-                  <div className="text-xs text-gray-600">Insured</div>
+                  <div className="text-xs text-slate-600">Insured</div>
                 </div>
                 <div>
                   <div className="font-display text-2xl font-bold text-reno-green">
                     ✓
                   </div>
-                  <div className="text-xs text-gray-600">Verified</div>
+                  <div className="text-xs text-slate-600">Verified</div>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-reno-teal-light text-lg font-bold text-reno-teal">
                   IF
@@ -477,7 +480,7 @@ export default function HowItWorksPage() {
                   <div className="font-semibold text-reno-dark">
                     Imperial Form
                   </div>
-                  <div className="text-xs text-gray-500">
+                  <div className="text-xs text-slate-500">
                     Concrete & Masonry • 15+ years
                   </div>
                 </div>
@@ -487,30 +490,30 @@ export default function HowItWorksPage() {
                   <div className="font-display text-2xl font-bold text-reno-teal">
                     15+
                   </div>
-                  <div className="text-xs text-gray-600">Years</div>
+                  <div className="text-xs text-slate-600">Years</div>
                 </div>
                 <div>
                   <div className="font-display text-2xl font-bold text-reno-teal">
                     WSIB
                   </div>
-                  <div className="text-xs text-gray-600">Covered</div>
+                  <div className="text-xs text-slate-600">Covered</div>
                 </div>
                 <div>
                   <div className="font-display text-2xl font-bold text-reno-teal">
                     $2M
                   </div>
-                  <div className="text-xs text-gray-600">Insured</div>
+                  <div className="text-xs text-slate-600">Insured</div>
                 </div>
                 <div>
                   <div className="font-display text-2xl font-bold text-reno-teal">
                     ✓
                   </div>
-                  <div className="text-xs text-gray-600">Verified</div>
+                  <div className="text-xs text-slate-600">Verified</div>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-reno-purple-light text-lg font-bold text-reno-purple">
                   SP
@@ -519,7 +522,7 @@ export default function HowItWorksPage() {
                   <div className="font-semibold text-reno-dark">
                     Spaders
                   </div>
-                  <div className="text-xs text-gray-500">
+                  <div className="text-xs text-slate-500">
                     Underpinning & Basements • 15+ years
                   </div>
                 </div>
@@ -529,25 +532,25 @@ export default function HowItWorksPage() {
                   <div className="font-display text-2xl font-bold text-reno-purple">
                     15+
                   </div>
-                  <div className="text-xs text-gray-600">Years</div>
+                  <div className="text-xs text-slate-600">Years</div>
                 </div>
                 <div>
                   <div className="font-display text-2xl font-bold text-reno-purple">
                     WSIB
                   </div>
-                  <div className="text-xs text-gray-600">Covered</div>
+                  <div className="text-xs text-slate-600">Covered</div>
                 </div>
                 <div>
                   <div className="font-display text-2xl font-bold text-reno-purple">
                     $2M
                   </div>
-                  <div className="text-xs text-gray-600">Insured</div>
+                  <div className="text-xs text-slate-600">Insured</div>
                 </div>
                 <div>
                   <div className="font-display text-2xl font-bold text-reno-purple">
                     ✓
                   </div>
-                  <div className="text-xs text-gray-600">Verified</div>
+                  <div className="text-xs text-slate-600">Verified</div>
                 </div>
               </div>
             </div>
@@ -558,7 +561,7 @@ export default function HowItWorksPage() {
             <p className="font-display text-2xl font-bold text-reno-dark">
               Not marketing — accountability.
             </p>
-            <p className="mt-4 text-gray-700">
+            <p className="mt-4 text-slate-700">
               Every stat is pulled from escrow releases, inspection reports, and
               QS measurements. Contractors can&apos;t game the system. The work
               speaks for itself.
@@ -589,7 +592,7 @@ export default function HowItWorksPage() {
             <h2 className="font-display text-4xl font-bold tracking-tight text-reno-dark sm:text-5xl">
               QS Dispute Resolution
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-slate-600">
               When homeowner and contractor disagree, a professional Quantity
               Surveyor measures the actual work completed. No negotiation. Just
               measurement.
@@ -600,34 +603,34 @@ export default function HowItWorksPage() {
           <div className="mx-auto mt-16 grid max-w-5xl gap-6 md:grid-cols-3">
             <div className="rounded-xl bg-white p-8 shadow-sm">
               <div className="mb-4 text-center">
-                <div className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
+                <div className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
                   GC Says
                 </div>
                 <div className="font-display text-5xl font-bold text-reno-red">
                   50%
                 </div>
-                <div className="mt-2 text-sm text-gray-600">
+                <div className="mt-2 text-sm text-slate-600">
                   Framing complete, ready for payment
                 </div>
               </div>
-              <div className="rounded-lg bg-reno-red-light p-4 text-center text-sm text-gray-700">
+              <div className="rounded-lg bg-reno-red-light p-4 text-center text-sm text-slate-700">
                 Requesting $24,000 milestone release
               </div>
             </div>
 
             <div className="rounded-xl bg-white p-8 shadow-sm">
               <div className="mb-4 text-center">
-                <div className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
+                <div className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
                   Owner Says
                 </div>
                 <div className="font-display text-5xl font-bold text-reno-amber">
                   20%
                 </div>
-                <div className="mt-2 text-sm text-gray-600">
+                <div className="mt-2 text-sm text-slate-600">
                   Only walls up, no inspection yet
                 </div>
               </div>
-              <div className="rounded-lg bg-reno-amber-light p-4 text-center text-sm text-gray-700">
+              <div className="rounded-lg bg-reno-amber-light p-4 text-center text-sm text-slate-700">
                 Willing to release only $9,600
               </div>
             </div>
@@ -640,7 +643,7 @@ export default function HowItWorksPage() {
                 <div className="font-display text-5xl font-bold text-reno-green">
                   30%
                 </div>
-                <div className="mt-2 text-sm text-gray-600">
+                <div className="mt-2 text-sm text-slate-600">
                   Professional site measurement
                 </div>
               </div>
@@ -666,7 +669,7 @@ export default function HowItWorksPage() {
                   <h4 className="font-semibold text-reno-dark">
                     Dispute Triggered
                   </h4>
-                  <p className="mt-1 text-sm text-gray-600">
+                  <p className="mt-1 text-sm text-slate-600">
                     Either party can flag a disagreement. Funds freeze
                     immediately. No partial releases.
                   </p>
@@ -683,7 +686,7 @@ export default function HowItWorksPage() {
                   <h4 className="font-semibold text-reno-dark">
                     QS Site Visit
                   </h4>
-                  <p className="mt-1 text-sm text-gray-600">
+                  <p className="mt-1 text-sm text-slate-600">
                     Licensed Quantity Surveyor inspects within 48 hours. Takes
                     measurements, photos, and detailed notes.
                   </p>
@@ -700,7 +703,7 @@ export default function HowItWorksPage() {
                   <h4 className="font-semibold text-reno-dark">
                     Binding Report
                   </h4>
-                  <p className="mt-1 text-sm text-gray-600">
+                  <p className="mt-1 text-sm text-slate-600">
                     QS issues completion percentage. That number determines
                     payment. No appeals, no negotiation.
                   </p>
@@ -717,7 +720,7 @@ export default function HowItWorksPage() {
                   <h4 className="font-semibold text-reno-dark">
                     Automatic Release
                   </h4>
-                  <p className="mt-1 text-sm text-gray-600">
+                  <p className="mt-1 text-sm text-slate-600">
                     Vault releases proportional payment. Work continues.
                     Remaining funds unlock when milestone actually completes.
                   </p>
@@ -731,7 +734,7 @@ export default function HowItWorksPage() {
             <p className="font-display text-xl font-bold text-reno-dark">
               &quot;You agreed to this process — it protects everyone.&quot;
             </p>
-            <p className="mt-4 text-gray-700">
+            <p className="mt-4 text-slate-700">
               Both homeowner and contractor sign the QS dispute resolution
               clause before work begins. It&apos;s in the contract. No
               surprises, no court, no lawyer fees. Just professional
@@ -752,7 +755,7 @@ export default function HowItWorksPage() {
             <h2 className="font-display text-4xl font-bold tracking-tight text-reno-dark sm:text-5xl">
               HouseFax™
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-slate-600">
               After construction, the record lives forever. Every material,
               trade, inspection, photo, and warranty. The complete build history
               of your home.
@@ -767,7 +770,7 @@ export default function HowItWorksPage() {
                 <h3 className="mb-2 font-semibold text-reno-dark">
                   Complete Material Log
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   Every product specification, supplier, installation date, and
                   warranty. Know exactly what&apos;s behind your walls.
                 </p>
@@ -778,7 +781,7 @@ export default function HowItWorksPage() {
                 <h3 className="mb-2 font-semibold text-reno-dark">
                   Trade Records
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   Licensed contractor info for every system: electrical,
                   plumbing, HVAC, framing. Who did the work and when.
                 </p>
@@ -789,7 +792,7 @@ export default function HowItWorksPage() {
                 <h3 className="mb-2 font-semibold text-reno-dark">
                   Inspection History
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   All municipal and third-party inspections with pass/fail
                   records and inspector notes.
                 </p>
@@ -800,7 +803,7 @@ export default function HowItWorksPage() {
                 <h3 className="mb-2 font-semibold text-reno-dark">
                   Photo Timeline
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   GPS-stamped progress photos from foundation to final
                   walkthrough. Visual proof of quality.
                 </p>
@@ -820,12 +823,12 @@ export default function HowItWorksPage() {
                 <h3 className="font-display text-2xl font-bold text-reno-dark">
                   Transferable on Sale
                 </h3>
-                <p className="mt-2 text-gray-600">
+                <p className="mt-2 text-slate-600">
                   HouseFax™ transfers to the new owner when you sell. Buyers see
                   the full construction record. No hidden defects, no unknown
                   history. Just transparency.
                 </p>
-                <p className="mt-4 text-sm text-gray-500">
+                <p className="mt-4 text-sm text-slate-500">
                   Access via QR code at the property or secure web portal.
                   Lifetime cloud storage.
                 </p>
@@ -843,7 +846,7 @@ export default function HowItWorksPage() {
                 <h4 className="mb-2 font-semibold text-reno-dark">
                   For Resale
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   Show buyers exactly what renovations were done, by whom, and
                   with what materials. Increase home value with verified
                   records.
@@ -854,7 +857,7 @@ export default function HowItWorksPage() {
                 <h4 className="mb-2 font-semibold text-reno-dark">
                   For Insurance
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   Prove replacement costs and quality standards. Document major
                   systems for coverage disputes or claims.
                 </p>
@@ -864,7 +867,7 @@ export default function HowItWorksPage() {
                 <h4 className="mb-2 font-semibold text-reno-dark">
                   For Maintenance
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-600">
                   Know when systems were installed, what products were used, and
                   when warranties expire. Plan repairs intelligently.
                 </p>

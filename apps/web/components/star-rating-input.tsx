@@ -49,7 +49,7 @@ export function StarRatingInput({
             onClick={() => !readonly && onChange?.(star)}
           >
             {/* Background (empty) star */}
-            <Star className={cn(sizeClasses[size], 'text-gray-200')} />
+            <Star className={cn(sizeClasses[size], 'text-slate-200')} />
 
             {/* Filled overlay */}
             {(filled || halfFilled) && (

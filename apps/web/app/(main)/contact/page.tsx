@@ -53,10 +53,10 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-50">
       <div className="container mx-auto px-4 py-12">
         {/* Breadcrumb */}
-        <nav className="mb-8 text-sm text-gray-600">
+        <nav className="mb-8 text-sm text-slate-600">
           <ol className="flex items-center gap-2">
             <li>
               <a href="/" className="hover:text-reno-green-dark">
@@ -64,16 +64,16 @@ export default function ContactPage() {
               </a>
             </li>
             <li>&gt;</li>
-            <li className="text-gray-900 font-medium">Contact</li>
+            <li className="text-slate-900 font-medium">Contact</li>
           </ol>
         </nav>
 
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">
             Get in Touch
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             We'd love to hear from you. Reach out and we'll get back within 24
             hours.
           </p>
@@ -85,13 +85,13 @@ export default function ContactPage() {
           <Card className="bg-white">
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                  <Mail className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mb-4">
+                  <Mail className="w-6 h-6 text-primary-600" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
+                <h3 className="font-semibold text-slate-900 mb-2">Email</h3>
                 <a
                   href="mailto:hello@renonext.com"
-                  className="text-blue-600 hover:underline"
+                  className="text-primary-600 hover:underline"
                 >
                   hello@renonext.com
                 </a>
@@ -103,13 +103,13 @@ export default function ContactPage() {
           <Card className="bg-white">
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
-                  <Phone className="w-6 h-6 text-emerald-600" />
+                <div className="w-12 h-12 rounded-full bg-reno-green-100 flex items-center justify-center mb-4">
+                  <Phone className="w-6 h-6 text-reno-green-600" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Phone</h3>
+                <h3 className="font-semibold text-slate-900 mb-2">Phone</h3>
                 <a
                   href="tel:+14165550120"
-                  className="text-emerald-600 hover:underline"
+                  className="text-reno-green-600 hover:underline"
                 >
                   +1 (416) 555-0120
                 </a>
@@ -121,11 +121,11 @@ export default function ContactPage() {
           <Card className="bg-white">
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-violet-100 flex items-center justify-center mb-4">
-                  <MapPin className="w-6 h-6 text-violet-600" />
+                <div className="w-12 h-12 rounded-full bg-reno-purple-100 flex items-center justify-center mb-4">
+                  <MapPin className="w-6 h-6 text-reno-purple-600" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Office</h3>
-                <p className="text-gray-600 text-sm">
+                <h3 className="font-semibold text-slate-900 mb-2">Office</h3>
+                <p className="text-slate-600 text-sm">
                   100 King Street West,
                   <br />
                   Suite 3500
@@ -210,7 +210,7 @@ export default function ContactPage() {
               </div>
 
               {status === 'sent' && (
-                <div className="flex items-center gap-2 rounded-lg bg-green-50 p-4 text-green-800">
+                <div className="flex items-center gap-2 rounded-lg bg-reno-green-50 p-4 text-reno-green-800">
                   <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
                   <p>Message sent! We&apos;ll get back to you within 24 hours.</p>
                 </div>
@@ -235,7 +235,7 @@ export default function ContactPage() {
         </Card>
 
         {/* Response Time Note */}
-        <div className="mt-8 flex items-center justify-center gap-2 text-gray-600">
+        <div className="mt-8 flex items-center justify-center gap-2 text-slate-600">
           <Clock className="w-4 h-4" />
           <p className="text-sm">
             We typically respond within 24 hours during business days

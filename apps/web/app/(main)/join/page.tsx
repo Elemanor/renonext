@@ -218,15 +218,15 @@ export default function JoinPage() {
 
   if (!user) {
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-gray-50">
+      <div className="min-h-[80vh] flex items-center justify-center bg-slate-50">
         <div className="text-center max-w-md mx-auto px-4">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-reno-green-dark to-secondary-600 flex items-center justify-center mx-auto mb-6 shadow-lg">
             <Briefcase className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl font-bold text-slate-900 mb-2">
             Sign up to get started
           </h1>
-          <p className="text-gray-600 mb-6">
+          <p className="text-slate-600 mb-6">
             Create a professional account to begin your contractor application.
           </p>
           <Button asChild className="bg-gradient-to-r from-reno-green-dark to-reno-green text-white">
@@ -239,13 +239,13 @@ export default function JoinPage() {
 
   if (profile?.role !== 'pro') {
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-gray-50">
+      <div className="min-h-[80vh] flex items-center justify-center bg-slate-50">
         <div className="text-center max-w-md mx-auto px-4">
           <AlertCircle className="w-12 h-12 text-amber-500 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl font-bold text-slate-900 mb-2">
             Professional Account Required
           </h1>
-          <p className="text-gray-600 mb-6">
+          <p className="text-slate-600 mb-6">
             This application is for contractor accounts only. Please sign up as a professional.
           </p>
           <Button asChild variant="outline">
@@ -397,13 +397,13 @@ export default function JoinPage() {
 
   const renderBusinessInfo = () => (
     <div className="space-y-6">
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="company_name">Company Name *</Label>
               <div className="relative group">
-                <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+                <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
                 <Input
                   id="company_name"
                   placeholder="Your Company Inc."
@@ -435,13 +435,13 @@ export default function JoinPage() {
         </CardContent>
       </Card>
 
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="business_number">Business Number</Label>
               <div className="relative group">
-                <Hash className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+                <Hash className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
                 <Input
                   id="business_number"
                   placeholder="123456789"
@@ -467,12 +467,12 @@ export default function JoinPage() {
         </CardContent>
       </Card>
 
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5 space-y-4">
           <div className="space-y-2">
             <Label htmlFor="address">Business Address</Label>
             <div className="relative group">
-              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
               <Input
                 id="address"
                 placeholder="123 Main St"
@@ -517,7 +517,7 @@ export default function JoinPage() {
           <div className="space-y-2">
             <Label htmlFor="phone">Phone Number *</Label>
             <div className="relative group">
-              <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+              <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
               <Input
                 id="phone"
                 type="tel"
@@ -531,7 +531,7 @@ export default function JoinPage() {
         </CardContent>
       </Card>
 
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5 space-y-4">
           <div className="space-y-2">
             <Label htmlFor="headline">Professional Headline *</Label>
@@ -562,13 +562,13 @@ export default function JoinPage() {
 
   const renderCredentials = () => (
     <div className="space-y-6">
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="license_number">License Number *</Label>
               <div className="relative group">
-                <Award className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+                <Award className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
                 <Input
                   id="license_number"
                   placeholder="LIC-123456"
@@ -600,7 +600,7 @@ export default function JoinPage() {
         </CardContent>
       </Card>
 
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
@@ -624,7 +624,7 @@ export default function JoinPage() {
             <div className="space-y-2">
               <Label htmlFor="license_expiry">License Expiry</Label>
               <div className="relative group">
-                <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+                <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
                 <Input
                   id="license_expiry"
                   type="date"
@@ -638,12 +638,12 @@ export default function JoinPage() {
         </CardContent>
       </Card>
 
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5">
           <div className="space-y-2">
             <Label htmlFor="bcin">BCIN Number (Optional)</Label>
             <div className="relative group">
-              <Hash className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+              <Hash className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
               <Input
                 id="bcin"
                 placeholder="BCIN-000000"
@@ -652,7 +652,7 @@ export default function JoinPage() {
                 onChange={(e) => updateField('bcin', e.target.value)}
               />
             </div>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-slate-500">
               Ontario Building Code Identification Number — required for Building Code designers
             </p>
           </div>
@@ -663,9 +663,9 @@ export default function JoinPage() {
 
   const renderInsurance = () => (
     <div className="space-y-6">
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5">
-          <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-sm font-semibold text-slate-900 mb-4 flex items-center gap-2">
             <Shield className="h-4 w-4 text-reno-green-dark" />
             Liability Insurance
           </h3>
@@ -699,7 +699,7 @@ export default function JoinPage() {
               <div className="space-y-2">
                 <Label htmlFor="insurance_coverage_amount">Coverage Amount ($)</Label>
                 <div className="relative group">
-                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
                   <Input
                     id="insurance_coverage_amount"
                     type="number"
@@ -716,7 +716,7 @@ export default function JoinPage() {
               <div className="space-y-2">
                 <Label htmlFor="insurance_expiry">Insurance Expiry</Label>
                 <div className="relative group">
-                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
                   <Input
                     id="insurance_expiry"
                     type="date"
@@ -731,9 +731,9 @@ export default function JoinPage() {
         </CardContent>
       </Card>
 
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5">
-          <h3 className="text-sm font-semibold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-sm font-semibold text-slate-900 mb-4 flex items-center gap-2">
             <FileCheck className="h-4 w-4 text-reno-green-dark" />
             WSIB (Workplace Safety and Insurance Board)
           </h3>
@@ -780,25 +780,25 @@ export default function JoinPage() {
 
     return (
       <div className="space-y-6">
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-slate-600">
           Upload your documentation for verification. Accepted formats: PDF, JPEG, PNG, WebP (max 10MB each).
         </p>
 
         {/* Insurance Certificate */}
-        <Card className="border-gray-200 shadow-sm">
+        <Card className="border-slate-200 shadow-sm">
           <CardContent className="p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h3 className="font-semibold text-gray-900 flex items-center gap-2">
+                <h3 className="font-semibold text-slate-900 flex items-center gap-2">
                   <Shield className="h-4 w-4 text-reno-green-dark" />
                   Insurance Certificate *
                 </h3>
-                <p className="text-sm text-gray-500 mt-1">
+                <p className="text-sm text-slate-500 mt-1">
                   Proof of active liability insurance
                 </p>
               </div>
               {formData.insurance_certificate_url && (
-                <Badge className="bg-gradient-to-r from-emerald-500 to-emerald-400 text-white border-0 shadow-sm">
+                <Badge className="bg-gradient-to-r from-reno-green-500 to-reno-green-400 text-white border-0 shadow-sm">
                   <Check className="h-3 w-3 mr-1" />
                   Uploaded
                 </Badge>
@@ -819,21 +819,21 @@ export default function JoinPage() {
 
             <div>
               {formData.insurance_certificate_url ? (
-                <div className="rounded-xl bg-emerald-50 border-2 border-emerald-200 p-4">
+                <div className="rounded-xl bg-reno-green-50 border-2 border-reno-green-200 p-4">
                   <div className="flex items-center gap-3">
                     {isInsurancePdf ? (
-                      <FileText className="h-6 w-6 text-emerald-600 shrink-0" />
+                      <FileText className="h-6 w-6 text-reno-green-600 shrink-0" />
                     ) : (
-                      <ImageIcon className="h-6 w-6 text-emerald-600 shrink-0" />
+                      <ImageIcon className="h-6 w-6 text-reno-green-600 shrink-0" />
                     )}
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-emerald-900">Document uploaded successfully</p>
-                      <p className="text-xs text-emerald-600 truncate">Ready for verification</p>
+                      <p className="text-sm font-medium text-reno-green-900">Document uploaded successfully</p>
+                      <p className="text-xs text-reno-green-600 truncate">Ready for verification</p>
                     </div>
                     <Button
                       size="sm"
                       variant="ghost"
-                      className="text-emerald-600 hover:text-red-500 hover:bg-red-50 h-8 w-8 p-0 shrink-0"
+                      className="text-reno-green-600 hover:text-red-500 hover:bg-red-50 h-8 w-8 p-0 shrink-0"
                       onClick={() => updateField('insurance_certificate_url', '')}
                     >
                       <X className="h-4 w-4" />
@@ -845,7 +845,7 @@ export default function JoinPage() {
                   className={`rounded-xl border-2 border-dashed transition-all duration-200 ${
                     insuranceDragActive
                       ? 'border-reno-green bg-reno-green-light'
-                      : 'border-gray-300 hover:border-reno-green hover:bg-gray-50'
+                      : 'border-slate-300 hover:border-reno-green hover:bg-slate-50'
                   }`}
                   onDragEnter={(e) => handleDrag(e, setInsuranceDragActive)}
                   onDragLeave={(e) => handleDrag(e, setInsuranceDragActive)}
@@ -858,18 +858,18 @@ export default function JoinPage() {
                     {uploadingInsurance ? (
                       <div className="space-y-3">
                         <Loader2 className="h-10 w-10 mx-auto animate-spin text-reno-green-dark" />
-                        <p className="text-sm text-gray-600">Uploading your document...</p>
+                        <p className="text-sm text-slate-600">Uploading your document...</p>
                         <div className="max-w-xs mx-auto">
                           <AnimatedProgress value={65} barClass="bg-gradient-to-r from-reno-green-dark to-reno-green" />
                         </div>
                       </div>
                     ) : (
                       <>
-                        <Upload className="h-10 w-10 mx-auto text-gray-400 mb-3" />
-                        <p className="text-sm font-medium text-gray-900 mb-1">
+                        <Upload className="h-10 w-10 mx-auto text-slate-400 mb-3" />
+                        <p className="text-sm font-medium text-slate-900 mb-1">
                           Drop your file here, or click to browse
                         </p>
-                        <p className="text-xs text-gray-500 mb-4">
+                        <p className="text-xs text-slate-500 mb-4">
                           PDF, JPEG, PNG, or WebP (max 10MB)
                         </p>
                         <Button
@@ -892,20 +892,20 @@ export default function JoinPage() {
 
         {/* WSIB Certificate */}
         {formData.wsib_status !== 'exempt' && formData.wsib_status !== 'not_applicable' && (
-          <Card className="border-gray-200 shadow-sm">
+          <Card className="border-slate-200 shadow-sm">
             <CardContent className="p-6">
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <h3 className="font-semibold text-gray-900 flex items-center gap-2">
+                  <h3 className="font-semibold text-slate-900 flex items-center gap-2">
                     <FileCheck className="h-4 w-4 text-reno-green-dark" />
                     WSIB Certificate *
                   </h3>
-                  <p className="text-sm text-gray-500 mt-1">
+                  <p className="text-sm text-slate-500 mt-1">
                     Proof of WSIB clearance
                   </p>
                 </div>
                 {formData.wsib_certificate_url && (
-                  <Badge className="bg-gradient-to-r from-emerald-500 to-emerald-400 text-white border-0 shadow-sm">
+                  <Badge className="bg-gradient-to-r from-reno-green-500 to-reno-green-400 text-white border-0 shadow-sm">
                     <Check className="h-3 w-3 mr-1" />
                     Uploaded
                   </Badge>
@@ -926,21 +926,21 @@ export default function JoinPage() {
 
               <div>
                 {formData.wsib_certificate_url ? (
-                  <div className="rounded-xl bg-emerald-50 border-2 border-emerald-200 p-4">
+                  <div className="rounded-xl bg-reno-green-50 border-2 border-reno-green-200 p-4">
                     <div className="flex items-center gap-3">
                       {isWsibPdf ? (
-                        <FileText className="h-6 w-6 text-emerald-600 shrink-0" />
+                        <FileText className="h-6 w-6 text-reno-green-600 shrink-0" />
                       ) : (
-                        <ImageIcon className="h-6 w-6 text-emerald-600 shrink-0" />
+                        <ImageIcon className="h-6 w-6 text-reno-green-600 shrink-0" />
                       )}
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-emerald-900">Document uploaded successfully</p>
-                        <p className="text-xs text-emerald-600 truncate">Ready for verification</p>
+                        <p className="text-sm font-medium text-reno-green-900">Document uploaded successfully</p>
+                        <p className="text-xs text-reno-green-600 truncate">Ready for verification</p>
                       </div>
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="text-emerald-600 hover:text-red-500 hover:bg-red-50 h-8 w-8 p-0 shrink-0"
+                        className="text-reno-green-600 hover:text-red-500 hover:bg-red-50 h-8 w-8 p-0 shrink-0"
                         onClick={() => updateField('wsib_certificate_url', '')}
                       >
                         <X className="h-4 w-4" />
@@ -952,7 +952,7 @@ export default function JoinPage() {
                     className={`rounded-xl border-2 border-dashed transition-all duration-200 ${
                       wsibDragActive
                         ? 'border-reno-green bg-reno-green-light'
-                        : 'border-gray-300 hover:border-reno-green hover:bg-gray-50'
+                        : 'border-slate-300 hover:border-reno-green hover:bg-slate-50'
                     }`}
                     onDragEnter={(e) => handleDrag(e, setWsibDragActive)}
                     onDragLeave={(e) => handleDrag(e, setWsibDragActive)}
@@ -965,18 +965,18 @@ export default function JoinPage() {
                       {uploadingWsib ? (
                         <div className="space-y-3">
                           <Loader2 className="h-10 w-10 mx-auto animate-spin text-reno-green-dark" />
-                          <p className="text-sm text-gray-600">Uploading your document...</p>
+                          <p className="text-sm text-slate-600">Uploading your document...</p>
                           <div className="max-w-xs mx-auto">
                             <AnimatedProgress value={65} barClass="bg-gradient-to-r from-reno-green-dark to-reno-green" />
                           </div>
                         </div>
                       ) : (
                         <>
-                          <Upload className="h-10 w-10 mx-auto text-gray-400 mb-3" />
-                          <p className="text-sm font-medium text-gray-900 mb-1">
+                          <Upload className="h-10 w-10 mx-auto text-slate-400 mb-3" />
+                          <p className="text-sm font-medium text-slate-900 mb-1">
                             Drop your file here, or click to browse
                           </p>
-                          <p className="text-xs text-gray-500 mb-4">
+                          <p className="text-xs text-slate-500 mb-4">
                             PDF, JPEG, PNG, or WebP (max 10MB)
                           </p>
                           <Button
@@ -1003,13 +1003,13 @@ export default function JoinPage() {
 
   const renderPortfolio = () => (
     <div className="space-y-6">
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="hourly_rate_min">Minimum Hourly Rate ($)</Label>
               <div className="relative group">
-                <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+                <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
                 <Input
                   id="hourly_rate_min"
                   type="number"
@@ -1024,7 +1024,7 @@ export default function JoinPage() {
             <div className="space-y-2">
               <Label htmlFor="hourly_rate_max">Maximum Hourly Rate ($)</Label>
               <div className="relative group">
-                <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+                <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
                 <Input
                   id="hourly_rate_max"
                   type="number"
@@ -1040,12 +1040,12 @@ export default function JoinPage() {
         </CardContent>
       </Card>
 
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5">
           <div className="space-y-2">
             <Label htmlFor="service_radius_km">Service Radius (km)</Label>
             <div className="relative group">
-              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
               <Input
                 id="service_radius_km"
                 type="number"
@@ -1057,25 +1057,25 @@ export default function JoinPage() {
                 onChange={(e) => updateField('service_radius_km', e.target.value)}
               />
             </div>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-slate-500">
               Maximum distance you're willing to travel for jobs
             </p>
           </div>
         </CardContent>
       </Card>
 
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-slate-100 shadow-sm">
         <CardContent className="p-5">
           <div className="space-y-2">
             <Label>Portfolio Links (Optional)</Label>
-            <p className="text-xs text-gray-500 mb-3">
+            <p className="text-xs text-slate-500 mb-3">
               Add links to your portfolio, website, or social media profiles
             </p>
             <div className="space-y-3">
               {formData.portfolio_urls.map((url, idx) => (
                 <div key={idx} className="flex gap-2">
                   <div className="relative flex-1 group">
-                    <Camera className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 transition-colors group-focus-within:text-reno-green-dark" />
+                    <Camera className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 transition-colors group-focus-within:text-reno-green-dark" />
                     <Input
                       placeholder="https://your-portfolio.com"
                       className="pl-10 h-11 rounded-xl"
@@ -1090,7 +1090,7 @@ export default function JoinPage() {
                   <Button
                     size="icon"
                     variant="ghost"
-                    className="shrink-0 text-gray-400 hover:text-red-500 h-11 w-11"
+                    className="shrink-0 text-slate-400 hover:text-red-500 h-11 w-11"
                     onClick={() => {
                       const updated = formData.portfolio_urls.filter((_, i) => i !== idx);
                       updateField('portfolio_urls', updated);
@@ -1126,8 +1126,8 @@ export default function JoinPage() {
         <CardContent className="p-5">
           <div className="flex items-center justify-between mb-3">
             <div>
-              <h3 className="text-sm font-semibold text-gray-900">Application Progress</h3>
-              <p className="text-xs text-gray-600 mt-0.5">
+              <h3 className="text-sm font-semibold text-slate-900">Application Progress</h3>
+              <p className="text-xs text-slate-600 mt-0.5">
                 {completionPercentage}% of fields completed
               </p>
             </div>
@@ -1156,26 +1156,26 @@ export default function JoinPage() {
             </AccordionTrigger>
             <AccordionContent className="px-4">
               <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm pt-2">
-                <dt className="text-gray-500">Company</dt>
-                <dd className="font-medium text-gray-900">{formData.company_name || '—'}</dd>
-                <dt className="text-gray-500">Type</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-slate-500">Company</dt>
+                <dd className="font-medium text-slate-900">{formData.company_name || '—'}</dd>
+                <dt className="text-slate-500">Type</dt>
+                <dd className="font-medium text-slate-900">
                   {BUSINESS_TYPES.find((t) => t.value === formData.business_type)?.label || '—'}
                 </dd>
-                <dt className="text-gray-500">Business #</dt>
-                <dd className="font-medium text-gray-900">{formData.business_number || '—'}</dd>
-                <dt className="text-gray-500">Experience</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-slate-500">Business #</dt>
+                <dd className="font-medium text-slate-900">{formData.business_number || '—'}</dd>
+                <dt className="text-slate-500">Experience</dt>
+                <dd className="font-medium text-slate-900">
                   {formData.years_experience ? `${formData.years_experience} years` : '—'}
                 </dd>
-                <dt className="text-gray-500">Location</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-slate-500">Location</dt>
+                <dd className="font-medium text-slate-900">
                   {formData.city ? `${formData.city}, ${formData.province}` : '—'}
                 </dd>
-                <dt className="text-gray-500">Phone</dt>
-                <dd className="font-medium text-gray-900">{formData.phone || '—'}</dd>
-                <dt className="text-gray-500">Headline</dt>
-                <dd className="font-medium text-gray-900 col-span-2">{formData.headline || '—'}</dd>
+                <dt className="text-slate-500">Phone</dt>
+                <dd className="font-medium text-slate-900">{formData.phone || '—'}</dd>
+                <dt className="text-slate-500">Headline</dt>
+                <dd className="font-medium text-slate-900 col-span-2">{formData.headline || '—'}</dd>
               </dl>
             </AccordionContent>
           </AccordionItem>
@@ -1191,20 +1191,20 @@ export default function JoinPage() {
             </AccordionTrigger>
             <AccordionContent className="px-4">
               <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm pt-2">
-                <dt className="text-gray-500">License #</dt>
-                <dd className="font-medium text-gray-900">{formData.license_number || '—'}</dd>
-                <dt className="text-gray-500">Type</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-slate-500">License #</dt>
+                <dd className="font-medium text-slate-900">{formData.license_number || '—'}</dd>
+                <dt className="text-slate-500">Type</dt>
+                <dd className="font-medium text-slate-900">
                   {LICENSE_TYPES.find((t) => t.value === formData.license_type)?.label || '—'}
                 </dd>
-                <dt className="text-gray-500">Province</dt>
-                <dd className="font-medium text-gray-900">{formData.license_province}</dd>
-                <dt className="text-gray-500">Expiry</dt>
-                <dd className="font-medium text-gray-900">{formData.license_expiry || '—'}</dd>
+                <dt className="text-slate-500">Province</dt>
+                <dd className="font-medium text-slate-900">{formData.license_province}</dd>
+                <dt className="text-slate-500">Expiry</dt>
+                <dd className="font-medium text-slate-900">{formData.license_expiry || '—'}</dd>
                 {formData.bcin && (
                   <>
-                    <dt className="text-gray-500">BCIN</dt>
-                    <dd className="font-medium text-gray-900">{formData.bcin}</dd>
+                    <dt className="text-slate-500">BCIN</dt>
+                    <dd className="font-medium text-slate-900">{formData.bcin}</dd>
                   </>
                 )}
               </dl>
@@ -1222,30 +1222,30 @@ export default function JoinPage() {
             </AccordionTrigger>
             <AccordionContent className="px-4">
               <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm pt-2">
-                <dt className="text-gray-500">Insurance Provider</dt>
-                <dd className="font-medium text-gray-900">{formData.insurance_provider || '—'}</dd>
-                <dt className="text-gray-500">Policy #</dt>
-                <dd className="font-medium text-gray-900">{formData.insurance_policy_number || '—'}</dd>
-                <dt className="text-gray-500">Coverage</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-slate-500">Insurance Provider</dt>
+                <dd className="font-medium text-slate-900">{formData.insurance_provider || '—'}</dd>
+                <dt className="text-slate-500">Policy #</dt>
+                <dd className="font-medium text-slate-900">{formData.insurance_policy_number || '—'}</dd>
+                <dt className="text-slate-500">Coverage</dt>
+                <dd className="font-medium text-slate-900">
                   {formData.insurance_coverage_amount
                     ? `$${Number(formData.insurance_coverage_amount).toLocaleString()}`
                     : '—'}
                 </dd>
-                <dt className="text-gray-500">WSIB Status</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-slate-500">WSIB Status</dt>
+                <dd className="font-medium text-slate-900">
                   {WSIB_STATUSES.find((s) => s.value === formData.wsib_status)?.label || '—'}
                 </dd>
                 {formData.wsib_number && (
                   <>
-                    <dt className="text-gray-500">WSIB #</dt>
-                    <dd className="font-medium text-gray-900">{formData.wsib_number}</dd>
+                    <dt className="text-slate-500">WSIB #</dt>
+                    <dd className="font-medium text-slate-900">{formData.wsib_number}</dd>
                   </>
                 )}
-                <dt className="text-gray-500">Insurance Cert</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-slate-500">Insurance Cert</dt>
+                <dd className="font-medium text-slate-900">
                   {formData.insurance_certificate_url ? (
-                    <Badge className="bg-gradient-to-r from-emerald-500 to-emerald-400 text-white border-0 text-xs shadow-sm">
+                    <Badge className="bg-gradient-to-r from-reno-green-500 to-reno-green-400 text-white border-0 text-xs shadow-sm">
                       <Check className="h-3 w-3 mr-1" />
                       Uploaded
                     </Badge>
@@ -1253,15 +1253,15 @@ export default function JoinPage() {
                     '—'
                   )}
                 </dd>
-                <dt className="text-gray-500">WSIB Cert</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-slate-500">WSIB Cert</dt>
+                <dd className="font-medium text-slate-900">
                   {formData.wsib_certificate_url ? (
-                    <Badge className="bg-gradient-to-r from-emerald-500 to-emerald-400 text-white border-0 text-xs shadow-sm">
+                    <Badge className="bg-gradient-to-r from-reno-green-500 to-reno-green-400 text-white border-0 text-xs shadow-sm">
                       <Check className="h-3 w-3 mr-1" />
                       Uploaded
                     </Badge>
                   ) : formData.wsib_status === 'exempt' || formData.wsib_status === 'not_applicable' ? (
-                    <span className="text-gray-400 text-xs">N/A</span>
+                    <span className="text-slate-400 text-xs">N/A</span>
                   ) : (
                     '—'
                   )}
@@ -1281,16 +1281,16 @@ export default function JoinPage() {
             </AccordionTrigger>
             <AccordionContent className="px-4">
               <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm pt-2">
-                <dt className="text-gray-500">Hourly Rate</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-slate-500">Hourly Rate</dt>
+                <dd className="font-medium text-slate-900">
                   {formData.hourly_rate_min || formData.hourly_rate_max
                     ? `$${formData.hourly_rate_min || '?'} – $${formData.hourly_rate_max || '?'}`
                     : '—'}
                 </dd>
-                <dt className="text-gray-500">Service Radius</dt>
-                <dd className="font-medium text-gray-900">{formData.service_radius_km} km</dd>
-                <dt className="text-gray-500">Portfolio Links</dt>
-                <dd className="font-medium text-gray-900">
+                <dt className="text-slate-500">Service Radius</dt>
+                <dd className="font-medium text-slate-900">{formData.service_radius_km} km</dd>
+                <dt className="text-slate-500">Portfolio Links</dt>
+                <dd className="font-medium text-slate-900">
                   {formData.portfolio_urls.filter(Boolean).length || 'None'}
                 </dd>
               </dl>
@@ -1300,7 +1300,7 @@ export default function JoinPage() {
       </Accordion>
 
       {/* Terms */}
-      <Card className="border-gray-200 shadow-sm">
+      <Card className="border-slate-200 shadow-sm">
         <CardContent className="p-5">
           <div className="flex items-start gap-3">
             <input
@@ -1310,7 +1310,7 @@ export default function JoinPage() {
               onChange={(e) => setAgreedToTerms(e.target.checked)}
               className="mt-1 accent-reno-green-dark w-4 h-4"
             />
-            <label htmlFor="terms" className="text-sm text-gray-600 cursor-pointer">
+            <label htmlFor="terms" className="text-sm text-slate-600 cursor-pointer">
               I certify that the information provided is accurate and complete. I agree to
               the{' '}
               <Link href="/terms" className="text-reno-green-dark hover:underline font-medium">
@@ -1365,32 +1365,32 @@ export default function JoinPage() {
   // ── Render ──
   return (
     <LazyMotion features={domAnimation}>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-slate-50">
         {/* Dark Hero Header */}
-        <div className="relative bg-gray-900 overflow-hidden">
+        <div className="relative bg-slate-900 overflow-hidden">
           <MeshGradient className="absolute inset-0 h-full w-full opacity-40" />
           <div className="absolute inset-0 bg-blueprint opacity-[0.03]" />
 
           <div className="relative container mx-auto px-4 py-12 md:py-16">
             <div className="max-w-3xl mx-auto text-center">
-              <Badge className="mb-4 inline-flex items-center gap-2 rounded-full border-emerald-400/20 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-400 backdrop-blur-sm">
+              <Badge className="mb-4 inline-flex items-center gap-2 rounded-full border-reno-green-400/20 bg-reno-green-500/10 px-4 py-1.5 text-sm font-medium text-reno-green-400 backdrop-blur-sm">
                 <Shield className="h-4 w-4" />
                 Verified Contractor Program
               </Badge>
 
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Join the{' '}
-                <span className="bg-gradient-to-r from-reno-green via-secondary-400 to-emerald-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-reno-green via-secondary-400 to-reno-green-400 bg-clip-text text-transparent">
                   RenoNext Network
                 </span>
               </h1>
 
-              <p className="text-lg text-gray-300 mb-6">
+              <p className="text-lg text-slate-300 mb-6">
                 Complete your application to become a verified contractor and access premium homeowner leads.
               </p>
 
-              <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
-                <Check className="h-4 w-4 text-emerald-400" />
+              <div className="flex items-center justify-center gap-2 text-sm text-slate-400">
+                <Check className="h-4 w-4 text-reno-green-400" />
                 <span>Step {currentStep + 1} of {STEPS.length}</span>
               </div>
             </div>
@@ -1414,10 +1414,10 @@ export default function JoinPage() {
                         <div
                           className={`flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all duration-300 ${
                             isCompleted
-                              ? 'border-emerald-500 bg-emerald-500 text-white shadow-lg shadow-emerald-500/30'
+                              ? 'border-reno-green-500 bg-reno-green-500 text-white shadow-lg shadow-emerald-500/30'
                               : isActive
                               ? 'border-reno-green-dark bg-reno-green-dark text-white shadow-lg shadow-reno-green-dark/40 animate-pulse'
-                              : 'border-gray-300 bg-white text-gray-400'
+                              : 'border-slate-300 bg-white text-slate-400'
                           }`}
                         >
                           {isCompleted ? (
@@ -1428,7 +1428,7 @@ export default function JoinPage() {
                         </div>
                         <span
                           className={`mt-2 text-xs font-medium leading-tight text-center max-w-[80px] ${
-                            isActive ? 'text-reno-green-dark' : isCompleted ? 'text-emerald-600' : 'text-gray-400'
+                            isActive ? 'text-reno-green-dark' : isCompleted ? 'text-reno-green-600' : 'text-slate-400'
                           }`}
                         >
                           {step}
@@ -1436,12 +1436,12 @@ export default function JoinPage() {
                       </div>
                       {idx < STEPS.length - 1 && (
                         <div className="relative flex-1 mx-3 h-1">
-                          <div className="absolute inset-0 bg-gray-200 rounded-full" />
+                          <div className="absolute inset-0 bg-slate-200 rounded-full" />
                           <div
                             className={`absolute inset-0 rounded-full transition-all duration-500 ${
                               idx < currentStep
-                                ? 'bg-gradient-to-r from-emerald-500 to-emerald-400 shadow-sm shadow-emerald-500/30'
-                                : 'bg-gray-200'
+                                ? 'bg-gradient-to-r from-reno-green-500 to-reno-green-400 shadow-sm shadow-emerald-500/30'
+                                : 'bg-slate-200'
                             }`}
                             style={{
                               transform: idx < currentStep ? 'scaleX(1)' : 'scaleX(0)',
@@ -1465,9 +1465,9 @@ export default function JoinPage() {
             </div>
 
             {/* Animated Step Content */}
-            <Card className="rounded-2xl border-gray-200/60 bg-white shadow-xl shadow-gray-200/50 overflow-hidden">
+            <Card className="rounded-2xl border-slate-200/60 bg-white shadow-xl shadow-gray-200/50 overflow-hidden">
               <CardContent className="p-6 md:p-8">
-                <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+                <h2 className="text-xl font-semibold text-slate-900 mb-6 flex items-center gap-2">
                   {(() => {
                     const StepIcon = stepIcons[currentStep];
                     return <StepIcon className="h-5 w-5 text-reno-green-dark" />;
@@ -1495,7 +1495,7 @@ export default function JoinPage() {
             </Card>
 
             {/* Sticky Bottom Navigation */}
-            <div className="sticky bottom-0 mt-6 bg-white/80 backdrop-blur-lg rounded-2xl border border-gray-200/60 shadow-lg shadow-gray-200/50 p-4">
+            <div className="sticky bottom-0 mt-6 bg-white/80 backdrop-blur-lg rounded-2xl border border-slate-200/60 shadow-lg shadow-gray-200/50 p-4">
               <div className="flex items-center justify-between">
                 <Button
                   variant="ghost"
@@ -1507,7 +1507,7 @@ export default function JoinPage() {
                   Back
                 </Button>
 
-                <span className="text-sm font-medium text-gray-500">
+                <span className="text-sm font-medium text-slate-500">
                   Step {currentStep + 1} of {STEPS.length}
                 </span>
 
@@ -1515,7 +1515,7 @@ export default function JoinPage() {
                   <Button
                     onClick={handleSubmit}
                     disabled={!canProceed() || submitting}
-                    className="bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white shadow-lg shadow-emerald-500/30 rounded-xl"
+                    className="bg-gradient-to-r from-reno-green-600 to-reno-green-500 hover:from-reno-green-700 hover:to-reno-green-600 text-white shadow-lg shadow-emerald-500/30 rounded-xl"
                   >
                     {submitting ? (
                       <>

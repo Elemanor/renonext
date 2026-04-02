@@ -1,6 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { whmisModules, whmisPictograms } from '@/lib/data/whmis-course';
+
+export const metadata: Metadata = {
+  title: 'Free WHMIS 2015 Training Course | RenoNext',
+  description: 'Complete your WHMIS 2015 training online for free. Learn to identify hazards, read labels and Safety Data Sheets, and earn your certificate — no account required.',
+  openGraph: {
+    title: 'Free WHMIS 2015 Training Course | RenoNext',
+    description: 'Complete your WHMIS 2015 training online for free. Learn to identify hazards, read labels and Safety Data Sheets, and earn your certificate — no account required.',
+  },
+};
 
 const stats = [
   { label: 'Modules', value: '7', icon: 'menu_book' },
@@ -53,7 +63,7 @@ export default function WHMISLandingPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+            <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-light leading-relaxed mb-10">
               Complete your Workplace Hazardous Materials Information System training
               online. Learn to identify hazards, read labels and Safety Data Sheets,
               and earn your certificate — all for free.
@@ -79,12 +89,12 @@ export default function WHMISLandingPage() {
       {/* ============================================================
           STATS ROW
           ============================================================ */}
-      <section className="bg-[#f6f8f8] border-y border-gray-200">
+      <section className="bg-[#f6f8f8] border-y border-slate-200">
         <div className="mx-auto max-w-5xl px-6 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat) => (
               <div key={stat.label} className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
                   <span
                     className="material-symbols-outlined text-[#0fbabd] text-xl"
                     style={{ fontVariationSettings: "'FILL' 1" }}
@@ -94,7 +104,7 @@ export default function WHMISLandingPage() {
                 </div>
                 <div>
                   <div className="text-2xl font-extrabold text-[#102122]">{stat.value}</div>
-                  <div className="text-xs text-gray-500 font-medium uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-xs text-slate-500 font-medium uppercase tracking-wider">{stat.label}</div>
                 </div>
               </div>
             ))}
@@ -127,7 +137,7 @@ export default function WHMISLandingPage() {
                     className="w-full h-full"
                   />
                 </div>
-                <span className="text-[10px] font-bold text-gray-600 text-center leading-tight">
+                <span className="text-[10px] font-bold text-slate-600 text-center leading-tight">
                   {p.name}
                 </span>
               </div>
@@ -148,7 +158,7 @@ export default function WHMISLandingPage() {
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#102122] mt-3 tracking-tight">
               7 Comprehensive Modules
             </h2>
-            <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+            <p className="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">
               Each module covers a critical aspect of WHMIS 2015. Complete all seven,
               then take the final quiz to earn your certificate.
             </p>
@@ -159,7 +169,7 @@ export default function WHMISLandingPage() {
               <Link
                 key={mod.id}
                 href={`/whmis/module/${mod.id}`}
-                className="group bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg hover:border-[#0fbabd]/30 transition-all"
+                className="group bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg hover:border-[#0fbabd]/30 transition-all"
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0fbabd]/10 to-[#0d9699]/10 flex items-center justify-center flex-shrink-0 group-hover:from-[#0fbabd]/20 group-hover:to-[#0d9699]/20 transition-colors">
@@ -171,7 +181,7 @@ export default function WHMISLandingPage() {
                     </span>
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
                       Module {mod.order}
                     </div>
                     <h3 className="text-lg font-bold text-[#102122] group-hover:text-[#0fbabd] transition-colors leading-tight">
@@ -179,11 +189,11 @@ export default function WHMISLandingPage() {
                     </h3>
                   </div>
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                <p className="text-sm text-slate-500 leading-relaxed mb-4">
                   {mod.description}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-gray-400 flex items-center gap-1">
+                  <span className="text-xs text-slate-400 flex items-center gap-1">
                     <span className="material-symbols-outlined text-sm">schedule</span>
                     ~{mod.estimatedMinutes} min
                   </span>
@@ -210,7 +220,7 @@ export default function WHMISLandingPage() {
                   </span>
                 </div>
                 <div>
-                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
                     Final Assessment
                   </div>
                   <h3 className="text-lg font-bold text-white group-hover:text-[#0fbabd] transition-colors leading-tight">
@@ -218,12 +228,12 @@ export default function WHMISLandingPage() {
                   </h3>
                 </div>
               </div>
-              <p className="text-sm text-gray-400 leading-relaxed mb-4">
+              <p className="text-sm text-slate-400 leading-relaxed mb-4">
                 20 multiple-choice questions covering all modules. Score 80% or higher
                 to earn your certificate.
               </p>
               <div className="flex items-center justify-between">
-                <span className="text-xs text-gray-500 flex items-center gap-1">
+                <span className="text-xs text-slate-500 flex items-center gap-1">
                   <span className="material-symbols-outlined text-sm">timer</span>
                   ~15 min
                 </span>
@@ -259,16 +269,16 @@ export default function WHMISLandingPage() {
                     >
                       check_circle
                     </span>
-                    <span className="text-gray-700">{outcome}</span>
+                    <span className="text-slate-700">{outcome}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Info card */}
-            <div className="bg-gradient-to-br from-[#f6f8f8] to-white rounded-2xl border border-gray-200 p-8">
+            <div className="bg-gradient-to-br from-[#f6f8f8] to-white rounded-2xl border border-slate-200 p-8">
               <h3 className="text-xl font-bold text-[#102122] mb-4">About This Course</h3>
-              <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
+              <div className="space-y-4 text-sm text-slate-600 leading-relaxed">
                 <p>
                   This free WHMIS 2015 training covers the <strong>generic education</strong> component
                   required under the Hazardous Products Act. It aligns with the Globally Harmonized
@@ -310,7 +320,7 @@ export default function WHMISLandingPage() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
             Ready to Get Certified?
           </h2>
-          <p className="text-gray-400 mb-8 text-lg max-w-xl mx-auto">
+          <p className="text-slate-400 mb-8 text-lg max-w-xl mx-auto">
             Start Module 1 and work through at your own pace. No account needed,
             no payment required.
           </p>
@@ -326,7 +336,7 @@ export default function WHMISLandingPage() {
             </span>
             Start Module 1
           </Link>
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-slate-500">
             <span className="flex items-center gap-1.5">
               <span
                 className="material-symbols-outlined text-[#0fbabd] text-base"

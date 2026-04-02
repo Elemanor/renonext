@@ -20,8 +20,8 @@ export function WeekAhead({ schedule }: WeekAheadProps) {
     <section className="space-y-4">
       {/* Section header */}
       <div className="flex items-center gap-2">
-        <CalendarDays className="h-5 w-5 text-gray-700" />
-        <h2 className="text-xl font-semibold text-gray-900">This Week Ahead</h2>
+        <CalendarDays className="h-5 w-5 text-slate-700" />
+        <h2 className="text-xl font-semibold text-slate-900">This Week Ahead</h2>
       </div>
 
       {/* Schedule cards */}

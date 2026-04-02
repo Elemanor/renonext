@@ -32,15 +32,15 @@ export function LiveVerificationTerminal() {
       <div className="p-6 text-sm">
         <div className="mb-6 flex items-center justify-between border-b border-slate-800 pb-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-500/20 ring-1 ring-blue-500/50">
-              <Award className="h-5 w-5 text-blue-400" />
+            <div className="flex h-10 w-10 items-center justify-center rounded bg-primary-500/20 ring-1 ring-primary-500/50">
+              <Award className="h-5 w-5 text-primary-400" />
             </div>
             <div>
               <p className="font-bold text-white">PRO_ID: #8942</p>
               <p className="text-[10px] text-slate-500">Tier: Institutional</p>
             </div>
           </div>
-          <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">
+          <Badge className="bg-reno-green-500/20 text-reno-green-400 border-reno-green-500/50">
             NETWORK ACTIVE
           </Badge>
         </div>
@@ -51,7 +51,7 @@ export function LiveVerificationTerminal() {
             <span className="text-slate-400">Biometric Identity</span>
             <AnimatePresence mode="wait">
               {step >= 0 ? (
-                <motion.span key="id-pass" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-emerald-400 flex items-center gap-1.5"><CheckCircle className="h-3 w-3" /> VERIFIED</motion.span>
+                <motion.span key="id-pass" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-reno-green-400 flex items-center gap-1.5"><CheckCircle className="h-3 w-3" /> VERIFIED</motion.span>
               ) : (
                 <span className="text-slate-600">Pending...</span>
               )}
@@ -63,7 +63,7 @@ export function LiveVerificationTerminal() {
             <span className="text-slate-400">Commercial Liability</span>
             <AnimatePresence mode="wait">
               {step >= 1 ? (
-                <motion.span key="ins-pass" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-emerald-400 flex items-center gap-1.5"><CheckCircle className="h-3 w-3" /> $2M ACTIVE</motion.span>
+                <motion.span key="ins-pass" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-reno-green-400 flex items-center gap-1.5"><CheckCircle className="h-3 w-3" /> $2M ACTIVE</motion.span>
               ) : (
                 <span className="text-slate-600 animate-pulse">Querying Database...</span>
               )}
@@ -75,7 +75,7 @@ export function LiveVerificationTerminal() {
             <span className="text-slate-400">WSIB Clearance</span>
             <AnimatePresence mode="wait">
               {step >= 2 ? (
-                <motion.span key="wsib-pass" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-emerald-400 flex items-center gap-1.5"><CheckCircle className="h-3 w-3" /> CLEAR</motion.span>
+                <motion.span key="wsib-pass" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-reno-green-400 flex items-center gap-1.5"><CheckCircle className="h-3 w-3" /> CLEAR</motion.span>
               ) : step >= 1 ? (
                 <span className="text-slate-600 animate-pulse">Querying Provincial API...</span>
               ) : (
@@ -88,7 +88,7 @@ export function LiveVerificationTerminal() {
            <div className="mt-4 pt-4 border-t border-slate-800 min-h-[40px]">
              <AnimatePresence mode="wait">
               {step === 3 && (
-                <motion.div initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} className="text-xs text-blue-400">
+                <motion.div initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} className="text-xs text-primary-400">
                   &gt; ALL SYSTEMS NOMINAL. <br/>&gt; PREMIUM PRICING JUSTIFIED.
                 </motion.div>
               )}
@@ -119,7 +119,7 @@ export function AddendumTerminal() {
   return (
     <div className="relative mx-auto w-full max-w-[460px] overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-2xl font-mono">
       <div className="flex items-center gap-2 border-b border-slate-800 bg-slate-950 px-4 py-3">
-        <Lock className="h-4 w-4 text-emerald-500" />
+        <Lock className="h-4 w-4 text-reno-green-500" />
         <p className="text-[10px] text-slate-400 uppercase tracking-widest">Margin Protection Protocol</p>
       </div>
 
@@ -141,7 +141,7 @@ export function AddendumTerminal() {
              </div>
              <div className="flex-1">
                <p className="text-[10px] text-slate-500 mb-1">EVIDENCE</p>
-               <div className="border border-slate-700 bg-slate-800/50 rounded p-2 text-emerald-400 flex items-center gap-2">
+               <div className="border border-slate-700 bg-slate-800/50 rounded p-2 text-reno-green-400 flex items-center gap-2">
                  <Camera className="h-3 w-3" /> 2 Photos Attached
                </div>
              </div>
@@ -153,7 +153,7 @@ export function AddendumTerminal() {
           <AnimatePresence mode="wait">
             {stage === 'input' && (
               <motion.div key="input" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex h-full items-center justify-center">
-                <button className="flex items-center gap-2 rounded bg-blue-600 px-4 py-2 font-bold text-white transition-colors hover:bg-blue-500">
+                <button className="flex items-center gap-2 rounded bg-primary-600 px-4 py-2 font-bold text-white transition-colors hover:bg-primary-500">
                   <FileText className="h-4 w-4" /> GENERATE ADDENDUM
                 </button>
               </motion.div>
@@ -174,9 +174,9 @@ export function AddendumTerminal() {
             {stage === 'locked' && (
               <motion.div key="locked" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="flex h-full flex-col justify-center">
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-emerald-500" />
+                  <CheckCircle className="h-5 w-5 text-reno-green-500" />
                   <div>
-                    <p className="text-emerald-400 text-xs font-bold">RATES VERIFIED. CONTRACT LOCKED.</p>
+                    <p className="text-reno-green-400 text-xs font-bold">RATES VERIFIED. CONTRACT LOCKED.</p>
                     <p className="text-slate-500 text-[10px] mt-0.5">Awaiting homeowner digital signature to resume work.</p>
                   </div>
                 </div>

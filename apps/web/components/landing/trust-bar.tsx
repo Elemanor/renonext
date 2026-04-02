@@ -8,12 +8,12 @@ const pills = [
   {
     icon: Shield,
     label: 'WSIB-Ready Workflows',
-    gradient: 'from-emerald-400 to-emerald-600',
+    gradient: 'from-reno-green-400 to-reno-green-600',
   },
   {
     icon: ClipboardCheck,
     label: 'Permit & Inspection Tracking',
-    gradient: 'from-blue-400 to-blue-600',
+    gradient: 'from-primary-400 to-primary-600',
   },
   {
     icon: Lock,
@@ -23,7 +23,7 @@ const pills = [
   {
     icon: BadgeCheck,
     label: 'Evidence-Based Verification',
-    gradient: 'from-violet-400 to-violet-600',
+    gradient: 'from-reno-purple-400 to-reno-purple-600',
   },
 ] as const;
 
@@ -33,7 +33,7 @@ export function TrustBar() {
       {/* Top gradient accent border */}
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-reno-green-400/40 to-transparent"
       />
 
       {/* Blueprint overlay */}

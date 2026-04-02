@@ -11,7 +11,7 @@ const weatherIcons = {
 };
 
 const riskColors = {
-  low: 'text-emerald-600',
+  low: 'text-reno-green-600',
   delay_likely: 'text-amber-600',
   reschedule_required: 'text-red-600',
 };
@@ -29,37 +29,37 @@ export function ScheduleDayCard({ day, isToday }: ScheduleDayCardProps) {
     <div
       className={cn(
         'flex flex-col rounded-xl border p-3 transition-all duration-200',
-        isToday ? 'border-blue-300 bg-blue-50/50 ring-1 ring-blue-200' : 'border-gray-200 bg-white',
+        isToday ? 'border-primary-300 bg-primary-50/50 ring-1 ring-primary-200' : 'border-slate-200 bg-white',
         isOff && 'opacity-60'
       )}
     >
       {/* Date header */}
       <div className="mb-2 flex items-center justify-between">
         <div>
-          <p className={cn('text-xs font-bold', isToday ? 'text-blue-700' : 'text-gray-900')}>
+          <p className={cn('text-xs font-bold', isToday ? 'text-primary-700' : 'text-slate-900')}>
             {day.day_label}
           </p>
-          <p className="text-[11px] tabular-nums text-gray-500">
+          <p className="text-[11px] tabular-nums text-slate-500">
             {new Date(day.date + 'T00:00:00').toLocaleDateString('en-CA', { month: 'short', day: 'numeric' })}
           </p>
         </div>
         {WeatherIcon && day.weather_forecast && (
           <div className="flex items-center gap-1">
             <WeatherIcon className={cn('h-4 w-4', riskColors[day.weather_forecast.risk_level])} />
-            <span className="text-[11px] tabular-nums text-gray-500">{day.weather_forecast.temp_high}°</span>
+            <span className="text-[11px] tabular-nums text-slate-500">{day.weather_forecast.temp_high}°</span>
           </div>
         )}
       </div>
 
       {isOff ? (
-        <p className="flex-1 text-xs text-gray-400">No work</p>
+        <p className="flex-1 text-xs text-slate-400">No work</p>
       ) : (
         <>
           {/* Work description */}
-          <p className="mb-2 flex-1 text-xs leading-relaxed text-gray-700">{day.work_planned}</p>
+          <p className="mb-2 flex-1 text-xs leading-relaxed text-slate-700">{day.work_planned}</p>
 
           {/* Crew + hours */}
-          <div className="mb-2 flex items-center gap-3 text-[11px] text-gray-500">
+          <div className="mb-2 flex items-center gap-3 text-[11px] text-slate-500">
             <span className="flex items-center gap-1">
               <Users className="h-3 w-3" />
               {day.crew_size}
@@ -72,7 +72,7 @@ export function ScheduleDayCard({ day, isToday }: ScheduleDayCardProps) {
 
           {/* Inspection highlight */}
           {day.is_inspection_day && (
-            <div className="mb-2 flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-1 text-[11px] font-medium text-emerald-700">
+            <div className="mb-2 flex items-center gap-1 rounded-md bg-reno-green-50 px-2 py-1 text-[11px] font-medium text-reno-green-700">
               <Eye className="h-3 w-3" />
               {day.inspection_type}
             </div>

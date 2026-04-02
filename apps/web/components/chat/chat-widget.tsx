@@ -47,17 +47,17 @@ export function ChatWidget() {
           <SheetHeader className="shrink-0 border-b px-4 py-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-50">
-                  <MessageCircle className="h-4 w-4 text-emerald-600" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-reno-green-50">
+                  <MessageCircle className="h-4 w-4 text-reno-green-600" />
                 </div>
                 <div>
                   <SheetTitle className="text-sm font-semibold">Virtual GC</SheetTitle>
-                  <p className="text-[10px] text-gray-500">AI Construction Advisor</p>
+                  <p className="text-[10px] text-slate-500">AI Construction Advisor</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
+                className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600"
               >
                 <X className="h-4 w-4" />
               </button>

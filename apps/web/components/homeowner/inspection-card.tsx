@@ -31,13 +31,13 @@ export function InspectionCard({ inspection, isNext }: InspectionCardProps) {
     switch (status) {
       case 'upcoming':
         return (
-          <Badge variant="default" className="bg-blue-500 hover:bg-blue-600">
+          <Badge variant="default" className="bg-primary-500 hover:bg-primary-600">
             Upcoming
           </Badge>
         );
       case 'passed':
         return (
-          <Badge variant="default" className="bg-emerald-500 hover:bg-emerald-600">
+          <Badge variant="default" className="bg-reno-green-500 hover:bg-reno-green-600">
             Passed
           </Badge>
         );
@@ -98,13 +98,13 @@ export function InspectionCard({ inspection, isNext }: InspectionCardProps) {
         >
           <div className="flex-1">
             <div className="flex items-center gap-2 flex-wrap">
-              <h4 className="font-medium text-gray-900">{type}</h4>
+              <h4 className="font-medium text-slate-900">{type}</h4>
               {getStatusBadge()}
             </div>
-            <p className="text-sm text-gray-500 mt-1">{formatDate(date)}</p>
+            <p className="text-sm text-slate-500 mt-1">{formatDate(date)}</p>
           </div>
           {canExpand && (
-            <button className="text-gray-400 hover:text-gray-600">
+            <button className="text-slate-400 hover:text-slate-600">
               {isExpanded ? (
                 <ChevronUp className="h-5 w-5" />
               ) : (
@@ -120,13 +120,13 @@ export function InspectionCard({ inspection, isNext }: InspectionCardProps) {
             {/* Prerequisites */}
             {prerequisites && prerequisites.length > 0 && (
               <div>
-                <p className="text-sm font-medium text-gray-700 mb-2">
+                <p className="text-sm font-medium text-slate-700 mb-2">
                   Prerequisites:
                 </p>
                 <div className="space-y-1">
                   {prerequisites.map((prereq, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-gray-600">
-                      <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0 text-emerald-500" />
+                    <div key={idx} className="flex items-start gap-2 text-slate-600">
+                      <CheckCircle2 className="h-4 w-4 mt-0.5 flex-shrink-0 text-reno-green-500" />
                       <p className="text-sm">{prereq}</p>
                     </div>
                   ))}
@@ -137,16 +137,16 @@ export function InspectionCard({ inspection, isNext }: InspectionCardProps) {
             {/* Inspector info */}
             {inspectorName && (
               <div>
-                <p className="text-sm font-medium text-gray-700 mb-1">
+                <p className="text-sm font-medium text-slate-700 mb-1">
                   Inspector:
                 </p>
-                <p className="text-sm text-gray-900">{inspectorName}</p>
+                <p className="text-sm text-slate-900">{inspectorName}</p>
                 {inspectorPhone && (
-                  <div className="flex items-center gap-2 text-gray-600 mt-1">
+                  <div className="flex items-center gap-2 text-slate-600 mt-1">
                     <Phone className="h-4 w-4" />
                     <a
                       href={`tel:${inspectorPhone}`}
-                      className="text-sm hover:text-blue-600 hover:underline"
+                      className="text-sm hover:text-primary-600 hover:underline"
                     >
                       {inspectorPhone}
                     </a>
@@ -157,7 +157,7 @@ export function InspectionCard({ inspection, isNext }: InspectionCardProps) {
 
             {/* Client presence required */}
             {requiresClientHome && (
-              <div className="flex items-center gap-2 text-blue-700 bg-blue-50 p-2 rounded">
+              <div className="flex items-center gap-2 text-primary-700 bg-primary-50 p-2 rounded">
                 <Home className="h-4 w-4 flex-shrink-0" />
                 <p className="text-sm">You may need to be home</p>
               </div>
@@ -168,8 +168,8 @@ export function InspectionCard({ inspection, isNext }: InspectionCardProps) {
         {/* Past inspection notes (collapsed by default) */}
         {isPast && notes && isExpanded && (
           <div className="pt-2 border-t">
-            <p className="text-sm font-medium text-gray-700 mb-1">Notes:</p>
-            <p className="text-sm text-gray-600">{notes}</p>
+            <p className="text-sm font-medium text-slate-700 mb-1">Notes:</p>
+            <p className="text-sm text-slate-600">{notes}</p>
           </div>
         )}
       </CardContent>

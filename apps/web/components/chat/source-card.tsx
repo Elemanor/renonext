@@ -22,12 +22,12 @@ interface Source {
 const SOURCE_CONFIG: Record<string, { icon: typeof FileText; color: string; href?: (s: Source) => string }> = {
   cost_guide: {
     icon: DollarSign,
-    color: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+    color: 'bg-reno-green-500/10 text-reno-green-400 border-reno-green-500/20',
     href: (s) => `/costs/${(s.metadata?.slug as string) || ''}`,
   },
   blog: {
     icon: BookOpen,
-    color: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+    color: 'bg-primary-500/10 text-primary-400 border-primary-500/20',
     href: (s) => `/blog/${(s.metadata?.slug as string) || ''}`,
   },
   service: {
@@ -50,11 +50,11 @@ const SOURCE_CONFIG: Record<string, { icon: typeof FileText; color: string; href
   },
   sequence: {
     icon: Repeat,
-    color: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
+    color: 'bg-primary-500/10 text-primary-400 border-primary-500/20',
   },
   upload: {
     icon: Upload,
-    color: 'bg-gray-500/10 text-gray-400 border-gray-500/20',
+    color: 'bg-slate-500/10 text-slate-400 border-slate-500/20',
   },
 };
 

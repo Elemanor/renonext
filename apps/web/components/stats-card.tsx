@@ -24,7 +24,7 @@ export function StatsCard({
   iconBg = 'bg-reno-green-light',
 }: StatsCardProps) {
   return (
-    <Card className="rounded-2xl border border-gray-200 bg-white shadow-none transition-all duration-200 hover:shadow-md">
+    <Card className="rounded-2xl border border-slate-200 bg-white shadow-none transition-all duration-200 hover:shadow-md">
       <CardContent className="p-6">
         <div className="flex items-center justify-between">
           <div className={`rounded-xl p-2.5 ${iconBg}`}>
@@ -34,7 +34,7 @@ export function StatsCard({
             <Badge
               className={`flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold ${
                 trend.isPositive
-                  ? 'bg-green-50 text-green-700 hover:bg-green-50'
+                  ? 'bg-reno-green-50 text-reno-green-700 hover:bg-reno-green-50'
                   : 'bg-red-50 text-red-700 hover:bg-red-50'
               }`}
             >
@@ -48,8 +48,8 @@ export function StatsCard({
           )}
         </div>
         <div className="mt-4">
-          <p className="text-sm font-medium text-gray-500">{label}</p>
-          <p className="mt-1 text-2xl font-bold tracking-tight text-gray-900">{value}</p>
+          <p className="text-sm font-medium text-slate-500">{label}</p>
+          <p className="mt-1 text-2xl font-bold tracking-tight text-slate-900">{value}</p>
         </div>
       </CardContent>
     </Card>

@@ -234,8 +234,8 @@ export default function SampleHouseFaxPage() {
           <div className="flex items-start justify-between mb-8">
             <div className="flex items-start gap-4">
               {/* Property Photo Placeholder */}
-              <div className="w-24 h-24 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
-                <Building2 className="h-12 w-12 text-gray-600" />
+              <div className="w-24 h-24 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
+                <Building2 className="h-12 w-12 text-slate-600" />
               </div>
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-reno-teal/20 border border-reno-teal/40 mb-3">
@@ -245,7 +245,7 @@ export default function SampleHouseFaxPage() {
                 <h1 className="font-display text-3xl sm:text-4xl mb-2">
                   Renovation Record — Verified by RenoNext
                 </h1>
-                <p className="text-gray-400 text-sm">
+                <p className="text-slate-400 text-sm">
                   All data GPS-confirmed and cryptographically secured
                 </p>
               </div>
@@ -255,7 +255,7 @@ export default function SampleHouseFaxPage() {
               <div className="w-24 h-24 rounded-lg bg-white flex items-center justify-center">
                 <QrCode className="h-16 w-16 text-reno-dark" />
               </div>
-              <button className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition">
+              <button className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition">
                 <Share2 className="h-4 w-4" />
                 Share this record
               </button>
@@ -265,42 +265,42 @@ export default function SampleHouseFaxPage() {
           {/* Property Details Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-1">
+              <div className="flex items-center gap-2 text-slate-400 text-sm mb-1">
                 <MapPin className="h-4 w-4" />
                 Location
               </div>
               <p className="text-xl font-semibold">Toronto, ON</p>
             </div>
             <div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-1">
+              <div className="flex items-center gap-2 text-slate-400 text-sm mb-1">
                 <Building2 className="h-4 w-4" />
                 Project Type
               </div>
               <p className="text-xl font-semibold">Basement Underpinning + Full Finish</p>
             </div>
             <div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-1">
+              <div className="flex items-center gap-2 text-slate-400 text-sm mb-1">
                 <Calendar className="h-4 w-4" />
                 Completed
               </div>
               <p className="text-xl font-semibold">February 2026</p>
             </div>
             <div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-1">
+              <div className="flex items-center gap-2 text-slate-400 text-sm mb-1">
                 <Clock className="h-4 w-4" />
                 Duration
               </div>
               <p className="text-xl font-semibold">14 weeks</p>
             </div>
             <div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-1">
+              <div className="flex items-center gap-2 text-slate-400 text-sm mb-1">
                 <DollarSign className="h-4 w-4" />
                 Total Value
               </div>
               <p className="text-xl font-semibold">$148,200</p>
             </div>
             <div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-1">
+              <div className="flex items-center gap-2 text-slate-400 text-sm mb-1">
                 <Users className="h-4 w-4" />
                 General Contractor
               </div>
@@ -308,7 +308,7 @@ export default function SampleHouseFaxPage() {
                 DrySpace Waterproofing
                 <ExternalLink className="h-4 w-4" />
               </Link>
-              <div className="flex items-center gap-3 mt-1 text-xs text-gray-400">
+              <div className="flex items-center gap-3 mt-1 text-xs text-slate-400">
                 <span>Licensed</span>
                 <span>•</span>
                 <span>Insured</span>
@@ -326,7 +326,7 @@ export default function SampleHouseFaxPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-reno-teal mb-1">RenoNext Verified Record</h3>
-                <p className="text-sm text-gray-300">
+                <p className="text-sm text-slate-300">
                   All data collected automatically during construction via RenoNext's GPS tracking, crew management, and inspection integration systems. This record is immutable and cryptographically signed.
                 </p>
               </div>
@@ -336,7 +336,7 @@ export default function SampleHouseFaxPage() {
       </section>
 
       {/* S2: At-a-Glance Summary */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-slate-50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -348,30 +348,30 @@ export default function SampleHouseFaxPage() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
               <div className="rounded-xl border-2 border-reno-teal/20 bg-white p-6 text-center hover:shadow-lg transition">
                 <div className="text-4xl font-display text-reno-teal mb-2">47</div>
-                <div className="text-sm font-medium text-gray-600">GPS-verified photos</div>
+                <div className="text-sm font-medium text-slate-600">GPS-verified photos</div>
               </div>
               <div className="rounded-xl border-2 border-reno-green/20 bg-white p-6 text-center hover:shadow-lg transition">
                 <div className="text-4xl font-display text-reno-green mb-2">6</div>
-                <div className="text-sm font-medium text-gray-600">City inspections passed</div>
+                <div className="text-sm font-medium text-slate-600">City inspections passed</div>
               </div>
               <div className="rounded-xl border-2 border-reno-purple/20 bg-white p-6 text-center hover:shadow-lg transition">
                 <div className="text-4xl font-display text-reno-purple mb-2">12</div>
-                <div className="text-sm font-medium text-gray-600">Licensed trades</div>
+                <div className="text-sm font-medium text-slate-600">Licensed trades</div>
               </div>
               <div className="rounded-xl border-2 border-reno-teal/20 bg-white p-6 text-center hover:shadow-lg transition">
                 <div className="text-4xl font-display text-reno-teal mb-2">24</div>
-                <div className="text-sm font-medium text-gray-600">Tracked materials (with SKUs)</div>
+                <div className="text-sm font-medium text-slate-600">Tracked materials (with SKUs)</div>
               </div>
               <div className="rounded-xl border-2 border-reno-purple/20 bg-white p-6 text-center hover:shadow-lg transition">
                 <div className="text-4xl font-display text-reno-purple mb-2">8</div>
-                <div className="text-sm font-medium text-gray-600">Active warranties</div>
+                <div className="text-sm font-medium text-slate-600">Active warranties</div>
               </div>
               <div className="rounded-xl border-2 border-reno-green/20 bg-reno-green-light p-6 text-center hover:shadow-lg transition">
                 <div className="text-4xl font-display text-reno-green mb-2">0</div>
                 <div className="text-sm font-medium text-reno-green">Open deficiencies</div>
               </div>
             </div>
-            <p className="text-sm text-gray-600 text-center max-w-4xl mx-auto">
+            <p className="text-sm text-slate-600 text-center max-w-4xl mx-auto">
               All data collected automatically during construction via RenoNext's GPS tracking, crew management, and inspection integration systems.
             </p>
           </motion.div>
@@ -388,13 +388,13 @@ export default function SampleHouseFaxPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-display text-3xl text-reno-dark mb-4">Milestone Timeline</h2>
-            <p className="text-gray-600 mb-12">Click each milestone for detailed information</p>
+            <p className="text-slate-600 mb-12">Click each milestone for detailed information</p>
 
             {/* Desktop: Horizontal Timeline */}
             <div className="hidden lg:block mb-12">
               <div className="relative">
                 {/* Connecting Line */}
-                <div className="absolute top-8 left-0 right-0 h-0.5 bg-gray-300" />
+                <div className="absolute top-8 left-0 right-0 h-0.5 bg-slate-300" />
 
                 {/* Milestone Nodes */}
                 <div className="relative flex justify-between">
@@ -407,13 +407,13 @@ export default function SampleHouseFaxPage() {
                       <div className={`w-16 h-16 rounded-full border-4 flex items-center justify-center transition z-10 ${
                         selectedMilestone === milestone.id
                           ? 'bg-reno-teal border-reno-teal text-white'
-                          : 'bg-white border-gray-300 text-gray-600 hover:border-reno-teal'
+                          : 'bg-white border-slate-300 text-slate-600 hover:border-reno-teal'
                       }`}>
                         <span className="text-lg font-bold">{index + 1}</span>
                       </div>
                       <div className="mt-4 text-center">
                         <div className="font-semibold text-sm text-reno-dark mb-1">{milestone.phase}</div>
-                        <div className="text-xs text-gray-500">{milestone.dateRange}</div>
+                        <div className="text-xs text-slate-500">{milestone.dateRange}</div>
                       </div>
                     </button>
                   ))}
@@ -434,32 +434,32 @@ export default function SampleHouseFaxPage() {
                         <h3 className="font-display text-2xl text-reno-dark mb-4">{milestone.phase}</h3>
                         <div className="grid grid-cols-4 gap-6 mb-4">
                           <div>
-                            <div className="text-sm text-gray-600 mb-1">Date Range</div>
+                            <div className="text-sm text-slate-600 mb-1">Date Range</div>
                             <div className="font-semibold text-reno-dark">{milestone.dateRange}</div>
                           </div>
                           <div>
-                            <div className="text-sm text-gray-600 mb-1">Photos</div>
+                            <div className="text-sm text-slate-600 mb-1">Photos</div>
                             <div className="font-semibold text-reno-dark flex items-center gap-2">
                               <ImageIcon className="h-4 w-4" />
                               {milestone.photos}
                             </div>
                           </div>
                           <div>
-                            <div className="text-sm text-gray-600 mb-1">Inspection</div>
+                            <div className="text-sm text-slate-600 mb-1">Inspection</div>
                             <div className="font-semibold text-reno-green flex items-center gap-2">
                               <CheckCircle2 className="h-4 w-4" />
                               {milestone.inspection}
                             </div>
                           </div>
                           <div>
-                            <div className="text-sm text-gray-600 mb-1">Vault Payment</div>
+                            <div className="text-sm text-slate-600 mb-1">Vault Payment</div>
                             <div className="font-semibold text-reno-green flex items-center gap-2">
                               <CheckCircle2 className="h-4 w-4" />
                               {milestone.vaultStatus}
                             </div>
                           </div>
                         </div>
-                        <p className="text-gray-700">{milestone.details}</p>
+                        <p className="text-slate-700">{milestone.details}</p>
                       </div>
                     ) : null
                   )}
@@ -472,18 +472,18 @@ export default function SampleHouseFaxPage() {
               {milestones.map((milestone, index) => (
                 <div key={milestone.id} className="relative">
                   {index !== milestones.length - 1 && (
-                    <div className="absolute left-8 top-16 bottom-0 w-0.5 bg-gray-300" />
+                    <div className="absolute left-8 top-16 bottom-0 w-0.5 bg-slate-300" />
                   )}
-                  <div className="rounded-xl border-2 border-gray-200 bg-white p-6 hover:border-reno-teal/40 transition">
+                  <div className="rounded-xl border-2 border-slate-200 bg-white p-6 hover:border-reno-teal/40 transition">
                     <div className="flex items-start gap-4">
                       <div className="w-16 h-16 rounded-full bg-reno-teal text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
                         {index + 1}
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="font-semibold text-lg text-reno-dark mb-1">{milestone.phase}</h3>
-                        <p className="text-sm text-gray-600 mb-3">{milestone.dateRange}</p>
+                        <p className="text-sm text-slate-600 mb-3">{milestone.dateRange}</p>
                         <div className="flex flex-wrap gap-4 text-sm">
-                          <div className="flex items-center gap-1 text-gray-600">
+                          <div className="flex items-center gap-1 text-slate-600">
                             <ImageIcon className="h-4 w-4" />
                             {milestone.photos} photos
                           </div>
@@ -507,7 +507,7 @@ export default function SampleHouseFaxPage() {
       </section>
 
       {/* S4: Photo Timeline */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-slate-50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -516,24 +516,24 @@ export default function SampleHouseFaxPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-display text-3xl text-reno-dark mb-4">Photo Timeline</h2>
-            <p className="text-gray-600 mb-8">47 GPS-verified photos organized by construction week</p>
+            <p className="text-slate-600 mb-8">47 GPS-verified photos organized by construction week</p>
 
             {/* Scrollable Photo Timeline */}
             <div className="overflow-x-auto pb-4">
               <div className="flex gap-4 min-w-max">
                 {photoTimeline.map((week) => (
                   <div key={week.week} className="w-48 flex-shrink-0">
-                    <div className="rounded-xl border-2 border-gray-200 bg-white p-4 hover:shadow-lg transition">
-                      <div className="w-full h-32 rounded-lg bg-gray-200 mb-3 flex items-center justify-center">
-                        <ImageIcon className="h-12 w-12 text-gray-400" />
+                    <div className="rounded-xl border-2 border-slate-200 bg-white p-4 hover:shadow-lg transition">
+                      <div className="w-full h-32 rounded-lg bg-slate-200 mb-3 flex items-center justify-center">
+                        <ImageIcon className="h-12 w-12 text-slate-400" />
                       </div>
                       <div className="flex items-center gap-2 text-reno-teal text-xs mb-2">
                         <MapPin className="h-3 w-3" />
                         GPS Verified
                       </div>
                       <div className="font-semibold text-reno-dark mb-1">{week.week}</div>
-                      <div className="text-xs text-gray-600 mb-2">{week.date}</div>
-                      <div className="text-xs text-gray-500">{week.count} photos • {week.phase}</div>
+                      <div className="text-xs text-slate-600 mb-2">{week.date}</div>
+                      <div className="text-xs text-slate-500">{week.count} photos • {week.phase}</div>
                     </div>
                   </div>
                 ))}
@@ -544,30 +544,30 @@ export default function SampleHouseFaxPage() {
             <div className="mt-12">
               <h3 className="font-display text-2xl text-reno-dark mb-6">Before & After</h3>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="rounded-xl border-2 border-gray-200 bg-white p-6">
-                  <div className="w-full h-64 rounded-lg bg-gray-200 mb-4 flex items-center justify-center">
+                <div className="rounded-xl border-2 border-slate-200 bg-white p-6">
+                  <div className="w-full h-64 rounded-lg bg-slate-200 mb-4 flex items-center justify-center">
                     <div className="text-center">
-                      <ImageIcon className="h-16 w-16 text-gray-400 mx-auto mb-2" />
-                      <div className="text-sm text-gray-500">Before: Bare concrete</div>
+                      <ImageIcon className="h-16 w-16 text-slate-400 mx-auto mb-2" />
+                      <div className="text-sm text-slate-500">Before: Bare concrete</div>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-600">Nov 4, 2025</span>
+                    <span className="text-sm font-medium text-slate-600">Nov 4, 2025</span>
                     <div className="flex items-center gap-2 text-xs text-reno-teal">
                       <Shield className="h-3 w-3" />
                       No edits detected
                     </div>
                   </div>
                 </div>
-                <div className="rounded-xl border-2 border-gray-200 bg-white p-6">
-                  <div className="w-full h-64 rounded-lg bg-gray-200 mb-4 flex items-center justify-center">
+                <div className="rounded-xl border-2 border-slate-200 bg-white p-6">
+                  <div className="w-full h-64 rounded-lg bg-slate-200 mb-4 flex items-center justify-center">
                     <div className="text-center">
-                      <ImageIcon className="h-16 w-16 text-gray-400 mx-auto mb-2" />
-                      <div className="text-sm text-gray-500">After: Finished space</div>
+                      <ImageIcon className="h-16 w-16 text-slate-400 mx-auto mb-2" />
+                      <div className="text-sm text-slate-500">After: Finished space</div>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-600">Feb 14, 2026</span>
+                    <span className="text-sm font-medium text-slate-600">Feb 14, 2026</span>
                     <div className="flex items-center gap-2 text-xs text-reno-teal">
                       <Shield className="h-3 w-3" />
                       No edits detected
@@ -590,34 +590,34 @@ export default function SampleHouseFaxPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-display text-3xl text-reno-dark mb-4">Materials Registry</h2>
-            <p className="text-gray-600 mb-8">Complete inventory with SKUs, installation dates, and warranty tracking</p>
+            <p className="text-slate-600 mb-8">Complete inventory with SKUs, installation dates, and warranty tracking</p>
 
-            <div className="overflow-hidden rounded-xl border-2 border-gray-200 shadow-lg">
+            <div className="overflow-hidden rounded-xl border-2 border-slate-200 shadow-lg">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="bg-gray-50 border-b-2 border-gray-200">
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Product</th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Manufacturer</th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">SKU</th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Qty</th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Installer</th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Install Date</th>
-                      <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Warranty Status</th>
+                    <tr className="bg-slate-50 border-b-2 border-slate-200">
+                      <th className="px-6 py-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Product</th>
+                      <th className="px-6 py-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Manufacturer</th>
+                      <th className="px-6 py-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">SKU</th>
+                      <th className="px-6 py-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Qty</th>
+                      <th className="px-6 py-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Installer</th>
+                      <th className="px-6 py-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Install Date</th>
+                      <th className="px-6 py-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Warranty Status</th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
+                  <tbody className="bg-white divide-y divide-slate-200">
                     {materials.map((material, index) => (
-                      <tr key={index} className="hover:bg-gray-50 transition">
+                      <tr key={index} className="hover:bg-slate-50 transition">
                         <td className="px-6 py-4 text-sm font-medium text-reno-dark whitespace-nowrap">{material.product}</td>
-                        <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">{material.manufacturer}</td>
-                        <td className="px-6 py-4 text-sm text-gray-500 font-mono whitespace-nowrap">{material.sku}</td>
-                        <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">{material.qty}</td>
+                        <td className="px-6 py-4 text-sm text-slate-600 whitespace-nowrap">{material.manufacturer}</td>
+                        <td className="px-6 py-4 text-sm text-slate-500 font-mono whitespace-nowrap">{material.sku}</td>
+                        <td className="px-6 py-4 text-sm text-slate-600 whitespace-nowrap">{material.qty}</td>
                         <td className="px-6 py-4 text-sm text-reno-teal whitespace-nowrap">{material.installer}</td>
-                        <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">{material.installDate}</td>
+                        <td className="px-6 py-4 text-sm text-slate-600 whitespace-nowrap">{material.installDate}</td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           {material.status === 'active' && (
-                            <span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700 border border-green-200">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-reno-green-50 px-3 py-1 text-xs font-semibold text-reno-green-700 border border-reno-green-200">
                               <CheckCircle2 className="h-3 w-3" />
                               {material.warranty}
                             </span>
@@ -629,7 +629,7 @@ export default function SampleHouseFaxPage() {
                             </span>
                           )}
                           {material.status === 'na' && (
-                            <span className="inline-flex items-center gap-1 rounded-full bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-600 border border-gray-200">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600 border border-slate-200">
                               {material.warranty}
                             </span>
                           )}
@@ -645,7 +645,7 @@ export default function SampleHouseFaxPage() {
       </section>
 
       {/* S6: Inspection History */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-slate-50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -654,34 +654,34 @@ export default function SampleHouseFaxPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-display text-3xl text-reno-dark mb-4">Inspection History</h2>
-            <p className="text-gray-600 mb-8">All city inspections passed — full compliance verified</p>
+            <p className="text-slate-600 mb-8">All city inspections passed — full compliance verified</p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {inspections.map((inspection) => (
-                <div key={inspection.id} className="rounded-xl border-2 border-gray-200 bg-white p-6 hover:shadow-lg transition">
+                <div key={inspection.id} className="rounded-xl border-2 border-slate-200 bg-white p-6 hover:shadow-lg transition">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                        <ClipboardCheck className="h-6 w-6 text-green-600" />
+                      <div className="w-12 h-12 rounded-full bg-reno-green-100 flex items-center justify-center flex-shrink-0">
+                        <ClipboardCheck className="h-6 w-6 text-reno-green-600" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-reno-dark">{inspection.name}</h3>
-                        <p className="text-sm text-gray-500">{inspection.date}</p>
+                        <p className="text-sm text-slate-500">{inspection.date}</p>
                       </div>
                     </div>
                   </div>
                   <div className="space-y-2 mb-4">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Permit #</span>
-                      <span className="font-mono text-gray-900">{inspection.permit}</span>
+                      <span className="text-slate-600">Permit #</span>
+                      <span className="font-mono text-slate-900">{inspection.permit}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Inspector</span>
-                      <span className="text-gray-500">City of Toronto</span>
+                      <span className="text-slate-600">Inspector</span>
+                      <span className="text-slate-500">City of Toronto</span>
                     </div>
                   </div>
-                  <div className="pt-4 border-t border-gray-200">
-                    <div className="inline-flex items-center gap-2 rounded-full bg-green-50 px-4 py-2 text-sm font-bold text-green-700 border-2 border-green-200">
+                  <div className="pt-4 border-t border-slate-200">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-reno-green-50 px-4 py-2 text-sm font-bold text-reno-green-700 border-2 border-reno-green-200">
                       <CheckCircle2 className="h-5 w-5" />
                       {inspection.result}
                     </div>
@@ -703,11 +703,11 @@ export default function SampleHouseFaxPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-display text-3xl text-reno-dark mb-4">Trade Roster</h2>
-            <p className="text-gray-600 mb-8">All licensed, insured, and WSIB-registered contractors</p>
+            <p className="text-slate-600 mb-8">All licensed, insured, and WSIB-registered contractors</p>
 
             <div className="space-y-4">
               {trades.map((trade, index) => (
-                <div key={index} className="rounded-xl border-2 border-gray-200 bg-white p-6 hover:shadow-lg transition">
+                <div key={index} className="rounded-xl border-2 border-slate-200 bg-white p-6 hover:shadow-lg transition">
                   <div className="flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full bg-reno-purple-light flex items-center justify-center flex-shrink-0">
@@ -715,23 +715,23 @@ export default function SampleHouseFaxPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg text-reno-dark">{trade.company}</h3>
-                        <p className="text-sm text-gray-600">{trade.trade} • {trade.role}</p>
+                        <p className="text-sm text-slate-600">{trade.trade} • {trade.role}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-6">
                       <div className="text-right">
                         <div className="text-2xl font-bold text-reno-dark">{trade.hours}</div>
-                        <div className="text-xs text-gray-500">hours logged</div>
+                        <div className="text-xs text-slate-500">hours logged</div>
                       </div>
                       <div className="flex gap-3">
                         {trade.wsib && (
-                          <div className="flex items-center gap-1 text-xs text-green-700">
+                          <div className="flex items-center gap-1 text-xs text-reno-green-700">
                             <CheckCircle2 className="h-4 w-4" />
                             WSIB
                           </div>
                         )}
                         {trade.insured && (
-                          <div className="flex items-center gap-1 text-xs text-green-700">
+                          <div className="flex items-center gap-1 text-xs text-reno-green-700">
                             <CheckCircle2 className="h-4 w-4" />
                             Insured
                           </div>
@@ -747,7 +747,7 @@ export default function SampleHouseFaxPage() {
       </section>
 
       {/* S8: Warranty Dashboard */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-slate-50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -756,43 +756,43 @@ export default function SampleHouseFaxPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-display text-3xl text-reno-dark mb-4">Warranty Dashboard</h2>
-            <p className="text-gray-600 mb-8">Track all warranties in one place — transfers with the property on sale</p>
+            <p className="text-slate-600 mb-8">Track all warranties in one place — transfers with the property on sale</p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               {warranties.map((warranty, index) => (
-                <div key={index} className="rounded-xl border-2 border-gray-200 bg-white p-6 hover:shadow-lg transition">
+                <div key={index} className="rounded-xl border-2 border-slate-200 bg-white p-6 hover:shadow-lg transition">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className={`w-3 h-3 rounded-full flex-shrink-0 ${warranty.status === 'active' ? 'bg-green-500' : 'bg-amber-500'}`} />
+                      <div className={`w-3 h-3 rounded-full flex-shrink-0 ${warranty.status === 'active' ? 'bg-reno-green-500' : 'bg-amber-500'}`} />
                       <div>
                         <h3 className="font-semibold text-reno-dark">{warranty.product}</h3>
-                        <p className="text-sm text-gray-500">{warranty.manufacturer}</p>
+                        <p className="text-sm text-slate-500">{warranty.manufacturer}</p>
                       </div>
                     </div>
-                    <Award className="h-5 w-5 text-gray-400" />
+                    <Award className="h-5 w-5 text-slate-400" />
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Warranty Term</span>
+                      <span className="text-slate-600">Warranty Term</span>
                       <span className="font-semibold text-reno-dark">{warranty.term}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Install Date</span>
-                      <span className="text-gray-900">{warranty.installDate}</span>
+                      <span className="text-slate-600">Install Date</span>
+                      <span className="text-slate-900">{warranty.installDate}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Expires</span>
-                      <span className={warranty.status === 'expiring' ? 'text-amber-700 font-semibold' : 'text-gray-900'}>{warranty.expiryDate}</span>
+                      <span className="text-slate-600">Expires</span>
+                      <span className={warranty.status === 'expiring' ? 'text-amber-700 font-semibold' : 'text-slate-900'}>{warranty.expiryDate}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Installer</span>
+                      <span className="text-slate-600">Installer</span>
                       <span className="text-reno-teal">{warranty.installer}</span>
                     </div>
                   </div>
-                  <div className="mt-4 pt-4 border-t border-gray-200">
+                  <div className="mt-4 pt-4 border-t border-slate-200">
                     {warranty.status === 'active' && (
-                      <div className="inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700 border border-green-200">
-                        <div className="w-2 h-2 rounded-full bg-green-500" />
+                      <div className="inline-flex items-center gap-2 rounded-full bg-reno-green-50 px-3 py-1 text-xs font-semibold text-reno-green-700 border border-reno-green-200">
+                        <div className="w-2 h-2 rounded-full bg-reno-green-500" />
                         Active
                       </div>
                     )}
@@ -899,7 +899,7 @@ export default function SampleHouseFaxPage() {
             <h2 className="font-display text-4xl sm:text-5xl mb-6">
               Get this for your home.
             </h2>
-            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-300 mb-12 max-w-3xl mx-auto">
               Every renovation through RenoNext automatically creates a HouseFax™. Complete documentation, verified by GPS and city inspections, that stays with your property forever.
             </p>
 
@@ -920,7 +920,7 @@ export default function SampleHouseFaxPage() {
               </Link>
             </div>
 
-            <p className="text-gray-400">
+            <p className="text-slate-400">
               Already renovating?{' '}
               <Link href="/contractors" className="text-reno-teal hover:underline font-semibold">
                 Ask your contractor to join the RenoNext network

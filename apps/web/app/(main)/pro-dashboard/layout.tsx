@@ -29,7 +29,7 @@ export default function ProDashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-50">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col gap-8 md:flex-row">
           <DashboardSidebar links={proLinks} title="Pro Dashboard" />

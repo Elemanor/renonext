@@ -50,12 +50,12 @@ const PHOTOS = {
 };
 
 const crewMembers = [
-  { initials: 'AN', grad: 'from-indigo-500 to-indigo-600', on: true },
-  { initials: 'AH', grad: 'from-rose-500 to-rose-600', on: true },
+  { initials: 'AN', grad: 'from-primary-500 to-primary-600', on: true },
+  { initials: 'AH', grad: 'from-reno-red-500 to-reno-red-600', on: true },
   { initials: 'DP', grad: 'from-amber-500 to-amber-600', on: true },
-  { initials: 'ED', grad: 'from-emerald-500 to-emerald-600', on: true },
-  { initials: 'KF', grad: 'from-blue-500 to-blue-600', on: false },
-  { initials: 'MS', grad: 'from-violet-500 to-violet-600', on: false },
+  { initials: 'ED', grad: 'from-reno-green-500 to-reno-green-600', on: true },
+  { initials: 'KF', grad: 'from-primary-500 to-primary-600', on: false },
+  { initials: 'MS', grad: 'from-reno-purple-500 to-reno-purple-600', on: false },
 ];
 
 const milestones = [
@@ -66,8 +66,8 @@ const milestones = [
 
 const tasks = [
   { label: 'City Inspection', sub: 'Inspector · 1-3 PM', icon: Shield, color: 'text-amber-400', bg: 'bg-amber-500/10', border: 'border-amber-500/20', dot: 'bg-amber-400' },
-  { label: 'Material Delivery', sub: '14 yd dumpster', icon: Truck, color: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/20', dot: 'bg-blue-400' },
-  { label: 'Concrete Pour', sub: 'Bay 4 · Weather OK', icon: HardHat, color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', dot: 'bg-emerald-400' },
+  { label: 'Material Delivery', sub: '14 yd dumpster', icon: Truck, color: 'text-primary-400', bg: 'bg-primary-500/10', border: 'border-primary-500/20', dot: 'bg-primary-400' },
+  { label: 'Concrete Pour', sub: 'Bay 4 · Weather OK', icon: HardHat, color: 'text-reno-green-400', bg: 'bg-reno-green-500/10', border: 'border-reno-green-500/20', dot: 'bg-reno-green-400' },
 ];
 
 export function HeroDashboardV2() {
@@ -117,7 +117,7 @@ export function HeroDashboardV2() {
                 <span className="h-[10px] w-[10px] rounded-full bg-[#28c840]/80" />
               </div>
               <div className="ml-3 flex flex-1 items-center gap-1.5 rounded-lg bg-white/[0.04] px-3 py-1">
-                <Lock className="h-3 w-3 text-emerald-400/60" />
+                <Lock className="h-3 w-3 text-reno-green-400/60" />
                 <span className="text-[11px] text-slate-500">
                   app.renonext.com/command-center
                 </span>
@@ -127,7 +127,7 @@ export function HeroDashboardV2() {
             {/* ── App header ── */}
             <div className="flex items-center justify-between border-b border-white/[0.06] px-5 py-2.5">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-sm shadow-emerald-500/25">
+                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-reno-green-500 to-reno-green-600 shadow-sm shadow-emerald-500/25">
                   <span className="text-[8px] font-black text-white">RN</span>
                 </div>
                 <span className="text-[13px] font-bold tracking-wide text-white/90">
@@ -145,11 +145,11 @@ export function HeroDashboardV2() {
                 </div>
                 <div className="relative">
                   <Bell className="h-4 w-4 text-slate-500" />
-                  <span className="absolute -right-1 -top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-blue-500 text-[7px] font-bold text-white ring-2 ring-[#0a0e17]">
+                  <span className="absolute -right-1 -top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-primary-500 text-[7px] font-bold text-white ring-2 ring-[#0a0e17]">
                     3
                   </span>
                 </div>
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-violet-500 ring-2 ring-white/[0.06]">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-primary-400 to-reno-purple-500 ring-2 ring-white/[0.06]">
                   <span className="text-[8px] font-bold text-white">PV</span>
                 </div>
               </div>
@@ -198,7 +198,7 @@ export function HeroDashboardV2() {
                       </p>
                       <div className="mt-1 flex items-center gap-3">
                         <span className="flex items-center gap-1 text-[10px] text-slate-300">
-                          <MapPin className="h-3 w-3 text-emerald-400" />
+                          <MapPin className="h-3 w-3 text-reno-green-400" />
                           Lakeview, Mississauga
                         </span>
                         <span className="text-[10px] text-slate-500">Day 14 of 42</span>
@@ -213,7 +213,7 @@ export function HeroDashboardV2() {
                   className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4"
                 >
                   <div className="mb-3 flex items-center gap-1.5">
-                    <DollarSign className="h-4 w-4 text-emerald-400/70" />
+                    <DollarSign className="h-4 w-4 text-reno-green-400/70" />
                     <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                       Budget Overview
                     </p>
@@ -256,16 +256,16 @@ export function HeroDashboardV2() {
                         of $625,000 total budget
                       </p>
                       <div className="mt-2 flex items-center gap-1">
-                        <TrendingUp className="h-3 w-3 text-emerald-400" />
-                        <span className="text-[10px] font-semibold text-emerald-400">On track</span>
+                        <TrendingUp className="h-3 w-3 text-reno-green-400" />
+                        <span className="text-[10px] font-semibold text-reno-green-400">On track</span>
                       </div>
                     </div>
                   </div>
                   {/* Spent / Remaining */}
                   <div className="mt-3 grid grid-cols-2 gap-2">
                     {[
-                      { label: 'Spent', val: '$156.4K', color: 'text-blue-400', bar: 'bg-blue-500', w: '25%' },
-                      { label: 'Remaining', val: '$468.6K', color: 'text-emerald-400', bar: 'bg-emerald-500', w: '75%' },
+                      { label: 'Spent', val: '$156.4K', color: 'text-primary-400', bar: 'bg-primary-500', w: '25%' },
+                      { label: 'Remaining', val: '$468.6K', color: 'text-reno-green-400', bar: 'bg-reno-green-500', w: '75%' },
                     ].map((s) => (
                       <div
                         key={s.label}
@@ -295,17 +295,17 @@ export function HeroDashboardV2() {
                 >
                   <div className="mb-3 flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
-                      <Users className="h-4 w-4 text-blue-400/70" />
+                      <Users className="h-4 w-4 text-primary-400/70" />
                       <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                         On-Site Verification
                       </p>
                     </div>
                     <div className="flex items-center gap-1">
                       <span className="relative flex h-2 w-2">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-reno-green-400 opacity-60" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-reno-green-400" />
                       </span>
-                      <span className="text-[10px] font-bold text-emerald-400">
+                      <span className="text-[10px] font-bold text-reno-green-400">
                         4 on site
                       </span>
                     </div>
@@ -324,7 +324,7 @@ export function HeroDashboardV2() {
                             </span>
                           </div>
                           {c.on && (
-                            <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-emerald-400 ring-[1.5px] ring-[#0a0e17]" />
+                            <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-reno-green-400 ring-[1.5px] ring-[#0a0e17]" />
                           )}
                         </div>
                       ))}
@@ -342,9 +342,9 @@ export function HeroDashboardV2() {
                       sizes="460px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0a0e17]/60 to-transparent" />
-                    <div className="absolute bottom-2 left-2 flex items-center gap-1 rounded-lg border border-emerald-500/25 bg-emerald-500/20 px-2 py-1 backdrop-blur-sm">
-                      <CheckCircle2 className="h-3 w-3 text-emerald-400" />
-                      <span className="text-[10px] font-bold text-emerald-300">
+                    <div className="absolute bottom-2 left-2 flex items-center gap-1 rounded-lg border border-reno-green-500/25 bg-reno-green-500/20 px-2 py-1 backdrop-blur-sm">
+                      <CheckCircle2 className="h-3 w-3 text-reno-green-400" />
+                      <span className="text-[10px] font-bold text-reno-green-300">
                         GPS Verified
                       </span>
                     </div>
@@ -359,9 +359,9 @@ export function HeroDashboardV2() {
                   {/* Stat cards */}
                   <div className="grid grid-cols-3 gap-2">
                     {[
-                      { icon: MapPin, label: 'Location', val: 'On-site', color: 'text-emerald-400' },
-                      { icon: Shield, label: 'Safety', val: 'JSA Signed', color: 'text-blue-400' },
-                      { icon: Camera, label: 'Photos', val: '24 today', color: 'text-violet-400' },
+                      { icon: MapPin, label: 'Location', val: 'On-site', color: 'text-reno-green-400' },
+                      { icon: Shield, label: 'Safety', val: 'JSA Signed', color: 'text-primary-400' },
+                      { icon: Camera, label: 'Photos', val: '24 today', color: 'text-reno-purple-400' },
                     ].map((v) => (
                       <div
                         key={v.label}
@@ -383,15 +383,15 @@ export function HeroDashboardV2() {
                   className="flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4"
                 >
                   <div className="mb-3 flex items-center gap-1.5">
-                    <DollarSign className="h-4 w-4 text-emerald-400/70" />
+                    <DollarSign className="h-4 w-4 text-reno-green-400/70" />
                     <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                       Milestone Payment
                     </p>
                   </div>
 
                   {/* Hero card */}
-                  <div className="relative mb-3 overflow-hidden rounded-xl border border-emerald-500/15 bg-gradient-to-br from-emerald-500/[0.08] via-transparent to-blue-500/[0.04] p-4">
-                    <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-emerald-500/[0.08] blur-2xl" />
+                  <div className="relative mb-3 overflow-hidden rounded-xl border border-reno-green-500/15 bg-gradient-to-br from-reno-green-500/[0.08] via-transparent to-primary-500/[0.04] p-4">
+                    <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-reno-green-500/[0.08] blur-2xl" />
                     <p className="text-[8px] font-semibold uppercase tracking-widest text-slate-500">
                       Next Release
                     </p>
@@ -400,10 +400,10 @@ export function HeroDashboardV2() {
                     </p>
                     <div className="mt-2 flex items-center gap-1.5">
                       <span className="relative flex h-2 w-2">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-reno-green-400 opacity-60" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-reno-green-400" />
                       </span>
-                      <span className="text-[10px] font-bold text-emerald-400">
+                      <span className="text-[10px] font-bold text-reno-green-400">
                         Funds Secured in Vault
                       </span>
                     </div>
@@ -417,7 +417,7 @@ export function HeroDashboardV2() {
                         className="flex items-center gap-2.5 rounded-xl border border-white/[0.04] bg-white/[0.02] px-3 py-2"
                       >
                         {ms.done ? (
-                          <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
+                          <CheckCircle2 className="h-4 w-4 shrink-0 text-reno-green-400" />
                         ) : (
                           <div className="relative flex h-4 w-4 shrink-0 items-center justify-center">
                             <Circle className="h-4 w-4 text-slate-700" />
@@ -435,7 +435,7 @@ export function HeroDashboardV2() {
                         <span
                           className={`rounded-md px-1.5 py-0.5 text-[8px] font-bold ${
                             ms.done
-                              ? 'bg-emerald-500/15 text-emerald-400'
+                              ? 'bg-reno-green-500/15 text-reno-green-400'
                               : ms.status === 'Pending'
                                 ? 'bg-amber-500/15 text-amber-400'
                                 : 'bg-white/[0.04] text-slate-500'
@@ -448,8 +448,8 @@ export function HeroDashboardV2() {
                   </div>
 
                   {/* Escrow footer */}
-                  <div className="mt-3 flex items-center gap-1.5 rounded-xl border border-emerald-500/10 bg-emerald-500/[0.04] px-3 py-2">
-                    <Lock className="h-3.5 w-3.5 text-emerald-400/50" />
+                  <div className="mt-3 flex items-center gap-1.5 rounded-xl border border-reno-green-500/10 bg-reno-green-500/[0.04] px-3 py-2">
+                    <Lock className="h-3.5 w-3.5 text-reno-green-400/50" />
                     <span className="text-[10px] text-slate-400">
                       Escrow protected · No funds requested today
                     </span>
@@ -464,7 +464,7 @@ export function HeroDashboardV2() {
               >
                 <div className="mb-3 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <Calendar className="h-4 w-4 text-violet-400/70" />
+                    <Calendar className="h-4 w-4 text-reno-purple-400/70" />
                     <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                       Today&apos;s Schedule
                     </p>
@@ -496,7 +496,7 @@ export function HeroDashboardV2() {
             <div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-2">
               <div className="flex items-center gap-3">
                 <span className="flex items-center gap-1.5 text-[10px] text-slate-600">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-reno-green-400" />
                   All systems online
                 </span>
                 <span className="text-[10px] tabular-nums text-slate-600">24ms</span>

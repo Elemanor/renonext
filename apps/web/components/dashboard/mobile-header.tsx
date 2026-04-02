@@ -17,15 +17,15 @@ export function MobileHeader() {
     <div className="relative px-4 pb-2 pt-4 lg:hidden">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-xs text-gray-500">Good morning,</p>
+          <p className="text-xs text-slate-500">Good morning,</p>
           <p className="text-sm font-semibold text-white/90">Sarah</p>
         </div>
         <button
           onClick={() => setShowNotifs(!showNotifs)}
           className="relative rounded-xl bg-white/[0.06] p-2.5"
         >
-          <Bell className="h-[18px] w-[18px] text-gray-400" />
-          <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-emerald-500" />
+          <Bell className="h-[18px] w-[18px] text-slate-400" />
+          <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-reno-green-500" />
         </button>
       </div>
 
@@ -42,14 +42,14 @@ export function MobileHeader() {
             <div className="flex items-center justify-between p-3">
               <span className="text-xs font-medium text-white/80">Notifications</span>
               <button onClick={() => setShowNotifs(false)}>
-                <X className="h-4 w-4 text-gray-500" />
+                <X className="h-4 w-4 text-slate-500" />
               </button>
             </div>
             <div className="max-h-60 overflow-y-auto px-3 pb-3">
               {notifications.map((n) => (
                 <div key={n.id} className="mb-2 rounded-xl bg-white/[0.04] p-3 last:mb-0">
-                  <p className="text-[11px] leading-relaxed text-gray-300">{n.text}</p>
-                  <p className="mt-1 text-[10px] text-gray-600">{n.time}</p>
+                  <p className="text-[11px] leading-relaxed text-slate-300">{n.text}</p>
+                  <p className="mt-1 text-[10px] text-slate-600">{n.time}</p>
                 </div>
               ))}
             </div>

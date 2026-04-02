@@ -118,7 +118,7 @@ export function HeroFloating() {
               onMouseLeave={clearFocus}
             >
               <div className="flex items-start justify-between mb-6">
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-green-50 text-green-600">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-reno-green-50 text-reno-green-600">
                   <span
                     className="material-symbols-outlined text-2xl"
                     style={{ fontVariationSettings: "'FILL' 1" }}
@@ -126,7 +126,7 @@ export function HeroFloating() {
                     shield_locked
                   </span>
                 </div>
-                <span className="px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full border border-green-200">
+                <span className="px-3 py-1 bg-reno-green-50 text-reno-green-700 text-xs font-semibold rounded-full border border-reno-green-200">
                   Secured
                 </span>
               </div>
@@ -145,8 +145,8 @@ export function HeroFloating() {
                 }}
               >
                 <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-green-500 relative">
-                    <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75" />
+                  <div className="w-2 h-2 rounded-full bg-reno-green-500 relative">
+                    <div className="absolute inset-0 bg-reno-green-500 rounded-full animate-ping opacity-75" />
                   </div>
                   <p className="text-xs text-slate-600 font-medium">
                     Next: Demolition ($15k)
@@ -171,33 +171,33 @@ export function HeroFloating() {
                     />
                     {/* Node 1 — Completed */}
                     <div className="relative flex items-start gap-3 mb-4">
-                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-green-600 flex items-center justify-center">
+                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-reno-green-600 flex items-center justify-center">
                         <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
                           <path d="M1.5 4L3.5 6L6.5 2" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </div>
                       <div>
                         <p className="text-[13px] font-semibold text-slate-900">Deposit</p>
-                        <p className="text-sm font-mono text-green-600">
+                        <p className="text-sm font-mono text-reno-green-600">
                           $10,000 <span className="text-[11px] font-sans text-slate-400">Released</span>
                         </p>
                       </div>
                     </div>
                     {/* Node 2 — Active */}
                     <div className="relative flex items-start gap-3 mb-4">
-                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center animate-pulse">
+                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-primary-600 flex items-center justify-center animate-pulse">
                         <div className="w-1.5 h-1.5 rounded-full bg-white" />
                       </div>
                       <div>
                         <p className="text-[13px] font-semibold text-slate-900">Demolition</p>
-                        <p className="text-sm font-mono text-blue-600">
+                        <p className="text-sm font-mono text-primary-600">
                           $15,000 <span className="text-[11px] font-sans text-slate-400">Secured</span>
                         </p>
                       </div>
                     </div>
                     {/* Node 3 — Pending */}
                     <div className="relative flex items-start gap-3">
-                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-gray-300 flex items-center justify-center">
+                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-slate-300 flex items-center justify-center">
                         <div className="w-1.5 h-1.5 rounded-full bg-white" />
                       </div>
                       <div>
@@ -225,7 +225,7 @@ export function HeroFloating() {
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0fbabd] to-[#0D9FA1] flex items-center justify-center text-white text-xl font-bold">
                     A
                   </div>
-                  <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-blue-500 rounded-full border-2 border-white flex items-center justify-center">
+                  <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-primary-500 rounded-full border-2 border-white flex items-center justify-center">
                     <span
                       className="material-symbols-outlined text-white text-[12px]"
                       style={{ fontVariationSettings: "'FILL' 1" }}
@@ -277,13 +277,13 @@ export function HeroFloating() {
               >
                 <div className="border-t border-slate-100 pt-4 space-y-3">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-5 h-5 rounded flex items-center justify-center bg-green-50">
-                      <span className="material-symbols-outlined text-green-600 text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                    <div className="w-5 h-5 rounded flex items-center justify-center bg-reno-green-50">
+                      <span className="material-symbols-outlined text-reno-green-600 text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>
                         verified_user
                       </span>
                     </div>
                     <span className="text-[13px] text-slate-900">
-                      License #ABC-12345 <span className="text-green-600 font-semibold">(Active)</span>
+                      License #ABC-12345 <span className="text-reno-green-600 font-semibold">(Active)</span>
                     </span>
                   </div>
                   <div className="flex items-center gap-2.5">
@@ -328,7 +328,7 @@ export function HeroFloating() {
           <div className="fixed inset-0 z-50 flex justify-end">
             {/* Overlay */}
             <div
-              className="absolute inset-0 bg-[#102122]/65 animate-fade-in"
+              className="absolute inset-0 bg-reno-dark/65 animate-fade-in"
               onClick={() => setShowModal(false)}
             />
 
