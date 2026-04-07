@@ -3,24 +3,38 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
-const homeownerBenefits = [
-  { icon: 'account_balance', text: 'Your money stays in escrow until work is verified' },
-  { icon: 'phone_iphone', text: 'See daily progress from your phone' },
-  { icon: 'home_storage', text: 'Own a permanent property record' },
-];
-
-const contractorBenefits = [
-  { icon: 'payments', text: 'Get paid in 24 hours, every milestone' },
-  { icon: 'dashboard_customize', text: 'One app replaces $400/mo in tools' },
-  { icon: 'workspace_premium', text: 'Build verified reputation automatically' },
+const steps = [
+  {
+    number: 1,
+    title: 'Post Your Project',
+    description:
+      'Specify your location, renovation type, and budget. Our system analyzes your needs to find the perfect match.',
+    icon: 'edit_square',
+    circleBg: 'bg-[#f6f8f8]',
+    circleText: 'text-reno-dark',
+  },
+  {
+    number: 2,
+    title: 'Get Matched',
+    description:
+      'Receive profiles of vetted contractors within 24 hours. Review ratings, past projects, and verified credentials.',
+    icon: 'group_add',
+    circleBg: 'bg-primary',
+    circleText: 'text-white',
+  },
+  {
+    number: 3,
+    title: 'Build with Protection',
+    description:
+      'Secure escrow payments, milestone tracking, and full project documentation from start to finish.',
+    icon: 'verified_user',
+    circleBg: 'bg-reno-dark',
+    circleText: 'text-white',
+  },
 ];
 
 export function AudienceSplit() {
   const [isVisible, setIsVisible] = useState(false);
-  const [checksVisible, setChecksVisible] = useState({
-    homeowner: [false, false, false],
-    contractor: [false, false, false],
-  });
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,10 +44,6 @@ export function AudienceSplit() {
 
     if (prefersReducedMotion) {
       setIsVisible(true);
-      setChecksVisible({
-        homeowner: [true, true, true],
-        contractor: [true, true, true],
-      });
       return;
     }
 
@@ -41,27 +51,6 @@ export function AudienceSplit() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-
-          setTimeout(() => {
-            setChecksVisible({
-              homeowner: [true, false, false],
-              contractor: [true, false, false],
-            });
-          }, 400);
-
-          setTimeout(() => {
-            setChecksVisible({
-              homeowner: [true, true, false],
-              contractor: [true, true, false],
-            });
-          }, 600);
-
-          setTimeout(() => {
-            setChecksVisible({
-              homeowner: [true, true, true],
-              contractor: [true, true, true],
-            });
-          }, 800);
         }
       },
       { threshold: 0.2 }
@@ -75,203 +64,130 @@ export function AudienceSplit() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-28 px-6 bg-[#f6f8f8]">
-      <div className="max-w-7xl mx-auto">
+    <section
+      ref={sectionRef}
+      className="py-16 md:py-24 bg-[#f6f8f8] overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <header
-          className={`text-center mb-14 transition-all duration-700 ${
+        <div
+          className={`text-center mb-12 md:mb-20 transition-all duration-700 ${
             isVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-6'
           }`}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-5">
-            <span
-              className="material-symbols-outlined text-sm"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              groups
-            </span>
-            Built for Both Sides
-          </div>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-reno-dark leading-[1.1]">
-            One Platform,{' '}
-            <span className="text-primary italic">Two Wins</span>.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-reno-dark mb-4 sm:mb-6">
+            Built for Speed & Security
           </h2>
-        </header>
+          <p className="text-slate-500 text-base sm:text-lg max-w-2xl mx-auto">
+            Our approach to renovation management means you're always three
+            steps away from a finished job.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {/* Homeowner Card */}
-          <div
-            className={`
-              relative bg-white rounded-2xl overflow-hidden
-              transition-all duration-700 ease-out
-              hover:-translate-y-1 shadow-float hover:shadow-float-hover
-              border border-primary/5
-              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-            `}
-          >
-            {/* Top accent bar */}
-            <div className="h-1.5 bg-gradient-to-r from-primary to-primary/60" />
+        {/* 3 Steps with Connecting Line */}
+        <div
+          className={`relative grid md:grid-cols-3 gap-8 md:gap-12 mb-12 md:mb-20 transition-all duration-700 delay-200 ${
+            isVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          {/* Connecting gradient line - hidden on mobile */}
+          <div className="hidden md:block absolute top-12 left-1/4 right-1/4 h-1 bg-gradient-to-r from-[#f6f8f8] via-primary to-reno-dark -z-0" />
 
-            <div className="p-8 md:p-10">
-              {/* Icon + Title */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <span
-                    className="material-symbols-outlined text-primary text-2xl"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    shield
-                  </span>
-                </div>
-                <div>
-                  <h3 className="font-display text-2xl font-bold text-reno-dark">
-                    Homeowners
-                  </h3>
-                  <p className="text-sm font-semibold text-primary tracking-wide">
-                    Protect. See. Own.
-                  </p>
+          {steps.map((step, idx) => (
+            <div
+              key={step.number}
+              className={`text-center transition-all duration-700 ${
+                isVisible ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{
+                transitionDelay: isVisible ? `${400 + idx * 150}ms` : '0ms',
+              }}
+            >
+              {/* Numbered Circle */}
+              <div className="relative z-10 flex justify-center mb-6">
+                <div
+                  className={`w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full ${step.circleBg} border-4 border-white shadow-xl flex items-center justify-center ${step.circleText} font-extrabold text-2xl md:text-3xl`}
+                >
+                  {step.number}
                 </div>
               </div>
 
-              {/* Benefits */}
-              <ul className="space-y-4 mb-8">
-                {homeownerBenefits.map((benefit, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <div className="relative mt-0.5 flex-shrink-0">
-                      <div
-                        className={`
-                          w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center
-                          transition-all duration-300
-                          ${checksVisible.homeowner[idx] ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}
-                        `}
-                      >
-                        <span
-                          className="material-symbols-outlined text-primary text-base"
-                          style={{ fontVariationSettings: "'FILL' 1" }}
-                        >
-                          {benefit.icon}
-                        </span>
-                      </div>
-                    </div>
-                    <span className="text-slate-600 leading-relaxed pt-1">
-                      {benefit.text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA Button */}
-              <Link
-                href="/signup"
-                className="
-                  block w-full py-3.5 px-6 bg-primary text-white text-center rounded-xl font-semibold
-                  transition-all duration-300
-                  hover:bg-primary/90 hover:shadow-lg
-                  relative overflow-hidden group
-                "
-              >
+              {/* Icon */}
+              <div className="flex justify-center mb-4">
                 <span
-                  className="
-                    absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent
-                    -translate-x-full group-hover:translate-x-full transition-transform duration-700
-                  "
-                />
-                <span className="relative inline-flex items-center gap-2">
-                  Start Project
-                  <span className="material-symbols-outlined text-lg">
-                    arrow_forward
-                  </span>
+                  className="material-symbols-outlined text-primary text-4xl"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  {step.icon}
                 </span>
-              </Link>
+              </div>
+
+              {/* Title & Description */}
+              <h3 className="text-xl font-bold text-reno-dark mb-3">
+                {step.title}
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                {step.description}
+              </p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Contractor Card */}
-          <div
-            className={`
-              relative bg-white rounded-2xl overflow-hidden
-              transition-all duration-700 ease-out delay-150
-              hover:-translate-y-1 shadow-float hover:shadow-float-hover
-              border border-primary/5
-              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-            `}
-          >
-            {/* Top accent bar */}
-            <div className="h-1.5 bg-gradient-to-r from-[#E8AA42] to-[#E8AA42]/60" />
-
-            <div className="p-8 md:p-10">
-              {/* Icon + Title */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-[#E8AA42]/10 flex items-center justify-center">
-                  <span
-                    className="material-symbols-outlined text-[#E8AA42] text-2xl"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    construction
-                  </span>
-                </div>
-                <div>
-                  <h3 className="font-display text-2xl font-bold text-reno-dark">
-                    Contractors
-                  </h3>
-                  <p className="text-sm font-semibold text-[#E8AA42] tracking-wide">
-                    Get paid. Run site. Build rep.
-                  </p>
-                </div>
+        {/* CTA Banner */}
+        <div
+          className={`transition-all duration-700 delay-700 ${
+            isVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div className="p-1 bg-gradient-to-r from-primary via-[#0D9FA1] to-primary rounded-[2rem]">
+            <div className="bg-reno-dark rounded-[1.9rem] py-10 px-6 sm:py-12 md:py-16 md:px-20 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
+              {/* Left Text */}
+              <div className="text-center md:text-left">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-2 sm:mb-3">
+                  Ready to start building?
+                </h3>
+                <p className="text-slate-300 text-lg">
+                  Join homeowners across Ontario building with protection.
+                </p>
               </div>
 
-              {/* Benefits */}
-              <ul className="space-y-4 mb-8">
-                {contractorBenefits.map((benefit, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <div className="relative mt-0.5 flex-shrink-0">
-                      <div
-                        className={`
-                          w-8 h-8 rounded-xl bg-[#E8AA42]/10 flex items-center justify-center
-                          transition-all duration-300
-                          ${checksVisible.contractor[idx] ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}
-                        `}
-                      >
-                        <span
-                          className="material-symbols-outlined text-[#E8AA42] text-base"
-                          style={{ fontVariationSettings: "'FILL' 1" }}
-                        >
-                          {benefit.icon}
-                        </span>
-                      </div>
-                    </div>
-                    <span className="text-slate-600 leading-relaxed pt-1">
-                      {benefit.text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA Button */}
-              <Link
-                href="/join"
-                className="
-                  block w-full py-3.5 px-6 bg-reno-dark text-white text-center rounded-xl font-semibold
-                  transition-all duration-300
-                  hover:bg-reno-dark/90 hover:shadow-lg
-                  relative overflow-hidden group
-                "
-              >
-                <span
+              {/* Right Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 flex-shrink-0 w-full md:w-auto">
+                <Link
+                  href="/signup"
                   className="
-                    absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent
-                    -translate-x-full group-hover:translate-x-full transition-transform duration-700
+                    px-6 py-3.5 sm:px-8 sm:py-4 bg-primary text-white rounded-xl font-semibold text-center text-sm sm:text-base
+                    transition-all duration-300
+                    hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5
+                    inline-flex items-center justify-center gap-2 whitespace-nowrap
                   "
-                />
-                <span className="relative inline-flex items-center gap-2">
-                  Apply for Network
+                >
+                  Start Your Renovation
                   <span className="material-symbols-outlined text-lg">
                     arrow_forward
                   </span>
-                </span>
-              </Link>
+                </Link>
+                <Link
+                  href="/pros"
+                  className="
+                    px-6 py-3.5 sm:px-8 sm:py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold text-center text-sm sm:text-base
+                    transition-all duration-300
+                    hover:bg-white hover:text-reno-dark hover:-translate-y-0.5
+                    inline-flex items-center justify-center gap-2 whitespace-nowrap
+                  "
+                >
+                  Browse Pros
+                  <span className="material-symbols-outlined text-lg">
+                    search
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

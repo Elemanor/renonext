@@ -9449,7 +9449,7 @@ export const mockBlogComments: BlogComment[] = [
 ];
 
 export function getBlogPostById(id: string): BlogPost | undefined {
-  return mockBlogPosts.find((p) => p.id === id);
+  return mockBlogPosts.find((p) => p.id === id || p.slug === id);
 }
 
 export function getBlogPostsByAuthor(authorId: string): BlogPost[] {

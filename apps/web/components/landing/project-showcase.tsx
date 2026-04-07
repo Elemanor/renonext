@@ -237,7 +237,7 @@ export function ProjectShowcase() {
             }`}
           >
             {/* Main After Image */}
-            <div className="md:col-span-2 group relative h-[360px] md:h-[460px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="md:col-span-2 group relative h-[240px] sm:h-[360px] md:h-[460px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/pros/dryspace/interior.webp"
                 alt="Completed interior waterproofing system by DrySpace Waterproofing"

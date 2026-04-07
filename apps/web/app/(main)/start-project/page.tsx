@@ -1,1510 +1,868 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import {
-  ChevronLeft,
-  ChevronRight,
-  Check,
-  Sparkles,
-  Home,
-  Building2,
-  Building,
-  Landmark,
-  HardHat,
-  Paintbrush,
-  Zap,
-  Droplets,
-  ShieldCheck,
-  ClipboardCheck,
-  Camera,
-  FileBarChart,
-  FileText,
-  Wrench,
-  AlertTriangle,
-  AlertCircle,
-  Info,
-  DollarSign,
-  TrendingUp,
-  PartyPopper,
-  Users,
-  Clock,
-  Shield,
-  Eye,
-  Ruler,
-  Truck,
-  ArrowRight,
-  Lock,
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from '@/components/ui/accordion';
-import { Progress } from '@/components/ui/progress';
 
 // ---------------------------------------------------------------------------
-// Constants
+// Types & Constants
 // ---------------------------------------------------------------------------
 
-const STEPS = [
-  'Scope Definition',
-  'Algorithmic Assessment',
-  'Milestone Architecture',
-  'Capital Requirements',
-  'Vault Security',
-  'Execute Protocol',
-];
-
-const PROPERTY_TYPES = [
-  { id: 'detached', label: 'Detached', icon: Home },
-  { id: 'semi', label: 'Semi-Detached', icon: Building2 },
-  { id: 'townhouse', label: 'Townhouse', icon: Building },
-  { id: 'condo', label: 'Condo', icon: Landmark },
-] as const;
-
-// ---------------------------------------------------------------------------
-// Simulated AI Data
-// ---------------------------------------------------------------------------
-
-const SIMULATED_SCOPE = {
-  summary:
-    'Your project involves lowering the basement floor (underpinning) to gain full-height living space. This is a structural modification requiring engineered drawings, municipal permits, and specialized contractors. Typical scope includes shoring, excavation, new footings, waterproofing, and mechanical relocation.',
-  confidence: 'High' as const,
-  trades: [
-    { name: 'Structural Engineer', required: true, icon: Ruler },
-    { name: 'Underpinning Contractor', required: true, icon: HardHat },
-    { name: 'Concrete Finisher', required: true, icon: Truck },
-    { name: 'Waterproofing Specialist', required: true, icon: Droplets },
-    { name: 'Plumber', required: true, icon: Wrench },
-    { name: 'Electrician', required: false, icon: Zap },
-    { name: 'HVAC Technician', required: false, icon: Building2 },
-    { name: 'Painter / Finisher', required: false, icon: Paintbrush },
-  ],
-  permits: [
-    {
-      name: 'Building Permit',
-      authority: 'City of Toronto',
-      estimatedWeeks: 6,
-    },
-    {
-      name: 'Shoring Permit',
-      authority: 'City of Toronto',
-      estimatedWeeks: 4,
-    },
-    {
-      name: 'Plumbing Permit',
-      authority: 'City of Toronto',
-      estimatedWeeks: 3,
-    },
-  ],
-  inspections: [
-    { stage: 'Pre-construction survey', description: 'Existing conditions documented' },
-    { stage: 'Shoring installation', description: 'Temporary supports verified' },
-    { stage: 'Excavation depth', description: 'Soil bearing confirmed' },
-    { stage: 'Footing reinforcement', description: 'Rebar placement inspected' },
-    { stage: 'Concrete pour', description: 'Strength test scheduled' },
-    { stage: 'Waterproofing membrane', description: 'Below-grade seal verified' },
-    { stage: 'Final occupancy', description: 'All systems signed off' },
-  ],
-  risks: [
-    {
-      level: 'high' as const,
-      title: 'Adjacent Property Settlement',
-      description:
-        'Excavation near party walls can cause neighbouring foundation movement. Requires shoring design by a licensed engineer.',
-    },
-    {
-      level: 'medium' as const,
-      title: 'Water Table Encounter',
-      description:
-        'Digging below grade may expose groundwater. Dewatering plan should be included in the scope.',
-    },
-    {
-      level: 'low' as const,
-      title: 'Permit Delays',
-      description:
-        'Municipal review timelines can vary. Applying early mitigates schedule risk.',
-    },
-  ],
-  complexityScore: 8,
-};
-
-const SIMULATED_MILESTONES = [
+const SERVICES = [
   {
-    stage: 1,
-    title: 'Engineering & Permits',
-    days: 21,
-    paymentPercent: 10,
-    plainDescription:
-      'A structural engineer designs the underpinning plan. Permit applications are submitted to the city. You review and approve the engineered drawings.',
-    whatToExpect:
-      'You will receive detailed drawings showing exactly how the work will be done. The engineer will visit your home to assess existing conditions. Permit approval typically takes 4-6 weeks.',
-    safetyNote: 'No physical work begins until permits are approved.',
+    id: 'underpinning',
+    label: 'Underpinning',
+    icon: 'foundation',
+    description: 'Basement lowering, structural reinforcement, and bench footing extensions.',
+    featured: true,
+    tag: 'High Demand',
   },
   {
-    stage: 2,
-    title: 'Shoring & Excavation',
-    days: 14,
-    paymentPercent: 25,
-    plainDescription:
-      'Temporary steel supports are installed to hold the existing foundation. The basement floor is excavated section by section to the new depth.',
-    whatToExpect:
-      'Heavy equipment will be on-site. Expect noise and vibration for 1-2 weeks. The crew works in small sections to maintain structural stability at all times.',
-    safetyNote:
-      'Shoring is inspected by the engineer before any excavation begins.',
+    id: 'waterproofing',
+    label: 'Waterproofing',
+    icon: 'water_damage',
+    description: 'Interior and exterior waterproofing, drainage, and sump systems.',
   },
   {
-    stage: 3,
-    title: 'Concrete & Structural',
-    days: 21,
-    paymentPercent: 30,
-    plainDescription:
-      'New concrete footings and walls are poured to create the lowered floor. Rebar reinforcement is placed per the engineering design.',
-    whatToExpect:
-      'Concrete trucks will need driveway access. Each section is poured and must cure before the next. The engineer inspects rebar placement before every pour.',
-    safetyNote: 'City inspector verifies footing depth and reinforcement.',
+    id: 'foundation-repair',
+    label: 'Foundation Repair',
+    icon: 'home_repair_service',
+    description: 'Crack injection, wall stabilization, and structural repairs.',
   },
   {
-    stage: 4,
-    title: 'Waterproofing & Drainage',
-    days: 10,
-    paymentPercent: 15,
-    plainDescription:
-      'Waterproof membranes are applied to all below-grade surfaces. A new drainage system (weeping tile) is installed around the perimeter.',
-    whatToExpect:
-      'This is critical for long-term protection. The membrane is applied in layers and inspected before backfilling. A sump pump may be recommended.',
-    safetyNote: 'Waterproofing is inspected before any covering.',
+    id: 'concrete',
+    label: 'Concrete & Masonry',
+    icon: 'domain',
+    description: 'Flatwork, retaining walls, and masonry restoration.',
   },
   {
-    stage: 5,
-    title: 'Mechanical & Finishing',
-    days: 18,
-    paymentPercent: 15,
-    plainDescription:
-      'Plumbing, electrical, and HVAC are relocated or extended to the new floor level. Basic finishing (subfloor, insulation) is completed.',
-    whatToExpect:
-      'Multiple trades work in sequence. Plumbing rough-in first, then electrical, then HVAC. Each requires a separate inspection before covering.',
-    safetyNote: 'All mechanical work requires licensed tradespeople.',
+    id: 'electrical',
+    label: 'Electrical',
+    icon: 'electrical_services',
+    description: 'Wiring, panel upgrades, and lighting installations.',
   },
   {
-    stage: 6,
-    title: 'Final Inspection & Handover',
-    days: 5,
-    paymentPercent: 5,
-    plainDescription:
-      'The city conducts a final inspection. All documentation is compiled. You do a walkthrough and sign off on the completed work.',
-    whatToExpect:
-      'You will receive a binder with all permits, inspection records, warranties, and as-built drawings. Any deficiencies are corrected before final payment.',
-    safetyNote: 'Final payment released only after your sign-off.',
+    id: 'plumbing',
+    label: 'Plumbing',
+    icon: 'plumbing',
+    description: 'Pipe repair, fixture installation, and drainage systems.',
+  },
+  {
+    id: 'kitchen',
+    label: 'Kitchen Renovation',
+    icon: 'kitchen',
+    description: 'Cabinets, countertops, appliances, and full kitchen remodels.',
+  },
+  {
+    id: 'bathroom',
+    label: 'Bathroom Remodel',
+    icon: 'bathtub',
+    description: 'Fixtures, tiling, plumbing, and complete bathroom overhauls.',
+  },
+  {
+    id: 'basement-unit',
+    label: 'Basement Second Unit',
+    icon: 'apartment',
+    description: 'Legal basement apartment conversions with permits and code compliance.',
+  },
+  {
+    id: 'addition',
+    label: 'Home Addition',
+    icon: 'add_home',
+    description: 'Room additions, bump-outs, and structural extensions.',
+  },
+  {
+    id: 'painting',
+    label: 'Painting',
+    icon: 'format_paint',
+    description: 'Interior and exterior painting and surface preparation.',
+  },
+  {
+    id: 'demolition',
+    label: 'Demolition',
+    icon: 'demolish',
+    description: 'Structural removal, concrete breaking, and site clearing.',
+  },
+  {
+    id: 'roofing',
+    label: 'Roofing',
+    icon: 'roofing',
+    description: 'Shingle replacement, flat roofing, and leak repairs.',
+  },
+  {
+    id: 'hvac',
+    label: 'HVAC',
+    icon: 'heat_pump',
+    description: 'Heating, cooling, and ventilation systems.',
+  },
+  {
+    id: 'general',
+    label: 'General Renovation',
+    icon: 'construction',
+    description: 'Multi-trade coordinated renovations and full remodels.',
   },
 ];
 
-const SIMULATED_COST = {
-  low: 65000,
-  high: 95000,
-  midpoint: 80000,
-  breakdown: [
-    { category: 'Engineering & Permits', low: 5000, high: 8000, icon: FileText },
-    { category: 'Shoring & Excavation', low: 18000, high: 25000, icon: HardHat },
-    { category: 'Concrete & Structural', low: 20000, high: 30000, icon: Truck },
-    { category: 'Waterproofing', low: 8000, high: 12000, icon: Droplets },
-    { category: 'Mechanical (Plumb/Elec/HVAC)', low: 10000, high: 15000, icon: Zap },
-    { category: 'Finishing & Cleanup', low: 4000, high: 5000, icon: Paintbrush },
-  ],
-  marketComparison: [
-    { label: 'Lowball Bid', value: 45000, percent: 37, color: 'bg-red-400' },
-    { label: 'Your Estimate', value: 80000, percent: 67, color: 'bg-reno-purple-500' },
-    { label: 'GTA Average', value: 85000, percent: 71, color: 'bg-primary-400' },
-    { label: 'Premium', value: 120000, percent: 100, color: 'bg-slate-300' },
-  ],
-  roi: {
-    homeValueIncrease: '$40,000 — $70,000',
-    squareFootage: '600 — 800 sq ft',
-    roiPercent: '50 — 75%',
-  },
-};
-
-const PROTECTIONS = [
-  {
-    id: 'escrowEnabled' as const,
-    title: 'Escrow Protection',
-    description:
-      'Payments held in trust and released only when milestones are verified complete.',
-    icon: Lock,
-    alwaysOn: true,
-  },
-  {
-    id: 'inspectionVerification' as const,
-    title: 'Inspection Verification',
-    description:
-      'Independent inspectors verify work quality at every critical stage.',
-    icon: ClipboardCheck,
-    alwaysOn: false,
-  },
-  {
-    id: 'photoDocumentation' as const,
-    title: 'Photo Documentation',
-    description:
-      'Contractors upload timestamped, geotagged photos of progress daily.',
-    icon: Camera,
-    alwaysOn: false,
-  },
-  {
-    id: 'progressReports' as const,
-    title: 'Weekly Progress Reports',
-    description:
-      'Automated summary of work completed, upcoming tasks, and any issues.',
-    icon: FileBarChart,
-    alwaysOn: false,
-  },
-  {
-    id: 'changeOrderApproval' as const,
-    title: 'Change Order Approval',
-    description:
-      'Any scope or cost changes require your explicit approval before work proceeds.',
-    icon: FileText,
-    alwaysOn: false,
-  },
-  {
-    id: 'warrantyTracking' as const,
-    title: 'Warranty Tracking',
-    description:
-      'All warranties logged and tracked with automatic renewal reminders.',
-    icon: ShieldCheck,
-    alwaysOn: false,
-  },
+const CITIES = [
+  'Toronto', 'Mississauga', 'Brampton', 'Vaughan', 'Markham',
+  'Richmond Hill', 'Aurora', 'Oakville', 'Burlington', 'Milton',
+  'Ajax', 'Pickering', 'Oshawa', 'Whitby', 'Hamilton',
 ];
 
-const LOADING_TEXTS_SCOPE = [
-  'Identifying required trades...',
-  'Checking permit requirements...',
-  'Evaluating risk factors...',
-  'Analyzing project complexity...',
+const TIME_SLOTS = [
+  { id: 'morning', label: 'Morning', sub: '8 AM — 12 PM', icon: 'wb_sunny' },
+  { id: 'afternoon', label: 'Afternoon', sub: '12 PM — 4 PM', icon: 'light_mode' },
+  { id: 'evening', label: 'Evening', sub: '4 PM — 8 PM', icon: 'nights_stay' },
 ];
 
-const LOADING_TEXTS_MILESTONES = [
-  'Sequencing work phases...',
-  'Calculating durations...',
-  'Mapping payment schedule...',
-];
-
-const LOADING_TEXTS_COST = [
-  'Pulling market data...',
-  'Comparing contractor rates...',
-  'Calculating ROI...',
+const BUDGET_RANGES = [
+  { id: 'under-10k', label: 'Under $10K' },
+  { id: '10-25k', label: '$10K — $25K' },
+  { id: '25-50k', label: '$25K — $50K' },
+  { id: '50-100k', label: '$50K — $100K' },
+  { id: '100k-plus', label: '$100K+' },
 ];
 
 // ---------------------------------------------------------------------------
-// Helper Components
+// Utility: simple calendar
 // ---------------------------------------------------------------------------
-
-function ShimmerLine({ className = '' }: { className?: string }) {
-  return (
-    <div
-      className={`animate-pulse rounded-lg bg-slate-200 ${className}`}
-    />
-  );
+function getCalendarDays(year: number, month: number) {
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const daysInPrev = new Date(year, month, 0).getDate();
+  const days: { day: number; current: boolean }[] = [];
+  for (let i = firstDay - 1; i >= 0; i--) {
+    days.push({ day: daysInPrev - i, current: false });
+  }
+  for (let i = 1; i <= daysInMonth; i++) {
+    days.push({ day: i, current: true });
+  }
+  return days;
 }
 
-function CyclingText({ texts }: { texts: string[] }) {
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((i) => (i + 1) % texts.length);
-    }, 1200);
-    return () => clearInterval(interval);
-  }, [texts.length]);
-  return (
-    <p className="text-sm font-medium text-reno-purple-600 transition-opacity duration-300">
-      {texts[index]}
-    </p>
-  );
-}
-
-function formatCurrency(n: number) {
-  return new Intl.NumberFormat('en-CA', {
-    style: 'currency',
-    currency: 'CAD',
-    maximumFractionDigits: 0,
-  }).format(n);
-}
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
 
 // ---------------------------------------------------------------------------
 // Page Component
 // ---------------------------------------------------------------------------
-
 export default function StartProjectPage() {
-  // --- form state ---
-  const [formData, setFormData] = useState({
-    description: '',
-    propertyType: '',
-    city: '',
-    postalCode: '',
-  });
+  const [step, setStep] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const updateForm = (field: keyof typeof formData, value: string) =>
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  // Step 1 state
+  const [selectedService, setSelectedService] = useState<string | null>(null);
 
-  // --- step state ---
-  const [currentStep, setCurrentStep] = useState(0);
+  // Step 2 state
+  const [description, setDescription] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [budget, setBudget] = useState('');
 
-  // --- AI loading states ---
-  const [scopeLoading, setScopeLoading] = useState(false);
-  const [scopeRevealed, setScopeRevealed] = useState(false);
-  const [milestonesLoading, setMilestonesLoading] = useState(false);
-  const [milestonesRevealed, setMilestonesRevealed] = useState(false);
-  const [costLoading, setCostLoading] = useState(false);
-  const [costRevealed, setCostRevealed] = useState(false);
-  const [animatedCost, setAnimatedCost] = useState(0);
+  // Step 3 state
+  const [timing, setTiming] = useState<'asap' | 'scheduled' | null>(null);
+  const [selectedDay, setSelectedDay] = useState<number | null>(null);
+  const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
+  const [calMonth, setCalMonth] = useState(() => new Date().getMonth());
+  const [calYear, setCalYear] = useState(() => new Date().getFullYear());
 
-  // --- protection toggles ---
-  const [protectionConfig, setProtectionConfig] = useState({
-    escrowEnabled: true,
-    inspectionVerification: true,
-    photoDocumentation: true,
-    progressReports: true,
-    changeOrderApproval: true,
-    warrantyTracking: true,
-  });
+  // Step 4 state
+  const [matchCount, setMatchCount] = useState(0);
+  const [matchDone, setMatchDone] = useState(false);
 
-  // --- submit ---
-  const [submitting, setSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  // Scroll to top on step change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [step]);
 
-  // --- validation ---
+  // Step 4 matching simulation
+  useEffect(() => {
+    if (step !== 3) return;
+    setMatchCount(0);
+    setMatchDone(false);
+    const interval = setInterval(() => {
+      setMatchCount((c) => {
+        if (c >= 5) {
+          clearInterval(interval);
+          setTimeout(() => setMatchDone(true), 800);
+          return 5;
+        }
+        return c + 1;
+      });
+    }, 600);
+    return () => clearInterval(interval);
+  }, [step]);
+
+  // Filtered services
+  const filteredServices = searchQuery.trim()
+    ? SERVICES.filter(
+        (s) =>
+          s.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          s.description.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : SERVICES;
+
+  const featured = filteredServices.find((s) => s.featured);
+  const regular = filteredServices.filter((s) => !s.featured);
+
+  // Calendar
+  const calDays = getCalendarDays(calYear, calMonth);
+  const today = new Date();
+  const isCurrentMonth = calYear === today.getFullYear() && calMonth === today.getMonth();
+
+  // Validation
   const canProceed = () => {
-    switch (currentStep) {
+    switch (step) {
       case 0:
-        return (
-          formData.description.length > 10 &&
-          formData.propertyType !== '' &&
-          formData.city.length > 0
-        );
+        return selectedService !== null;
       case 1:
-        return scopeRevealed;
+        return description.length > 5 && city.length > 0;
       case 2:
-        return milestonesRevealed;
-      case 3:
-        return costRevealed;
-      case 4:
-        return true;
-      case 5:
-        return true;
+        return timing !== null && (timing === 'asap' || (selectedDay !== null && selectedSlot !== null));
       default:
         return false;
     }
   };
 
-  // --- navigation ---
   const handleNext = () => {
-    if (currentStep >= STEPS.length - 1) return;
-    const nextStep = currentStep + 1;
-    setCurrentStep(nextStep);
-
-    // Trigger AI simulation for steps 1-3
-    if (nextStep === 1 && !scopeRevealed) {
-      setScopeLoading(true);
-      setTimeout(() => {
-        setScopeLoading(false);
-        setScopeRevealed(true);
-      }, 2500);
-    }
-    if (nextStep === 2 && !milestonesRevealed) {
-      setMilestonesLoading(true);
-      setTimeout(() => {
-        setMilestonesLoading(false);
-        setMilestonesRevealed(true);
-      }, 2000);
-    }
-    if (nextStep === 3 && !costRevealed) {
-      setCostLoading(true);
-      // Animate the counter
-      const target = SIMULATED_COST.midpoint;
-      const duration = 2800;
-      const steps = 40;
-      const increment = target / steps;
-      let current = 0;
-      const interval = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          clearInterval(interval);
-        }
-        setAnimatedCost(Math.round(current));
-      }, duration / steps);
-
-      setTimeout(() => {
-        setCostLoading(false);
-        setCostRevealed(true);
-        setAnimatedCost(target);
-      }, 3000);
-    }
+    if (step < 3) setStep(step + 1);
   };
-
   const handleBack = () => {
-    if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
-    }
+    if (step > 0) setStep(step - 1);
   };
 
-  const handleSubmit = () => {
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
-  };
-
-  const activeProtections = Object.values(protectionConfig).filter(Boolean).length;
+  const selectedServiceData = SERVICES.find((s) => s.id === selectedService);
 
   // =========================================================================
-  // SUCCESS STATE
+  // STEP 4 — Matching Screen
   // =========================================================================
-  if (isSubmitted) {
+  if (step === 3) {
     return (
-      <div className="mx-auto flex min-h-[80vh] max-w-2xl flex-col items-center justify-center px-4 py-20 text-center">
-        <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-reno-green-400 to-reno-green-600 shadow-lg shadow-emerald-200">
-          <PartyPopper className="h-10 w-10 text-white" />
+      <div className="min-h-screen bg-gradient-to-b from-reno-dark to-[#0a1a1b] text-white flex flex-col -mt-[60px] pt-[60px]">
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto w-full">
+          <button
+            onClick={() => setStep(2)}
+            className="p-2 rounded-full hover:bg-white/10 transition-colors"
+          >
+            <span className="material-symbols-outlined text-white/70">arrow_back</span>
+          </button>
+          <span className="text-xs font-bold tracking-widest uppercase text-primary bg-primary/20 px-3 py-1 rounded-full">
+            Step 4 of 4
+          </span>
+          <div className="w-10" />
         </div>
-        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
-          Your Project Is Live!
-        </h1>
-        <p className="mt-3 text-lg text-slate-600">
-          We&apos;re matching you with 5+ qualified, verified contractors now.
-          Expect your first bids within 48 hours.
-        </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-          <span className="flex items-center gap-2">
-            <Shield className="h-4 w-4 text-reno-green-500" />
-            Escrow Protected
-          </span>
-          <span className="flex items-center gap-2">
-            <Users className="h-4 w-4 text-primary-500" />
-            5+ Qualified Contractors
-          </span>
-          <span className="flex items-center gap-2">
-            <Clock className="h-4 w-4 text-reno-purple-500" />
-            Bids in 48 hrs
-          </span>
-        </div>
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <Button asChild className="rounded-xl bg-gradient-to-r from-primary-600 to-reno-purple-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-blue-600/20 hover:brightness-110">
-            <Link href="/dashboard">Go to Dashboard</Link>
-          </Button>
-          <Button asChild variant="outline" className="rounded-xl px-8 py-3 text-base font-semibold">
-            <Link href="/">Back to Home</Link>
-          </Button>
+
+        {/* Radar */}
+        <div className="flex-1 flex flex-col items-center justify-center px-6 relative overflow-hidden">
+          {/* Radar Rings */}
+          <div className="relative w-full max-w-lg h-[340px] sm:h-[400px] flex items-center justify-center">
+            {[200, 300, 420].map((size) => (
+              <div
+                key={size}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/20"
+                style={{ width: size, height: size }}
+              />
+            ))}
+
+            {/* Scanning sweep */}
+            <div
+              className="absolute top-1/2 left-1/2 w-[210px] h-[210px] rounded-full -translate-x-1/2 -translate-y-1/2 animate-spin"
+              style={{
+                animationDuration: '4s',
+                background: 'conic-gradient(from 0deg, rgba(15,186,189,0.15) 0%, transparent 25%)',
+              }}
+            />
+
+            {/* Core */}
+            <div className="relative z-10 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_0_60px_rgba(15,186,189,0.4)]">
+              <span
+                className="material-symbols-outlined text-primary text-4xl"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                architecture
+              </span>
+            </div>
+
+            {/* Floating pro nodes */}
+            {matchCount >= 1 && (
+              <div className="absolute top-[12%] left-[22%] animate-pulse">
+                <div className="w-12 h-12 rounded-full border-2 border-primary bg-reno-dark flex items-center justify-center shadow-[0_0_20px_rgba(15,186,189,0.3)]">
+                  <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>person</span>
+                </div>
+              </div>
+            )}
+            {matchCount >= 2 && (
+              <div className="absolute bottom-[18%] right-[25%]">
+                <div className="w-14 h-14 rounded-full border-2 border-primary bg-reno-dark flex items-center justify-center shadow-[0_0_20px_rgba(15,186,189,0.4)]">
+                  <span className="material-symbols-outlined text-primary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>engineering</span>
+                </div>
+              </div>
+            )}
+            {matchCount >= 3 && (
+              <div className="absolute top-[38%] right-[10%] opacity-80">
+                <div className="w-10 h-10 rounded-full border-2 border-white/30 bg-reno-dark flex items-center justify-center">
+                  <span className="material-symbols-outlined text-white/60 text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>construction</span>
+                </div>
+              </div>
+            )}
+            {matchCount >= 4 && (
+              <div className="absolute bottom-[8%] left-[35%]">
+                <div className="w-16 h-16 rounded-full border-2 border-primary bg-reno-dark flex items-center justify-center shadow-[0_0_25px_rgba(15,186,189,0.5)]">
+                  <span className="material-symbols-outlined text-primary text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>person</span>
+                </div>
+              </div>
+            )}
+            {matchCount >= 5 && (
+              <div className="absolute top-[18%] right-[35%] opacity-70">
+                <div className="w-11 h-11 rounded-full border-2 border-[#E8AA42] bg-reno-dark flex items-center justify-center">
+                  <span className="material-symbols-outlined text-[#E8AA42] text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Matching text */}
+          <div className="text-center mt-6 mb-8 z-20">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">
+              {matchDone ? (
+                <>
+                  <span className="text-primary">{matchCount} Pros</span> Ready
+                </>
+              ) : (
+                <>
+                  Matching with top-rated pros{' '}
+                  <br className="hidden sm:block" />
+                  in your area...
+                </>
+              )}
+            </h2>
+            <div className="flex items-center justify-center gap-2 text-primary font-medium">
+              {matchDone ? (
+                <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+              ) : (
+                <div className="w-4 h-4 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+              )}
+              <p className="text-base sm:text-lg">
+                {matchDone
+                  ? 'Your project is live — expect bids within 48 hours'
+                  : `Found ${matchCount} verified contractors near you...`}
+              </p>
+            </div>
+          </div>
+
+          {/* Project Summary Card */}
+          <div className="w-full max-w-3xl mx-auto mb-12 z-20">
+            <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-white/50 text-xs font-bold tracking-widest uppercase">Project Summary</span>
+                <button onClick={() => setStep(1)} className="text-primary text-xs font-bold hover:underline">Edit Details</button>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white">{selectedServiceData?.icon || 'construction'}</span>
+                  </div>
+                  <div>
+                    <p className="text-white/40 text-[10px] uppercase font-bold tracking-wider">Service</p>
+                    <p className="text-white font-semibold text-sm">{selectedServiceData?.label || 'General'}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white">location_on</span>
+                  </div>
+                  <div>
+                    <p className="text-white/40 text-[10px] uppercase font-bold tracking-wider">Location</p>
+                    <p className="text-white font-semibold text-sm">{city || 'GTA'}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white">schedule</span>
+                  </div>
+                  <div>
+                    <p className="text-white/40 text-[10px] uppercase font-bold tracking-wider">Timeline</p>
+                    <p className="text-white font-semibold text-sm">{timing === 'asap' ? 'ASAP' : 'Scheduled'}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA when done */}
+          {matchDone && (
+            <div className="w-full max-w-md mx-auto mb-16 z-20 flex flex-col gap-3">
+              <Link
+                href="/dashboard"
+                className="w-full py-4 bg-primary text-white font-bold rounded-xl text-center text-lg shadow-lg shadow-primary/30 hover:brightness-110 transition-all flex items-center justify-center gap-2"
+              >
+                Go to Dashboard
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </Link>
+              <p className="text-center text-xs text-white/40">
+                You won&apos;t be charged until work is completed and approved.
+              </p>
+            </div>
+          )}
+
+          {/* Background blurs */}
+          <div className="fixed inset-0 pointer-events-none -z-10">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-reno-dark/50 blur-[120px] rounded-full" />
+          </div>
         </div>
       </div>
     );
   }
 
   // =========================================================================
-  // WIZARD
+  // WIZARD STEPS 0-2
   // =========================================================================
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10 md:py-16">
-      {/* ---- Step Indicator ---- */}
-      <div className="mb-10">
-        <div className="flex items-center justify-between">
-          {STEPS.map((label, index) => (
-            <div key={label} className="flex flex-1 items-center">
-              {/* Circle */}
-              <div className="flex flex-col items-center">
-                <div
-                  className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold transition-all duration-500 ${
-                    index < currentStep
-                      ? 'bg-reno-green-dark text-white shadow-md shadow-reno-green-light'
-                      : index === currentStep
-                        ? 'bg-reno-green-dark text-white ring-4 ring-reno-green-light shadow-md shadow-reno-green-light'
-                        : 'bg-slate-100 text-slate-400'
-                  }`}
-                >
-                  {index < currentStep ? (
-                    <Check className="h-4 w-4" />
-                  ) : (
-                    index + 1
-                  )}
-                </div>
-                <span
-                  className={`mt-2 hidden text-xs font-medium sm:block ${
-                    index <= currentStep ? 'text-reno-green-dark' : 'text-slate-400'
-                  }`}
-                >
-                  {label}
-                </span>
+    <div className="min-h-screen pb-32">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10">
+        {/* Progress */}
+        <div className="mb-8 sm:mb-12">
+          <div className="flex justify-between items-end mb-4">
+            <div>
+              <span className="text-slate-500 font-bold text-xs tracking-widest uppercase mb-2 block">
+                Step {step + 1} of 4
+              </span>
+              <div className="flex items-center gap-2 mt-2">
+                {[0, 1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      i === step
+                        ? 'w-12 bg-reno-dark'
+                        : i < step
+                          ? 'w-8 bg-primary'
+                          : 'w-8 bg-slate-200'
+                    }`}
+                  />
+                ))}
               </div>
-              {/* Connecting line */}
-              {index < STEPS.length - 1 && (
-                <div
-                  className={`mx-2 h-0.5 flex-1 transition-all duration-500 ${
-                    index < currentStep ? 'bg-reno-green-dark' : 'bg-slate-200'
-                  }`}
-                />
-              )}
             </div>
-          ))}
+            <div className="hidden sm:block text-right">
+              <span className="text-xs font-semibold text-slate-400">Progress</span>
+              <p className="text-sm font-bold text-reno-dark">{Math.round(((step + 1) / 4) * 100)}% Complete</p>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* ================================================================= */}
-      {/* STEP 0 — Scope Definition                                    */}
-      {/* ================================================================= */}
-      {currentStep === 0 && (
-        <div className="space-y-8">
+        {/* ================================================================= */}
+        {/* STEP 0 — Service Selection                                        */}
+        {/* ================================================================= */}
+        {step === 0 && (
           <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Initialize Scope Definition
-            </h2>
-            <p className="mt-2 text-slate-500">
-              Input your project requirements. The system will translate your parameters 
-              into a standardized construction protocol.
-            </p>
-          </div>
+            <div className="mb-8 sm:mb-10">
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-reno-dark leading-tight tracking-tight">
+                What do you need help with?
+              </h1>
+            </div>
 
-          {/* Textarea */}
-          <div>
-            <Label htmlFor="description" className="text-sm font-semibold text-slate-700">
-              Project Parameters
-            </Label>
-            <Textarea
-              id="description"
-              rows={5}
-              placeholder="e.g. Lower basement floor by 2 feet to create a legal rental unit. Currently 6-foot ceilings, old furnace, moisture issues on back wall. 1950s semi-detached in Toronto."
-              value={formData.description}
-              onChange={(e) => updateForm('description', e.target.value)}
-              className="mt-2 resize-none rounded-xl border-slate-200 text-base leading-relaxed focus:border-reno-green focus:ring-reno-green"
-            />
-            <p className="mt-2 flex items-center gap-1.5 text-xs text-slate-400">
-              <Sparkles className="h-3 w-3" />
-              Detailed parameters yield a higher fidelity algorithmic assessment.
-            </p>
-          </div>
+            {/* Search */}
+            <div className="relative mb-8 sm:mb-10 group">
+              <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                <span className="material-symbols-outlined text-slate-400">search</span>
+              </div>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search for a service (e.g. Waterproofing, Kitchen...)"
+                className="w-full h-14 sm:h-16 bg-white border-none rounded-xl pl-14 pr-6 text-base sm:text-lg text-reno-dark placeholder:text-slate-400 focus:ring-2 focus:ring-primary shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-shadow group-hover:shadow-[0_8px_30px_rgba(0,0,0,0.07)] outline-none"
+              />
+            </div>
 
-          {/* Property Type */}
-          <div>
-            <Label className="text-sm font-semibold text-slate-700">
-              Property Type
-            </Label>
-            <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {PROPERTY_TYPES.map(({ id, label, icon: Icon }) => (
+            {/* Bento Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 mb-10">
+              {/* Featured Card */}
+              {featured && (
                 <button
-                  key={id}
-                  type="button"
-                  onClick={() => updateForm('propertyType', id)}
-                  className={`flex flex-col items-center gap-2 rounded-xl border-2 p-4 transition-all duration-200 ${
-                    formData.propertyType === id
-                      ? 'border-reno-green bg-reno-green-light text-reno-green-dark shadow-md shadow-reno-green-light'
-                      : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50'
+                  onClick={() => setSelectedService(featured.id)}
+                  className={`sm:col-span-2 group relative overflow-hidden rounded-2xl text-left aspect-[16/9] sm:aspect-auto sm:min-h-[220px] flex flex-col justify-end p-6 sm:p-8 cursor-pointer transition-all duration-300 active:scale-[0.98] ${
+                    selectedService === featured.id
+                      ? 'ring-4 ring-primary ring-offset-2'
+                      : ''
                   }`}
                 >
-                  <Icon className="h-6 w-6" />
-                  <span className="text-sm font-semibold">{label}</span>
+                  <div className="absolute inset-0 bg-reno-dark" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-reno-dark via-reno-dark/60 to-reno-dark/30" />
+                  <div className="relative z-10">
+                    {featured.tag && (
+                      <div className="bg-[#E8AA42] text-reno-dark px-3 py-1 rounded-full text-xs font-bold w-fit mb-3 uppercase tracking-wider">
+                        {featured.tag}
+                      </div>
+                    )}
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="material-symbols-outlined text-3xl text-white">{featured.icon}</span>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">{featured.label}</h3>
+                    </div>
+                    <p className="text-white/70 text-sm max-w-md">{featured.description}</p>
+                    {selectedService === featured.id && (
+                      <div className="absolute top-4 right-4 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <span className="material-symbols-outlined text-white text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>check</span>
+                      </div>
+                    )}
+                  </div>
+                </button>
+              )}
+
+              {/* Regular cards */}
+              {regular.map((service) => (
+                <button
+                  key={service.id}
+                  onClick={() => setSelectedService(service.id)}
+                  className={`group bg-white rounded-2xl p-5 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all flex flex-col justify-between min-h-[160px] sm:min-h-[180px] cursor-pointer active:scale-[0.97] text-left relative ${
+                    selectedService === service.id
+                      ? 'ring-2 ring-primary ring-offset-1'
+                      : ''
+                  }`}
+                >
+                  <div className="h-12 w-12 bg-[#f6f8f8] rounded-xl flex items-center justify-center text-reno-dark group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span className="material-symbols-outlined text-2xl">{service.icon}</span>
+                  </div>
+                  <div className="mt-3">
+                    <h3 className="text-base sm:text-lg font-bold text-reno-dark mb-1">{service.label}</h3>
+                    <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">{service.description}</p>
+                  </div>
+                  {selectedService === service.id && (
+                    <div className="absolute top-3 right-3 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                      <span className="material-symbols-outlined text-white text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check</span>
+                    </div>
+                  )}
                 </button>
               ))}
             </div>
-          </div>
 
-          {/* City + Postal */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
-              <Label htmlFor="city" className="text-sm font-semibold text-slate-700">
-                City
-              </Label>
-              <Input
-                id="city"
-                placeholder="e.g. Toronto"
-                value={formData.city}
-                onChange={(e) => updateForm('city', e.target.value)}
-                className="mt-2 rounded-xl"
-              />
-            </div>
-            <div>
-              <Label htmlFor="postalCode" className="text-sm font-semibold text-slate-700">
-                Postal Code (optional)
-              </Label>
-              <Input
-                id="postalCode"
-                placeholder="e.g. M4K 1A1"
-                value={formData.postalCode}
-                onChange={(e) => updateForm('postalCode', e.target.value)}
-                className="mt-2 rounded-xl"
-              />
+            {/* Custom quote banner */}
+            <div className="flex flex-col sm:flex-row items-center justify-between bg-[#f6f8f8] p-5 sm:p-6 rounded-2xl gap-4">
+              <div>
+                <p className="text-sm font-semibold text-reno-dark">Need something else?</p>
+                <p className="text-xs text-slate-500">Request a custom quote for specialized work</p>
+              </div>
+              <button className="w-full sm:w-auto bg-reno-dark text-white px-6 sm:px-8 py-3 rounded-xl font-bold hover:bg-reno-dark/90 transition-all active:scale-95 shadow-lg shadow-reno-dark/10 text-sm">
+                Custom Quote
+              </button>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* ================================================================= */}
-      {/* STEP 1 — Algorithmic Assessment                                        */}
-      {/* ================================================================= */}
-      {currentStep === 1 && (
-        <div className="space-y-8">
+        {/* ================================================================= */}
+        {/* STEP 1 — Project Details                                          */}
+        {/* ================================================================= */}
+        {step === 1 && (
           <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Algorithmic Assessment
-            </h2>
-            <p className="mt-2 text-slate-500">
-              The system has processed your parameters and structured the required 
-              trade, permit, and inspection dependencies.
-            </p>
-          </div>
-
-          {scopeLoading && (
-            <div className="flex flex-col items-center gap-6 py-16">
-              <div className="relative">
-                <Sparkles className="h-12 w-12 animate-pulse text-reno-purple-500" />
-                <div className="absolute inset-0 animate-ping rounded-full bg-reno-purple-200 opacity-20" />
-              </div>
-              <CyclingText texts={LOADING_TEXTS_SCOPE} />
-              <div className="w-full max-w-md space-y-3">
-                <ShimmerLine className="h-4 w-full" />
-                <ShimmerLine className="h-4 w-5/6" />
-                <ShimmerLine className="h-4 w-4/6" />
-                <ShimmerLine className="h-10 w-full" />
-                <ShimmerLine className="h-10 w-full" />
-              </div>
+            <div className="mb-8 sm:mb-10">
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-reno-dark leading-tight tracking-tight mb-3">
+                Project Details
+              </h1>
+              <p className="text-slate-500 text-base sm:text-lg">
+                Provide specific details to help our pros give you an accurate estimate.
+              </p>
             </div>
-          )}
 
-          {scopeRevealed && (
-            <div className="space-y-8 animate-in fade-in duration-500">
-              {/* Summary Card */}
-              <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-reno-purple-600 to-primary-600 p-6 text-white shadow-xl shadow-violet-200">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold">Project Summary</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/90">
-                      {SIMULATED_SCOPE.summary}
-                    </p>
-                  </div>
-                  <Badge className="shrink-0 ml-4 border-white/30 bg-white/20 text-white">
-                    {SIMULATED_SCOPE.confidence} Confidence
-                  </Badge>
-                </div>
+            <div className="space-y-8 sm:space-y-10 max-w-2xl">
+              {/* Description */}
+              <div>
+                <label className="block font-display font-bold text-reno-dark tracking-tight mb-3">
+                  Project Description
+                </label>
+                <textarea
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  rows={5}
+                  placeholder="What needs to be done? Include dimensions, material preferences, or any specific challenges..."
+                  className="w-full bg-white border-none rounded-xl p-4 text-reno-dark placeholder:text-slate-400/60 focus:ring-2 focus:ring-primary shadow-[0_4px_20px_rgba(0,0,0,0.04)] resize-none outline-none text-base"
+                />
               </div>
 
-              {/* Trades */}
+              {/* City */}
               <div>
-                <h3 className="mb-4 text-lg font-bold text-slate-900">
-                  Required Trades
-                </h3>
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  {SIMULATED_SCOPE.trades.map((trade) => {
-                    const Icon = trade.icon;
-                    return (
-                      <div
-                        key={trade.name}
-                        className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
-                      >
-                        <div
-                          className={`flex h-10 w-10 items-center justify-center rounded-lg ${
-                            trade.required
-                              ? 'bg-reno-green-light text-reno-green-dark'
-                              : 'bg-slate-50 text-slate-400'
-                          }`}
-                        >
-                          <Icon className="h-5 w-5" />
-                        </div>
-                        <div className="flex-1">
-                          <p className="text-sm font-semibold text-slate-900">
-                            {trade.name}
-                          </p>
-                        </div>
-                        <Badge
-                          variant={trade.required ? 'default' : 'secondary'}
-                          className={
-                            trade.required
-                              ? 'bg-reno-green-light text-reno-green-dark'
-                              : 'bg-slate-100 text-slate-500'
-                          }
-                        >
-                          {trade.required ? 'Required' : 'Optional'}
-                        </Badge>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Permits */}
-              <div>
-                <h3 className="mb-4 text-lg font-bold text-slate-900">
-                  Permits Required
-                </h3>
-                <div className="space-y-3">
-                  {SIMULATED_SCOPE.permits.map((permit) => (
-                    <div
-                      key={permit.name}
-                      className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
-                    >
-                      <div className="flex items-center gap-3">
-                        <FileText className="h-5 w-5 text-primary-500" />
-                        <div>
-                          <p className="text-sm font-semibold text-slate-900">
-                            {permit.name}
-                          </p>
-                          <p className="text-xs text-slate-500">
-                            {permit.authority}
-                          </p>
-                        </div>
-                      </div>
-                      <Badge variant="secondary" className="bg-primary-50 text-primary-600">
-                        ~{permit.estimatedWeeks} weeks
-                      </Badge>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Inspections */}
-              <div>
-                <h3 className="mb-4 text-lg font-bold text-slate-900">
-                  Inspections ({SIMULATED_SCOPE.inspections.length})
-                </h3>
-                <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
-                  {SIMULATED_SCOPE.inspections.map((insp, i) => (
-                    <div
-                      key={insp.stage}
-                      className={`flex items-center gap-3 px-4 py-3 ${
-                        i < SIMULATED_SCOPE.inspections.length - 1
-                          ? 'border-b border-slate-100'
-                          : ''
+                <label className="block font-display font-bold text-reno-dark tracking-tight mb-3">
+                  City
+                </label>
+                <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
+                  {CITIES.map((c) => (
+                    <button
+                      key={c}
+                      onClick={() => setCity(c)}
+                      className={`px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                        city === c
+                          ? 'bg-primary text-white shadow-md'
+                          : 'bg-white text-slate-600 hover:bg-[#f6f8f8] shadow-sm'
                       }`}
                     >
-                      <ClipboardCheck className="h-4 w-4 shrink-0 text-reno-green-500" />
-                      <div className="flex-1">
-                        <span className="text-sm font-medium text-slate-900">
-                          {insp.stage}
-                        </span>
-                        <span className="ml-2 text-sm text-slate-500">
-                          — {insp.description}
-                        </span>
-                      </div>
-                    </div>
+                      {c}
+                    </button>
                   ))}
                 </div>
               </div>
 
-              {/* Risk Flags */}
+              {/* Address */}
               <div>
-                <h3 className="mb-4 text-lg font-bold text-slate-900">
-                  Risk Assessment
-                </h3>
-                <div className="space-y-3">
-                  {SIMULATED_SCOPE.risks.map((risk) => {
-                    const colors = {
-                      high: 'border-red-200 bg-red-50',
-                      medium: 'border-amber-200 bg-amber-50',
-                      low: 'border-primary-200 bg-primary-50',
-                    };
-                    const iconColors = {
-                      high: 'text-red-500',
-                      medium: 'text-amber-500',
-                      low: 'text-primary-500',
-                    };
-                    const badgeColors = {
-                      high: 'bg-red-100 text-red-700',
-                      medium: 'bg-amber-100 text-amber-700',
-                      low: 'bg-primary-100 text-primary-700',
-                    };
-                    return (
-                      <div
-                        key={risk.title}
-                        className={`rounded-xl border p-4 ${colors[risk.level]}`}
-                      >
-                        <div className="flex items-start gap-3">
-                          <AlertTriangle
-                            className={`mt-0.5 h-5 w-5 shrink-0 ${iconColors[risk.level]}`}
-                          />
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2">
-                              <p className="text-sm font-semibold text-slate-900">
-                                {risk.title}
-                              </p>
-                              <Badge className={badgeColors[risk.level]}>
-                                {risk.level.charAt(0).toUpperCase() +
-                                  risk.level.slice(1)}
-                              </Badge>
-                            </div>
-                            <p className="mt-1 text-sm text-slate-600">
-                              {risk.description}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
+                <label className="block font-display font-bold text-reno-dark tracking-tight mb-3">
+                  Project Address
+                </label>
+                <div className="relative">
+                  <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50">location_on</span>
+                  <input
+                    type="text"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    placeholder="Enter the street address (optional)"
+                    className="w-full bg-white border-none rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary text-reno-dark shadow-[0_4px_20px_rgba(0,0,0,0.04)] placeholder:text-slate-400/60 outline-none"
+                  />
                 </div>
               </div>
 
-              {/* Complexity Score */}
-              <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-bold text-slate-900">
-                    Complexity Score
-                  </h3>
-                  <span className="text-2xl font-extrabold text-reno-purple-600">
-                    {SIMULATED_SCOPE.complexityScore}/10
-                  </span>
-                </div>
-                <Progress
-                  value={SIMULATED_SCOPE.complexityScore * 10}
-                  className="mt-3 h-3"
-                />
-                <p className="mt-2 text-sm text-slate-500">
-                  This is a high-complexity project requiring licensed
-                  professionals and multiple inspections.
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* ================================================================= */}
-      {/* STEP 2 — Milestone Architecture                                           */}
-      {/* ================================================================= */}
-      {currentStep === 2 && (
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Milestone Architecture
-            </h2>
-            <p className="mt-2 text-slate-500">
-              The project has been structured into discrete verification stages. 
-              Capital is disbursed solely upon objective proof of completion.
-            </p>
-          </div>
-
-          {milestonesLoading && (
-            <div className="flex flex-col items-center gap-6 py-16">
-              <div className="relative">
-                <Sparkles className="h-12 w-12 animate-pulse text-reno-purple-500" />
-                <div className="absolute inset-0 animate-ping rounded-full bg-reno-purple-200 opacity-20" />
-              </div>
-              <CyclingText texts={LOADING_TEXTS_MILESTONES} />
-              <div className="w-full max-w-md space-y-4">
-                {[...Array(6)].map((_, i) => (
-                  <ShimmerLine key={i} className="h-16 w-full" />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {milestonesRevealed && (
-            <div className="relative space-y-0 animate-in fade-in duration-500">
-              {/* Vertical timeline line */}
-              <div className="absolute left-[18px] top-2 hidden h-[calc(100%-2rem)] w-0.5 bg-slate-200 sm:block" />
-
-              <Accordion type="multiple" className="space-y-4">
-                {SIMULATED_MILESTONES.map((milestone, i) => (
-                  <AccordionItem
-                    key={milestone.stage}
-                    value={`stage-${milestone.stage}`}
-                    className="relative border-0"
-                  >
-                    <div className="flex gap-4">
-                      {/* Timeline circle */}
-                      <div className="relative z-10 hidden sm:block">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-reno-green-dark text-sm font-bold text-white shadow-md shadow-reno-green-light">
-                          {milestone.stage}
-                        </div>
-                      </div>
-
-                      {/* Card */}
-                      <div className="flex-1 rounded-xl border border-slate-200 bg-white shadow-sm">
-                        <AccordionTrigger className="px-4 py-4 hover:no-underline [&>svg]:h-5 [&>svg]:w-5">
-                          <div className="flex flex-1 flex-col items-start gap-1 text-left sm:flex-row sm:items-center sm:gap-4">
-                            <span className="text-sm font-bold text-slate-900 sm:hidden">
-                              Stage {milestone.stage}:{' '}
-                            </span>
-                            <span className="text-sm font-bold text-slate-900">
-                              {milestone.title}
-                            </span>
-                            <div className="flex items-center gap-2">
-                              <Badge variant="secondary" className="bg-slate-100 text-slate-600">
-                                {milestone.days} days
-                              </Badge>
-                              <Badge className="bg-reno-green-100 text-reno-green-700">
-                                {milestone.paymentPercent}% payment
-                              </Badge>
-                            </div>
-                          </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="px-4">
-                          <p className="text-sm leading-relaxed text-slate-600">
-                            {milestone.plainDescription}
-                          </p>
-                          <div className="mt-4 rounded-lg border border-primary-100 bg-primary-50 p-3">
-                            <p className="flex items-center gap-2 text-xs font-semibold text-primary-700">
-                              <Eye className="h-3.5 w-3.5" />
-                              What to Expect
-                            </p>
-                            <p className="mt-1 text-sm text-primary-600">
-                              {milestone.whatToExpect}
-                            </p>
-                          </div>
-                          {milestone.safetyNote && (
-                            <div className="mt-3 rounded-lg border border-amber-100 bg-amber-50 p-3">
-                              <p className="flex items-center gap-2 text-xs font-semibold text-amber-700">
-                                <AlertCircle className="h-3.5 w-3.5" />
-                                Safety Note
-                              </p>
-                              <p className="mt-1 text-sm text-amber-600">
-                                {milestone.safetyNote}
-                              </p>
-                            </div>
-                          )}
-                        </AccordionContent>
-                      </div>
-                    </div>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-
-              {/* Total */}
-              <div className="mt-6 flex items-center justify-between rounded-xl border-2 border-reno-green-light bg-reno-green-light p-4">
-                <span className="text-sm font-bold text-reno-green-dark">
-                  Total Duration
-                </span>
-                <span className="text-lg font-extrabold text-reno-green-dark">
-                  ~{SIMULATED_MILESTONES.reduce((s, m) => s + m.days, 0)} days
-                  ({Math.round(
-                    SIMULATED_MILESTONES.reduce((s, m) => s + m.days, 0) / 7
-                  )}{' '}
-                  weeks)
-                </span>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* ================================================================= */}
-      {/* STEP 3 — Capital Requirements                                        */}
-      {/* ================================================================= */}
-      {currentStep === 3 && (
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Capital Requirements
-            </h2>
-            <p className="mt-2 text-slate-500">
-              Algorithmic baseline pricing formulated using active market data 
-              from verified professionals within your postal code.
-            </p>
-          </div>
-
-          {costLoading && (
-            <div className="flex flex-col items-center gap-6 py-16">
-              <div className="relative">
-                <Sparkles className="h-12 w-12 animate-pulse text-reno-purple-500" />
-                <div className="absolute inset-0 animate-ping rounded-full bg-reno-purple-200 opacity-20" />
-              </div>
-              <CyclingText texts={LOADING_TEXTS_COST} />
-              <div className="text-center">
-                <p className="text-4xl font-extrabold text-slate-900 tabular-nums">
-                  {formatCurrency(animatedCost)}
-                </p>
-              </div>
-            </div>
-          )}
-
-          {costRevealed && (
-            <div className="space-y-8 animate-in fade-in duration-500">
-              {/* Hero Price Card */}
-              <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-reno-purple-600 to-primary-600 p-8 text-center text-white shadow-xl shadow-violet-200">
-                <p className="text-sm font-semibold uppercase tracking-wider text-white/70">
-                  Estimated Project Cost
-                </p>
-                <p className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
-                  {formatCurrency(SIMULATED_COST.low)} —{' '}
-                  {formatCurrency(SIMULATED_COST.high)}
-                </p>
-                <p className="mt-2 text-sm text-white/80">
-                  Based on current GTA market rates for basement underpinning
-                </p>
-              </div>
-
-              {/* Breakdown */}
+              {/* Budget */}
               <div>
-                <h3 className="mb-4 text-lg font-bold text-slate-900">
-                  Cost Breakdown
-                </h3>
-                <div className="space-y-3">
-                  {SIMULATED_COST.breakdown.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <div
-                        key={item.category}
-                        className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-50 text-slate-500">
-                            <Icon className="h-5 w-5" />
-                          </div>
-                          <span className="text-sm font-semibold text-slate-900">
-                            {item.category}
-                          </span>
-                        </div>
-                        <span className="text-sm font-bold text-slate-700">
-                          {formatCurrency(item.low)} — {formatCurrency(item.high)}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Market Comparison */}
-              <div>
-                <h3 className="mb-4 text-lg font-bold text-slate-900">
-                  Market Comparison
-                </h3>
-                <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-                  {SIMULATED_COST.marketComparison.map((item) => (
-                    <div key={item.label}>
-                      <div className="flex items-center justify-between text-sm">
-                        <span
-                          className={`font-medium ${
-                            item.label === 'Your Estimate'
-                              ? 'font-bold text-reno-purple-700'
-                              : 'text-slate-600'
-                          }`}
-                        >
-                          {item.label}
-                        </span>
-                        <span
-                          className={`font-bold ${
-                            item.label === 'Your Estimate'
-                              ? 'text-reno-purple-700'
-                              : 'text-slate-700'
-                          }`}
-                        >
-                          {formatCurrency(item.value)}
-                        </span>
-                      </div>
-                      <div className="mt-1 h-3 w-full overflow-hidden rounded-full bg-slate-100">
-                        <div
-                          className={`h-full rounded-full transition-all duration-700 ${item.color}`}
-                          style={{ width: `${item.percent}%` }}
-                        />
-                      </div>
-                    </div>
+                <label className="block font-display font-bold text-reno-dark tracking-tight mb-3">
+                  Estimated Budget
+                </label>
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                  {BUDGET_RANGES.map((b) => (
+                    <button
+                      key={b.id}
+                      onClick={() => setBudget(b.id)}
+                      className={`px-3 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all text-center ${
+                        budget === b.id
+                          ? 'bg-primary text-white shadow-md'
+                          : 'bg-white text-slate-600 hover:bg-[#f6f8f8] shadow-sm'
+                      }`}
+                    >
+                      {b.label}
+                    </button>
                   ))}
                 </div>
               </div>
 
-              {/* ROI Card */}
-              <div className="rounded-2xl border-2 border-reno-green-200 bg-reno-green-50 p-6">
-                <h3 className="flex items-center gap-2 text-lg font-bold text-reno-green-900">
-                  <TrendingUp className="h-5 w-5" />
-                  Return on Investment
-                </h3>
-                <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  <div className="rounded-xl bg-white p-4 text-center shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      Home Value Increase
-                    </p>
-                    <p className="mt-1 text-lg font-extrabold text-reno-green-700">
-                      {SIMULATED_COST.roi.homeValueIncrease}
-                    </p>
-                  </div>
-                  <div className="rounded-xl bg-white p-4 text-center shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      New Living Space
-                    </p>
-                    <p className="mt-1 text-lg font-extrabold text-reno-green-700">
-                      {SIMULATED_COST.roi.squareFootage}
-                    </p>
-                  </div>
-                  <div className="rounded-xl bg-white p-4 text-center shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      ROI
-                    </p>
-                    <p className="mt-1 text-lg font-extrabold text-reno-green-700">
-                      {SIMULATED_COST.roi.roiPercent}
-                    </p>
-                  </div>
+              {/* Photo Upload placeholder */}
+              <div>
+                <div className="flex justify-between items-center mb-3">
+                  <label className="block font-display font-bold text-reno-dark tracking-tight">
+                    Upload Photos
+                  </label>
+                  <span className="text-xs font-semibold text-slate-400 bg-[#f6f8f8] px-2.5 py-1 rounded-lg">Optional</span>
                 </div>
-                <p className="mt-4 flex items-center gap-2 text-xs text-slate-500">
-                  <Info className="h-3.5 w-3.5" />
-                  Estimates based on real project data from licensed contractors
-                </p>
+                <button className="w-full flex flex-col items-center justify-center p-8 sm:p-10 border-2 border-dashed border-slate-200 rounded-2xl bg-[#f6f8f8] hover:bg-white hover:border-primary/30 transition-colors group">
+                  <span className="material-symbols-outlined text-4xl text-primary/30 group-hover:text-primary mb-3 transition-colors">add_a_photo</span>
+                  <p className="font-display font-bold text-sm text-reno-dark">Add Photos</p>
+                  <p className="text-xs text-slate-400 mt-1">Up to 10MB each</p>
+                </button>
               </div>
             </div>
-          )}
-        </div>
-      )}
-
-      {/* ================================================================= */}
-      {/* STEP 4 — Vault Security                                         */}
-      {/* ================================================================= */}
-      {currentStep === 4 && (
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Vault Security Parameters
-            </h2>
-            <p className="mt-2 text-slate-500">
-              Configure the capital protection safeguards for your project. 
-              Core milestone vault protection is non-negotiable and permanently enabled.
-            </p>
           </div>
+        )}
 
-          <div className="space-y-3">
-            {PROTECTIONS.map((protection) => {
-              const Icon = protection.icon;
-              const isOn =
-                protectionConfig[
-                  protection.id as keyof typeof protectionConfig
-                ];
-              return (
-                <div
-                  key={protection.id}
-                  className={`flex items-center gap-4 rounded-xl border-2 p-4 transition-all duration-200 ${
-                    isOn
-                      ? 'border-reno-green-light bg-reno-green-light/50'
-                      : 'border-slate-200 bg-white'
+        {/* ================================================================= */}
+        {/* STEP 2 — Scheduling                                               */}
+        {/* ================================================================= */}
+        {step === 2 && (
+          <div>
+            <div className="mb-8 sm:mb-12">
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-reno-dark leading-tight tracking-tight mb-3">
+                When should we start?
+              </h1>
+              <p className="text-slate-500 text-base sm:text-lg">
+                Select your preferred timing. Our pros are ready when you are.
+              </p>
+            </div>
+
+            <div className="space-y-5 max-w-2xl">
+              {/* ASAP Option */}
+              <button
+                onClick={() => setTiming('asap')}
+                className={`w-full text-left p-5 sm:p-6 rounded-2xl bg-white border-2 transition-all shadow-[0_10px_30px_-15px_rgba(16,33,34,0.1)] ${
+                  timing === 'asap'
+                    ? 'border-primary'
+                    : 'border-transparent hover:border-primary/20'
+                }`}
+              >
+                <div className="flex items-start gap-4 sm:gap-5">
+                  <div className={`p-3 rounded-xl transition-transform ${timing === 'asap' ? 'bg-primary text-white scale-110' : 'bg-[#E8AA42]/10 text-[#E8AA42]'}`}>
+                    <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg sm:text-xl font-bold text-reno-dark font-display">ASAP (within 24 hours)</h3>
+                      <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                        timing === 'asap' ? 'border-primary bg-primary' : 'border-slate-300'
+                      }`}>
+                        {timing === 'asap' && <div className="w-2.5 h-2.5 rounded-full bg-white" />}
+                      </div>
+                    </div>
+                    <p className="text-slate-500 mt-1 text-sm">Best for emergency repairs or immediate needs.</p>
+                  </div>
+                </div>
+              </button>
+
+              {/* Scheduled Option */}
+              <div className="space-y-4">
+                <button
+                  onClick={() => setTiming('scheduled')}
+                  className={`w-full text-left p-5 sm:p-6 rounded-2xl bg-white border-2 transition-all shadow-[0_10px_30px_-15px_rgba(16,33,34,0.1)] ${
+                    timing === 'scheduled'
+                      ? 'border-primary'
+                      : 'border-transparent hover:border-primary/20'
                   }`}
                 >
-                  <div
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${
-                      isOn
-                        ? 'bg-reno-green-light text-reno-green-dark'
-                        : 'bg-slate-100 text-slate-400'
-                    }`}
-                  >
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <p className="text-sm font-bold text-slate-900">
-                        {protection.title}
-                      </p>
-                      {protection.alwaysOn && (
-                        <Badge className="bg-reno-green-light text-reno-green-dark">
-                          Required
-                        </Badge>
-                      )}
+                  <div className="flex items-start gap-4 sm:gap-5">
+                    <div className={`p-3 rounded-xl transition-transform ${timing === 'scheduled' ? 'bg-primary text-white scale-110' : 'bg-primary/10 text-primary'}`}>
+                      <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>calendar_today</span>
                     </div>
-                    <p className="mt-0.5 text-sm text-slate-500">
-                      {protection.description}
-                    </p>
-                  </div>
-                  {/* Toggle switch */}
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked={isOn}
-                    disabled={protection.alwaysOn}
-                    onClick={() =>
-                      setProtectionConfig((prev) => ({
-                        ...prev,
-                        [protection.id]: !prev[protection.id as keyof typeof prev],
-                      }))
-                    }
-                    className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-reno-green focus-visible:ring-offset-2 ${
-                      protection.alwaysOn
-                        ? 'cursor-not-allowed opacity-70'
-                        : ''
-                    } ${isOn ? 'bg-reno-green-dark' : 'bg-slate-200'}`}
-                  >
-                    <span
-                      className={`inline-block h-4 w-4 rounded-full bg-white shadow-sm transition-transform duration-200 ${
-                        isOn ? 'translate-x-6' : 'translate-x-1'
-                      }`}
-                    />
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Protection Score */}
-          <div className="rounded-xl border-2 border-reno-green-light bg-reno-green-light p-4">
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-bold text-reno-green-dark">
-                Protection Score
-              </span>
-              <span className="text-lg font-extrabold text-reno-green-dark">
-                {activeProtections}/6 protections active
-              </span>
-            </div>
-            <Progress
-              value={(activeProtections / 6) * 100}
-              className="mt-3 h-3"
-            />
-          </div>
-        </div>
-      )}
-
-      {/* ================================================================= */}
-      {/* STEP 5 — Review & Launch                                          */}
-      {/* ================================================================= */}
-      {currentStep === 5 && (
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Review & Launch
-            </h2>
-            <p className="mt-2 text-slate-500">
-              Everything looks great. Review the summary below and launch your
-              project to start receiving bids from qualified contractors.
-            </p>
-          </div>
-
-          <Accordion type="multiple" defaultValue={['description', 'scope', 'milestones', 'cost', 'protections']} className="space-y-3">
-            {/* Project Description */}
-            <AccordionItem value="description" className="rounded-xl border border-slate-200 bg-white shadow-sm">
-              <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                <span className="text-sm font-bold text-slate-900">
-                  Project Description
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="px-4">
-                <p className="text-sm text-slate-600">{formData.description}</p>
-                <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-500">
-                  <Badge variant="secondary">
-                    {PROPERTY_TYPES.find((p) => p.id === formData.propertyType)
-                      ?.label ?? formData.propertyType}
-                  </Badge>
-                  <Badge variant="secondary">{formData.city}</Badge>
-                  {formData.postalCode && (
-                    <Badge variant="secondary">{formData.postalCode}</Badge>
-                  )}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Scope */}
-            <AccordionItem value="scope" className="rounded-xl border border-slate-200 bg-white shadow-sm">
-              <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                <span className="text-sm font-bold text-slate-900">
-                  Scope — {SIMULATED_SCOPE.trades.filter((t) => t.required).length} trades, {SIMULATED_SCOPE.permits.length} permits, {SIMULATED_SCOPE.inspections.length} inspections
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="px-4 space-y-3">
-                <div className="flex flex-wrap gap-2">
-                  {SIMULATED_SCOPE.trades
-                    .filter((t) => t.required)
-                    .map((t) => (
-                      <Badge key={t.name} variant="secondary" className="bg-reno-green-light text-reno-green-dark">
-                        {t.name}
-                      </Badge>
-                    ))}
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {SIMULATED_SCOPE.permits.map((p) => (
-                    <Badge key={p.name} variant="secondary" className="bg-primary-50 text-primary-600">
-                      {p.name}
-                    </Badge>
-                  ))}
-                </div>
-                <p className="text-xs text-slate-500">
-                  {SIMULATED_SCOPE.risks.length} risks identified — complexity{' '}
-                  {SIMULATED_SCOPE.complexityScore}/10
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Milestones */}
-            <AccordionItem value="milestones" className="rounded-xl border border-slate-200 bg-white shadow-sm">
-              <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                <span className="text-sm font-bold text-slate-900">
-                  Milestones — 6 stages,{' '}
-                  {SIMULATED_MILESTONES.reduce((s, m) => s + m.days, 0)} days
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="px-4 space-y-2">
-                {SIMULATED_MILESTONES.map((m) => (
-                  <div
-                    key={m.stage}
-                    className="flex items-center justify-between text-sm"
-                  >
-                    <span className="text-slate-700">
-                      {m.stage}. {m.title}
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <span className="text-slate-500">{m.days}d</span>
-                      <Badge className="bg-reno-green-100 text-reno-green-700">
-                        {m.paymentPercent}%
-                      </Badge>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-lg sm:text-xl font-bold text-reno-dark font-display">Scheduled</h3>
+                        <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                          timing === 'scheduled' ? 'border-primary bg-primary' : 'border-slate-300'
+                        }`}>
+                          {timing === 'scheduled' && <div className="w-2.5 h-2.5 rounded-full bg-white" />}
+                        </div>
+                      </div>
+                      <p className="text-slate-500 mt-1 text-sm">Choose a specific date and time window.</p>
                     </div>
                   </div>
-                ))}
-              </AccordionContent>
-            </AccordionItem>
+                </button>
 
-            {/* Cost */}
-            <AccordionItem value="cost" className="rounded-xl border border-slate-200 bg-white shadow-sm">
-              <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                <span className="text-sm font-bold text-slate-900">
-                  Cost Range — {formatCurrency(SIMULATED_COST.low)} to{' '}
-                  {formatCurrency(SIMULATED_COST.high)}
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="px-4 space-y-2">
-                {SIMULATED_COST.breakdown.map((item) => (
-                  <div
-                    key={item.category}
-                    className="flex items-center justify-between text-sm"
-                  >
-                    <span className="text-slate-700">{item.category}</span>
-                    <span className="font-medium text-slate-600">
-                      {formatCurrency(item.low)} — {formatCurrency(item.high)}
-                    </span>
+                {/* Date & Time Picker */}
+                {timing === 'scheduled' && (
+                  <div className="bg-[#f6f8f8] rounded-2xl p-5 sm:p-8 space-y-6 sm:space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                      {/* Calendar */}
+                      <div className="space-y-3">
+                        <label className="text-xs font-bold uppercase tracking-widest text-reno-dark flex items-center gap-2">
+                          <span className="material-symbols-outlined text-sm">event</span>
+                          Select Date
+                        </label>
+                        <div className="bg-white rounded-xl p-4 shadow-sm">
+                          <div className="flex items-center justify-between mb-4">
+                            <span className="font-bold text-sm text-reno-dark">
+                              {MONTH_NAMES[calMonth]} {calYear}
+                            </span>
+                            <div className="flex gap-1">
+                              <button
+                                onClick={() => {
+                                  if (calMonth === 0) { setCalMonth(11); setCalYear(calYear - 1); }
+                                  else setCalMonth(calMonth - 1);
+                                }}
+                                className="p-1 rounded-lg hover:bg-[#f6f8f8]"
+                              >
+                                <span className="material-symbols-outlined text-sm">chevron_left</span>
+                              </button>
+                              <button
+                                onClick={() => {
+                                  if (calMonth === 11) { setCalMonth(0); setCalYear(calYear + 1); }
+                                  else setCalMonth(calMonth + 1);
+                                }}
+                                className="p-1 rounded-lg hover:bg-[#f6f8f8]"
+                              >
+                                <span className="material-symbols-outlined text-sm">chevron_right</span>
+                              </button>
+                            </div>
+                          </div>
+                          <div className="grid grid-cols-7 gap-1 text-center mb-2">
+                            {['S','M','T','W','T','F','S'].map((d, i) => (
+                              <span key={i} className="text-[10px] font-bold text-slate-400">{d}</span>
+                            ))}
+                          </div>
+                          <div className="grid grid-cols-7 gap-1 text-center">
+                            {calDays.map((d, i) => {
+                              const isPast = isCurrentMonth && d.current && d.day < today.getDate();
+                              const isSelected = d.current && d.day === selectedDay;
+                              const isToday = isCurrentMonth && d.current && d.day === today.getDate();
+                              return (
+                                <button
+                                  key={i}
+                                  disabled={!d.current || isPast}
+                                  onClick={() => d.current && !isPast && setSelectedDay(d.day)}
+                                  className={`p-2 text-xs rounded-lg transition-all ${
+                                    !d.current
+                                      ? 'text-slate-300 cursor-default'
+                                      : isPast
+                                        ? 'text-slate-300 cursor-not-allowed'
+                                        : isSelected
+                                          ? 'bg-primary text-white font-bold'
+                                          : isToday
+                                            ? 'bg-primary/10 text-primary font-bold hover:bg-primary/20'
+                                            : 'hover:bg-[#f6f8f8] cursor-pointer'
+                                  }`}
+                                >
+                                  {d.day}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Time Slots */}
+                      <div className="space-y-3">
+                        <label className="text-xs font-bold uppercase tracking-widest text-reno-dark flex items-center gap-2">
+                          <span className="material-symbols-outlined text-sm">schedule</span>
+                          Arrival Window
+                        </label>
+                        <div className="grid grid-cols-1 gap-2">
+                          {TIME_SLOTS.map((slot) => (
+                            <button
+                              key={slot.id}
+                              onClick={() => setSelectedSlot(slot.id)}
+                              className={`p-3.5 text-sm text-left rounded-xl flex justify-between items-center transition-all ${
+                                selectedSlot === slot.id
+                                  ? 'bg-primary text-white shadow-md'
+                                  : 'bg-white hover:bg-white/80 border border-slate-200'
+                              }`}
+                            >
+                              <div>
+                                <span className="font-semibold">{slot.label}</span>
+                                <span className={`ml-2 text-xs ${selectedSlot === slot.id ? 'text-white/70' : 'text-slate-400'}`}>{slot.sub}</span>
+                              </div>
+                              <span className={`material-symbols-outlined text-base ${selectedSlot === slot.id ? 'text-white/80' : 'text-slate-400'}`}>{slot.icon}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* Protections */}
-            <AccordionItem value="protections" className="rounded-xl border border-slate-200 bg-white shadow-sm">
-              <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                <span className="text-sm font-bold text-slate-900">
-                  Protections — {activeProtections}/6 active
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="px-4">
-                <div className="flex flex-wrap gap-2">
-                  {PROTECTIONS.filter(
-                    (p) =>
-                      protectionConfig[p.id as keyof typeof protectionConfig]
-                  ).map((p) => (
-                    <Badge
-                      key={p.id}
-                      variant="secondary"
-                      className="bg-reno-green-50 text-reno-green-700"
-                    >
-                      <Check className="mr-1 h-3 w-3" />
-                      {p.title}
-                    </Badge>
-                  ))}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-
-          {/* What Happens Next */}
-          <div className="rounded-xl border border-primary-200 bg-primary-50 p-6">
-            <h3 className="flex items-center gap-2 text-sm font-bold text-primary-900">
-              <Info className="h-4 w-4" />
-              What Happens Next?
-            </h3>
-            <ul className="mt-3 space-y-2 text-sm text-primary-700">
-              <li className="flex items-start gap-2">
-                <ArrowRight className="mt-0.5 h-4 w-4 shrink-0" />
-                Your project is posted to our verified contractor network
-              </li>
-              <li className="flex items-start gap-2">
-                <ArrowRight className="mt-0.5 h-4 w-4 shrink-0" />
-                5+ qualified contractors review your scope and submit bids
-              </li>
-              <li className="flex items-start gap-2">
-                <ArrowRight className="mt-0.5 h-4 w-4 shrink-0" />
-                Compare bids, reviews, and credentials in your dashboard
-              </li>
-              <li className="flex items-start gap-2">
-                <ArrowRight className="mt-0.5 h-4 w-4 shrink-0" />
-                Choose your contractor — payments protected by escrow
-              </li>
-            </ul>
-          </div>
-
-          {/* Launch CTA */}
-          <div className="text-center">
-            <Button
-              onClick={handleSubmit}
-              disabled={submitting}
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-reno-purple-600 px-12 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-200 hover:shadow-xl hover:brightness-110"
-            >
-              {submitting ? (
-                <>
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white" />
-                  Launching...
-                </>
-              ) : (
-                <>
-                  <Sparkles className="h-5 w-5" />
-                  Launch Project & Get Matched
-                </>
-              )}
-            </Button>
-            <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-              <span className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-reno-green-500" />
-                Escrow Protected
-              </span>
-              <span className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-primary-500" />
-                5+ Qualified Contractors
-              </span>
-              <span className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-reno-purple-500" />
-                Bids in 48 hrs
-              </span>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* ================================================================= */}
-      {/* NAVIGATION BAR                                                    */}
-      {/* ================================================================= */}
-      {currentStep < 5 && (
-        <div className="mt-10 flex items-center justify-between border-t border-slate-100 pt-6">
-          <Button
-            variant="outline"
-            onClick={handleBack}
-            disabled={currentStep === 0}
-            className="rounded-xl px-6"
-          >
-            <ChevronLeft className="mr-1 h-4 w-4" />
-            Back
-          </Button>
-          <Button
+        {/* ================================================================= */}
+        {/* NAVIGATION                                                        */}
+        {/* ================================================================= */}
+        <div className="max-w-2xl mt-12 sm:mt-16 flex flex-col gap-4">
+          <button
             onClick={handleNext}
             disabled={!canProceed()}
-            className="rounded-xl bg-gradient-to-r from-reno-green-dark to-reno-green px-8 text-white shadow-md shadow-reno-green-light hover:brightness-110 disabled:opacity-50"
+            className="w-full py-4 sm:py-5 bg-[#E8AA42] text-reno-dark font-bold rounded-xl shadow-[0_4px_0_0_#b8862e] active:shadow-none active:translate-y-1 transition-all flex items-center justify-center gap-2 text-base sm:text-lg font-display disabled:opacity-40 disabled:cursor-not-allowed disabled:active:translate-y-0 disabled:active:shadow-[0_4px_0_0_#b8862e]"
           >
-            {currentStep === 0 ? (
-              <>
-                <Sparkles className="mr-1 h-4 w-4" />
-                Analyze My Project
-              </>
-            ) : currentStep === 1 ? (
-              <>
-                Build Milestone Plan
-                <ChevronRight className="ml-1 h-4 w-4" />
-              </>
-            ) : currentStep === 2 ? (
-              <>
-                Calculate Costs
-                <ChevronRight className="ml-1 h-4 w-4" />
-              </>
-            ) : currentStep === 3 ? (
-              <>
-                Set Up Protection
-                <ChevronRight className="ml-1 h-4 w-4" />
-              </>
-            ) : (
-              <>
-                Review Everything
-                <ChevronRight className="ml-1 h-4 w-4" />
-              </>
-            )}
-          </Button>
+            {step === 0
+              ? 'Continue'
+              : step === 1
+                ? 'Continue to Timeline'
+                : 'Confirm & Find Pros'}
+            <span className="material-symbols-outlined text-lg">arrow_forward</span>
+          </button>
+          {step > 0 && (
+            <button
+              onClick={handleBack}
+              className="w-full py-3 text-slate-500 font-semibold rounded-xl hover:bg-[#f6f8f8] transition-colors text-sm"
+            >
+              Go Back
+            </button>
+          )}
+          <p className="text-center text-xs text-slate-400">
+            You won&apos;t be charged until the job is completed and approved.
+          </p>
         </div>
-      )}
+      </div>
     </div>
   );
 }

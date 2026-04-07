@@ -20,12 +20,19 @@ interface BlogPostPageProps {
   params: Promise<{ id: string }>;
 }
 
+export async function generateStaticParams() {
+  return mockBlogPosts.map((post) => ({ id: post.slug }));
+}
+
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const post = getBlogPostById(resolvedParams.id);
   return {
     title: post ? `${post.title} | RenoNext Blog` : 'Blog Post | RenoNext',
     description: post?.excerpt || '',
+    alternates: {
+      canonical: `/blog/${resolvedParams.id}`,
+    },
   };
 }
 

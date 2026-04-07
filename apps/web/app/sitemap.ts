@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { mockBlogPosts } from '@/lib/mock-data/blog';
+import { getAllAppSlugs } from '@/lib/data/apps';
+import { getAllProSlugs, getAllProjectSlugs } from '@/lib/data/pro-content';
 
 const BASE = 'https://renonext.com';
 
@@ -108,8 +110,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  // App pages: 1 hub + 5 individual app pages = 6 URLs
-  const appSlugs = ['equipment-fix', 'drawing-viewer', 'attendance', 'ar-survey', 'concrete-pour', 'jsa'];
+  // App pages: 1 hub + individual app pages
+  const appSlugs = getAllAppSlugs();
   const appHubPage: MetadataRoute.Sitemap = [
     { url: `${BASE}/apps`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ];
@@ -117,6 +119,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE}/apps/${slug}`,
     lastModified: now,
     changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  // Pro profile pages (static content-driven)
+  const proSlugs = getAllProSlugs();
+  const proPages: MetadataRoute.Sitemap = proSlugs.map((slug) => ({
+    url: `${BASE}/pro/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  // Project detail pages
+  const projectSlugs = getAllProjectSlugs();
+  const projectPages: MetadataRoute.Sitemap = projectSlugs.map((slug) => ({
+    url: `${BASE}/projects/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
 
@@ -185,6 +205,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...appPages,
     ...whmisPages,
     ...blogPages,
+    ...proPages,
+    ...projectPages,
     ...bestWaterproofingPages,
     ...bestUnderpinningPages,
     ...basementRenovationCostPages,

@@ -54,6 +54,9 @@ export async function generateMetadata({
   return {
     title: `${name} | RenoNext`,
     description: headline,
+    alternates: {
+      canonical: `/pros/${resolvedParams.id}`,
+    },
     openGraph: {
       title: `${name} | RenoNext`,
       description: headline,

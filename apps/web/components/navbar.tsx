@@ -183,6 +183,9 @@ export function Navbar() {
     setResourcesOpen(false);
   };
 
+  const isHome = pathname === '/';
+  const isTransparent = isHome && !scrolled;
+
   return (
     <>
       <header className="sticky top-0 z-50 w-full">
@@ -190,18 +193,20 @@ export function Navbar() {
           className={`w-full transition-all duration-300 ease-out ${
             scrolled
               ? 'bg-white/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,28,55,0.06)]'
-              : 'bg-white/80 backdrop-blur-xl'
+              : isHome
+                ? 'bg-transparent'
+                : 'bg-white/80 backdrop-blur-xl'
           }`}
         >
           <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-3.5 lg:px-8">
             {/* Logo */}
             <Link href="/" className="flex shrink-0 items-center gap-2">
-              <div className="size-6 text-[#0fbabd]">
+              <div className={`size-6 ${isTransparent ? 'text-white' : 'text-[#0fbabd]'} transition-colors duration-300`}>
                 <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                   <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor" />
                 </svg>
               </div>
-              <span className="text-xl font-bold leading-tight tracking-tight text-slate-900">
+              <span className={`text-xl font-bold leading-tight tracking-tight ${isTransparent ? 'text-white' : 'text-slate-900'} transition-colors duration-300`}>
                 RenoNext
               </span>
             </Link>
@@ -219,7 +224,7 @@ export function Navbar() {
                   }}
                   aria-expanded={productsOpen}
                   aria-haspopup="true"
-                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:text-slate-900"
+                  className={`flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 ${isTransparent ? 'text-white/90 hover:text-white' : 'text-slate-700 hover:text-slate-900'}`}
                 >
                   Products
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
@@ -312,7 +317,7 @@ export function Navbar() {
                   }}
                   aria-expanded={hiwOpen}
                   aria-haspopup="true"
-                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:text-slate-900"
+                  className={`flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 ${isTransparent ? 'text-white/90 hover:text-white' : 'text-slate-700 hover:text-slate-900'}`}
                 >
                   How It Works
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform ${hiwOpen ? 'rotate-180' : ''}`} />
@@ -373,7 +378,7 @@ export function Navbar() {
                   }}
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
-                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:text-slate-900"
+                  className={`flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 ${isTransparent ? 'text-white/90 hover:text-white' : 'text-slate-700 hover:text-slate-900'}`}
                 >
                   Services
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
@@ -419,7 +424,7 @@ export function Navbar() {
                   }}
                   aria-expanded={resourcesOpen}
                   aria-haspopup="true"
-                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:text-slate-900"
+                  className={`flex items-center gap-1 rounded-lg px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 ${isTransparent ? 'text-white/90 hover:text-white' : 'text-slate-700 hover:text-slate-900'}`}
                 >
                   Resources
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} />
@@ -448,14 +453,14 @@ export function Navbar() {
 
               <Link
                 href="/pros"
-                className="rounded-lg px-3.5 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:text-slate-900"
+                className={`rounded-lg px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 ${isTransparent ? 'text-white/90 hover:text-white' : 'text-slate-700 hover:text-slate-900'}`}
               >
                 Browse Pros
               </Link>
 
               <Link
                 href="/price-check"
-                className="rounded-lg px-3.5 py-2 text-[13px] font-semibold text-[#0fbabd] transition-colors hover:text-[#0d9fa1]"
+                className={`rounded-lg px-3.5 py-2 text-[13px] font-semibold transition-colors duration-300 ${isTransparent ? 'text-white hover:text-[#0fbabd]' : 'text-[#0fbabd] hover:text-[#0d9fa1]'}`}
               >
                 Price Check
               </Link>
@@ -506,7 +511,7 @@ export function Navbar() {
                 <>
                   <Link
                     href="/login"
-                    className="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
+                    className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-300 ${isTransparent ? 'text-white/90 hover:text-white' : 'text-slate-600 hover:text-slate-900'}`}
                   >
                     Log In
                   </Link>
@@ -523,7 +528,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="flex items-center justify-center rounded-lg p-2 text-slate-700 lg:hidden"
+              className={`flex items-center justify-center rounded-lg p-2 lg:hidden transition-colors duration-300 ${isTransparent ? 'text-white' : 'text-slate-700'}`}
             >
               <span className="material-symbols-outlined text-2xl">
                 {mobileOpen ? 'close' : 'menu'}

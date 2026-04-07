@@ -1,13 +1,13 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 export function HeroFloating() {
-  const [focusedCard, setFocusedCard] = useState<'escrow' | 'contractor' | null>(null)
   const [showModal, setShowModal] = useState(false)
   const [selectedProjectType, setSelectedProjectType] = useState<string | null>(null)
   const [selectedBudget, setSelectedBudget] = useState<string | null>(null)
+  const [postalCode, setPostalCode] = useState('')
 
   useEffect(() => {
     if (showModal) {
@@ -28,45 +28,74 @@ export function HeroFloating() {
     return () => window.removeEventListener('keydown', handleEsc)
   }, [showModal])
 
-  const clearFocus = useCallback(() => setFocusedCard(null), [])
+  const handleSearchPros = () => {
+    // TODO: Navigate to pros search with postal code filter
+    console.log('Searching pros near:', postalCode)
+  }
 
   return (
     <>
       {/* ── HERO SECTION ── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#f6f8f8]">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute inset-0 bg-[#f6f8f8]/90 backdrop-blur-[2px] z-10" />
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-40"
-            style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
-            }}
-          />
-          {/* Subtle teal gradient accent */}
-          <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[#0fbabd]/5 blur-[120px] rounded-full mix-blend-multiply z-10" />
-        </div>
+      <section className="relative min-h-[100dvh] flex items-center overflow-hidden bg-reno-dark -mt-[60px]">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80')",
+          }}
+        />
 
-        <div className="container mx-auto px-6 lg:px-12 relative z-20 h-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 py-16 lg:py-0">
-          {/* Left: Typographic Lockup (55%) */}
-          <div className="w-full lg:w-[55%] flex flex-col gap-8 text-left pt-10 lg:pt-0">
-            <h1 className="text-5xl lg:text-[64px] font-bold leading-[1.1] tracking-tight text-slate-900">
-              Build with confidence.
+        {/* Gradient Overlays */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-reno-dark via-reno-dark/80 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 z-10 bg-gradient-to-t from-reno-dark to-transparent" />
+
+        {/* Content */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-20 pt-24 sm:pt-28 pb-24 sm:pb-16">
+          <div className="max-w-3xl">
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tighter leading-[0.95] text-white mb-6">
+              Renovate with Proof,
               <br />
-              <span className="text-[#0fbabd]">Pay with certainty.</span>
+              <span className="text-[#0fbabd]">Not Promises.</span>
             </h1>
 
-            <p className="text-lg lg:text-xl text-slate-600 font-normal leading-relaxed max-w-xl">
-              The only renovation platform where your funds are secured in
-              escrow until milestones are met.
+            {/* Subtitle */}
+            <p className="text-base sm:text-lg md:text-2xl text-white/80 leading-relaxed mb-8 md:mb-10 max-w-2xl font-light">
+              The only renovation platform where your funds are secured in escrow until milestones are met. Verified contractors, transparent pricing.
             </p>
 
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+            {/* Search Bar */}
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-2xl shadow-black/20 p-2 sm:p-3 flex flex-col sm:flex-row gap-2 sm:gap-3 mb-6 md:mb-8 max-w-2xl">
+              <div className="flex-1 relative">
+                <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
+                  search
+                </span>
+                <input
+                  type="text"
+                  placeholder="Enter your postal code (e.g., M5V)"
+                  value={postalCode}
+                  onChange={(e) => setPostalCode(e.target.value)}
+                  className="w-full h-12 sm:h-14 pl-12 pr-4 text-sm sm:text-base text-slate-900 placeholder:text-slate-400 outline-none rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#0fbabd]/20 transition-all"
+                />
+              </div>
+              <button
+                onClick={handleSearchPros}
+                className="group flex items-center justify-center h-12 sm:h-14 px-6 sm:px-8 bg-[#0fbabd] text-white text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl hover:bg-[#0da5a8] transition-all duration-300 shadow-lg shadow-[#0fbabd]/30 hover:shadow-[#0fbabd]/50"
+              >
+                Search Pros
+                <span className="material-symbols-outlined ml-2 text-lg transition-transform group-hover:translate-x-1">
+                  arrow_forward
+                </span>
+              </button>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-10">
               <button
                 onClick={() => setShowModal(true)}
-                className="group flex items-center justify-center rounded-lg h-14 px-8 bg-[#0fbabd] text-white text-base font-semibold shadow-lg shadow-[#0fbabd]/30 hover:shadow-[#0fbabd]/50 hover:-translate-y-0.5 transition-all duration-300"
+                className="group flex items-center justify-center h-12 sm:h-14 px-6 sm:px-8 bg-[#0fbabd] text-white text-sm sm:text-base font-semibold rounded-xl hover:bg-[#0da5a8] transition-all duration-300 shadow-lg shadow-[#0fbabd]/30 hover:shadow-[#0fbabd]/50"
               >
-                Secure Your Renovation
+                Start Your Renovation
                 <span className="material-symbols-outlined ml-2 text-lg transition-transform group-hover:translate-x-1">
                   arrow_forward
                 </span>
@@ -74,250 +103,45 @@ export function HeroFloating() {
 
               <Link
                 href="/join"
-                className="flex items-center justify-center rounded-lg h-14 px-8 border-2 border-[#0fbabd] text-[#0fbabd] text-base font-semibold hover:bg-[#0fbabd]/5 transition-all duration-300"
+                className="group flex items-center justify-center h-12 sm:h-14 px-6 sm:px-8 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm sm:text-base font-semibold rounded-xl hover:bg-white/15 transition-all duration-300"
               >
                 I&apos;m a Contractor
-                <span className="material-symbols-outlined ml-2 text-lg">
+                <span className="material-symbols-outlined ml-2 text-lg transition-transform group-hover:translate-x-1">
                   chevron_right
                 </span>
               </Link>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center gap-6 pt-4 text-sm text-slate-500 font-medium">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-white/70">
               <div className="flex items-center gap-2">
                 <span
-                  className="material-symbols-outlined text-[#0fbabd] text-lg"
+                  className="material-symbols-outlined text-[#0fbabd] text-xl"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   shield
                 </span>
-                <span>Bank-grade Escrow</span>
+                <span className="text-sm font-medium">Bank-grade Escrow</span>
               </div>
-              <div className="w-1 h-1 rounded-full bg-slate-300" />
+              <div className="w-1 h-1 rounded-full bg-white/30" />
               <div className="flex items-center gap-2">
                 <span
-                  className="material-symbols-outlined text-[#0fbabd] text-lg"
+                  className="material-symbols-outlined text-[#0fbabd] text-xl"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   verified
                 </span>
-                <span>Vetted Pros</span>
+                <span className="text-sm font-medium">Vetted Pros</span>
               </div>
-            </div>
-          </div>
-
-          {/* Right: Floating Cards Composition (45%) */}
-          <div className="w-full lg:w-[45%] relative h-[450px] lg:h-[600px] hidden lg:flex items-center justify-center lg:justify-end pr-0 lg:pr-8">
-            {/* ── ESCROW CARD ── */}
-            <div
-              className={`absolute top-[10%] right-[5%] lg:right-[15%] w-[320px] bg-white rounded-2xl p-6 shadow-float hover:shadow-float-hover hover:-translate-y-2 transition-all duration-300 border border-[#0fbabd]/10 z-10 animate-float-in-1 cursor-pointer ${
-                focusedCard === 'contractor' ? 'opacity-25' : ''
-              }`}
-              onMouseEnter={() => setFocusedCard('escrow')}
-              onMouseLeave={clearFocus}
-            >
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-reno-green-50 text-reno-green-600">
-                  <span
-                    className="material-symbols-outlined text-2xl"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    shield_locked
-                  </span>
-                </div>
-                <span className="px-3 py-1 bg-reno-green-50 text-reno-green-700 text-xs font-semibold rounded-full border border-reno-green-200">
-                  Secured
-                </span>
-              </div>
-              <div className="flex flex-col gap-1">
-                <p className="text-slate-500 text-sm font-medium">Secured in Escrow</p>
-                <p className="text-slate-900 text-[32px] font-bold tracking-tight font-mono">
-                  $45,000
-                </p>
-              </div>
-
-              {/* Milestone hint / Expanded timeline on hover */}
-              <div
-                className="overflow-hidden transition-all duration-500 ease-out"
-                style={{
-                  maxHeight: focusedCard === 'escrow' ? '220px' : '52px',
-                }}
-              >
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-reno-green-500 relative">
-                    <div className="absolute inset-0 bg-reno-green-500 rounded-full animate-ping opacity-75" />
-                  </div>
-                  <p className="text-xs text-slate-600 font-medium">
-                    Next: Demolition ($15k)
-                  </p>
-                </div>
-
-                {/* Expanded timeline */}
-                <div
-                  className="transition-all duration-500"
-                  style={{
-                    opacity: focusedCard === 'escrow' ? 1 : 0,
-                    marginTop: focusedCard === 'escrow' ? '16px' : '0px',
-                  }}
+              <div className="w-1 h-1 rounded-full bg-white/30" />
+              <div className="flex items-center gap-2">
+                <span
+                  className="material-symbols-outlined text-[#0fbabd] text-xl"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
                 >
-                  <div className="relative pl-7">
-                    {/* Vertical connector */}
-                    <div
-                      className="absolute left-[7px] top-2 bottom-2 w-0.5 rounded"
-                      style={{
-                        background: 'linear-gradient(to bottom, #16a34a, #2563EB, #D1D5DB)',
-                      }}
-                    />
-                    {/* Node 1 — Completed */}
-                    <div className="relative flex items-start gap-3 mb-4">
-                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-reno-green-600 flex items-center justify-center">
-                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                          <path d="M1.5 4L3.5 6L6.5 2" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-[13px] font-semibold text-slate-900">Deposit</p>
-                        <p className="text-sm font-mono text-reno-green-600">
-                          $10,000 <span className="text-[11px] font-sans text-slate-400">Released</span>
-                        </p>
-                      </div>
-                    </div>
-                    {/* Node 2 — Active */}
-                    <div className="relative flex items-start gap-3 mb-4">
-                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-primary-600 flex items-center justify-center animate-pulse">
-                        <div className="w-1.5 h-1.5 rounded-full bg-white" />
-                      </div>
-                      <div>
-                        <p className="text-[13px] font-semibold text-slate-900">Demolition</p>
-                        <p className="text-sm font-mono text-primary-600">
-                          $15,000 <span className="text-[11px] font-sans text-slate-400">Secured</span>
-                        </p>
-                      </div>
-                    </div>
-                    {/* Node 3 — Pending */}
-                    <div className="relative flex items-start gap-3">
-                      <div className="absolute -left-5 top-0.5 w-4 h-4 rounded-full bg-slate-300 flex items-center justify-center">
-                        <div className="w-1.5 h-1.5 rounded-full bg-white" />
-                      </div>
-                      <div>
-                        <p className="text-[13px] font-semibold text-slate-900">Final Inspection</p>
-                        <p className="text-sm font-mono text-slate-400">
-                          $20,000 <span className="text-[11px] font-sans">Pending</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* ── CONTRACTOR CARD ── */}
-            <div
-              className={`absolute bottom-[15%] left-[5%] lg:left-[5%] w-[320px] bg-white rounded-2xl p-6 shadow-float hover:shadow-float-hover hover:-translate-y-2 transition-all duration-300 border border-[#0fbabd]/10 z-20 animate-float-in-2 cursor-pointer ${
-                focusedCard === 'escrow' ? 'opacity-25' : ''
-              }`}
-              onMouseEnter={() => setFocusedCard('contractor')}
-              onMouseLeave={clearFocus}
-            >
-              <div className="flex items-center gap-4 mb-5">
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0fbabd] to-[#0D9FA1] flex items-center justify-center text-white text-xl font-bold">
-                    A
-                  </div>
-                  <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-primary-500 rounded-full border-2 border-white flex items-center justify-center">
-                    <span
-                      className="material-symbols-outlined text-white text-[12px]"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
-                      check
-                    </span>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-slate-900 text-lg font-bold">Apex Builders</h3>
-                  <p className="text-slate-500 text-xs font-medium">
-                    Kitchen &amp; Bath Specialists
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between p-3 bg-slate-50 rounded-xl mb-4">
-                <div className="flex items-center gap-1 text-[#E8AA42]">
-                  {[1, 2, 3, 4, 5].map(i => (
-                    <span
-                      key={i}
-                      className="material-symbols-outlined text-base"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
-                      star
-                    </span>
-                  ))}
-                </div>
-                <span className="text-slate-700 text-sm font-semibold">
-                  5.0 <span className="text-slate-400 font-normal">(42)</span>
+                  analytics
                 </span>
-              </div>
-
-              <div className="flex items-center gap-2 text-xs font-medium text-slate-600">
-                <span className="material-symbols-outlined text-[#0fbabd] text-[16px]">
-                  workspace_premium
-                </span>
-                <span>Verified License &amp; Insurance</span>
-              </div>
-
-              {/* Expanded details on hover */}
-              <div
-                className="overflow-hidden transition-all duration-500 ease-out"
-                style={{
-                  maxHeight: focusedCard === 'contractor' ? '200px' : '0px',
-                  opacity: focusedCard === 'contractor' ? 1 : 0,
-                  marginTop: focusedCard === 'contractor' ? '16px' : '0px',
-                }}
-              >
-                <div className="border-t border-slate-100 pt-4 space-y-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-5 h-5 rounded flex items-center justify-center bg-reno-green-50">
-                      <span className="material-symbols-outlined text-reno-green-600 text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                        verified_user
-                      </span>
-                    </div>
-                    <span className="text-[13px] text-slate-900">
-                      License #ABC-12345 <span className="text-reno-green-600 font-semibold">(Active)</span>
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-5 h-5 rounded flex items-center justify-center bg-[#0fbabd]/10">
-                      <span className="material-symbols-outlined text-[#0fbabd] text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                        security
-                      </span>
-                    </div>
-                    <span className="text-[13px] text-slate-900">
-                      Insured up to <strong>$2M</strong>
-                    </span>
-                  </div>
-                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mt-3 mb-2">
-                    Recent Projects
-                  </p>
-                  <div className="flex gap-2">
-                    {[
-                      { label: 'Kitchen', color: 'from-primary/30 to-primary/50' },
-                      { label: 'Bath', color: 'from-[#E8AA42]/30 to-[#E8AA42]/50' },
-                      { label: 'Deck', color: 'from-primary/15 to-primary/30' },
-                    ].map(p => (
-                      <div
-                        key={p.label}
-                        className={`relative overflow-hidden w-16 h-16 rounded-lg bg-gradient-to-br ${p.color}`}
-                      >
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-[10px] font-semibold text-white/85 drop-shadow-sm">
-                            {p.label}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <span className="text-sm font-medium">5,000+ Projects</span>
               </div>
             </div>
           </div>
@@ -392,8 +216,8 @@ export function HeroFloating() {
                   </legend>
                   <div className="grid grid-cols-3 gap-3">
                     {[
-                      { id: '10-50', label: '$10k\u2013$50k' },
-                      { id: '50-100', label: '$50k\u2013$100k' },
+                      { id: '10-50', label: '$10k–$50k' },
+                      { id: '50-100', label: '$50k–$100k' },
                       { id: '100+', label: '$100k+' },
                     ].map(opt => (
                       <button
